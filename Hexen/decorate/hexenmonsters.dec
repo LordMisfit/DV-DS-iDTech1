@@ -31,7 +31,7 @@ ACTOR PigNew : Pig replaces Pig
     PIGY B 10 A_Look
     goto Spawn+1
   See:
-    PIGY A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PIGY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PIGY ABCD 3 A_Chase
     Loop
   Melee:
@@ -132,7 +132,7 @@ ACTOR EttinNew : Ettin // replaces Ettin
     ETTN AA 10 A_Look
     goto Spawn+1
   See:
-    ETTN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ETTN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ETTN ABCD 5 A_Chase
     Loop
   Melee:
@@ -236,7 +236,7 @@ ACTOR EttinGhostNew : EttinMash replaces EttinMash
     ETTN AA 10 A_Look
     goto Spawn+1
   See:
-    ETTN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ETTN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ETTN ABCD 5 A_Chase
     Loop
   Melee:
@@ -328,7 +328,7 @@ Actor EttinCommander : Ettin
 	CETN AA 10 A_Look
     goto Spawn+1
   See:
-    CETN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CETN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CETN ABCD 5 A_Chase
     Loop
   Pain:
@@ -473,7 +473,7 @@ ACTOR CentaurNew : Centaur replaces Centaur
     CENT AB 10 A_Look
     goto Spawn+1
   See:
-    CENT A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CENT ABCD 4 A_Chase
     Loop
   Melee:
@@ -590,7 +590,7 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
     CENT AB 10 A_Look
     goto Spawn+1
   See:
-    CENT A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CENT ABCD 4 A_Chase
     Loop
   Melee:
@@ -679,7 +679,7 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
     CENT AB 10 A_Look
     goto Spawn+1
   See:
-    CENT A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CENT ABCD 4 A_Chase
     Loop
   Melee:
@@ -797,7 +797,7 @@ ACTOR FireDemonNew : FireDemon replaces FireDemon
     FDMN EFG 10 Bright A_Look
     Goto Spawn+3
   See:
-    FDMN E 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    FDMN E 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDMN E 8 Bright
     FDMN F 6 Bright
     FDMN G 5 Bright
@@ -807,7 +807,7 @@ ACTOR FireDemonNew : FireDemon replaces FireDemon
     FDMN HI 5 Bright
     FDMN J 5 Bright A_UnSetInvulnerable
   Chase:
-    TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDMN ABC 5 Bright A_FireDChase
     Loop
   Pain:
@@ -901,7 +901,7 @@ ACTOR BishopNew : Bishop // replaces Bishop
     BISH A 10 A_Look
     goto Spawn+1
   See:
-    BISH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    BISH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     BISH A 2 A_Chase
     BISH A 2 A_BishopChase
     BISH A 2
@@ -1034,7 +1034,7 @@ ACTOR StalkerNew : Serpent replaces Serpent
     SSPT H 10 A_Look
     goto Spawn+1
   See:
-    SSPT H 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SSPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SSPT HH 1 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE)
     SSPT H 2 A_SerpentHumpDecide
     Loop
@@ -1139,7 +1139,7 @@ ACTOR StalkerLeaderNew : SerpentLeader replaces SerpentLeader
     SSPT H 10 A_Look
     goto Spawn+1
   See:
-    SSPT H 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SSPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SSPT HH 1 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE)
     SSPT H 2 A_SerpentHumpDecide
     Loop
@@ -1247,7 +1247,7 @@ ACTOR GreenChaosSerpentNew : Demon1 replaces Demon1
     DEMN AA 10 A_Look
     goto Spawn+1
   See:
-    DEMN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    DEMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEMN ABCD 4 A_Chase
     Loop
   Pain:
@@ -1361,7 +1361,7 @@ ACTOR GreenChaosSerpentGhostNew : Demon1Mash replaces Demon1Mash
     DEMN AA 10 A_Look
     goto Spawn+1
   See:
-    DEMN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    DEMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEMN ABCD 4 A_Chase
     Loop
   Pain:
@@ -1445,7 +1445,7 @@ ACTOR BrownChaosSerpentNew : Demon2 replaces Demon2
     DEM2 AA 10 A_Look
     goto Spawn+1
   See:
-    DEM2 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    DEM2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEM2 ABCD 4 A_Chase
     Loop
   Pain:
@@ -1553,7 +1553,7 @@ ACTOR BrownChaosSerpentGhostNew : Demon2Mash replaces Demon2Mash
     DEM2 AA 10 A_Look
     goto Spawn+1
   See:
-    DEM2 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    DEM2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEM2 ABCD 4 A_Chase
     Loop
   Pain:
@@ -1639,11 +1639,11 @@ ACTOR WraithNew : Wraith replaces Wraith
     WRTH B 5 A_WraithInit
     goto Spawn+1
   Look:
-    WRTH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH AB 15 A_Look
     Loop
   See:
-    WRTH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH ABCD 4 A_WraithChase
     Loop
   Pain:
@@ -1751,18 +1751,18 @@ ACTOR WraithBuriedNew : WraithBuried replaces WraithBuried
     TNT1 A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     Goto Look
   Look:
-    WRTH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH AB 15 A_Look
     Loop
   See:
-    WRTH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH A 2 A_WraithRaiseInit
     WRTH A 2 A_WraithRaise
     WRTH A 2 A_FaceTarget
     WRTH BB 2 A_WraithRaise
     Goto See+2
   Chase:
-    TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH ABCD 4 A_WraithChase
     Loop
 
@@ -1860,7 +1860,7 @@ ACTOR IceGuyNew : IceGuy replaces IceGuy
     ICEY A 10 A_IceGuyLook
     goto Spawn+1
   See:
-    ICEY A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ICEY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ICEY A 4 A_Chase
     ICEY B 4 A_IceGuyChase
     ICEY CD 4 A_Chase
@@ -1939,7 +1939,7 @@ ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
     SORC A 10 A_Look
     Wait
   See:
-    SORC A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SORC A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SORC ABCD 5 A_Chase
     Loop
   Pain:
@@ -2120,7 +2120,7 @@ ACTOR KoraxNew : Korax replaces Korax
     KORX A 5 A_Look
     goto Spawn+1
   See:
-    KORX A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    KORX A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     KORX AAA 3 A_KoraxChase
     KORX B 3 A_Chase
     KORX BBB 3 A_KoraxChase
@@ -2218,7 +2218,7 @@ ACTOR DragonNew : Dragon replaces Dragon
     DRAG D 10 A_Look
     goto Spawn+1
   See:
-    DRAG A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    DRAG A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DRAG CB 5
     DRAG A 5 A_DragonInitFlight
     DRAG B 3 A_DragonFlap
@@ -2305,7 +2305,7 @@ ACTOR ClericBossNew : ClericBoss replaces ClericBoss
     CLER A 5 A_Look
     goto Spawn+1
   See:
-    CLER A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CLER A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 //    CLER A 0 Thing_ChangeTID(0,1222)
     CLER ABCD 4 A_FastChase
     Loop
@@ -2474,7 +2474,7 @@ ACTOR FighterBossNew : FighterBoss replaces FighterBoss
     PLAY A 5 A_Look
     goto Spawn+1
   See:
-    PLAY A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PLAY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 //    PLAY A 0 Thing_ChangeTID(0,1222)
     PLAY ABCD 4 A_FastChase
     Loop
@@ -2618,7 +2618,7 @@ ACTOR MageBossNew : MageBoss replaces MageBoss
     MAGE A 5 A_Look
     goto Spawn+1
   See:
-    MAGE A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MAGE A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 //    MAGE A 0 Thing_ChangeTID(0,1222)
     MAGE ABCD 4 A_FastChase
     Loop
@@ -2775,7 +2775,7 @@ ACTOR VampireDVDS : Bishop
     VAM1 AB 10 A_Look 
     goto Spawn+1
    See:
-    VAM1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    VAM1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     VAM1 A 2 A_Chase
 	VAM1 A 0 A_BishopDecide
 	VAM1 A 2 A_BishopChase

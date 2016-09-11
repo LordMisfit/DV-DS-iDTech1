@@ -35,7 +35,7 @@ ACTOR ChickenNew : Chicken replaces Chicken
     CHKN AB 10 A_Look
     goto Spawn+1
   See:
-    CHKN A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CHKN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CHKN AB 3 A_Chase
     Loop
   Melee:
@@ -117,7 +117,7 @@ actor HereticImpNew : HereticImp replaces HereticImp
     IMPX ABCB 10 A_Look
     goto Spawn+1
   See:
-    IMPX A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    IMPX A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     IMPX AABBCCBB 3 A_Chase
     Loop
   Melee:
@@ -214,7 +214,7 @@ actor HereticImpLeaderNew : HereticImpLeader replaces HereticImpLeader
     IMPX ABCB 10 A_Look
     goto Spawn+1
   See:
-    IMPX A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    IMPX A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     IMPX AABBCCBB 3 A_Chase
     Loop
   Melee:
@@ -305,7 +305,7 @@ actor MummyNew : Mummy replaces Mummy
     MUMM AB 10 A_Look
     goto Spawn+1
   See:
-    MUMM A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MUMM A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MUMM ABCD 4 A_Chase
     Loop
   Melee:
@@ -393,7 +393,7 @@ actor MummyGhostNew : MummyGhost replaces MummyGhost
     MUMM AB 10 A_Look
     goto Spawn+1
   See:
-    MUMM A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MUMM A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MUMM ABCD 4 A_Chase
     Loop
   Melee:
@@ -481,7 +481,7 @@ actor MummyLeaderNew : MummyLeader replaces MummyLeader
     MUMA AB 10 A_Look
     goto Spawn+1
   See:
-    MUMA A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MUMA A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MUMA ABCD 4 A_Chase
     Loop
   Melee:
@@ -578,7 +578,7 @@ actor MummyLeaderGhostNew : MummyLeaderGhost replaces MummyLeaderGhost
     MUMA AB 10 A_Look
     goto Spawn+1
   See:
-    MUMA A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MUMA A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MUMA ABCD 4 A_Chase
     Loop
   Melee:
@@ -675,7 +675,7 @@ ACTOR KnightNew : Knight replaces Knight
     KNIG AB 10 A_Look
     goto Spawn+1
   See:
-    KNIG A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    KNIG A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     KNIG ABCD 4 A_Chase
     Loop
   Melee:
@@ -766,7 +766,7 @@ ACTOR KnightGhostNew : KnightGhost replaces KnightGhost
     KNIG AB 10 A_Look
     goto Spawn+1
   See:
-    KNIG A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    KNIG A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     KNIG ABCD 4 A_Chase
     Loop
   Melee:
@@ -860,7 +860,7 @@ ACTOR WizardNew : Wizard replaces Wizard
     WZRD AB 10 A_Look
     goto Spawn+1
   See:
-    WZRD A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    WZRD A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WZRD A 3 A_Chase
     WZRD A 4 A_Chase
     WZRD A 3 A_Chase
@@ -967,7 +967,7 @@ ACTOR IronlichNew : Ironlich replaces Ironlich
     LICH A 10 A_Look
     goto Spawn+1
   See:
-    LICH A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    LICH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     LICH A 4 A_Chase
     Loop
   Missile:
@@ -1053,7 +1053,7 @@ ACTOR ClinkNew : Clink replaces Clink
     CLNK AB 10 A_Look
     Loop
   See:
-    CLNK A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    CLNK A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CLNK ABCD 3 A_Chase
     Loop
   Melee:
@@ -1139,7 +1139,7 @@ ACTOR BeastNew : Beast replaces Beast
     BEAS AB 10 A_Look
     goto Spawn+1
   See:
-    BEAS A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    BEAS A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     BEAS ABCDEF 3 A_Chase
     Loop
   Missile:
@@ -1242,11 +1242,11 @@ ACTOR MaulotaurNew : Minotaur replaces Minotaur
     MNTR AB 10 A_MinotaurLook
     goto Spawn+1
   Roam:
-    MNTR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MNTR ABCD 5 A_MinotaurRoam
     Loop
   See:
-    MNTR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MNTR ABCD 5 A_MinotaurChase
     Loop
   Melee:
@@ -1386,7 +1386,7 @@ ACTOR SnakeNew : Snake replaces Snake
     SNKE AB 10 A_Look
     goto Spawn+1
   See:
-    SNKE A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SNKE A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SNKE ABCD 4 A_Chase
     Loop
   Missile:
@@ -1476,7 +1476,7 @@ ACTOR DSparilMountedNew : Sorcerer1 replaces Sorcerer1
     SRCR AB 10 A_Look
     goto Spawn+1
   See:
-    SRCR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SRCR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SRCR ABCD 5 A_Sor1Chase
     Loop
   Missile:
@@ -1561,7 +1561,7 @@ ACTOR DSparilUnmountedNew : Sorcerer2 replaces Sorcerer2
     SOR2 MN 10 A_Look
     goto Spawn+1
   See:
-    SOR2 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SOR2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SOR2 MNOP 4 A_Chase
     Loop
   Rise:

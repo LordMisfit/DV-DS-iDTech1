@@ -33,7 +33,7 @@ ACTOR PeasantNew : Peasant replaces Peasant
     PEAS A 10 A_Look2
     goto Spawn+1
   See:
-    PEAS A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PEAS A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PEAS AABBCCDD 5 A_Wander
     loop
   Melee:
@@ -293,7 +293,7 @@ ACTOR BeggarNew : Beggar replaces Beggar // Base Class
     BEGR A 10 A_Look
     goto Spawn+1
   See:
-    BEGR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    BEGR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     BEGR AABBCC 4 A_Wander
     Loop
   Melee:
@@ -535,7 +535,7 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     HMN1 ABCDABCD 6 A_Wander
     goto Spawn+1
   See:
-    HMN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    HMN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     HMN1 AABBCCDD 3 A_Chase
     Loop
   Missile:
@@ -727,7 +727,7 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     AGRD ABCDABCD 5 A_Wander
     goto Spawn+1
   See:
-    AGRD A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    AGRD A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     AGRD A 6 Fast Slow A_AcolyteBits
     AGRD BCD 6 Fast Slow A_Chase
     Loop
@@ -994,7 +994,7 @@ ACTOR TemplarNew : Templar replaces Templar
     PGRD B 10 A_Wander
     goto Spawn+1
   See:
-    PGRD A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PGRD A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PGRD AABBCCDD 3 A_Chase
     Loop
   Melee:
@@ -1124,7 +1124,7 @@ ACTOR InquisitorNew : Inquisitor replaces Inquisitor
     ROB3 AB 10 A_Look
     goto Spawn+1
   See:
-    ROB3 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ROB3 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ROB3 B 3 A_InquisitorWalk
     ROB3 B 3 A_Chase
     ROB3 CCDD 4 A_Chase
@@ -1262,7 +1262,7 @@ ACTOR ReaverNew : Reaver replaces Reaver
     ROB1 A 10 A_Look
     goto Spawn+1
   See:
-    ROB1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ROB1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ROB1 BBCCDDEE 3 A_Chase
     Loop
   Melee:
@@ -1384,7 +1384,7 @@ ACTOR CrusaderNew : Crusader replaces Crusader
     ROB2 Q 10 A_Look
     goto Spawn+1
   See:
-    ROB2 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ROB2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ROB2 AABBCCDD 3 A_Chase
     Loop
   Missile:
@@ -1486,7 +1486,7 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
     SEWR A 10 A_Look
     goto Spawn+1
   See:
-    SEWR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    SEWR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SEWR A 6 A_SentinelBob
     SEWR A 6 A_Chase
     Loop
@@ -1578,7 +1578,7 @@ ACTOR OStalkerNew : Stalker replaces Stalker
     STLK J 10 A_Look
     Loop
   See:
-    TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     STLK A 1 Slow A_StalkerChaseDecide
     STLK ABB 3 Slow A_Chase
     STLK C 3 Slow A_StalkerWalk
@@ -1676,7 +1676,7 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
     TURT A 5 A_TurretLook
     goto Spawn+1
   See:
-    TURT A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    TURT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     TURT A 2 A_Chase
     Loop
   Missile:
@@ -1783,7 +1783,7 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
     PRGR A 1 A_SentinelBob
     goto Spawn+1
   See:
-    PRGR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PRGR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PRGR A 160 A_SentinelBob
     PRGR BCD 5 A_SentinelBob
 	PRGR A 0 Thing_ChangeTID(0,1222)
@@ -1894,7 +1894,7 @@ ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
     MLDR A 10 A_Look
     goto Spawn+1
   See:
-    MLDR A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MLDR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	MLDR A 0 Thing_ChangeTID(0,1222)
     MLDR AABBCCDD 3 A_Chase
     Loop
@@ -2067,7 +2067,7 @@ ACTOR Macil1New : Macil1 replaces Macil1
     LEAD ABCD 6 A_Wander
     goto Spawn+1
   See:
-    LEAD A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    LEAD A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	LEAD A 0 Thing_ChangeTID(0,1222)
     LEAD AABBCCDD 3 A_Chase
     Loop
@@ -2154,7 +2154,7 @@ ACTOR Macil2New : Macil2 replaces Macil2
     LEAD ABCD 6 A_Wander
     goto Spawn+1
   See:
-    LEAD A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    LEAD A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	LEAD A 0 Thing_ChangeTID(0,1222)
     LEAD AABBCCDD 3 A_Chase
     Loop
@@ -2265,7 +2265,7 @@ ACTOR LoremasterNew : Loremaster replaces Loremaster
     PRST B 10 A_SentinelBob
     goto Spawn+1
   See:
-    PRST A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    PRST A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	PRST A 0 Thing_ChangeTID(0,1222)
     PRST A 4 A_Chase
     PRST A 4 A_SentinelBob
@@ -2400,7 +2400,7 @@ ACTOR AlienSpectre1New : AlienSpectre1 replaces AlienSpectre1
     ALN1 B 10 A_SentinelBob
     goto Spawn+1
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     ALN1 AB 4 Bright A_Chase
     ALN1 C 4 Bright A_SentinelBob
@@ -2520,7 +2520,7 @@ ACTOR AlienSpectre2New : AlienSpectre2 replaces AlienSpectre2
     ALN1 B 10 A_SentinelBob
     goto Spawn+1
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     ALN1 AB 4 Bright A_Chase
     ALN1 C 4 Bright A_SentinelBob
@@ -2642,7 +2642,7 @@ ACTOR AlienSpectre3New : AlienSpectre3 replaces AlienSpectre3
     ALN1 ABCDEFGHIJK 5
     goto Spawn+1
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     ALN1 AB 5 A_Chase
     ALN1 C 5 A_SentinelBob
@@ -2783,7 +2783,7 @@ ACTOR AlienSpectre4New : AlienSpectre4 replaces AlienSpectre4
     ALN1 B 10 A_SentinelBob
     goto Spawn+1
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     ALN1 AB 4 Bright A_Chase
     ALN1 C 4 Bright A_SentinelBob
@@ -2921,7 +2921,7 @@ ACTOR AlienSpectre5New : AlienSpectre5 replaces AlienSpectre5
     ALN1 B 10 A_SentinelBob
     goto Spawn+1
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     ALN1 AB 4 Bright A_Chase
     ALN1 C 4 Bright A_SentinelBob
@@ -3082,7 +3082,7 @@ ACTOR EntityBossNew : EntityBoss replaces EntityBoss
     MNAL B 4 Bright A_SentinelBob
     Goto Spawn+13
   See:
-    ALN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    ALN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	ALN1 A 0 Thing_ChangeTID(0,1222)
     MNAL AB 4 Bright A_Chase
     MNAL C 4 Bright A_SentinelBob
@@ -3212,7 +3212,7 @@ ACTOR EntitySecondNew : EntitySecond replaces EntitySecond
     MNAL R 10 Bright A_Look
     goto Spawn+1
   See:
-    MNAL R 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MNAL R 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	MNAL R 0 Thing_ChangeTID(0,1222)
     MNAL R 5 Bright A_SentinelBob
     MNAL ST 5 Bright A_Chase
@@ -3351,7 +3351,7 @@ ACTOR EntityAscended : EntityBoss
     MNAL B 4 Bright A_SentinelBob
     goto Spawn+1
   See:
-    MNAL A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    MNAL A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 	MNAL A 0 Thing_ChangeTID(0,1222)
     MNAL AB 4 Bright A_Chase
     MNAL C 4 Bright A_SentinelBob

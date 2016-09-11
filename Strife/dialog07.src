@@ -1,0 +1,164 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// AcolyteRed
+conversation
+{
+	actor = 54;
+	page
+	{
+		dialog = "WHAT THE HELL?  WHO OPENED THE GATES?  SOUND THE ALARM!!!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 15;
+	page
+	{
+		dialog = "THERE'S ANOTHER WAY INTO THE SEWERS, THROW THAT SWITCH AND THEN GO UP AND PURGE THE RECLAMATION TANK.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 6;
+	page
+	{
+		dialog = "WHAT THE HELL'S YOUR PROBLEM?!  IF THE PROGRAMMER COMES UP FROM HIS AUDIENCE CHAMBER, YOU'RE DEAD, LADY!";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "YOU KNOW, I'M ACTUALLY LOOKING FOR HIM, SO I DON'T MIND THAT AT ALL.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		dialog = "PFFT. WHATEVER YOU WISH. I WON'T BE THE ONE TO SING YOUR FUNERAL MARCH.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// AcolyteRust
+conversation
+{
+	actor = 55;
+	page
+	{
+		dialog = "HEY, YOU'RE NOT CLEARED TO GO DOWN THERE.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Fake Programmer
+conversation
+{
+	actor = 21;
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP3";
+		voice = "FP301A";
+		dialog = "PROGRAMMER? WHO TOLD YOU THAT? THERE IS NO PROGRAMMER. THAT STORY WAS SPREAD AGES AGO. DON'T TELL ME THE FRONT ACTUALLY BELIEVED THAT CRAP. IDIOTS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SORRY, I'VE HEARD TOO MANY THINGS ABOUT HIM BEING QUITE REAL. YOU'RE NOT FOOLING ME.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP3";
+		voice = "F3TBLA";
+		dialog = "I TOLD YOU ALL I KNOW. YOU ARE WASTING YOUR TIME.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 43;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 44;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 45;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 46;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 47;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 48;
+	page
+	{
+		name = "FRONT SOLDIER";
+		dialog = "FIGHT ON, WE WILL TRIUMPH. THIS DAY WILL BELONG TO US!";
+		drop = 0;
+		link = 0;
+	}
+}

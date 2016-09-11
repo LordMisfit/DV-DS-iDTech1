@@ -1,0 +1,41 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+conversation
+{
+	actor = 12;
+	page
+	{
+		dialog = "THE MASTER DOESN'T LIKE VISITORS.  HE LIKES ALL OF HIS WORK TO REMAIN UNDISTURBED. I'VE GOT TO GO GET FRESH PARTS FROM THE STORAGE ROOM.  I THINK HE SAID A LEG AND AN ARM.  OH, WELL NO TIME TO TALK ANYMORE. I'D LEAVE BEFORE HE FINDS YOU.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ACTUALLY, I'M HERE TO FIND HIM.";
+			yesmessage = "REALLY? YOU'VE COME HERE TO EMBRACE THE GLORY OF THE ORDER?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		dialog = "INTERESTING. SADLY YOU'RE THE WRONG SIZE FOR ONE OF THE ACOLYTE'S UNIFORMS. BUT THEN AGAIN, FOR A LADY LIKE YOU TO GET THIS FAR, A HAVE A FEELING THE MASTER HAS A MUCH HIGHER POSITION IN MIND FOR YOU ANYWAYS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SOUNDS LIKE HE MUST'VE BEEN EXPECTING ME...";
+			yesmessage = "INDEED, NOW GET OUT OF HERE, I MUST GET BACK TO WORK!";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		dialog = "REMEMBER: DON'T SHOW DISRESPECT TO THE MASTER, OR YOU WON'T LAST MORE THAN A FEW MORE SECONDS IN THAT FRAIL-LOOKING SHELL OF YOURS.";
+		drop = 0;
+		link = 0;
+	}
+}

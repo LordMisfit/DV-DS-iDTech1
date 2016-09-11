@@ -1,0 +1,46 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_StrifeDoom.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	MAP04
+	{
+		defaultfloortexture = "F_WATR03";
+		overrideceilheight = false;
+		
+		resources
+		{
+		}
+		
+		defaulttoptexture = "BRKGRY01";
+		overridemiddletexture = false;
+		
+		grid
+		{
+			background = "";
+			backoffsetx = 0;
+			backoffsety = 0;
+			backscalex = 100;
+			backscaley = 100;
+			backsource = 0;
+			gridsize = 32;
+		}
+		
+		overridefloortexture = false;
+		customceilheight = 128;
+		customfloorheight = 0;
+		defaultceiltexture = "F_DECK";
+		overridebrightness = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overridetoptexture = false;
+		custombrightness = 196;
+		overrideceiltexture = false;
+		defaultwalltexture = "BRKGRY01";
+		defaultbottomtexture = "BRKGRY01";
+	}
+	
+}
+

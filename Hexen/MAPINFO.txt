@@ -1,0 +1,87 @@
+// Hexen patch MAPINFO
+
+gameinfo
+{
+ InfoPage = "HELP1"
+ AddInfoPage = "HELP2", "GENHELP", "STATHELP", "FLORA-1", "FLORA-2", "FLORA-3"
+ CreditPage = "TITLEPI1"
+ AddCreditPage = "TITLEPI2", "CREDIT"
+ borderflat = "FIGHT1"
+ drawreadthis = true
+ titletime = 10
+}
+
+clearskills
+skill baby
+{
+	SpawnFilter = Baby
+	Name = "Lost in the World..."
+	Key = "i"
+}
+
+skill easy
+{
+	SpawnFilter = Easy
+	Name = "Still a Bit Scared..."
+	Key = "h"
+}
+
+skill normal
+{
+	SpawnFilter = Normal
+	Name = "A Long Journey Awaits..."
+	Key = "h"
+	DefaultSkill
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "It's Getting Messy..."
+	Key = "u"
+}
+
+skill nightmare
+{
+	SpawnFilter = Nightmare
+	Name = "Korax's Revenge!!"
+	Key = "n"
+}
+
+clearepisodes
+episode map0a
+{
+ name = "Hexen: Beyond Heretic"
+ key = "H"
+}
+episode map0b
+{
+ name = "Hexen: DeathKings"
+ key = "H"
+}
+
+//**********************
+//**Classic Hexen Maps**
+//**********************
+map MAP0A "Skip Map"
+{
+ levelnum = 1020
+ next = "MAP01"
+ cluster = 32
+ par = 1
+ sucktime = 1
+ aircontrol = 1.0
+ NoIntermission
+}
+
+map MAP0b "Skip Map"
+{
+ levelnum = 1021
+ next = "MAP41"
+ cluster = 32
+ par = 1
+ sucktime = 1
+ aircontrol = 1.0
+ NoIntermission
+}
+

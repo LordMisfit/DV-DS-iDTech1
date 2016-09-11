@@ -1,0 +1,34 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Fake Programmer
+conversation
+{
+	actor = 24;
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP2";
+		voice = "FP201A";
+		dialog = "OH NO, I'M NOT THE REAL PROGRAMMER, HE'S HIDING. CONTINUE PAST THE GUARD TRAINING AREA, VERY TOUGH. IF YOU SURVIVE, YOU MIGHT BE ABLE TO TALK TO HIM. OR KILL HIM.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HM, SO WHO ARE YOU THEN?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP2";
+		voice = "F2TBLA";
+		dialog = "YOU'LL NEVER FIND ANYTHING IF YOU HANG AROUND HERE.";
+		drop = 0;
+		link = 0;
+	}
+}

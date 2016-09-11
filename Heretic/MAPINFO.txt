@@ -1,0 +1,172 @@
+// Heretic patch MAPINFO
+
+gameinfo
+{
+ InfoPage = "HELP1"
+ AddInfoPage = "HELP2", "GENHELP", "STATHELP", "FLORA-1", "FLORA-2", "FLORA-3"
+ CreditPage = "TITLEPI1"
+ AddCreditPage = "TITLEPI2", "CREDIT"
+ borderflat = "FIGHT1"
+ drawreadthis = true
+ titletime = 10
+}
+
+clearskills
+skill baby
+{
+	SpawnFilter = Baby
+	Name = "Lost in the World..."
+	Key = "i"
+}
+
+skill easy
+{
+	SpawnFilter = Easy
+	Name = "Still a Bit Scared..."
+	Key = "h"
+}
+
+skill normal
+{
+	SpawnFilter = Normal
+	Name = "A Long Journey Awaits..."
+	Key = "h"
+	DefaultSkill
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "It's Getting Messy..."
+	Key = "u"
+}
+
+skill nightmare
+{
+	SpawnFilter = Nightmare
+	Name = "D'Sparil's Revenge!!"
+	Key = "n"
+}
+
+clearepisodes
+episode e1ma
+{
+ name = "Heretic: Shadow of the Serpent Riders"
+ key = "H"
+}
+
+//*********************
+//**Classic Doom Maps**
+//*********************
+gamedefaults
+{
+ KeepFullInventory
+}
+
+map E1MA "Skip Map"
+{
+ levelnum = 1010
+ next = "E1M1"
+ cluster = 32
+ par = 1
+ sucktime = 1
+ aircontrol = 1.0
+ NoIntermission
+}
+
+// Play all the Heretic episodes in order? Yes please [thanks Kyle873 for having done this for me already :o]
+map E1M8 lookup "HHUSTR_E1M8"
+{
+ next = "E2M1"
+ secretnext = "E1M9"
+ sky1 = "SKY1"
+ cluster = 1
+ ironlichspecial
+ specialaction_lowerfloortohighest
+ music = "MUS_E1M8"
+}
+
+map E2M8 lookup "HHUSTR_E2M8"
+{
+ next = "E3M1"
+ secretnext = "E2M9"
+ sky1 = "SKY2"
+ cluster = 2
+ nointermission
+ minotaurspecial
+ specialaction_lowerfloortohighest
+ specialaction_killmonsters
+ music = "MUS_E2M8"
+}
+
+map E3M8 lookup "HHUSTR_E3M8"
+{
+ next = "E4M1"
+ secretnext = "E3M9"
+ sky1 = "SKY3"
+ cluster = 3
+ dsparilspecial
+ specialaction_lowerfloortohighest
+ specialaction_killmonsters
+ music = "MUS_E1M9"
+}
+
+map E4M8 lookup "HHUSTR_E4M8"
+{
+ next = "E5M1"
+ secretnext = "E4M9"
+ sky1 = "SKY1"
+ cluster = 4
+ ironlichspecial
+ specialaction_lowerfloortohighest
+ specialaction_killmonsters
+ music = "MUS_E1M8"
+}
+
+map E5M8 lookup "HHUSTR_E5M8"
+{
+ next = "EndGame1"
+ secretnext = "E5M9"
+ sky1 = "SKY3"
+ cluster = 5
+ nointermission
+ minotaurspecial
+ specialaction_killmonsters
+ specialaction_lowerfloortohighest
+ music = "MUS_E2M8"
+}
+
+cluster 1
+{
+	flat = "FLOOR25"
+	music = "MUS_CPTD"
+	exittext = lookup, "HE1TEXT"
+}
+
+cluster 2
+{
+	flat = "FLATHUH1"
+	music = "MUS_CPTD"
+	exittext = lookup, "HE2TEXT"
+}
+
+cluster 3
+{
+	flat = "FLTWAWA2"
+	music = "MUS_CPTD"
+	exittext = lookup, "HE3TEXT"
+}
+
+cluster 4
+{
+	flat = "FLOOR28"
+	music = "MUS_CPTD"
+	exittext = lookup, "HE4TEXT"
+}
+
+cluster 5
+{
+	flat = "FLOOR08"
+	music = "MUS_CPTD"
+	exittext = lookup, "HE5TEXT"
+}

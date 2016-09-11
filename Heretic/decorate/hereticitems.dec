@@ -1,0 +1,394 @@
+ACTOR GauntletsNew : RandomSpawner replaces Gauntlets
+{
+    DropItem "BerserkSphere", 255, 95
+    DropItem "RandomSeedDropForced", 255, 32
+    DropItem "DiarisLongbow", 255, 32
+    DropItem "GoldWandNew", 255, 32
+    DropItem "SuperCrossbowNew", 255, 32
+    DropItem "RandomHellcoreWeapon", 255, 32
+    DropItem "FyggForced", 255, 1
+}
+
+ACTOR ArtiTimeBombNew replaces ArtiTimeBomb
+{
+  Radius 16
+  Height 16
+  +DONTGIB
+  States
+  {
+   Spawn:
+	TNT1 A 0 NoDelay
+	{
+	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard"); }
+	 if (random(1,256) <= 85) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+	 if (random(1,256) <= 28) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+	 if (random(1,256) <= 9) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+	 if (random(1,256) <= 3) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+	 A_Fadeout(1.0);
+	}
+	stop
+  }
+}
+
+ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
+{
+    +DONTGIB
+    DropItem "RandomMagicSpawner", 256
+}
+
+ACTOR ArtiEggNew : ArtiEgg replaces ArtiEgg
+{
+  +DONTGIB
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  Tag "Torpol's Morph Ovum: Transforms up to eleven enemies into chickens."
+  States
+  {
+  Spawn:
+    EGGC ABCB 5
+    Loop
+  Use:
+    TNT1 A 0 A_FireCustomMissile("EggFX", -18.75, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", -15, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", -11.25, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", -3.75, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", -7.5, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 0, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 3.75, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 7.5, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 11.25, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 15, 0, 0, 0, 1)
+    TNT1 A 0 A_FireCustomMissile("EggFX", 18.75, 0, 0, 0, 1)
+    Stop
+  }
+}
+  
+ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
+{
+  +DONTGIB
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  Tag "Darchala's Chaos Device: Teleports you away to near a level's entry point."
+}
+  
+ACTOR ArtiTomeOfPowerNew : RandomSpawner replaces ArtiTomeOfPower
+{
+    DropItem "RandomSeedDropForcedAlways", 255, 246
+    DropItem "FloraRandomArmorAlwaysDrop", 255, 8
+    DropItem "SauronHelmet", 255, 1
+    DropItem "SauronGauntlets", 255, 1
+}
+
+ACTOR ArtiInvisibilityNew : CustomInventory replaces ArtiInvisibility
+{
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.INVBAR
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.HUBPOWER
+  +INVENTORY.PERSISTENTPOWER
+  +INVENTORY.KEEPDEPLETED
+  RenderStyle Translucent
+  Alpha 0.4
+  Inventory.RespawnTics 4230
+  Inventory.Icon ARTIINVS
+  Inventory.PickupMessage "$TXT_ARTIINVISIBILITY"
+  Tag "ShadowSphere: Gives partial invisiblity for 90 seconds"
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  States
+  {
+  Spawn:
+    INVS A 350 Bright
+    Loop
+  Use:
+    TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-7)
+	fail
+  }
+}
+
+ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
+{
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  Inventory.RespawnTics 4230
+  Inventory.Icon ARTISOAR
+  Inventory.PickupMessage "$TXT_ARTIFLY" // "WINGS OF WRATH"
+  Tag "$TAG_ARTIFLY"
+  States
+  {
+  Spawn:
+    TNT1 A 0 NoDelay A_SpawnItemEx("SeedOfSkillForced",0,0,0,0,0,0,0,0,0)
+    TNT1 A 0 A_SpawnItemEx("SeedOfSkillForced",0,0,0,0,0,0,0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfAgilityForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfAgilityForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfDefenseForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfDefenseForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfDeftnessForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfDeftnessForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfSorceryForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfSorceryForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfStrengthForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfStrengthForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfTherapeusisForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfTherapeusisForced",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfLife",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfLife",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("SeedOfMagic",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,192)
+    TNT1 A 0 A_SpawnItemEx("SeedOfMagic",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,240)
+
+    TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,254)
+    TNT1 A 0 A_FadeOut(1.0)
+    Loop
+  }
+}
+
+ACTOR ArtiInvulnerabilityNew : CustomInventory replaces ArtiInvulnerability
+{
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  +INVENTORY.INVBAR
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.HUBPOWER
+  +INVENTORY.PERSISTENTPOWER
+  +INVENTORY.KEEPDEPLETED
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  Inventory.RespawnTics 4230
+  Inventory.Icon ARTIINVU
+  Inventory.PickupMessage "$TXT_ARTIINVULNERABILITY" // "RING OF INVINCIBILITY"
+  Tag "Valador's Ring of Invincibility: Gives 45 Seconds of Invulnerability"
+  States
+  {
+  Spawn:
+    INVU ABCD 3
+    Loop
+  Use:
+    TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-6)
+	fail
+  }
+}
+
+actor SilverShieldNew : RandomSpawner replaces SilverShield
+{
+    DropItem "MaxHealthBonusReal", 255, 96
+    DropItem "FloraRandomArmorAlwaysDrop", 255, 2
+    DropItem "SauronHelmet", 255, 1
+    DropItem "SauronGauntlets", 255, 1
+}
+
+actor EnchantedShieldNew : RandomSpawner replaces EnchantedShield
+{
+    DropItem "MaxHealthBonusReal", 255, 92
+    DropItem "FloraRandomArmorAlwaysDrop", 255, 4
+    DropItem "SauronHelmet", 255, 2
+    DropItem "SauronGauntlets", 255, 2
+}
+
+ACTOR CrystalVialNew : CustomInventory replaces CrystalVial
+{
+  +DONTGIB
+  +FLOATBOB
+  Inventory.Amount 10
+  Inventory.PickupMessage "$TXT_ITEMHEALTH" // "CRYSTAL VIAL"
+  States
+  {
+    Herb1:
+     TNT1 A 0 A_SpawnItemEx("MedicinalHerb",0,0,0,0,0,0,0,0,0)
+     TNT1 A 0 A_SpawnItemEx("MedicinalHerb",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,224)
+     TNT1 A 0 A_SpawnItemEx("MedicinalHerb",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,252)
+     TNT1 A 0 A_SpawnItemEx("MedicinalHerb",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,255)
+     TNT1 A 0 A_Jump(32,"Idle")
+     TNT1 A 0 A_FadeOut(1.0)
+     stop
+
+    Herb2:
+     TNT1 A 0 A_SpawnItemEx("StrongMedicine",0,0,0,0,0,0,0,0,0)
+     TNT1 A 0 A_SpawnItemEx("StrongMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,224)
+     TNT1 A 0 A_SpawnItemEx("StrongMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,252)
+     TNT1 A 0 A_SpawnItemEx("StrongMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,255)
+     TNT1 A 0 A_Jump(32,"Idle")
+     TNT1 A 0 A_FadeOut(1.0)
+     stop
+
+    Herb3:
+     TNT1 A 0 A_SpawnItemEx("SpecialMedicine",0,0,0,0,0,0,0,0,0)
+     TNT1 A 0 A_SpawnItemEx("SpecialMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,224)
+     TNT1 A 0 A_SpawnItemEx("SpecialMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,252)
+     TNT1 A 0 A_SpawnItemEx("SpecialMedicine",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,255)
+     TNT1 A 0 A_Jump(32,"Idle")
+     TNT1 A 0 A_FadeOut(1.0)
+     stop
+
+   TurnIntoHerb:
+     TNT1 A 0 A_Jump(144,"Herb1")
+     TNT1 A 0 A_Jump(112,"Herb2")
+     goto Herb3
+
+  Spawn:
+    TNT1 A 0
+    TNT1 A 0
+	{
+	 // Monster Munchies
+	 if (random(1,128) <= 1)
+	 {
+	  A_SpawnItemEx("MonsterMunchies",0,0,0,random(-4,4),random(-4,4),random(-4,4),0,0,0);
+	 }
+	 // Vimstones
+	 if (random(1,1024) <= 1)
+	 {
+	  if (random(1,4) <= 3)
+	  {
+	   A_SpawnItemEx("LesserVimstone",0,0,0,0,0,0,0,0,0);
+	  }
+	  else
+	  {
+       A_SpawnItemEx("GreaterVimstone",0,0,0,0,0,0,0,0,0);
+	  }
+	 }
+	}
+    TNT1 A 0 A_Jump(36,"TurnIntoHerb") 
+  Idle:
+    PTN1 ABC 3
+    loop
+  Success:
+    TNT1 A 0 ACS_NamedExecuteAlways("PickupMedicalItem",0,0,0,0)
+    Stop
+  Pickup:
+    TNT1 A 0 ACS_NamedExecuteWithResult("CheckHealthLevels",0,0,0)
+    TNT1 A 0 A_JumpIf(args[3] == 1,"Success")
+    Fail
+  }
+}
+
+ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
+{
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.INVBAR
+  +INVENTORY.HUBPOWER
+  +INVENTORY.PERSISTENTPOWER
+  +INVENTORY.KEEPDEPLETED
+  Inventory.DefMaxAmount
+  Inventory.Icon ARTIPTN2
+  Inventory.PickupSound "misc/p_pkup"
+  Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
+  Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  States
+  {
+  Spawn:
+    PTN2 ABC 4
+    Loop
+  Use:
+    TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-1)
+	fail
+  }
+}
+
+ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
+{
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.FANCYPICKUPSOUND
+  +INVENTORY.INVBAR
+  +INVENTORY.HUBPOWER
+  +INVENTORY.PERSISTENTPOWER
+  +INVENTORY.KEEPDEPLETED
+  Inventory.DefMaxAmount
+  Inventory.Icon ARTISPHL
+  Inventory.PickupSound "misc/p_pkup"
+  Inventory.PickupMessage "$TXT_ARTISUPERHEALTH" // "MYSTIC URN"
+  Tag "Mystic Urn: Recovers 100-110% HP to 192.5% of Maximum"
+  inventory.maxamount 99
+  inventory.InterHubAmount 99
+  
+  States
+  {
+  Spawn:
+    SPHL A 350
+    Loop
+  Use:
+    TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-2)
+	fail
+  }
+}
+
+actor BagOfHoldingNew : CustomInventory replaces BagOfHolding
+{
+  Height 26
+  +DONTGIB
+  +COUNTITEM
+  +FLOATBOB
+  Inventory.PickupMessage "$TXT_ITEMBAGOFHOLDING"
+  States
+  {
+   Spawn:
+    TNT1 A 0 NoDelay
+	{
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("GoldWandHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("CrossbowHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("BlasterHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("PhoenixRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("MaceHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <=  84) { A_SpawnItemEx("DiarisArrowQuiver",0,0,0,random(-5,5),random(-5,5),0); }
+
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+    }
+   Idle:
+    BAGH A -1 
+    Stop
+   Pickup:
+    TNT1 A 0 
+    TNT1 A 0 ACS_NamedExecuteAlways("GrabBackpack",0,0,0,0) // Backpack Script
+    Stop
+  }
+}

@@ -1,0 +1,239 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Door Guard
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "PDG01";
+		dialog = "HALT. NO ONE GETS THROUGH HERE WITHOUT AUTHORIZATION FROM THE WARDEN OR THE GOVERNOR.";
+		drop = 136;
+		link = 0;
+		choice
+		{
+			text = "HERE'S MY PASS, PLEASE LET ME IN NOW.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 304;
+				amount = 1;
+			}
+			displaycost = false;
+			giveitem = 302;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "PDG02";
+		dialog = "OK, BUT TALK ONLY TO THE WARDEN.";
+		drop = 136;
+		link = 3;
+		ifitem
+		{
+			item = 137;
+		}
+	}
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "ADG01";
+		dialog = "DO I LOOK LIKE THE WARDEN TO YOU? KEEP MOVING, THIS AREA'S OFF LIMITS.";
+		drop = 136;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 55;
+	page
+	{
+		name = "PRISON GUARD";
+		panel = "M_GUARD3";
+		voice = "AG301";
+		dialog = "THE ORDER'S WRATH WILL RAIN DOWN ON THESE SERVANTS UNTIL THEY BEG FOR DEATH.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Warden Montag
+conversation
+{
+	actor = 12;
+	page
+	{
+		name = "WARDEN MONTAG";
+		panel = "M_WARDEN";
+		voice = "WDM01";
+		dialog = "I DON'T CARE IF MOUREL GAVE YOU A PASS. THIS IS MY PRISON. MY KEY IS THE ONLY WAY IN OR OUT, AND I'M NOT TAKING ANY CHANCES. THE ORDER DOES NOT TOLERATE MISTAKES.";
+		drop = 137;
+		link = 0;
+		choice
+		{
+			text = "SORRY, BUT I NEED THE KEY.";
+			log = "LOG1010";
+			giveitem = 301;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WARDEN MONTAG";
+		panel = "M_WARDEN";
+		voice = "WDM02";
+		dialog = "OVER MY DEAD BODY!";
+		drop = 137;
+		link = 0;
+		choice
+		{
+			text = "*SIGH* YOU LEAVE ME NO CHOICE, THEN.";
+			giveitem = 301;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WARDEN MONTAG";
+		panel = "M_WARDEN";
+		voice = "MOTBL";
+		dialog = "SHACKLES OR CHAINS, I WANT YOU TO HANG AROUND.";
+		drop = 137;
+		link = 0;
+	}
+}
+
+// Judge Wolfnick
+conversation
+{
+	actor = 13;
+	page
+	{
+		name = "JUDGE WOLENICK";
+		panel = "M_JUDGE";
+		voice = "JDW01";
+		dialog = "I DON'T KNOW HOW YOU MANAGED TO GET PAST THE GUARDS AND THE WARDEN, BUT I HOPE YOU LIKE THE DECOR, BECAUSE YOU JUST MOVED IN.";
+		drop = 138;
+		link = 0;
+		choice
+		{
+			text = "I'M TERRIBLY SORRY, BUT YOU'LL HAVE TO FREE MY COMRADES... OR DIE.";
+			giveitem = 301;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "JUDGE WOLENICK";
+		panel = "M_JUDGE";
+		voice = "JDW02";
+		dialog = "KILL ME AND YOU'LL NEVER SET ANYONE FREE. I POSSESS THE ONLY PATTERN KEY THAT WILL UNLOCK THE CELLS.";
+		drop = 138;
+		link = 0;
+		choice
+		{
+			text = "HMM... CAN YOU LEND ME A HAND THEN?";
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "JUDGE WOLENICK";
+		panel = "M_JUDGE";
+		voice = "JWTBL";
+		dialog = "MOVE ALONG OR JOIN YOUR FRIENDS.";
+		drop = 138;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "PRISONER";
+		dialog = "DON'T JUST STAND THERE GIRL, GET US OUT OF HERE!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "PRISONER";
+		dialog = "THE SKY, I WANT TO SEE THE SKY.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 17;
+	page
+	{
+		name = "PRISONER";
+		dialog = "FIVE FEET BY FOUR FEET, FIVE FEET BY FOUR FEET, FIVE FEET BY FOUR FEET.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 18;
+	page
+	{
+		name = "PRISONER";
+		dialog = "DON'T RELEASE ME IF THE ORDER'S STILL IN CHARGE. I CAN'T STAND THE TERROR.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 19;
+	page
+	{
+		name = "PRISONER";
+		dialog = "I DON'T WANT TO BITCH, BUT IT'S ABOUT TIME MACIL SENT SOMEONE TO GET US OUT.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 20;
+	page
+	{
+		name = "PRISONER";
+		dialog = "I'D GIVE ANYTHING FOR JUST A CRUST OF BREAD. I'M SO HUNGRY.";
+		drop = 0;
+		link = 0;
+	}
+}

@@ -1,0 +1,311 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Weran
+conversation
+{
+	actor = 19;
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER01";
+		dialog = "AH, A SURFACER IN NEED OF A FAVOR. DOWN HERE YOU DO A FAVOR TO GET A FAVOR AND I NEED THE TOWN ENTRANCE THAT IS OUR PATH TO FOOD OPENED. THE ORDER HAS IT SEALED AND GUARDED.";
+		drop = 0;
+		link = 5;
+		ifitem
+		{
+			item = 162;
+		}
+		choice
+		{
+			text = "WHERE'S THE GATE MECHANISM?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER02";
+		dialog = "DO MY FAVOR FIRST, OR YOU'LL GET SQUAT FROM ME.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "THEN, HOW WILL YOU KNOW IT'S OPEN?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER03";
+		dialog = "BRING ME BACK THE GUARD'S UNIFORM. THAT WAY ONE OF MY RATFELLOWS CAN WEAR IT AND NO ONE WILL TRY TO SHUT THE DOOR AGAIN.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "OKAY, SO YOU WANT HIS UNIFORM?";
+			log = "LOG1015";
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER05";
+		dialog = "OPEN THE DOOR, BRING ME THE UNIFORM AND WE TRADE. OTHERWISE, PISS OFF.";
+		drop = 0;
+		link = 5;
+		ifitem
+		{
+			item = 162;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER06";
+		dialog = "HAVE YOU BROUGHT ME WHAT I WANT?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HOW ABOUT THIS UNIFORM?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 162;
+				amount = 1;
+			}
+			displaycost = false;
+			nomessage = "BRING ME THE UNIFORM.";
+			giveitem = 191;
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER07";
+		dialog = "GOOD. HERE'S SOMETHING EXTRA. MY FELLOWS TORE THIS OFF OF A FALLEN CRUSADER, IT'S THE PARTS THAT MAKE UP A FLAMETHROWER. NOW IRALE CAN MAKE ONE FOR YOU. YOU CAN HAVE SUCH FUN.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SO AGAIN, WHERE'S THE GATE MECHANISM?";
+			giveitem = 302;
+			nextpage = 7;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER08";
+		dialog = "YOU HAVE TO ENTER ANOTHER PART OF THE SEWERS. TO GET THERE YOU MUST ENTER THE CASTLE FROM A SEWER MAINTENANCE DOOR AND DRAIN THE FLUID RECLAMATION TANK. AT THE BOTTOM IS THE HIDDEN ENTRANCE TO SEWERS, AND RIGHT BEYOND THAT IS THE MANUAL GATE CONTROL.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "IS THERE ANYTHING ELSE YOU CAN DO?";
+			nextpage = 8;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WER09";
+		dialog = "GOOD LUCK. I'VE OPENED SEVERAL OF OUR TUNNELS FOR YOU. IT SHOULD MAKE YOUR TASK EASIER. OH, SIZE TEN, PERFECT! ...BUT DREADFUL COLORS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, THANKS FOR YOUR HELP.";
+			log = "LOG1016";
+			nextpage = 9;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "WERAN";
+		panel = "M_WERAN";
+		voice = "WNTBL";
+		dialog = "YOU GIVE ME NOTHING, YOU GET NOTHING.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 38;
+	page
+	{
+		dialog = "WERAN WILL SAVE US. HE'S NEVER FAILED US YET.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 39;
+	page
+	{
+		dialog = "IF YOU SEEK AN ANSWER TO YOUR PROBLEM, FIND WERAN.  ";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 40;
+	page
+	{
+		dialog = "LONG LIVE THE FRONT?  THAT'S ALL CRAP. WE'RE ALL JUST WAITING TO DIE. ";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 41;
+	page
+	{
+		dialog = "WITH OUR PASSAGE TO THE SURFACE SEALED, WE CAN'T EVEN FEED OURSELVES.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 42;
+	page
+	{
+		dialog = "FOOD, DO YOU HAVE ANY FOOD? PLEASE HELP US.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// AcolyteTan
+conversation
+{
+	actor = 53;
+	page
+	{
+		dialog = "THIS IS MY \"REWARD\" FOR LETTING PRISONERS ESCAPE, GUARDING THE SEWERS. IF I EVER FIND THE GUY WHO BROKE THEM OUT, I'LL SLAUGHTER HIM.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "\"HER\" YOU MEAN, \"GOOD\" SIR.";
+			nextpage = 2;
+			closedialog = false;			
+		}
+	}
+	page
+	{
+		dialog = "\"HER\"?! YOU MEAN, YOU'RE ADMITTING TO BEING THE FOOL WHO DARES TO STAND WITH THE FRONT?!";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "ABSOLUTELY! AND THE SAD PART IS THAT YOU'RE THE REAL \"FOOL\".";
+			nextpage = 3;
+			giveitem = 301;
+			closedialog = false;			
+		}
+	}
+	page
+	{
+		dialog = "I'LL ENJOY RIPPING YOU TO PIECES, YOU INSOLENT BITCH!";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "HMPH... GO AHEAD AND TRY, \"GOOD\" SIR.";
+			nextpage = 4;
+			closedialog = true;			
+		}
+	}
+	page
+	{
+		dialog = "DIE!!!";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// AcolyteRed
+conversation
+{
+	actor = 54;
+	page
+	{
+		dialog = "WE'VE GOT THOSE LITTLE BEGGARS JUST WHERE WE WANT THEM. FEW MORE DAYS OF THIS, AND THEY'LL HAVE STARVED THEMSELVES INTO OBLIVION.";
+		drop = 143;
+		link = 0;
+		choice
+		{
+			text = "I'M SORRY, I'M AFRAID IT'S YOU WHO WILL BE VISITING THE DEADLANDS, \"GOOD\" SIR.";
+			nextpage = 2;
+			closedialog = false;			
+		}
+	}
+	page
+	{
+		dialog = "IS THAT A THREAT, LITTLE GIRL?";
+		drop = 143;
+		link = 0;
+		choice
+		{
+			text = "THREAT? NO NO... IT'S A PROMISE.";
+			nextpage = 3;
+			giveitem = 301;
+			closedialog = false;			
+		}
+	}
+	page
+	{
+		dialog = "DIE YOU REBEL PEON!!!";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// AcolyteRust
+conversation
+{
+	actor = 55;
+	page
+	{
+		name = "WATCHMAN";
+		dialog = "WHAT'S YOUR CLEARANCE?  THERE'S NO UNAUTHORIZED PERSONNEL ALLOWED UP HERE.";
+		drop = 0;
+		link = 0;
+	}
+}

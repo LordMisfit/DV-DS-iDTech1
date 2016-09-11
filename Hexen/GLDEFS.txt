@@ -1,0 +1,166 @@
+Pointlight VampireBeam
+{
+Color 1.0 0.0 0.0
+Size 16
+}
+
+Pointlight VampireBeamEnd1
+{
+Color 1.0 0.0 0.0
+Size 24
+}
+
+Pointlight VampireBeamEnd2
+{
+Color 1.0 0.0 0.0
+Size 20
+}
+
+Pointlight VampireBeamEnd3
+{
+Color 1.0 0.0 0.0
+Size 16
+}
+
+Pointlight VampireBeamEnd4
+{
+Color 1.0 0.0 0.0
+Size 12
+}
+
+Pointlight VampireBeamEnd5
+{
+Color 1.0 0.0 0.0
+Size 8
+}
+
+Pointlight VampireBeamEnd6
+{
+Color 1.0 0.0 0.0
+Size 4
+}
+
+Object VampireRoundBeam
+{
+Frame VAM2A { Light VampireBeam }
+Frame VAM2C { Light VampireBeamEnd1 }
+Frame VAM2D { Light VampireBeamEnd2 }
+Frame VAM2E { Light VampireBeamEnd3 }
+Frame VAM2F { Light VampireBeamEnd4 }
+Frame VAM2G { Light VampireBeamEnd5 }
+Frame VAM2H { Light VampireBeamEnd6 }
+}
+
+Pointlight FlyingBat1
+{
+Color 0.5 0.5 0.5
+Size 16
+}
+
+
+Object BatAttack
+{
+Frame VAM4A { Light FlyingBat1 }
+Frame VAM4B { Light FlyingBat1 }
+Frame VAM4C { Light FlyingBat1 }
+}
+
+Object BatAttackSafe
+{
+Frame VAM4A { Light FlyingBat1 }
+Frame VAM4B { Light FlyingBat1 }
+Frame VAM4C { Light FlyingBat1 }
+}
+
+Flickerlight2 VampireFire1
+{
+Color 1.0 0.0 0.0
+Size 16
+SecondarySize 32
+Interval 0.7
+Offset 0 42 0
+}
+
+Flickerlight2 VampireFire2
+{
+Color 1.0 0.0 0.0
+Size 32
+SecondarySize 56
+Interval 0.7
+Offset 0 42 0
+}
+
+Flickerlight2 VampireFire3
+{
+Color 0.5 0.5 0.5
+Size 16
+SecondarySize 32
+Interval 0.7
+Offset 0 42 0
+}
+
+Flickerlight2 VampireFire4
+{
+Color 0.5 0.5 0.5
+Size 32
+SecondarySize 56
+Interval 0.7
+Offset 0 42 0
+}
+
+Pointlight VampireExplode1
+{
+Color 0.5 0.5 0.5
+Size 32
+Offset 0 42 0
+}
+
+Pointlight VampireExplode2
+{
+Color 0.5 0.5 0.5
+Size 64
+Offset 0 42 0
+}
+
+Pointlight VampireExplode3
+{
+Color 0.5 0.5 0.5
+Size 80
+Offset 0 42 0
+}
+
+Pointlight VampireExplode4
+{
+Color 0.5 0.5 0.5
+Size 140
+Offset 0 42 0
+}
+
+Pointlight VampireExplode5
+{
+Color 0.5 0.5 0.5
+Size 96
+Offset 0 42 0
+}
+
+Pointlight VampireExplode6
+{
+Color 0.5 0.5 0.5
+Size 48
+Offset 0 48 0
+}
+
+Object VampireDVDS
+{
+Frame VAM1E { Light VampireFire1 }
+Frame VAM1F { Light VampireFire2 }
+Frame VAM1X { Light VampireFire3 }
+Frame VAM1Y { Light VampireFire4 }
+Frame VAM1G { Light VampireExplode1 }
+Frame VAM1H { Light VampireExplode2 }
+Frame VAM1I { Light VampireExplode3 }
+Frame VAM1J { Light VampireExplode4 }
+Frame VAM1K { Light VampireExplode5 }
+Frame VAM1L { Light VampireExplode6 }
+Frame VAM1M { Light VampireExplode7 }
+}

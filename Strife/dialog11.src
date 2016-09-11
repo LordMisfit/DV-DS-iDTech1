@@ -1,0 +1,136 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+conversation
+{
+	actor = 24;
+	page
+	{
+		name = "KEY MASTER";
+		panel = "M_KEVIN";
+		voice = "KNTBL";
+		dialog = "I'm the keymaster.";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 311;
+		}
+	}
+	page
+	{
+		name = "KEY MASTER";
+		panel = "M_KEVIN";
+		voice = "KEV01";
+		dialog = "A LOT OF PEOPLE WOULD SAY THIS IS A THANKLESS AND INSIGNIFICANT JOB. BUT IT'S NOT, IN FACT...";
+		drop = 146;
+		link = 0;
+		choice
+		{
+			text = "CAN YOU GIVE ME THE KEY, PLEASE?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 311;
+				amount = 1;
+			}
+			displaycost = false;
+			nomessage = "NO.  you don't have what i want for the  GIVE ME THE KEY!!";
+			log = "LOG1021";
+			giveitem = 146;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "KEY MASTER";
+		panel = "M_KEVIN";
+		voice = "KEV02";
+		dialog = "OK, BUT REMEMBER, I'M THE KEYMASTER.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HOPE THAT'S WORKING OUT FOR YOU...";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "KEY MASTER";
+		panel = "M_KEVIN";
+		voice = "KNTBL";
+		dialog = "I'm the keymaster.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "TEMPLE GUARD";
+		dialog = "DIE TRAITOR!";
+		drop = 145;
+		link = 0;
+	}
+}
+
+//AcolyteGrayNew
+conversation
+{
+	actor = 56;
+	page
+	{
+		name = "SERGEANT";
+		dialog = "DIE, YOU REBEL TRAITOR!";
+		drop = 147;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "PRISONER";
+		dialog = "HAVE YOU COME TO GLOAT?  EVEN THOUGH WE'RE BEHIND THESE BARS, AS LONG AS WE HOLD ON, YOU STILL LOSE.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "PRISONER";
+		dialog = "LET US OUT OF HERE!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 17;
+	page
+	{
+		name = "PRISONER";
+		dialog = "LEAVE ME ALONE!";
+		drop = 0;
+		link = 0;
+	}
+}

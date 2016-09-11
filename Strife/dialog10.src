@@ -1,0 +1,857 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Macil
+conversation
+{
+	actor = 50;
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAC15";
+		dialog = "GOOD, YOU'RE CONSCIOUS AGAIN. WHEN YOU GRABBED THAT ITEM THE PROGRAMMER DROPPED YOU LET LOOSE SOME TERRIBLE SECRETS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, TELL ME WHAT YOU'VE LEARNED.";
+			giveitem = 343;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAC20";
+		dialog = "WE HAVE NO IDEA WHERE THIS WEAPON CAME FROM, BUT WE MUST FIND OUT. YOU HAVE WRESTED ONE FROM THE ORDER, BUT WE MUST HAVE ALL FIVE. WE HAVE REACHED THE LIMITS OF MY KNOWLEDGE. SEEK OUT THE ORACLE AND ASK IT FOR HELP.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WELL, I'M GONNA NEED MORE HELP AND SUPPLIES FOR THIS.";
+			log = "LOG1019";
+			giveitem = 309;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MACRWD";
+		dialog = "HERE'S SOME GOLD. GO VISIT THE MEDIC AND THE WEAPONS TRAINER AND THEN, MOVE OUT!";
+		drop = 0;
+		link = 5;
+		ifitem
+		{
+			item = 333;
+		}
+		choice
+		{
+			text = "ALRIGHT THEN!";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MLTBL";
+		dialog = "FIGHT FOR THE FRONT AND FREEDOM. MOVE OUT.";
+		drop = 0;
+		link = 5;
+		ifitem
+		{
+			item = 333;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE01";
+		dialog = "What prompts your return? Are you hurt? There's no time to lose, continue with your mission. Complete the SIGIL.";
+		drop = 0;
+		link = 9;
+		ifitem
+		{
+			item = 334;
+		}
+		choice
+		{
+			text = "THE ORACLE HAS TOLD ME YOU'VE INFLITRATED THE FRONT AND THAT YOU MUST DIE.";
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE02";
+		dialog = "I have sworn myself to freedom. It is the Oracle who holds the third piece. There's your traitor.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "YEAH, SOMETHING DOES SEEM SUSPICIOUS ABOUT THAT GUY.";
+			log = "LOG1024";
+			nextpage = 8;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SORRY, I'M AFRAID I KNOW MORE THAN YOU REALIZE.";
+			giveitem = 301;
+			nextpage = 7;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAC666";
+		dialog = "Spirit of the one god avenge me and turn this world into dust.";
+		drop = 0;
+		link = 0;
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE03";
+		dialog = "You have made the right decision. Its clear that the ORACLE is controlled by whatever evil is driving The ORDER. Return to it and claim the third piece of the SIGIL.";
+		drop = 0;
+		link = 9;
+		ifitem
+		{
+			item = 334;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE04";
+		dialog = "There seems no end to the horror we face. We have found out that The Order is NOT killing our people. it is transforming them, into bio-mechanical soldiers. Find the facility where this is being done and CLOSE IT, permanently.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, WHERE IS THIS PLACE LOCATED?";
+			giveitem = 309;
+			nextpage = 10;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE05";
+		dialog = "One of our captains, RICHTER, is waiting for you by the waterfall in the commons. He has seen the facility and can guide you inside. Stop this atrocity, now.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'LL DEAL WITH THIS PERSONALLY. THE ORDER MUST PAY FOR THIS!";
+			log = "LOG1028";
+			giveitem = 149;
+			nextpage = 11;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MLTBL";
+		dialog = "FIGHT FOR THE FRONT AND FREEDOM. MOVE OUT.";
+		drop = 0;
+		link = 12;
+		ifitem
+		{
+			item = 336;
+		}
+	}
+	page
+	{
+		name = "MACIL";
+		panel = "M_LEDR0";
+		voice = "MAE06";
+		dialog = "I am the one God... I need his spirit to be free so that I can leave my  body, and join him in flight. You have no idea what you possess... and what terror you face... the one God must be free... and he will reward me... I will be ONE...";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'M SORRY MACIL, YOU'VE FALLEN INTO THE DARKNESS. TIME TO PUT YOU OUT OF YOUR MISERY!";
+			giveitem = 301;
+		}
+	}
+}
+
+// Gerard the Medic
+conversation
+{
+	actor = 5;
+	page
+	{
+		name = "GERARD";
+		dialog = "GLAD TO SEE YOU MADE IT. WHAT DO YOU NEED?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED A BIT OF HEALING, I GUESS...?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "WELL, LETS GET YOU FIXED UP.";
+			nomessage = "YOU'RE FINE RIGHT NOW, MISSY.";
+			giveitem = 299;
+			nextpage = 1;
+			closedialog = true;
+		}
+		choice
+		{
+			text = "ANYTHING NEW ON THAT IMPLANT?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "YES, I'VE GOT SOME NEW HARDWARE FOR YOU. HOPE YOU'RE FEELING STRONGER NOW.";
+			nomessage = "NOPE, I'M WORKING ON IT THOUGH. IT WON'T BE MUCH LONGER.";
+			giveitem = 306;
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "WHAT CAN I DO FOR YOU NOW?  FERIS IS DECRYPTING SOME REALLY COMPLEX FILES, BUT IT'S ALL WORTH IT.  THERE'S ALREADY SOME INFORMATION THAT I'LL BE ABLE TO APPLY TO THE NEXT VERSION OF THE STAMINA IMPLANT.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED A BIT OF HEALING, I GUESS...?";
+			yesmessage = "YOU SHOULD LEARN TO BE A LITTLE MORE CAREFUL.";
+			nomessage = "YOU'RE FINE RIGHT NOW, MISSY.";
+			giveitem = 299;
+		}
+		choice
+		{
+			text = "WHEN WILL THAT BE READY?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "IT'S READY NOW.  THIS WON'T TAKE BUT A  MOMENT. GOOD LUCK!";
+			nomessage = "SOON. AS I SAID, COMPLEX FILES.";
+			giveitem = 306;
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "I THINK I FOUND A GLITCH IN YOUR IMPLANT HARDWARE.  FERIS IS HELPING ME DESIGN A RETROFIT THAT WILL TAKE CARE OF IT AND BOOST THE SPEED OF YOUR HARDWARE A LITTLE.  IS THERE SOMETHING I CAN DO FOR YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED A BIT OF HEALING, I GUESS...?";
+			yesmessage = "THERE, AS GOOD AS NEW I GUESS.";
+			nomessage = "NO NEED, YOU'RE OKAY FOR NOW, MISS.";
+			giveitem = 299;
+		}
+		choice
+		{
+			text = "SO, A RETROFIT?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "AH, NOW WE'RE COOKING. DON'T LET THAT NEW POWER GO TO YOUR HEAD NOW.";
+			nomessage = "I'LL HAVE IT AS SOON AS FERIS FINISHES IT.";
+			giveitem = 306;
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "HOW'S IT GOING, LASS? MAN, SOME OF THIS NEW TECHNOLOGY IS SIMPLY AMAZING. THIS SHOULD ALSO HELP WITH YOUR IMPLANT. I'VE GOT A COUPLE IDEAS THAT I'M SKETCHING OUT AND I'LL HAVE THEM READY SOON. WHAT CAN I DO FOR YOU, MAYBE SOME HEALING?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED A BIT OF HEALING, I GUESS...?";
+			yesmessage = "ALL RIGHT, HERE YOU GO.";
+			nomessage = "YOU'RE FINE RIGHT NOW, MISSY.";
+			giveitem = 299;
+		}
+		choice
+		{
+			text = "HOW ABOUT THAT NEW TECH?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "LET ME KNOW HOW THIS WORKS. GOOD HEALTH TO YOU!";
+			nomessage = "I'M NOT QUITE DONE DESIGNING IT YET.";
+			giveitem = 306;
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "BACK AGAIN LASS? DON'T YOU EVER TIRE OF THIS? I'VE GOT SOME GOOD NEWS THOUGH, FERIS FOUND A WAY TO INCREASE THE OUTPUT OF YOUR IMPLANT. HE GAVE THE SPECS TO ME AND I'M TRYING TO GET IT TO BLEND WITH YOUR PHYSIOLOGY. I'M FORCE GROWING SOME TISSUE, TOTALLY NEW STUFF HERE, I HOPE IT TAKES. DO YOU NEED HEALING?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED A BIT OF HEALING, I GUESS...?";
+			yesmessage = "DONE, NOW TAKE CARE OF YOURSELF.";
+			nomessage = "NO NEED, YOU'RE OKAY FOR NOW, MISS.";
+			giveitem = 299;
+		}
+		choice
+		{
+			text = "WELL, WHEN WILL YOU BE DONE?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "NOW ACTUALLY. AWESOME, IT WORKED!";
+			nomessage = "I'M WAITING ON THE TISSUE TO FINISH ITS FINAL GROWTH CYCLE.";
+			giveitem = 306;
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "WELL, I'M BACK UP TO MY OLD TRICKS AGAIN, I'M STILL WORKING ON YOUR IMPLANTS. DID YOU KNOW THAT MACIL HAS NOW AUTHORIZED THEM FOR EVERYONE? NO, HUH?  IT'S BECAUSE YOU TURNED OUT SO WELL. ANYTHING I CAN DO FOR YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'M AFRAID I NEED A BIT OF HEALING...";
+			yesmessage = "THAT'S ALL I CAN DO.";
+			nomessage = "NO NEED, YOU'RE OKAY FOR NOW, MISS.";
+			giveitem = 299;
+		}
+		choice
+		{
+			text = "SO, ANOTHER NEW IMPLANT?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 309;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "YEP, MY BEST ONE YET. HAPPY ORDER HUNTING!";
+			nomessage = "SORRY, BUT YOU JUST HAVE TO WAIT A LITTLE LONGER.";
+			giveitem = 306;
+			nextpage = 7;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GERARD";
+		dialog = "THIS IS IT, FERIS HAS MANAGED TO DRAIN EVERYTHING HE COULD OUT OF ALL THE DATA WE HAVE, THIS WILL THE BEST, AND LAST IMPLANT UPGRADE.  IT WILL BE SORT OF DEPRESSING, SEEING MY BEST CREATION REACH ITS PEAK. WELL, AT LEAST THE REST OF THIS CREW WILL KEEP ME OCCUPIED.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "COULD YOU HEAL ME?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "THERE, YOU'RE ALL SET NOW.";
+			nomessage = "NO NEED, YOU'RE OKAY FOR NOW, MISS.";
+			giveitem = 299;
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+}
+
+// Feris the Weapon Trainer
+conversation
+{
+	actor = 2;
+	page
+	{
+		name = "FERIS";
+		dialog = "IT'S THE HEROINE! GREAT JOB! WHAT CAN I GET FOR YOU? WE'VE GOT A LITTLE LARGER SELECTION NOW THAT WE HAVE ALL THE ORDINANCE FROM THE CASTLE. IF YOU NEED TO BUY SOME AMMO TALK TO JUSTIN. HE'LL TAKE CARE OF YOU.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'M OUT OF ARROWS.";
+			yesmessage = "HERE'S SOME BOLTS FOR YOU. DON'T WASTE IT.";
+			nomessage = "YOU'VE GOT ENOUGH FOR NOW.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "TIME FOR MORE LESSONS?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "INDEED. NOW, A FEW TIPS ON THE BIG GUNS...";
+			nomessage = "SORRY, YOU'RE NOT READY YET.";
+			giveitem = 307;
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "HOW'S THE WAR EFFORT? AH NEVERMIND, IF WE'RE STILL HERE, IT MUST BE GOING FINE. WHAT CAN I DO FOR YOU, MY GOOD LADY?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I RAN OUT OF ARROWS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "HERE'S SOME BOLTS FOR YOU. DON'T WASTE IT.";
+			nomessage = "YOU'VE GOT ENOUGH BOLTS.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "I'M READY FOR A FEW MORE LESSONS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "HERE, I'LL SHOW YOU A FEW TRICKS OF THE TRADE.";
+			nomessage = "SORRY, YOU'RE NOT READY YET.";
+			giveitem = 307;
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "WELL HAVE YOU COME FOR TUTELAGE OR IS IT SOME AMMO YOU'RE LOOKING FOR? DON'T THINK THAT I'M DONE WITH YOU YET. I'VE STILL GOT A FEW TRICKS UP MY SLEEVE.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "IT'S ARROWS FOR NOW.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "HERE'S SOME BOLTS FOR YOU. DON'T WASTE THEM.";
+			nomessage = "YOU'VE GOT ENOUGH BOLTS.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "HERE FOR ANOTHER LESSON, \"MASTER\".";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "WOOHOO! TIME FOR THE ADVANCED LESSONS, MISSY!";
+			nomessage = "WELL SORRY, YOU'RE NOT READY QUITE YET.";
+			giveitem = 307;
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "WELL, WHAT IS IT NOW? DON'T YOU EVER TAKE A BREAK? I'M GLAD THAT YOU'RE STILL BREATHING. I'D HATE FOR MY FAVORITE STUDENT TO COME BACK LOOKING OUT FROM THE INSIDE OF A BODY BAG.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I NEED SOME MORE ARROWS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "THERE, DON'T WASTE THEM.";
+			nomessage = "YOU HAVE ENOUGH.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "WHAT ELSE CAN YOU TEACH ME?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "WELL DON'T GET SNIPPY, YOU'VE STILL SOME ROOM LEFT TO GROW.";
+			nomessage = "NOTHING UNTIL YOU'RE READY.";
+			giveitem = 307;
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "LOOK WHO'S BACK, WHAT'S ON YOUR MIND? I KNOW IT'S BEEN HARD ON YOU HERE, BUT ALL OF US APPRECIATE YOUR EFFORTS, BELIEVE ME.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'VE RUN OUT OF ARROWS AGAIN.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "*TSK* WHAT ELSE IS NEW, HERE YOU GO.";
+			nomessage = "YOU HAVE MORE THAN I CAN GIVE YOU.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "I'VE COME FOR YET ANOTHER ONE OF YOUR LESSONS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "ALL RIGHT MISSY, SO HERE'S SOME POINTERS...";
+			nomessage = "SORRY, NOT RIGHT NOW. THINGS ARE A BIT BUSIER THAN USUAL.";
+			giveitem = 307;
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "WHAT IS IT YOU NEED? I HOPE THAT YOU'RE GIVING THE ORDER A TASTE OF THE KIND OF PAIN THAT WE HAVE BEEN FEELING FOR YEARS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SOME ARROWS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "THERE YOU GO, DON'T WASTE THEM.";
+			nomessage = "YOU'VE GOT ENOUGH BOLTS.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "ANOTHER LESSON?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "A FEW MORE LESSONS AND YOU'LL KNOW ALL THAT I CAN TEACH.";
+			nomessage = "GIVE ME JUST A BIT MORE TIME, AND WE'LL START.";
+			giveitem = 307;
+			nextpage = 7;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "I CAN'T BELIEVE THAT WE'RE STILL AROUND, YOU AND I. THERE'S JUST TOO MANY OF US THAT HAVE PASSED SINCE THE BEGINNING. WHAT CAN I DO FOR YOU FRIEND?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'M OUT OF BOLTS.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "HERE, USE THEM TO KEEP YOURSELF IN GOOD HEALTH.";
+			nomessage = "YOU HAVE ENOUGH.";
+			giveitem = 298;
+		}
+		choice
+		{
+			text = "SO, ANYTHING ELSE YOU CAN TEACH ME?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 310;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "WELL, THAT'S IT, YOU'RE DONE. I CAN TEACH NO MORE.";
+			nomessage = "RETURN AFTER MACIL TELLS YOU IT'S TIME.";
+			giveitem = 307;
+			nextpage = 8;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "FERIS";
+		dialog = "I'VE TAUGHT YOU EVERYTHING I CAN RIGHT NOW. I'VE GIVEN YOU ALL THAT YOU SHOULD EVER NEED, UNLESS YOU'RE OUT OF ARROWS. THOSE I CAN STILL HELP YOU WITH.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "YES I AM.";
+			yesmessage = "HERE YOU GO. ";
+			nomessage = "YOU'VE GOT ENOUGH BOLTS FOR NOW.";
+			giveitem = 298;
+		}
+	}
+}
+
+// Justin [Shopkeeper]
+conversation
+{
+	actor = 4;
+	page
+	{
+		name = "JUSTIN";
+		dialog = "CHECK OUT WHAT'S NEW, THE TELEPORTER BEACON. WHEN YOU USE THE BEACON, WE'LL TRACK THE SIGNAL AND SEND HELP. IS THERE SOMETHING I CAN GET YOU?";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "POISON BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 150;
+			}
+			displaycost = true;
+			yesmessage = "WORTH EVERY GOLD!";
+			nomessage = "COME ON, 150 GOLD!";
+			giveitem = 185;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MAGIC WATER";
+			cost
+			{
+				item = 168;
+				amount = 175;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU GO. DRINK IT IN GOOD HEALTH, LASS!";
+			nomessage = "COME BACK WHEN YOU HAVE ENOUGH MONEY.";
+			giveitem = 359; // MagicWater
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SAGE ELIXIR";
+			cost
+			{
+				item = 168;
+				amount = 450;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU GO. DRINK IT IN GOOD HEALTH, LASS!";
+			nomessage = "SORRY, YOU'LL NEED SOME MORE GOLD FOR THIS.";
+			giveitem = 360; // SageElixir
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "ELFIN ELIXIR";
+			cost
+			{
+				item = 168;
+				amount = 1000;
+			}
+			displaycost = true;
+			yesmessage = "REMEMBER TO ONLY USE IF YOUR MAGIC IS DEPLETED!";
+			nomessage = "SORRY, ELFIN ELIXIRS AREN'T EXACTLY CHEAP.";
+			giveitem = 361; // ElfinElixir
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "TELEPORTER BEACON";
+			cost
+			{
+				item = 168;
+				amount = 75;
+			}
+			displaycost = true;
+			yesmessage = "HELP, WHEN AND WHERE YOU NEED IT.";
+			nomessage = "SORRY, NO CHARITY.";
+			giveitem = 166;
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+}
+
+//Rebel2
+conversation
+{
+	actor = 44;
+	page
+	{
+		dialog = "NOW THAT WE ACTUALLY HAVE THE CASTLE UNDER CONTROL, WE HAVE TO BE EXTRA VIGILANT TO KEEP IT. THE ORDER'S PROBABLY GETTING READY TO STRIKE BACK RIGHT NOW.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+//Rebel3
+conversation
+{
+	actor = 45;
+	page
+	{
+		dialog = "BE CAREFUL OUT THERE, LASSIE.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+//Rebel4
+conversation
+{
+	actor = 46;
+	page
+	{
+		dialog = "KEEP UP THE GREAT WORK, WE COULDN'T HAVE DONE IT WITHOUT YOU.";
+		drop = 0;
+		link = 0;
+	}
+}

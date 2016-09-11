@@ -1,0 +1,43 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Beldin
+conversation
+{
+	actor = 14;
+	page
+	{
+		name = "BELDIN";
+		dialog = "I DON'T WANT ANY TROUBLE, STAY AWAY FROM ME. I'VE HAD ENOUGH TROUBLE WITH WHAT THAT BASTARD HARRIS DID TO ME. HE PROMISED ME MONEY, INSTEAD I GET TO LOOK FORWARD TO BEING \"QUESTIONED\" BY THE PROGRAMMER.";
+		drop = 173;
+		link = 0;
+		choice
+		{
+			text = "\"PROGRAMMER\"?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "BELDIN";
+		dialog = "YES, A \"MAN\" YOU WOULD BE WISE TO FEAR. I ALMOST WISH SOMEONE WOULD JUST PUT ME OUT OF MY MISERY. IT WOULD BE BETTER THAN FACING HIM!";
+		drop = 173;
+		link = 0;
+		choice
+		{
+			text = "I... SEE. SORRY TO HEAR THAT.";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "BELDIN";
+		dialog = "LOOK LADY, JUST GO AWAY! DON'T TRUST HARRIS, AND DON'T TRUST ANY ONE AROUND HERE. THEY'LL TAKE ADVANTAGE OF A SWEET THING LIKE YOU IN THE BLINK OF AN EYE! I'D CUT MY LOSSES AND RUN IF I WERE YOU...";
+		drop = 173;
+		link = 0;
+	}
+}

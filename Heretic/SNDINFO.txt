@@ -1,0 +1,101 @@
+//
+// Minotaur sounds
+//
+
+minotaur/sight			minsit
+minotaur/melee			minsmh
+minotaur/attack1			minat1
+minotaur/attack2			minat2
+minotaur/attack3			minat3
+minotaur/pain			minpai
+minotaur/death			mindth
+minotaur/active			minact
+minotaur/fx2hit			MINFHI
+minotaur/fx3hit			MINFHI
+
+//
+// Wizard sounds
+//
+
+wizard/sight				wizsit
+wizard/attack			wizatk
+wizard/death				wizdth
+wizard/pain				wizpai
+wizard/active1			wizact
+$random wizard/active 		{ wizard/sight wizard/active1 }
+
+himp/sight			impsit
+himp/attack			impat1
+himp/pain			imppai
+himp/death			impdth
+himp/active			impsit
+himp/leaderattack		impat2
+
+mummy/sight			mumsit
+mummy/attack1		mumat1
+mummy/attack2		mumat2
+mummy/pain			mumpai
+mummy/death			mumdth
+mummy/active			mumsit
+mummy/head			mumhed
+
+beast/sight			bstsit
+beast/attack			bstatk
+beast/pain			bstpai
+beast/death			bstdth
+beast/active			bstact
+
+snake/attack			snkatk
+snake/sight			snksit
+snake/pain			snkpai
+snake/death			snkdth
+snake/active			snkact
+
+clink/sight			clksit
+clink/attack			clkatk
+clink/pain			clkpai
+clink/death			clkdth
+clink/active			clkact
+
+hknight/sight			kgtsit
+hknight/attack			kgtatk
+hknight/melee			kgtat2
+hknight/pain				kgtpai
+hknight/death			kgtdth
+hknight/active			kgtsit
+hknight/hit				hrnhit
+hknight/axewhoosh			kgtatk
+
+ironlich/sight			hedsit
+ironlich/attack1			hedat1
+ironlich/attack2			hedat2
+ironlich/attack3			hedat3
+ironlich/pain			hedpai
+ironlich/death			heddth
+ironlich/active			hedact
+
+dsparilserpent/sight		sbtsit
+dsparilserpent/attack		sbtatk
+dsparilserpent/pain			sbtpai
+dsparilserpent/death		sbtdth
+dsparilserpent/active		sbtact
+
+dsparil/sight			sorsit
+dsparil/attack			soratk
+dsparil/pain				sorpai
+dsparil/active			soract
+dsparil/rise				sorrise
+dsparil/zap				sorzap
+dsparil/scream			sordsph
+dsparil/explode			sordexp
+dsparil/bones			sordbon
+
+chicken/active			chicact
+chicken/attack			chicatk
+chicken/pain				chicpai
+chicken/death			chicdth
+chicken/peck1			chicpk1
+chicken/peck2			chicpk2
+chicken/peck3			chicpk3
+$random chicken/peck		{ chicken/peck1  chicken/peck2  chicken/peck3 }
+

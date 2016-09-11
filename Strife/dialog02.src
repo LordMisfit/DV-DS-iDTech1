@@ -1,0 +1,2357 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Ulaine
+conversation
+{
+	actor = 8;
+	page
+	{
+		name = "ULAINE";
+		dialog = "I'LL HELP YOU IF YOU HELP ME. FIVE PIECES OF GOLD AND I'LL TELL ALL I KNOW.";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "HERE'S THE GOLD.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 168; // Coin
+				amount = 5;
+			}
+			displaycost = false;
+			yesmessage = "BE STEALTHY WHEN YOU KILL, YOU WON'T SET OFF ALARMS.";
+			nomessage = "WELL, I WON'T BE TELLING YOU ANYTHING FOR FREE!";
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ULAINE";
+		dialog = "HAVE YOU BY ANY CHANCE GOT ANOTHER 5 GOLD ON YOU?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "HERE'S 5 MORE GOLD.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 168; // Coin
+				amount = 5;
+			}
+			displaycost = false;
+			yesmessage = "WELL, POISON BOLTS CAN KILL THE GUARDS INSTANTLY AND WON'T SET OFF THE ALARMS.";
+			nomessage = "NO LADY, I WON'T BE TELLING YOU ANYTHING FOR FREE!";
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ULAINE";
+		dialog = "HAVE YOU BY ANY CHANCE GOT ANOTHER 15 GOLD ON YOU?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT FINE, HERE'S 15 MORE GOLD.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 168; // Coin
+				amount = 15;
+			}
+			displaycost = false;
+			yesmessage = "HERE, THIS BOXED HERB MIGHT HELP YOU OUT, THANKS.";
+			nomessage = "SORRY, BUT INFO DOESN'T GROW ON TREES YOU KNOW!";
+			giveitem = 353; // SpecialMedicene
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ULAINE";
+		dialog = "YOU'VE WRUNG THE LAST BIT OF GOSSIP OUT OF ME ALREADY!";
+		drop = 169;
+		link = 0;
+	}
+}
+
+// Irale
+conversation
+{
+	actor = 18;
+	page
+	{
+		name = "IRALE";
+		dialog = "WHAT CAN I GET FOR YOU?";
+		drop = 179;
+		link = 2;
+		ifitem
+		{
+			item = 325; // QuestItem14
+		}
+		choice
+		{
+			text = "DIARIS LONGBOW";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU GO. THIS SHOULD HELP YOU OUT A LOT!";
+			nomessage = "YOU CAN'T AFFORD THAT RIGHT NOW.";
+			giveitem = 363; // DiarisLongbow
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "6 DIARIS ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 85;
+			}
+			displaycost = true;
+			yesmessage = "THANKS. THESE ARROWS GO WELL WITH THAT LONG BOW.";
+			nomessage = "YOU NEED MORE GOLD FOR THOSE.";
+			giveitem = 364; // DiarisArrow
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "QUIVER OF 30 ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 405;
+			}
+			displaycost = true;
+			yesmessage = "MORE ARROWS FOR YOUR LONG BOW, MISS.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "IRALE";
+		dialog = "GOOD NEWS FROM THE FRONT FOR A CHANGE.  MACIL SENT YOU FOR A REWARD AND TRAINING. HE'S INSTRUCTED ME TO GIVE THEM TO YOU.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "THANK YOU, IRALE.";
+			yesmessage = "GLAD TO BE OF SERVICE, MISS.";
+			giveitem = 172;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "IRALE";
+		dialog = "ALL RIGHT, HERE'S A FEW POINTERS ON WHAT TO DO: DON'T GET IN THE WAY OF CRUSADERS: REMEMBER YOUR DIARIS ARROWS CAN PIERCE MULTIPLE TARGETS.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "IS THAT IT?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "FOR NOW. YOU'LL LEARN MORE LATER FROM FERIS.";
+			giveitem = 307;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "IRALE";
+		dialog = "IF I CAN GET THE PARTS OF A CRUSADER, I MIGHT BE ABLE TO CONVERT THEM INTO A WEAPON FOR USE BY HUMANS. KEEP AN EYE OUT FOR SOME.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "I GOT THOSE PARTS YOU WANTED, IRALE.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 191;
+				amount = 1;
+			}
+			displaycost = false;
+			yesmessage = "HERE, I DON'T KNOW WHAT THIS ORB OF LIGHT IS, BUT IT FLEW STRAIGHT TO YOU, SO YOU MIGHT KNOW WHAT TO DO WITH IT.";
+			nomessage = "DON'T KID WITH ME, MISSY! THIS IS A SERIOUS MATTER, YOU KNOW.";
+			giveitem = 385; // BalrogFistCI
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "DIARIS LONGBOW";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU GO. THIS SHOULD HELP YOU OUT A LOT!";
+			nomessage = "OBVIOUSLY, YOU CAN'T AFFORD THAT RIGHT NOW.";
+			giveitem = 363; // DiarisLongbow
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "6 DIARIS ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 85;
+			}
+			displaycost = true;
+			yesmessage = "THANKS. THESE ARROWS GO WELL WITH THAT LONG BOW.";
+			nomessage = "YOU NEED MORE GOLD FOR THOSE.";
+			giveitem = 364; // DiarisArrow
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "QUIVER OF 30 ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 405;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR AMMO.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MONSTER MUNCHIES";
+			cost
+			{
+				item = 168; // Coin
+				amount = 350;
+			}
+			displaycost = true;
+			yesmessage = "USE THEM WISELY.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 362; // MonsterMunchies
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "IRALE";
+		dialog = "NOW THAT YOU HAVE THAT BALROG'S SOUL THING, WHAT ELSE CAN I GET FOR YOU?";
+		drop = 179;
+		link = 6;
+		ifitem
+		{
+			item = 328;
+		}
+		choice
+		{
+			text = "DIARIS LONGBOW";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU GO.";
+			nomessage = "OBVIOUSLY, YOU CAN'T AFFORD THAT RIGHT NOW.";
+			giveitem = 363; // DiarisLongbow
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "6 DIARIS ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 85;
+			}
+			displaycost = true;
+			yesmessage = "THANKS. THESE ARROWS GO WELL WITH THAT LONG BOW.";
+			nomessage = "YOU NEED MORE GOLD FOR THOSE.";
+			giveitem = 364; // DiarisArrow
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "QUIVER OF 30 ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 405;
+			}
+			displaycost = true;
+			yesmessage = "MORE ARROWS FOR YOUR LONG BOW, MISS.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MONSTER MUNCHIES";
+			cost
+			{
+				item = 168; // Coin
+				amount = 350;
+			}
+			displaycost = true;
+			yesmessage = "USE THEM WISELY.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 362; // MonsterMunchies
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "IRALE";
+		dialog = "NOW THAT YOU HAVE THAT BALROG'S SOUL THING, WHAT ELSE CAN I GET FOR YOU?";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "6 DIARIS ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 85;
+			}
+			displaycost = true;
+			yesmessage = "THANKS.";
+			nomessage = "YOU NEED MORE GOLD FOR THOSE.";
+			giveitem = 364; // DiarisArrow
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "QUIVER OF 30 ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 405;
+			}
+			displaycost = true;
+			yesmessage = "MORE ARROWS FOR YOUR LONG BOW, MISS.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MONSTER MUNCHIES";
+			cost
+			{
+				item = 168; // Coin
+				amount = 350;
+			}
+			displaycost = true;
+			yesmessage = "USE THEM WISELY.";
+			nomessage = "MAYBE SOME OTHER TIME.";
+			giveitem = 362; // MonsterMunchies
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "POISON BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 200;
+			}
+			displaycost = true;
+			yesmessage = "WORTH EVERY GOLD!";
+			nomessage = "COME ON, 200 GOLD!";
+			giveitem = 185;
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+}
+
+// Sewer Gate Worker
+conversation
+{
+	actor = 21;
+	page
+	{
+		name = "SEWER WORKER";
+		dialog = "I CAN'T BELIEVE THAT I GOT STUCK WITH THIS DUTY. THEY SAY THAT SOMETHING EVIL CAME UP OUT OF THIS SEWER GATE... NOW I GET TO STAND HERE UNTIL IT COMES UP AGAIN!";
+		drop = 168;
+		link = 0;
+		choice
+		{
+			text = "WHAT GATE?";
+			yesmessage = "THE SEWER OVERFLOW GATE.";
+		}
+	}
+}
+
+// BOWYER
+conversation
+{
+	actor = 2;
+	page
+	{
+		name = "BOWYER";
+		dialog = "HELLO FRIEND. WHAT CAN I GET FOR YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ELECTRIC BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 10;
+			}
+			displaycost = true;
+			yesmessage = "you got the ELECTRIC BOLTS.";
+			nomessage = "SORRY, YOU NEED A BIT MORE GOLD";
+			giveitem = 186;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "AMMO SATCHEL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 450;
+			}
+			displaycost = true;
+			yesmessage = "THANK YOU. ANYTHING ELSE?";
+			nomessage = "YOU CAN'T AFFORD THAT, GOOD DAY.";
+			giveitem = 187;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "BOWYER";
+		dialog = "WHAT CAN I GET FOR YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ELECTRIC BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 10;
+			}
+			displaycost = true;
+			yesmessage = "you got the ELECTRIC BOLTS.";
+			nomessage = "SORRY, YOU NEED A BIT MORE GOLD";
+			giveitem = 186;
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "AMMO SATCHEL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 250;
+			}
+			displaycost = true;
+			yesmessage = "THANK YOU, ANYTHING ELSE?";
+			nomessage = "YOU CAN'T AFFORD THAT, GOOD DAY TO YOU!";
+			giveitem = 187;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+}
+
+// ARMORER
+conversation
+{
+	actor = 4;
+	page
+	{
+		name = "ARMORER";
+		dialog = "WELCOME. WHAT MAY I SHOW YOU?";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 328;
+		}
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE.";
+			nomessage = "I'M SORRY BUT YOU DON'T HAVE ENOUGH MONEY FOR THAT.";
+			giveitem = 161;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5000;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ARMORER";
+		dialog = "WELCOME. WHAT MAY I SHOW YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE.";
+			nomessage = "I'M SORRY BUT YOU DON'T HAVE ENOUGH MONEY FOR THAT.";
+			giveitem = 161;
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5000;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ARMORER";
+		dialog = "WELCOME. WHAT MAY I SHOW YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE.";
+			nomessage = "I'M SORRY BUT YOU DON'T HAVE ENOUGH MONEY FOR THAT.";
+			giveitem = 161;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5000;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ARMORER";
+		dialog = "WELCOME. WHAT MAY I SHOW YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 20;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE.";
+			nomessage = "I'M SORRY BUT YOU DON'T HAVE ENOUGH MONEY FOR THAT.";
+			giveitem = 161;
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 450;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+}
+
+// Medic
+conversation
+{
+	actor = 5;
+	page
+	{
+		name = "MEDIC";
+		dialog = "HOW MAY I ASSIST YOU?";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 325;
+		}
+		choice
+		{
+			text = "MED PATCH";
+			cost
+			{
+				item = 168; // Coin
+				amount = 10;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR PATCH.";
+			nomessage = "YOU NEED 10 GOLD FOR THAT.";
+			giveitem = 125;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICAL KIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "THANK YOU.";
+			nomessage = "I WISH I COULD GIVE THEM AWAY, BUT THEY COST 25 GOLD.";
+			giveitem = 126;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "FIELD SURGERY KIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 75;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO.  TAKE CARE NOW.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD SOME MED PATCHES?";
+			giveitem = 127;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICINAL HERB";
+			cost
+			{
+				item = 168; // Coin
+				amount = 20;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICINAL HERB.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MED PATCH?";
+			giveitem = 351; // MedicinalHerb
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "STRONG MEDICENE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO.  TAKE CARE NOW OF YOURSELF.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MEDICINAL HERB?";
+			giveitem = 352; // StrongMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SPECIAL MEDICENE";
+			cost
+			{
+				item = 168;
+				amount = 150;
+			}
+			displaycost = true;
+			yesmessage = "ONE SPECIALIZED MEDICINAL HERB FOR YA.";
+			nomessage = "SORRY, THESE KINDS OF HERBS AREN'T CHEAP.";
+			giveitem = 353; // SpecialMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "YGGDRASIL DEW";
+			cost
+			{
+				item = 168;
+				amount = 625;
+			}
+			displaycost = true;
+			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
+			nomessage = "THESE THINGS ARE WAY TOO RARE TO SKILT FOR CHEAP, I'M AFRAID!";
+			giveitem = 354; // YggdrasilDew
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MEDIC";
+		dialog = "I HOPE MACIL KNOWS WHAT HE'S DOING. IF THE ORDER FINDS OUT I'M HELPING THE FRONT I'M AS GOOD AS DEAD... NOT THAT THIS MATTERS TO YOU ANY. THE FRONT'S MEDIC GAVE ME AN UPGRADE CHIP FOR YOU, ARE YOU READY? ";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "YES, I'M READY.";
+			yesmessage = "WELL THEN, THIS WON'T TAKE BUT A SECOND. THERE, DONE ALREADY.";
+			giveitem = 306;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MEDIC";
+		dialog = "HOW MAY I ASSIST YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "MED PATCH";
+			cost
+			{
+				item = 168; // Coin
+				amount = 10;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR PATCH.";
+			nomessage = "YOU NEED 10 GOLD FOR THAT.";
+			giveitem = 125;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICAL KIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "THANK YOU.";
+			nomessage = "I WISH I COULD GIVE THEM AWAY, BUT THEY COST 25 GOLD.";
+			giveitem = 126;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "FIELD SURGERY KIT";
+			cost
+			{
+				item = 168; // Coin
+				amount = 75;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO.  TAKE CARE NOW.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD SOME MED PATCHES?";
+			giveitem = 127;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICINAL HERB";
+			cost
+			{
+				item = 168; // Coin
+				amount = 20;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICINAL HERB.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MED PATCH?";
+			giveitem = 351; // MedicinalHerb
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "STRONG MEDICENE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO.  TAKE CARE NOW OF YOURSELF.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MEDICINAL HERB?";
+			giveitem = 352; // StrongMedicene
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SPECIAL MEDICENE";
+			cost
+			{
+				item = 168;
+				amount = 150;
+			}
+			displaycost = true;
+			yesmessage = "ONE SPECIALIZED MEDICINAL HERB FOR YA.";
+			nomessage = "SORRY, THESE KINDS OF HERBS AREN'T CHEAP.";
+			giveitem = 353; // SpecialMedicene
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "YGGDRASIL DEW";
+			cost
+			{
+				item = 168;
+				amount = 625;
+			}
+			displaycost = true;
+			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
+			nomessage = "THESE THINGS ARE WAY TOO RARE TO SKILT FOR CHEAP, I'M AFRAID!";
+			giveitem = 354; // YggdrasilDew
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+}
+
+// Barkeep
+conversation
+{
+	actor = 3;
+	page
+	{
+		name = "BARKEEP";
+		dialog = "HELLO YOUNG LADY, I HAVEN'T SEEN YOU AROUND HERE BEFORE, THEN AGAIN USUALLY WOMAN OR CHILDREN ARE QUICKLY TAKEN AWAY BY THOSE BRUTES. LET ME GIVE YOU A PIECE OF FREE ADVICE. I'D BE VERY CAUTIOUS IF I WERE YOU. THE ORDER ALSO DOES NOT TOLERATE FREE WILL, AND THEIR JUSTICE IS SWIFT.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WHAT'S THE WORD AROUND HERE?";
+			yesmessage = "WELL THE WORD IS... THE SEWERS HOLD MORE THAN JUST RATS AND ROBOTS.";
+			nomessage = "HEY A MAN'S GOT TO MAKE A LIVING. YOU THINK THESE JOKERS  HERE TIP WELL?";
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "SO WHAT CAN I DO FOR YOU NOW, MISS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ANY MORE INFO?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "THE GOVERNOR IS A SIMPLE REMINDER TO US THAT WE AREN'T FREE PEOPLE ANYMORE.";
+			nomessage = "COME BACK WHEN YOU GET SOME GOLD.";
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "WELL, YOU'RE ASKING A LOT OF QUESTIONS FOR SOMEONE WHO'S NOT TRYING TO DIE. MAKE SURE YOU DON'T GO AND GET YOURSELF KILLED, OR WORSE.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ANY MORE INFO?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "OCCASIONALLY, THE ORDER MENTIONS OF \"THE ONE GOD\", CRAZY THINGS LIKE THAT.";
+			nomessage = "WE'LL TALK WHEN YOU GET SOME GOLD!";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "THERE'S SOMETHING IN YOUR EYES, SOMETHING THAT SEEMS TO INDICATE YOU'RE LOOKING TO MAKE SOME KIND OF MARK ON THIS WORLD. I DON'T KNOW WHERE YOU COME FROM, BUT YOU SHOULD RECONSIDER IF YOU PLAN TO FACE THE ORDER.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ANY MORE INFO?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "THE ORDER'S \"SANCTUARY\" IS ESSENTIALLY THEIR UNOFFICIAL \"TORTURE CHAMBER\".";
+			nomessage = "WE'LL TALK WHEN YOU GET SOME GOLD!";
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "THAT'S IT MISS, THE WELL OF KNOWLEDGE HAS RUN DRY.  I'VE TOLD YOU MORE THAN I SHOULD HAVE ANYWAY. GOOD LUCK...";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "GOT ANYTHING TO DRINK?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 500;
+			}
+			displaycost = true;
+			yesmessage = "I SUPPOSE THIS \"PAXA PUNCH\" WILL HELP YOU OUT.";
+			nomessage = "I HAVE SOMETHING, BUT YOU NEED 500 GOLD FOR ME TO SELL IT.";
+			giveitem = 355; // Paxa Punch
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "I SUPPOSE YOU WANTED MORE OF THAT \"PAXA PUNCH\", MISS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "OF COURSE I DO...";
+			cost
+			{
+				item = 168; // Coin
+				amount = 420;
+			}
+			displaycost = true;
+			yesmessage = "HEH, GUESS THESE THINGS ARE POPULAR WHERE YOU'RE FROM.";
+			nomessage = "YOU'LL NEED 420 GOLD FOR SOME MORE.";
+			giveitem = 355; // Paxa Punch
+			closedialog = true;
+		}
+	}
+}
+
+// Door Guard
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "DOOR GUARD";
+		dialog = "HEY, I'M ONLY HERE IN CASE OF AN EMERGENCY. IF THE CORE BREACHES, THEN I MAKE SURE NO ONE GETS IN... OR OUT.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Guard
+conversation
+{
+	actor = 55;
+	page
+	{
+		name = "GUARD";
+		dialog = "WATCH YOUR STEP, WOMAN! WE'RE WATCHING YOU...";
+		drop = 169; // 10Gold
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 56;
+	page
+	{
+		name = "GUARD";
+		dialog = "WE'RE GOING TO KILL YOU, OUTSIDER!";
+		drop = 170; // 25Gold
+		link = 0;
+	}
+}
+
+// Sewer Guard
+conversation
+{
+	actor = 57;
+	page
+	{
+		name = "SEWER GUARD";
+		dialog = "WHO THE HELL ARE YOU?! NO ONE'S SUPPOSED TO BE LOITERING ABOUT IN THIS AREA!";
+		drop = 162; // GuardUniform
+		link = 0;
+	}
+}
+
+// Scantuary and Governor GUARD
+conversation
+{
+	actor = 58;
+	page
+	{
+		name = "GUARD";
+		dialog = "YOU THERE, NOBODY'S ALLOWED IN HERE. MOVE ALONG!";
+		drop = 170; // 25Gold
+		link = 0;
+	}
+}
+
+// Irale's Front Guard
+conversation
+{
+	actor = 44;
+	page
+	{
+		name = "FRONT GUARD";
+		dialog = "IRALE WILL SET YOU RIGHT UP!";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Harris [the assball x.x]
+conversation
+{
+	actor = 9;
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA001";
+		dialog = "I'M KINDA A TALENT BROKER FOR THE REBELS. A GAL WHO'S AS GOOD AS YOU COULD MAKE A LOT OF GOLD... IF YOU HOOKED UP WITH THE RIGHT PEOPLE.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, I'M INTERESTED...";
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SORRY, NOT INTERESTED...";
+			giveitem = 301; // RaiseAlarm
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA002";
+		dialog = "NO SECOND CHANCE. OH GUARDS, KILL HER.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA003";
+		dialog = "GOOD CHOICE. THE ORDER'S SANCTUARY BY THE RIVER IS THEIR UNOFFICIAL TORTURE CHAMBER. HIDDEN INSIDE THERE'S A GOLDEN CHALICE. YOU SWIPE IT AND REAP YOUR REWARD.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "HOW AM I SUPPOSED TO DO THAT?";
+			giveitem = 194;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA004";
+		dialog = "HERE'S A CROSSBOW, JUST AIM STRAIGHT AND --SPLAT--.   REMEMBER, GRAB THE FANCY CUP AND GET TO THE TAVERN.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "WELL ALRIGHT, IF YOU SAY SO...";
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA006";
+		dialog = "WHAT ARE YOU WAITING FOR? BRING ME THAT CHALICE.";
+		drop = 305; // OpenDoor224
+		link = 6;
+		ifitem
+		{
+			item = 174;
+		}
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA007";
+		dialog = "HEY, I KNOW, KINDA LOOKS LIKE A SET-UP. I WOULD NEVER DO THAT TO SUCH A GREAT KILLING MACHINE.  GOT THE ITEM? GREAT! NOW GET READY, GOLD AND GLORY JUST LIKE I PROMISED. TAKE THIS KEY AND THE GOVERNOR WILL REWARD YOU.";
+		drop = 305; // OpenDoor224
+		link = 0;
+		choice
+		{
+			text = "YOU BETTER HOPE HE DOES...";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 174;
+				amount = 1;
+			}
+			displaycost = false;
+			giveitem = 134;
+			nextpage = 7;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "A LIAR THROUGH AND THROUGH...";
+			nextpage = 8;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HATBL";
+		dialog = "GET LOST KID, YOU BOTHER ME.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+	page
+	{
+		name = "HARRIS";
+		panel = "M_PEAS1";
+		voice = "HA002";
+		dialog = "NO SECOND CHANCE. OH GUARDS, KILL HER.";
+		drop = 305; // OpenDoor224
+		link = 0;
+	}
+}
+
+// Governor Mourel
+conversation
+{
+	actor = 27;
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV01";
+		dialog = "FIRST THEY SLAUGHTER THOUSANDS, NOW THEY WANT ALL ABLE-BODIED PEASANTS FOR UNSPECIFIED \"TESTS\". HOW DOES THE ORDER EXPECT ME TO KEEP THE PEACE? WHAT THE HELL DO YOU WANT?";
+		drop = 301; // RaiseAlarm
+		link = 11;
+		ifitem
+		{
+			item = 313;
+		}
+		choice
+		{
+			text = "I'M LOOKING FOR A PRISON PASS. LET'S MAKE A DEAL.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV02";
+		dialog = "I LIKE YOU ALREADY. I HAVE TWO CHORES THAT I DON'T WANT TO DO MYSELF. ONE IS MESSY, THE OTHER BLOODY.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "I'LL DEAL WITH THE \"MESS\"";
+			giveitem = 315;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "DON'T WORRY, I'M NOT SQUEAMISH";
+			giveitem = 316;
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV03";
+		dialog = "ONE OF MY MINIONS IS STEALING POWER WITH A TAP ON THE MAINS SOMEWHERE. FIND IT AND TRUNCATE HIS SUPPLY AND I'LL PROVIDE YOU WITH WHAT YOU WANT. BRING ME SOMETHING AS A TOKEN.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "WHERE DO I FIND THIS TAP?";
+			log = "LOG1007";
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV04";
+		dialog = "IF I KNEW, IT WOULDN'T BE A CHORE NOW WOULD IT? USE YOUR CHARM, BUT SHUT OFF HIS SUPPLY.";
+		drop = 301; // RaiseAlarm
+		link = 7;
+		ifitem
+		{
+			item = 289;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV05";
+		dialog = "TELL YOU WHAT, THERE'S A LYING SACK NAMED DERWIN WHO HAS BEEN SELLING CHILDREN TO THE ORDER. I WON'T TOLERATE THAT KIND OF DEPRAVITY. NOT WITHOUT MY CUT. DERWIN WORKS IN THE WAREHOUSE. KILL HIM AND BRING ME HIS, EAR, AND I'LL SEE WHAT I CAN DO.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "HOW DO I GET IN?";
+			log = "LOG1008";
+			giveitem = 135;
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV06";
+		dialog = "THIS KEY WILL GET YOU INTO THE POWER STATION. ON SECOND THOUGHT, CUT OFF THE EAR AND THEN KILL HIM. MUCH BETTER.";
+		drop = 301; // RaiseAlarm
+		link = 9;
+		ifitem
+		{
+			item = 175;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV08";
+		dialog = "OH, I JUST LOVE SOUVENIRS. HERE, THIS WILL GET YOU INTO THE PRISON. TALK TO WARDEN MONTAG. WHATEVER YOU DO AFTER THAT, I DON'T WANT TO KNOW.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "DON'T WORRY, I'M ON MY WAY OUT NOW.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 289;
+				amount = 1;
+			}
+			displaycost = false;
+			log = "LOG1009";
+			giveitem = 304;
+			nextpage = 8;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOTBL";
+		dialog = "GIVE YOU A HINT. WHEN I STOP TALKING TO YOU, YOU LEAVE.";
+		drop = 171;
+		link = 0;
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV07";
+		dialog = "DO YOU HAVE GOOD NEWS FOR ME? I'M ALL EARS.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "THE DEED IS DONE!";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 175;
+				amount = 1;
+			}
+			displaycost = false;
+			nextpage = 10;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV08";
+		dialog = "OH, I JUST LOVE SOUVENIRS. HERE, THIS WILL GET YOU INTO THE PRISON. TALK TO WARDEN MONTAG. WHATEVER YOU DO AFTER THAT, I DON'T WANT TO KNOW.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "DON'T WORRY, I'M ON MY WAY OUT NOW.";
+			log = "LOG1009";
+			giveitem = 304;
+			nextpage = 8;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GOVERNOR MOUREL";
+		panel = "M_PEAS7";
+		voice = "GOV6A1";
+		dialog = "SO YOU'RE THE FOOL WHO STOLE THE CHALICE?  I'M GOING TO HAVE YOU ARRESTED AS A REBEL THIEF... THEREBY ENHANCING MY POSITION WITH THE ORDER. HOW DOES IT FEEL TO BE AN UNWITTING PAWN? I'LL GIVE YOU A HINT, IT'S GONNA' HURT. ";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "NOT AS MUCH AS IT WILL FOR YOU.";
+			yesmessage = "WAIT, WHAT DID YOU SAY?!";
+			giveitem = 301; // RaiseAlarm
+		}
+	}
+}
+
+// Rowan
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET01";
+		dialog = "IN A SMALL WORLD, WORD TRAVELS FAST. I HEAR YOU JUST REMOVED SOME OBSTACLES FROM YOUR PATH. NICE WORK. ARE YOU INTERESTED IN SOME MORE LUCRATIVE PROJECTS?";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "WHAT DO YOU HAVE IN MIND?";
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SORRY, NO THANKS.";
+			giveitem = 301; // RaiseAlarm
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET05";
+		dialog = "FOOL! GUARDS, RID ME OF THIS MEDDLESOME PEON.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET02";
+		dialog = "GOOD. SOME UH, FRIENDS OF MINE NEED SOMEONE SILENCED. BELDIN IS BEING HELD BY THE ORDER IN THEIR SANCTUARY. THERE'S A RARELY USED ENTRANCE BY A SMALL PIER OFF THE RIVER WHICH IS UNGUARDED. GET IN, SHUT HIM UP, AND BRING HIS RING BACK TO ME AS PROOF.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "AN ASSASSINATION? I HOPE THIS IS REALLY WORTH IT...";
+			log = "LOG1003";
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET03";
+		dialog = "I'LL GUARANTEE 50 GOLD AND IF YOU RETURN WITHOUT SETTING OFF EVERY ALARM IN TOWN, THERE'S THE CHANCE TO EARN MUCH, MUCH MORE, AND HERE'S A LITTLE HELPER THAT SHOULD GIVE YOU AN EDGE.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "THANKS, I'LL PROBABLY NEED IT.";
+			giveitem = 194;
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET04";
+		dialog = "GOOD. REMEMBER, HIS SILENCE IS GOLDEN.";
+		drop = 301; // RaiseAlarm
+		link = 6;
+		ifitem
+		{
+			item = 173;
+		}
+		choice
+		{
+			text = "ALRIGHT, I'LL GET HIM.";
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET07";
+		dialog = "MISSION ACCOMPLISHED? YOU HAVE THE RING OF THE TRAITOR?";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "HE'S DEAD, IS THIS THE RING?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 173;
+				amount = 1;
+			}
+			displaycost = false;
+			nomessage = "LIAR!  Go get the ring!";
+			giveitem = 171;
+			nextpage = 7;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET09";
+		dialog = "HERE, YOU EARNED IT. THE TRAITOR YOU KILLED WAS ABOUT TO REVEAL THE LOCATION OF THE FRONT. YOU SAVED LIVES. HOW WOULD YOU LIKE TO EARN MORE GOLD, AND A FUTURE FREE FROM TYRANNY?";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "OH DO I? TELL ME MORE, SIR!";
+			giveitem = 133;
+			nextpage = 8;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "NOT MY STYLE.";
+			giveitem = 301; // RaiseAlarm
+			nextpage = 10;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET12";
+		dialog = "I HAVE A BUSINESS RELATIONSHIP WITH THE FRONT'S LEADER, MACIL. I KNOW HE NEEDS AN INCISIVE FELLOW LIKE YOURSELF, AND HE PAYS WELL. TAKE THIS RECOVERED COM UNIT AND YOU'LL BE LED TO, SHALL WE SAY, OPPORTUNITIES.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+		choice
+		{
+			text = "THANKS VERY MUCH.";
+			log = "LOG1004";
+			giveitem = 176;
+			nextpage = 9;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET06";
+		dialog = "GET GOING. IF YOU HANG AROUND HERE, WE'RE BOTH DEAD.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET11";
+		dialog = "A PITY, BUT NOW THAT YOU KNOW ABOUT MY FRIENDS, I MUST KILL YOU. GUARDS, TAKE OUT THIS TRASH!";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+	page
+	{
+		name = "ROWAN";
+		panel = "M_RETRIC";
+		voice = "RET05";
+		dialog = "FOOL. GUARDS! RID ME OF MEDDLESOME PEON.";
+		drop = 301; // RaiseAlarm
+		link = 0;
+	}
+}
+
+// GEOFF
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "GEOFF";
+		panel = "M_GEOFF";
+		voice = "GETBL";
+		dialog = "WALK AWAY, GIRL, JUST WALK AWAY.";
+		drop = 179;
+		link = 2;
+		ifitem
+		{
+			item = 133;
+		}
+	}
+	page
+	{
+		name = "GEOFF";
+		panel = "M_GEOFF";
+		voice = "GEO01";
+		dialog = "WHAT ARE YOU DOING HERE?";
+		drop = 179;
+		link = 4;
+		ifitem
+		{
+			item = 314;
+		}
+		choice
+		{
+			text = "HEY THERE GEOFF, UM... I NEED GOLD!";
+			cost
+			{
+				item = 168; // Coin
+				amount = 0;
+			}
+			cost
+			{
+				item = 133;
+				amount = 1;
+			}
+			displaycost = false;
+			giveitem = 302;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "GEOFF";
+		panel = "M_GEOFF";
+		voice = "GEO02";
+		dialog = "BLACKBIRD TOLD YOU THE CODE, HUH? LET ME SHUT OFF THE ALARM. MACIL IS ONE FLIGHT DOWN.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "THANK YOU VERY MUCH.";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "GEOFF";
+		panel = "M_GEOFF";
+		voice = "GETBL";
+		dialog = "WALK AWAY, GIRL, JUST WALK AWAY.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Arion
+conversation
+{
+	actor = 7;
+	page
+	{
+		name = "ARION";
+		dialog = "DO YOU HAVE AN APPOINTMENT WITH THE GOVERNOR? ";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "YES I HAVE ONE.";
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "NO, AND I DON'T NEED ONE!";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ARION";
+		dialog = "ALRIGHT. HE'LL BE UPSTAIRS. PLEASE GO UP.";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "THANK YOU.";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ARION";
+		dialog = "SORRY! I DIDN'T MEAN... PLEASE GO RIGHT UP.";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SOMETHING TOLD ME YOU'D SAY THAT.";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ARION";
+		dialog = "IF YOU'RE IN SUCH A HURRY, DON'T WASTE YOUR TIME WITH ME.";
+		drop = 169;
+		link = 0;
+	}
+}
+
+// MacGuffin [Beggar1]
+conversation
+{
+	actor = 38;
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MCTBL";
+		dialog = "RELEASE ME, LEAVE AN OLD MAN ALONE.";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 315;
+		}
+	}
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MAG01";
+		dialog = "YOU SEEK WISDOM, MY LADY? THE ORDER HAS SEEN TO IT THAT WE ONLY ASK ONE QUESTION, \"WHY?\"";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WHERE'S THE POWER COUPLING?";
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "WHERE'S THE ORDER'S MAIN?";
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "WHERE'S THE ILLEGAL TAP?";
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MAG02";
+		dialog = "I'LL TELL YOU WHERE IT IS, BUT I DON'T KNOW WHOSE COUPLING YOU'LL BE TAMPERING WITH.  IT'S RIGHT HERE IN THE SEWAGE PLANT.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "OH BOY... THANK YOU SIR.";
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MAG03";
+		dialog = "THAT'S RIGHT HERE IN THE SEWAGE PLANT. BUT IT'S THE FRONT'S COUPLING. WHOEVER TOLD YOU THAT IT WAS THE ORDER'S WAS WRONG.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I SEE. THANK YOU VERY MUCH.";
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MAG04";
+		dialog = "IF YOU SAY IT'S ILLEGAL I WANT NOTHING TO DO WITH YOU. I HAVE ENOUGH TROUBLE AS IT IS.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SORRY SIR, JUST DOING MY JOB.";
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "MACGUFFIN";
+		panel = "M_MCGUFF";
+		voice = "MCTBL";
+		dialog = "RELEASE ME, LEAVE AN OLD MAN ALONE.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+//************************
+//*NEW NPCS - DV-DS Patch*
+//************************
+// Celoff "Greenback" [Beggar2] (sell your inventory items for spare gold :V)
+conversation
+{
+	actor = 39;
+	page // 1 - Default Options
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO DO YOU HAVE ANYTHING YOU WANT ME TO TAKE OFF YOUR HANDS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I WANT TO SELL HEALING ITEMS.";
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "I WANT TO SELL BUFFING ITEMS.";
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "I WANT TO SELL MAGICAL ITEMS.";
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "I WANT TO SELL UNIQUE ITEMS.";
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "I WANT TO SELL VIMSTONES.";
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "I HAVE SOME OTHER THINGS TO SELL.";
+			nextpage = 7;
+			closedialog = false;
+		}
+	}
+	page // 2 - Healing Stuff [Herbs, Dew, Medical Patch/Kit/Surgery Kit]
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO WHAT HEALING ITEMS DO YOU WANT TO SELL?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "MED PATCH (5 GOLD)";
+			cost
+			{
+				item = 125; // MedPatch
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 505; // MedPatchSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "MEDICAL KIT (12 GOLD)";
+			cost
+			{
+				item = 126; // MedicalKit
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 506; // MedicalKitSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "SURGERY KIT (37 GOLD)";
+			cost
+			{
+				item = 127; // SurgeryKit
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 507; // SurgeryKitSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "MEDICINAL HERB (10 GOLD)";
+			cost
+			{
+				item = 351; // Medicinal Herb
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 501; // MedicinalHerbSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "STRONG MEDICENE (25 GOLD)";
+			cost
+			{
+				item = 352; // StrongMedicene
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 502; // StrongMediceneSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "SPECIAL MEDICENE (75 GOLD)";
+			cost
+			{
+				item = 353; // SpecialMedicene
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 503; // SpecialMediceneSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "YGGDRASIL DEW (312 GOLD)";
+			cost
+			{
+				item = 354; // YggdrasilDew
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 504; // YggdrasilDewSellItem1
+			nextpage = 2;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 3 - Buffing Stuff [Paxa Punch/Mercury Bandana]
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO WHAT BUFFING ITEMS DO YOU WANT TO SELL?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "PAXA PUNCH (250 GOLD)";
+			cost
+			{
+				item = 355; // PaxaPunch
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 508; // PaxaPunchSellItem1
+			nextpage = 3;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "MERCURY BANDANA (250 GOLD)";
+			cost
+			{
+				item = 356; // MercuryBandana
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 509; // MercuryBandanaSellItem1
+			nextpage = 3;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 4 - Magical Stuff [Magic Water, Sage/Elfin Elixirs]
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO WHAT MAGICAL ITEMS DO YOU WANT TO SELL?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "MAGIC WATER (87 GOLD)";
+			cost
+			{
+				item = 359; // MagicWater
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 510; // MagicWaterSellItem1
+			nextpage = 4;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "SAGE ELIXIR (225 GOLD)";
+			cost
+			{
+				item = 360; // SageElixir
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 511; // SageElixirSellItem1
+			nextpage = 4;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "ELFIN ELIXIR (500 GOLD)";
+			cost
+			{
+				item = 361; // ElfinElixir
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 512; // SageElixirSellItem1
+			nextpage = 4;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 5 - Unique Stuff [Environmental Suit/Targetter/Degnin Ore/Teleporter Beacon/Shadow Armor]
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO WHAT UNIQUE ITEMS DO YOU WANT TO SELL?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT (12 GOLD)";
+			cost
+			{
+				item = 161; // EnvironmentalSuit
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 513; // EnvironmentalSuitSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "TARGETER (125 GOLD)";
+			cost
+			{
+				item = 167; // Targeter
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 514; //TargeterSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "DEGNIN ORE (1375 GOLD)";
+			cost
+			{
+				item = 128; // DegninOre
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 515; //DegninOreSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "SHADOW ARMOR (500 GOLD)";
+			cost
+			{
+				item = 160; // ShadowArmor
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 516; //ShadowArmorSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "TELEPORTER BEACON (150 GOLD)";
+			cost
+			{
+				item = 166; // TeleporterBeacon
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 517; //TeleporterBeaconSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "MAP SCANNER (750 GOLD)";
+			cost
+			{
+				item = 165; // Scanner
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 520; //ScannerSellItem1
+			nextpage = 5;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 6 - Vimstones
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "SO WHAT VIMSTONES DO YOU WANT TO SELL?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "LESSER VIMSTONE (1125 GOLD)";
+			cost
+			{
+				item = 357; // LesserVimstone
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 518; // LesserVimstoneSellItem1
+			nextpage = 6;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "GREATER VIMSTONE (4020 GOLD)";
+			cost
+			{
+				item = 358; // GreaterVimstone
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 519; // GreaterVimstoneSellItem1
+			nextpage = 6;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 7 - Other Misc Things
+	{
+		name = "CELOFF GREENBACK";
+		dialog = "PERHAPS YOU HAVE SOMETHING ELSE TO SELL HERE?";
+		drop = 0;
+		link = 0;
+
+		choice
+		{
+			text = "OFFERING CHALICE (7500 GOLD)";
+			cost
+			{
+				item = 174; // OfferingChalice
+				amount = 1;
+			}
+			cost
+			{
+				item = 313; // QuestItem2 [got Offering Chalice]
+				amount = 1;
+			}
+			yesmessage = "PRAISE ABOVE! YOU ACTUALLY MANAGED TO STEAL THIS THING?! THANK YOU VERY MUCH, MAY GOOD TIDINGS COME TO YOU!";
+			nomessage = "PLEASE, DON'T KID WITH ME ABOUT RARE THINGS LIKE THAT!";
+			giveitem = 521; //OfferingChaliceItem1
+			nextpage = 1;
+			closedialog = false;
+    }
+		choice
+		{
+			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
+			nextpage = 1;
+			closedialog = false;
+		}
+  }
+}

@@ -1,0 +1,2 @@
+clearplayerclasses
+addplayerclass FloraBriscoletti

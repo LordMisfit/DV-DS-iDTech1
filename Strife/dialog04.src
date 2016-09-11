@@ -1,0 +1,580 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Door Guard
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "DGG03";
+		dialog = "SORRY, NO. YOU DO NOT HAVE CLEARANCE.";
+		drop = 139;
+		link = 2;
+		ifitem
+		{
+			item = 139;
+		}
+	}
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "DGG01";
+		dialog = "STOP! SHOW ME YOUR ID BADGE.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WELL, HERE'S MY I.D.";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			cost
+			{
+				item = 139;
+				amount = 1;
+			}
+			displaycost = false;
+			giveitem = 302;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "DOOR GUARD";
+		panel = "M_GUARD2";
+		voice = "DGG02";
+		dialog = "OH, OK. SURE GO AHEAD. HAVE A NICE DAY.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Foreman 1
+conversation
+{
+	actor = 55;
+	page
+	{
+		name = "FOREMAN";
+		panel = "M_GUARD3";
+		voice = "FOR01A";
+		dialog = "DERWIN? YEAH, HE'S DOWN IN THE WAREHOUSE, BUT YOU'RE NOT GETTING IN UNLESS YOU'RE CLEARED.";
+		drop = 179;
+		link = 4;
+		ifitem
+		{
+			item = 321;
+		}
+		choice
+		{
+			text = "OH SORRY, BUT I'VE GOT CLEARANCE.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "FOREMAN";
+		panel = "M_GUARD3";
+		voice = "FOR02A";
+		dialog = "GO ON.";
+		drop = 179;
+		link = 0;
+		choice
+		{
+			text = "DO YOU KNOW WHERE HE'S AT?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "FOREMAN";
+		panel = "M_GUARD3";
+		voice = "FOR04A";
+		dialog = "I DON'T KNOW WHERE ANYBODY IS. I JUST KEEP THE LID ON THE RAT TRAP.";
+		drop = 179;
+		link = 4;
+		ifitem
+		{
+			item = 137;
+		}
+	}
+	page
+	{
+		name = "FOREMAN";
+		panel = "M_GUARD3";
+		voice = "FOTBLA";
+		dialog = "YOU ARE AN UNPLEASANT DISTRACTION.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Reactor Guard
+conversation
+{
+	actor = 56;
+	page
+	{
+		name = "REACTOR GUARD";
+		panel = "M_GUARD4";
+		voice = "RGTBL";
+		dialog = "MOVE ALONG OR TASTE METAL.";
+		drop = 179;
+		link = 2;
+		ifitem
+		{
+			item = 140;
+		}
+	}
+	page
+	{
+		name = "REACTOR GUARD";
+		panel = "M_GUARD4";
+		voice = "RGG01";
+		dialog = "PASS YOUR ID THROUGH HERE FOR ACCESS.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 57;
+	page
+	{
+		name = "OVERSEER";
+		panel = "M_GUARD5";
+		voice = "AGG01";
+		dialog = "GET BACK TO WORK, NOW!";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Core Guard
+conversation
+{
+	actor = 58;
+	page
+	{
+		name = "CORE GUARD";
+		panel = "M_GUARD6";
+		voice = "AGG01";
+		dialog = "GET BACK TO WORK, NOW!";
+		drop = 161;
+		link = 0;
+	}
+}
+
+// Dock Worker
+conversation
+{
+	actor = 9;
+	page
+	{
+		name = "DOCK WORKER";
+		panel = "M_DKWRKR";
+		voice = "DOW01";
+		dialog = "WE'VE BEEN RUNNING AROUND THE CLOCK FOR WEEKS WITH NO DOWN TIME. I'D SAY THAT THE ORDER IS PLANNING A SUPPRESSION RAID ON THE FRONT.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Derwin ["Bloody" quest]
+conversation
+{
+	actor = 10;
+	page
+	{
+		name = "DERWIN";
+		panel = "M_DERWIN";
+		voice = "DER01";
+		dialog = "OH, DAMN. THE GOVERNOR SENT YOU. I WAS GOING TO GIVE HIM HIS CUT, REALLY I WAS. OK, LISTEN. I'VE GOT A BUNDLE STASHED. IT'S YOURS IF YOU LOOK THE OTHER WAY.";
+		drop = 175;
+		link = 0;
+		choice
+		{
+			text = "I DON'T CARE ABOUT YOUR DAMN MONEY, YOU SICK PSYCHOPATH!";
+			giveitem = 301;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "DERWIN";
+		panel = "M_DERWIN";
+		voice = "DER03";
+		dialog = "BUSINESS MY ASS. HELP, GUARDS, I'VE GOT A LIVE ONE.";
+		drop = 175;
+		link = 0;
+	}
+}
+
+// Worner
+conversation
+{
+	actor = 11;
+	page
+	{
+		name = "WORNER";
+		panel = "M_WORNER";
+		voice = "WOR01";
+		dialog = "AH, I GOT WORD FROM MACIL THAT YOU'D BE COMING. I HAVE A WAY TO GET YOU INSIDE THE POWER STATION, BUT IT'S ON THE RISKY SIDE.";
+		drop = 139;
+		link = 0;
+		choice
+		{
+			text = "I'LL HAVE TO TAKE MY CHANCES.";
+			giveitem = 139;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WORNER";
+		panel = "M_WORNER";
+		voice = "WOR02";
+		dialog = "ALL RIGHT, I STOLE AN I.D. FROM THE CORPSE OF SOME FOOL WHO FELL INTO THE REACTOR'S COOLANT PIT. --BLAT-- INSTANT DEEP FRY.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "OH HAH HAH... SO WHAT SHOULD I DO ONCE I'M IN?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "WORNER";
+		panel = "M_WORNER";
+		voice = "WOR03";
+		dialog = "TELL WHOEVER ASKS THAT YOU'RE THE REPLACEMENT WORKER FOR MR. CRISPY. IT'S JUST DUMB ENOUGH TO WORK. OH, AND YOU MIGHT WANT TO CHECK OUT THE STOREROOM THAT'S RIGHT ABOVE US.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WELL, I HOPE THIS I.D. WORKS.";
+			log = "LOG1012";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "WORNER";
+		panel = "M_WORNER";
+		voice = "WRTBL";
+		dialog = "GET OUT OF HERE, UNLESS YOU WANT TO END UP MS. DEAD.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Dock Worker 2
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "DOCK WORKER";
+		panel = "M_DKWRKR";
+		voice = "DWW01";
+		dialog = "HEY, LEAVE ME ALONE. IF THEY CATCH US WASTING TIME WE GET DEAD, OR EXTRA WORK.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// TECHNICIAN 1
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCH01";
+		dialog = "SUCH PRESSURE, AT THIS RATE WE'LL BE BACK TO NORMAL SHIFTS SOON. WE'RE PUMPING TONS OF POWER TO THE CASTLE AND I'M ALMOST FINISHED LOGGING THOSE NEW WEAPONS.";
+		drop = 142;
+		link = 0;
+		choice
+		{
+			text = "HUH, WEAPONS EH?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCH02";
+		dialog = "WHAT DO YOU THINK, WE'RE BACKED UP ON SOCKS?";
+		drop = 142;
+		link = 0;
+		choice
+		{
+			text = "WHAT KIND OF WEAPONS?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCH03";
+		dialog = "ARE YOU DEAF? I JUST TOLD YOU HOW BUSY I AM. GET BACK TO WORK.";
+		drop = 142;
+		link = 0;
+	}
+}
+
+// TECHNICIAN 2
+conversation
+{
+	actor = 17;
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCB01";
+		dialog = "WHO ARE YOU? ONLY CLEARANCE LEVEL TWO PERSONNEL ARE PERMITTED IN THIS AREA.";
+		drop = 140;
+		link = 0;
+		choice
+		{
+			text = "I'M THE REPLACEMENT WORKER.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCB02";
+		dialog = "ABOUT TIME YOU SHOWED UP. GO TALK WITH KETRICK IN THE CORE. OH, AND TAKE THIS KEY CARD. DON'T WANT YOU GETTING SHOT ON YOUR FIRST DAY, HUH?";
+		drop = 140;
+		link = 3;
+		ifitem
+		{
+			item = 140;
+		}
+		choice
+		{
+			text = "SO WHERE'S THE POWER CRYSTAL?";
+			log = "LOG1013";
+			giveitem = 140;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKBRN";
+		voice = "TCB03";
+		dialog = "IF YOU DON'T GET TO WORK, YOU'LL GET SHOT ANYWAY. MOVE YOUR TUNIC.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// TECHNICIAN 3
+conversation
+{
+	actor = 7;
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKTAN";
+		voice = "TCT01";
+		dialog = "I DON'T MEAN TO SOUND ALARMIST, BUT IF THEY KEEP PUSHING THE POWER CRYSTAL THIS HARD IT'S GONNA FLAW, AND THEN SHATTER, AND THEN *BOOM*! ...JUST A THOUGHT.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// TECHNICIAN 4
+conversation
+{
+	actor = 8;
+	page
+	{
+		name = "TECHNICIAN";
+		panel = "M_TEKTAN";
+		voice = "TCC01";
+		dialog = "LET ME BE QUITE CLEAR. IF THIS TERMINAL LOCKS UP AGAIN, THE COOLANT LEVEL WILL DROP AND WE'LL ALL HAVE TO ANSWER TO THE PROGRAMMER. IF WE SURVIVE.";
+		drop = 301;
+		link = 0;
+	}
+}
+
+// Ketrick, having a bad [and final] day :V
+conversation
+{
+	actor = 12;
+	page
+	{
+		name = "KETRICK";
+		panel = "M_KETRIC";
+		voice = "KET01";
+		dialog = "YOU! YEAH, YOU. YOU AREN'T CLEARED FOR THIS AREA. LET ME HAVE YOUR KEY CARD, FAST. I'M IN SUCH A BAD MOOD!";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HERE, HERE'S MY I.D. CARD.";
+			giveitem = 301;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "KETRICK";
+		panel = "M_KETRIC";
+		voice = "KET02";
+		dialog = "THIS IS GARBAGE! WAIT HERE. OH SCREW IT. GUARDS KILL THIS INTRUDER!";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WELL, GOOD DAY TO YOU TOO, \"GOOD\" SIR.";
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "KETRICK";
+		panel = "M_KETRIC";
+		voice = "KET02";
+		dialog = "THIS IS GARBAGE! WAIT HERE. OH SCREW IT. GUARDS KILL THIS INTRUDER!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Sammis
+conversation
+{
+	actor = 13;
+	page
+	{
+		name = "SAMMIS";
+		panel = "M_SAMMIS";
+		voice = "SAM01A";
+		dialog = "WORK, SLEEP, GET TORTURED, WHAT A LIFE.  SAY, YOU THE REPLACEMENT FOR THE CARELESS PIT DIVER?";
+		drop = 141;
+		link = 0;
+		choice
+		{
+			text = "YEAH, I CAN'T WAIT TO START.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "SAMMIS";
+		panel = "M_SAMMIS";
+		voice = "SAM02A";
+		dialog = "YEAH, RIGHT. OK, GET YOUR ASS TO WORK.";
+		drop = 141;
+		link = 0;
+		choice
+		{
+			text = "SO, WHERE'S THE CRYSTAL?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "SAMMIS";
+		panel = "M_SAMMIS";
+		voice = "SAM03A";
+		dialog = "GO TALK TO KETRICK. BRING THE WALKWAY UP USING THE SWITCHES, THEN USE THIS I.D. FOR THE ELEVATOR.";
+		drop = 141;
+		link = 0;
+		choice
+		{
+			text = "AND WHERE'S THE CRYSTAL AGAIN?";
+			log = "LOG1014";
+			giveitem = 141;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "SAMMIS";
+		panel = "M_SAMMIS";
+		voice = "SAM04A";
+		dialog = "NONE OF YOUR BUSINESS, GO TALK TO KETRICK.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "*SIGH* FINE.";
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "SAMMIS";
+		panel = "M_SAMMIS";
+		voice = "SAM05A";
+		dialog = "IF IT'S BUSY WORK YOU WANT, GO STARE AT THAT SCREEN FOR A WHILE, IT'LL BORE YOU TO TEARS.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+// Computer Tech
+conversation
+{
+	actor = 14;
+	page
+	{
+		name = "COMPUTER TECH";
+		panel = "M_TEKGRY";
+		voice = "CTT01";
+		dialog = "THE ALMIGHTY PROGRAMMER IS SO PARANOID OF INFILTRATION THAT HE'S LOCKED UP THE COMPUTER CORE. HOW AM I SUPPOSED TO GET MY WORK DONE? THE ONLY WAY IN IS THE SUICIDE RUN.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "\"SUICIDE RUN\"? WHAT'S THAT?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "COMPUTER TECH";
+		panel = "M_TEKGRY";
+		voice = "CTT02";
+		dialog = "IT'S A SURE-FIRE WAY TO GET KILLED, BUT THAT'S NOT IMPORTANT RIGHT NOW. GO DOWN THE LIFT IF YOU'RE SO INCLINED.";
+		drop = 0;
+		link = 0;
+	}
+}

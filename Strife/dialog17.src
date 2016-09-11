@@ -1,0 +1,742 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// AcolyteRed [Bailey Guard]
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "BAILEY GUARD";
+		panel = "M_GUARD2";
+		voice = "RGTBL";
+		dialog = "Move along or taste metal.";
+		drop = 147;
+		link = 2;
+		ifitem
+		{
+			item = 147;
+		}
+	}
+	page
+	{
+		name = "BAILEY GUARD";
+		panel = "M_GUARD2";
+		voice = "BGG01";
+		dialog = "I.D. check.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HERE. SORRY, BUT I'M IN A HURRY.";
+			giveitem = 302;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "BAILEY GUARD";
+		panel = "M_GUARD2";
+		voice = "BGG03";
+		dialog = "Stop waving your ID in my face and go in.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 57;
+	page
+	{
+		name = "WAREHOUSE GUARD";
+		dialog = "NOTHING TO SEE HERE. MOVE ALONG.";
+		drop = 179;
+		link = 0;
+	}
+}
+
+// Quincy
+conversation
+{
+	actor = 5;
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI01";
+		dialog = "What a healthy specimen. You don't need my help, do you?";
+		drop = 0;
+		link = 7;
+		ifitem
+		{
+			item = 338;
+		}
+		choice
+		{
+			text = "THANKS FOR THE COMPLIMENT, BUT YES I DO NEED YOUR HELP. MACIL SENT ME.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI02";
+		dialog = "Shhhh... keep it quiet, unless you want us both killed. Now, what can I do for you?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "cAN YOU Tell me how to find The Bishop?";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI03";
+		dialog = "Ohhh, I knew you would ask me for that. Look behind you. That's the entrance to The Bishop's Citadel. It's guarded by a force field that is only shut off for official visitors, Not you.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I have to find and destroy him.";
+			giveitem = 330;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI04";
+		dialog = "OH, Sure YOU DO. First, fight your way into the Security Complex and use the Teleporter. And this might be more to your liking, destroy the computer in Central Administration. No computer, no force field.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "GREAT, THAT SOUNDS EASY ENOUGH.";
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI05";
+		dialog = "There's an advantage to destroying the Computer, that's where the plans to the Tower are kept. Can you say, Five Finger Discount? HEH HEH!";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ANYTHING ELSE OF NOTE?";
+			log = "LOG1022";
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUI06";
+		dialog = "OH WELL, Word has it that the Bailey's warehouse received a shipment of Maulers, that's the weapon that VAPORIZES.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HM, IS THAT SO?";
+			nextpage = 7;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "QUINCY";
+		panel = "M_QUINCY";
+		voice = "QUTBL";
+		dialog = "Don't you know the meaning of the words \"get lost\"?";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 12;
+	page
+	{
+		name = "ASSISTANT";
+		dialog = "TALK TO QUINCY FIRST.  I'M NOT ALLOWED TO HELP ANYONE UNLESS HE SAYS IT'S OK.";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 330; // QuestItem19
+		}
+	}
+	page
+	{
+		name = "ASSISTANT";
+		dialog = "SO, HOW CAN I HELP YOU TODAY?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "MED PATCH";
+			cost
+			{
+				item = 168;
+				amount = 15;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR PATCH.";
+			nomessage = "THAT IS 15 GOLD MY FRIEND.";
+			giveitem = 125;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICAL KIT";
+			cost
+			{
+				item = 168;
+				amount = 30;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICAL KIT.";
+			nomessage = "YOU'RE A BIT LOW ON FUNDS FOR THAT.";
+			giveitem = 126;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "FIELD SURGERY KIT";
+			cost
+			{
+				item = 168;
+				amount = 75;
+			}
+			displaycost = true;
+			yesmessage = "ONE FIELD SURGERY KIT, DONE.";
+			nomessage = "COME BACK WHEN YOU HAVE MONEY!";
+			giveitem = 127;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICINAL HERB";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICINAL HERB.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MED PATCH?";
+			giveitem = 351; // MedicinalHerb
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "STRONG MEDICENE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 60;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO. TAKE CARE NOW OF YOURSELF.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MEDICINAL HERB?";
+			giveitem = 352; // StrongMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SPECIAL MEDICENE";
+			cost
+			{
+				item = 168;
+				amount = 165;
+			}
+			displaycost = true;
+			yesmessage = "ONE SPECIALIZED MEDICINAL HERB FOR YA.";
+			nomessage = "SORRY, THESE KINDS OF HERBS AREN'T CHEAP.";
+			giveitem = 353; // SpecialMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "YGGDRASIL DEW";
+			cost
+			{
+				item = 168;
+				amount = 675;
+			}
+			displaycost = true;
+			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
+			nomessage = "THESE THINGS ARE WAY TOO RARE TO SKILT FOR CHEAP, I'M AFRAID!";
+			giveitem = 354; // YggdrasilDew
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+}
+
+//************************
+//*NEW NPCS - DV-DS Patch*
+//************************
+// Tress Growler [Beggar2] (buy Stat Seeds)
+conversation
+{
+	actor = 39;
+	page // 1 - Original Prices
+	{
+		name = "TRESS GROWLER";
+		dialog = "SEEDS FOR YOUR TROUBLES, MISS?";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 332; // QuestItem21 [killed the Bishop]
+		}
+		choice
+		{
+			text = "SEED OF LIFE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "EAT IT IN GOOD HEALTH!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 369; // SeedOfLife
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF MAGIC";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S TO MORE MAGIC!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 370; // SeedOfMagic
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF AGILITY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "\"GOTTA GO FAST\", AS THEY SAY!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 374; // SeedOfAgilityForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFENSE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "MAKE YOURSELF AS STURDY AS TITANIUM!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 376; // SeedOfDefenseForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFTNESS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "TO MORE EXPERIENCE AND LUCK!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 378; // SeedOfDeftnessForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SORCERY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "YOU CAN'T GO WRONG WITH STRONGER MAGIC, YA' KNOW!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 380; // SeedOfSorceryForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF STRENGTH";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "WOW, YOU DON'T LOOK ANY BUFFER THAN BEFORE! WEIRD...";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 382; // SeedOfStrengthForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF THERAPEUSIS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 875;
+			}
+			displaycost = true;
+			yesmessage = "NOW YOUR HEALING AND MAGICAL DEFENSES ARE PRISTINE, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 384; // SeedOfTherapeusisForced
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SKILL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 2875;
+			}
+			displaycost = true;
+			yesmessage = "USE THOSE AEON POINTS WISELY, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 372; // SeedOfSkillForced
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+	page // 2 - Reduced prices [killed Bishop]
+	{
+		name = "TRESS GROWLER";
+		dialog = "SEEDS FOR YOUR TROUBLES, MISS?";
+		drop = 0;
+		link = 3;
+		ifitem
+		{
+			item = 665; // SigilComplete [a full Sigil]
+		}
+		choice
+		{
+			text = "SEED OF LIFE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "EAT IT IN GOOD HEALTH!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 369; // SeedOfLife
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF MAGIC";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S TO MORE MAGIC!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 370; // SeedOfMagic
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF AGILITY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "\"GOTTA GO FAST\", AS THEY SAY!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 374; // SeedOfAgilityForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFENSE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "MAKE YOURSELF AS STURDY AS TITANIUM!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 376; // SeedOfDefenseForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFTNESS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "TO MORE EXPERIENCE AND LUCK!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 378; // SeedOfDeftnessForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SORCERY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "YOU CAN'T GO WRONG WITH STRONGER MAGIC, YA' KNOW!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 380; // SeedOfSorceryForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF STRENGTH";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "WOW, YOU DON'T LOOK ANY BUFFER THAN BEFORE! WEIRD...";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 382; // SeedOfStrengthForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF THERAPEUSIS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 655;
+			}
+			displaycost = true;
+			yesmessage = "NOW YOUR HEALING AND MAGICAL DEFENSES ARE PRISTINE, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 384; // SeedOfTherapeusisForced
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SKILL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 2300;
+			}
+			displaycost = true;
+			yesmessage = "USE THOSE AEON POINTS WISELY, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 372; // SeedOfSkillForced
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page // 3 - Further Reduced prices [full Sigil completion]
+	{
+		name = "TRESS GROWLER";
+		dialog = "SEEDS FOR YOUR TROUBLES, MISS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SEED OF LIFE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "EAT IT IN GOOD HEALTH!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 369; // SeedOfLife
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF MAGIC";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S TO MORE MAGIC!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 370; // SeedOfMagic
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF AGILITY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "\"GOTTA GO FAST\", AS THEY SAY!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 374; // SeedOfAgilityForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFENSE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "MAKE YOURSELF AS STURDY AS TITANIUM!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 376; // SeedOfDefenseForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF DEFTNESS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "TO MORE EXPERIENCE AND LUCK!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 378; // SeedOfDeftnessForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SORCERY";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "YOU CAN'T GO WRONG WITH STRONGER MAGIC, YA' KNOW!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 380; // SeedOfSorceryForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF STRENGTH";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "WOW, YOU DON'T LOOK ANY BUFFER THAN BEFORE! WEIRD...";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 382; // SeedOfStrengthForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF THERAPEUSIS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 520;
+			}
+			displaycost = true;
+			yesmessage = "NOW YOUR HEALING AND MAGICAL DEFENSES ARE PRISTINE, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 384; // SeedOfTherapeusisForced
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SEED OF SKILL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 1840;
+			}
+			displaycost = true;
+			yesmessage = "USE THOSE AEON POINTS WISELY, LASS!";
+			nomessage = "SORRY, THESE SEEDS AREN'T EXACTLY COMMON, YA' KNOW.";
+			giveitem = 372; // SeedOfSkillForced
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+}

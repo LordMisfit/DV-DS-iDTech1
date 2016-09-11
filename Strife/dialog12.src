@@ -1,0 +1,227 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+conversation
+{
+	actor = 65;
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC01";
+		dialog = "WHAT IS THE WISDOM YOU SEEK, SIMPLE ONE?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "THE SIGIL OF THE ONE GOD.";
+			giveitem = 302;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC02";
+		dialog = "I FEEL ONE FRAGMENT RESONATE WITHIN YOU. THE SECOND LIES AT THE HEART OF THE CRIMSON AND OBSIDIAN TOWER. THERE YOU MUST COMBAT THE BISHOP, WHO IS AWARE, AND AWAITS YOU. YOU WILL FIND HIM BY FOLLOWING HIS SYMBOL OF POWER. TAKE THIS TOKEN TO THE KEYMASTER. RETURN TO ME AFTER YOU HAVE SLAIN THE BEAST.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, I'LL BE BACK.";
+			log = "LOG1020";
+			giveitem = 311;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC03";
+		dialog = "ALTHOUGH THE BISHOP IS FORMIDABLE, THIS QUEST IS SLIGHT. RETURN TO ME WHEN YOU POSSESS THE NEXT FRAGMENT.";
+		drop = 0;
+		link = 4;
+		ifitem
+		{
+			item = 332;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORE01";
+		dialog = "Your next challenge will test your spirit. The third piece is held by your own leader. He is the same as that which he sends you to kill.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WAIT WHAT? MACIL'S A TRAITOR?";
+			giveitem = 309;
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORE02";
+		dialog = "Your blind faith has allowed him to advance to his goals with each piece you gain. Confront him and resolve your fate.";
+		drop = 0;
+		link = 8;
+		ifitem
+		{
+			item = 335;
+		}
+		choice
+		{
+			text = "ALL RIGHT, IT IS MACIL. I'LL GO CHECK THIS OUT.";
+			log = "LOG1023";
+			giveitem = 333;
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "YOU KNOW, IT'S YOU I DON'T TRUST, SIR ORACLE.";
+			giveitem = 333;
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC04";
+		dialog = "Whatever choice you make your kind shall perish under the will of the one god.";
+		drop = 0;
+		link = 8;
+		ifitem
+		{
+			item = 335;
+		}
+		choice
+		{
+			text = "WE'LL SEE ABOUT THAT. I'LL BE BACK WHEN MACIL'S DEAD.";
+			log = "LOG1027";
+			giveitem = 302;
+			nextpage = 7;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "THEY'RE NOT MY \"KIND\", BUT I CAN'T LET THAT HAPPEN.";
+			giveitem = 301;
+			nextpage = 13;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORTBL";
+		dialog = "THE RIVER OF TIME MOVES FOREVER ONWARD, WHILE YOU STAND STILL.";
+		drop = 0;
+		link = 8;
+		ifitem
+		{
+			item = 335;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC05";
+		dialog = "You have cut the cancer from your body, but your heart still beats. Next you must find the surgeon who butchers and controls your people, The LoreMaster. Stop him, and the next piece will be yours.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "A LORE MASTER? SO WHERE DO I FIND HIM?";
+			log = "LOG1025";
+			giveitem = 304;
+			nextpage = 9;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORC06";
+		dialog = "Use the Teleporter behind the door I just opened to reach The LoreMaster. When he is dead, use the same device to return to me.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ALRIGHT, I SHALL RETURN SOON.";
+			log = "LOG1026";
+			giveitem = 309;
+			nextpage = 10;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "ORTBL";
+		dialog = "THE RIVER OF TIME MOVES FOREVER ONWARD, WHILE YOU STAND STILL.";
+		drop = 0;
+		link = 11;
+		ifitem
+		{
+			item = 337;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "LOM03";
+		dialog = "Pitiful woman, you have done what thousands have failed to do... you bring me the power of the SIGIL, the voice of the one God.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HM, I THINK I'M STARTING TO UNDERSTAND YOU...";
+			nextpage = 12;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "LOM04";
+		dialog = "The SIGIL will open the door and free the spirit which will cleanse this planet and let me live forever. I will strip this world of its energies and find new worlds to conquer.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "TERRIBLY SORRY, BUT I CAN'T LET YOU DO THAT, SIR ORACLE.";
+			giveitem = 301;
+			nextpage = 13;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "ORACLE";
+		panel = "M_ORACLE";
+		voice = "LOM05";
+		dialog = "YOU CAN IF YOU'RE DEAD.";
+		drop = 0;
+		link = 0;
+	}
+}

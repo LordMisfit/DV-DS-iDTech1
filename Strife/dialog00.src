@@ -1,0 +1,483 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+conversation
+{
+	actor = 6;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 7;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 8;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 9;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 10;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 11;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 12;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 13;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 14;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 17;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 18;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 19;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 20;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 21;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 22;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 23;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 24;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 25;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 26;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 27;
+	page
+	{
+		name = "PEASANT";
+		dialog = "RANDOM_PEASANT";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 43;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 44;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 45;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 46;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 47;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 48;
+	page
+	{
+		dialog = "RANDOM_REBEL";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 61;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 53;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 54;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 55;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 56;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 57;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 58;
+	page
+	{
+		dialog = "RANDOM_AGUARD";
+		drop = 179;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 38;
+	page
+	{
+		dialog = "RANDOM_BEGGAR";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 39;
+	page
+	{
+		dialog = "RANDOM_BEGGAR";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 40;
+	page
+	{
+		dialog = "RANDOM_BEGGAR";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 41;
+	page
+	{
+		dialog = "RANDOM_BEGGAR";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 42;
+	page
+	{
+		dialog = "RANDOM_BEGGAR";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 62;
+	page
+	{
+		dialog = "RANDOM_PGUARD";
+		drop = 183;
+		link = 0;
+	}
+	page
+	{
+		dialog = "RANDOM_PGUARD";
+		drop = 183;
+		link = 0;
+	}
+}

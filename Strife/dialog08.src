@@ -1,0 +1,46 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Fake Programmer
+conversation
+{
+	actor = 27;
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP1";
+		voice = "FP101A";
+		dialog = "YOU KILLED ALL THE GUARDS. DON'T HURT ME. I TOLD HIM THIS WAS A DUMB IDEA. THE REAL PROGRAMMER'S IN THE KEEP. HERE, TAKE THIS KEY.";
+		drop = 144;
+		link = 0;
+		choice
+		{
+			text = "HM, YOU DON'T LOOK TOO POWERFUL, BUT WHO REALLY KNOWS...";
+			giveitem = 144;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "PROGRAMMER";
+		panel = "M_FALSP1";
+		voice = "FP102A";
+		dialog = "DO I LOOK LIKE I WIELD ULTIMATE POWER? THE ORDER USES US ALL. NOW GO, I'M DEAD ALREADY.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 54;
+	page
+	{
+		dialog = "POWER IS THE KEY!";
+		drop = 0;
+		link = 0;
+	}
+}

@@ -1,0 +1,113 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+conversation
+{
+	actor = 9;
+	page
+	{
+		name = "JAMES";
+		dialog = "ARE YOU HERE TO FREE US? BECAUSE I'VE BEEN GOOD, THEY TOOK MY IMPLANT OUT. I STILL HAVE TO STAY DOWN HERE AND WIPE UP THE DROOL THOUGH.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ABSOLUTELY, I'M HERE TO FREE YOU GUYS.";
+			yesmessage = "YOU MEAN IT?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "JAMES";
+		dialog = "I CAN'T HELP NOBODY ELSE. NOT UNTIL YOU BLOW UP THE TRANSMITTER. THAT'S WHAT'S BEHIND THE FORCEFIELD UPSTAIRS. MY JOB IS TO CHECK ON THE CONVEYORS TO MAKE SURE THEY AREN'T JAMMED. WELL, NOT ANYMORE!";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "THAT'S RIGHT, YOU'RE GONNA BE SAVED.";
+			yesmessage = "OH, THANK YOU!";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "JAMES";
+		dialog = "WE'RE FREE!! WE'RE FREE!! WE'RE FREE!!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 24;
+	page
+	{
+		name = "DRONE";
+		dialog = "MUST MINE MORE ORE!";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 340;
+		}
+	}
+	page
+	{
+		name = "PEASANT";
+		dialog = "WE'RE FREE!! WE'RE FREE!! WE'RE FREE!!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 25;
+	page
+	{
+		name = "DRONE";
+		dialog = "MUST MINE MORE ORE!";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 340;
+		}
+	}
+	page
+	{
+		name = "PEASANT";
+		dialog = "WE'RE FREE!! WE'RE FREE!! WE'RE FREE!!";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 26;
+	page
+	{
+		name = "DRONE";
+		dialog = "MUST MINE MORE ORE!";
+		drop = 0;
+		link = 2;
+		ifitem
+		{
+			item = 340;
+		}
+	}
+	page
+	{
+		name = "PEASANT";
+		dialog = "WE'RE FREE!! WE'RE FREE!! WE'RE FREE!!";
+		drop = 0;
+		link = 0;
+	}
+}

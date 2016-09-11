@@ -1,0 +1,1022 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// Weapon Smith
+conversation
+{
+	actor = 2;
+	page
+	{
+		name = "WEAPON SMITH";
+		dialog = "WHAT CAN I GET YOU, CITIZEN?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ELECTRIC BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 45;
+			}
+			displaycost = true;
+			yesmessage = "DON'T GO FRYING EVERY PIECE OF ELECTRONICS IN SIGHT, NOW.";
+			nomessage = "SORRY, YOU NEED A BIT MORE GOLD, LASS.";
+			giveitem = 186; // ElectricBolts
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "POISON BOLTS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 250;
+			}
+			displaycost = true;
+			yesmessage = "TRUST ME, WORTH IT!";
+			nomessage = "SORRY, POISON BOLTS ARE EXPENSIVE, LASS.";
+			giveitem = 185; // PoisonBolts
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "6 DIARIS ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 110;
+			}
+			displaycost = true;
+			yesmessage = "THANKS. 6 DIARIS ARROWS COMING UP!";
+			nomessage = "SORRY, LIGHT ARROWS CAN BE EXPENSIVE.";
+			giveitem = 364; // DiarisArrow
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "QUIVER OF 30 ARROWS";
+			cost
+			{
+				item = 168; // Coin
+				amount = 565;
+			}
+			displaycost = true;
+			yesmessage = "LOTS OF LIGHT ARROWS FOR YOU, MISS.";
+			nomessage = "SORRY, LIGHT ARROWS CAN BE EXPENSIVE.";
+			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "AMMO SATCHEL";
+			cost
+			{
+				item = 168; // Coin
+				amount = 385;
+			}
+			displaycost = true;
+			yesmessage = "HAVING MORE AMMO IS ALWAYS NICE!";
+			nomessage = "YOU CAN'T AFFORD THAT, COME BACK WITH SOME MORE GOLD!";
+			giveitem = 187;
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+}
+
+// Armorer
+conversation
+{
+	actor = 4;
+	page // 1
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I ASSIST YOU WITH?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SOMETHING DIFFERENT?";
+			cost
+			{
+				item = 168;
+				amount = 100;
+			}
+			displaycost = true;
+			yesmessage = "GO THROUGH THE DOOR DOWN THE HALL.";
+			nomessage = "YOU MUST PAY IF YOU WANT TO PLAY.";
+			giveitem = 302;
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page // 2
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 2;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5500;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5500;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 4;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5500;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 5;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "RANDOM ARMOR";
+			cost
+			{
+				item = 168; // Coin
+				amount = 5500;
+			}
+			displaycost = true;
+			yesmessage = "WELL, HERE YOU ARE. HOPE IT HELPS";
+			nomessage = "SORRY IT TAKES A LOT OF GOLD FOR THIS KIND OF ARMOR...";
+			giveitem = 366;
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "ARMORER";
+		dialog = "WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ENVIRONMENTAL SUIT";
+			cost
+			{
+				item = 168;
+				amount = 50;
+			}
+			displaycost = true;
+			yesmessage = "HERE YOU ARE.";
+			nomessage = "NO MONEY, NO SUIT.";
+			giveitem = 161;
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MERCURY BANDANA";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "GOOD FOR A SPEED BOOSTER!";
+			nomessage = "MAYBE AN ENVIRONMENTAL SUIT WOULD SUIT YOU BETTER?";
+			giveitem = 356; // Mercury Bandana
+			nextpage = 6;
+			closedialog = false;
+		}
+	}
+}
+
+// Medic
+conversation
+{
+	actor = 5;
+	page
+	{
+		name = "MEDIC";
+		dialog = "HOW CAN I HELP YOU TODAY?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "MED PATCH";
+			cost
+			{
+				item = 168;
+				amount = 15;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR PATCH.";
+			nomessage = "THAT IS 15 GOLD MY FRIEND.";
+			giveitem = 125;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICAL KIT";
+			cost
+			{
+				item = 168;
+				amount = 30;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICAL KIT.";
+			nomessage = "YOUR A BIT LOW ON FUNDS FOR THAT.";
+			giveitem = 126;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "FIELD SURGERY KIT";
+			cost
+			{
+				item = 168;
+				amount = 75;
+			}
+			displaycost = true;
+			yesmessage = "ONE FIELD SURGERY KIT.";
+			nomessage = "COME BACK WHEN YOU HAVE MONEY!";
+			giveitem = 127;
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MEDICINAL HERB";
+			cost
+			{
+				item = 168; // Coin
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "HERE'S YOUR MEDICINAL HERB.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MED PATCH?";
+			giveitem = 351; // MedicinalHerb
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "STRONG MEDICENE";
+			cost
+			{
+				item = 168; // Coin
+				amount = 60;
+			}
+			displaycost = true;
+			yesmessage = "THERE YOU GO.  TAKE CARE NOW OF YOURSELF.";
+			nomessage = "WELL, MAYBE YOU CAN AFFORD A MEDICINAL HERB?";
+			giveitem = 352; // StrongMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "SPECIAL MEDICENE";
+			cost
+			{
+				item = 168;
+				amount = 175;
+			}
+			displaycost = true;
+			yesmessage = "ONE SPECIALIZED MEDICINAL HERB FOR YA.";
+			nomessage = "SORRY, THESE KINDS OF HERBS AREN'T CHEAP.";
+			giveitem = 353; // SpecialMedicene
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "YGGDRASIL DEW";
+			cost
+			{
+				item = 168;
+				amount = 700;
+			}
+			displaycost = true;
+			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
+			nomessage = "THESE THINGS ARE WAY TOO RARE TO SKILT FOR CHEAP, I'M AFRAID!";
+			giveitem = 354; // YggdrasilDew
+			nextpage = 1;
+			closedialog = false;
+		}
+	}
+}
+
+// Barkeep
+conversation
+{
+	actor = 3;
+	page
+	{
+		name = "BARKEEP";
+		dialog = "HELLO YOUNG LADY, WHAT CAN I GET YOU?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "CAN I GET SOME INFORMATION?";
+			cost
+			{
+				item = 168;
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "I'VE NEVER SEEN ANYONE GO IN OR OUT OF THE FACTORY, THE FORCEFIELD'S ALWAYS UP.";
+			nomessage = "SORRY LASS, BUT NO MONEY, NO INFO.";
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "YES, WHAT WOULD YOU LIKE?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SOME MORE INFORMATION.";
+			cost
+			{
+				item = 168;
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "THE FACTORY'S BUILT ON THE COMET'S IMPACT SITE. I DON'T THINK IT'S BY CHANCE.";
+			nomessage = "COME ON LASS, IT'S ONLY A MEASLY 5 GOLD.";
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "HELLO AGAIN MISSY, WHAT'LL IT BE?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "ANY MORE INFORMATION TO GIVE?";
+			cost
+			{
+				item = 168;
+				amount = 5;
+			}
+			displaycost = true;
+			yesmessage = "THE FACTORY CLOSED WHEN THE ORDER UNVEILED IT'S NEW HORROR: THE INQUISITOR. IF YOU EVER MEET ONE, CROSS YOUR HEART AND SAY YOUR PRAYERS.";
+			nomessage = "SORRY LASSIE, 5 GOLD PLEASE.";
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "STILL GONNA HANG AROUND, MISS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "CAN YOU TELL ME ANYTHING ELSE?";
+			cost
+			{
+				item = 168;
+				amount = 25;
+			}
+			displaycost = true;
+			yesmessage = "THE LORE MASTER HAS ESTABLISHED HIS FORTRESS WITHIN THE FACTORY. THERE'S RUMORS OF AN AUTONOMIC CONVERTER INSIDE. THEY SAY THINGS HUMAN GO INSIDE, THEN THEY COME OUT... AS THOSE ACOLYTES. IT DOESN'T WORK FOR CONVERSIONS INTO TEMPLARS THOUGH.";
+			nomessage = "THIS KIND OF INFORMATION REQUIRES A BIT MORE GOLD THAN PAST BITS OF INFO. SORRY.";
+			nextpage = 5;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "THAT'S ALL I KNOW.  EVEN BARTENDERS RUN OUT OF STUFF TO SAY, SORRY.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "HEY, GOT ANYTHING TO DRINK?";
+			cost
+			{
+				item = 168; // Coin
+				amount = 600;
+			}
+			displaycost = true;
+			yesmessage = "I SUPPOSE THIS \"PAXA PUNCH\" WILL HELP YOU OUT, MISS";
+			nomessage = "I HAVE SOMETHING, BUT YOU NEED 600 GOLD FOR ME TO SELL IT.";
+			giveitem = 355; // Paxa Punch
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "BARKEEP";
+		dialog = "YOU HERE FOR MORE OF THAT \"PAXA PUNCH\", LASS?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "YES, IF YOU DON'T MIND...";
+			cost
+			{
+				item = 168; // Coin
+				amount = 505;
+			}
+			displaycost = true;
+			yesmessage = "WELL, I GUESS THESE THINGS ARE POPULAR OVER IN TARNHILL?";
+			nomessage = "YOU'LL NEED 505 GOLD FOR SOME MORE.";
+			giveitem = 355; // Paxa Punch
+			closedialog = true;
+		}
+	}
+}
+
+// Timothy
+conversation
+{
+	actor = 24;
+	page
+	{
+		name = "TIMOTHY";
+		dialog = "HELLO THERE, MISS. I'VE HEARD AROUND ABOUT YOU. DON'T WORRY. I'M NOT HERE TO HELP THOSE BRUTES. HOWEVER, I WONDER IF THIS GOLD, SPARKLING FRUIT COULD OF SOME USE TO YOU...";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "OH! THAT FRUIT'S A FYGG, ISN'T IT?";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "TIMOTHY";
+		dialog = "\"FYGG\"? I GUESS THAT MEANS YOU KNOW WHAT THIS THING DOES. HOWEVER I CAN'T PART WITH IT UNLESS I CAN GET AT LEAST 26,999 GOLD FOR IT. SORRY.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "WELL, HERE'S YOUR 26,999 GOLD THEN.";
+			cost
+			{
+				item = 168; // Coin
+				amount = 26999;
+			}
+			displaycost = false;
+			yesmessage = "HERE, I HOPE THIS IS WORTH IT FOR YOU.";
+			nomessage = "SORRY, NO LESS THAN 26,999 GOLD, LADY.";
+			giveitem = 368; // FyggForced
+			nextpage = 3;
+			closedialog = true;
+		}
+	}
+	page
+	{
+		name = "TIMOTHY";
+		dialog = "OH HELLO AGAIN. I HOPE THAT \"FYGG\" FRUIT HELPED YOU. I SUPPOSE YOU ALREADY LOOK STRONGER THAN BEFORE. I GUESS IT HAS SOME UNIQUE REACTION TO YOU OR SO.";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "SO, WHAT ARE YOU DOING RIGHT NOW?";
+			yesmessage = "I'M KINDA BUSY... DOING STUFF. I'LL BE BUSY FOR A WHILE, SO COME BACK LATER.";
+		}
+	}
+}
+
+// Tevick [vendor of unique stuff :V]
+conversation
+{
+	actor = 9;
+	page // 1 [4/1]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [4 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 3;
+			closedialog = true;
+		}
+		choice
+		{
+			text = "LARGE, SPIKY PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 6250;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE EXTREMELY RARE, SO I NEED MUCH MORE THAN THAT.";
+			giveitem = 358; // GreaterVimstone
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+	page // 2 [4/0]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [4 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page // 3 [3/1]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [3 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 5;
+			closedialog = true;
+		}
+		choice
+		{
+			text = "LARGE, SPIKY PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 6250;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE EXTREMELY RARE, SO I NEED MUCH MORE THAN THAT.";
+			giveitem = 358; // GreaterVimstone
+			nextpage = 4;
+			closedialog = true;
+		}
+	}
+	page // 4 [3/0]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [3 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page // 5 [2/1]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [2 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 7;
+			closedialog = true;
+		}
+		choice
+		{
+			text = "LARGE, SPIKY PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 6250;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE EXTREMELY RARE, SO I NEED MUCH MORE THAN THAT.";
+			giveitem = 358; // GreaterVimstone
+			nextpage = 6;
+			closedialog = true;
+		}
+	}
+	page // 6 [2/0]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [2 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 8;
+			closedialog = true;
+		}
+	}
+	page // 7 [1/1]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 9;
+			closedialog = true;
+		}
+		choice
+		{
+			text = "LARGE, SPIKY PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 6250;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE EXTREMELY RARE, SO I NEED MUCH MORE THAN THAT.";
+			giveitem = 358; // GreaterVimstone
+			nextpage = 8;
+			closedialog = true;
+		}
+	}
+	page // 8 [1/0]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "SMALL PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 1750;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE PRETTY RARE, SO I NEED MORE THAN THAT.";
+			giveitem = 357; // LesserVimstone
+			nextpage = 10;
+			closedialog = true;
+		}
+	}
+	page // 9 [0/1]
+	{
+		name = "TEVICK";
+		dialog = "NOW, WHAT CAN I HELP YOU WITH?";
+		drop = 169;
+		link = 0;
+		choice
+		{
+			text = "LARGE, SPIKY PURPLE STONE? [1 LEFT]";
+			cost
+			{
+				item = 168;
+				amount = 6250;
+			}
+			displaycost = true;
+			yesmessage = "IF YOU INSIST, THOUGH I HAVE NO IDEA WHAT THIS THING DOES...";
+			nomessage = "SORRY, MIGHT NOT KNOW WHAT THEY DO, BUT THEY'RE EXTREMELY RARE, SO I NEED MUCH MORE THAN THAT.";
+			giveitem = 358; // GreaterVimstone
+			nextpage = 10;
+			closedialog = true;
+		}
+	}
+	page // 10 [0/0]
+	{
+		name = "TEVICK";
+		dialog = "SORRY, I HAVE NOTHING LEFT TO SELL YOU. YOU'VE CLEANED ME OUT, LADY!";
+		drop = 169;
+		link = 0;
+	}
+}
+
+// Richter
+conversation
+{
+	actor = 18;
+	page
+	{
+		name = "RICHTER";
+		panel = "M_RICHTR";
+		voice = "RIC01";
+		dialog = "Thank deus you got here. To enter the Factory you need a Key. We stole it but our agent is missing in the web of catacombs under the Order's stronghold. I have sent ten good men into those tunnels to find him, and none have returned. SOMETHING is down there!";
+		drop = 301;
+		link = 3;
+		ifitem
+		{
+			item = 335;
+		}
+		choice
+		{
+			text = "So what is it? Human or...?";
+			giveitem = 153;
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "RICHTER";
+		panel = "M_RICHTR";
+		voice = "RIC02";
+		dialog = "NOT. Definitely NOT.  Whatever it is, YOU must fight it to retrieve the key. I'll open the catacombs' entrance. When you've got it, the Factory is next to the mines. Hurry, each second counts.";
+		drop = 301;
+		link = 0;
+		choice
+		{
+			text = "SOMETHING ELSE INHUMAN, HUH? WELL THAT'S JUST GREAT...";
+			log = "LOG1029";
+			giveitem = 304;
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page
+	{
+		name = "RICHTER";
+		panel = "M_RICHTR";
+		voice = "RRTBL";
+		dialog = "You're wasting time AND lives! Move!";
+		drop = 301;
+		link = 0;
+	}
+}

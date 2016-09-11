@@ -1,0 +1,48 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+// AcolyteRed [foreman]
+conversation
+{
+	actor = 54;
+	page
+	{
+		name = "FOREMAN";
+		dialog = "WHAT ARE YOU DOING HERE?";
+		drop = 0;
+		link = 0;
+		choice
+		{
+			text = "I'M HERE FOR A ROUTINE INSPECTION.";
+			yesmessage = "ALL RIGHT, CARRY ON.";
+			nextpage = 2;
+			closedialog = true;
+		}
+	}
+}
+
+conversation
+{
+	actor = 15;
+	page
+	{
+		name = "TECHNICIAN";
+		dialog = "NOTHING TO REPORT HERE, SIR. EVERYTHING IS WORKING FINE. IF ANYTHING GOES WRONG, I'LL BE SURE TO REPORT IT.";
+		drop = 0;
+		link = 0;
+	}
+}
+
+conversation
+{
+	actor = 16;
+	page
+	{
+		name = "TECHNICIAN";
+		dialog = "SIR, THERE WAS A PROBLEM EARLIER, BUT IT WAS TAKEN CARE OF.";
+		drop = 0;
+		link = 0;
+	}
+}

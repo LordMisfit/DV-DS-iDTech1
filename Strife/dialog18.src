@@ -1,0 +1,68 @@
+// Decompiled by Universal Strife Dialog Compiler.
+
+namespace = "Strife";
+include = "SCRIPT00";
+
+//AcolyteGold
+conversation
+{
+	actor = 58;
+	page // 1
+	{
+		name = "WAREHOUSE GUARD";
+		dialog = "WHAT IS IT, SOLDIER?";
+		drop = 156;
+		link = 0;
+		choice
+		{
+			text = "JUST LOOKING AROUND. IS THAT ALRIGHT?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "YES, JUST KEEP OUT OF THE WAY.";
+			nextpage = 2;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "WAREHOUSE GUARD";
+		dialog = "THE TEMPLARS WILL BE HERE SOON TO PICK UP THEIR NEW MAULERS.  IF YOU GET IN THEIR WAY YOU'RE A DEAD MAN.";
+		drop = 156;
+		link = 0;
+		choice
+		{
+			text = "MAULERS, HUH?";
+			cost
+			{
+				item = 168;
+				amount = 0;
+			}
+			displaycost = false;
+			yesmessage = "THE TEMPLAR'S FAVORITE WEAPON.";
+			nextpage = 3;
+			closedialog = false;
+		}
+	}
+	page // 3 [Easy and Normal Difficulties]
+	{
+		name = "WAREHOUSE GUARD";
+		dialog = "THEY CAME IN EARLIER. THAT'S WHAT ALL THE SECURITY'S ABOUT.  I GOT A CHANCE TO LOOK AT THEM WHEN I LOCKED UP.  NOBODY'S SUPPOSED TO GO IN OR OUT OF THERE UNTIL THE REST OF THE PLATOON COMES TO CLAIM THEIR WEAPONS.";
+		drop = 156;
+		link = 4;
+		ifitem
+		{
+			item = 408; // IsHardSkill
+		}
+	}
+	page // 4 [Hard Difficulties]
+	{
+		name = "WAREHOUSE GUARD";
+		dialog = "THEY CAME IN EARLIER. THAT'S WHAT ALL THE SECURITY'S ABOUT.  I GOT A CHANCE TO LOOK AT THEM WHEN I LOCKED UP.  NOBODY'S SUPPOSED TO GO IN OR OUT OF THERE UNTIL THE REST OF THE PLATOON COMES TO CLAIM THEIR WEAPONS. THEY'VE EVEN SENT US AN INQUISITOR FROM THE FACTORY IN ORDER TO HELP US KEEP THEM UNDER WRAPS. I'M SURE YOU KNOW HOW DANGEROUS THEY ARE, SO STAY OUT OF THEIR WAY.";
+		drop = 156;
+		link = 0;
+	}
+}

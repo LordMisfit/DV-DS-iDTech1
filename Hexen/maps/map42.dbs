@@ -1,0 +1,46 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_HexenHexen.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	MAP42
+	{
+		
+		resources
+		{
+		}
+		
+		defaultfloortexture = "CAVE02";
+		defaultceiltexture = "CAVE02";
+		defaulttoptexture = "CAVE03";
+		defaultwalltexture = "CAVE03";
+		defaultbottomtexture = "CAVE03";
+		custombrightness = 196;
+		customfloorheight = 0;
+		customceilheight = 128;
+		overridefloortexture = false;
+		overrideceiltexture = false;
+		overridetoptexture = false;
+		overridemiddletexture = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overrideceilheight = false;
+		overridebrightness = false;
+		
+		grid
+		{
+			background = "";
+			backsource = 0;
+			backoffsetx = 0;
+			backoffsety = 0;
+			backscalex = 100;
+			backscaley = 100;
+			gridsize = 8;
+		}
+		
+	}
+	
+}
+

@@ -1,0 +1,783 @@
+// Entity's Lair
+
+namespace = "Strife";
+include = "SCRIPT00";
+	
+// AEPERRGOMR - The Programmer's Spectre
+conversation
+{
+	actor = 666; // AlienSpectre1Model
+	page // 1
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "YOU. I SUPPOSE THE FALL OF MY BRETHREN SHOULD'VE BEEN THE FIRST SIGN YOU'D SHOW UP.";
+		choice
+		{
+			text = "HUH? ANOTHER ONE OF YOU SPECTRAL BEINGS?";
+			nextpage = 2;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "NO. I AM THE GHOST OF THE BEING THAT ONCE CONTROLLED THE ONE YOU AND YOUR HUMAN ALLIES CALLED THE \"PROGRAMMER\".";
+		choice
+		{
+			text = "SO YOU WERE INDEED THE PROGRAMMER'S SPECTRE? WHY DIDN'T YOU APPEAR WHEN I FOUGHT HIM?";
+			nextpage = 3;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "HEHEHEHEH. THE PROGRAMMER WAS BY AND FAR THE MOST MANIPULATIVE AND CUNNING OF THE ORDER'S LEADERS. HE ACCEPTED MY POWERS ORIGINALLY, BUT ONCE WE FOUND WHAT CAME TO BE HIS PIECE OF THE SIGIL, HE BETRAYED ME, USING HIS NEW FOUND STRENGTH I HAD GIVEN HIM TO FORCE ME OUT, ALL THE WAY ACROSS THE LAND.";
+		choice
+		{
+			text = "SO THAT'S WHY I MET YOU AT THAT ABANDONED TEMPLE ADJACENT OF THE CATACOMBS...";
+			nextpage = 4;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "INDEED. THOUGH I INTENDED TO TAKE YOU OVER WHEN I PURGED YOUR BODY OF LIFE, I QUICKLY REALIZED WITH THREE PIECES OF THE SIGIL IN YOUR POSSESSION THAT MY FATE WAS LIKELY SEALED. STILL I COULDN'T JUST ABANDON MY MISSION.";
+		choice
+		{
+			text = "LET ME GUESS: \"THE ONE GOD MUST BE FREE!\", RIGHT?";
+			nextpage = 5;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "YES. YOU ARE A FOOL TO COME HERE. YOU MUST REALIZE IN ORDER TO \"DEFEAT\" MY MASTER, YOU MUST FIRST FREE HIM, CORRECT?";
+		choice
+		{
+			text = "SO HE IS INDEED HERE, IS HE? IF THAT IS THE CASE, THEN YES, I SUPPOSE HE'S THE SOURCE OF THE VIRUS.";
+			nextpage = 6;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "I HAVE ACCEPTED MY FATE, BUT IN SOME SICK SENSE OF HONOR, I WILL WARN YOU. MY MASTER IS FAR ABOVE ANY OF US, WAY MORE THAN THE POWER OF ALL FIVE OF US COMBINED. YOU CANNOT HOPE TO DEFEAT HIM. THE OTHERS WILL CALL MY ACTIONS BLASPHEMOUS BY TELLING YOU TO FLEE, BUT I SEE IT IN YOUR EYES, CREATURE. YOU WILL NOT RUN. YOU WILL FIGHT HIM, AND THUS YOU WILL DIE.";
+		choice
+		{
+			text = "I GUESS WE'LL HAVE TO SEE WHAT HAPPENS.";
+			nextpage = 7;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 7
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "YOU MIGHT BE A CREATURE ON A DIFFERENT LEVEL FROM THOSE FRAIL HUMANS, BUT YOU STILL HAVE A MORTAL SHELL OF YOUR OWN, CREATURE. MY MASTER CAN ONLY BE HARMED BY MEANS OF THE SIGIL, AND HE HAS BUILT UP QUITE A RESISTANCE TO IT BY NOW.";
+		choice
+		{
+			text = "\"CREATURE\"? WHY DO YOU CALL ME THAT?";
+			nextpage = 8;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 8
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "YOU MIGHT APPEAR HUMAN ON THE SURFACE, CREATURE... BUT I KNOW YOU ARE SOMETHING DIFFERENT ALTOGETHER, POSSIBLY EVEN A KIND OF \"DEMIGOD\" YOURSELF. I KNOW NOT WHAT YOU TRULY ARE, BUT I KNOW THAT YOU ARE NOT BIOLOGICALLY HUMAN.";
+		choice
+		{
+			text = "HM, WELL AT LEAST YOU'VE ACCQUIRED THE OBSERVANCY OF YOUR FORMER HOST.";
+			nextpage = 9;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 9
+	{
+		name = "GHOST OF THE PROGRAMMER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "*TCH* FLATTERY, WILL GET YOU NOWHERE, CREATURE. ANYWAYS, I BELIEVE IT IS TIME TO GO FORTH AND MEET YOUR FATE.";
+		choice
+		{
+			text = "IF YOU SAY SO, SPECTRE.";
+			nextpage = 10;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 10
+	{
+		name = "AEPERRGOMR";
+		panel = "";
+		voice = "";
+		dialog = "AEPERRGOMR. THAT IS ALL YOU NEED TO KNOW ABOUT MY NAME, LITTLE CREATURE. I HAVE NOTHING ELSE TO SAY TO YOU.";
+		choice
+		{
+			text = "FINE. FAREWELL, \"AEPERRGOMR\"...";
+			nextpage = 11;
+			displaycost = false;
+			closedialog = true;
+		}
+	}
+	page // 11
+	{
+		name = "AEPERRGOMR";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}
+
+// SOBHEPITH - The Bishop's Spectre
+conversation
+{
+	actor = 667; // AlienSpectre2Model
+	page // 1
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "SO YOU'VE COME. IT SEEMS WITH THE ARRIVAL OF MY BROTHERS, YOU WERE EXPECTED. MY \"MASTER\" HAS BEEN WAITING FOR YOUR ARRIVAL.";
+		choice
+		{
+			text = "ANOTHER ONE OF YOU SPECTRES... SO WHO WAS YOUR HOST?";
+			nextpage = 2;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "THE ORDER'S MILITARY LEADER. THE ONE THE \"ORACLE\" AND YOUR \"FRONT\" REFERRED TO AS THE \"BISHOP\".";
+		choice
+		{
+			text = "SO WHY ARE YOU HERE ANYWAYS? TRYING TO STOP ME FROM REACHING YOUR \"MASTER\"?";
+			nextpage = 3;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "AHAHAHAHAHA! \"STOP\" YOU? WHY WOULD I STOP YOU FROM FREEING MY MASTER? YOU WHO POSSESS THE COMPLETED SIGIL. DON'T YOU FEEL IT'S POWER, CREATURE!? THE SIGIL IS CAPABLE OF ALLOWING ITS' WIELDER TO RULE THE PLANET.";
+		choice
+		{
+			text = "THAT'S WHAT MACIL SAID TOO, BUT HE ALSO TURNED OUT TO HAVE BEEN DRIVEN MAD BY ONE OF YOU.";
+			nextpage = 4;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "MACIL... YES. THE ONE FAINCOLTMR POSSESSED. THE LEADER OF THE \"FRONT\", THE RAG TAG BAND OF REBELS WHO BELIEVED THEY COULD \"SAVE THE WORLD\". FACE IT, THEY'D HAVE BEEN DEAD BY NOW IF YOU HAD NOT INTERFERED... BUT... I MUST ADMIT THAT THIS IS A RATHER INTERESTING TURN OF EVENTS TOO.";
+		choice
+		{
+			text = "WHAT DO YOU MEAN BY THAT?";
+			nextpage = 5;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "OUR MASTER HAS BEEN MONITORING YOUR PROGRESS SINCE MY VERY DEFEAT, \"DEMIGODDESS\". HE KNOWS YOU ARE NOT OF THIS WORLD. HE KNOWS YOU'RE NOT EVEN OF THIS UNIVERSE. YOU MERELY CAME TO THIS WORLD BY ACCIDENT, A FREAK ACCIDENT IN TIME AND SPACE ITSELF. HE KNOWS MORE THAN I AM TELLING YOU, OR SO HE CLAIMS, BUT I'M NOT PRIVY TO THIS KNOWLEDGE. YOU WILL HAVE TO SPEAK WITH HIM, IF HE WISHES TO SPEAK BACK.";
+		choice
+		{
+			text = "SO HE AT LEAST KNOWS THAT MUCH, DOES HE?";
+			nextpage = 6;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "GHOST OF THE BISHOP'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "HE ALSO KNOWS YOU HAVE COME TO \"DEFEAT\" HIM. BUT OF COURSE YOU MUST KNOW THAT YOU'LL HAVE TO OPEN HIS CHAMBERS, WHICH IS WHAT WE'VE SOUGHT THE SIGIL OUT FOR THIS ENTIRE TIME. YOU'VE SIMPLY WALKED INTO THE DEN OF THE BEAST WITH THE MEAT IN HAND, LITTLE CREATURE.";
+		choice
+		{
+			text = "YOU SEEM CONFIDENT ENOUGH IN YOUR MASTER, SPECTRE.";
+			nextpage = 7;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 7
+	{
+		name = "SOBHEPITH";
+		panel = "";
+		voice = "";
+		dialog = "SOBHEPITH. THAT IS MY \"NAME\" AS YOU HUMAN TYPES WOULD CALL ME. AND YES MY MASTER POSSESSES FAR GREATER POWERS THAN I OR ANY OF MY FOUR BROTHERS AND THE ENTIRE ORDER COMBINED. YOU CANNOT WIN. HOWEVER MY MASTER KNOWS YOU ARE ONE OF THOSE TYPES WHO WON'T LEAVE A JOB LIKE THIS \"UNFINISHED\". YOU'LL ENTER THAT CHAMBER AND FACE HIM, BUT YOU WILL DIE. YOUR FATE IS ALREADY SEALED, LITTLE CREATURE.";
+		choice
+		{
+			text = "\"FATE\" IS MEANINGLESS IN THE FACE OF A \"DEMIGODDESS\" LIKE ME. YOUR MASTER SHOULD ALREADY KNOW THAT, THOUGH.";
+			nextpage = 8;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 8
+	{
+		name = "SOBHEPITH";
+		panel = "";
+		voice = "";
+		dialog = "THEN WHAT IS THAT HUMAN SAYING? \"THE IRRESISTIBLE FORCE MEETS THE IMMOVABLE OBJECT\", YES? OUR MASTER IS NO MORE BOUND BY FATE THAN YOU CLAIM TO BE, LITTLE CREATURE. WE SHALL SEE WHO REALLY DEFIES FATE.";
+		choice
+		{
+			text = "ENOUGH OF THIS, IT'S TIME FOR YOUR MASTER TO DRAW HIS FINAL BREATH, SOBHEPITH.";
+			nextpage = 9;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 9
+	{
+		name = "SOBHEPITH";
+		panel = "";
+		voice = "";
+		dialog = "THERE IS NOTHING ELSE TO SAY TO YOU AT THIS POINT. GO FORTH AND PROVE YOUR WORDS, OR DIE TRYING, LITTLE CREATURE...";
+		choice
+		{
+			text = "OH I WILL, ALRIGHT!";
+			nextpage = 10;
+			displaycost = false;
+			closedialog = true;
+		}
+	}
+	page // 11
+	{
+		name = "SOBHEPITH";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}
+
+// AETCHELOR - The Oracle's Spectre
+conversation
+{
+	actor = 668; // AlienSpectre3Model
+	page // 1
+	{
+		name = "GHOST OF THE ORACLE'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "WHAT IS THE WISDOM YOU SEEK, SIMPLE ONE? NO, \"SIMPLE ONE\" WOULD BE A MISTAKE. WHAT IS THE WISDOM YOU SEEK, FIRST DAUGHTER OF EMPYREA?";
+		choice
+		{
+			text = "WAIT, YOU KNOW ABOUT MY MOTHER...?";
+			nextpage = 2;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "GHOST OF THE ORACLE'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "YES. I ALSO NOW KNOW. YOU ARE FLORA BRISCOLETTI, YOU ARE THE BLOOD DAUGHTER OF THE GODBIRD EMPYREA, ALSO KNOW AS THE HIGH-QUEEN OF THE ELOHIMIAR. YOU WERE HOWEVER RAISED BY HUMANS ON THE WORLD OF ZENDARIA, IN A UNIVERSE DISTANT AND SEPERATED FROM THAT OF OUR OWN. YOUR POWER, YOUR FORMIDIBLITY DURING OUR BATTLE, MAKES MUCH MORE SENSE NOW.";
+		choice
+		{
+			text = "HM, YOU... YOU'RE THE ORACLE, AREN'T YOU?";
+			nextpage = 3;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "YOU AND THE HUMANS OF EARTH KNOW ME AS SUCH, BUT MY TRUE NAME IS \"AETCHELOR\". THE ORACLE WAS A FORM I WAS FORCED TO TAKE TO TRULY COMMUNICATE WITH HUMANKIND ON THIS PLANET. IN DOING SO, I BECAME COMPROMISED. I BEGAN TO FEEL SOME SYMPATHY FOR HUMANS THAT I DID NOT BEFORE. I HAD MADE A MISTAKE. LONG BEFORE I EVER MET YOU, FLORA.";
+		choice
+		{
+			text = "SO, BLACKBIRD WASN'T WRONG WHEN SHE CALLED YOU THAT.";
+			nextpage = 4;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "SHE WAS NOT. AND MY BRETHREN BEGAN TO REALIZE I WAS GAINING SOME COMPASSION FOR THE RACE WE CAME HERE TO REMOVE, AND THOSE WHO HELD THE PIECES TO OUR MASTER'S KEY. THE SIGIL OF THE ONE GOD. I SEE YOU HAVE MANAGED TO COMPLETE IT.";
+		choice
+		{
+			text = "YES, I HAVE COME HERE TO PUT AN END TO THIS.";
+			nextpage = 5;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "PERHAPS YOU WILL. BUT I KNOW OF YOU AND YOUR MOTHER. YOU ARE BOTH IMMUNE TO THE RIGORS OF FATE. OUR MASTER, TEIYTENTH, HAS CLAIMED THAT IT WAS JUST LIES THAT SHE WAS IMMUNE TO IT, BUT THAT IS BECAUSE HE KNOWS SHE WAS THE ONE WHO SEALED HIM AWAY IN THE COCCOON IN THE ROOM AHEAD OF US. HE SPREADS SLANDER ABOUT YOUR MOTHER, AND HIS WORDS ABOUT YOU BEING A WEAK, SIMPLE FOOL, WERE WRONG.";
+		choice
+		{
+			text = "SO MY MOTHER SEALED YOUR MASTER HERE, DID SHE?";
+			nextpage = 6;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "EONS AGO, WE HAD LEFT THIS PLANET IN SEARCH OF MORE WORDS TO COLONIZE, TO TAKE FOR OUR OWN. EARTH WAS THE WORLD OF OUR SPAWNING THOUGH. THE LIFE OF THIS WORLD WAS SUBJECTED TO HORRIBLE EXPERIMENTS AND UNQUESTIONABLE HORROR. YOUR MOTHER, THOUGH STILL IN HER EXILE FROM AETHERIUS, STILL TOOK IT UPON HERSELF TO STOP US, AND DEFEATING OUR MASTER'S CORPORAL FORM.";
+		choice
+		{
+			text = "SO MOTHER AND HIM FOUGHT LONG AGO?";
+			nextpage = 7;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 7
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "THOUGH HIS PHYSICAL FORM WAS DESTROYED, HIS SPECTRAL ESSENCE SURVIVED. REALIZING THIS IMMEDIATELY AND NOT WANTING TO RISK HIS RECESSITATION, SHE SEALED OUR MASTER'S LIFEFORCE INSIDE A CURSED COCCOON, THE ONE IN THE ROOM NEARBY. HOWEVER IN HIS FINAL MOMENTS OF FREEDOM, HE CREATED A DEVICE THAT COULD EVENTUALLY BE USED TO UNSEAL HIS NEW PRISON.";
+		choice
+		{
+			text = "IT'S THE SIGIL ISN'T IT?";
+			nextpage = 8;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 8
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "CORRECT. BUT YOUR MOTHER DISCOVERED IT, BUT BEING UNABLE TO FULLY DESTROY IT, BEING IT WAS BOUND TO HIS SEALED FORM, SHE HAD NO CHOICE BUT TO BREAK IT INTO SEVERAL PIECES, SENDING THEM BACK TO EARTH, OUR HOME WORLD, AND THEN SPLIT ACROSS THE PLANET TO FIVE DIFFERENT CORNERS.";
+		choice
+		{
+			text = "SO BASICALLY BY BEING HERE, I'M ABOUT TO FREE HIM, AREN'T I?";
+			nextpage = 9;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 9
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "YES, BUT WHAT MY BROTHERS DO NOT KNOW IS THAT NOT ONLY IS THAT SIGIL THE KEY TO HIS FREEDOM, IT IS THE KEY TO HIS ULTIMATE DESTRUCTION AS WELL. HE WILL EMERGE AS SPECTRAL AS HE WAS WHEN SEALED. IF HE CAN BE DESTROYED IN HIS PRESENT STATE, TEIYTENTH WILL FOREVER CEASE TO EXIST. BUT BEWARE, HE HAS EXPRESSED INTEREST IN YOU. HE KNOWS YOU ARE EMPYREA'S DAUGHTER, AND HE BELIEVES TO POSSESS YOU WOULD BE THE ULTIMATE REVENGE AGAINST YOUR MOTHER.";
+		choice
+		{
+			text = "OH, IT FIGURES, DOESN'T IT?";
+			nextpage = 10;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 10
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "YOU MIGHT HAVE ALSO NOTICED, WHILE YOU STILL HAVE POSSESSION OF YOUR MOTHER'S SCEPTRE, YOU HAVE LIKELY NOT BEEN ABLE TO COMMUNICATE WITH HER. THAT OTHER FRONT WOMAN, BLACKBIRD HAS BEEN THERE IN HER PLACE INSTEAD. THIS IS BECAUSE YOUR MOTHER IS LIKELY UNABLE TO REACH THROUGH TO COMMUNICATE TO YOU IN THIS UNIVERSE DUE TO TEIYTENTH'S POWERS. HE DIDN'T WANT YOU TO LEARN THE TRUTH ABOUT THE CONFLICT BETWEEN THEM AND WONDER INTO HIS GRIP FOREVER UNAWARE AND UNABLE TO SPEAK TO HER AGAIN.";
+		choice
+		{
+			text = "WAIT, SO WHY ARE YOU BOTHERING TO TELL ME THIS?! ISN'T HE YOUR MASTER, AND AREN'T I YOUR ENEMY?";
+			nextpage = 11;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 11
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "I KNOW LITTLE OF THE ELOHIMIAR PERSONALLY OUTSIDE OF THE CONFLICT BETWEEN TEIYTENTH AND EMPYREA, BUT I DO KNOW THIS. YOU LIVE AND BREATH LIKE A HUMAN IN SPITE OF NOT ACTUALLY BEING ONE. YOU HAVE ALWAYS HAD AN AFFINITY FOR HUMANITY, FLORA. WHILE YOU AND I WERE ONCE ENEMIES, IT WAS MOSTLY DUE TO CIRCUMSTANCE I HAD TO USE YOU TO TAKE OUT MY BROTHERS. I MIGHT HAVE BETRAYED YOU IN THE END HAD YOU KILLED MACIL AND THE LOREMASTER BEFORE ME, BUT THAT'S A RESULT YOU PREVENTED FROM EVER COMING TO PASS...";
+		choice
+		{
+			text = "STILL, WHY BOTHER INFORMING ME OF ANY OF THIS?";
+			nextpage = 12;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 12
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "DO YOU NOT NOTICE THAT I AM SEPERATED FROM MY BROTHERS IN THIS TINY CORRIDOR? I DO NOT ROAM AMONGST THEM FOR ONE REAL REASON. I AM CONSIDERED A TRAITOR TO THEM, A TRAITOR TO TEIYTENTH. EVEN IF I HAVE NO REAL LOVE FOR YOU, OR EVEN HUMANITY AS A WHOLE, HE HAS BEEN ALLOWED TO RUN RAMPANT IN ONE FORM OR ANOTHER FOR TOO LONG. IT'S TIME FOR HIS REIGN TO COME TO AN END. EVEN IF I GET SNUFFED OUT OF EXISTANCE COMPLETELY AFTER THIS DISCUSSION. YOU MUST KNOW THE TRUTH, AND BE READY FOR ONE OF THE BIGGEST BATTLES OF YOUR LIFE.";
+		choice
+		{
+			text = "HAH, PERHAPS BLACKBIRD WAS MORE CORRECT ABOUT YOU ON HER FIRST GUESS THAN WE REALIZED.";
+			nextpage = 13;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 13
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "PERHAPS SHE INDEED WAS. I DON'T UNDERSTAND WHY, BUT HUMANITY IS INFECTIOUS, EVEN IF THEY MIGHT ONE DAY TURN OUT TO BE EVEN MORE MONSTROUS THAN WE COULD EVER BE. I SUPPOSE FATE WILL DECIDE THAT WON'T IT? OH YES, THAT'S RIGHT. YOU CERTAINLY DON'T ABIDE TO FATE, DO YOU FLORA?";
+		choice
+		{
+			text = "NO, I NEVER DID. NOT SINCE I LEARNED ABOUT MY TRUE PAST, MY TRUE SELF.";
+			nextpage = 14;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 14
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "THIS IS WHY TEIYTENTH WILL ONE DAY FALL. FATE IS NOT TRULY IN STONE. TIME MIGHT BE A RIVER, BUT EVEN A RIVER CAN BE DIVERTED. EVEN AN OCEAN MAY. NOW, IT IS TIME FLORA. YOU MUST GO FORTH AND CHANGE OUR FATES, AND CIRCUMVENT THE INTENDED FATE OF THE PLANET ITSELF.";
+		choice
+		{
+			text = "I SHALL DO THAT. ALSO, AETCHELOR... THANK YOU.";
+			nextpage = 15;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 15
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "THANK ME NOT. AGAIN, I DO NOT DO THIS FOR YOU, BUT BECAUSE IT IS TIME FOR THE RIVER OF TIME TO FLOW ELSEWHERE. THE RIVER CANNOT STAGNATE, AND TEIYTENTH HAS BROUGHT MORE STAGNATION THAN WE CAN HANDLE. OUR KINDS MIGHT NEVER BE FRIENDS, BUT WE DON'T NECESSARILY NEED TO BE ENEMIES.";
+		choice
+		{
+			text = "I UNDERSTAND. I WILL DESTROY TEIYTENTH, WHATEVER IT TAKES.";
+			nextpage = 16;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 16
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "NOW GO FLORA. DO NOT BODE WORRY OF ME. ONCE TEIYTENTH IS DESTROYED, I AND MY BROTHERS TOO WILL VANISH FROM THIS WORLD, AND EMERGE ON THE \"OTHER SIDE\". THIS IS AS NECESSARY FOR US AS IT IS FOR HUMANITY. NOW GO...";
+		choice
+		{
+			text = "RIGHT.";
+			nextpage = 17;
+			displaycost = false;
+			closedialog = true;
+		}
+	}
+	page // 17
+	{
+		name = "AETCHELOR";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}
+
+// FAINCOLTMR - Macil's Spectre
+conversation
+{
+	actor = 669; // AlienSpectre4Model
+	page // 1
+	{
+		name = "GHOST OF MACIL'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "AHAHAHAHAHAHA!! SO YOU'VE COME TO FINISH THE \"JOB\", FOR YOUR \"FRONT\" MASTER, LITTLE GIRL!? YOU'VE COME TO DESTROY OUR MASTER, HAVE YOU?!";
+		choice
+		{
+			text = "\"MASTER\"? I'M NOT ANYONE'S PUPPET, NOT THE FRONT'S, NOT THE ORDER'S.";
+			nextpage = 2;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "GHOST OF MACIL'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "IS THAT SO? YOU WERE SO WILLING TO HELP MACIL AND HIS RAG-TAG LITTLE GROUP OF DEGENERATES STOP THE ORDER AND RETRIEVE THE SIGIL, WEREN'T YOU?!";
+		choice
+		{
+			text = "OH, NOW I GET IT. MACIL WAS YOUR HOST, WASN'T HE, SPECTRE?";
+			nextpage = 3;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "CORRECT, LITTLE SLAVE. YOU MIGHT KNOW ME AS \"FAINCOLTMR\" AMONGST MY BRETHREN. I CONTROLLED THAT FOOL MACIL INTO PUTTING THE FRONT AGAINST THE ORDER. MY BROTHER SOBHEPITH CONTROLLED ONE OF THE ORDER'S GENERALS, THE ONE YOU KNOW AS THE \"BISHOP\" AND WE ACTED THINGS OUT TO BE A SORT OF VENDETTA BETWEEN THE TWO SIDES. A SIBLING RIVALRY YOU COULD SAY.";
+		choice
+		{
+			text = "NO DOUBT YOUR KIND SAW THIS AS A MERE GAME, DIDN'T YOU?!";
+			nextpage = 4;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "NOT. DEFINATELY NOT. SURE WE HAD SOME GLEEFUL FUN STRINGING AROUND YOU AND YOUR HUMAN FRIENDS LIKE PUPPETS, BUT THERE WAS DEFINATELY THE GOAL OF RELEASING OUR MASTER, \"TEIYTENTH\", OR \"THE ONE GOD\" AS THOSE ORDER FOOLS CALLED HIM.";
+		choice
+		{
+			text = "\"TEIYTENTH\"? SO HE'S THE ONE YOU WERE SO OBSESSED WITH FREEING? WHY?";
+			nextpage = 5;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "OUR MASTER WILL ENSURE THE FINAL ANNHILATION OF HUMANKIND, AND FREE THIS WORLD FROM THEIR SCUMFUL RULE! THIS WORLD WAS NEVER MEANT FOR THEM TO RULE TO BEGIN WITH! THE SCALES OF FATE HAVE BEEN FOR TOO LONG IN THEIR FAVOR, AND NOW IT IS TIME FOR US TO RECLAIM THE WORLD WE LEFT BEHIND EONS AGO!";
+		choice
+		{
+			text = "THEN WHY DID YOU EVEN LEAVE THE PLANET TO ALLOW HUMANS TO RISE TO POWER IN THE FIRST PLACE?";
+			nextpage = 6;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "YOUR FEEBLE MIND WOULD NEVER UNDERSTAND HOW WE PRECEIVE THE UNIVERSE, LITTLE GIRL! THERE ARE FORCES AT WORK, FORCES EVEN YOU AND THAT NOSY MOTHER OF YOURS COULD EVER IMAGINE.";
+		choice
+		{
+			text = "WAIT, EXCUSE ME? WHAT DOES MY MOTHER HAVE TO DO WITH ANYTHING?";
+			nextpage = 7;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 7
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "ONLY MASTER TEIYTENTH TRULY KNOWS WHAT HAPPENED IN THOSE AGES PAST! WE MERELY FOLLOW HIS COMMAND! YOU WILL HAVE TO HOPE HE DECIDES TO GRACE YOU WITH AN ANSWER BEFORE YOUR SWIFT DEATH, INTERLOPER.";
+		choice
+		{
+			text = "SORRY, BUT TEIYTENTH IS THE ONE WHO WILL DIE IF THIS KEEPS UP.";
+			nextpage = 8;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 8
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "I DOUBT THAT, BUT I ADMIT, IT WILL BE AN INTERESTING BATTLE TO WATCH. DON'T DISAPPOINT US, LITTLE GIRL. YOUR FATE AWAITS, AND SOON, SO WILL THAT OF YOUR MOTHER FOR HER INTERFERENCE IN OUR AFFAIRS!";
+		choice
+		{
+			text = "HMPH, WHATEVER YOU SAY. IT'S TIME TO END THIS...";
+			nextpage = 9;
+			displaycost = false;
+			closedialog = true;
+		}
+	}
+	page // 9
+	{
+		name = "FAINCOLTMR";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}
+
+// LASMERETOR - The Loremaster's Spectre
+conversation
+{
+	actor = 670; // AlienSpectre5Model
+	page // 1
+	{
+		name = "GHOST OF THE LOREMASTER'S SPECTRE";
+		panel = "";
+		voice = "";
+		dialog = "AS I PREDICTED IN MY DEATH THROES, YOU HAVE ARRIVED TO MEET MY MASTER. TEIYTENTH, THE ONE TRUE LIGHT. \"THE ONE GOD\" HIMSELF. HE AWAITS YOU. DO NOT PASS UP THIS OPPORTUNITY. JOIN HIM, COMPLETE THE UNION OF YOUR BODY, THE SIGIL, AND HIS LIGHT, AND BECOME FULL!";
+		choice
+		{
+			text = "WHAT ARE YOU TALKING ABOUT, SPECTRE? JOIN YOUR MASTER?! YOU MUST REALLY BE DEVOTED TO HIM...";
+			nextpage = 2;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 2
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "CALL ME \"LASMERETOR\", STRONG ONE. I WAS THE ONE WHO POSSESSED THE ORDER'S LORE MASTER. I WAS THE ONE WHO DEVOTED THE TIME AND THE EFFORT TO BUILDING THE FUNDAMENTAL BLOCKS OF THE ORDER AND IT'S POWER. THE OTHERS HAD THEIR ROLES, BUT WITHOUT MY GUIDENCE, THERE WOULD NOT BE OTHERS FOR MY BROTHERS TO POSSESS, TO USE TO UNITE THE SIGIL OF THE ONE LIGHT!";
+		choice
+		{
+			text = "WHY DOES YOUR MASTER EVEN NEED THE SIGIL? WHY IS HE UNABLE TO COME OUT OF THIS SHIP HIMSELF UNTIL NOW?";
+			nextpage = 3;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 3
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "MASTER TEIYTENTH HAS NOT FULLY EXPLAINED IT EVEN TO US, BUT EONS AGO, AFTER HAVING LEFT THIS WORLD FOR OTHERS, A SO-CALLED \"DIVINE BEING\" FACED AGAINST US. A SO CALLED \"GODDESS\" WHO CAST OUR MASTER INTO A COCCOON FROM WHICH HE WOULD REMAIN TRAPPED FOR EONS LONGER. HOWEVER IN THIS PROCESS, A \"KEY\" OF GREAT POWER WAS CREATED BY OUR MASTER IN HIS FINAL ACT OF FREEDOM, A KEY THAT WOULD BE HIS \"KEY\" TO HIS EVENTUAL ESCAPE.";
+		choice
+		{
+			text = "THE SIGIL IS THE \"KEY\" YOU SPEAK OF, ISN'T IT?";
+			nextpage = 4;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 4
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "INDEED. THE BLASPHEMING \"GODDESS\" QUICKLY FOUND THE KEY, BUT SHE COULD NOT DESTROY IT WITH HER INFERIOR \"POWER\" SO THE NEXT BEST THING SHE COULD DO WAS SHATTER IT INTO MULTIPLE PIECES. FIVE PIECES. SHE THEN SCATTERED THEM TO ONE PLANET, THE PLANET OF OUR BIRTH, THE PLANET EARTH. WE HAD TO RETURN HERE IN ORDER TO SEEK THE PIECES OF THE KEY TO OUR MASTER'S FREEDOM. SHE ENTRUSTED THE SIGIL'S PIECES TO MANY TRIBES OF HUMANS THROUGHOUT THE WORLD, CAUSING THEM TO BECOME TRULY SCATTERED.";
+		choice
+		{
+			text = "SO THAT'S WHY YOU HAD TO USE THE ORDER AS YOUR PAWNS?";
+			nextpage = 5;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 5
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "PAWNS? THEY THEMSELVES BELIEVED EACH OTHER UNFIT TO RULE EARTH FOR THEMSELVES. WE DID NOT SO MUCH CONTROL THEM, AS GIVE THEM THE GUIDENCE THEY NEEDED TO COMPLETE THEIR DESTRUCTION.";
+		choice
+		{
+			text = "IF THAT'S SO TRUE, THEN WHY DID \"THE FRONT\" COME TO EXIST THEN, SPECTRE?";
+			nextpage = 6;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 6
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "BECAUSE UNLIKE THE ORDER, SOME HUMANS DID NOT BELIEVE IN THE RIVER OF TIME, THE RIVER OF FATE. THEY WOULD RATHER POINTLESSLY FIGHT THEIR OWN DESTRUCTION. BUT THEY ARE NOT FIT, THEY ARE NOT WELL. THEY DO NOT REALIZE THAT IN DEATH WILL COME THEIR FINAL SALVATION.";
+		choice
+		{
+			text = "FATE IS NOTHING MORE TO ME THAN ANOTHER WORD, LASMERETOR.";
+			nextpage = 7;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 7
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "INTERESTING. MASTER TEIYTENTH HAS MENTIONED THAT THE \"GODDESS\" WHO SEALED HIM AWAY HERE HAD SIMILAR OPINIONS. BUT THE MASTER IS ON THE CUSP OF HIS RETURN, ALL THANKS TO YOU OF ALL PEOPLE. IF YOU DO NOT BELIEVE IN FATE, DO NOT COME BACK GROVELING TO US WHEN OUR MASTER GRINDS YOU OUT THROUGH THE DUST OF THIS PLANET!";
+		choice
+		{
+			text = "EITHER WAY, THIS CONVERSATION AT LEAST SHINED SOME LIGHT ON ALL OF THIS.";
+			nextpage = 8;
+			displaycost = false;
+			closedialog = false;
+		}
+	}
+	page // 8
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "OF COURSE IT HAS. MASTER TEIYTENTH IS THE ONE LIGHT, THE TRUE GOD OF ALL THE UNIVERSE. YOU WOULD DO WELL TO CONSIDER MY OFFER TO JOIN HIS POWER WITH YOURS. YOU COULD BECOME THE NEW RULER OF NOT JUST THIS UNIVERSE, BUT POTENTIALLY THE WHOLE MULTIVERSE ITSELF! WOULDN'T THAT TICKLE YOUR FANCY?";
+		choice
+		{
+			text = "WHATEVER YOU SAY. I'M OUT OF HERE...";
+			nextpage = 9;
+			displaycost = false;
+			closedialog = true;
+		}
+	}
+	page // 9
+	{
+		name = "LASMERETOR";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}

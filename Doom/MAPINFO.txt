@@ -4,8 +4,9 @@ gameinfo
 {
  InfoPage = "HELP1"
  AddInfoPage = "GENHELP", "STATHELP", "FLORA-1", "FLORA-2", "FLORA-3"
- CreditPage = "TITLEPI1"
- AddCreditPage = "TITLEPI2", "CREDIT"
+ TitlePage = "TITLEPIC"
+ CreditPage = "TITLEPI0"
+ AddCreditPage = "TITLEPI1", "TITLEPI2", "CREDIT"
  borderflat = "FIGHT1"
  drawreadthis = true
  titletime = 10

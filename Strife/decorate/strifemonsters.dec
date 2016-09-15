@@ -3560,7 +3560,6 @@ ACTOR DarkInquisitor : Inquisitor 27406
   +MISSILEMORE
   +MISSILEEVENMORE
   +DROPOFF
-  Damagefactor "EMP", 0.5
   Damagefactor "Disintegrate", 0.25
   DamageFactor "Fire", 0.15
   Damagefactor "Ice", 0

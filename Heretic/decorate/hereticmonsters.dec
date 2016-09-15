@@ -1,5 +1,25 @@
 // Heretic Monsters
 
+// EggFX
+ACTOR EggFXNew : EggFX replaces EggFX
+{
+  Radius 8
+  Height 8
+  Speed 18
+  MorphProjectile.PlayerClass "ChickenPlayer"
+  MorphProjectile.MonsterClass "Chicken"
+  MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE
+  States
+  {
+  Spawn:
+    EGGM ABCDE 4
+    Loop
+  Death:
+    FX01 FFGH 3 Bright
+    Stop
+  }
+}
+
 ACTOR ChickenNew : Chicken replaces Chicken
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel;

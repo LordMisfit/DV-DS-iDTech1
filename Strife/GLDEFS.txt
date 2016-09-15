@@ -1,0 +1,413 @@
+Object DarkMatterBall
+{	Frame DMGB { Light DarkMatterLight }	}
+Object ShadowVaporSpawner
+{
+	Frame PLAYA	{ Light DarkMatterLightExp2 }
+	Frame PLAYB	{ Light DarkMatterLightExp1 }
+	Frame PLAYC	{ Light DarkMatterLightExp2 }
+	Frame PLAYD	{ Light DarkMatterLightExp3 }
+	Frame PLAYE	{ Light DarkMatterLightExp4 }
+	Frame PLAYF	{ Light DarkMatterLightExp5 }
+}
+
+pulselight DarkMatterLight 
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 70
+    secondarySize 90
+    interval 0.7
+    Subtractive 90
+}
+
+flickerlight DarkMatterLightExp1 
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 100
+    secondarysize 110
+    Subtractive 110
+    chance 0.4
+}
+flickerlight DarkMatterLightExp2
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 85
+    secondarysize 95
+    Subtractive 100
+    chance 0.4
+}
+flickerlight DarkMatterLightExp3
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 70
+    secondarysize 80
+    Subtractive 90
+    chance 0.4
+}
+flickerlight DarkMatterLightExp4
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 55
+    secondarysize 65
+    Subtractive 80
+    chance 0.4
+}
+flickerlight DarkMatterLightExp5
+{
+    offset 0 0 0
+    color 0.2 0.0 0.6
+    size 40
+    secondarysize 50
+    Subtractive 70
+    chance 0.4
+}
+
+pointlight EMPBall
+{
+    color 1.0 1.0 1.0
+    size 24
+}
+
+Object EMPGrenade
+{
+	Frame TEFX { Light EMPBall }
+}
+
+pointlight TeslaExplode1
+{
+    color 0.75 0.75 1.0
+    size 32
+}
+
+pointlight TeslaExplode2
+{
+    color 0.75 0.75 1.0
+    size 40
+}
+
+pointlight TeslaExplode3
+{
+    color 0.75 0.75 1.0
+    size 48
+}
+
+pointlight TeslaExplode4
+{
+    color 0.75 0.75 1.0
+    size 56
+}
+
+pointlight TeslaExplode5
+{
+    color 0.75 0.75 1.0
+    size 64
+}
+
+pointlight TeslaExplode6
+{
+    color 0.75 0.75 1.0
+    size 72
+}
+
+pointlight TeslaExplode7
+{
+    color 0.75 0.75 1.0
+    size 80
+}
+
+pointlight TeslaExplode8
+{
+    color 0.75 0.75 1.0
+    size 88
+}
+
+pointlight TeslaExplode9
+{
+    color 0.75 0.75 1.0
+    size 96
+}
+
+pointlight TeslaExplode10
+{
+    color 0.75 0.75 1.0
+    size 104
+}
+
+pointlight TeslaExplode11
+{
+    color 0.75 0.75 1.0
+    size 112
+}
+
+pointlight TeslaExplode12
+{
+    color 0.75 0.75 1.0
+    size 120
+}
+
+pointlight TeslaExplode13
+{
+    color 0.75 0.75 1.0
+    size 128
+}
+
+pointlight TeslaExplode14
+{
+    color 0.75 0.75 1.0
+    size 136
+}
+
+pointlight TeslaExplode15
+{
+    color 0.75 0.75 1.0
+    size 144
+}
+
+pointlight TeslaExplode16
+{
+    color 0.75 0.75 1.0
+    size 152
+}
+
+Object TeslaShotAltExplode1
+{
+	Frame TXP1 { Light TeslaExplode1 }
+}
+
+Object TeslaShotAltExplode2
+{
+	Frame TXP1 { Light TeslaExplode2 }
+}
+
+Object TeslaShotAltExplode3
+{
+	Frame TXP1 { Light TeslaExplode3 }
+}
+
+Object TeslaShotAltExplode4
+{
+	Frame TXP1 { Light TeslaExplode4 }
+}
+
+Object TeslaShotAltExplode5
+{
+	Frame TXP1 { Light TeslaExplode5 }
+}
+
+Object TeslaShotAltExplode6
+{
+	Frame TXP1 { Light TeslaExplode6 }
+}
+
+Object TeslaShotAltExplode7
+{
+	Frame TXP1 { Light TeslaExplode7 }
+}
+
+Object TeslaShotAltExplode8
+{
+	Frame TXP1 { Light TeslaExplode8 }
+}
+
+Object TeslaShotAltExplode9
+{
+	Frame TXP1 { Light TeslaExplode9 }
+}
+
+Object TeslaShotAltExplode10
+{
+	Frame TXP1 { Light TeslaExplode10 }
+}
+
+Object TeslaShotAltExplode11
+{
+	Frame TXP1 { Light TeslaExplode11 }
+}
+
+Object TeslaShotAltExplode12
+{
+	Frame TXP1 { Light TeslaExplode12 }
+}
+
+Object TeslaShotAltExplode13
+{
+	Frame TXP1 { Light TeslaExplode13 }
+}
+
+Object TeslaShotAltExplode14
+{
+	Frame TXP1 { Light TeslaExplode14 }
+}
+
+Object TeslaShotAltExplode15
+{
+	Frame TXP1 { Light TeslaExplode15 }
+}
+
+Object TeslaShotAltExplode16
+{
+	Frame TXP1 { Light TeslaExplode16 }
+}
+
+Pointlight SmithExplode1
+{
+Color 1.0 0.8 0.0
+Size 56
+}
+
+Pointlight SmithExplode2
+{
+Color 1.0 0.8 0.0
+Size 64
+}
+
+Pointlight SmithExplode3
+{
+Color 1.0 0.8 0.0
+Size 72
+Offset 0 8 0
+}
+
+Pointlight SmithExplode4
+{
+Color 1.0 0.8 0.0
+Size 80
+Offset 0 16 0
+}
+
+Pointlight SmithExplode5
+{
+Color 1.0 0.8 0.0
+Size 88
+Offset 0 24 0
+}
+
+Pointlight SmithExplode6
+{
+Color 1.0 0.8 0.0
+Size 96
+Offset 0 32 0
+}
+
+Pointlight SmithExplode7
+{
+Color 1.0 0.8 0.0
+Size 104
+Offset 0 40 0
+}
+
+Pointlight SmithExplode8
+{
+Color 1.0 0.8 0.0
+Size 112
+Offset 0 48 0
+}
+
+Pointlight SmithExplode9
+{
+Color 1.0 0.8 0.0
+Size 128
+Offset 0 48 0
+}
+
+Pointlight SmithExplode10
+{
+Color 1.0 0.8 0.0
+Size 136
+Offset 0 48 0
+}
+
+Pointlight SmithExplode11
+{
+Color 1.0 0.8 0.0
+Size 96
+Offset 0 48 0
+}
+
+Pointlight SmithExplode12
+{
+Color 1.0 0.8 0.0
+Size 80
+Offset 0 48 0
+}
+
+Pointlight SmithExplode13
+{
+Color 1.0 0.8 0.0
+Size 64
+Offset 0 48 0
+}
+
+Pointlight SmithExplode14
+{
+Color 1.0 0.8 0.0
+Size 56
+Offset 0 48 0
+}
+
+
+Object DarkInquisitorBigExplosion
+{
+Frame GRNEA { Light SmithExplode1 }
+Frame GRNEB { Light SmithExplode2 }
+Frame GRNEC { Light SmithExplode3 }
+Frame GRNED { Light SmithExplode4 }
+Frame GRNEE { Light SmithExplode5 }
+Frame GRNEF { Light SmithExplode6 }
+Frame GRNEG { Light SmithExplode7 }
+Frame GRNEH { Light SmithExplode8 }
+Frame GRNEI { Light SmithExplode9 }
+Frame GRNEJ { Light SmithExplode10 }
+Frame GRNEK { Light SmithExplode11 }
+Frame GRNEL { Light SmithExplode12 }
+Frame GRNEM { Light SmithExplode13 }
+Frame GRNEN { Light SmithExplode14 }
+}
+
+Pointlight DeathExplode1
+{
+Color 1.0 0.8 0.0
+Size 128
+Offset 0 48 0
+}
+
+Pointlight DeathExplode2
+{
+Color 1.0 0.8 0.0
+Size 96
+Offset 0 48 0
+}
+
+Pointlight DeathExplode3
+{
+Color 1.0 0.8 0.0
+Size 80
+Offset 0 48 0
+}
+
+Pointlight DeathExplode4
+{
+Color 1.0 0.8 0.0
+Size 64
+Offset 0 48 0
+}
+
+Pointlight DeathExplode5
+{
+Color 1.0 0.8 0.0
+Size 56
+Offset 0 48 0
+}
+
+Object InquisitorDeathExplosion
+{
+Frame R045M { Light DeathExplode1 }
+Frame R045N { Light DeathExplode2 }
+Frame R045O { Light DeathExplode3 }
+Frame R045P { Light DeathExplode4 }
+Frame R045Q { Light DeathExplode5 }
+}

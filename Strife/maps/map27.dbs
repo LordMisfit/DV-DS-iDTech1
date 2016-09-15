@@ -13,7 +13,6 @@ maps
 		resources
 		{
 		}
-		
 		defaulttoptexture = "IRON04";
 		overridemiddletexture = false;
 		
@@ -22,12 +21,11 @@ maps
 			backoffsety = 0;
 			backoffsetx = 0;
 			backscalex = 100;
-			gridsize = 16;
+			gridsize = 32;
 			background = "";
 			backsource = 0;
 			backscaley = 100;
 		}
-		
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
@@ -40,7 +38,9 @@ maps
 		overrideceiltexture = false;
 		defaultwalltexture = "IRON04";
 		defaultbottomtexture = "IRON04";
+		uselongtexturenames = false;
+		viewpositionx = 2346.309f;
+		viewpositiony = 764.8061f;
+		viewscale = 0.8866504f;
 	}
-	
 }
-

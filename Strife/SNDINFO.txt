@@ -21,3 +21,33 @@ stalker/pain		dsstkatk
 stalker/death		dsstkdth
 stalker/active		dsstksit
 stalker/walk		dsstkwlk
+
+// Dark Inquisitor
+
+darkinquisitor/sight inqalert
+darkinquisitor/pain inqpain
+darkinquisitor/death inqdeath
+darkinquisitor/empfire inqempfi
+darkinquisitor/empdie inqempex
+darkinquisitor/bigdeathexpl inqbigxp
+darkinquisitor/deathexplosion inqdthxp
+darkinquisitor/step step2
+darkinquisitor/darkmatterdie inqdrkxp
+darkinquisitor/flight inqfly
+
+inqv1 inqact1
+inqv2 inqact2
+inqv3 inqact3
+inqv4 inqact4
+inqv5 inqact5  
+inqv6 inqact6
+inqv7 inqact7  
+inqv8 inqact8  
+$RANDOM darkinquisitor/active { inqv1 inqv2 inqv3 inqv4 inqv5 inqv6 inqv7 inqv8 }
+
+darkinquisitor/darkmatterfire INQDRKFI
+
+shrapnel1 shrapnl1
+shrapnel2 shrapnl2
+shrapnel3 shrapnl3
+$RANDOM darkinquisitor/shrapnel { shrapnel1 shrapnel2 shrapnel3 }

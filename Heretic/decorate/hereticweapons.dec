@@ -233,8 +233,12 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -250,13 +254,10 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -304,108 +305,8 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -694,8 +595,12 @@ ACTOR DualGoldWandNew : GoldWandNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -711,13 +616,10 @@ ACTOR DualGoldWandNew : GoldWandNew
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -765,108 +667,8 @@ ACTOR DualGoldWandNew : GoldWandNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -1207,8 +1009,12 @@ ACTOR CrossbowNew : Crossbow replaces Crossbow
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -1224,13 +1030,10 @@ ACTOR CrossbowNew : Crossbow replaces Crossbow
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -1278,108 +1081,8 @@ ACTOR CrossbowNew : Crossbow replaces Crossbow
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -1619,8 +1322,12 @@ ACTOR DualCrossbowNew : CrossbowNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -1636,13 +1343,10 @@ ACTOR DualCrossbowNew : CrossbowNew
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -1690,108 +1394,8 @@ ACTOR DualCrossbowNew : CrossbowNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -2220,8 +1824,12 @@ ACTOR DragonClawNew : Blaster replaces Blaster
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -2237,13 +1845,10 @@ ACTOR DragonClawNew : Blaster replaces Blaster
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -2291,108 +1896,8 @@ ACTOR DragonClawNew : Blaster replaces Blaster
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -2548,8 +2053,12 @@ ACTOR DualDragonClawNew : DragonClawNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -2559,18 +2068,16 @@ ACTOR DualDragonClawNew : DragonClawNew
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -2618,108 +2125,8 @@ ACTOR DualDragonClawNew : DragonClawNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -2925,8 +2332,12 @@ ACTOR HellStaffNew : SkullRod replaces SkullRod
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -2936,18 +2347,16 @@ ACTOR HellStaffNew : SkullRod replaces SkullRod
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -2995,108 +2404,8 @@ ACTOR HellStaffNew : SkullRod replaces SkullRod
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -3254,8 +2563,12 @@ ACTOR DualHellStaffNew : HellStaffNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -3265,18 +2578,16 @@ ACTOR DualHellStaffNew : HellStaffNew
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -3324,108 +2635,8 @@ ACTOR DualHellStaffNew : HellStaffNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -3625,8 +2836,12 @@ ACTOR PhoenixRodNew : PhoenixRod replaces PhoenixRod
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -3636,18 +2851,16 @@ ACTOR PhoenixRodNew : PhoenixRod replaces PhoenixRod
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -3695,108 +2908,8 @@ ACTOR PhoenixRodNew : PhoenixRod replaces PhoenixRod
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -3963,8 +3076,12 @@ ACTOR DualPhoenixRodNew : PhoenixRodNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -3974,18 +3091,16 @@ ACTOR DualPhoenixRodNew : PhoenixRodNew
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -4033,108 +3148,8 @@ ACTOR DualPhoenixRodNew : PhoenixRodNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -4378,8 +3393,12 @@ ACTOR FiremaceNew : Mace replaces Mace
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -4389,18 +3408,16 @@ ACTOR FiremaceNew : Mace replaces Mace
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -4448,108 +3465,8 @@ ACTOR FiremaceNew : Mace replaces Mace
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -4706,8 +3623,12 @@ ACTOR DualFiremaceNew : FiremaceNew
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -4717,18 +3638,16 @@ ACTOR DualFiremaceNew : FiremaceNew
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -4776,108 +3695,8 @@ ACTOR DualFiremaceNew : FiremaceNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -5145,8 +3964,12 @@ actor SuperCrossbowNew : Weapon 25102
   states
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -5156,18 +3979,16 @@ actor SuperCrossbowNew : Weapon 25102
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -5215,108 +4036,8 @@ actor SuperCrossbowNew : Weapon 25102
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -5730,8 +4451,12 @@ actor DualSuperCrossbowNew : SuperCrossbowNew
   states
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -5741,18 +4466,16 @@ actor DualSuperCrossbowNew : SuperCrossbowNew
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -5800,108 +4523,8 @@ actor DualSuperCrossbowNew : SuperCrossbowNew
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -6701,8 +5324,12 @@ actor DSparilStaff : weapon
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -6712,18 +5339,16 @@ actor DSparilStaff : weapon
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -6771,108 +5396,8 @@ actor DSparilStaff : weapon
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);
@@ -6883,7 +5408,7 @@ actor DSparilStaff : weapon
 	}
     goto Ready
   Spawn:
-    DSTF B 0 NoDelay
+    DSTA A 0 NoDelay
 	{
 	 if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
 	 {
@@ -6891,7 +5416,7 @@ actor DSparilStaff : weapon
 	  A_FadeOut(1,1);
 	 }
 	}
-	DSTF A 1
+	DSTA A 1
 	Loop
   Ready:
 	DSTF A 1 A_WeaponReady(WRF_ALLOWUSER1)
@@ -7042,8 +5567,12 @@ actor DualDSparilStaff : DSparilStaff
   States
   {
   User1:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0, "Ready")
-	TNT1 A 0 
+    TNT1 A 0
+	{
+	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
+     return state(""); 
+	}
+	TNT1 A 0
 	{
 	 if (random(1,256) >= 253)
 	 {
@@ -7053,18 +5582,16 @@ actor DualDSparilStaff : DSparilStaff
 	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
 	  }
 	 }
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
 	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
 	}
-    FKIC A 1 Offset(48,46)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,42) { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC A 1 Offset(48,40)
-    FKIC B 1 Offset(24,38)
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,34)
+    FKIC AB 1
+    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
+    FKIC DEF 1
+    FKIC GHG 1
 	{
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
 	 {
@@ -7112,108 +5639,8 @@ actor DualDSparilStaff : DSparilStaff
 	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
 	 }
 	}
-    FKIC B 1 Offset(24,32)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuffNoThrust",104);
-	 }
-	}
-    FKIC B 1 Offset(24,34)
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC B 1 Offset(24,36)
-    FKIC B 1 Offset(24,38)
-    FKIC A 1 Offset(48,40)
-    FKIC A 1 Offset(48,42)
-    FKIC A 1 Offset(48,44)
-    FKIC A 1 Offset(48,46)
+    FKIC FEDCBA 1
+    TNT1 A 0
 	{
 	 A_TakeInventory("KickCritBonus1",9999);
 	 A_TakeInventory("KickCritBonus2",9999);

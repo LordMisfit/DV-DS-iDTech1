@@ -1,3 +1,23 @@
+// PorkFX
+ACTOR PorkFXNew : PorkFX replaces PorkFX
+{
+  Radius 8
+  Height 8
+  Speed 18
+  MorphProjectile.PlayerClass "PigPlayer"
+  MorphProjectile.MonsterClass "Pig"
+  MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE
+  States
+  {
+  Spawn:
+    PRKM ABCDE 4
+    Loop
+  Death:
+    FHFX IJKL 3 Bright
+    Stop
+  }
+}
+
 // Pig
 ACTOR PigNew : Pig replaces Pig
 {

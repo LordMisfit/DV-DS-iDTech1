@@ -942,45 +942,40 @@ Actor NNSigil : StrifeWeaponBase
    Deselect1:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 	  }
       SGLA A 1 Bright { A_Lower; A_Lower; }
       Loop
    Deselect2:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 	  }
       SGLB A 1 Bright { A_Lower; A_Lower; }
       Loop
    Deselect3:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 	  }
       SGLC A 1 Bright { A_Lower; A_Lower; }
       Loop
    Deselect4:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 	  }
       SGLD A 1 Bright { A_Lower; A_Lower; }
       Loop
    Deselect5:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 	  }
       SGLE A 1 Bright { A_Lower; A_Lower; }
       Loop
@@ -995,45 +990,40 @@ Actor NNSigil : StrifeWeaponBase
    Select1:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 	  }
       SGLA A 1 Bright { A_Raise; A_Raise; }
       Loop
    Select2:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 	  }
       SGLB A 1 Bright { A_Raise; A_Raise; }
       Loop
    Select3:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 	  }
       SGLC A 1 Bright { A_Raise; A_Raise; }
       Loop
    Select4:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 	  }
       SGLD A 1 Bright { A_Raise; A_Raise; }
       Loop
    Select5:
       TNT1 A 0 Bright 
 	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 	  }
       SGLE A 1 Bright { A_Raise; A_Raise; }
       Loop

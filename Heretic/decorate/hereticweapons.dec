@@ -223,7 +223,7 @@ ACTOR GoldWandFX2New : GoldWandFX2
  DamageType "Magic" 
 }
 
-ACTOR GoldWandNew : GoldWand replaces GoldWand
+ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 {
   +BLOODSPLATTER
   Weapon.Kickback 150
@@ -240,90 +240,6 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
 
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     GWAN A 0 NoDelay
 	{
@@ -349,7 +265,7 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
     Loop
   Fire:
     GWND B 3 
-    GWND C 5 // A_FireGoldWandPL1
+    GWND C 5
     {
      ACS_NamedExecuteAlways("StartTensionCountDown");
 	 
@@ -595,97 +511,20 @@ ACTOR GoldWandNew : GoldWand replaces GoldWand
 
 ACTOR DualGoldWandNew : GoldWandNew
 {
+  +BLOODSPLATTER
+  Weapon.Kickback 150
+  Weapon.SelectionOrder 2000
+  Weapon.AmmoGive 25
   Weapon.AmmoType1 "GoldWandAmmo"
   Weapon.AmmoType2 "GoldWandAmmo"
   Weapon.AmmoUse1 1  
   Weapon.AmmoUse2 1  
+  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNGOLDWAND" // "GOLD WAND"
+  Obituary "$OB_MPGOLDWAND"
   Tag "Dual Elven Wands"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     GWAN A -1
     Stop
@@ -698,9 +537,9 @@ ACTOR DualGoldWandNew : GoldWandNew
   Select:
     GWN2 A 1 { A_Raise; A_Raise; }
     Loop
-  Fire: // 11 Frames
+  Fire:
     GWN2 B 3 
-    GWN2 CD 5 // A_FireGoldWandPL1
+    GWN2 CD 5
     {
      ACS_NamedExecuteAlways("StartTensionCountDown");
 	 
@@ -1008,99 +847,18 @@ ACTOR CrossbowFX3New : CrossbowFX3
   }
 }
 
-ACTOR CrossbowNew : Crossbow replaces Crossbow
+ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 {
+  Weapon.SelectionOrder 800
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
   Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNCROSSBOW"
+  Tag "$TAG_CROSSBOW"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBOW A 0 NoDelay
 	{
@@ -1139,7 +897,7 @@ ACTOR CrossbowNew : Crossbow replaces Crossbow
     CRBW A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
-    CRBW D 6 // A_FireCrossbowPL1
+    CRBW D 6
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
@@ -1320,100 +1078,19 @@ ACTOR CrossbowNew : Crossbow replaces Crossbow
   }
 }
 
-ACTOR DualCrossbowNew : CrossbowNew
+ACTOR DualCrossbowNew : HereticWeaponBase
 {
+  Weapon.SelectionOrder 800
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
+  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNCROSSBOW"
   Tag "Dual Ethereal Crossbows"
 
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBOW A -1
     Stop
@@ -1427,7 +1104,7 @@ ACTOR DualCrossbowNew : CrossbowNew
     CRBD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
-    CRBD D 6 // A_FireCrossbowPL1
+    CRBD D 6
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
@@ -1498,7 +1175,7 @@ ACTOR DualCrossbowNew : CrossbowNew
       A_FireCustomMissile ("CrossbowFX3New",  4.5-4, 0,  2-2, 3);
 	 }
 	}
-    CRBD E 6 // A_FireCrossbowPL1
+    CRBD E 6
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
 	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
@@ -1824,99 +1501,21 @@ ACTOR BlasterFX1New : BlasterFX1
   }
 }
 
-ACTOR DragonClawNew : Blaster replaces Blaster
+ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 {
+  +BLOODSPLATTER
+  Weapon.SelectionOrder 500
+  Weapon.AmmoGive 30
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoType1 "BlasterAmmo"
   Weapon.AmmoType2 "BlasterAmmo"
   Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNBLASTER"
+  Tag "$TAG_BLASTER"
+  Obituary "$OB_MPBLASTER"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBLS A 0 NoDelay
 	{
@@ -1940,7 +1539,7 @@ ACTOR DragonClawNew : Blaster replaces Blaster
   Fire:
     FBLS BC 3
   Hold:
-    FBLS D 2 // A_FireBlasterPL1
+    FBLS D 2
     {
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	
@@ -2053,99 +1652,21 @@ ACTOR DragonClawNew : Blaster replaces Blaster
   }
 }
 
-ACTOR DualDragonClawNew : DragonClawNew
+ACTOR DualDragonClawNew : HereticWeaponBase
 {
+  +BLOODSPLATTER
+  Weapon.SelectionOrder 500
+  Weapon.AmmoGive 30
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoType1 "BlasterAmmo"
   Weapon.AmmoType2 "BlasterAmmo"
+  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNBLASTER"
   Tag "Dual Dragon Claws"
+  Obituary "$OB_MPBLASTER"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBLS A -1
     Stop
@@ -2161,7 +1682,7 @@ ACTOR DualDragonClawNew : DragonClawNew
   Fire:
     FDBL BC 3
   Hold:
-    FDBL DE 2 // A_FireBlasterPL1
+    FDBL DE 2
     {
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 A_PlaySound("weapons/blastershoot",1);
@@ -2332,99 +1853,20 @@ ACTOR RainPillarNew : RainPillar replaces RainPillar
  DamageType "Magic" 
 }
 
-ACTOR HellStaffNew : SkullRod replaces SkullRod
+ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 {
+  Weapon.SelectionOrder 200
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
+  Weapon.AmmoGive1 50
+  Weapon.YAdjust 0
   Weapon.AmmoType1 "SkullRodAmmo"
   Weapon.AmmoType2 "SkullRodAmmo"
-  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNSKULLROD"
+  Tag "$TAG_SKULLROD"
+
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WSKL A 0 NoDelay
 	{
@@ -2446,7 +1888,7 @@ ACTOR HellStaffNew : SkullRod replaces SkullRod
     HROD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
-    HROD AB 4 // A_FireSkullRodPL1
+    HROD AB 4
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
      A_PlaySound("weapons/hornrodshoot",1);
@@ -2562,100 +2004,19 @@ ACTOR HellStaffNew : SkullRod replaces SkullRod
   }
 }
 
-ACTOR DualHellStaffNew : HellStaffNew
+ACTOR DualHellStaffNew : HereticWeaponBase
 {
+  Weapon.SelectionOrder 200
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
+  Weapon.AmmoGive1 50
+  Weapon.YAdjust 0
   Weapon.AmmoType1 "SkullRodAmmo"
   Weapon.AmmoType2 "SkullRodAmmo"
+  Inventory.PickupMessage "$TXT_WPNSKULLROD"
   Tag "Dual HellStaves"
-
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WSKL A -1
     Stop
@@ -2669,7 +2030,7 @@ ACTOR DualHellStaffNew : HellStaffNew
     DHRD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
-    DHRD AB 4 // A_FireSkullRodPL1
+    DHRD AB 4
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
      A_PlaySound("weapons/hornrodshoot",1);
@@ -2836,99 +2197,22 @@ ACTOR PhoenixFX2New : PhoenixFX2
   DamageType "Fire"
 }
 
-ACTOR PhoenixRodNew : PhoenixRod replaces PhoenixRod
+ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod 
 {
+  +WEAPON.NOAUTOFIRE
+  Weapon.SelectionOrder 2600
+  Weapon.Kickback 150
+  Weapon.YAdjust 0
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
+  Weapon.AmmoGive 2
   Weapon.AmmoType1 "PhoenixRodAmmo"
   Weapon.AmmoType2 "PhoenixRodAmmo"
-  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
+  Tag "$TAG_PHOENIxROD"
+
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WPHX A 0 NoDelay
 	{
@@ -3075,100 +2359,22 @@ ACTOR PhoenixRodNew : PhoenixRod replaces PhoenixRod
   }
 }
 
-ACTOR DualPhoenixRodNew : PhoenixRodNew
+ACTOR DualPhoenixRodNew : HereticWeaponBase
 {
+  +WEAPON.NOAUTOFIRE
+  Weapon.SelectionOrder 2600
+  Weapon.Kickback 150
+  Weapon.YAdjust 0
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
+  Weapon.AmmoGive 2
   Weapon.AmmoType1 "PhoenixRodAmmo"
   Weapon.AmmoType2 "PhoenixRodAmmo"
+  Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
   Tag "Dual Phoenix Rods"
 
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WPHX A -1
     Stop
@@ -3393,99 +2599,20 @@ ACTOR MaceSpawnerNew : MaceSpawner replaces MaceSpawner
   }
 }
 
-ACTOR FiremaceNew : Mace replaces Mace
+ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 {
+  Weapon.SelectionOrder 1400
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
+  Weapon.AmmoGive1 50
+  Weapon.YAdjust 0
   Weapon.AmmoType1 "MaceAmmo"
   Weapon.AmmoType2 "MaceAmmo"
-  Weapon.YAdjust 0
+  Inventory.PickupMessage "$TXT_WPNMACE"
+  Tag "$TAG_MACE"
+
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WMCE A 0 NoDelay
 	{
@@ -3622,100 +2749,20 @@ ACTOR FiremaceNew : Mace replaces Mace
   }
 }
 
-ACTOR DualFiremaceNew : FiremaceNew
+ACTOR DualFiremaceNew : HereticWeaponBase
 {
+  Weapon.SelectionOrder 1400
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
+  Weapon.AmmoGive1 50
+  Weapon.YAdjust 0
   Weapon.AmmoType1 "MaceAmmo"
   Weapon.AmmoType2 "MaceAmmo"
+  Inventory.PickupMessage "$TXT_WPNMACE"
   Tag "Dual Firemaces"
 
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WMCE A -1
     Stop
@@ -3955,7 +3002,7 @@ ACTOR DualFiremaceNew : FiremaceNew
   }
 }
 
-actor SuperCrossbowNew : Weapon 25102
+actor SuperCrossbowNew : HereticWeaponBase 25102
 {
   spawnid 33
   obituary "%o was splattered by %k's super crossbow."
@@ -3973,90 +3020,6 @@ actor SuperCrossbowNew : Weapon 25102
   Tag "Super Ethereal Crossbow"
   states
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBOW B 0 NoDelay
 	{
@@ -4442,7 +3405,7 @@ actor SuperCrossbowNew : Weapon 25102
   }
 }
 
-actor DualSuperCrossbowNew : SuperCrossbowNew
+actor DualSuperCrossbowNew : HereticWeaponBase
 {
   spawnid 33
   obituary "%o was splattered by %k's super crossbows."
@@ -4460,90 +3423,6 @@ actor DualSuperCrossbowNew : SuperCrossbowNew
   Tag "Dual Super Ethereal Crossbows"
   states
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     WBOW B -1
     stop
@@ -5321,7 +4200,7 @@ actor Sorcerer2FX3
   }
 }
 
-actor DSparilStaff : weapon
+actor DSparilStaff : HereticWeaponBase
 {
   Weapon.Ammouse1 5
   Weapon.Ammouse2 15
@@ -5333,90 +4212,6 @@ actor DSparilStaff : weapon
   Tag "Staff of D'Sparil"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
     DSTA A 0 NoDelay
 	{
@@ -5564,7 +4359,7 @@ actor DSparilStaff : weapon
   }
 }
 
-actor DualDSparilStaff : DSparilStaff
+actor DualDSparilStaff : HereticWeaponBase
 {
   Weapon.Ammouse1 5
   Weapon.Ammouse2 15
@@ -5576,90 +4371,6 @@ actor DualDSparilStaff : DSparilStaff
   Tag "Dual Staves of D'Sparil"
   States
   {
-  User1:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("UseStaminaAttack",ACS_NamedExecuteWithResult("GetKickStaminaUse",0),2) == 0) { return state("Ready"); }
-     return state(""); 
-	}
-	TNT1 A 0
-	{
-	 if (random(1,256) >= 253)
-	 {
-	  if (CountInv("PlayingStrife",AAPTR_PLAYER1) > 0) { } // Strife mode makes the punch work like the Punch Dagger where it NEVER makes sound
-	  else
-	  {
-	   A_AlertMonsters; // Sometimes a swing will be enough to wake up all monsters in the area.
-	  }
-	 }
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("KickAttackDEFLvl2",1); } else { A_GiveInventory("KickAttackDEFLvl1",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) >= 5) { A_GiveInventory("MartArtsMaster2",1); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035) == 4) { A_GiveInventory("MartArtsMaster1",1); }
-	 if (random(1,256) > 64) { A_GiveInventory("KickCritBonus1",1,AAPTR_PLAYER1); } else { A_GiveInventory("KickCritBonus2",1,AAPTR_PLAYER1); }
-	}
-    FKIC AB 1
-    FKIC C 1 { if (random(1,256) >= 128) { A_PlaySound("FloraKiaiFull",CHAN_VOICE); } }
-    FKIC DEFG 1
-    FKIC H 1
-	{
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle-15);
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_CustomPunch(ACS_NamedExecuteWithResult("GetKickDamage",0),1,0,"KickPuff",104);
-	 }
-	}
-    FKIC GFEDCBA 1
-    TNT1 A 0
-	{
-	 A_TakeInventory("KickCritBonus1",9999);
-	 A_TakeInventory("KickCritBonus2",9999);
-	 A_TakeInventory("KickAttackDEFLvl1",9999);
-	 A_TakeInventory("KickAttackDEFLvl2",9999);
-	 A_TakeInventory("MartArtsMaster1",9999);
-	 A_TakeInventory("MartArtsMaster2",9999);
-	}
-    goto Ready
   Spawn:
 	DSTF A -1
 	Stop

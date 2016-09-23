@@ -3013,7 +3013,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
-  weapon.kickback 100
+  weapon.kickback 150
   weapon.AmmoUse1 2
   weapon.AmmoUse2 2
   weapon.AmmoGive 8
@@ -3416,7 +3416,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
-  weapon.kickback 100
+  weapon.kickback 150
   weapon.AmmoUse1 2
   weapon.AmmoUse2 2
   weapon.AmmoGive 8

@@ -258,9 +258,19 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
     GWND A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     GWND A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     GWND A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -532,9 +542,19 @@ ACTOR DualGoldWandNew : GoldWandNew
     GWN2 A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     GWN2 A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     GWN2 A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -891,9 +911,19 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
     CRBW AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
+    }
     CRBW A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
+    }
     CRBW A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -1098,9 +1128,19 @@ ACTOR DualCrossbowNew : HereticWeaponBase
     CRBD AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
+    }
     CRBD A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
+    }
     CRBD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -1531,9 +1571,19 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
     FBLS A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     FBLS A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     FBLS A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -1674,9 +1724,19 @@ ACTOR DualDragonClawNew : HereticWeaponBase
     FDBL A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     FDBL A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     FDBL A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -1882,9 +1942,19 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
     HROD A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     HROD A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     HROD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -2024,9 +2094,19 @@ ACTOR DualHellStaffNew : HereticWeaponBase
     DHRD A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     DHRD A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     DHRD A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -2228,9 +2308,19 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
     PHNX A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     PHNX A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     PHNX A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -2382,9 +2472,19 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
     PHND A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     PHND A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     PHND A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -2628,9 +2728,19 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
     MACE A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     MACE A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     MACE A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -2770,9 +2880,19 @@ ACTOR DualFiremaceNew : HereticWeaponBase
     DMAC A 1 A_WeaponReady(WRF_ALLOWUSER1)
     Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     DMAC A 1 { A_Lower; A_Lower; }
     Loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     DMAC A 1 { A_Raise; A_Raise; }
     Loop
   Fire:
@@ -3035,9 +3155,19 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
     CRB2 ABC 6 A_WeaponReady(WRF_ALLOWUSER1)
     loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     CRB2 ABC 1 { A_Lower; A_Lower; }
     loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     CRB2 ABC 1 { A_Raise; A_Raise; }
     loop
   Fire:
@@ -3430,9 +3560,19 @@ actor DualSuperCrossbowNew : HereticWeaponBase
     SCRD ABC 6 A_WeaponReady(WRF_ALLOWUSER1)
     loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
     SCRD ABC 1 { A_Lower; A_Lower; }
     loop
   Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
     SCRD ABC 1 { A_Raise; A_Raise; }
     loop
   Fire:
@@ -4226,11 +4366,21 @@ actor DSparilStaff : HereticWeaponBase
   Ready:
 	DSTF A 1 A_WeaponReady(WRF_ALLOWUSER1)
 	Loop
-  Select:
-	DSTF A 1 { A_Raise; A_Raise; }
-	Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
 	DSTF A 1 { A_Lower; A_Lower; }
+	Loop
+  Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
+	DSTF A 1 { A_Raise; A_Raise; }
 	Loop
   Fire:
 	DSTF B 4 bright A_PlayWeaponSound("dsparil/attack")
@@ -4377,11 +4527,21 @@ actor DualDSparilStaff : HereticWeaponBase
   Ready:
 	DSTD A 1 A_WeaponReady(WRF_ALLOWUSER1)
 	Loop
-  Select:
-	DSTD A 1 { A_Raise; A_Raise; }
-	Loop
   Deselect:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Lower; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Lower; }
+    }
 	DSTD A 1 { A_Lower; A_Lower; }
+	Loop
+  Select:
+    TNT1 A 0 
+ 	{
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_Raise; }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_Raise; }
+    }
+	DSTD A 1 { A_Raise; A_Raise; }
 	Loop
   Fire:
 	DSTD B 4 bright A_PlayWeaponSound("dsparil/attack")

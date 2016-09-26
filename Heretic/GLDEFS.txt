@@ -249,3 +249,108 @@ Frame DKATU { Light DKFire2 }
 Frame DKATV { Light DKFire3 }
 Frame DKATW { Light DKFire4 }
 }
+
+// Hell Guard
+//lights
+Pointlight HellGuardFire
+{
+Color 0.8 0.8 0.3
+Size 32
+Offset 0 32 0
+}
+
+Object HellGuard
+{
+Frame HLGDF { Light HellGuardFire }
+}
+
+Pointlight HellGuardBall1
+{
+Color 0.4 0.4 0.0
+Size 32
+}
+
+Pointlight HellGuardBall2
+{
+Color 0.5 0.5 0.0
+Size 40
+}
+
+Pointlight HellGuardBall3
+{
+Color 0.6 0.6 0.0
+Size 48
+}
+
+Pointlight HellGuardBall4
+{
+Color 0.3 0.3 0.0
+Size 32
+}
+
+Pointlight HellGuardBall5
+{
+Color 0.2 0.2 0.0
+Size 16
+}
+
+Object HellGuardBall
+{
+Frame HGFBA { Light HellGuardBall1 }
+Frame HGFBB { Light HellGuardBall1 }
+Frame HGFBC { Light HellGuardBall1 }
+Frame HGFBD { Light HellGuardBall1 }
+Frame HGFBE { Light HellGuardBall2 }
+Frame HGFBF { Light HellGuardBall3 }
+Frame HGFBG { Light HellGuardBall4 }
+Frame HGFBH { Light HellGuardBall5 }
+}
+
+//brightmaps
+Brightmap Sprite HLGDF1
+{
+Map BMHLGDF1
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF2
+{
+Map BMHLGDF2
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF3
+{
+Map BMHLGDF3
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF4
+{
+Map BMHLGDF4
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF5
+{
+Map BMHLGDF5
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF6
+{
+Map BMHLGDF6
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF7
+{
+Map BMHLGDF7
+DisableFullBright
+}
+
+Brightmap Sprite HLGDF8
+{
+Map BMHLGDF8
+DisableFullBright
+}

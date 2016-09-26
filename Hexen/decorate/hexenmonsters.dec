@@ -30,6 +30,9 @@ ACTOR PigNew : Pig replaces Pig
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
   DamageFactor "Normal", 0.5
   Speed 10
   Radius 12
@@ -143,6 +146,9 @@ ACTOR EttinNew : Ettin // replaces Ettin
   Painchance "Fist", 90 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 150 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 90 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -247,6 +253,9 @@ ACTOR EttinGhostNew : EttinMash replaces EttinMash
   Painchance "Fist", 90 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 150 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 90 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -327,6 +336,9 @@ Actor EttinCommander : Ettin
   Painchance "Fist", 52 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 87 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 52 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
   MeleeRange 68
 
   DamageFactor "Normal", 0.875
@@ -484,6 +496,9 @@ ACTOR CentaurNew : Centaur replaces Centaur
   Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -601,6 +616,9 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
   Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -690,6 +708,9 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
   Painchance "Fist", 126 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 210 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 126 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -807,6 +828,9 @@ ACTOR FireDemonNew : FireDemon replaces FireDemon
   Painchance "Fist", 32
   Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 32
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -912,6 +936,9 @@ ACTOR BishopNew : Bishop // replaces Bishop
   Painchance "Fist", 165 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 165 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1045,6 +1072,9 @@ ACTOR StalkerNew : Serpent replaces Serpent
   Painchance "Fist", 144 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 240 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 144 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1150,6 +1180,9 @@ ACTOR StalkerLeaderNew : SerpentLeader replaces SerpentLeader
   Painchance "Fist", 144 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 240 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 144 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1258,6 +1291,9 @@ ACTOR GreenChaosSerpentNew : Demon1 replaces Demon1
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1372,6 +1408,9 @@ ACTOR GreenChaosSerpentGhostNew : Demon1Mash replaces Demon1Mash
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1456,6 +1495,9 @@ ACTOR BrownChaosSerpentNew : Demon2 replaces Demon2
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1564,6 +1606,9 @@ ACTOR BrownChaosSerpentGhostNew : Demon2Mash replaces Demon2Mash
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1649,6 +1694,9 @@ ACTOR WraithNew : Wraith replaces Wraith
   Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1763,6 +1811,9 @@ ACTOR WraithBuriedNew : WraithBuried replaces WraithBuried
   Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1871,6 +1922,9 @@ ACTOR IceGuyNew : IceGuy replaces IceGuy
   Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
 
   States
   {
@@ -1946,6 +2000,9 @@ ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
   Painchance "Fist", 15 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 25 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 16
+  Painchance "GravityMP", 16
+  Painchance "GravityHPMP", 16 
 
   +AVOIDMELEE
   States
@@ -2131,6 +2188,9 @@ ACTOR KoraxNew : Korax replaces Korax
   Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1 
 
   States
   {
@@ -2228,6 +2288,9 @@ ACTOR DragonNew : Dragon replaces Dragon
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 64
+  Painchance "GravityMP", 64
+  Painchance "GravityHPMP", 64
 
   +AVOIDMELEE
   States
@@ -2312,6 +2375,9 @@ ACTOR ClericBossNew : ClericBoss replaces ClericBoss
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 16
+  Painchance "GravityMP", 16
+  Painchance "GravityHPMP", 16 
 
   +AVOIDMELEE
 
@@ -2481,6 +2547,9 @@ ACTOR FighterBossNew : FighterBoss replaces FighterBoss
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 16
+  Painchance "GravityMP", 16
+  Painchance "GravityHPMP", 16
 
   +AVOIDMELEE
 
@@ -2625,6 +2694,9 @@ ACTOR MageBossNew : MageBoss replaces MageBoss
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 16
+  Painchance "GravityMP", 16
+  Painchance "GravityHPMP", 16
 
   +AVOIDMELEE
 
@@ -2771,6 +2843,9 @@ ACTOR VampireDVDS : Bishop
   Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 32
+  Painchance "GravityMP", 32
+  Painchance "GravityHPMP", 32 
 
   Speed 8
   Scale 0.90

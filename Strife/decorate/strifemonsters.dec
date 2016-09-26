@@ -17,6 +17,7 @@ ACTOR PeasantNew : Peasant replaces Peasant
   +NOSPLASHALERT
   +FLOORCLIP
   +JUSTHIT
+  +CANTSEEK
   MinMissileChance 150
   MaxStepHeight 16
   MaxDropoffHeight 32
@@ -276,6 +277,7 @@ ACTOR BeggarNew : Beggar replaces Beggar // Base Class
   +JUSTHIT
   -COUNTKILL
   +NOSPLASHALERT
+  +CANTSEEK
   MinMissileChance 150
   Tag "$TAG_BEGGAR" // "Beggar"
   MaxStepHeight 16
@@ -423,6 +425,7 @@ ACTOR MerchantNew : Merchant replaces Merchant
   +NOSPLASHALERT
   +NOBLOOD
   +NODAMAGE
+  +CANTSEEK
   States
   {
   Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
@@ -512,6 +515,7 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
   +FRIENDLY
   -COUNTKILL
   +NOSPLASHALERT
+  +CANTSEEK
   species "Players"
   MinMissileChance 150
   Tag "$TAG_REBEL" // "Rebel"
@@ -711,6 +715,9 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
   Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 225 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
   DropItem "AssaultGun" 1
   
   States
@@ -972,6 +979,9 @@ ACTOR TemplarNew : Templar replaces Templar
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 128
+  Painchance "GravityMP", 128
+  Painchance "GravityHPMP", 128
 
   ConversationID 62
   +NOBLOOD
@@ -1251,6 +1261,9 @@ ACTOR ReaverNew : Reaver replaces Reaver
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 32
+  Painchance "GravityMP", 32
+  Painchance "GravityHPMP", 32 
 
   +NOBLOOD
   +INCOMBAT
@@ -1368,6 +1381,9 @@ ACTOR CrusaderNew : Crusader replaces Crusader
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 32
+  Painchance "GravityMP", 32
+  Painchance "GravityHPMP", 32 
 
   +FLOORCLIP
   +DONTMORPH
@@ -1467,6 +1483,9 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
   Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 32
+  Painchance "GravityMP", 32
+  Painchance "GravityHPMP", 32
 
   +SPAWNCEILING
   +NOGRAVITY
@@ -1556,6 +1575,9 @@ ACTOR OStalkerNew : Stalker replaces Stalker
   Painchance "Fist", 60 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 100 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 60 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 32
+  Painchance "GravityMP", 32
+  Painchance "GravityHPMP", 32
 
   +NOGRAVITY
   +DROPOFF
@@ -1658,6 +1680,9 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
   Painchance "Fist", 0 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 0 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 0 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 0
+  Painchance "GravityMP", 0
+  Painchance "GravityHPMP", 0
 
   -SOLID
   -CANPASS
@@ -1748,6 +1773,12 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
   ConversationID 95
   Health 1100
   PainChance 50
+  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 4
+  Painchance "GravityMP", 4
+  Painchance "GravityHPMP", 4
   Speed 26
   FloatSpeed 5
   Radius 45
@@ -1864,6 +1895,12 @@ ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
   ConversationID 64
   Health 500
   PainChance 128
+  Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 4
+  Painchance "GravityMP", 4
+  Painchance "GravityHPMP", 4
   Speed 8
   Radius 40
   Height 56
@@ -2033,6 +2070,12 @@ ACTOR Macil1New : Macil1 replaces Macil1
   Height 56
   Speed 8
   PainChance 250
+  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 4
+  Painchance "GravityMP", 4
+  Painchance "GravityHPMP", 4
   Monster
   -COUNTKILL
   +NOTDMATCH
@@ -2112,6 +2155,12 @@ ACTOR Macil2New : Macil2 replaces Macil2
 
   ConversationID 50
   PainChance 200
+  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 4
+  Painchance "GravityMP", 4
+  Painchance "GravityHPMP", 4
   +COUNTKILL
   -NODAMAGE
   Tag "$TAG_MACIL2" // "MACIL"
@@ -2234,6 +2283,9 @@ ACTOR LoremasterNew : Loremaster replaces Loremaster
   Radius 15
   Height 56
   FloatSpeed 5
+  Painchance "GravityHP", 4
+  Painchance "GravityMP", 4
+  Painchance "GravityHPMP", 4
   Monster
   +FLOAT
   +NOBLOOD
@@ -2341,6 +2393,12 @@ ACTOR AlienSpectre1New : AlienSpectre1 replaces AlienSpectre1
   ConversationID 67
   Health 1000
   PainChance 250
+  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Speed 12
   Radius 64
   Height 64
@@ -2482,6 +2540,12 @@ ACTOR AlienSpectre2New : AlienSpectre2 replaces AlienSpectre2
   Health 1200
   Mass 500000000
   PainChance 50
+  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Radius 24
   //DropItem "Sigil2"
   +NOFEAR
@@ -2604,6 +2668,12 @@ ACTOR AlienSpectre3New : AlienSpectre3 replaces AlienSpectre3
   Health 1500
   Mass 500000000
   PainChance 50
+  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Radius 24
   +SPAWNCEILING
   //DropItem "Sigil3"
@@ -2745,6 +2815,12 @@ ACTOR AlienSpectre4New : AlienSpectre4 replaces AlienSpectre4
   Health 1700
   Mass 500000000
   PainChance 50
+  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Radius 24
   DropItem "Sigil4"
   +NOFEAR
@@ -2884,6 +2960,12 @@ ACTOR AlienSpectre5New : AlienSpectre5 replaces AlienSpectre5
   Health 2000
   Mass 500000000
   PainChance 50
+  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Radius 24
   DropItem "Sigil5"
   -SPECTRAL
@@ -3017,6 +3099,12 @@ ACTOR EntityBossNew : EntityBoss replaces EntityBoss
   ConversationID 74
   Health 2500
   PainChance 255
+  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Speed 13
   Radius 130
   Height 200
@@ -3152,6 +3240,12 @@ ACTOR EntitySecondNew : EntitySecond replaces EntitySecond
   ConversationID 75
   Health 990
   PainChance 255
+  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 1
+  Painchance "GravityMP", 1
+  Painchance "GravityHPMP", 1
   Speed 14
   Radius 130
   Height 200
@@ -3288,6 +3382,12 @@ ACTOR EntityAscended : EntityBoss
  
   Health 3250
   PainChance 64
+  Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 0
+  Painchance "GravityMP", 0
+  Painchance "GravityHPMP", 0
   Speed 17
   Radius 130
   Height 200

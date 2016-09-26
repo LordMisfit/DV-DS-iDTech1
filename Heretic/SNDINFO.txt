@@ -114,3 +114,11 @@ weapons/boom1 dsboom1
 weapons/boltfi dsboltfi
 weapons/firex4 dsfirex4
 weapons/scorch dsscorch
+
+// Hell Guard
+hellguard/sight hgsee
+hellguard/death hgdeath
+hellguard/idle hgidle
+hellguard/shot hgshot1
+hellguard/shothit hgshot2
+hellguard/pain hgpain

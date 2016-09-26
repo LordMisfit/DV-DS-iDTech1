@@ -99,3 +99,18 @@ chicken/peck2			chicpk2
 chicken/peck3			chicpk3
 $random chicken/peck		{ chicken/peck1  chicken/peck2  chicken/peck3 }
 
+// Death Knight
+monster/dknhit dsdknhit
+monster/dknsit dsdknsit
+monster/dknpai dsdknpai
+monster/dkndth dsdkndth
+monster/dknact dsdknact
+monster/dknswg dsdknswg
+
+monster/dkndrt dsdkndrt
+weapons/firex2 dsfirex2
+monster/dknmsl dsdknmsl
+weapons/boom1 dsboom1
+weapons/boltfi dsboltfi
+weapons/firex4 dsfirex4
+weapons/scorch dsscorch

@@ -219,6 +219,7 @@ actor FHereticImp : HereticImpNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR HereticImpBallNew : HereticImpBall replaces HereticImpBall { DamageType "Fire" DamageType "Magic" }
 actor HereticImpLeaderNew : HereticImpLeader replaces HereticImpLeader
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -229,9 +230,9 @@ actor HereticImpLeaderNew : HereticImpLeader replaces HereticImpLeader
  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
  Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
+ Painchance "GravityHP", 255
+ Painchance "GravityMP", 255
+ Painchance "GravityHPMP", 255 
 
  Translation "141:141=144:144", "145:160=145:153", "248:254=248:251", "66:94=66:80", "95:110=95:103"
 
@@ -497,6 +498,7 @@ actor FMummyGhost : MummyGhostNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR MummyFX1New : MummyFX1 replaces MummyFX1 { DamageType "Fire" DamageType "Magic" }
 actor MummyLeaderNew : MummyLeader replaces MummyLeader
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -507,9 +509,9 @@ actor MummyLeaderNew : MummyLeader replaces MummyLeader
  Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
  Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
  Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
+ Painchance "GravityHP", 255
+ Painchance "GravityMP", 255
+ Painchance "GravityHPMP", 255 
 
  states
  {
@@ -697,6 +699,8 @@ actor FMummyLeaderGhost : MummyLeaderGhostNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR KnightAxeNew : KnightAxe replaces KnightAxe { DamageType "Magic" }
+ACTOR RedAxeNew : RedAxe replaces RedAxe { DamageType "Magic" }
 ACTOR KnightNew : Knight // replaces Knight
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -885,6 +889,7 @@ actor FKnightGhost : KnightGhostNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR WizardFX1New : WizardFX1 replaces WizardFX1 { DamageType "Magic" }
 ACTOR WizardNew : Wizard replaces Wizard
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -924,7 +929,6 @@ ACTOR WizardNew : Wizard replaces Wizard
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     WZRD N 6 A_FaceTarget
 	WZRD O 6 A_FaceTarget
-	//TNT1 A 0 A_PlaySound("nosferati/attack")
 	WZRD P 12 A_CustomMeleeAttack(random(1,5)*8, "wizard/melee", none, melee, true)
 	Goto See
   Missile:
@@ -998,6 +1002,9 @@ actor FWizard : WizardNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR HeadFX1New : HeadFX1 replaces HeadFX1 { DamageType "Ice" DamageType "Magic" }
+ACTOR WhirlwindNew : Whirlwind replaces Whirlwind { DamageType "Wind" DamageType "Magic" }
+ACTOR HeadFX3New : HeadFX3 replaces HeadFX3 { DamageType "Fire" DamageType "Magic" }
 ACTOR IronlichNew : Ironlich replaces Ironlich
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -1176,6 +1183,7 @@ actor FClink : ClinkNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR BeastBallNew : BeastBall replaces BeastBall { DamageType "Fire" }
 ACTOR BeastNew : Beast replaces Beast
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -1281,6 +1289,9 @@ actor FBeast : BeastNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR MinotaurFX1New : MinotaurFX1 replaces MinotaurFX1 { DamageType "Fire" DamageType "Magic" }
+ACTOR MinotaurFX2New : MinotaurFX2 replaces MinotaurFX2 { DamageType "Fire" DamageType "Magic" }
+ACTOR MinotaurFX3New : MinotaurFX3 replaces MinotaurFX3 { DamageType "Fire" DamageType "Magic" }
 ACTOR MaulotaurNew : Minotaur replaces Minotaur
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -1429,6 +1440,8 @@ actor FMaulotaur : MaulotaurNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR SnakeProjANew : SnakeProjA replaces SnakeProjA { DamageType "Ice" DamageType "Magic" }
+ACTOR SnakeProjBNew : SnakeProjB replaces SnakeProjB { DamageType "Fire" DamageType "Magic" }
 ACTOR SnakeNew : Snake // replaces Snake
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -1522,6 +1535,7 @@ actor FSnake : SnakeNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR SorcererFX1New : SorcererFX1 replaces SorcererFX1 { DamageType "Fire" }
 ACTOR DSparilMountedNew : Sorcerer1 replaces Sorcerer1
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
@@ -1610,6 +1624,9 @@ ACTOR DSparilMountedNew : Sorcerer1 replaces Sorcerer1
   }
 }
 
+ACTOR SorcererFX1New : SorcererFX1 replaces SorcererFX1 { DamageType "Fire" }
+ACTOR Sorcerer2FX1New : Sorcerer2FX1 replaces Sorcerer2FX1 { Damage 10 DamageType "Thunder" DamageType "Magic" }
+ACTOR Sorcerer2FX2New : Sorcerer2FX2 replaces Sorcerer2FX2 { Damage 10 DamageType "Magic" }
 ACTOR DSparilUnmountedNew : Sorcerer2 replaces Sorcerer2
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;

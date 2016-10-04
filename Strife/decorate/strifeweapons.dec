@@ -529,14 +529,7 @@ ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
     Loop
 
    Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     BLIT A -1
     Stop
   }
@@ -563,14 +556,7 @@ ACTOR BoxOfBulletsNew : BoxOfBullets replaces BoxOfBullets
     Loop
 
    Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     BBOX A -1
     Stop
   }
@@ -601,15 +587,8 @@ ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     RIFL A -1
     Stop
   Ready:
@@ -656,15 +635,8 @@ ACTOR AssaultGunStandingNew : AssaultGunStanding replaces AssaultGunStanding
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     RIFL B -1
     Stop
   }
@@ -690,15 +662,8 @@ ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     MSSL A -1
     Stop
   }
@@ -724,15 +689,8 @@ ACTOR CrateOfMissilesNew : CrateOfMissiles replaces CrateOfMissiles
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     ROKT A -1
     Stop
   }
@@ -763,15 +721,8 @@ ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     MMSL A -1
     Stop
   Ready:
@@ -820,15 +771,8 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     FLAM A -1
     Stop
   Ready:
@@ -867,15 +811,8 @@ ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     MSSL A -1
     Stop
   }
@@ -905,15 +842,8 @@ ACTOR PhosphorusGrenadeRoundsNew : PhosphorusGrenadeRounds replaces PhosphorusGr
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     ROKT A -1
     Stop
   }
@@ -950,15 +880,8 @@ ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLau
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     GRND A -1
     Stop
   Ready:
@@ -1036,15 +959,8 @@ ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     MSSL A -1
     Stop
   }
@@ -1070,15 +986,8 @@ ACTOR EnergyPackNew : EnergyPack replaces EnergyPack
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-   Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     ROKT A -1
     Stop
   }
@@ -1110,15 +1019,8 @@ ACTOR MaulerNew : Mauler replaces Mauler
 	}
     Loop
 
-   Spawn:
-    TNT1 A 0
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-    TNT1 A 1 ACS_NamedExecuteAlways("ArmorBonusCheckCharacter",0,0,0,0)
-    TNT1 A 0 A_JumpIf(args[4] == 2,"FloraDetected")
-  Idle:
+  Spawn:
+    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
     TRPD A -1
     Stop
   Ready:

@@ -3,7 +3,7 @@ ACTOR PeasantNew : Peasant replaces Peasant
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
 
   Health 31
@@ -265,7 +265,7 @@ ACTOR BeggarNew : Beggar replaces Beggar // Base Class
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
 
   Health 20
@@ -411,7 +411,7 @@ ACTOR MerchantNew : Merchant replaces Merchant
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
 
   Health 94
   PainChance 256 // a merchant should always enter the pain state when getting hurt
@@ -503,7 +503,7 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
 
   Health 120		// 2x the HP
@@ -704,7 +704,7 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
 
   DamageFactor "Fire", 0.875
@@ -968,7 +968,7 @@ ACTOR TemplarNew : Templar replaces Templar
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.75
@@ -1111,7 +1111,7 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.25
@@ -1249,7 +1249,7 @@ ACTOR ReaverNew : Reaver replaces Reaver
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.5
@@ -1369,7 +1369,7 @@ ACTOR CrusaderNew : Crusader replaces Crusader
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.5
@@ -1471,7 +1471,7 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.75
@@ -1563,7 +1563,7 @@ ACTOR OStalkerNew : Stalker replaces Stalker
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.75
@@ -1668,7 +1668,7 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   DamageFactor "Fire", 0.85
@@ -1767,7 +1767,7 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
  
   ConversationID 95
@@ -1889,7 +1889,7 @@ ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.15
  
   ConversationID 64
@@ -1992,7 +1992,7 @@ ACTOR OracleNew : Oracle replaces Oracle
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.05
  
   ConversationID 65
@@ -2061,7 +2061,7 @@ ACTOR Macil1New : Macil1 replaces Macil1
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
  
   ConversationID 49
@@ -2147,7 +2147,7 @@ ACTOR Macil2New : Macil2 replaces Macil2
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
  
   DamageFactor "Fire", 0.5
@@ -2274,7 +2274,7 @@ ACTOR LoremasterNew : Loremaster replaces Loremaster
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
  
   ConversationID 66
@@ -2387,7 +2387,7 @@ ACTOR AlienSpectre1New : AlienSpectre1 replaces AlienSpectre1
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.001
  
   ConversationID 67
@@ -2533,7 +2533,7 @@ ACTOR AlienSpectre2New : AlienSpectre2 replaces AlienSpectre2
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 70
@@ -2661,7 +2661,7 @@ ACTOR AlienSpectre3New : AlienSpectre3 replaces AlienSpectre3
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 71
@@ -2808,7 +2808,7 @@ ACTOR AlienSpectre4New : AlienSpectre4 replaces AlienSpectre4
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 72
@@ -2953,7 +2953,7 @@ ACTOR AlienSpectre5New : AlienSpectre5 replaces AlienSpectre5
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 73
@@ -3093,7 +3093,7 @@ ACTOR EntityBossNew : EntityBoss replaces EntityBoss
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 74
@@ -3234,7 +3234,7 @@ ACTOR EntitySecondNew : EntitySecond replaces EntitySecond
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   ConversationID 75
@@ -3377,7 +3377,7 @@ ACTOR EntityAscended : EntityBoss
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
  
   Health 3250
@@ -3573,7 +3573,7 @@ actor AlienSpectre1Model : AlienSpectreModel 27401
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   //$NotAngled
   //$Color 12
   //$Category "DV-DS Strife Patch/Models"
@@ -3586,7 +3586,7 @@ actor AlienSpectre2Model : AlienSpectreModel 27402
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   //$NotAngled
   //$Color 12
   //$Category "DV-DS Strife Patch/Models"
@@ -3599,7 +3599,7 @@ actor AlienSpectre3Model : AlienSpectreModel 27403
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   //$NotAngled
   //$Color 12
   //$Category "DV-DS Strife Patch/Models"
@@ -3612,7 +3612,7 @@ actor AlienSpectre4Model : AlienSpectreModel 27404
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   //$NotAngled
   //$Color 12
   //$Category "DV-DS Strife Patch/Models"
@@ -3625,7 +3625,7 @@ actor AlienSpectre5Model : AlienSpectreModel 27405
 {
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+ var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   //$NotAngled
   //$Color 12
   //$Category "DV-DS Strife Patch/Models"
@@ -3639,7 +3639,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_checkmapskill; var int user_ressurrectstr; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
 
   SeeSound "darkinquisitor/sight"

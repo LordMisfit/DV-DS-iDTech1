@@ -326,6 +326,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 {
   Weapon.SelectionOrder 2700
+  +WEAPON.NOALERT
   Weapon.AmmoUse1 1
   Weapon.AmmoGive1 0
   Weapon.AmmoType1 "PoisonBolts"
@@ -398,29 +399,29 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -428,16 +429,16 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
 	 }
 	}
     TNT1 A 0

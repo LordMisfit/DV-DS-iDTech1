@@ -1080,6 +1080,7 @@ Actor NNSigil : StrifeWeaponBase
   Weapon.Kickback 100
   Weapon.SelectionOrder 4000
   +WEAPON.CHEATNOTWEAPON
+  +WEAPON.NOALERT
   Tag "$TAG_SIGIL"
   States
   {

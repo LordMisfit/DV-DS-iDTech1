@@ -3130,7 +3130,6 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
   obituary "%o was splattered by %k's super crossbow."
   radius 20
   height 16
-  attacksound "weapons/sshotf"
   inventory.pickupmessage "SUPER ETHEREAL CROSSBOW"
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"
@@ -3543,7 +3542,6 @@ actor DualSuperCrossbowNew : HereticWeaponBase
   obituary "%o was splattered by %k's super crossbows."
   radius 20
   height 16
-  attacksound "weapons/sshotf"
   inventory.pickupmessage "SUPER ETHEREAL CROSSBOW"
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"

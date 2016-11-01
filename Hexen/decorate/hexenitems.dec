@@ -699,7 +699,7 @@ ACTOR ArtiBoostManaNew : CustomInventory replaces ArtiBoostMana
 	Use:
 		//TNT1 A 0 A_GiveInventory("Mana1", 200)
 		//TNT1 A 0 A_GiveInventory("Mana2", 200)
-		TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-3) // A_GiveInventory("DoomSpellMana", 9999)
+		TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-3)
 		fail
 	}
 }

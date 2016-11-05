@@ -665,6 +665,11 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     DISR GHIJ 4
     MEAT D 700
     Stop
+  Ice:
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    HMN1 A 5 A_FreezeDeath
+    HMN1 A 1 A_FreezeDeathChunks
+    Wait
   }
 }
 
@@ -1234,6 +1239,14 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
     RBB3 CD 3 A_TossGib
     RBB3 E -1
     Stop
+
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(100,150))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    ROB3 A 5 A_FreezeDeath
+    ROB3 A 1 A_FreezeDeathChunks
+    Wait
   Raise:
     RBB3 C 3 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     RBB3 DBA 3 
@@ -1356,6 +1369,14 @@ ACTOR ReaverNew : Reaver replaces Reaver
     ROB1 O 5 A_NoBlocking
     ROB1 P 5 A_TossGib
     Goto Death+10
+
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(5,10))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    ROB1 A 5 A_FreezeDeath
+    ROB1 A 1 A_FreezeDeathChunks
+    Wait
   Raise:
     ROB1 Q 6 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     ROB1 PONML 5 
@@ -1458,6 +1479,13 @@ ACTOR CrusaderNew : Crusader replaces Crusader
     ROB2 P -1 A_CrusaderDeath
     Stop
 
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(7,16))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    ROB2 D 5 A_FreezeDeath
+    ROB2 D 1 A_FreezeDeathChunks
+    Wait
   Raise:
     ROB2 O 6 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     ROB2 NMLKJI 6 
@@ -1556,6 +1584,14 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
     SEWR I 4
     SEWR J 5
     Stop
+
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(4,7))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    SEWR D 5 A_FreezeDeath
+    SEWR D 1 A_FreezeDeathChunks
+    Wait
   }
 }
 
@@ -1661,6 +1697,13 @@ ACTOR OStalkerNew : Stalker replaces Stalker
     STLK VW 4
     STLK "XYZ[" 4 Bright
     Stop
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(3,6))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    STLK O 5 A_FreezeDeath
+    STLK O 1 A_FreezeDeathChunks
+    Wait
   }
 }
 
@@ -1759,6 +1802,8 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
     BALL BCDE 6 Bright
     TURT C -1
     Stop
+  Ice:
+    goto Death
   }
 }
 
@@ -1883,6 +1928,8 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
   XDeath:
     goto Death
   }
+  Ice:
+    goto Death
 }
 
 ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
@@ -1985,6 +2032,8 @@ ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
     Stop
   XDeath:
     goto Death
+  Ice:
+    goto Death
   }
 }
 
@@ -2053,6 +2102,8 @@ ACTOR OracleNew : Oracle replaces Oracle
     ORCL Q -1
     Stop
   XDeath:
+    goto Death
+  Ice:
     goto Death
   }
 }
@@ -2140,6 +2191,9 @@ ACTOR Macil1New : Macil1 replaces Macil1
     LEAD Y 3
     LEAD Y 3 A_Pain
     Goto See
+
+  Ice:
+    goto Death
   }
 }
 
@@ -2267,6 +2321,9 @@ ACTOR Macil2New : Macil2 replaces Macil2
     Stop
   XDeath:
     goto Death
+	
+  Ice:
+    goto Death
   }
 }
 
@@ -2378,6 +2435,9 @@ ACTOR LoremasterNew : Loremaster replaces Loremaster
     PDED T -1
     Stop
   XDeath:
+    goto Death
+	
+  Ice:
     goto Death
   }
 }
@@ -2526,6 +2586,9 @@ ACTOR AlienSpectre1New : AlienSpectre1 replaces AlienSpectre1
     Stop
   XDeath:
     goto Death
+	
+  Ice:
+    goto Death
   }
 }
 
@@ -2653,6 +2716,9 @@ ACTOR AlienSpectre2New : AlienSpectre2 replaces AlienSpectre2
 	}
     Stop
   XDeath:
+    goto Death
+	
+  Ice:
     goto Death
   }
 }
@@ -2801,6 +2867,9 @@ ACTOR AlienSpectre3New : AlienSpectre3 replaces AlienSpectre3
     Stop
   XDeath:
     goto Death
+	
+  Ice:
+    goto Death
   }
 }
 
@@ -2946,6 +3015,9 @@ ACTOR AlienSpectre4New : AlienSpectre4 replaces AlienSpectre4
     Stop
   XDeath:
     goto Death
+	
+  Ice:
+    goto Death
   }
 }
 
@@ -3084,6 +3156,9 @@ ACTOR AlienSpectre5New : AlienSpectre5 replaces AlienSpectre5
 	}
     Stop
   XDeath:
+    goto Death
+	
+  Ice:
     goto Death
   }
 }
@@ -3226,6 +3301,8 @@ ACTOR EntityBossNew : EntityBoss replaces EntityBoss
     MNAL Q 6 Bright A_EntityDeath
     Stop
   XDeath:
+    goto Death
+  Ice:
     goto Death
   }
 }
@@ -3370,6 +3447,8 @@ ACTOR EntitySecondNew : EntitySecond replaces EntitySecond
 
   XDeath:
     goto Death
+  Ice:
+    goto Death
   }
 }
 
@@ -3512,6 +3591,8 @@ ACTOR EntityAscended : EntityBoss
     Stop
   XDeath:
     goto Death
+  Ice:
+    goto Death
   }
 }
 
@@ -3527,7 +3608,7 @@ actor AlienSpectreModel
   Mass 500000000
   RenderStyle Translucent
   Alpha 0.333
-  Monster
+  //Monster
   -SOLID
   +NODAMAGE
   +NOBLOOD
@@ -3785,7 +3866,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
     TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
     Goto Death
   Death:
-    TNT1 A 0 A_GiveToTarget ("Coin", random(100,150))
+    TNT1 A 0 A_GiveToTarget ("Coin", random(200,250))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
     TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
 	ROB4 A 0 A_TakeInventory("FlightToken", 1)
@@ -3799,6 +3880,13 @@ ACTOR DarkInquisitor : Inquisitor 27406
 	NULL A 0 A_CustomMissile("DarkInquisitorBigExplosion",0,0,0)
 	TNT1 A 0 Radius_Quake(8,40,0,35,0)
     Stop
+  Ice:
+    TNT1 A 0 A_GiveToTarget ("Coin", random(200,250))
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+    ROB4 A 5 A_FreezeDeath
+    ROB4 A 1 A_FreezeDeathChunks
+    Wait
   }
 }
 

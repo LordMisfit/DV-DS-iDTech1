@@ -872,6 +872,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
   Weapon.SelectionOrder 800
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
+  Weapon.AmmoGive 10
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
   Weapon.YAdjust 0
@@ -1113,6 +1114,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
   Weapon.SelectionOrder 800
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
+  Weapon.AmmoGive 10
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
   Weapon.YAdjust 0

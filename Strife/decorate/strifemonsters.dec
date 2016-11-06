@@ -1927,9 +1927,9 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
     Stop
   XDeath:
     goto Death
-  }
   Ice:
     goto Death
+  }
 }
 
 ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop

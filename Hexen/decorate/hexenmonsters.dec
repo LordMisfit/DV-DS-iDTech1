@@ -416,7 +416,7 @@ Actor EttinCommander : Ettin
 
   XDeath:
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    CETB A 4 A_SpawnItemEx("GIBBER")
+    CETB A 4 //A_SpawnItemEx("GIBBER")
     CETB B 4 A_NoBlocking
     CETB C 4 A_SpawnItemEx("EttinMace", 0,0,8.5, random[DropMace](-128,127) * 0.03125, random[DropMace](-128,127) * 0.03125, 10 + random[DropMace](0,255) * 0.015625, 0, SXF_ABSOLUTEMOMENTUM)
     CETB D 4 A_Scream

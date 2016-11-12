@@ -1705,7 +1705,7 @@ ACTOR WraithNew : Wraith replaces Wraith
     WRTH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     WRTH A 10
     WRTH B 5 A_WraithInit
-    goto Spawn+1
+    goto Look
   Look:
     WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH AB 15 A_Look

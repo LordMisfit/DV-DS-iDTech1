@@ -1123,6 +1123,7 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
   DamageFactor "Ice", 0.5
   DamageFactor "Thunder", 1.75
 
+  Mass 80000
   ConversationID 93
   +DROPOFF
   +NOBLOOD
@@ -3732,6 +3733,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
   PainChance 1
   Speed 20
   FloatSpeed 15
+  Mass 120000
   +BOSS
   +BOSSDEATH
   +FLOORCLIP

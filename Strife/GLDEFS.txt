@@ -173,84 +173,24 @@ pointlight TeslaExplode16
     size 152
 }
 
-Object TeslaShotAltExplode1
+Object EMPGrenade
 {
-	Frame TXP1 { Light TeslaExplode1 }
-}
-
-Object TeslaShotAltExplode2
-{
-	Frame TXP1 { Light TeslaExplode2 }
-}
-
-Object TeslaShotAltExplode3
-{
-	Frame TXP1 { Light TeslaExplode3 }
-}
-
-Object TeslaShotAltExplode4
-{
-	Frame TXP1 { Light TeslaExplode4 }
-}
-
-Object TeslaShotAltExplode5
-{
-	Frame TXP1 { Light TeslaExplode5 }
-}
-
-Object TeslaShotAltExplode6
-{
-	Frame TXP1 { Light TeslaExplode6 }
-}
-
-Object TeslaShotAltExplode7
-{
-	Frame TXP1 { Light TeslaExplode7 }
-}
-
-Object TeslaShotAltExplode8
-{
-	Frame TXP1 { Light TeslaExplode8 }
-}
-
-Object TeslaShotAltExplode9
-{
-	Frame TXP1 { Light TeslaExplode9 }
-}
-
-Object TeslaShotAltExplode10
-{
-	Frame TXP1 { Light TeslaExplode10 }
-}
-
-Object TeslaShotAltExplode11
-{
-	Frame TXP1 { Light TeslaExplode11 }
-}
-
-Object TeslaShotAltExplode12
-{
-	Frame TXP1 { Light TeslaExplode12 }
-}
-
-Object TeslaShotAltExplode13
-{
-	Frame TXP1 { Light TeslaExplode13 }
-}
-
-Object TeslaShotAltExplode14
-{
-	Frame TXP1 { Light TeslaExplode14 }
-}
-
-Object TeslaShotAltExplode15
-{
-	Frame TXP1 { Light TeslaExplode15 }
-}
-
-Object TeslaShotAltExplode16
-{
-	Frame TXP1 { Light TeslaExplode16 }
+	Frame TXP1A { Light TeslaExplode1 }
+	Frame TXP1B { Light TeslaExplode2 }
+	Frame TXP1C { Light TeslaExplode3 }
+	Frame TXP1D { Light TeslaExplode4 }
+	Frame TXP1E { Light TeslaExplode5 }
+	Frame TXP1F { Light TeslaExplode6 }
+	Frame TXP1G { Light TeslaExplode7 }
+	Frame TXP1H { Light TeslaExplode8 }
+	Frame TXP1I { Light TeslaExplode9 }
+	Frame TXP1J { Light TeslaExplode10 }
+	Frame TXP1K { Light TeslaExplode11 }
+	Frame TXP1L { Light TeslaExplode12 }
+	Frame TXP1M { Light TeslaExplode13 }
+	Frame TXP1N { Light TeslaExplode14 }
+	Frame TXP1O { Light TeslaExplode15 }
+	Frame TXP1P { Light TeslaExplode16 }
 }
 
 Pointlight SmithExplode1

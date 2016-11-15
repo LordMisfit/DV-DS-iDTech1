@@ -49,18 +49,19 @@ skill nightmare
 }
 
 clearepisodes
-episode map0a
+episode map0b
 {
- name = "Hexen: Beyond Heretic"
+ name = "Hexen: DeathKings"
  key = "H"
 }
+
 //**********************
 //**Classic Hexen Maps**
 //**********************
-map MAP0A "Skip Map"
+map MAP0b "Skip Map"
 {
- levelnum = 1020
- next = "MAP01"
+ levelnum = 1021
+ next = "MAP41"
  cluster = 32
  par = 1
  sucktime = 1

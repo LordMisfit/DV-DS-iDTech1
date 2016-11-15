@@ -20,6 +20,8 @@ HOW TO INSTALL / RUN / ETC:
 
  - Running - 3. To run Hexen w/ DV-DS Command line: "start gzdoom.exe -iwad hexen.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" +hud_scale 0 exit" 
 
- - Running - 4. To run Strife w/ DV-DS Command line: "start gzdoom.exe -iwad strife1.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Strife" +hud_scale 0 exit" 
+ - Running - 4. To run Hexen: DeathKings of the Dark Citadel w/ DV-DS Command line: "start gzdoom.exe -iwad hexdd.wad "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" "DV-DS-idTech1/HexDD" +hud_scale 0 exit" 
+
+ - Running - 5. To run Strife w/ DV-DS Command line: "start gzdoom.exe -iwad strife1.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Strife" +hud_scale 0 exit" 
 
  - Important: The "Deus Vult" and "Deus Vult II" episodes do NOT appear when playing in Heretic, Hexen or Strife modes, as they heavily rely on Doom-specfic resources which are not normally present while playing the other Doom engine games. You can still warp to those maps ["warp" or "changemap" console commands] but they won't function 100%. :P

@@ -531,7 +531,8 @@ Actor EttinCommander : Ettin
     CETN K 4 A_Scream
     CETN L 4 A_NoBlocking
     CETN M 4 A_QueueCorpse
-    CETN NOP 4
+    CETN NO 4 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
+    CETN P 4 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
     CETN Q -1 //A_BossDeath
     Stop
 
@@ -542,7 +543,8 @@ Actor EttinCommander : Ettin
     CETB C 4 A_SpawnItemEx("EttinMace", 0,0,8.5, random[DropMace](-128,127) * 0.03125, random[DropMace](-128,127) * 0.03125, 10 + random[DropMace](0,255) * 0.015625, 0, SXF_ABSOLUTEMOMENTUM)
     CETB D 4 A_Scream
     CETB E 4 A_QueueCorpse
-    CETB FGHIJK 4
+    CETB FGHIJ 4
+    CETB K 4 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
     ETTB L -1 //A_BossDeath
     Stop
   Ice:
@@ -3118,7 +3120,7 @@ ACTOR VampireDVDS : Bishop
     VAM1 J 5 Bright  
     VAM1 KLM 5 Bright
     VAM1 N 5 
-    VAM1 O 5  
+    VAM1 O 5 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
     VAM1 P -1 
     Stop 
   Ice:

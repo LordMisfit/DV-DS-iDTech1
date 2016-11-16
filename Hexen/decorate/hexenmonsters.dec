@@ -31,11 +31,11 @@ ACTOR MaulotaurNew : MinotaurFriend replaces MinotaurFriend
   Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     MNTR A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-    MNTR A 15
-    MNTR A 15 A_SetTranslucent(0.66, 0)
-    MNTR A 3 A_SetTranslucent(1, 0)
-    MNTR AB 10 A_MinotaurLook
-    goto Spawn+4
+//    MNTR A 15
+//    MNTR A 15 A_SetTranslucent(0.66, 0)
+//    MNTR A 3 A_SetTranslucent(1, 0)
+//    MNTR AB 10 A_MinotaurLook
+    goto Spawn+1
   Roam:
     MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MNTR ABCD 5 A_MinotaurRoam

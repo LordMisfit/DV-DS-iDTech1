@@ -7,8 +7,8 @@ ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
 ACTOR ArtiPorkNew : ArtiPork replaces ArtiPork
 {
   +DONTGIB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Tag "Porkulator: Transforms up to eleven enemies into pigs."
   States
@@ -35,8 +35,8 @@ ACTOR ArtiPorkNew : ArtiPork replaces ArtiPork
 ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 {
   +DONTGIB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Tag "Dark Servant: Summons a friendly Maulotaur to fight for you."
 }
@@ -44,8 +44,8 @@ ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 {
   +DONTGIB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Tag "Banishment Device: Teleports away the first creature it hits."
 }
@@ -53,8 +53,8 @@ ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 {
   +DONTGIB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Tag "Chaos Device: Teleports you away to near a level's entry point."
 }
@@ -63,8 +63,8 @@ ACTOR ArtiSpeedBootsNew : CustomInventory replaces ArtiSpeedBoots
 {
   +DONTGIB
   +FLOATBOB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Inventory.Icon ARTISPED
   Inventory.PickupMessage "$TXT_ARTISPEED" // "BOOTS OF SPEED"
@@ -84,8 +84,8 @@ ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
 {
   +DONTGIB
   +FLOATBOB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTISOAR
@@ -176,8 +176,8 @@ ACTOR ArtiInvulnerability2New : CustomInventory replaces ArtiInvulnerability2
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTIDEFN
@@ -199,8 +199,8 @@ ACTOR ArtiHealingRadiusNew : CustomInventory replaces ArtiHealingRadius
   +DONTGIB
   +COUNTITEM
   +FLOATBOB
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   +INVENTORY.INVBAR
   +INVENTORY.PICKUPFLASH
@@ -231,6 +231,7 @@ actor FlechetteReplacer : RandomSpawner replaces ArtiPoisonBag
     DropItem "ArtiSuperHealth", 96, 14
     DropItem "StrongMedicine", 96, 10
     DropItem "SpecialMedicine", 96, 10
+    DropItem "SapphireWandNew" 96, 10
     DropItem "RockBombShard", 96, 5
     DropItem "PaxaPunch", 96, 5
     DropItem "MercuryBandana", 96, 5
@@ -253,6 +254,7 @@ actor ArtiBlastRadiusNew : FlechetteReplacer replaces ArtiBlastRadius
     DropItem "ArtiSuperHealth", 96, 14
     DropItem "StrongMedicine", 96, 10
     DropItem "SpecialMedicine", 96, 10
+    DropItem "SapphireWandNew" 96, 10
     DropItem "RockBombShard", 96, 5
     DropItem "PaxaPunch", 96, 5
     DropItem "MercuryBandana", 96, 5
@@ -317,6 +319,7 @@ actor MeshArmorNew : RandomSpawner replaces MeshArmor
 actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "ImpClawCI"
     DropItem "DarkImpClawCI"
@@ -328,6 +331,7 @@ actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
 actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "ImpClawCI"
     DropItem "DarkImpClawCI"
@@ -339,6 +343,7 @@ actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
 actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "ImpClawCI"
     DropItem "DarkImpClawCI"
@@ -352,6 +357,7 @@ actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
 actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "IncarnateSkullCI"
     DropItem "BaronFistCI"
@@ -363,6 +369,7 @@ actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
 actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "IncarnateSkullCI"
     DropItem "BaronFistCI"
@@ -374,6 +381,7 @@ actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
 actor MWeapLightningNew : RandomSpawner replaces MWeapLightning
 {
   +DONTGIB
+    DropItem "SapphireWandNew"
     DropItem "DiarisLongbow"
     DropItem "IncarnateSkullCI"
     DropItem "BaronFistCI"
@@ -663,8 +671,8 @@ ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Inventory.Icon ARTIPTN2
   Inventory.PickupSound "misc/p_pkup"
@@ -692,8 +700,8 @@ ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 99
-  inventory.InterHubAmount 99
+  inventory.maxamount 250
+  inventory.InterHubAmount 250
   
   Inventory.Icon ARTISPHL
   Inventory.PickupSound "misc/p_pkup"
@@ -722,8 +730,8 @@ ACTOR ArtiBoostManaNew : CustomInventory replaces ArtiBoostMana
     +INVENTORY.HUBPOWER
     +INVENTORY.PERSISTENTPOWER
     +INVENTORY.KEEPDEPLETED
-    inventory.maxamount 99
-    inventory.InterHubAmount 99
+    inventory.maxamount 250
+    inventory.InterHubAmount 250
     
 	Inventory.Icon "ARTIBMAN"
 	Inventory.PickupSound "misc/p_pkup"

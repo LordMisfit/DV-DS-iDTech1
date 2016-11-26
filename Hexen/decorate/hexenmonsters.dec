@@ -2955,7 +2955,7 @@ actor Demon2Spawner : CustomInventory replaces Demon2
 
   Spawn:
    DEM2 A 0 
-   DEM2 A 0 A_JumpIf( random(1,1024) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
+   DEM2 A 0 A_JumpIf( random(1,512) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
    DEM2 A 0 A_SpawnItemEx("BrownChaosSerpentNew",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
    stop
  }

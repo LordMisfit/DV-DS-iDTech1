@@ -3225,6 +3225,7 @@ ACTOR Goldlich : Ironlich 31044
 
   States
   {
+  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     LICH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     LICH A 1 A_Look
@@ -3530,6 +3531,7 @@ ACTOR BloodLich
   +BOSSDEATH
   States
   {
+  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     BLCH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
 	BLCH A 10 A_Look
@@ -3776,6 +3778,7 @@ ACTOR Banshee
 
   States
   {
+  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     BANS A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     BANS A 1 A_Look

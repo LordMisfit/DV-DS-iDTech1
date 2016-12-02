@@ -1,3 +1,28 @@
+goldlich/attack1	HEDAT1
+goldlich/attack2	HEDAT2
+goldlich/attack2Blast	GHEDAT2B
+goldlich/attack3	GHEDAT3
+
+goldlich/sight		GHEDSIT
+goldlich/pain		GHEDPAI
+goldlich/death		GHEDDTH
+goldlich/active		GHEDACT
+
+monster/plaugeBall                dsbloodx
+
+MageStaffFire		mage4
+MageStaffExplode	mageball
+WraithSight		raith5a
+WraithActive		raith3
+WraithPain		raith4a
+WraithAttack		raith1b
+WraithMissileFire	impfire2
+WraithMissileExplode	impact3
+
+FlameBreath		FLAMEB
+CurseActive		CURSEACT
+CurseHit		CURSEHIT
+
 //
 // Minotaur sounds
 //
@@ -73,6 +98,9 @@ ironlich/attack3			hedat3
 ironlich/pain			hedpai
 ironlich/death			heddth
 ironlich/active			hedact
+FrostBreath		FROSTB
+IceGuyAttack            frosty2
+IceGuyMissileExplode    shards1b
 
 dsparilserpent/sight		sbtsit
 dsparilserpent/attack		sbtatk

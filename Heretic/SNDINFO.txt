@@ -1,3 +1,21 @@
+// Banshee
+Banshee/Sight  BANSSEE1
+Banshee/Active BANSACT1
+Banshee/ASpawn BANSATT1
+Banshee/ADeath BANSATT2
+
+BANSDIE1 BANSDIE1
+BANSDIE2 BANSDIE2
+BANSPAI1 BANSPAI1
+BANSPAI2 BANSPAI2
+BANSRAI1 BANSRAI1
+BANSRAI2 BANSRAI2
+
+$Random Banshee/Death { BANSDIE1 BANSDIE2 }
+$Random Banshee/Pain  { BANSPAI1 BANSPAI2 }
+$Random Banshee/Raise { BANSRAI1 BANSRAI2 }
+
+// Gold Lich
 goldlich/attack1	HEDAT1
 goldlich/attack2	HEDAT2
 goldlich/attack2Blast	GHEDAT2B

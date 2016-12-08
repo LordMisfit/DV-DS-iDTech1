@@ -2279,6 +2279,8 @@ ACTOR PhoenixFX2New : PhoenixFX2
   Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",34)) //2
   DamageType "Magic"
   DamageType "Fire"
+  ProjectileKickback 0
+  +NODAMAGETHRUST
 }
 
 ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod 

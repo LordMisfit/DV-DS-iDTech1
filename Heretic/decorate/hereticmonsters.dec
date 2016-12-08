@@ -2924,8 +2924,7 @@ ACTOR PlagueShot
   Radius 8
   Height 16
   Speed 16
-  Damage 2
-  PoisonDamage 12
+  Damage (5*random(3,5))
   PROJECTILE
   +THRUGHOST
   +HITMASTER

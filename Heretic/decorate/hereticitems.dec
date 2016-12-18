@@ -116,7 +116,6 @@ ACTOR ArtiInvisibilityNew : CustomInventory replaces ArtiInvisibility
 ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
 {
   +DONTGIB
-  +COUNTITEM
   +FLOATBOB
   inventory.maxamount 250
   inventory.InterHubAmount 250

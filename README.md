@@ -1,4 +1,4 @@
-DV-DS-iDTech1 ["Aetherius" iDTech1 Packages - Allows DV-DS to run with other iDTech1 games]
+DV-DS-iDTech1 ["Aetherius" iDTech1 Packages - Allows "Aetherius" to run with other iDTech1 games]
 
 - Allows you to properly run "Aetherius" in Doom 1 mode, as it adds some sprites/actors that don't appear normally in Doom 1 like the Super Shotgun, Chaingunners, etc. It will also add a custom intermission map for Episode 4: Thy Flesh Consumed.
 

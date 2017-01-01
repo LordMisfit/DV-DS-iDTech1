@@ -144,29 +144,29 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -174,16 +174,16 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
 	 }
 	}
     TNT1 A 0
@@ -267,29 +267,29 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -297,16 +297,16 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
 	 }
 	}
     XBOW C 4
@@ -399,29 +399,29 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -429,16 +429,16 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
+	  A_FireProjectile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
 	 }
 	}
     TNT1 A 0
@@ -1223,29 +1223,29 @@ Actor NNSigil : StrifeWeaponBase
 	   {
         // Angle + 15, Pitch + 0
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle + 7.5, Pitch + 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle + 7.5, Pitch - 7.5
         A_SetPitch(pitch-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle + 0, Pitch + 0
         A_SetPitch(pitch+7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle - 7.5, Pitch - 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle - 7.5, Pitch + 7.5
         A_SetPitch(pitch+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Angle - 15, Pitch + 0
         A_SetPitch(pitch-7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         // Reset
         A_SetAngle(angle+15);
 	   }
@@ -1253,16 +1253,16 @@ Actor NNSigil : StrifeWeaponBase
 	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	   {
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
         A_SetAngle(angle+15);
 	   }
 	   else
 	   {
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
+	    A_FireProjectile("NNSigilLightningSpot", 0, 0);
  	   }
 	  }
       Goto Ready
@@ -1279,29 +1279,29 @@ Actor NNSigil : StrifeWeaponBase
 	   {
         // Angle + 15, Pitch + 0
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle + 7.5, Pitch + 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle + 7.5, Pitch - 7.5
         A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle + 0, Pitch + 0
         A_SetPitch(pitch+7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle - 7.5, Pitch - 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle - 7.5, Pitch + 7.5
         A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Angle - 15, Pitch + 0
         A_SetPitch(pitch-7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         // Reset
         A_SetAngle(angle+15);
 	   }
@@ -1309,16 +1309,16 @@ Actor NNSigil : StrifeWeaponBase
 	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	   {
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
         A_SetAngle(angle+15);
 	   }
 	   else
 	   {
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
+	    A_FireProjectile("SpectralLightningH1", 0, 0);
  	   }
 	  }
       Goto Ready
@@ -1339,29 +1339,29 @@ Actor NNSigil : StrifeWeaponBase
 	   {
         // Angle + 15, Pitch + 0
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle + 7.5, Pitch + 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle + 7.5, Pitch - 7.5
         A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle + 0, Pitch + 0
         A_SetPitch(pitch+7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle - 7.5, Pitch - 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle - 7.5, Pitch + 7.5
         A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Angle - 15, Pitch + 0
         A_SetPitch(pitch-7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         // Reset
         A_SetAngle(angle+15);
 	   }
@@ -1369,16 +1369,16 @@ Actor NNSigil : StrifeWeaponBase
 	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	   {
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
         A_SetAngle(angle+15);
 	   }
 	   else
 	   {
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBall1", 0, 0);
  	   }
 	  }
       TNT1 A 0 A_TakeInventory("NNSigil3AttackCounter", 1)
@@ -1398,29 +1398,29 @@ Actor NNSigil : StrifeWeaponBase
 	   {
         // Angle + 15, Pitch + 0
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle + 7.5, Pitch + 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle + 7.5, Pitch - 7.5
         A_SetPitch(pitch-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle + 0, Pitch + 0
         A_SetPitch(pitch+7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle - 7.5, Pitch - 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle - 7.5, Pitch + 7.5
         A_SetPitch(pitch+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Angle - 15, Pitch + 0
         A_SetPitch(pitch-7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         // Reset
         A_SetAngle(angle+15);
 	   }
@@ -1428,16 +1428,16 @@ Actor NNSigil : StrifeWeaponBase
 	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	   {
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
         A_SetAngle(angle+15);
 	   }
 	   else
 	   {
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
+	    A_FireProjectile("NNSigilLightningBigV", 0, 0);
  	   }
 	  }
       Goto Ready
@@ -1454,29 +1454,29 @@ Actor NNSigil : StrifeWeaponBase
 	   {
         // Angle + 15, Pitch + 0
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle + 7.5, Pitch + 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle + 7.5, Pitch - 7.5
         A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle + 0, Pitch + 0
         A_SetPitch(pitch+7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle - 7.5, Pitch - 7.5
         A_SetAngle(angle-7.5);
         A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle - 7.5, Pitch + 7.5
         A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Angle - 15, Pitch + 0
         A_SetPitch(pitch-7.5);
         A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         // Reset
         A_SetAngle(angle+15);
 	   }
@@ -1484,16 +1484,16 @@ Actor NNSigil : StrifeWeaponBase
 	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	   {
         A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
         A_SetAngle(angle+15);
 	   }
 	   else
 	   {
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
+	    A_FireProjectile("SpectralLightningBigBall1", 0, 0);
  	   }
 	  }
       Goto Ready

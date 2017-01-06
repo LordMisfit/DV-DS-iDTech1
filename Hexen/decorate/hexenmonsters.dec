@@ -84,6 +84,16 @@ ACTOR MaulotaurNew : MinotaurFriend replaces MinotaurFriend
     MNTR E 3
     MNTR E 6 A_Pain
     Goto See
+  Pain.Fist:
+    MNTR E 3
+    MNTR E 6 A_Pain
+    MNTR EE 3
+    Goto See
+  Pain.Kick:
+    MNTR E 3
+    MNTR E 6 A_Pain
+    MNTR EEEE 3
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -322,6 +332,14 @@ ACTOR EttinNew : Ettin // replaces Ettin
   Pain:
     ETTN H 7 A_Pain
     Goto See
+  Pain.Fist:
+    ETTN H 7 A_Pain
+    ETTN H 7
+    Goto See
+  Pain.Kick:
+    ETTN H 7 A_Pain
+    ETTN HH 7
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -438,6 +456,14 @@ ACTOR EttinGhostNew : EttinMash replaces EttinMash
   Pain:
     ETTN H 7 A_Pain
     Goto See
+  Pain.Fist:
+    ETTN H 7 A_Pain
+    ETTN H 7
+    Goto See
+  Pain.Kick:
+    ETTN H 7 A_Pain
+    ETTN HH 7
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -536,6 +562,14 @@ Actor EttinCommander : Ettin
     Loop
   Pain:
     CETN H 7 A_Pain
+    Goto See
+  Pain.Fist:
+    CETN H 7 A_Pain
+    CETN H 7
+    Goto See
+  Pain.Kick:
+    CETN H 7 A_Pain
+    CETN HH 7
     Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -704,6 +738,20 @@ ACTOR CentaurNew : Centaur replaces Centaur
     CENT EEE 15 A_CentaurDefend
     CENT E 1 A_UnsetReflectiveInvulnerable
     Goto See
+  Pain.Fist:
+    CENT G 6 A_Pain
+    CENT GG 6
+    CENT G 6 A_SetReflectiveInvulnerable
+    CENT EEE 15 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  Pain.Kick:
+    CENT G 6 A_Pain
+    CENT GGGG 6
+    CENT G 6 A_SetReflectiveInvulnerable
+    CENT EEE 15 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -832,6 +880,20 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
     CENT EEE 15 A_CentaurDefend
     CENT E 1 A_UnsetReflectiveInvulnerable
     Goto See
+  Pain.Fist:
+    CENT G 6 A_Pain
+    CENT GG 6
+    CENT G 6 A_SetReflectiveInvulnerable
+    CENT EEE 15 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  Pain.Kick:
+    CENT G 6 A_Pain
+    CENT GGGG 6
+    CENT G 6 A_SetReflectiveInvulnerable
+    CENT EEE 15 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -936,6 +998,20 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
     Goto See
   Pain:
     CENT G 5 A_Pain
+    CENT G 5 A_SetReflectiveInvulnerable
+    CENT EEE 17 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  Pain.Fist:
+    CENT G 5 A_Pain
+    CENT GG 5
+    CENT G 5 A_SetReflectiveInvulnerable
+    CENT EEE 17 A_CentaurDefend
+    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto See
+  Pain.Kick:
+    CENT G 5 A_Pain
+    CENT GGGG 5
     CENT G 5 A_SetReflectiveInvulnerable
     CENT EEE 17 A_CentaurDefend
     CENT E 1 A_UnsetReflectiveInvulnerable
@@ -1065,6 +1141,16 @@ ACTOR FireDemonNew : FireDemon replaces FireDemon
   Pain:
     FDMN D 0 Bright A_UnSetInvulnerable
     FDMN D 6 Bright A_Pain
+    Goto Chase
+  Pain.Fist:
+    FDMN D 0 Bright A_UnSetInvulnerable
+    FDMN D 6 Bright A_Pain
+    FDMN DD 6 Bright
+    Goto Chase
+  Pain.Kick:
+    FDMN D 0 Bright A_UnSetInvulnerable
+    FDMN D 6 Bright A_Pain
+    FDMN DDDD 6 Bright
     Goto Chase
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -1219,6 +1305,18 @@ ACTOR BishopNew : Bishop // replaces Bishop
     BISH CCC 6 A_BishopPainBlur
     BISH C 0
     Goto See
+  Pain.Fist:
+    BISH C 6 A_Pain
+    BISH CC 6
+    BISH CCC 6 A_BishopPainBlur
+    BISH C 0
+    Goto See
+  Pain.Kick:
+    BISH C 6 A_Pain
+    BISH CCCC 6
+    BISH CCC 6 A_BishopPainBlur
+    BISH C 0
+    Goto See
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     BISH A 3 A_FaceTarget
@@ -1360,6 +1458,17 @@ ACTOR StalkerNew : Serpent replaces Serpent
   Pain:
     SSPT L 5
     SSPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    SSPT L 5
+    SSPT L 5 A_Pain
+    SSPT L 5
+	goto Dive
+  Pain.Kick:
+    SSPT L 5
+    SSPT L 5 A_Pain
+    SSPT LLLLL 5
+	goto Dive
   Dive:
     SSDV ABC 4
     SSDV D 4 A_UnSetShootable
@@ -1484,6 +1593,17 @@ ACTOR StalkerLeaderNew : SerpentLeader replaces SerpentLeader
   Pain:
     SSPT L 5
     SSPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    SSPT L 5
+    SSPT L 5 A_Pain
+    SSPT L 5
+	goto Dive
+  Pain.Kick:
+    SSPT L 5
+    SSPT L 5 A_Pain
+    SSPT LLLLL 5
+	goto Dive
   Dive:
     SSDV ABC 4
     SSDV D 4 A_UnSetShootable
@@ -1604,6 +1724,16 @@ ACTOR GreenChaosSerpentNew : Demon1 // replaces Demon1
   Pain:
     DEMN E 4
     DEMN E 4 A_Pain
+    Goto See
+  Pain.Fist:
+    DEMN E 4
+    DEMN E 4 A_Pain
+    DEMN EE 4
+    Goto See
+  Pain.Kick:
+    DEMN E 4
+    DEMN E 4 A_Pain
+    DEMN EEEE 4
     Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -1732,6 +1862,16 @@ ACTOR GreenChaosSerpentGhostNew : Demon1Mash replaces Demon1Mash
     DEMN E 4
     DEMN E 4 A_Pain
     Goto See
+  Pain.Fist:
+    DEMN E 4
+    DEMN E 4 A_Pain
+    DEMN EE 4
+    Goto See
+  Pain.Kick:
+    DEMN E 4
+    DEMN E 4 A_Pain
+    DEMN EEEE 4
+    Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEMN E 6 A_FaceTarget
@@ -1828,6 +1968,16 @@ ACTOR BrownChaosSerpentNew : Demon2 // replaces Demon2
   Pain:
     DEM2 E 4
     DEM2 E 4 A_Pain
+    Goto See
+  Pain.Fist:
+    DEM2 E 4
+    DEM2 E 4 A_Pain
+    DEM2 EE 4
+    Goto See
+  Pain.Kick:
+    DEM2 E 4
+    DEM2 E 4 A_Pain
+    DEM2 EEEE 4
     Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -1997,6 +2147,16 @@ ACTOR BrownChaosSerpentGhostNew : Demon2Mash replaces Demon2Mash
   Pain:
     DEM2 E 4
     DEM2 E 4 A_Pain
+    Goto See
+  Pain.Fist:
+    DEM2 E 4
+    DEM2 E 4 A_Pain
+    DEM2 EE 4
+    Goto See
+  Pain.Kick:
+    DEM2 E 4
+    DEM2 E 4 A_Pain
+    DEM2 EEEE 4
     Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -2297,6 +2457,16 @@ Actor MagmaChaosSerpentNew : Demon1
   Pain:
     RDMN E 4
     RDMN E 4 A_Pain
+    Goto See
+  Pain.Fist:
+    RDMN E 4
+    RDMN E 4 A_Pain
+    RDMN EE 4
+    Goto See
+  Pain.Kick:
+    RDMN E 4
+    RDMN E 4 A_Pain
+    RDMN EEEE 4
     Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
@@ -2632,6 +2802,16 @@ Actor BlackChaosSerpentNew : Demon2
     DEM4 E 4
     DEM4 E 4 A_Pain
     Goto See
+  Pain.Fist:
+    DEM4 E 4
+    DEM4 E 4 A_Pain
+    DEM4 EE 4
+    Goto See
+  Pain.Kick:
+    DEM4 E 4
+    DEM4 E 4 A_Pain
+    DEM4 EEEE 4
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -2868,6 +3048,16 @@ Actor EtherealChaosSerpentNew : Demon1
     DEM5 E 4
     DEM5 E 4 A_Pain
     Goto See
+  Pain.Fist:
+    DEM5 E 4
+    DEM5 E 4 A_Pain
+    DEM5 EE 4
+    Goto See
+  Pain.Kick:
+    DEM5 E 4
+    DEM5 E 4 A_Pain
+    DEM5 EEEE 4
+    Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
     Goto See
@@ -3004,6 +3194,16 @@ ACTOR WraithNew : Wraith replaces Wraith
     WRTH A 2
     WRTH H 6 A_Pain
     Goto See
+  Pain.Fist:
+    WRTH A 2
+    WRTH H 6 A_Pain
+    WRTH H 6
+    Goto See
+  Pain.Kick:
+    WRTH A 2
+    WRTH H 6 A_Pain
+    WRTH HH 6
+    Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     WRTH E 6 A_FaceTarget
@@ -3134,6 +3334,16 @@ ACTOR WraithBuriedNew : WraithBuried replaces WraithBuried
   Pain:
     WRTH A 2
     WRTH H 6 A_Pain
+    Goto See
+  Pain.Fist:
+    WRTH A 2
+    WRTH H 6 A_Pain
+    WRTH H 6
+    Goto See
+  Pain.Kick:
+    WRTH A 2
+    WRTH H 6 A_Pain
+    WRTH HH 6
     Goto See
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -3400,6 +3610,16 @@ ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
     SORC G 8
     SORC G 8 A_Pain
     Goto See
+  Pain.Fist:
+    SORC G 8
+    SORC G 8 A_Pain
+    SORC G 8
+    Goto See
+  Pain.Kick:
+    SORC G 8
+    SORC G 8 A_Pain
+    SORC GG 8
+    Goto See
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     SORC F 6 Bright A_FaceTarget
@@ -3665,6 +3885,14 @@ ACTOR KoraxNew : Korax replaces Korax
     KORX H 5 A_Pain
     KORX H 5
     Goto See
+  Pain.Fist:
+    KORX H 5 A_Pain
+    KORX HH 5
+    Goto See
+  Pain.Kick:
+    KORX H 5 A_Pain
+    KORX HHH 5
+    Goto See
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     KORX E 2 Bright A_FaceTarget
@@ -3767,6 +3995,14 @@ ACTOR DragonNew : Dragon replaces Dragon
   Pain:
     DRAG F 10 A_DragonPain
     Goto See+4
+  Pain.Fist:
+    DRAG F 10 A_DragonPain
+    DRAG F 5
+    Goto See+4
+  Pain.Kick:
+    DRAG F 10 A_DragonPain
+    DRAG F 15
+    Goto See+4
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DRAG E 8 A_DragonAttack
@@ -3862,6 +4098,16 @@ ACTOR ClericBossNew : ClericBoss replaces ClericBoss
   Pain:
     CLER H 4
     CLER H 4 A_Pain
+    Goto See
+  Pain.Fist:
+    CLER H 4
+    CLER H 4 A_Pain
+    CLER HH 4
+    Goto See
+  Pain.Kick:
+    CLER H 4
+    CLER H 4 A_Pain
+    CLER HHHH 4
     Goto See
   Melee:
   Missile:
@@ -4042,6 +4288,16 @@ ACTOR FighterBossNew : FighterBoss replaces FighterBoss
     PLAY G 4
     PLAY G 4 A_Pain
     Goto See
+  Pain.Fist:
+    PLAY H 4
+    PLAY H 4 A_Pain
+    PLAY HH 4
+    Goto See
+  Pain.Kick:
+    PLAY H 4
+    PLAY H 4 A_Pain
+    PLAY HHHH 4
+    Goto See
   Melee:
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -4195,6 +4451,16 @@ ACTOR MageBossNew : MageBoss replaces MageBoss
   Pain:
     MAGE G 4
     MAGE G 4 A_Pain
+    Goto See
+  Pain.Fist:
+    MAGE H 4
+    MAGE H 4 A_Pain
+    MAGE HH 4
+    Goto See
+  Pain.Kick:
+    MAGE H 4
+    MAGE H 4 A_Pain
+    MAGE HHHH 4
     Goto See
   Melee:
   Missile:
@@ -4440,6 +4706,26 @@ ACTOR VampireDVDS : Bishop
  
    Pain:
     VAM1 C 6 A_Pain
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEx("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEx("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEX("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    Goto See
+   Pain.Fist:
+    VAM1 C 6 A_Pain
+    VAM1 CC 6
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEx("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEx("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    TNT1 A 0 A_Jump(64,"Blur")
+    VAM1 C 6 A_SpawnItemEX("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
+    Goto See
+   Pain.Kick:
+    VAM1 C 6 A_Pain
+    VAM1 CCCC 6
     TNT1 A 0 A_Jump(64,"Blur")
     VAM1 C 6 A_SpawnItemEx("VampirePainBlur",Random(-10,10),Random(-10,10),Random(-10,10))
     TNT1 A 0 A_Jump(64,"Blur")

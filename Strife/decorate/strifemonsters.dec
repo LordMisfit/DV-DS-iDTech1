@@ -580,10 +580,18 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot1")
 
    BulletShot1:
-    HMN1 F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    HMN1 F 0 
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot1
    TracerShot1:
-    HMN1 F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    HMN1 F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot1
 
    EndShot1:
@@ -594,10 +602,18 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot2")
 
    BulletShot2:
-    HMN1 E 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    HMN1 E 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot2
    TracerShot2:
-    HMN1 E 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    HMN1 E 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot2
 
    EndShot2:
@@ -608,10 +624,18 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot3")
 
    BulletShot3:
-    HMN1 F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    HMN1 F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot3
    TracerShot3:
-    HMN1 F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    HMN1 F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot3
 
    EndShot3:
@@ -813,10 +837,18 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot1")
 
    BulletShot1:
-    AGRD F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    AGRD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot1
    TracerShot1:
-    AGRD F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    AGRD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot1
 
    EndShot1:
@@ -827,10 +859,18 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot2")
 
    BulletShot2:
-    AGRD E 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    AGRD E 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot2
    TracerShot2:
-    AGRD E 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    AGRD E 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot2
 
    EndShot2:
@@ -841,10 +881,18 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot3")
 	
    BulletShot3:
-    AGRD F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    AGRD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot3
    TracerShot3:
-    AGRD F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    AGRD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot3
 
    EndShot3:
@@ -1119,10 +1167,18 @@ ACTOR TemplarNew : Templar replaces Templar
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "OriginalTracerShot1")
 
    OriginalBulletShot1:
-    PGRD H 0 A_CustomBulletAttack (11.25, 7, 10, 2*random(1,4), "MaulerPuff", 2048, CBAF_NORANDOM) // A_TemplarAttack
+    PGRD H 0  // A_TemplarAttack
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (11.25, 7, 10, 2*random(3,12), "MaulerPuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (11.25, 7, 10, 2*random(1,4), "MaulerPuff", 2048, CBAF_NORANDOM); }	 
+	}
     goto EndMissile
    OriginalTracerShot1:
-    PGRD HHHHHHHHHH 0 A_CustomMissile("StrifeMaulerTracer", 32, 12, frandom(-5.625,5.625), CMF_OFFSETPITCH, frandom(-3.5,3.5))
+    PGRD HHHHHHHHHH 0 
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeMaulerTracer2", 32, 12, frandom(-5.625,5.625), CMF_OFFSETPITCH, frandom(-3.5,3.5)); }
+	 else { A_CustomMissile("StrifeMaulerTracer", 32, 12, frandom(-5.625,5.625), CMF_OFFSETPITCH, frandom(-3.5,3.5)); }	 
+	}
     goto EndMissile
 
    // "Retail" Attack [20 pellets @ 5*1d3 damage, with a wider spread: like the Strife player's Mauler (harder to deal with)]
@@ -1131,10 +1187,18 @@ ACTOR TemplarNew : Templar replaces Templar
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "RetailTracerShot1")
 
    RetailBulletShot1:
-    PGRD H 0 A_CustomBulletAttack (22.5, 14, 20, 5*random(1,3), "MaulerPuff", 2048, CBAF_NORANDOM) // A_TemplarAttack
+    PGRD H 0  // A_TemplarAttack
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (22.5, 14, 20, 3*random(3,15), "MaulerPuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (22.5, 14, 20, 3*random(1,5), "MaulerPuff", 2048, CBAF_NORANDOM); }	 
+	}
     goto EndMissile
    RetailTracerShot1:
-    PGRD HHHHHHHHHHHHHHHHHHHH 0 A_CustomMissile("StrifeMaulerTracerRetail", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH, frandom(-7.0,7.0))
+    PGRD HHHHHHHHHHHHHHHHHHHH 0 
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeMaulerTracerRetail2", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH, frandom(-7.0,7.0)); }
+	 else { A_CustomMissile("StrifeMaulerTracerRetail", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH, frandom(-7.0,7.0)); }	 
+	}
     goto EndMissile
 
   EndMissile:
@@ -1301,10 +1365,18 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot1")
 
    BulletShot1:
-    ROB3 G 0 Bright A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM) // A_ReaverRanged
+    ROB3 G 0 Bright  // A_ReaverRanged
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
+	}
 	goto EndMissile1
    TracerShot1:
-    ROB3 GGG 0 Bright A_CustomMissile("StrifeReaverBulletTracer", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    ROB3 GGG 0 Bright 
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeReaverBulletTracer2", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeReaverBulletTracer", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
 	goto EndMissile1
   EndMissile1:
     ROB3 G 8
@@ -1314,10 +1386,18 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot2")
 
    BulletShot2:
-    ROB3 G 0 A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM) // A_ReaverRanged
+    ROB3 G 0 // A_ReaverRanged
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
+	}
 	goto EndMissile2
    TracerShot2:
-    ROB3 GGG 0 A_CustomMissile("StrifeReaverBulletTracer", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    ROB3 GGG 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeReaverBulletTracer2", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeReaverBulletTracer", 80, -28, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
 	goto EndMissile2
   EndMissile2:
     ROB3 G 8 
@@ -1478,10 +1558,18 @@ ACTOR ReaverNew : Reaver replaces Reaver
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot1")
 
    BulletShot1:
-    ROB1 G 0 Slow Bright A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM) // A_ReaverRanged
+    ROB1 G 0 Slow Bright // A_ReaverRanged
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
+	}
     goto EndMissile
    TracerShot1:
-    ROB1 GGG 0 Slow Bright A_CustomMissile("StrifeReaverBulletTracer", 32, -12, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    ROB1 GGG 0 Slow Bright
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeReaverBulletTracer2", 32, -12, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeReaverBulletTracer", 32, -12, frandom(-5.5,5.5), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndMissile
 	
   EndMissile:
@@ -1730,6 +1818,7 @@ ACTOR SentinelFXCustomTrail : SentinelFXCustom
 ACTOR SentinelFXCustom2 : SentinelFXCustom { Damage 3 }
 ACTOR SentinelFXCustom3 : SentinelFXCustom { Damage 6 }
 ACTOR SentinelFXCustom4 : SentinelFXCustom { Damage 10 }
+ACTOR SentinelFXCustom5 : SentinelFXCustom { Damage 15 }
 
 ACTOR SentinelNew : Sentinel replaces Sentinel
 {
@@ -1798,7 +1887,8 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
     SEWR B 4 A_FaceTarget
     SEWR C 8 Bright // A_SentinelAttack
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(5); A_CustomMissile("SentinelFXCustom4"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); A_CustomMissile("SentinelFXCustom5"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(5); A_CustomMissile("SentinelFXCustom4"); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(6); A_CustomMissile("SentinelFXCustom3"); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(7); A_CustomMissile("SentinelFXCustom2"); }
 	 else { A_CustomMissile("SentinelFXCustom"); }
@@ -1973,17 +2063,21 @@ ACTOR OStalkerNew : Stalker replaces Stalker
     STLK J 3 Slow A_FaceTarget
     STLK J 3 Bright Slow
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_CustomMissile("SentinelFXCustom4"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_CustomMissile("SentinelFXCustom3"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom2"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom1"); }
 	}
     STLK K 3 Bright Slow A_SentinelRefire
     STLK J 3 Slow A_FaceTarget
     STLK J 3 Bright Slow
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_CustomMissile("SentinelFXCustom4"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_CustomMissile("SentinelFXCustom3"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom2"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2"); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom1"); }
 	}
     STLK K 3 Bright Slow A_SentinelRefire
     STLK J 3 Slow A_FaceTarget
@@ -2117,10 +2211,18 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot")
 
   BulletShot:
-    TURT B 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    TURT B 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndAttack
   TracerShot:
-    TURT B 0 A_CustomMissile("StrifeGenBulletTracer", 0, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    TURT B 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndAttack
 
   EndAttack:
@@ -2582,10 +2684,18 @@ ACTOR Macil1New : Macil1 replaces Macil1
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot")
 
    BulletShot:
-    LEAD F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    LEAD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot
    TracerShot:
-    LEAD F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    LEAD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot
 
    EndShot:
@@ -2696,10 +2806,18 @@ ACTOR Macil2New : Macil2 replaces Macil2
     TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckHitscanType") == 1, "TracerShot")
 
    BulletShot:
-    LEAD F 0 A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM)
+    LEAD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	}
     goto EndShot
    TracerShot:
-    LEAD F 0 A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0))
+    LEAD F 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	}
     goto EndShot
 
    EndShot:

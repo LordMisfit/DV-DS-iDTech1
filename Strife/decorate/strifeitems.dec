@@ -130,8 +130,8 @@ ACTOR DegninOreNew : DegninOre
   Radius 16
   Height 16
   Mass 0x7FFFFFFD // So it's unaffected by a Poison Cloud spell's vortexes
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   +SOLID
   +SHOOTABLE
   +NOBLOOD
@@ -179,8 +179,8 @@ ACTOR EnvironmentalSuitNew : CustomInventory replaces EnvironmentalSuit // Power
   +INVENTORY.KEEPDEPLETED
   -INVENTORY.FANCYPICKUPSOUND
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   Inventory.PickupSound "misc/i_pkup"
   Inventory.Icon "I_MASK"
   Inventory.PickupMessage "You picked up the \cdEnvironmental Suit\c-."
@@ -214,8 +214,8 @@ ACTOR ShadowArmorNew : CustomInventory replaces ShadowArmor
   -INVENTORY.FANCYPICKUPSOUND
   RenderStyle Translucent
   Tag "Shadow Armor: Gives player invisibility"
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
 
   Inventory.Icon "I_SHD1"
   Inventory.PickupSound "misc/i_pkup"
@@ -242,8 +242,8 @@ ACTOR TeleporterBeaconNew : TeleporterBeacon replaces TeleporterBeacon
   Health 5
   Radius 16
   Height 16
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   +DROPPED
   +INVENTORY.INVBAR
   +INVENTORY.KEEPDEPLETED
@@ -275,8 +275,8 @@ ACTOR TargeterNew : Targeter replaces Targeter
   -INVENTORY.FANCYPICKUPSOUND
   Tag "Targetter: Will depict your range of accuracy visually"
   Powerup.Type "Targeter"
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   Inventory.Icon "I_TARG"
   Inventory.PickupSound "misc/i_pkup"
   Inventory.PickupMessage "You picked up the \cbTargeter\c-."
@@ -294,8 +294,8 @@ ACTOR ScannerNew : Scanner replaces Scanner
   +FLOORCLIP
   +INVENTORY.KEEPDEPLETED
   +INVENTORY.FANCYPICKUPSOUND
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   Tag "Scanner: Shows location of things on the map"
   Inventory.Icon "I_PMUP"
   Powerup.Type "Scanner"
@@ -318,8 +318,8 @@ ACTOR MedPatchNew : MedPatch replaces MedPatch // : HealthPickup 2011
   +FLOORCLIP
   +INVENTORY.INVBAR
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
     
   Tag "Medicial Patch: Restores 10 HP."
   Inventory.Icon "I_STMP"
@@ -347,8 +347,8 @@ ACTOR MedicalKitNew : MedicalKit replaces MedicalKit // HealthPickup 2012
   +FLOORCLIP
   +INVENTORY.INVBAR
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
     
   Tag "Medicial Kit: Restores 25 HP."
   Inventory.Icon "I_MDKT"
@@ -375,8 +375,8 @@ ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
   +INVENTORY.INVBAR
   +INVENTORY.KEEPDEPLETED
   Health -100
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
     
   Tag "Surgery Kit: Fully restores all HP."
   Inventory.Icon "I_FULL"

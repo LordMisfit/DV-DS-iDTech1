@@ -39,8 +39,8 @@ ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
 ACTOR ArtiEggNew : ArtiEgg replaces ArtiEgg
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Torpol's Morph Ovum: Transforms up to eleven enemies into chickens."
   States
@@ -67,8 +67,8 @@ ACTOR ArtiEggNew : ArtiEgg replaces ArtiEgg
 ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Darchala's Chaos Device: Teleports you away to near a level's entry point."
 }
@@ -99,8 +99,8 @@ ACTOR ArtiInvisibilityNew : CustomInventory replaces ArtiInvisibility
   Inventory.Icon ARTIINVS
   Inventory.PickupMessage "$TXT_ARTIINVISIBILITY"
   Tag "ShadowSphere: Gives partial invisiblity for 90 seconds"
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   States
   {
@@ -117,8 +117,8 @@ ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
 {
   +DONTGIB
   +FLOATBOB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTISOAR
@@ -171,8 +171,8 @@ ACTOR ArtiInvulnerabilityNew : CustomInventory replaces ArtiInvulnerability
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTIINVU
@@ -296,8 +296,8 @@ ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
   Inventory.PickupSound "misc/p_pkup"
   Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
   Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   States
   {
@@ -326,8 +326,8 @@ ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
   Inventory.PickupSound "misc/p_pkup"
   Inventory.PickupMessage "$TXT_ARTISUPERHEALTH" // "MYSTIC URN"
   Tag "Mystic Urn: Recovers 100-110% HP to 192.5% of Maximum"
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   States
   {

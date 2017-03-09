@@ -7,8 +7,8 @@ ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
 ACTOR ArtiPorkNew : ArtiPork replaces ArtiPork
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Porkulator: Transforms up to eleven enemies into pigs."
   States
@@ -35,8 +35,8 @@ ACTOR ArtiPorkNew : ArtiPork replaces ArtiPork
 ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Dark Servant: Summons a friendly Maulotaur to fight for you."
 }
@@ -44,8 +44,8 @@ ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Banishment Device: Teleports away the first creature it hits."
 }
@@ -53,8 +53,8 @@ ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 {
   +DONTGIB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Tag "Chaos Device: Teleports you away to near a level's entry point."
 }
@@ -63,8 +63,8 @@ ACTOR ArtiSpeedBootsNew : CustomInventory replaces ArtiSpeedBoots
 {
   +DONTGIB
   +FLOATBOB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.Icon ARTISPED
   Inventory.PickupMessage "$TXT_ARTISPEED" // "BOOTS OF SPEED"
@@ -84,8 +84,8 @@ ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
 {
   +DONTGIB
   +FLOATBOB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTISOAR
@@ -176,8 +176,8 @@ ACTOR ArtiInvulnerability2New : CustomInventory replaces ArtiInvulnerability2
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.RespawnTics 4230
   Inventory.Icon ARTIDEFN
@@ -199,8 +199,8 @@ ACTOR ArtiHealingRadiusNew : CustomInventory replaces ArtiHealingRadius
   +DONTGIB
   +COUNTITEM
   +FLOATBOB
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   +INVENTORY.INVBAR
   +INVENTORY.PICKUPFLASH
@@ -671,8 +671,8 @@ ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.Icon ARTIPTN2
   Inventory.PickupSound "misc/p_pkup"
@@ -700,8 +700,8 @@ ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
   +INVENTORY.HUBPOWER
   +INVENTORY.PERSISTENTPOWER
   +INVENTORY.KEEPDEPLETED
-  inventory.maxamount 250
-  inventory.InterHubAmount 250
+  inventory.maxamount 9999
+  inventory.InterHubAmount 9999
   
   Inventory.Icon ARTISPHL
   Inventory.PickupSound "misc/p_pkup"
@@ -730,8 +730,8 @@ ACTOR ArtiBoostManaNew : CustomInventory replaces ArtiBoostMana
     +INVENTORY.HUBPOWER
     +INVENTORY.PERSISTENTPOWER
     +INVENTORY.KEEPDEPLETED
-    inventory.maxamount 250
-    inventory.InterHubAmount 250
+    inventory.maxamount 9999
+    inventory.InterHubAmount 9999
     
 	Inventory.Icon "ARTIBMAN"
 	Inventory.PickupSound "misc/p_pkup"

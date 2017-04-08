@@ -37,7 +37,7 @@ conversation
 				amount = 250;
 			}
 			displaycost = true;
-			yesmessage = "TRUST ME, WORTH IT!";
+			yesmessage = "TRUST ME, WORTH IT FOR DEALING WITH ACOLYTES!";
 			nomessage = "SORRY, POISON BOLTS ARE EXPENSIVE, LASS.";
 			giveitem = 185; // PoisonBolts
 			nextpage = 1;

@@ -1042,7 +1042,7 @@ ACTOR AcolyteLGreenNew : AcolyteNew replaces AcolyteLGreen
 {
   ConversationID 59
   Health 60
-  Translation 6
+  Translation 5
 }
 
 ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
@@ -1050,7 +1050,7 @@ ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
   ConversationID 54
   +MISSILEMORE
   +MISSILEEVENMORE
-  Translation 2
+  Translation 0
 }
 
 ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
@@ -1058,7 +1058,7 @@ ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
   ConversationID 55
   +MISSILEMORE
   +MISSILEEVENMORE
-  Translation 2
+  Translation 1
 }
 
 ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow

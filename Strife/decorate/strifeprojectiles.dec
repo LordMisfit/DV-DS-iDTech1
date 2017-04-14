@@ -7,7 +7,7 @@ ACTOR StrifeGenBulletTracer : FastProjectile
    Radius 1
    Height 1
    Mass 5
-   Speed 80
+   Speed 160 // 80
    PROJECTILE
    +DONTREFLECT
    +BLOODSPLATTER
@@ -19,6 +19,8 @@ ACTOR StrifeGenBulletTracer : FastProjectile
    States
    {
    Spawn:
+      TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+   Idle:
       TNT1 A 0 bright
       TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
       TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
@@ -96,7 +98,7 @@ ACTOR StrifeReaverBulletTracer : FastProjectile
    Radius 1
    Height 1
    Mass 5
-   Speed 80
+   Speed 160 // 80
    PROJECTILE
    +DONTREFLECT
    +BLOODSPLATTER
@@ -108,6 +110,8 @@ ACTOR StrifeReaverBulletTracer : FastProjectile
    States
    {
    Spawn:
+      TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+   Idle:
       TNT1 A 0 bright
       TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
       TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
@@ -185,7 +189,7 @@ ACTOR StrifeMaulerTracer : FastProjectile
    Radius 1
    Height 1
    Mass 5
-   Speed 80
+   Speed 160 // 80
    PROJECTILE
    +DONTREFLECT
    +BLOODSPLATTER
@@ -197,6 +201,8 @@ ACTOR StrifeMaulerTracer : FastProjectile
    States
    {
    Spawn:
+      TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+   Idle:
       TNT1 A 0 bright
       TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)
       TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-12.5,0,0,0,0,0,0,128,0)

@@ -2000,9 +2000,9 @@ ACTOR OStalkerNew : Stalker replaces Stalker
   LookFloor:
     STLK J 10 A_Look
     Loop
-  See:
+  See: // While on Ceiling
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    STLK A 1 Slow 
+    STLK A 0 Slow 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
@@ -2020,10 +2020,37 @@ ACTOR OStalkerNew : Stalker replaces Stalker
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","Missile"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","MissileCeiling"); }
 	 else { A_Chase("Melee",""); }
 	}
     STLK C 3 Slow 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","MissileCeiling"); }
+	 else { A_Chase("Melee",""); }
+	 A_PlaySound("stalker/walk",4);
+	}
+    STLK C 3 Slow
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","MissileCeiling"); }
+	 else { A_Chase("Melee",""); }
+	}
+    Loop
+  SeeFloor:
+    STLK J 3 // A_StalkerWalk
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
@@ -2036,7 +2063,32 @@ ACTOR OStalkerNew : Stalker replaces Stalker
 	 else { A_Chase("Melee",""); }
 	 A_PlaySound("stalker/walk",4);
 	}
-    STLK C 3 Slow
+    STLK KK 3 // A_Chase
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","Missile"); }
+	 else { A_Chase("Melee",""); }
+	}
+    STLK L 3 // A_StalkerWalk
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) {  A_Chase("Melee","Missile"); }
+	 else { A_Chase("Melee",""); }
+	 A_PlaySound("stalker/walk",4);
+	}
+    STLK L 3 // A_Chase
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
@@ -2063,38 +2115,73 @@ ACTOR OStalkerNew : Stalker replaces Stalker
     STLK J 3 Slow A_FaceTarget
     STLK J 3 Bright Slow
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom1"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
 	}
     STLK K 3 Bright Slow A_SentinelRefire
     STLK J 3 Slow A_FaceTarget
     STLK J 3 Bright Slow
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom1"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
 	}
     STLK K 3 Bright Slow A_SentinelRefire
     STLK J 3 Slow A_FaceTarget
     STLK J 3 Bright Slow
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_CustomMissile("SentinelFXCustom4"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_CustomMissile("SentinelFXCustom3"); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom2"); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", 8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
 	}
     STLK K 3 Bright Slow A_SentinelRefire
 	Goto See
-  SeeFloor:
-    STLK J 3 A_StalkerWalk
-    STLK KK 3 A_Chase
-    STLK L 3 A_StalkerWalk
-    STLK L 3 A_Chase
-    Loop
+  MissileCeiling:
+    TNT1 A 0
+	{
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel < 61) { return state("See"); }
+	 return state("");
+	}
+    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+    STLK A 3 Slow A_FaceTarget
+    STLK A 3 Bright Slow
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	}
+    STLK B 3 Bright Slow A_SentinelRefire
+    STLK A 3 Slow A_FaceTarget
+    STLK A 3 Bright Slow
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	}
+    STLK B 3 Bright Slow A_SentinelRefire
+    STLK A 3 Slow A_FaceTarget
+    STLK A 3 Bright Slow
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_CustomMissile("SentinelFXCustom5", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 127) { A_CustomMissile("SentinelFXCustom4", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_CustomMissile("SentinelFXCustom3", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 82) { A_CustomMissile("SentinelFXCustom2", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_CustomMissile("SentinelFXCustom", -8, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	}
+    STLK B 3 Bright Slow A_SentinelRefire
+	Goto See
+
   Pain:
     STLK L 1 A_Pain
     Goto See
@@ -2220,8 +2307,8 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
   TracerShot:
     TURT B 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
-	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 0, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 0, 0, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
 	}
     goto EndAttack
 
@@ -2229,7 +2316,7 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
     TURT B 4 Slow 
     TURT D 3 Slow A_SentinelRefire
     TURT A 4 A_SentinelRefire
-    Loop
+    goto Missile
 
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)

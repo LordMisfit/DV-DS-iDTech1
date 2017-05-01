@@ -329,7 +329,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
     GWND D 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     GWND B 3 
     GWND C 4 // A_FireGoldWandPL2
     {
@@ -614,7 +614,7 @@ ACTOR DualGoldWandNew : GoldWandNew
     GWN2 E 0 A_ReFire
     Goto Ready
   AltFire: // 10 Frames
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     GWN2 B 3 
     GWN2 CD 4 // A_FireGoldWandPL2
     {
@@ -1004,7 +1004,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
     CRBW C 5 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     CRBW D 5 // A_FireCrossbowPL2
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
@@ -1293,7 +1293,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
     CRBD C 5 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     CRBD D 5 // A_FireCrossbowPL2
 	{
      ACS_NamedExecuteAlways("StartTensionCountDown");
@@ -1649,7 +1649,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
   AltFire:
     FBLS BC 0
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     FBLS D 3 
 	{
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
@@ -1802,7 +1802,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
   AltFire:
     FDBL BC 0
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     FDBL DE 3 
 	{
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
@@ -2016,7 +2016,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
     HROD B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     HROD C 2
     HROD D 3
     HROD E 2
@@ -2180,7 +2180,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
     DHRD B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     DHRD C 2
     DHRD D 3
     DHRD E 2
@@ -2386,7 +2386,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
     PHNX B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     PHNX B 3 // A_InitPhoenixPL2
 	{
      ACS_NamedExecuteWithResult("FlameCount",0,350);
@@ -2561,7 +2561,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
     PHND B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     PHND B 3 // A_InitPhoenixPL2
 	{
      ACS_NamedExecuteWithResult("FlameCount",0,350);
@@ -2808,7 +2808,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
     Goto Ready
   AltFire:
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     MACE B 4
     MACE D 4 // A_FireMacePL2
 	{
@@ -3060,7 +3060,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
     Goto Ready
   AltFire:
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     DMAC B 4
     DMAC D 4 // A_FireMacePL2
 	{
@@ -3313,7 +3313,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
     CRB2 H 5 A_ReFire
     goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
     CRB2 A 3
     CRB2 D 5
 	{
@@ -3844,7 +3844,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
     SCRD H 3 A_ReFire
     goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
     SCRD A 3
     SCRD D 5
 	{
@@ -4444,7 +4444,7 @@ actor DSparilStaff : HereticWeaponBase
 	DSTF A 4 A_ReFire
 	goto ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",1,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
 	DSTF B 4 bright A_PlayWeaponSound("dsparil/attack")
 	DSTF C 4 bright
 	DSTF D 4 bright
@@ -4655,7 +4655,7 @@ actor DualDSparilStaff : HereticWeaponBase
 	DSTD A 4 A_ReFire
 	goto ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",2,2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",4,2) == 0, "Ready")
 	DSTD B 4 bright A_PlayWeaponSound("dsparil/attack")
 	DSTD C 4 bright
 	DSTD D 4 bright A_PlayWeaponSound("dsparil/attack")

@@ -1,3 +1,12 @@
+FloraGiggle1			NERAGIG1
+FloraGiggle2			NERAGIG2
+$random FloraLaugh		{ FloraGiggle1 FloraGiggle2 }
+$limit FloraLaugh 1
+
+$playeralias	FloraSND	male	*evillaugh	FloraLaugh
+$playeralias	FloraSND	female	*evillaugh	FloraLaugh
+$playeralias	FloraSND	other	*evillaugh	FloraLaugh
+
 // Banshee
 Banshee/Sight  BANSSEE1
 Banshee/Active BANSACT1

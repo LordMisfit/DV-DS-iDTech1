@@ -4043,7 +4043,7 @@ ACTOR Goldlich : Ironlich 31044
     LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
     LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
     
-    LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,65), random(-56,56), random(0,64),0,0,0, 0,0, 0)
+    LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,56), random(-56,56), random(0,64),0,0,0, 0,0, 0)
     
     LICH I 4 A_SpawnItemEx("GoldLichGlitter", random(-64,64), random(-64,64), random(0,48),0,0,0, 0,0, 0)
     LICH I -1 A_BossDeath

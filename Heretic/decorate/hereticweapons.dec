@@ -356,7 +356,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -366,13 +366,13 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -382,12 +382,12 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -397,13 +397,13 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -413,13 +413,13 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -429,12 +429,12 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -444,13 +444,13 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -460,7 +460,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Reset
       A_SetAngle(angle+15);
@@ -470,7 +470,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 	 {
       A_SetAngle(angle+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -480,11 +480,11 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -494,11 +494,11 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -508,14 +508,14 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -525,7 +525,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
 	 }
 	}
@@ -660,7 +660,7 @@ ACTOR DualGoldWandNew : GoldWandNew
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -670,13 +670,13 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -686,12 +686,12 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -701,13 +701,13 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -717,13 +717,13 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -733,12 +733,12 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -748,13 +748,13 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -764,7 +764,7 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       // Reset
       A_SetAngle(angle+15);
@@ -774,7 +774,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 	 {
       A_SetAngle(angle+15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -784,11 +784,11 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -798,11 +798,11 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle-15);
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -812,14 +812,14 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
       A_SetAngle(angle-5.625);
- 	  A_FireProjectile("GoldWandFX2New",0,0);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,0);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
@@ -829,7 +829,7 @@ ACTOR DualGoldWandNew : GoldWandNew
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
       A_SetAngle(angle+2.8125);
  	  A_FireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0);
- 	  A_FireProjectile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
+ 	  A_FireCustomMissile("GoldWandFX2New",0,1); A_PlaySound("weapons/wandhit",1);
       A_SetAngle(angle-5.625);
 	 }
 	}
@@ -1798,29 +1798,29 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -1828,16 +1828,16 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       A_SetAngle(angle-15);
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
       A_SetAngle(angle-15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
 	 }
 	}
     FBLS CB 4
@@ -1968,29 +1968,29 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -1998,16 +1998,16 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       A_SetAngle(angle-15);
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
       A_SetAngle(angle-15);
-  	  A_FireProjectile("BlasterFX1New",0,0);
+  	  A_FireCustomMissile("BlasterFX1New",0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-  	  A_FireProjectile("BlasterFX1New",0,1);
+  	  A_FireCustomMissile("BlasterFX1New",0,1);
 	 }
 	}
     FDBL FG 4
@@ -2136,29 +2136,29 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("HornRodFX1New",0,1);
+ 	  A_FireCustomMissile("HornRodFX1New",0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2166,16 +2166,16 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("HornRodFX1New",0,1);
+ 	  A_FireCustomMissile("HornRodFX1New",0,1);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("HornRodFX1New",0,0);
+ 	  A_FireCustomMissile("HornRodFX1New",0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("HornRodFX1New",0,1);
+ 	  A_FireCustomMissile("HornRodFX1New",0,1);
 	 }
 	}
     HROD B 0 A_ReFire
@@ -2211,29 +2211,29 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("HornRodFX2New",0,1,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,1,0,0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2241,16 +2241,16 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("HornRodFX2New",0,1,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,1,0,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("HornRodFX2New",0,0,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,0,0,0,1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("HornRodFX2New",0,1,0,0,1);
+	  A_FireCustomMissile("HornRodFX2New",0,1,0,0,1);
 	 }
 	}
     HROD F 2
@@ -2319,36 +2319,36 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("HornRodFX1New",3,1,3);
- 	  A_FireProjectile("HornRodFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,1,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,1,-3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2356,20 +2356,20 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("HornRodFX1New",3,1,3);
- 	  A_FireProjectile("HornRodFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,1,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,1,-3);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("HornRodFX1New",3,0,3);
- 	  A_FireProjectile("HornRodFX1New",-3,0,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,0,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,0,-3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("HornRodFX1New",3,1,3);
- 	  A_FireProjectile("HornRodFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("HornRodFX1New",3,1,3);
+ 	  A_FireCustomMissile("HornRodFX1New",-3,1,-3);
 	 }
 	}
     DHRD B 0 A_ReFire
@@ -2405,36 +2405,36 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("HornRodFX2New",3,1,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,1,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,1,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,1,-3,0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2442,20 +2442,20 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("HornRodFX2New",3,1,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,1,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,1,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,1,-3,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("HornRodFX2New",3,0,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,0,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,0,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,0,-3,0,1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("HornRodFX2New",3,1,3,0,1);
-	  A_FireProjectile("HornRodFX2New",-3,1,-3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",3,1,3,0,1);
+	  A_FireCustomMissile("HornRodFX2New",-3,1,-3,0,1);
 	 }
 	}
     DHRD F 2
@@ -2570,29 +2570,29 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX1New",0,1);
+ 	  A_FireCustomMissile("PhoenixFX1New",0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2600,16 +2600,16 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX1New",0,1);
+ 	  A_FireCustomMissile("PhoenixFX1New",0,1);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",0,0);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("PhoenixFX1New",0,1);
+ 	  A_FireCustomMissile("PhoenixFX1New",0,1);
 	 }
      A_Recoil(ACS_NamedExecuteWithResult("GetRecoil",1));
 	}
@@ -2637,29 +2637,29 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2667,16 +2667,16 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-2,2),0,random(-2,2),0,1,2);
 	 }
 	 A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
      ACS_NamedExecuteWithResult("FlameCount",1,-1);
@@ -2758,36 +2758,36 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX1New",3,1,3);
- 	  A_FireProjectile("PhoenixFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("PhoenixFX1New",3,1,3);
+ 	  A_FireCustomMissile("PhoenixFX1New",-3,1,-3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2795,20 +2795,20 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX1New",3,1,3);
- 	  A_FireProjectile("PhoenixFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("PhoenixFX1New",3,1,3);
+ 	  A_FireCustomMissile("PhoenixFX1New",-3,1,-3);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX1NoAOE",3,0,3);
- 	  A_FireProjectile("PhoenixFX1NoAOE",-3,0,-3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",3,0,3);
+ 	  A_FireCustomMissile("PhoenixFX1NoAOE",-3,0,-3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("PhoenixFX1New",3,1,3);
- 	  A_FireProjectile("PhoenixFX1New",-3,1,-3);
+ 	  A_FireCustomMissile("PhoenixFX1New",3,1,3);
+ 	  A_FireCustomMissile("PhoenixFX1New",-3,1,-3);
 	 }
      A_Recoil(ACS_NamedExecuteWithResult("GetRecoil",2));
 	}
@@ -2836,36 +2836,36 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -2873,20 +2873,20 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       A_SetAngle(angle-15);
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
- 	  A_FireProjectile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
- 	  A_FireProjectile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(-5,-1),0,random(-5,1),0,1,2);
+ 	  A_FireCustomMissile("PhoenixFX2New",random(1,5),0,random(1,5),0,1,2);
 	 }
 	 A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
      ACS_NamedExecuteWithResult("FlameCount",1,-1);
@@ -3039,29 +3039,29 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,1,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,1,0,0,0,2); }
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       // Reset
       A_SetAngle(angle+15);
      }
@@ -3069,16 +3069,16 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       A_SetAngle(angle-15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,1,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,1,0,0,0,2); }
       A_SetAngle(angle-15);
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,0,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),0,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,0,0,0,0,2); }
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  if (random(1,100) <= 89) { A_FireProjectile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireProjectile("MaceFX2New",0,1,0,0,0,2); }
+	  if (random(1,100) <= 89) { A_FireCustomMissile("MaceFX1New",random(-4.21875,4.21875),1,0,0,0,0); } else { A_FireCustomMissile("MaceFX2New",0,1,0,0,0,2); }
 	 }
 	}
     MACE C 4
@@ -3113,29 +3113,29 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("MaceFX4New",0,1,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,1,0,0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       // Reset
       A_SetAngle(angle+15);
      }
@@ -3143,16 +3143,16 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("MaceFX4New",0,1,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,1,0,0,1);
       A_SetAngle(angle-15);
-	  A_FireProjectile("MaceFX4New",0,0,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,0,0,0,1);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("MaceFX4New",0,1,0,0,1);
+	  A_FireCustomMissile("MaceFX4New",0,1,0,0,1);
 	 }
 	}
     MACE B 4
@@ -3227,89 +3227,89 @@ ACTOR DualFiremaceNew : HereticWeaponBase
       A_SetAngle(angle+15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
 	  }
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       // Reset
       A_SetAngle(angle+15);
@@ -3320,35 +3320,35 @@ ACTOR DualFiremaceNew : HereticWeaponBase
       A_SetAngle(angle+15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       A_SetAngle(angle-15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
 	  }
       A_SetAngle(angle-15);
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),0,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),0,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),0,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),0,random(0,-2),0,0,2); 
 	  }
       A_SetAngle(angle+15);
 	 }
@@ -3356,13 +3356,13 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 	 {
 	  if (random(1,100) <= 89) 
 	  { 
-	   A_FireProjectile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
-	   A_FireProjectile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-6.328125,2.109375),1,random(-3,1),0,0,0); 
+	   A_FireCustomMissile("MaceFX1New",random(-2.109375,6.328125),1,random(-1,3),0,0,0); 
 	  } 
 	  else 
 	  { 
-	   A_FireProjectile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
-	   A_FireProjectile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(2,0),1,random(2,0),0,0,2); 
+	   A_FireCustomMissile("MaceFX2New",random(0,-2),1,random(0,-2),0,0,2); 
 	  }
 	 }
 	}
@@ -3397,36 +3397,36 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       // Reset
       A_SetAngle(angle+15);
      }
@@ -3434,20 +3434,20 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       A_SetAngle(angle-15);
-      A_FireProjectile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
       A_SetAngle(angle-15);
-      A_FireProjectile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),0,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),0,random(0,-4),0,0,1); 
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
-      A_FireProjectile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(4,0),1,random(4,0),0,0,1); 
+      A_FireCustomMissile("MaceFX4New",random(0,-4),1,random(0,-4),0,0,1); 
 	 }
 	}
     DMAC B 4
@@ -3530,78 +3530,78 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -3609,44 +3609,44 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX1New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX1New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX3New", 4,0,-14,  0);
-      A_FireProjectile("CrossbowFX3New",-4,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0,  0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0,  0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0,  0,-10);
 	 }
 	}
     CRB2 E 10
@@ -3700,134 +3700,134 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -3835,76 +3835,76 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0,0,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX2New", 0,2,  7,  0);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New", 1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 0,0, -7,  0);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0,  5);
-      A_FireProjectile("CrossbowFX2New",-1,0,  0, -5);
-      A_FireProjectile("CrossbowFX2New", 2,0,-14,  0);
-      A_FireProjectile("CrossbowFX2New",-2,0, 14,  0);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0, 10);
-      A_FireProjectile("CrossbowFX3New", 2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New",-2,0, 0,-10);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0,  5);
-      A_FireProjectile("CrossbowFX3New", 1,0, 0, -5);
-      A_FireProjectile("CrossbowFX3New",-1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,2,  7,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0,0, -7,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1,0,  0, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2,0,-14,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2,0, 14,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2,0, 0,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1,0, 0, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1,0, 0, -5);
 	 }
 	}
     CRB2 EF 6
@@ -3986,78 +3986,78 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4065,44 +4065,44 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX1New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX1New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX3New", 4-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX3New",-4-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
 	 }
 	}
 	SCRD E 4
@@ -4117,78 +4117,78 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4196,44 +4196,44 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX1New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX1New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX1New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX3New", 4+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX3New",-4+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX1New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 4+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New",-4+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
 	 }
 	}
     SCRD F 10
@@ -4281,134 +4281,134 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4416,76 +4416,76 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0-6,0,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX2New", 0-6,2,  7-3,  0);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 0-6,0, -7-3,  0);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX2New",-1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX2New", 2-6,0,-14-3,  0);
-      A_FireProjectile("CrossbowFX2New",-2-6,0, 14-3,  0);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3, 10);
-      A_FireProjectile("CrossbowFX3New", 2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New",-2-6,0,  0-3,-10);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3,  5);
-      A_FireProjectile("CrossbowFX3New", 1-6,0,  0-3, -5);
-      A_FireProjectile("CrossbowFX3New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,2,  7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0-6,0, -7-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2-6,0,-14-3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2-6,0, 14-3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2-6,0,  0-3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1-6,0,  0-3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1-6,0,  0-3, -5);
 	 }
 	}
     SCRD E 5
@@ -4503,134 +4503,134 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4638,76 +4638,76 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       A_SetAngle(angle-15);
-      A_FireProjectile("CrossbowFX2New", 0+6,0,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("CrossbowFX2New", 0+6,2,  7+3,  0);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 0+6,0, -7+3,  0);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX2New",-1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX2New", 2+6,0,-14+3,  0);
-      A_FireProjectile("CrossbowFX2New",-2+6,0, 14+3,  0);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3, 10);
-      A_FireProjectile("CrossbowFX3New", 2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New",-2+6,0,  0+3,-10);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3,  5);
-      A_FireProjectile("CrossbowFX3New", 1+6,0,  0+3, -5);
-      A_FireProjectile("CrossbowFX3New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,2,  7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 0+6,0, -7+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX2New",-1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX2New", 2+6,0,-14+3,  0);
+      A_FireCustomMissile("CrossbowFX2New",-2+6,0, 14+3,  0);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3, 10);
+      A_FireCustomMissile("CrossbowFX3New", 2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New",-2+6,0,  0+3,-10);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3,  5);
+      A_FireCustomMissile("CrossbowFX3New", 1+6,0,  0+3, -5);
+      A_FireCustomMissile("CrossbowFX3New",-1+6,0,  0+3, -5);
 	 }
 	}
     SCRD FG 6
@@ -4848,29 +4848,29 @@ actor DSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",0,1);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,1);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4878,16 +4878,16 @@ actor DSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",0,1);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,1);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",0,0);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("Sorcerer2FX1Player",0,1);
+      A_FireCustomMissile("Sorcerer2FX1Player",0,1);
 	 }
 	}
 	DSTF F 4 bright
@@ -4925,36 +4925,36 @@ actor DSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25,1,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,1,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -4962,20 +4962,20 @@ actor DSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25,1,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,1,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25,0,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,0,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("Sorcerer2FX3",25,1,0);
-  	  A_FireProjectile("Sorcerer2FX3",-25,0,0);
+	  A_FireCustomMissile("Sorcerer2FX3",25,1,0);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25,0,0);
 	 }
 	}
 	DSTF F 4 bright
@@ -5056,29 +5056,29 @@ actor DualDSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",-3,1,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,1,-3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -5086,16 +5086,16 @@ actor DualDSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,1,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,1,-3);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",-3,0,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,0,-3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("Sorcerer2FX1Player",-3,1,-3);
+      A_FireCustomMissile("Sorcerer2FX1Player",-3,1,-3);
 	 }
 	}
 	DSTD F 4 bright 
@@ -5113,29 +5113,29 @@ actor DualDSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",3,1,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,1,3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -5143,16 +5143,16 @@ actor DualDSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",3,1,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,1,3);
       A_SetAngle(angle-15);
-      A_FireProjectile("Sorcerer2FX1Player",3,0,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,0,3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-      A_FireProjectile("Sorcerer2FX1Player",3,1,3);
+      A_FireCustomMissile("Sorcerer2FX1Player",3,1,3);
 	 }
 	}
 	DSTD H 4 bright
@@ -5196,36 +5196,36 @@ actor DualDSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25+3,1,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,1,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -5233,20 +5233,20 @@ actor DualDSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,1,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,1,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25+3,0,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,0,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("Sorcerer2FX3",25+3,1,3);
-  	  A_FireProjectile("Sorcerer2FX3",-25+3,0,3);
+	  A_FireCustomMissile("Sorcerer2FX3",25+3,1,3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25+3,0,3);
 	 }
 	}
 	DSTD F 4 bright
@@ -5264,36 +5264,36 @@ actor DualDSparilStaff : HereticWeaponBase
 	 {
       // Angle + 15, Pitch + 0
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle + 7.5, Pitch + 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch+7.5);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle + 7.5, Pitch - 7.5
       A_SetPitch(pitch-15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle + 0, Pitch + 0
       A_SetPitch(pitch+7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25-3,1,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,1,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle - 7.5, Pitch - 7.5
       A_SetAngle(angle-7.5);
       A_SetPitch(pitch-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle - 7.5, Pitch + 7.5
       A_SetPitch(pitch+15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Angle - 15, Pitch + 0
       A_SetPitch(pitch-7.5);
       A_SetAngle(angle-7.5);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       // Reset
       A_SetAngle(angle+15);
 	 }
@@ -5301,20 +5301,20 @@ actor DualDSparilStaff : HereticWeaponBase
 	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
 	 {
       A_SetAngle(angle+15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,1,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,1,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       A_SetAngle(angle-15);
-	  A_FireProjectile("Sorcerer2FX3",25-3,0,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,0,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
       A_SetAngle(angle+15);
 	 }
 	 else
 	 {
-	  A_FireProjectile("Sorcerer2FX3",25-3,1,-3);
-  	  A_FireProjectile("Sorcerer2FX3",-25-3,0,-3);
+	  A_FireCustomMissile("Sorcerer2FX3",25-3,1,-3);
+  	  A_FireCustomMissile("Sorcerer2FX3",-25-3,0,-3);
 	 }
 	}
 	DSTD H 4 bright

@@ -2007,6 +2007,8 @@ ACTOR MaulotaurNew : Minotaur replaces Minotaur
   Painchance "GravityHP", 85
   Painchance "GravityMP", 85
   Painchance "GravityHPMP", 85 
+  DropItem "PhoenixRodHefty", 84
+  DropItem "ArtiSuperHealth", 51
 
   +AVOIDMELEE
   States
@@ -2177,6 +2179,11 @@ ACTOR SnakeNew : Snake // replaces Snake
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DropItem "PhoenixRodAmmoNew", 84
+  DropItem "PhoenixRodAmmoNew", 84
+  DropItem "PhoenixRodAmmoNew", 84
+  DropItem "PhoenixRodAmmoNew", 84
+  DropItem "PhoenixRodAmmoNew", 84
   Species "Ophidian"
   +DONTHARMSPECIES
 

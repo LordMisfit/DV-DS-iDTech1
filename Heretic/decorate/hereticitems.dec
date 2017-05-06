@@ -367,6 +367,9 @@ actor BagOfHoldingNew : CustomInventory replaces BagOfHolding
      if (Random(1,1000) <= 667) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
      if (Random(1,1000) <= 333) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
      if (Random(1,1000) <= 167) { A_SpawnItemEx("MaceHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 667) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 333) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+     if (Random(1,1000) <= 167) { A_SpawnItemEx("SkullRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
      if (Random(1,1000) <= 333) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
      if (Random(1,1000) <= 167) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
      if (Random(1,1000) <=  84) { A_SpawnItemEx("DiarisArrowQuiver",0,0,0,random(-5,5),random(-5,5),0); }

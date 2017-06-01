@@ -2675,7 +2675,11 @@ ACTOR DeathKnight 30114
   Death:
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
     DKNT I 0 Bright A_CustomMissile("DKSword",44,32,-90,0)
-    DKNT I 8 Bright A_CustomMissile("DKShield",44,-32,90,0)
+    DKNT I 8 Bright 
+	{
+	 if (random(1,4) == 1) { A_CustomMissile("EvilWarriorShield",44,-32,90,0); }
+	 else { A_CustomMissile("DKShield",44,-32,90,0); }
+	}
     DKNT J 8 Bright A_Scream 
     DKNT K 8 Bright
     DKNT L 8 Bright A_NoBlocking 

@@ -582,15 +582,15 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
    BulletShot1:
     HMN1 F 0 
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 	}
     goto EndShot1
    TracerShot1:
     HMN1 F 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
-	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }	 
 	}
     goto EndShot1
 
@@ -604,15 +604,15 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
    BulletShot2:
     HMN1 E 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 	}
     goto EndShot2
    TracerShot2:
     HMN1 E 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
-	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }	 
 	}
     goto EndShot2
 
@@ -626,15 +626,15 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
    BulletShot3:
     HMN1 F 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-	 else { A_CustomBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+	 else { A_CustomBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 	}
     goto EndShot3
    TracerShot3:
     HMN1 F 0
 	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }
-	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(-4.0,4.0), CMF_OFFSETPITCH, frandom(-0.0,0.0)); }	 
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_CustomMissile("StrifeGenBulletTracer2", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }
+	 else { A_CustomMissile("StrifeGenBulletTracer", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH, 0); }	 
 	}
     goto EndShot3
 

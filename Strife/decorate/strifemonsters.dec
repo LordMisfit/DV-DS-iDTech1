@@ -552,14 +552,21 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
     HMN1 P 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     HMN1 P 5 A_Look2
     goto Spawn+1
+    HMN1 Q 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     HMN1 Q 8
     goto Spawn+1
+    HMN1 R 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     HMN1 R 8
     goto Spawn+1
+    HMN1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     HMN1 ABCDABCD 6 A_Wander
     goto Spawn+1
   See:
-    HMN1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    HMN1 A 0 
+	{
+	 if (CountInv("MonsterHasBuffs") >= 0) { ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0); }
+	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0);	 
+	}
     HMN1 AABBCCDD 3
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }

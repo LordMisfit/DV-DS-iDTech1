@@ -5198,6 +5198,7 @@ ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
 	  if (random(1,512) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
 	  if (random(1,1024) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
 	  if (random(1,2048) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,16384) <= 1) { A_SpawnItemEx("FloraRandomArmorAlwaysDrop",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
 	 }
 	}
     BARW EFG 2

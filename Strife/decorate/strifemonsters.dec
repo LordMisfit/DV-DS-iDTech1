@@ -5143,3 +5143,65 @@ actor InquisitorSpawner : CustomInventory replaces Inquisitor 16
    stop
  }
 }
+
+// Barrels
+ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
+{
+  var int user_type;
+  Health 10
+  Radius 10
+  Height 32
+  +SOLID
+  +SHOOTABLE
+  +NOBLOOD
+  +INCOMBAT
+  DeathSound "woodenbarrel/death"
+  States
+  {
+  Spawn:
+    BARW A -1
+    Stop
+  Death:
+    BARW B 2 A_Scream
+    BARW C 2
+    BARW D 2 
+	{
+	 A_NoBlocking;
+	 if (random(1,100) <= 25) // Chance for item to spawn at all
+	 {
+	  if (random(1,100) <= 25) // Chance to upgrade to "tier 2"
+      {
+	   if (random(1,100) <= 25) // Chance to upgrade to "tier 3"
+       {
+	    if (random(1,2) == 1) { A_SpawnItemEx("SpecialMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+		else { A_SpawnItemEx("ElfinElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+       }
+	   else // Tier 2
+	   {
+	   if (random(1,2) == 1) { A_SpawnItemEx("StrongMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	   else { A_SpawnItemEx("SageElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+ 	   }
+      }
+	  else // Tier 1
+	  {
+	   if (random(1,2) == 1) { A_SpawnItemEx("MedicinalHerb",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	   else { A_SpawnItemEx("MagicWater",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+ 	  }
+	 }
+	 else
+	 {
+	  if (random(1,16) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,32) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,64) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,128) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,256) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,512) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,1024) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,2048) <= 1) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	 }
+	}
+    BARW EFG 2
+    BARW H -1
+    Stop
+  }
+}

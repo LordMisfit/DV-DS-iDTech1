@@ -1292,6 +1292,8 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
   DamageFactor "Ice", 0.5
   DamageFactor "Thunder", 1.75
 
+  Radius 40
+  Height 110
   Mass 80000
   ConversationID 93
   +DROPOFF
@@ -2262,6 +2264,7 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
   DamageFactor "Fire", 0.85
   DamageFactor "Ice", 0.9375
   DamageFactor "Thunder", 1.25
+  Mass 1000000000
 
   ConversationID 92
   PainChance 0
@@ -2286,7 +2289,13 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
   Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     TURT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-    TURT A 5 A_TurretLook
+    TURT A 5 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(2); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+	 A_TurretLook;
+	}
     goto Spawn+1
   See:
     TURT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
@@ -2321,8 +2330,22 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
 
   EndAttack:
     TURT B 4 Slow 
-    TURT D 3 Slow A_SentinelRefire
-    TURT A 4 A_SentinelRefire
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+	}
+    TURT D 3 Slow
+	{
+	 A_SentinelRefire;
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(2); }
+	}
+    TURT A 4 
+	{
+	 A_SentinelRefire;
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+	}
     goto Missile
 
   Pain.GravityHP:
@@ -5102,7 +5125,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
     TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
     Goto Death
   Death:
-    TNT1 A 0 A_GiveToTarget ("Coin", random(200,250))
+    TNT1 A 0 A_GiveToTarget ("Coin", random(250,375))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
     TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
 	ROB4 A 0 A_TakeInventory("FlightToken", 1)
@@ -5117,7 +5140,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
 	TNT1 A 0 Radius_Quake(8,40,0,35,0)
     Stop
   Ice:
-    TNT1 A 0 A_GiveToTarget ("Coin", random(200,250))
+    TNT1 A 0 A_GiveToTarget ("Coin", random(250,375))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
     TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
     ROB4 A 5 A_FreezeDeath
@@ -5128,6 +5151,8 @@ ACTOR DarkInquisitor : Inquisitor 27406
 
 actor InquisitorSpawner : CustomInventory replaces Inquisitor 16
 {
+ Radius 40
+ Height 110
  +ISMONSTER
  +RANDOMIZE
  states

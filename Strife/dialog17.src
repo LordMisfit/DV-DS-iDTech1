@@ -118,7 +118,7 @@ conversation
 		name = "QUINCY";
 		panel = "M_QUINCY";
 		voice = "QUI04";
-		dialog = "OH, Sure YOU DO. First, fight your way into the Security Complex and use the Teleporter. And this might be more to your liking, destroy the computer in Central Administration. No computer, no force field.";
+		dialog = "OH, Sure YOU DO. First, fight your way into the Security Complex and use the Teleporter. And this might be more to your liking, destroy the computer in Central Administration. No computer, no force field. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 0;
 		choice
@@ -149,7 +149,7 @@ conversation
 		name = "QUINCY";
 		panel = "M_QUINCY";
 		voice = "QUI06";
-		dialog = "OH WELL, Word has it that the Bailey's warehouse received a shipment of Maulers, that's the weapon that VAPORIZES.";
+		dialog = "OH WELL, Word has it that the Bailey's warehouse received a shipment of Maulers, that's the weapon that VAPORIZES. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 0;
 		choice

@@ -31,7 +31,7 @@ conversation
 		name = "WERAN";
 		panel = "M_WERAN";
 		voice = "WER02";
-		dialog = "DO MY FAVOR FIRST, OR YOU'LL GET SQUAT FROM ME.";
+		dialog = "DO MY FAVOR FIRST, OR YOU'LL GET SQUAT FROM ME. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 0;
 		choice
@@ -62,7 +62,7 @@ conversation
 		name = "WERAN";
 		panel = "M_WERAN";
 		voice = "WER05";
-		dialog = "OPEN THE DOOR, BRING ME THE UNIFORM AND WE TRADE. OTHERWISE, PISS OFF.";
+		dialog = "OPEN THE DOOR, BRING ME THE UNIFORM AND WE TRADE. OTHERWISE, PISS OFF. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 5;
 		ifitem

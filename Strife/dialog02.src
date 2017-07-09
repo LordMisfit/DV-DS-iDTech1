@@ -1371,7 +1371,7 @@ conversation
 		name = "GOVERNOR MOUREL";
 		panel = "M_PEAS7";
 		voice = "GOV04";
-		dialog = "IF I KNEW, IT WOULDN'T BE A CHORE NOW WOULD IT? USE YOUR CHARM, BUT SHUT OFF HIS SUPPLY.";
+		dialog = "IF I KNEW, IT WOULDN'T BE A CHORE NOW WOULD IT? USE YOUR CHARM, BUT SHUT OFF HIS SUPPLY.  \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 301; // RaiseAlarm
 		link = 7;
 		ifitem
@@ -1602,7 +1602,7 @@ conversation
 		link = 0;
 		choice
 		{
-			text = "HE'S DEAD, IS THIS THE RING?";
+			text = "YES I DO, SO I SUPPOSE YOU OWE ME GOLD?";
 			cost
 			{
 				item = 168; // Coin
@@ -1614,7 +1614,7 @@ conversation
 				amount = 1;
 			}
 			displaycost = false;
-			nomessage = "LIAR!  Go get the ring!";
+			nomessage = "LIAR! GO GET THE RING!";
 			giveitem = 171;
 			nextpage = 7;
 			closedialog = false;

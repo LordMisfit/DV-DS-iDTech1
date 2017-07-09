@@ -39,7 +39,7 @@ conversation
 		name = "DOOR GUARD";
 		panel = "M_GUARD2";
 		voice = "PDG02";
-		dialog = "OK, BUT TALK ONLY TO THE WARDEN.";
+		dialog = "OK, BUT TALK ONLY TO THE WARDEN. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 136;
 		link = 3;
 		ifitem
@@ -66,7 +66,7 @@ conversation
 		name = "PRISON GUARD";
 		panel = "M_GUARD3";
 		voice = "AG301";
-		dialog = "THE ORDER'S WRATH WILL RAIN DOWN ON THESE SERVANTS UNTIL THEY BEG FOR DEATH.";
+		dialog = "THE ORDER'S WRATH WILL RAIN DOWN ON THESE SERVANTS UNTIL THEY BEG FOR DEATH. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 179;
 		link = 0;
 	}
@@ -98,7 +98,7 @@ conversation
 		name = "WARDEN MONTAG";
 		panel = "M_WARDEN";
 		voice = "WDM02";
-		dialog = "OVER MY DEAD BODY!";
+		dialog = "OVER MY DEAD BODY! \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 137;
 		link = 0;
 		choice

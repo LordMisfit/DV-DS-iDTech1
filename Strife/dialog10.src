@@ -141,7 +141,7 @@ conversation
 		name = "MACIL";
 		panel = "M_LEDR0";
 		voice = "MAE04";
-		dialog = "There seems no end to the horror we face. We have found out that The Order is NOT killing our people. it is transforming them, into bio-mechanical soldiers. Find the facility where this is being done and CLOSE IT, permanently.";
+		dialog = "There seems no end to the horror we face. We have found out that The Order is NOT killing our people. it is transforming them, into bio-mechanical soldiers. Find the facility where this is being done and CLOSE IT, permanently. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 0;
 		choice
@@ -187,7 +187,7 @@ conversation
 		name = "MACIL";
 		panel = "M_LEDR0";
 		voice = "MAE06";
-		dialog = "I am the one God... I need his spirit to be free so that I can leave my  body, and join him in flight. You have no idea what you possess... and what terror you face... the one God must be free... and he will reward me... I will be ONE...";
+		dialog = "I am the one God... I need his spirit to be free so that I can leave my  body, and join him in flight. You have no idea what you possess... and what terror you face... the one God must be free... and he will reward me... I will be ONE... \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 0;
 		choice

@@ -3731,6 +3731,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25102
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
+	 ACS_NamedExecuteAlways("StartTensionCountDown");
 	 A_PlaySound("weapons/bowshoot");
 	 A_PlaySound("weapons/bowshoot");
 	 A_PlaySound("weapons/bowshoot");

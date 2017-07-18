@@ -2518,8 +2518,9 @@ ACTOR DeathKnight 30114
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
 
-  Health 1250
+  Health 1100
   Radius 24
   Height 72
   Mass 700 
@@ -2528,10 +2529,14 @@ ACTOR DeathKnight 30114
   Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Holy", 35 // Holy attacks have a +75% chance of stunning an enemy
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
 
+  DamageFactor "Normal", 0.875
+  DamageFactor "Holy", 1.75
+  
   MeleeDamage 10
   MONSTER
   +FLOORCLIP 
@@ -2560,8 +2565,14 @@ ACTOR DeathKnight 30114
     goto Spawn+1 
   See:
     DKNT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    DKNT A 0 A_Jump(32,"SeeShielded")
-    DKNT A 0 A_UnSetReflectiveInvulnerable
+    DKNT A 0 A_Jump(51,"SeeShielded")
+    DKNT A 0 // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	}
     DKNT AABBCCDD 3
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -2575,12 +2586,29 @@ ACTOR DeathKnight 30114
     loop
   SeeShielded:
     DKNT P 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    DKNT P 0 A_SetReflectiveInvulnerable
-    DKNT PPQQRRSS 3 A_Chase
-    goto See
+    DKNT PPQQRRSS 3 // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_Chase;
+	}
+    DKNT S 0
+	{
+	 if (random(1,100) >= 20) { return state("See"); }
+	 return state("");
+	}
+    loop
   Melee:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    DKNT E 0 A_UnSetReflectiveInvulnerable
+    DKNT E 0 // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	}
     DKNT E 6 A_FaceTarget
     DKNT F 1 A_Playsound ("monster/dknswg")
     DKNT F 6 A_FaceTarget
@@ -2588,41 +2616,142 @@ ACTOR DeathKnight 30114
     Goto See
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    DKNT A 0 A_Jump(88,"Attack1")
-    DKNT A 0 A_Jump(88,"Attack2")
-    DKNT E 0 Bright A_UnSetReflectiveInvulnerable
+    DKNT E 0 A_Jump(88,"Attack1")
+    DKNT E 0 A_Jump(88,"Attack2")
+    DKNT E 0 Bright // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	}
     DKNT E 6 Bright A_FaceTarget
     DKNT F 6 Bright A_Playsound ("monster/kntswg")
-    DKNT G 0 Bright A_CustomMissile ("DKDart",32,0,-3,0)
-    DKNT G 0 Bright A_CustomMissile ("DKDart",32,0,-1,0)
-    DKNT G 0 Bright A_CustomMissile ("DKDart",32,0,1,0)
-    DKNT G 5 Bright A_CustomMissile ("DKDart",32,0,3,0)
+    DKNT G 5 Bright
+	{
+     A_CustomMissile ("DKDart",32,0,-3,0);
+     A_CustomMissile ("DKDart",32,0,-1,0);
+     A_CustomMissile ("DKDart",32,0,1,0);
+	 A_CustomMissile ("DKDart",32,0,3,0);
+	}
     DKNT A 0 A_Jump(64,"Attack2")
     Goto See
   Attack1:
-    DKNT T 0 Bright A_SetReflectiveInvulnerable
-    DKNT T 6 Bright A_FaceTarget
-    DKNT U 1 Bright A_FaceTarget
-    DKNT U 0 Bright A_CustomMissile("FHeadShot",44,-4,-12,0)      
-    DKNT U 5 Bright A_CustomMissile("FHeadShot",44,-4,12,0)
-    DKNT U 0 Bright A_UnSetReflectiveInvulnerable
+    DKNT T 1 Bright // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+	 A_SetUserVar("user_defendtimermax",6);
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("Attack1Phase2"); }
+	 return state("");
+	}
+	loop
+  Attack1Phase2:
+    DKNT U 1 Bright
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	}
+  Attack1Phase3:
+    DKNT U 1 Bright 
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+	 if (user_defendtimer == 2) 
+	 {
+	  A_CustomMissile("FHeadShot",44,-4,-12,0);
+	  A_CustomMissile("FHeadShot",44,-4,12,0);
+	 }
+	 
+	 A_SetUserVar("user_defendtimermax",5);
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("Attack1End"); }
+	 return state("");
+	}
+	loop
+  Attack1End:
+    DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	}
     DKNT U 0 A_Jump(64,"Attack2")
     Goto See
   Attack2:
-    DKNT T 0 Bright A_SetReflectiveInvulnerable
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 3 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 3 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 3 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 3 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 3 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT T 3 Bright A_FaceTarget      
-    DKNT U 2 Bright A_CustomMissile("DKbolt",44,-4,0,0)
-    DKNT U 0 Bright A_UnSetReflectiveInvulnerable
+    DKNT T 0 Bright // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	}
+  Attack2Phase1: // 6 times
+    DKNT T 1 Bright 
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+	 A_SetUserVar("user_defendtimermax",3);
+	 if (user_defendtimer >= user_defendtimermax) 
+	 {
+	  A_SetUserVar("user_defendtimer",0); 
+	  return state("Attack2Phase2"); 
+	 }
+	 return state("");
+	}
+	loop
+  Attack2Phase2: // 6 times
+    DKNT U 1 Bright 
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;	 
+
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+	 if (user_defendtimer == 1) { A_CustomMissile("DKbolt",44,-4,0,0); }
+
+	 A_SetUserVar("user_defendtimermax",3);
+	 if (user_defendtimer >= user_defendtimermax) 
+	 {
+	  A_SetUserVar("user_defendtimer",0); 
+	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
+	  
+	  if (user_defendcycles >= 6) { return state("Attack2End"); } else { return state("Attack2Phase1"); }
+	  return state(""); 
+	 }
+	 return state("");
+	}
+	loop
+  Attack2End:
+    DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+	}
     Goto See
   Pain:
     DKNT H 2 
@@ -2640,11 +2769,57 @@ ACTOR DeathKnight 30114
 	goto PainShield
 
   PainShield:
-    DKNT T 105 A_SetReflectiveInvulnerable
-    DKNT T 0 A_UnSetReflectiveInvulnerable
-    DKNT P 0 A_Jump (16,1)
-    Goto SeeShielded
+    DKNT T 1 // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
+	 else { A_SetUserVar("user_defendtimermax",15); }
+
+	 if (user_defendtimer >= user_defendtimermax)
+	 {
+	  A_SetUserVar("user_defendtimer",0);
+	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
+	  if (random(1,4) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+	  {
+	   A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+       A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	   A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	   A_TakeInventory("EWShieldDefendModeExtra",9999);
+	   return state("Melee");
+	  }
+	  A_FaceTarget;
+	 }
+	 if (user_defendcycles >= 7) { return state("PainShieldEnd"); }
+	 return state("");
+	}
+	loop
+  PainShieldEnd:
+    DKNT T 0 // A_UnSetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+
+	 if (random(1,16) == 1) { return state("SeeShielded"); }
+	 return state("");
+	}
     DKNT H 1
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+	}
     Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
@@ -3254,7 +3429,7 @@ ACTOR PlagueShot
   Radius 8
   Height 16
   Speed 16
-  Damage (5*random(3,5))
+  Damage (3*random(3,5))
   PROJECTILE
   +THRUGHOST
   +HITMASTER

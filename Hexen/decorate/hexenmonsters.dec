@@ -697,7 +697,9 @@ ACTOR CentaurNew : Centaur replaces Centaur
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
   DamageFactor "Thunder", 3
+  DamageFactor "Normal", 0.875
 
   Painchance 135
   Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
@@ -716,6 +718,13 @@ ACTOR CentaurNew : Centaur replaces Centaur
     goto Spawn+1
   See:
     CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    CENT A 0
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+    }
     CENT ABCD 4
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -734,23 +743,79 @@ ACTOR CentaurNew : Centaur replaces Centaur
     Goto See
   Pain:
     CENT G 6 A_Pain
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Fist:
     CENT G 6 A_Pain
     CENT GG 6
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Kick:
     CENT G 6 A_Pain
     CENT GGGG 6
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto ShieldDefend
+  ShieldDefend:
+    CENT G 1 // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+     if (random(1,32) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+     if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",3); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",4); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",5); }
+	 else { A_SetUserVar("user_defendtimermax",6); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
+	 return state("");
+	}
+	loop
+  ShieldBlocking:
+    // Defense Cycles
+    CENT E 1 // A_CentaurDefend
+	{	 
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
+	 else { A_SetUserVar("user_defendtimermax",15); }
+
+	 if (user_defendtimer >= user_defendtimermax)
+	 {
+	  A_SetUserVar("user_defendtimer",0);
+	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
+	  if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+	  {
+	   A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+       A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	   A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	   A_TakeInventory("EWShieldDefendModeExtra",9999);
+	   return state("Melee");
+	  }
+	  A_FaceTarget;
+	 }
+	 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+	 return state("");
+	}
+	loop
+  ShieldEnding:
+    CENT E 1 // A_UnsetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+	}
     Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
@@ -843,7 +908,7 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Thunder", 3
+  var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
   +NOBLOOD
   +BLASTED
   -TELESTOMP
@@ -851,6 +916,8 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
   RenderStyle Translucent
   Alpha 0.4
 
+  DamageFactor "Thunder", 3
+  DamageFactor "Normal", 0.875
   Painchance 135
   Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
@@ -868,6 +935,13 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
     goto Spawn+1
   See:
     CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    CENT A 0
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+    }
     CENT ABCD 4
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -886,23 +960,79 @@ ACTOR CentaurGhostNew : CentaurMash replaces CentaurMash
     Goto See
   Pain:
     CENT G 6 A_Pain
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Fist:
     CENT G 6 A_Pain
     CENT GG 6
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Kick:
     CENT G 6 A_Pain
     CENT GGGG 6
-    CENT G 6 A_SetReflectiveInvulnerable
-    CENT EEE 15 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto ShieldDefend
+  ShieldDefend:
+    CENT G 1 // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+     if (random(1,32) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+     if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",3); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",4); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",5); }
+	 else { A_SetUserVar("user_defendtimermax",6); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
+	 return state("");
+	}
+	loop
+  ShieldBlocking:
+    // Defense Cycles
+    CENT E 1 // A_CentaurDefend
+	{	 
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
+	 else { A_SetUserVar("user_defendtimermax",15); }
+
+	 if (user_defendtimer >= user_defendtimermax)
+	 {
+	  A_SetUserVar("user_defendtimer",0);
+	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
+	  if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+	  {
+	   A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+       A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	   A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	   A_TakeInventory("EWShieldDefendModeExtra",9999);
+	   return state("Melee");
+	  }
+	  A_FaceTarget;
+	 }
+	 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+	 return state("");
+	}
+	loop
+  ShieldEnding:
+    CENT E 1 // A_UnsetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+	}
     Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
@@ -954,13 +1084,15 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Normal", 0.875
+  var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
+  var int user_paintomissile;
+  DamageFactor "Normal", 0.75
   DamageFactor "Fire", 0.75
   RadiusDamageFactor 0.75
   DamageFactor "Explosive", 0.75
   DamageFactor "Magic", 1.1167
   DamageFactor "Thunder", 3
-  // Translation "81:96=85:92", "97:121=101:113", "0:32=128:145", "33:50=128:145"  // Dsrk Skin, Gold Armor
+  // Translation "81:96=85:92", "97:121=101:113", "0:32=128:145", "33:50=128:145"  // Dark Skin, Gold Armor
   Translation "81:96=85:92", "97:121=101:113", "0:32=231:235", "33:50=231:235"  // Dark Skin, Obsidian Armor
 
   Health 325
@@ -982,6 +1114,13 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
     goto Spawn+1
   See:
     CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    CENT A 0
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+    }
     CENT ABCD 4
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -1001,30 +1140,180 @@ ACTOR SlaughtaurNew : CentaurLeader replaces CentaurLeader
     Goto See
   Missile:
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    CENT E 10 A_FaceTarget
-    CENT F 8 Bright A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET)
-    CENT E 10 A_FaceTarget
-    CENT F 8 Bright A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET)
-    Goto See
+  MissilePhase1:
+    CENT E 1
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
+	 else { A_SetUserVar("user_defendtimermax",10); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase2"); }
+	 return state(""); 
+	}
+	loop
+  MissilePhase2:
+    CENT F 1 Bright 
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+     if (user_defendtimer == 1) { A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET); }
+	 
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+	 else { A_SetUserVar("user_defendtimermax",8); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase3"); }
+	 return state(""); 
+	}
+    loop
+  MissilePhase3:
+    CENT E 1
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
+	 else { A_SetUserVar("user_defendtimermax",10); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase4"); }
+	 return state(""); 
+	}
+	loop
+  MissilePhase4:
+    CENT F 1 Bright 
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+     if (user_defendtimer == 1) { A_CustomMissile("CentaurFX", 45, 0, 0, CMF_AIMOFFSET); }
+	 
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+	 else { A_SetUserVar("user_defendtimermax",8); }
+
+	 if (user_defendtimer >= user_defendtimermax) 
+	 { 
+	  A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+      A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	  A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	  A_TakeInventory("EWShieldDefendModeExtra",9999);
+	  return state("See"); 
+	 }
+	 return state(""); 
+	}
+    loop
   Pain:
     CENT G 5 A_Pain
-    CENT G 5 A_SetReflectiveInvulnerable
-    CENT EEE 17 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Fist:
     CENT G 5 A_Pain
     CENT GG 5
-    CENT G 5 A_SetReflectiveInvulnerable
-    CENT EEE 17 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
-    Goto See
+    Goto ShieldDefend
   Pain.Kick:
     CENT G 5 A_Pain
     CENT GGGG 5
-    CENT G 5 A_SetReflectiveInvulnerable
-    CENT EEE 17 A_CentaurDefend
-    CENT E 1 A_UnsetReflectiveInvulnerable
+    Goto ShieldDefend
+  ShieldDefend:
+    CENT G 1 // A_SetReflectiveInvulnerable
+	{
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); } 
+	 A_FaceTarget;
+
+     if (random(1,32) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+     if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 315) { A_SetUserVar("user_defendtimermax",2); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 210) { A_SetUserVar("user_defendtimermax",3); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_SetUserVar("user_defendtimermax",4); }
+	 else { A_SetUserVar("user_defendtimermax",5); }
+
+	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
+	 return state("");
+	}
+	loop
+  ShieldBlocking:
+    // Defense Cycles
+    CENT E 1 // A_CentaurDefend
+	{	 
+     A_ChangeFlag("NOBLOOD", 1); A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("REFLECTIVE", 1);
+	 A_GiveInventory("EWShieldDefendMode",1); // A_SetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 if (random(1,4) == 1) { A_GiveInventory("EWShieldDefendModeExtra",1); }
+	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(21,22)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(19,20)); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(18,19)); }
+	 else { A_SetUserVar("user_defendtimermax",18); }
+
+	 if (user_defendtimer >= user_defendtimermax)
+	 {
+	  A_SetUserVar("user_defendtimer",0);
+	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
+	  if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+	  {
+	   A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+       A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	   A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	   A_TakeInventory("EWShieldDefendModeExtra",9999);
+	   return state("Melee");
+	  }
+	  A_FaceTarget;
+	 }
+	 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+	 return state("");
+	}
+	loop
+  ShieldEnding:
+    CENT E 1 // A_UnsetReflectiveInvulnerable
+	{
+	 A_SetUserVar("user_defendtimer",0); A_SetUserVar("user_defendcycles",0);
+     A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("REFLECTIVE", 0);
+	 A_TakeInventory("EWShieldDefendMode",9999); // A_UnSetInvulnerable
+	 A_TakeInventory("EWShieldDefendModeExtra",9999);
+	 A_FaceTarget;
+
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_paintomissile",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetUserVar("user_paintomissile",2); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 140) { A_SetUserVar("user_paintomissile",3); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_paintomissile",4); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 100) { A_SetUserVar("user_paintomissile",5); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetUserVar("user_paintomissile",6); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_paintomissile",7); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetUserVar("user_paintomissile",8); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 20) { A_SetUserVar("user_paintomissile",9); }
+	 else { A_SetUserVar("user_paintomissile",10); }
+
+	 if (random(1,user_paintomissile) == 1) { return state("Missile"); }
+	 return state("");
+	}
     Goto See
   Pain.GravityHP:
     TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
@@ -5298,8 +5587,8 @@ ACTOR Bormereth
   PainSound "DMage/Pain"
   ActiveSound "DMage/idle"
   DeathSound "DMage/death"
-  Obituary "%o was incinerated by the rage of Bormereth."
-  HitObituary "%o was smashed by Bormereth."
+  Obituary "%o was incinerated by the rage of a Bormereth."
+  HitObituary "%o was smashed by a Bormereth."
   States
   {
   Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See

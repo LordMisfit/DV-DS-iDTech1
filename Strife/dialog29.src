@@ -784,3 +784,14 @@ conversation
 
 // TEIYTENTH - The Entity/The "One God"
 // Coming soon. >.>
+conversation
+{
+	actor = 671; // OrderCultistBase
+	page // 1
+	{
+		name = "?????????";
+		panel = "";
+		voice = "";
+		dialog = "...";
+	}
+}

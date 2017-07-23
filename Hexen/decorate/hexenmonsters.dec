@@ -2391,10 +2391,12 @@ Actor FireDemonQueen : FireDemon
     TNT1 A 0 A_UnSetShootable
     FDNQ AAAAAAAAA 1 Bright A_FadeOut(0.10)
     FDNQ A 1 Bright A_SetTranslucent(0.0)
-    TNT1 A 0 A_SpawnItemEx("FireDemonQueenClone",-50,100,0,0,0,0,0,16)
-    TNT1 A 0 A_SpawnItemEx("FireDemonQueenClone",50,-100,0,0,0,0,0,16)
-    TNT1 A 0 A_SpawnItemEx("FireDemonQueenClone",100,100,0,0,0,0,0,16)
-    TNT1 A 0 A_SpawnItemEx("FireDemonQueenClone",-100,-50,0,0,0,0,0,16)
+	{
+     A_SpawnItemEx("FireDemonQueenClone",-50,100,0,0,0,0,0,16);
+     A_SpawnItemEx("FireDemonQueenClone",50,-100,0,0,0,0,0,16);
+     A_SpawnItemEx("FireDemonQueenClone",100,100,0,0,0,0,0,16);
+     A_SpawnItemEx("FireDemonQueenClone",-100,-50,0,0,0,0,0,16);
+	}
     FDNQ AAAAAAAAAA 1 Bright A_FadeIn(0.10)
     TNT1 A 0 A_SetShootable
     Goto Chase
@@ -2477,7 +2479,7 @@ Actor FireDemonQueen : FireDemon
 
 actor FireDemonQueenClone : FireDemonQueen
 {
-  Health 1
+  Health 5
   +NOBLOOD
   -COUNTKILL
   -TELESTOMP
@@ -2486,7 +2488,7 @@ actor FireDemonQueenClone : FireDemonQueen
   +GHOST
   RenderStyle Translucent
   Alpha 0.0
-  Tag "Afrit Queen Clone"
+  Tag "Afrit Queen?"
   States
   {
   Spawn:
@@ -2495,6 +2497,7 @@ actor FireDemonQueenClone : FireDemonQueen
     FDNQ AAAAAAA 1 Bright A_FadeIn(0.10)
     Goto Chase
   Missile:
+    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDNQ K 3 Bright 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }

@@ -6067,3 +6067,61 @@ ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
     Stop
   }
 }
+
+actor OrderCultistBase 27407
+{
+  Health 1000000
+  PainChance 0
+  Mass 500000000
+  RenderStyle Translucent
+  Alpha 0.666
+  Radius 32
+  Height 72
+  ConversationID 671
+  //Monster
+  +SOLID
+  +NODAMAGE
+  +NOBLOOD
+  +NEVERTARGET
+  +NOGRAVITY
+  +FLOAT
+  +SHADOW
+  +NOTDMATCH
+  +DONTMORPH
+  +NOBLOCKMONST
+  +LOOKALLAROUND
+  +NOICEDEATH
+  +NOFEAR
+  -SPECTRAL
+  +FLOATBOB
+  States
+  {
+  Spawn:
+    TNT1 A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+    TNT1 A 0 A_JumpIfInventory("FloraInPlay",1,"Check1",AAPTR_PLAYER1)
+    TNT1 A 0 A_FadeOut(1.0)
+	stop
+  Check1:
+    TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"StickAround",AAPTR_PLAYER1)
+    TNT1 A 0 A_FadeOut(1.0)
+	stop
+  StickAround:
+    ORCL CCCCCCCCC 4
+	{
+	 A_FadeIn(0.03,0);
+	 A_JumpIfInventory("TalkToTeiytenth",1,"Death",AAPTR_PLAYER1);
+	}
+    ORCL CCCCCCCCC 4
+    {
+	 A_FadeOut(0.03,0);
+	 A_JumpIfInventory("TalkToTeiytenth",1,"Death",AAPTR_PLAYER1);
+	}
+	loop
+  Death:
+    ORCL C 4
+    {
+	 A_FadeOut(0.03,0);
+	}
+	loop
+  }
+}

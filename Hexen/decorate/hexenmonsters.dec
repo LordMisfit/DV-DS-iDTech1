@@ -5954,6 +5954,7 @@ ACTOR DragonNew : Dragon replaces Dragon
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
 
   Health 10240
+  Mass 51200
   DamageFactor "Normal", 0.833
   PainChance 128
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy

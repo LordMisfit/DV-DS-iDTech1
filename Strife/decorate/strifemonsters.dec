@@ -6075,8 +6075,8 @@ actor OrderCultistBase 27407
   Mass 500000000
   RenderStyle Translucent
   Alpha 0.666
-  Radius 32
-  Height 72
+  Radius 24 // 24
+  Height 56 // 56
   ConversationID 671
   //Monster
   +SOLID
@@ -6109,19 +6109,27 @@ actor OrderCultistBase 27407
     ORCL CCCCCCCCC 4
 	{
 	 A_FadeIn(0.03,0);
-	 A_JumpIfInventory("TalkToTeiytenth",1,"Death",AAPTR_PLAYER1);
+	 if (CountInv("TalkToTeiytenth",AAPTR_PLAYER1) > 0) { return state("Death"); }
+     return state("");
 	}
     ORCL CCCCCCCCC 4
     {
 	 A_FadeOut(0.03,0);
-	 A_JumpIfInventory("TalkToTeiytenth",1,"Death",AAPTR_PLAYER1);
+	 if (CountInv("TalkToTeiytenth",AAPTR_PLAYER1) > 0) { return state("Death"); }
+     return state("");
 	}
 	loop
   Death:
     ORCL C 4
     {
-	 A_FadeOut(0.03,0);
+	 A_FadeOut(0.03,FTF_REMOVE|FTF_CLAMP);
 	}
 	loop
   }
+}
+
+actor TalkToTeiytenth : PlaceholderItem 
+{ 
+ +INVENTORY.KEEPDEPLETED
+ Inventory.MaxAmount 1
 }

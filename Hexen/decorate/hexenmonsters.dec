@@ -7851,7 +7851,7 @@ actor AfritSpawner : CustomInventory replaces FireDemon
      stop
 
     UpgradeClass2:
-     FDMN X 0 A_JumpIf( random(1,512) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass2")
+     FDMN X 0 A_JumpIf( random(1,1024) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass2")
      FDMN X 0 A_SpawnItemEx("FireDemonCommander",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
      stop
 
@@ -7862,7 +7862,7 @@ actor AfritSpawner : CustomInventory replaces FireDemon
 
   Spawn:
    FDMN X 0 
-   FDMN X 0 A_JumpIf( random(1,512) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
+   FDMN X 0 A_JumpIf( random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
    FDMN X 0 A_SpawnItemEx("FireDemonNew",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
    stop
  }

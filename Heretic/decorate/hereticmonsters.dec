@@ -43,6 +43,7 @@ ACTOR ChickenNew : Chicken replaces Chicken
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
   DamageFactor "Normal", 0.5
+  DamageFactor "Crush", 32
   Monster
   -COUNTKILL
   +WINDTHRUST
@@ -147,6 +148,7 @@ actor HereticImpNew : HereticImp // replaces HereticImp
  Painchance "GravityHP", 255
  Painchance "GravityMP", 255
  Painchance "GravityHPMP", 255 
+ DamageFactor "Crush", 10
  +DONTHARMSPECIES
  Species "Gargoyle"
  Damage (0)
@@ -319,6 +321,7 @@ actor HereticImpLeaderNew : HereticImpLeader // replaces HereticImpLeader
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+ DamageFactor "Crush", 10
 
  Painchance 200
  Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -445,6 +448,7 @@ actor MummyNew : Mummy // replaces Mummy
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+ DamageFactor "Crush", 8
 
  Painchance 128
  Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
@@ -572,6 +576,7 @@ actor MummyGhostNew : MummyGhost // replaces MummyGhost
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+ DamageFactor "Crush", 8
 
  Painchance 128
  Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
@@ -700,6 +705,7 @@ actor MummyLeaderNew : MummyLeader // replaces MummyLeader
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+ DamageFactor "Crush", 8
 
  Painchance 64
  Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
@@ -868,6 +874,7 @@ actor MummyLeaderGhostNew : MummyLeaderGhost // replaces MummyLeaderGhost
  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+ DamageFactor "Crush", 8
 
  Painchance 64
  Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
@@ -1038,6 +1045,7 @@ ACTOR KnightNew : Knight // replaces Knight
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 7.2
 
   Painchance 100
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
@@ -1194,6 +1202,7 @@ ACTOR KnightGhostNew : KnightGhost // replaces KnightGhost
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 7.2
 
   Painchance 100
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
@@ -1353,6 +1362,7 @@ ACTOR WizardNew : Wizard // replaces Wizard
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 7.2
 
   Painchance 64
   Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
@@ -1670,6 +1680,7 @@ ACTOR IronlichNew : Ironlich // replaces Ironlich
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 4
 
   Painchance 32
   Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
@@ -1874,6 +1885,7 @@ ACTOR ClinkNew : Clink replaces Clink
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 6.4
 
   MeleeRange 52
   Painchance 32
@@ -2072,6 +2084,7 @@ ACTOR BeastNew : Beast replaces Beast
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 6.4
 
   Painchance 100
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
@@ -2215,6 +2228,7 @@ ACTOR MaulotaurNew : Minotaur replaces Minotaur
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 2.4
 
   Painchance 25
   Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
@@ -2461,6 +2475,7 @@ ACTOR SnakeNew : Snake // replaces Snake
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 6.4
 
   Painchance 48
   Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
@@ -2598,6 +2613,7 @@ ACTOR DSparilMountedNew : Sorcerer1 replaces Sorcerer1
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 0.5
 
   Health 24000
   Painchance 56
@@ -2755,6 +2771,7 @@ ACTOR DSparilUnmountedNew : Sorcerer2 replaces Sorcerer2
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 0.5
 
   Health 56000
   Painchance 32
@@ -2902,6 +2919,7 @@ ACTOR DeathKnight 30114
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
+  DamageFactor "Crush", 7.2
 
   Health 1100
   Radius 24
@@ -3533,6 +3551,7 @@ actor HellGuard 3114
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 6.4
 
   //$Category "ZDoom Monster pack"
   Health 420 // 300
@@ -3763,6 +3782,7 @@ ACTOR PlagueImp : HereticImpLeader 31026
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 7.6
 
   Health 120
   Translation "145:168=225:240", "255:248=0:0"
@@ -3978,6 +3998,7 @@ ACTOR WatcherImp : HereticImp
   HitObituary "%o was slashed by a Watcher Gargoyle."
 
   DamageFactor "Fire", 0.5
+  DamageFactor "Crush", 7.6
   PainChance 50
   Painchance "Fire", 25 // Fire attacks have a -50% chance of stunning an enemy
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -4429,6 +4450,7 @@ ACTOR IceLich : IceGuy
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 4.0
 
   obituary "%o was frozen by an Ice Lich"
   health 700
@@ -4667,6 +4689,7 @@ ACTOR Goldlich : Ironlich 31044
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 4.0
 
   DropItem "BlasterHefty", 84, 50
   DropItem "ArtiEgg", 51, 0
@@ -5037,6 +5060,7 @@ ACTOR BloodLich
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 2.4
 
   Obituary "%o was reduced to a pile of ash by a Blood Lich."
   Health 2100
@@ -5308,19 +5332,20 @@ ACTOR CurseSpell
 	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (random(1,user_ailmentmaxchance) <= 2)
 	  {
-	   A_SetUserVar("user_random",random(1,12));
+	   A_SetUserVar("user_random",random(1,13));
 	   if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(315,525)); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,19,random(315,525)); } // Blind for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,20,random(315,525)); } // Sleep for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-	   else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,18,random(315,525)); } // Fatigue for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 6) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-	   else if (user_random == 7) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   else if (user_random == 7) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 8) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 9) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-	   else if (user_random == 10) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   else if (user_random == 10) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 12) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   else if (user_random == 13) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
 	 }
 	 return state("");
@@ -5337,6 +5362,7 @@ ACTOR Banshee
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
+  DamageFactor "Crush", 4.8
 
   Health 720
   Radius 12 // 15
@@ -5879,6 +5905,7 @@ Actor IceGolem
   HitObituary "%o was bludgeoned by an ice golem"
 
   RadiusDamageFactor 0.625
+  DamageFactor "Crush", 5.6
   DamageFactor "Normal", 0.925
   DamageFactor "Fire", 1.8
   DamageFactor "Ice", 0.334

@@ -9,6 +9,7 @@ ACTOR PeasantNew : Peasant replaces Peasant
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
 
   Health 31
   PainChance 200
@@ -320,6 +321,7 @@ ACTOR BeggarNew : Beggar replaces Beggar // Base Class
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
 
   Health 20
   PainChance 250
@@ -592,6 +594,7 @@ ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_shotsfired; var int user_shotsfiredmax;
   DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
 
   Health 75		// 1.25x the HP
   PainChance 187	// 75% the original pain chance
@@ -831,7 +834,7 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_shotsfired; var int user_shotsfiredmax;
   DamageFactor "PoisonBolt", 10.0
-
+  DamageFactor "Crush", 8
   DamageFactor "Fire", 0.875
   DamageFactor "Ice", 0.9375
   DamageFactor "Thunder", 1.25
@@ -1347,6 +1350,7 @@ ACTOR TemplarNew : Templar replaces Templar
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_pelletsfired;
   DamageFactor "PoisonBolt", 0.05
+  DamageFactor "Crush", 5.6
 
   DamageFactor "Fire", 0.75
   DamageFactor "Ice", 0.875
@@ -1560,6 +1564,7 @@ ACTOR InquisitorNew : Inquisitor // replaces Inquisitor
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_pelletsfired;
   DamageFactor "PoisonBolt", 0.05
+  DamageFactor "Crush", 1.6
 
   DamageFactor "Fire", 0.25
   DamageFactor "Ice", 0.5
@@ -1820,7 +1825,7 @@ ACTOR ReaverNew : Reaver replaces Reaver
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   var int user_pelletsfired;
   DamageFactor "PoisonBolt", 0.05
-
+  DamageFactor "Crush", 5.6
   DamageFactor "Fire", 0.5
   DamageFactor "Ice", 0.75
   DamageFactor "Thunder", 1.75
@@ -2001,6 +2006,7 @@ ACTOR CrusaderNew : Crusader replaces Crusader
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
+  DamageFactor "Crush", 3.2
 
   DamageFactor "Fire", 0.5
   DamageFactor "Ice", 0.75
@@ -2196,7 +2202,7 @@ ACTOR SentinelNew : Sentinel replaces Sentinel
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
-
+  DamageFactor "Crush", 10
   DamageFactor "Fire", 0.75
   DamageFactor "Ice", 0.875
   DamageFactor "Thunder", 1.75
@@ -2341,6 +2347,7 @@ ACTOR OStalkerNew : Stalker replaces Stalker
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
+  DamageFactor "Crush", 10
 
   DamageFactor "Fire", 0.75
   DamageFactor "Ice", 0.875
@@ -2709,7 +2716,7 @@ ACTOR CeilingTurretNew : CeilingTurret replaces CeilingTurret
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
-
+  DamageFactor "Crush", 0.01
   DamageFactor "Fire", 0.85
   DamageFactor "Ice", 0.9375
   DamageFactor "Thunder", 1.25
@@ -2835,6 +2842,7 @@ ACTOR ProgrammerNew : Programmer replaces Programmer
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
+ DamageFactor "Crush", 0.5
  
   ConversationID 95
   Health 1100
@@ -3026,6 +3034,7 @@ ACTOR StrifeBishopNew : StrifeBishop replaces StrifeBishop
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.15
+ DamageFactor "Crush", 0.5
  
   ConversationID 64
   Health 500
@@ -3149,6 +3158,7 @@ ACTOR OracleNew : Oracle replaces Oracle
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.05
+ DamageFactor "Crush", 0.5
  
   ConversationID 65
   Health 250
@@ -3220,6 +3230,7 @@ ACTOR Macil1New : Macil1 replaces Macil1
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
+ DamageFactor "Crush", 0.5
  
   ConversationID 49
   Health 285
@@ -3338,6 +3349,7 @@ ACTOR Macil2New : Macil2 replaces Macil2
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
+ DamageFactor "Crush", 0.5
  
   DamageFactor "Fire", 0.5
   DamageFactor "Ice", 0.75
@@ -3499,6 +3511,7 @@ ACTOR LoremasterNew : Loremaster replaces Loremaster
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.25
+ DamageFactor "Crush", 0.5
  
   ConversationID 66
   Health 800
@@ -3708,6 +3721,7 @@ ACTOR AlienSpectre1New : AlienSpectre1 replaces AlienSpectre1
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.001
+ DamageFactor "Crush", 0.001
  
   ConversationID 67
   Health 1000
@@ -3933,6 +3947,7 @@ ACTOR AlienSpectre2New : AlienSpectre2 replaces AlienSpectre2
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 70
   Health 1200
@@ -4140,6 +4155,7 @@ ACTOR AlienSpectre3New : AlienSpectre3 replaces AlienSpectre3
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 71
   Health 1500
@@ -4376,6 +4392,7 @@ ACTOR AlienSpectre4New : AlienSpectre4 replaces AlienSpectre4
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 72
   Health 1700
@@ -4600,6 +4617,7 @@ ACTOR AlienSpectre5New : AlienSpectre5 replaces AlienSpectre5
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 73
   Health 2000
@@ -4819,6 +4837,7 @@ ACTOR EntityBossNew : EntityBoss replaces EntityBoss
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 74
   Health 2500
@@ -5038,6 +5057,7 @@ ACTOR EntitySecondNew : EntitySecond replaces EntitySecond
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   ConversationID 75
   Health 990
@@ -5263,6 +5283,7 @@ ACTOR EntityAscended : EntityBoss
  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
  DamageFactor "PoisonBolt", 0.01
+ DamageFactor "Crush", 0.001
  
   Health 3250
   PainChance 64
@@ -5603,6 +5624,7 @@ ACTOR DarkInquisitor : Inquisitor 27406
   var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
   var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 0.05
+  DamageFactor "Crush", 1.6
 
   SeeSound "darkinquisitor/sight"
   ActiveSound "darkinquisitor/active"

@@ -3470,6 +3470,10 @@ ACTOR GreenChaosSerpentGhostNew : Demon1Mash replaces Demon1Mash
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 4.8
+  DamageFactor "Fire", 0.75
+  Painchance "Fire", 37
+  DamageFactor "Ice", 1.33
+  Painchance "Ice", 66
 
   States
   {
@@ -3611,8 +3615,12 @@ ACTOR BrownChaosSerpentNew : Demon2 // replaces Demon2
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-  Species "ChaosSerpent"
+  Painchance "Poison", 33
+  DamageFactor "Poison", 0.67
+  Painchance "PoisonElemental", 10
+  DamageFactor "PoisonElemental", 0.2
   DamageFactor "Crush", 4.8
+  Species "ChaosSerpent"
 
   States
   {
@@ -4111,7 +4119,7 @@ ACTOR HrVolcanoTBlast
 
 Actor RedDemonFXExplosion
 {
-  DamageType MagmaSerpentFire
+  DamageType "MagmaSerpentFire"
   +NODAMAGETHRUST
   States
   {
@@ -4138,7 +4146,6 @@ Actor MagmaChaosSerpentNew : Demon1
   +TELESTOMP
   +FLOORCLIP
   meleerange 82
-  DamageFactor MagmaSerpentFire, 0
   BloodColor "Orange"
   SeeSound "DemonSight"
   AttackSound "DemonAttack"
@@ -4156,10 +4163,13 @@ Actor MagmaChaosSerpentNew : Demon1
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
 
-  Painchance "Fire", 13 
-  DamageFactor "Fire", 0.25
-  Painchance "Ice", 67 
-  DamageFactor "Ice", 1.33
+  DamageFactor "MagmaSerpentFire", 0
+
+  PainChance 50
+  Painchance "Fire", 25
+  DamageFactor "Fire", 0.5
+  Painchance "Ice", 100
+  DamageFactor "Ice", 2.0
   DamageFactor "Crush", 4.8
   Species "ChaosSerpent"
   
@@ -4534,15 +4544,16 @@ Actor BlackChaosSerpentNew : Demon2
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
 
-  Painchance "Fire", 25 
-  DamageFactor "Fire", 0.5
+  Painchance 50
+  Painchance "Fire", 37 
+  DamageFactor "Fire", 0.75
   Painchance "Ice", 75
   DamageFactor "Ice", 1.5
-  Painchance "Poison", 33
-  DamageFactor "Poison", 0.67
+  Painchance "Poison", 16
+  DamageFactor "Poison", 0.33
+  Painchance "PoisonElemental", 5
+  DamageFactor "PoisonElemental", 0.1
   DamageFactor "Crush", 4.8
-  Painchance "PoisonElemental", 10
-  DamageFactor "PoisonElemental", 0.2
   Species "ChaosSerpent"
   
   States

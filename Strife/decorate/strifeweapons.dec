@@ -140,183 +140,60 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	{
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
      A_PlaySound("weapons/xbowshoot",1);
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-	 }
+     A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"ElectricBolts",0,0,0,0);
 	}
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("FireEnd5"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("FireEnd4"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("FireEnd3"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("FireEnd2"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("FireEnd1"); }
-	 return state("FireEnd0");
-	}
-  FireEnd0:
-    // 32 [29]
-    XBOW B 6 
-    XBOW C 4
-    XBOW D 6
-    XBOW E 3
-    XBOW F 5
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 5 A_CheckReload
-    Goto Ready+1
-  FireEnd1:
-    // 29 [26]
-    XBOW B 5 
-    XBOW C 4
-    XBOW D 5
-    XBOW E 3
-    XBOW F 4
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 5 A_CheckReload
-    Goto Ready+1
-  FireEnd2:
-    // 27 [25]
-    XBOW B 5 
-    XBOW C 4
-    XBOW D 5
-    XBOW E 3
-    XBOW F 4
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 4 A_CheckReload
-    Goto Ready+1
-  FireEnd3:
-    // 24 [22]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 4
-    XBOW E 2
-    XBOW F 4
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 4 A_CheckReload
-    Goto Ready+1
-  FireEnd4:
-    // 22 [21]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 3
-    XBOW E 2
-    XBOW F 4
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 4 A_CheckReload
-    Goto Ready+1
-  FireEnd5:
-    // 19 [18]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 3
-    XBOW E 2
-    XBOW F 4
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 3 A_CheckReload
-    Goto Ready+1
-/*
-  Fire:
-    // 32
-    XBOW A 3 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
     XBOW B 6
 	{
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-     A_PlaySound("weapons/xbowshoot",1);
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_FireCustomMissile("ElectricBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-	 }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(5); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
 	}
     XBOW C 4
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+	}
     XBOW D 6
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+	}
     XBOW E 3
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+	}
     XBOW F 5
-    XBOW G 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW G 5 A_CheckReload
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+	}
+    XBOW G 5
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+
+     A_GunFlash ("Flash", GFF_NOEXTCHANGE);
+     A_CheckReload;
+	}
     Goto Ready+1
-*/
   Flash:
     XBOW KLM 5
     Loop
@@ -395,114 +272,58 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	{
 	 ACS_NamedExecuteAlways("StartTensionCountDown");
      A_PlaySound("weapons/xbowshoot",1);
-	 if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	 {
-      // Angle + 15, Pitch + 0
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch + 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch+7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 7.5, Pitch - 7.5
-      A_SetPitch(pitch-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle + 0, Pitch + 0
-      A_SetPitch(pitch+7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch - 7.5
-      A_SetAngle(angle-7.5);
-      A_SetPitch(pitch-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 7.5, Pitch + 7.5
-      A_SetPitch(pitch+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Angle - 15, Pitch + 0
-      A_SetPitch(pitch-7.5);
-      A_SetAngle(angle-7.5);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      // Reset
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	 {
-      A_SetAngle(angle+15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle-15);
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-      A_SetAngle(angle+15);
-	 }
-	 else
-	 {
-	  A_FireCustomMissile("PoisonBoltNew", frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)), 1);
-	 }
+     A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"PoisonBolts",0,0,0,0);
 	}
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("FireEnd5"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("FireEnd4"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("FireEnd3"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("FireEnd2"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("FireEnd1"); }
-	 return state("FireEnd0");
-	}
-  FireEnd0:
-    // 32 [29]
     XBOW B 6 
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(5); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+	}
     XBOW C 4
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+	}
     XBOW D 6
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+	}
     XBOW E 3
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+	}
     XBOW I 5
-    XBOW J 5 A_CheckReload
-    Goto Ready
-  FireEnd1:
-    // 29 [26]
-    XBOW B 5 
-    XBOW C 4
-    XBOW D 5
-    XBOW E 3
-    XBOW I 4
-    XBOW J 5 A_CheckReload
-    Goto Ready
-  FireEnd2:
-    // 27 [25]
-    XBOW B 5 
-    XBOW C 4
-    XBOW D 5
-    XBOW E 3
-    XBOW I 4
-    XBOW J 4 A_CheckReload
-    Goto Ready
-  FireEnd3:
-    // 24 [22]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 4
-    XBOW E 2
-    XBOW I 4
-    XBOW J 4 A_CheckReload
-    Goto Ready
-  FireEnd4:
-    // 22 [21]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 3
-    XBOW E 2
-    XBOW I 4
-    XBOW J 4 A_CheckReload
-    Goto Ready
-  FireEnd5:
-    // 19 [18]
-    XBOW B 4 
-    XBOW C 4
-    XBOW D 3
-    XBOW E 2
-    XBOW I 4
-    XBOW J 3 A_CheckReload
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+	}
+    XBOW J 5 
+	{
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+ 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+
+	 A_CheckReload;
+	}
     Goto Ready
   Flash:
     Stop
@@ -1205,304 +1026,200 @@ Actor NNSigil : StrifeWeaponBase
       goto Ready
    //
    Fire:
+      SGLA A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
       TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Fire5")
       TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Fire4")
       TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Fire3")
       TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Fire2")
       TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Fire1")
    Fire1:
-      SGLA A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      SGLA A 18 Bright A_Light2
-      SGLA A 3 Bright A_GunFlash
-      TNT1 A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 4)
+      SGLA A 18 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+	   A_Light2;
+	  }
+      SGLA A 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_GunFlash;
+	  }
       SGLA B 15 
 	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 4);
        ACS_NamedExecuteAlways("StartTensionCountDown");
-	   if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	   {
-        // Angle + 15, Pitch + 0
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle + 7.5, Pitch + 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle + 7.5, Pitch - 7.5
-        A_SetPitch(pitch-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle + 0, Pitch + 0
-        A_SetPitch(pitch+7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle - 7.5, Pitch - 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle - 7.5, Pitch + 7.5
-        A_SetPitch(pitch+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Angle - 15, Pitch + 0
-        A_SetPitch(pitch-7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        // Reset
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	   {
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   {
-	    A_FireCustomMissile("NNSigilLightningSpot", 0, 0);
- 	   }
+       A_SpreadAuraFireProjectile("NNSigilLightningSpot",0,0,"",0,0,0,0);
 	  }
       Goto Ready
    Fire2:
-      SGLB A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      SGLB A 18 Bright A_Light2
-      SGLB A 3 Bright A_GunFlash
-      TNT1 A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 8)
+      SGLB A 18 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+	   A_Light2;
+	  }
+      SGLB A 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_GunFlash;
+	  }
       SGLB B 15
 	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 8);
        ACS_NamedExecuteAlways("StartTensionCountDown");
-	   if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	   {
-        // Angle + 15, Pitch + 0
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle + 7.5, Pitch + 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle + 7.5, Pitch - 7.5
-        A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle + 0, Pitch + 0
-        A_SetPitch(pitch+7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle - 7.5, Pitch - 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle - 7.5, Pitch + 7.5
-        A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Angle - 15, Pitch + 0
-        A_SetPitch(pitch-7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        // Reset
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	   {
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   {
-	    A_FireCustomMissile("SpectralLightningH1", 0, 0);
- 	   }
+       A_SpreadAuraFireProjectile("SpectralLightningH1",0,0,"",0,0,0,0);
 	  }
       Goto Ready
    Fire3:
-      SGLC A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      SGLC A 18 Bright A_Light2
-      SGLC A 3 Bright A_GunFlash
-      TNT1 A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 12)
-      TNT1 A 0 A_GiveInventory("NNSigil3AttackCounter", 20)
+      SGLC A 18 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+	   A_Light2;
+	  }
+      SGLC A 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_GunFlash;
+	  }
+      TNT1 A 0 
+	  {
+       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 12);
+	   A_GiveInventory("NNSigil3AttackCounter", 20);
+	  }
       TNT1 A 0 A_SetAngle(angle-90)
    Fire3Loop:
       TNT1 A 0 A_SetAngle(angle+9)
       TNT1 A 0
 	  {
        ACS_NamedExecuteAlways("StartTensionCountDown");
-	   if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	   {
-        // Angle + 15, Pitch + 0
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle + 7.5, Pitch + 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle + 7.5, Pitch - 7.5
-        A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle + 0, Pitch + 0
-        A_SetPitch(pitch+7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle - 7.5, Pitch - 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle - 7.5, Pitch + 7.5
-        A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Angle - 15, Pitch + 0
-        A_SetPitch(pitch-7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        // Reset
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	   {
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   {
-	    A_FireCustomMissile("SpectralLightningBall1", 0, 0);
- 	   }
+       A_SpreadAuraFireProjectile("SpectralLightningBall1",0,0,"",0,0,0,0);
 	  }
       TNT1 A 0 A_TakeInventory("NNSigil3AttackCounter", 1)
       TNT1 A 0 A_JumpIfInventory("NNSigil3AttackCounter", 1, "Fire3Loop")
-      SGLC B 15 A_SetAngle(angle-90)
+      SGLC B 15 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+	   A_SetAngle(angle-90);
+	  }
       Goto Ready
    Fire4:
-      SGLD A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      SGLD A 18 Bright A_Light2
-      SGLD A 3 Bright A_GunFlash
-      TNT1 A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 16)
+      SGLD A 18 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+	   A_Light2;
+	  }
+      SGLD A 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_GunFlash;
+	  }
       SGLD B 15
 	  {
-       ACS_NamedExecuteAlways("StartTensionCountDown");
-	   if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	   {
-        // Angle + 15, Pitch + 0
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle + 7.5, Pitch + 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle + 7.5, Pitch - 7.5
-        A_SetPitch(pitch-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle + 0, Pitch + 0
-        A_SetPitch(pitch+7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle - 7.5, Pitch - 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle - 7.5, Pitch + 7.5
-        A_SetPitch(pitch+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Angle - 15, Pitch + 0
-        A_SetPitch(pitch-7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        // Reset
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	   {
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   {
-	    A_FireCustomMissile("NNSigilLightningBigV", 0, 0);
- 	   }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 16);
+       A_SpreadAuraFireProjectile("NNSigilLightningBigV",0,0,"",0,0,0,0);
 	  }
       Goto Ready
    Fire5:
-      SGLE A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      SGLE A 18 Bright A_Light2
-      SGLE A 3 Bright A_GunFlash
-      TNT1 A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 20)
+      SGLE A 18 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+	   A_Light2;
+	  }
+      SGLE A 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_GunFlash;
+	  }
       SGLE B 15
 	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 20);
        ACS_NamedExecuteAlways("StartTensionCountDown");
-	   if (CountInv("SpreaderAura2",AAPTR_PLAYER1) > 0)
-	   {
-        // Angle + 15, Pitch + 0
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle + 7.5, Pitch + 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch+7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle + 7.5, Pitch - 7.5
-        A_SetPitch(pitch-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle + 0, Pitch + 0
-        A_SetPitch(pitch+7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle - 7.5, Pitch - 7.5
-        A_SetAngle(angle-7.5);
-        A_SetPitch(pitch-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle - 7.5, Pitch + 7.5
-        A_SetPitch(pitch+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Angle - 15, Pitch + 0
-        A_SetPitch(pitch-7.5);
-        A_SetAngle(angle-7.5);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        // Reset
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   if (CountInv("SpreaderAura1",AAPTR_PLAYER1) > 0)
-	   {
-        A_SetAngle(angle+15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        A_SetAngle(angle-15);
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
-        A_SetAngle(angle+15);
-	   }
-	   else
-	   {
-	    A_FireCustomMissile("SpectralLightningBigBall1", 0, 0);
- 	   }
+       A_SpreadAuraFireProjectile("SpectralLightningBigBall1",0,0,"",0,0,0,0);
 	  }
       Goto Ready
    //
    Flash:
-      SGLF A 3 Bright A_Light2
-      SGLF B 4 Bright A_Light2
-      SGLF C 3 Bright A_LightInverse
-      SGLF B 4 Bright A_Light1
+      SGLF A 3 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_Light2;
+	  }
+      SGLF B 4 Bright
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
+	   A_Light2;
+	  }
+      SGLF C 3 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+	   A_LightInverse;
+	  }
+      SGLF B 4 Bright 
+	  {
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
+	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
+	   A_Light1;
+	  }
       SGLF B 0 A_Light0
       Stop
    }

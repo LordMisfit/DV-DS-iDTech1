@@ -443,22 +443,29 @@ actor FHereticImpLeader : HereticImpLeaderNew
  dropitem NoItemSpawn 1
 }
 
-actor MummyNew : Mummy // replaces Mummy
+actor MummyNew : AetheriusBaseZSC // replaces Mummy
 {
- var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
- var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
- DamageFactor "Crush", 8
-
- Painchance 128
- Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
- Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "GravityHP", 255
- Painchance "GravityMP", 255
- Painchance "GravityHPMP", 255
- +DONTHARMSPECIES
- Species "Golem"
+  Health 80
+  Radius 22
+  Height 62
+  Mass 75
+  Speed 12
+  Painchance 128
+  Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
+  DamageFactor "Crush", 8
+  Species "Golem"
+  Monster
+  +FLOORCLIP
+  +DONTHARMSPECIES
+  SeeSound "mummy/sight"
+  AttackSound "mummy/attack1"
+  PainSound "mummy/pain"
+  DeathSound "mummy/death"
+  ActiveSound "mummy/active"
+  HitObituary "%o was smashed by a golem."
+  DropItem "GoldWandAmmo", 84, 3
 
  states
  {
@@ -571,22 +578,12 @@ actor FMummy : MummyNew
  dropitem NoItemSpawn 1
 }
 
-actor MummyGhostNew : MummyGhost // replaces MummyGhost
+actor MummyGhostNew : MummyNew // replaces MummyGhost
 {
- var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
- var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
- DamageFactor "Crush", 8
-
- Painchance 128
- Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
- Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "GravityHP", 255
- Painchance "GravityMP", 255
- Painchance "GravityHPMP", 255 
- +DONTHARMSPECIES
- Species "Golem"
+ +SHADOW
+ +GHOST
+ RenderStyle Translucent
+ Alpha 0.4
 
  states
  {
@@ -700,22 +697,30 @@ actor FMummyGhost : MummyGhostNew
 }
 
 ACTOR MummyFX1New : MummyFX1 replaces MummyFX1 { DamageType "Fire" DamageType "Magic" }
-actor MummyLeaderNew : MummyLeader // replaces MummyLeader
+actor MummyLeaderNew : AetheriusBaseZSC // replaces MummyLeader
 {
- var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
- var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
- DamageFactor "Crush", 8
-
- Painchance 64
- Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
- Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "GravityHP", 255
- Painchance "GravityMP", 255
- Painchance "GravityHPMP", 255 
- +DONTHARMSPECIES
- Species "Golem"
+  Health 100
+  Radius 22
+  Height 62
+  Mass 75
+  Speed 12
+  PainChance 64
+  Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
+  DamageFactor "Crush", 8
+  Species "Golem"
+  Monster
+  +FLOORCLIP
+  +DONTHARMSPECIES
+  SeeSound "mummy/sight"
+  AttackSound "mummy/attack1"
+  PainSound "mummy/pain"
+  DeathSound "mummy/death"
+  ActiveSound "mummy/active"
+  Obituary "$OB_MUMMYLEADER"
+  HitObituary "%o was smashed by a golem."
+  DropItem "GoldWandAmmo", 84, 3
 
  states
  {
@@ -869,23 +874,13 @@ actor FMummyLeader : MummyLeaderNew
  dropitem NoItemSpawn 1
 }
 
-actor MummyLeaderGhostNew : MummyLeaderGhost // replaces MummyLeaderGhost
+actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 {
- var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
- var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
- var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
- DamageFactor "Crush", 8
-
- Painchance 64
- Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
- Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
- Painchance "GravityHP", 255
- Painchance "GravityMP", 255
- Painchance "GravityHPMP", 255 
- +DONTHARMSPECIES
- Species "Golem"
-
+  +SHADOW
+  +GHOST
+  RenderStyle Translucent
+  Alpha 0.4
+  
  states
  {
   Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See

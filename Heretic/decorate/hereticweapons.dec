@@ -1044,7 +1044,7 @@ ACTOR HornRodFX1New : HornRodFX1
     Loop
   }	
 }
-ACTOR HornRodFX2New : HornRodFX2 
+ACTOR HornRodFX2New : HornRodFX2Base
 { 
   var int user_fuse;
   Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",32)) //2
@@ -1067,19 +1067,8 @@ ACTOR HornRodFX2New : HornRodFX2
     FX00 J 4 Bright
     FX00 KLM 3 Bright
     FX00 G 1 A_HideInCeiling
-//  Wait
-  RainLoop:
-    FX00 G 0 // A_SkullRodStorm
-	{
-     A_SpawnItemEx("RainPillarNew",random(-64,64),random(-64,64),(((ceilingz-floorz)*1)/2)-(random(4,12)),random(-0.25,0.25),random(-0.25,0.25),random(-14,-10),0,SXF_NOCHECKPOSITION,16);
-     A_SpawnItemEx("RainPillarNew",random(-64,64),random(-64,64),(((ceilingz-floorz)*1)/2)-(random(4,12)),random(-0.25,0.25),random(-0.25,0.25),random(-14,-10),0,SXF_NOCHECKPOSITION,248);
-     A_SetUserVar("user_fuse",user_fuse-1);
-    }
-    FX00 G 1 A_JumpIf(user_fuse<=0,"End")
-    Loop
-  End:
-    TNT1 A 0 A_FadeOut(1)
-    stop
+    FX00 G 1 A_SkullRodStorm("RainPillar",231,16)
+    Wait
   }
 }
 ACTOR RainPillarNew : RainPillar replaces RainPillar 

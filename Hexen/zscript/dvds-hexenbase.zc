@@ -1,0 +1,238 @@
+class KoraxBase : AetheriusBossZSC
+{
+ // Korax
+ const KORAX_ARM_EXTENSION_SHORT	= 40;
+ const KORAX_ARM_EXTENSION_LONG		= 55;
+
+ const KORAX_ARM1_HEIGHT			= 108;
+ const KORAX_ARM2_HEIGHT			= 82;
+ const KORAX_ARM3_HEIGHT			= 54;
+ const KORAX_ARM4_HEIGHT			= 104;
+ const KORAX_ARM5_HEIGHT			= 86;
+ const KORAX_ARM6_HEIGHT			= 53;
+
+ const KORAX_FIRST_TELEPORT_TID		= 248;
+ const KORAX_TELEPORT_TID			= 249;
+
+ const KORAX_DELTAANGLE				= 85;
+
+ const KORAX_COMMAND_HEIGHT			= 120;
+ const KORAX_COMMAND_OFFSET			= 27;
+
+ const KORAX_SPIRIT_LIFETIME 		= 5*TICRATE/5;	// 5 seconds
+ 
+	//*******
+	//*Korax*
+	//*******
+	//===========================================================================
+	// Korax Variables
+	//	tracer		last teleport destination
+	//	special2	set if "below half" script not yet run
+	//
+	// Korax Scripts (reserved)
+	//	249		Tell scripts that we are below half health
+	//	250-254	Control scripts (254 is only used when less than half health)
+	//	255		Death script
+	//
+	// Korax TIDs (reserved)
+	//	245		Reserved for Korax himself
+	//  248		Initial teleport destination
+	//	249		Teleport destination
+	//	250-254	For use in respective control scripts
+	//	255		For use in death script (spawn spots)
+	//===========================================================================
+	void A_KoraxStep()
+	{ 
+		A_PlaySound("KoraxStep"); 
+		A_Chase(); 
+	}	
+
+	void A_KoraxChase()
+	{
+	    int teleporthealth;
+		if (User_MaxHP <= 0) teleporthealth = SpawnHealth()/2; else teleporthealth = User_MaxHP/2;
+		if ((!special2) && (health <= (teleporthealth)))
+		{
+			ActorIterator it = ActorIterator.Create(KORAX_FIRST_TELEPORT_TID);
+			Actor spot = it.Next ();
+			if (spot != null)
+			{
+				Teleport ((spot.pos.xy, ONFLOORZ), spot.angle, TELF_SOURCEFOG | TELF_DESTFOG);
+			}
+			ACS_Execute(249, 0);
+			special2 = 1;	// Don't run again
+			return;
+		}
+
+		if (target == null)
+		{
+			return;
+		}
+		if (random[KoraxChase]() < 30)
+		{
+			SetState (MissileState);
+		}
+		else if (random[KoraxChase]() < 30)
+		{
+			A_PlaySound("KoraxActive", CHAN_VOICE, 1, false, ATTN_NONE);
+		}
+
+		// Teleport away
+	    int teleporthealth2;
+		if (User_MaxHP <= 0) teleporthealth2 = SpawnHealth() >> 1; else teleporthealth2 = User_MaxHP >> 1;
+		if (health < (teleporthealth2))
+		{
+			if (random[KoraxChase]() < 10)
+			{
+				ActorIterator it = ActorIterator.Create(KORAX_TELEPORT_TID);
+				Actor spot;
+
+				if (tracer != null)
+				{	// Find the previous teleport destination
+					do
+					{
+						spot = it.Next ();
+					} while (spot != null && spot != tracer);
+				}
+
+				// Go to the next teleport destination
+				spot = it.Next ();
+				tracer = spot;
+				if (spot)
+				{
+					Teleport ((spot.pos.xy, ONFLOORZ), spot.angle, TELF_SOURCEFOG | TELF_DESTFOG);
+				}
+			}
+		}
+	}
+
+	void A_KoraxDecide()
+	{
+		if (random[KoraxDecide]() < 220)
+		{
+			SetStateLabel ("Attack");
+		}
+		else
+		{
+			SetStateLabel ("Command");
+		}
+	}
+
+	void A_KoraxBonePop()
+	{
+		// Spawn 6 spirits equalangularly
+		for (int i = 0; i < 6; ++i)
+		{
+			Actor mo = SpawnMissileAngle ("KoraxSpirit", 60.*i, 5.);
+			if (mo)
+			{
+				KSpiritInit (mo);
+			}
+		}
+		ACS_Execute(255, 0);
+	}
+
+	private void KSpiritInit (Actor spirit)
+	{
+		spirit.health = KORAX_SPIRIT_LIFETIME;
+
+		spirit.tracer = self;						// Swarm around korax
+		spirit.WeaveIndexZ = 32 + (random[Kspiritnit]() & 7);	// Float bob index
+		spirit.args[0] = 10; 						// initial turn value
+		spirit.args[1] = 0; 						// initial look angle
+
+		// Spawn a tail for spirit
+		HolyTail.SpawnSpiritTail (spirit);
+	}
+
+	void A_KoraxMissile()
+	{
+		static const class<Actor> choices[] =
+		{
+			"WraithFX1", "Demon1FX1", "Demon2FX1", "FireDemonMissile", "CentaurFX", "SerpentFX", "ThrownMace"
+		};
+		static const sound sounds[] = 
+		{
+			"WraithMissileFire", "DemonMissileFire", "DemonMissileFire", "FireDemonAttack", "CentaurLeaderAttack", "SerpentLeaderAttack", "FighterHammerMiss"
+		};
+		int type = random[KoraxMissile]() % 7;
+
+		A_PlaySound("KoraxAttack", CHAN_VOICE);
+
+		// Fire all 6 missiles at once
+		A_PlaySound(sounds[type], CHAN_WEAPON, 1, false, ATTN_NONE);
+		class<Actor> info = choices[type];
+		for (int i = 0; i < 6; ++i)
+		{
+			KoraxFire(info, i);
+		}
+	}
+
+	void KoraxFire (Class<Actor> type, int arm)
+	{
+		static const int extension[] =
+		{
+			KORAX_ARM_EXTENSION_SHORT,
+			KORAX_ARM_EXTENSION_LONG,
+			KORAX_ARM_EXTENSION_LONG,
+			KORAX_ARM_EXTENSION_SHORT,
+			KORAX_ARM_EXTENSION_LONG,
+			KORAX_ARM_EXTENSION_LONG
+		};
+		static const int armheight[] =
+		{
+			KORAX_ARM1_HEIGHT,
+			KORAX_ARM2_HEIGHT,
+			KORAX_ARM3_HEIGHT,
+			KORAX_ARM4_HEIGHT,
+			KORAX_ARM5_HEIGHT,
+			KORAX_ARM6_HEIGHT
+		};
+
+		double ang = angle + (arm < 3 ? -KORAX_DELTAANGLE : KORAX_DELTAANGLE);
+		Vector3 pos = Vec3Angle(extension[arm], ang, armheight[arm] - Floorclip);
+		SpawnKoraxMissile (pos, target, type);
+	}
+
+	private void SpawnKoraxMissile (Vector3 pos, Actor dest, Class<Actor> type)
+	{
+		Actor th = Spawn (type, pos, ALLOW_REPLACE);
+		if (th != null)
+		{
+			th.target = self; // Originator
+			double an = th.AngleTo(dest);
+			if (dest.bShadow)
+			{ // Invisible target
+				an += Random2[KoraxMissile]() * (45/256.);
+			}
+			th.angle = an;
+			th.VelFromAngle();
+			double dist = dest.DistanceBySpeed(th, th.Speed);
+			th.Vel.Z = (dest.pos.z - pos.Z + 30) / dist;
+			th.CheckMissileSpawn(radius);
+		}
+	}
+
+	void A_KoraxCommand()
+	{
+		int numcommands;
+
+		A_PlaySound("KoraxCommand", CHAN_VOICE);
+
+		// Shoot stream of lightning to ceiling
+		double ang = angle - 90;
+		Vector3 pos = Vec3Angle(KORAX_COMMAND_OFFSET, ang, KORAX_COMMAND_HEIGHT);
+		Spawn("KoraxBolt", pos, ALLOW_REPLACE);
+
+		if (health <= (SpawnHealth() >> 1))
+		{
+			numcommands = 5;
+		}
+		else
+		{
+			numcommands = 4;
+		}
+
+		ACS_Execute(250 + (random[KoraxCommand]()%numcommands), 0);
+	}
+}

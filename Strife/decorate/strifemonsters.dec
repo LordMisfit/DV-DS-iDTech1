@@ -2,17 +2,47 @@
 actor AcolyteShieldDefend : HWShieldDefense { damagefactor "normal", 0.75 radiusdamagefactor 0.75 }
 actor AcolyteShieldDefendExtra : HWShieldDefense { damagefactor "normal", 0.30 radiusdamagefactor 0.30 }
 
-// PEASANTS
-ACTOR PeasantNew : Peasant replaces Peasant
+// Base HumanoidClass
+ACTOR StrifeHumanoidBase : AetheriusMonsterZSC
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "PoisonBolt", 10.0
-  DamageFactor "Crush", 8
+  MaxStepHeight 16
+  MaxDropoffHeight 32
+  CrushPainSound "misc/pcrush"
+  States
+  {
+  Burn:
+    BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
+    BURN B 3 Bright A_DropFire
+    BURN C 3 Bright A_Wander
+    BURN D 3 Bright A_NoBlocking
+    BURN E 5 Bright A_DropFire
+    BURN FGH 5 Bright A_Wander
+    BURN I 5 Bright A_DropFire
+    BURN JKL 5 Bright A_Wander
+    BURN M 5 Bright A_DropFire
+    BURN NOPQPQ 5 Bright
+    BURN RSTU 7 Bright
+    BURN V -1
+    Stop
+  Disintegrate:
+    DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
+    DISR BC 5
+    DISR D 5 A_NoBlocking
+    DISR EF 5
+    DISR GHIJ 4
+    MEAT D 700
+    Stop
+  }
+}
 
+
+// PEASANTS
+ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
+{
   Health 31
   PainChance 200
+  DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
   Speed 8
   Radius 20
   Height 56
@@ -31,6 +61,7 @@ ACTOR PeasantNew : Peasant replaces Peasant
   PainSound "peasant/pain"
   DeathSound "peasant/death"
   HitObituary "$OB_PEASANT" // "%o should have never picked a fight with a civilian."
+
   States
   {
   Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
@@ -315,11 +346,8 @@ ACTOR Peasant22New : PeasantNew replaces Peasant22
 }
 
 // BEGGARS
-ACTOR BeggarNew : Beggar replaces Beggar // Base Class
+ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
   DamageFactor "PoisonBolt", 10.0
   DamageFactor "Crush", 8
 
@@ -587,17 +615,12 @@ ACTOR MedicNew : MerchantNew replaces Medic
 }
 
 // THE FRONT
-ACTOR RebelNew : Rebel replaces Rebel // Base class for Rebels
+ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  var int user_shotsfired; var int user_shotsfiredmax;
-  DamageFactor "PoisonBolt", 10.0
-  DamageFactor "Crush", 8
-
   Health 75		// 1.25x the HP
   PainChance 187	// 75% the original pain chance
+  DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
   Speed 10			// 25% more speed than before
   Radius 20
   Height 56
@@ -827,18 +850,9 @@ ACTOR Rebel6New : RebelNew replaces Rebel6
 }
 
 // THE ORDER
-ACTOR AcolyteNew : Acolyte replaces Acolyte
+ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  var int user_shotsfired; var int user_shotsfiredmax;
-  DamageFactor "PoisonBolt", 10.0
-  DamageFactor "Crush", 8
-  DamageFactor "Fire", 0.875
-  DamageFactor "Ice", 0.9375
-  DamageFactor "Thunder", 1.25
-
+  Health 70
   Painchance 150
   Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
@@ -846,6 +860,29 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "PoisonBolt", 10.0
+  DamageFactor "Crush", 8
+  DamageFactor "Fire", 0.875
+  DamageFactor "Ice", 0.9375
+  DamageFactor "Thunder", 1.25
+  Speed 7
+  Radius 24
+  Height 64
+  Mass 400
+  Monster
+  +SEESDAGGERS
+  +NOSPLASHALERT
+  +FLOORCLIP
+  +NEVERRESPAWN
+  MinMissileChance 150
+  Tag "$TAG_ACOLYTE" // "ACOLYTE"
+  SeeSound "acolyte/sight"
+  PainSound "acolyte/pain"
+  AttackSound "acolyte/rifle"
+  DeathSound "acolyte/death"
+  ActiveSound "acolyte/active"
+  Obituary "$OB_ACOLYTE" // "%o was zealously shot down by an Acolyte."
+
   DropItem "AssaultGun" 1
   
   States
@@ -1168,7 +1205,8 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     BURN I 5 Bright A_DropFire
     BURN JKL 5 Bright A_Wander
     BURN M 5 Bright A_DropFire
-    BURN NOPQPQ 5 Bright
+    BURN N 5 Bright A_AcolyteDie
+    BURN OPQPQ 5 Bright
     BURN RSTU 7 Bright
     BURN V -1
     Stop
@@ -1180,7 +1218,8 @@ ACTOR AcolyteNew : Acolyte replaces Acolyte
     DISR BC 5
     DISR D 5 A_NoBlocking
     DISR EF 5
-    DISR GHIJ 4
+    DISR G 4 A_AcolyteDie
+    DISR HIJ 4
     MEAT D 700
     Stop
   }
@@ -1257,7 +1296,8 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-	 A_BeShadowyFoe;
+
+     A_BeShadowyFoe;
 	}
     Goto Super::See+1
   Pain:

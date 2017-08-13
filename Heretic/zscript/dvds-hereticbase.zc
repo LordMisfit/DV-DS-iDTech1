@@ -1,0 +1,172 @@
+class DSparilBase : AetheriusBossZSC
+{
+	//**********
+    //*D'Sparil*
+	//**********
+	// w/ Chaos Serpent
+	void A_Sor1Pain ()
+	{
+		special1 = 20; // Number of steps to walk fast
+		A_Pain();
+	}
+
+	void A_Sor1Chase ()
+	{
+		if (special1)
+		{
+			special1--;
+			tics -= 3;
+		}
+		A_Chase();
+	}
+
+	void A_Srcr1Attack ()
+	{
+		if (!target)
+		{
+			return;
+		}
+		A_PlaySound (AttackSound, CHAN_BODY);
+		if (CheckMeleeRange ())
+		{
+			int damage = random[Srcr1Attack](1,8) * 8;
+			int newdam = target.DamageMobj (self, self, damage, 'Melee');
+			target.TraceBleed (newdam > 0 ? newdam : damage, self);
+			return;
+		}
+
+		int fireballhealth1;
+		if (User_MaxHP <= 0) fireballhealth1 = SpawnHealth()/3*2; else fireballhealth1 = User_MaxHP/3*2;
+		int fireballhealth2;
+		if (User_MaxHP <= 0) fireballhealth2 = SpawnHealth()/3; else fireballhealth2 = User_MaxHP/3;
+		if (health > fireballhealth1)
+		{ // Spit one fireball
+			SpawnMissileZ (pos.z + 48, target, "SorcererFX1");
+		}
+		else
+		{ // Spit three fireballs
+			Actor mo = SpawnMissileZ (pos.z + 48, target, "SorcererFX1");
+			if (mo != null)
+			{
+				double ang = mo.angle;
+				SpawnMissileAngleZ(pos.z + 48, "SorcererFX1", ang - 3, mo.Vel.Z);
+				SpawnMissileAngleZ(pos.z + 48, "SorcererFX1", ang + 3, mo.Vel.Z);
+			}
+			if (health < fireballhealth2)
+			{ // Maybe attack again
+				if (special1)
+				{ // Just attacked, so don't attack again
+					special1 = 0;
+				}
+				else
+				{ // Set state to attack again
+					special1 = 1;
+					SetStateLabel("Missile2");
+				}
+			}
+		}
+	}
+
+	void A_SorcererRise ()
+	{
+		bSolid = false;
+		Actor mo = Spawn("Sorcerer2", Pos, ALLOW_REPLACE);
+		if (mo != null)
+		{
+			mo.Translation = Translation;
+			mo.SetStateLabel("Rise");
+			mo.angle = angle;
+			mo.CopyFriendliness (self, true);
+		}
+	}
+
+	// without Chaos Serpent
+	void DSparilTeleport ()
+	{
+		SpotState state = SpotState.GetSpotState();
+		if (state == null) return;
+
+		Actor spot = state.GetSpotWithMinMaxDistance("BossSpot", pos.x, pos.y, 128, 0);
+		if (spot == null) return;
+
+		Vector3 prev = Pos;
+		if (TeleportMove (spot.Pos, false))
+		{
+			Actor mo = Spawn("Sorcerer2Telefade", prev, ALLOW_REPLACE);
+			if (mo) 
+			{
+				mo.Translation = Translation;
+				mo.A_PlaySound("misc/teleport", CHAN_BODY);
+			}
+			SetStateLabel ("Teleport");
+			A_PlaySound ("misc/teleport", CHAN_BODY);
+			SetZ(floorz);
+			angle = spot.angle;
+			vel = (0,0,0); 
+		}
+	}
+
+	void A_Srcr2Decide ()
+	{
+		static const int chance[] =
+		{
+			192, 120, 120, 120, 64, 64, 32, 16, 0
+		};
+
+		int teleporthealth;
+		if (User_MaxHP <= 0) teleporthealth = SpawnHealth(); else teleporthealth = User_MaxHP;
+
+		int health8 = max(1, teleporthealth / 8);
+		int chanceindex = min(8, health / health8);
+
+		if (random[Srcr2Decide]() < chance[chanceindex])
+		{
+			DSparilTeleport ();
+		}
+	}
+
+	void A_Srcr2Attack ()
+	{
+	    int attackhealth;
+		if (User_MaxHP <= 0) attackhealth = SpawnHealth(); else attackhealth = User_MaxHP;
+		if (!target)
+		{
+			return;
+		}
+		A_PlaySound (AttackSound, CHAN_BODY, 1, false, ATTN_NONE);
+		if (CheckMeleeRange())
+		{
+			int damage = random[Srcr2Atk](1, 8) * 20;
+			int newdam = target.DamageMobj (self, self, damage, 'Melee');
+			target.TraceBleed (newdam > 0 ? newdam : damage, self);
+			return;
+		}
+		int chance = health < attackhealth/2 ? 96 : 48;
+		if (random[Srcr2Atk]() < chance)
+		{ // Wizard spawners
+
+			SpawnMissileAngle("Sorcerer2FX2", Angle - 45, 0.5);
+			SpawnMissileAngle("Sorcerer2FX2", Angle + 45, 0.5);
+		}
+		else
+		{ // Blue bolt
+			SpawnMissile (target, "Sorcerer2FX1");
+		}
+	}
+
+	void A_Sor2DthInit ()
+	{
+		special1 = 7; // Animation loop counter
+		Thing_Destroy(0); // Kill monsters early
+	}
+
+	void A_Sor2DthLoop ()
+	{
+		if (--special1)
+		{ // Need to loop
+			SetStateLabel("DeathLoop");
+		}
+	}
+
+}
+

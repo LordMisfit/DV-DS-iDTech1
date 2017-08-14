@@ -233,9 +233,6 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
   Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Normal", 0.5
   DamageFactor "Crush", 32
   Speed 10
@@ -338,9 +335,6 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
   Painchance "Fist", 90 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 150 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 90 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 8
   Monster
   +FLOORCLIP
@@ -473,9 +467,6 @@ Actor EttinCommander : EttinNew
   Painchance "Fist", 52 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 87 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 52 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   MeleeRange 68
 
   DamageFactor "Normal", 0.875
@@ -1165,9 +1156,6 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
   Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Shock", 3
   DamageFactor "Electric", 3
   DamageFactor "Thunder", 3
@@ -1400,9 +1388,6 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
   Painchance "Fist", 126 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 210 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 126 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Normal", 0.75
   DamageFactor "Fire", 0.75
   RadiusDamageFactor 0.75
@@ -1610,9 +1595,6 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
   Painchance "Fist", 32
   Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 32
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 10
   DamageFactor "Fire", 0.25
   DamageFactor "Ice", 4
@@ -1748,9 +1730,6 @@ Actor FireDemonLeader : FireDemonNew
   Painchance "Fist", 32
   Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 32
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 9
   DamageFactor "Fire", 0.20
   DamageFactor "Ice", 5
@@ -2000,9 +1979,6 @@ Actor FireDemonCommander : FireDemonNew
   Painchance "Fist", 32
   Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 32
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 9
   DamageFactor "Fire", 0.20
   DamageFactor "Ice", 5
@@ -2255,9 +2231,6 @@ Actor FireDemonQueen : FireDemonNew
   Painchance "Fist", 16
   Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 16
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 8
   DamageFactor "Fire", 0.2
   DamageFactor "Ice", 2.5
@@ -2580,9 +2553,6 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
   Painchance "Fist", 165 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 165 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 7.2
   Monster
   +FLOAT
@@ -2784,9 +2754,6 @@ Actor DarkDisciple : BishopNew
   Painchance "Fist", 165 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 165 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 6.4
   Monster
   +FLOAT
@@ -3839,9 +3806,6 @@ ACTOR StalkerNew : AetheriusMonsterZSC replaces Serpent
   Painchance "Fist", 144 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 240 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 144 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 6.4
   Speed 12
   Radius 32
@@ -4055,9 +4019,6 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 4.8
   Speed 13
   Radius 32
@@ -4593,9 +4554,6 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "MagmaSerpentFire", 0
   Painchance "Fire", 25
   DamageFactor "Fire", 0.5
@@ -4940,9 +4898,6 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
   Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   Painchance "Fire", 37 
   DamageFactor "Fire", 0.75
   Painchance "Ice", 75
@@ -5181,9 +5136,6 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
   Painchance "Fist", 15 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 25 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 1.2
   Monster
   +TELESTOMP
@@ -5368,9 +5320,6 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
   Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Crush", 9.6
   Speed 11
   Height 55
@@ -5630,9 +5579,6 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
   Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "Ice", 0.05
   DamageFactor "Crush", 4.8
   Speed 14

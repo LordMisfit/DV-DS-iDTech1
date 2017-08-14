@@ -775,9 +775,6 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 225 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
   DamageFactor "PoisonBolt", 10.0
   DamageFactor "Crush", 8
   DamageFactor "Fire", 0.875

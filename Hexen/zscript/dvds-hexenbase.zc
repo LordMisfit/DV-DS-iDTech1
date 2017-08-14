@@ -1,3 +1,45 @@
+class MaulotaurFriendBase : MaulotaurBase
+{
+	int StartTime;
+
+	override void BeginPlay ()
+	{
+		Super.BeginPlay ();
+		StartTime = -1;
+	}
+
+	override void Die (Actor source, Actor inflictor, int dmgflags)
+	{
+		Super.Die (source, inflictor, dmgflags);
+
+		if (tracer && tracer.health > 0 && tracer.player)
+		{
+			// Search thinker list for minotaur
+			ThinkerIterator it = ThinkerIterator.Create("MinotaurFriend");
+			MinotaurFriend mo;
+
+			while ((mo = MinotaurFriend(it.Next())) != null)
+			{
+				if (mo.health <= 0) continue;
+				// [RH] Minotaurs can't be morphed, so this isn't needed
+				//if (!(mo.flags&MF_COUNTKILL)) continue;		// for morphed minotaurs
+				if (mo.bCorpse) continue;
+				if (mo.StartTime >= 0 && (level.maptime - StartTime) >= MAULATORTICS) continue;
+				if (mo.tracer != null && mo.tracer.player == tracer.player) break;
+			}
+
+			if (mo == null)
+			{
+				Inventory power = tracer.FindInventory("PowerMinotaur");
+				if (power != null)
+				{
+					power.Destroy ();
+				}
+			}
+		}
+	}
+}
+
 class KoraxBase : AetheriusBossZSC
 {
  // Korax

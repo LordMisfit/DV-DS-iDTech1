@@ -6,22 +6,27 @@ actor SlaughtaurShieldDefendExtra : HWShieldDefense { damagefactor "normal", 0.0
 
 // DarkServent Maulotaur
 
-ACTOR MaulotaurNew : MinotaurFriend replaces MinotaurFriend
+ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 2.4
-
-  Painchance 25
+  Health 2500
+  Radius 28
+  Height 100
+  Mass 800
+  Speed 16
+  Damage 7
+  PainChance 25
   Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "GravityHP", 85
   Painchance "GravityMP", 85
   Painchance "GravityHPMP", 85 
-
-  +AVOIDMELEE
+  DamageFactor "Crush", 2.4
+  Monster
+  +FLOORCLIP
+  +NORADIUSDMG
+  +NOTARGET
+  +BOSSDEATH
   -DROPOFF
   -BOSS
   -DONTMORPH
@@ -30,12 +35,18 @@ ACTOR MaulotaurNew : MinotaurFriend replaces MinotaurFriend
   +STAYMORPHED
   +TELESTOMP
   +SUMMONEDMONSTER
+  +AVOIDMELEE
   RenderStyle Translucent
   Alpha 0.3333
+  SeeSound "minotaur/sight"
+  AttackSound "minotaur/attack1"
+  PainSound "minotaur/pain"
+  DeathSound "minotaur/death"
+  ActiveSound "minotaur/active"
   DropItem "None"
+  
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     MNTR A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
 //    MNTR A 15
@@ -6314,7 +6325,6 @@ ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
   States
   {
   Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
-
   Spawn:
     SORC A 3 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     SORC A 2 A_SorcSpinBalls

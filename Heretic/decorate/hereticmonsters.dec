@@ -401,7 +401,6 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     IMPX A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     IMPX ABCB 10 A_Look
@@ -607,7 +606,6 @@ ACTOR WatcherImp : HereticImpNew
   
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     WATC A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     WATC ABCB 10 A_Look
@@ -960,7 +958,6 @@ actor MummyGhostNew : MummyNew // replaces MummyGhost
 
  states
  {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     MUMM A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     MUMM AB 10 A_Look
@@ -1255,7 +1252,6 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
   
  states
  {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     MUMA A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     MUMA AB 10 A_Look
@@ -1407,13 +1403,13 @@ actor FMummyLeaderGhost : MummyLeaderGhostNew
 
 ACTOR KnightAxeNew : KnightAxe replaces KnightAxe { DamageType "Magic" }
 ACTOR RedAxeNew : RedAxe replaces RedAxe { DamageType "Magic" }
-ACTOR KnightNew : Knight // replaces Knight
+ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 7.2
-
+  Health 200
+  Radius 24
+  Height 78
+  Mass 150
+  Speed 12
   Painchance 100
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
@@ -1421,10 +1417,20 @@ ACTOR KnightNew : Knight // replaces Knight
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "Crush", 7.2
+  Monster
+  +FLOORCLIP
+  SeeSound "hknight/sight"
+  AttackSound "hknight/attack"
+  PainSound "hknight/pain"
+  DeathSound "hknight/death"
+  ActiveSound "hknight/active"
+  Obituary "$OB_BONEKNIGHT"
+  HitObituary "$OB_BONEKNIGHTHIT"
+  DropItem "CrossbowAmmo", 84, 5
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     KNIG A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     KNIG AB 10 A_Look
@@ -1563,158 +1569,14 @@ actor FKnight : KnightNew
  Species "FriendlyMonsters"
  dropitem NoItemSpawn 1
 }
-
-ACTOR KnightGhostNew : KnightGhost // replaces KnightGhost
+ACTOR KnightGhostNew : KnightNew // replaces KnightGhost
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 7.2
-
-  Painchance 100
-  Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
-  +DONTHARMSPECIES
-  Species "UndeadWarrior"
-
-  States
-  {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
-  Spawn:
-    KNIG A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-    KNIG AB 10 A_Look
-    goto Spawn+1
-  See:
-    KNIG A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    KNIG ABCD 4
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-	 A_Chase;
-	}
-    Loop
-  Melee:
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    KNIG E 10
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-	 A_FaceTarget;
-	}
-    KNIG F 8 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_FaceTarget;
-	}
-    KNIG G 8 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_KnightAttack;
-	}
-    KNIG E 10
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-	 A_FaceTarget;
-	}
-    KNIG F 8 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_FaceTarget;
-	}
-    KNIG G 8 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_KnightAttack;
-	}
-    Goto See
-  Pain:
-    KNIG H 3
-    KNIG H 3 A_Pain
-    Goto See
-  Pain.Fist:
-    KNIG H 3
-    KNIG H 3 A_Pain
-    KNIG HH 3
-    Goto See
-  Pain.Kick:
-    KNIG H 3
-    KNIG H 3 A_Pain
-    KNIG HHHH 3
-    Goto See
-  Pain.GravityHP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
-    Goto See
-  Pain.GravityMP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,1,0,0)
-    Goto See
-  Pain.GravityHPMP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,2,0,0)
-    Goto See
-  Pain.Sceptre:
-    TNT1 A 0 A_CheckFlag("FRIENDLY",2,AAPTR_DEFAULT)
-    TNT1 A 0 ACS_NamedExecuteAlways("AddSceptreEXP",0,0,0,10) // Increase EXP for Sceptre [1+(HP/300)]
-    TNT1 A 0 
-    Goto Pain
-  Death.Sceptre:
-    TNT1 A 0 A_CheckFlag("FRIENDLY",2,AAPTR_DEFAULT)
-    TNT1 A 0 ACS_NamedExecuteAlways("AddSceptreEXP",0,0,0,1) // Increase EXP for Sceptre [1+(HP/300)]
-    TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
-    Goto Death
-  Pain.Gauntlets:
-    TNT1 A 0 ACS_NamedExecuteAlways("SauronGauntletsHit",0,0,1,0) // Give some life when hurting a monster [1+(HP/500)]
-    Goto Pain
-  Death.Gauntlets:
-    TNT1 A 0 ACS_NamedExecuteAlways("SauronGauntletsHit",0,0,2,0) // Give some life when killing a monster [3+(HP/100)]
-    TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
-    Goto Death
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    KNIG I 6
-    KNIG J 6 A_Scream
-    KNIG K 6
-    KNIG L 6 A_NoBlocking
-    KNIG MN 6 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
-    KNIG O -1
-    Stop
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    KNIG H 5 A_GenericFreezeDeath
-    KNIG H 1 A_FreezeDeathChunks
-    wait
-  Raise:
-    KNIG N 6 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-    KNIG MLKJI 6
-    goto See
-  }
+  +SHADOW
+  +GHOST
+  RenderStyle Translucent
+  Alpha 0.4
 }
+
 actor FKnightGhost : KnightGhostNew
 {
  -COUNTKILL 
@@ -1724,13 +1586,13 @@ actor FKnightGhost : KnightGhostNew
 }
 
 ACTOR WizardFX1New : WizardFX1 replaces WizardFX1 { DamageType "Magic" }
-ACTOR WizardNew : Wizard // replaces Wizard
+ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 7.2
-
+  Health 180
+  Radius 16
+  Height 68
+  Mass 100
+  Speed 12
   Painchance 64
   Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
@@ -1738,13 +1600,25 @@ ACTOR WizardNew : Wizard // replaces Wizard
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
+  DamageFactor "Crush", 7.2
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +DONTOVERLAP
+  SeeSound "wizard/sight"
+  AttackSound "wizard/attack"
+  PainSound "wizard/pain"
+  DeathSound "wizard/death"
+  ActiveSound "wizard/active"
+  Obituary "$OB_WIZARD"
+  HitObituary "$OB_WIZARDHIT"
+  DropItem "BlasterAmmo", 84, 10
+  DropItem "ArtiTomeOfPower", 4, 0
   Obituary "%o was cursed by a Disciple of D'Sparil."
   HitObituary "%o was scratched by a Disciple of D'Sparil."
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     WZRD A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     WZRD AB 10 A_Look
@@ -2042,13 +1916,13 @@ ACTOR HeadFX2New : HeadFX2 replaces HeadFX2
 }
 ACTOR WhirlwindNew : Whirlwind replaces Whirlwind { DamageType "Wind" DamageType "Magic" }
 ACTOR HeadFX3New : HeadFX3 replaces HeadFX3 { DamageType "Fire" DamageType "Magic" }
-ACTOR IronlichNew : Ironlich // replaces Ironlich
+ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 4
-
+  Health 700
+  Radius 40
+  Height 72
+  Mass 325
+  Speed 6
   Painchance 32
   Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
@@ -2056,10 +1930,24 @@ ACTOR IronlichNew : Ironlich // replaces Ironlich
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "Crush", 4
+  Monster
+  +NOBLOOD
+  +DONTMORPH
+  +DONTSQUASH
+  +BOSSDEATH
+  SeeSound "ironlich/sight"
+  AttackSound "ironlich/attack"
+  PainSound "ironlich/pain"
+  DeathSound "ironlich/death"
+  ActiveSound "ironlich/active"
+  Obituary "$OB_IRONLICH"
+  HitObituary "$OB_IRONLICHHIT"
+  DropItem "BlasterAmmo", 84, 10
+  DropItem "ArtiEgg", 51, 0
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     LICH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     LICH A 10 A_Look
@@ -2096,7 +1984,7 @@ ACTOR IronlichNew : Ironlich // replaces Ironlich
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(17); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(18); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 20) { A_SetTics(19); }
-	 A_LichAttack;
+	 A_LichAttack(5+(user_monsterlevel/30), 1+(user_monsterlevel/45));
 	}
     Goto See
   Pain:
@@ -2247,13 +2135,13 @@ actor ClinkLungeAttackStatus : PowerProtection
  inventory.icon "" 
 }
 
-ACTOR ClinkNew : Clink replaces Clink
+ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 6.4
-
+  Health 150
+  Radius 20
+  Height 64
+  Mass 75
+  Speed 14
   MeleeRange 52
   Painchance 32
   Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
@@ -2262,10 +2150,20 @@ ACTOR ClinkNew : Clink replaces Clink
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
+  DamageFactor "Crush", 6.4
+  Monster
+  +NOBLOOD
+  +FLOORCLIP
+  SeeSound "clink/sight"
+  AttackSound "clink/attack"
+  PainSound "clink/pain"
+  DeathSound "clink/death"
+  ActiveSound "clink/active"
+  Obituary "$OB_CLINK"
+  DropItem "SkullRodAmmo", 84, 20	
+  
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     CLNK A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     CLNK AB 10 A_Look
@@ -2446,13 +2344,13 @@ actor FClink : ClinkNew
 }
 
 ACTOR BeastBallNew : BeastBall replaces BeastBall { DamageType "Fire" }
-ACTOR BeastNew : Beast replaces Beast
+ACTOR BeastNew : AetheriusMonsterZSC replaces Beast
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 6.4
-
+  Health 220
+  Radius 32
+  Height 74
+  Mass 200
+  Speed 14
   Painchance 100
   Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
@@ -2460,10 +2358,19 @@ ACTOR BeastNew : Beast replaces Beast
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "Crush", 6.4
+  Monster
+  +FLOORCLIP
+  SeeSound "beast/sight"
+  AttackSound "beast/attack"
+  PainSound "beast/pain"
+  DeathSound "beast/death"
+  ActiveSound "beast/active"
+  Obituary "$OB_BEAST"
+  DropItem "CrossbowAmmo", 84, 10
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     BEAS A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     BEAS AB 10 A_Look
@@ -2590,7 +2497,7 @@ actor FBeast : BeastNew
 ACTOR MinotaurFX1New : MinotaurFX1 replaces MinotaurFX1 { DamageType "Fire" DamageType "Magic" }
 ACTOR MinotaurFX2New : MinotaurFX2 replaces MinotaurFX2 { DamageType "Fire" DamageType "Magic" }
 ACTOR MinotaurFX3New : MinotaurFX3 replaces MinotaurFX3 { DamageType "Fire" DamageType "Magic" }
-ACTOR MaulotaurNew : AetheriusMonsterZSC replaces Minotaur
+ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 {
   Health 3000
   Radius 28
@@ -2614,6 +2521,7 @@ ACTOR MaulotaurNew : AetheriusMonsterZSC replaces Minotaur
   +DONTMORPH
   +NOTARGET
   +BOSSDEATH
+  +AVOIDMELEE
   SeeSound "minotaur/sight"
   AttackSound "minotaur/attack1"
   PainSound "minotaur/pain"
@@ -2624,10 +2532,8 @@ ACTOR MaulotaurNew : AetheriusMonsterZSC replaces Minotaur
   DropItem "PhoenixRodHefty", 84
   DropItem "ArtiSuperHealth", 51
 
-  +AVOIDMELEE
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     MNTR A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     MNTR AB 10 A_MinotaurLook
@@ -2854,13 +2760,12 @@ actor FMaulotaur : MaulotaurNew
 
 ACTOR SnakeProjANew : SnakeProjA replaces SnakeProjA { DamageType "Ice" DamageType "Magic" }
 ACTOR SnakeProjBNew : SnakeProjB replaces SnakeProjB { DamageType "Fire" DamageType "Magic" }
-ACTOR SnakeNew : Snake // replaces Snake
+ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 6.4
-
+  Health 280
+  Radius 22
+  Height 70
+  Speed 10
   Painchance 48
   Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
@@ -2868,17 +2773,25 @@ ACTOR SnakeNew : Snake // replaces Snake
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "Crush", 6.4
+  Monster
+  +FLOORCLIP
+  +DONTHARMSPECIES
+  AttackSound "snake/attack"
+  SeeSound "snake/sight"
+  PainSound "snake/pain"
+  DeathSound "snake/death"
+  ActiveSound "snake/active"
+  Obituary "$OB_SNAKE"
   DropItem "PhoenixRodAmmoNew", 84
   DropItem "PhoenixRodAmmoNew", 84
   DropItem "PhoenixRodAmmoNew", 84
   DropItem "PhoenixRodAmmoNew", 84
   DropItem "PhoenixRodAmmoNew", 84
   Species "Ophidian"
-  +DONTHARMSPECIES
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     SNKE A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     SNKE AB 10 A_Look
@@ -3026,7 +2939,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 
   States
   {
-  Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
+  Pain.Charm: Goto See
   Spawn:
     SRCR A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     SRCR AB 10 A_Look
@@ -3201,7 +3114,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 
   States
   {
-  Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
+  Pain.Charm: Goto See
   Spawn:
     SOR2 A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     SOR2 MN 10 A_Look
@@ -3329,19 +3242,14 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 //****************
 
 // Death Knight
-ACTOR DeathKnight 30114 
+ACTOR DeathKnight : AetheriusMonsterZSC 30114 
 { 
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  var int user_defendtimer; var int user_defendtimermax; var int user_defendcycles;
-  DamageFactor "Crush", 7.2
-
   Health 1100
   Radius 24
   Height 72
   Mass 700 
   Speed 10
+  MeleeDamage 10
   PainChance 20 
   Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
@@ -3350,11 +3258,9 @@ ACTOR DeathKnight 30114
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
   DamageFactor "Normal", 0.875
   DamageFactor "Holy", 1.75
-  
-  MeleeDamage 10
+  DamageFactor "Crush", 7.2
   MONSTER
   +FLOORCLIP 
   +NOTARGET 
@@ -3363,6 +3269,7 @@ ACTOR DeathKnight 30114
   +BOSS
   +DEFLECT
   +AVOIDMELEE
+  +DONTHARMSPECIES
   Obituary "%o got thought %g could kill a Death Knight."
   HitObituary "A Death Knight hacked %o into pieces." 
   MeleeSound "monster/dknhit" 
@@ -3370,12 +3277,10 @@ ACTOR DeathKnight 30114
   PainSound "monster/dknpai" 
   DeathSound "monster/dkndth" 
   ActiveSound "monster/dknact" 
-  +DONTHARMSPECIES
   Species "UndeadWarrior"
 
   States 
   { 
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn: 
     DKNT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     DKNT AB 10 A_Look 
@@ -3962,13 +3867,8 @@ actor KnightGhostSpawner : CustomInventory replaces KnightGhost
 }
 
 // Hell Guard
-actor HellGuard 3114
+actor HellGuard : AetheriusMonsterZSC 3114
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 6.4
-
   //$Category "ZDoom Monster pack"
   Health 420 // 300
   Radius 24
@@ -3981,6 +3881,7 @@ actor HellGuard 3114
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
+  DamageFactor "Crush", 6.4
   Mass 750 // 500
   MONSTER 
   +FLOORCLIP
@@ -3997,7 +3898,6 @@ actor HellGuard 3114
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     HLGD A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     HLGD AB 10 A_Look
@@ -4415,20 +4315,9 @@ actor LichSpawner : CustomInventory replaces Ironlich
 }
 
 // Ice Lich
-ACTOR IceLich : IceGuy
+ACTOR IceLich : AetheriusMonsterZSC
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 4.0
-
-  obituary "%o was frozen by an Ice Lich"
   health 700
-  radius 40
-  height 72
-  mass 500
-  speed 6
-
   painchance 16
   Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
@@ -4436,14 +4325,13 @@ ACTOR IceLich : IceGuy
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
-  seesound "ironlich/sight"
-  attacksound ""
-  painsound "ironlich/pain"
-  deathsound "freeze/shatter"
-  activesound "ironlich/active"
   Damagefactor "Ice", 0
   Damagefactor "Fire", 2
+  DamageFactor "Crush", 4.0
+  speed 6
+  radius 40
+  height 72
+  mass 500
   MONSTER
   +NOGRAVITY
   +NOBLOOD
@@ -4455,9 +4343,15 @@ ACTOR IceLich : IceGuy
   +NOICEDEATH
   +DONTSPLASH
   +BOSSDEATH
+  seesound "ironlich/sight"
+  attacksound ""
+  painsound "ironlich/pain"
+  deathsound "freeze/shatter"
+  activesound "ironlich/active"
+  obituary "%o was frozen by an Ice Lich"
+
   states
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     ILCH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     ILCH A 10 A_Look
@@ -4654,19 +4548,11 @@ ACTOR IceBreath
 }
 
 // Gold Lich
-ACTOR Goldlich : Ironlich 31044
+ACTOR Goldlich : IronlichNew 31044
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 4.0
-
-  DropItem "BlasterHefty", 84, 50
-  DropItem "ArtiEgg", 51, 0
   Mass 2000
   Speed 10
   Health 1400
-
   Painchance 8
   Painchance "Fist", 12 // Fist attacks have a +50% chance of stunning an enemy
   Painchance "Kick", 20 // Kick attacks have a +150% chance of stunning an enemy
@@ -4674,19 +4560,19 @@ ACTOR Goldlich : Ironlich 31044
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-  
+  DamageFactor "Crush", 4.0
   SeeSound "goldlich/sight"
   PainSound "goldlich/pain"
   DeathSound "goldlich/death"
-  ActiveSound "goldlich/active"
-  
+  ActiveSound "goldlich/active"  
   Translation "0:17=112:121", "18:35=137:144", "36:42=116:121", "43:51=137:144", "52:58=114:121", "59:65=137:144"
   Obituary "%o was annihilated by the goldlich's power."
   Species "GoldLich"
+  DropItem "BlasterHefty", 84, 50
+  DropItem "ArtiEgg", 51, 0
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     LICH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     LICH A 1 A_Look
@@ -5025,26 +4911,13 @@ ACTOR FakeGoldLich : GoldLich
 }
 
 // Blood Lich
-ACTOR BloodLich
+ACTOR BloodLich : AetheriusMonsterZSC
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 2.4
-
-  Obituary "%o was reduced to a pile of ash by a Blood Lich."
   Health 2100
   Radius 40
   Height 72
   Mass 2100
   Speed 10
-  SeeSound "ironlich/sight"
-  AttackSound ""
-  PainSound "ironlich/pain"
-  DeathSound "ironlich/death"
-  ActiveSound "ironlich/active"
-
-  DamageFactor "Fire", 0.5
   PainChance 16
   Painchance "Fire", 8 // Fire attacks have a -50% chance of stunning an enemy
   Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
@@ -5053,7 +4926,8 @@ ACTOR BloodLich
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
+  DamageFactor "Fire", 0.5
+  DamageFactor "Crush", 2.4
   MONSTER
   +NOGRAVITY
   +NOTARGET
@@ -5068,9 +4942,15 @@ ACTOR BloodLich
   +DONTSPLASH
   +BOSS
   +BOSSDEATH
+  SeeSound "ironlich/sight"
+  AttackSound ""
+  PainSound "ironlich/pain"
+  DeathSound "ironlich/death"
+  ActiveSound "ironlich/active"
+  Obituary "%o was reduced to a pile of ash by a Blood Lich."
+
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     BLCH A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
 	BLCH A 10 A_Look
@@ -5327,19 +5207,24 @@ ACTOR CurseSpell
   }
 }
 
-ACTOR Banshee
+ACTOR Banshee : AetheriusMonsterZSC
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  DamageFactor "Crush", 4.8
-
   Health 720
   Radius 12 // 15
   Height 48 // 60
   Mass 515
   Speed 15
   Scale 0.8
+  PainChance 100
+  Painchance "Fire", 50 // Fire attacks have a -50% chance of stunning an enemy
+  Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
+  Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
+  Painchance "GravityHP", 255
+  Painchance "GravityMP", 255
+  Painchance "GravityHPMP", 255 
+  DamageFactor "Fire", 0.5
+  DamageFactor "Crush", 4.8
   +FLOAT
   +NOGRAVITY
   +DONTOVERLAP
@@ -5354,21 +5239,10 @@ ACTOR Banshee
   MONSTER
   Obituary "%o Heard The Banshee's Wail"
   DropItem "BlasterAmmo", 128, 10
-  DropItem "ArtiTomeOfPower", 8, 0  
-  
-  DamageFactor "Fire", 0.5
-  PainChance 100
-  Painchance "Fire", 50 // Fire attacks have a -50% chance of stunning an enemy
-  Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 255
-  Painchance "GravityMP", 255
-  Painchance "GravityHPMP", 255 
+  DropItem "ArtiTomeOfPower", 8, 0    
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     BANS A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     BANS A 1 A_Look
@@ -5851,34 +5725,13 @@ actor WizardSpawner : CustomInventory replaces Wizard
 }
 
 // Ice Golem
-Actor IceGolem
+Actor IceGolem : AetheriusMonsterZSC
 {
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-  var int user_regencycles; var int user_regencyclemax;
   Health 450
   Radius 22
   Height 62
   Mass 900
   Speed 16
-  Monster
-  +FloorClip
-  +NoBlood
-  RenderStyle Translucent
-  Alpha 0.8
-  Scale 1.0
-  SeeSound "mummy/sight"
-  AttackSound "mummy/attack1"
-  PainSound "mummy/pain"
-  ActiveSound "mummy/active"
-  HitObituary "%o was bludgeoned by an ice golem"
-
-  RadiusDamageFactor 0.625
-  DamageFactor "Crush", 5.6
-  DamageFactor "Normal", 0.925
-  DamageFactor "Fire", 1.8
-  DamageFactor "Ice", 0.334
   Painchance 32
   Painchance "Fire", 56 // Fire attacks have a +80% chance of stunning an enemy
   Painchance "Ice", 11 // Ice attacks have a -67% chance of stunning an enemy
@@ -5888,13 +5741,27 @@ Actor IceGolem
   Painchance "GravityHP", 255
   Painchance "GravityMP", 255
   Painchance "GravityHPMP", 255 
-
+  RadiusDamageFactor 0.625
+  DamageFactor "Crush", 5.6
+  DamageFactor "Normal", 0.925
+  DamageFactor "Fire", 1.8
+  DamageFactor "Ice", 0.334
+  Monster
+  +FloorClip
+  +NoBlood
   +DONTHARMSPECIES
+  RenderStyle Translucent
+  Alpha 0.8
+  Scale 1.0
+  SeeSound "mummy/sight"
+  AttackSound "mummy/attack1"
+  PainSound "mummy/pain"
+  ActiveSound "mummy/active"
+  HitObituary "%o was bludgeoned by an ice golem"
   Species "Golem"
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
     IGLM A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     IGLM AB 10 A_Look

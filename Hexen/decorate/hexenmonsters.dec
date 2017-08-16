@@ -3799,7 +3799,7 @@ ACTOR BatAttackSafe
   }
 }
 
-ACTOR StalkerNew : AetheriusMonsterZSC replaces Serpent
+ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 {
   Health 90
   Painchance 96
@@ -3984,7 +3984,7 @@ actor FStalker : StalkerNew
  dropitem NoItemSpawn 1
 }
 
-ACTOR StalkerLeaderNew : StalkerNew replaces SerpentLeader
+ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 {
   Translation "51:67=51:59", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16"  
 
@@ -5580,6 +5580,7 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
   Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
   Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
   DamageFactor "Ice", 0.05
+  DamageFactor "Fire", 2.5
   DamageFactor "Crush", 4.8
   Speed 14
   Radius 22
@@ -6803,3 +6804,264 @@ actor BishopSpawner : CustomInventory replaces Bishop
  }
 }
 
+ACTOR IceStalker : StalkerNew
+{
+  Health 180
+  Speed 10
+  Monster
+  Meleerange 72
+  damagetype Ice
+  DamageFactor "Ice", 0.05
+  DamageFactor "Fire", 2.5
+  -SHOOTABLE
+  +NOBLOOD
+  +CANTLEAVEFLOORPIC +NONSHOOTABLE
+  +STAYMORPHED +DONTBLAST +NOTELEOTHER
+  +INVISIBLE
+  +NOICEDEATH
+  +NODAMAGETHRUST
+  Obituary "%o caught a chill from an ice stalker."
+  HitObituary "%o caught a chill from an ice stalker."
+  Tag "Ice Stalker"
+  States
+  {
+  Spawn:
+    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+	ISPT H 10 A_Look
+	goto Spawn+1
+  See:
+    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    ISPT HH 1 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+	}
+    ISPT H 2
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+	 A_SerpentHumpDecide;
+	}
+	Loop
+  Pain:
+	ISPT L 5
+	ISPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT L 5
+	goto Dive
+  Pain.Kick:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT LLLLL 5
+	goto Dive
+  Dive:
+	ISDV ABC 4
+	ISDV D 4 A_UnSetShootable
+	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+	ISDV F 3
+	ISDV GH 4
+	ISDV I 3
+	ISDV J 3 A_SerpentHide
+	Goto See
+  Melee:
+	ISPT A 1 A_UnHideThing
+	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+	ISPT B 3 A_SetShootable
+	ISPT C 3
+	ISPT D 4 A_SerpentCheckForAttack
+	Goto Dive
+  Death:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  XDeath:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  Ice:
+	Stop
+  Walk:
+	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
+	ISPT J 5 A_SerpentCheckForAttack
+	Goto Dive
+  Hump:
+	ISPT H 3 A_SerpentUnHide
+	ISPT EFGEF 3 A_SerpentRaiseHump
+	ISPT GEF 3
+	ISPT GEFGE 3 A_SerpentLowerHump
+	ISPT F 3 A_SerpentHide
+	Goto See
+  Attack:
+	ISPT K 6 A_FaceTarget
+	ISPT L 5 A_SerpentChooseAttack
+	Goto MeleeAttack
+  MeleeAttack:
+	ISPT N 5 
+	{
+	 A_CustomMeleeAttack(random(15,30));
+	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+	}
+	Goto Dive
+  }
+}
+
+ACTOR IceStalkerLeader : StalkerLeaderNew
+{
+  Health 240
+  Speed 10
+  Monster
+  Meleerange 72
+  damagetype ice
+  DamageFactor "Ice", 0.05
+  DamageFactor "Fire", 2.5
+  -SHOOTABLE
+  +NOBLOOD
+  +CANTLEAVEFLOORPIC +NONSHOOTABLE
+  +STAYMORPHED +DONTBLAST +NOTELEOTHER
+  +INVISIBLE
+  +NOICEDEATH
+  +NODAMAGETHRUST
+  Obituary "%o caught a chill from an ice stalker."
+  HitObituary "%o caught a chill from an ice stalker."
+  Tag "Ice Stalker"
+  Translation "51:67=51:67", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32"  
+
+  States
+  {
+  Spawn:
+    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+	ISPT H 10 A_Look
+	goto Spawn+1
+  See:
+    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    ISPT HH 1 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+	}
+    ISPT H 2
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+	 A_SerpentHumpDecide;
+	}
+	Loop
+  Pain:
+	ISPT L 5
+	ISPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT L 5
+	goto Dive
+  Pain.Kick:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT LLLLL 5
+	goto Dive
+  Dive:
+	ISDV ABC 4
+	ISDV D 4 A_UnSetShootable
+	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+	ISDV F 3
+	ISDV GH 4
+	ISDV I 3
+	ISDV J 3 A_SerpentHide
+	Goto See
+  Melee:
+	ISPT A 1 A_UnHideThing
+	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+	ISPT B 3 A_SetShootable
+	ISPT C 3
+	ISPT D 4 A_SerpentCheckForAttack
+	Goto Dive
+  Missile:
+	ISPT N 0 A_CustomMissile("IceguyFX", 32, 0)
+	ISPT N 5 A_CustomMissile("IceguyFX", 32, 0)
+	Goto Dive
+  Death:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  XDeath:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  Ice:
+	STOP
+  Walk:
+	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
+	ISPT J 5 A_SerpentCheckForAttack
+	Goto Dive
+  Hump:
+	ISPT H 3 A_SerpentUnHide
+	ISPT EFGEF 3 A_SerpentRaiseHump
+	ISPT GEF 3
+	ISPT GEFGE 3 A_SerpentLowerHump
+	ISPT F 3 A_SerpentHide
+	Goto See
+  Attack:
+	ISPT K 6 A_FaceTarget
+	ISPT L 5 A_SerpentChooseAttack
+	Goto MeleeAttack
+  MeleeAttack:
+	ISPT N 5 
+	{
+	 A_CustomMeleeAttack(random(15,30));
+	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+	}
+	Goto Dive
+  }
+}
+
+actor StalkerSpawner : CustomInventory replaces Serpent
+{
+ +ISMONSTER
+ +RANDOMIZE
+ states
+ {
+    UpgradeClass:
+     SSPT H 0 A_SpawnItemEx("IceStalker",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
+     stop
+
+  Spawn:
+   SSPT H 0 
+   SSPT H 0 A_JumpIf( random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
+   SSPT H 0 A_SpawnItemEx("StalkerNew",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
+   stop
+ }
+}
+
+actor StalkerLeaderSpawner : CustomInventory replaces SerpentLeader
+{
+ +ISMONSTER
+ +RANDOMIZE
+ states
+ {
+    UpgradeClass:
+     SSPT H 0 A_SpawnItemEx("IceStalker",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
+     stop
+
+  Spawn:
+   SSPT H 0 
+   SSPT H 0 A_JumpIf( random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
+   SSPT H 0 A_SpawnItemEx("StalkerNew",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
+   stop
+ }
+}

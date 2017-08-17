@@ -3986,7 +3986,8 @@ actor FStalker : StalkerNew
 
 ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 {
-  Translation "51:67=51:59", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16"  
+  Health 120
+  Translation "51:66=51:58", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16"  
 
   States
   {
@@ -6933,7 +6934,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
   Obituary "%o caught a chill from an ice stalker."
   HitObituary "%o caught a chill from an ice stalker."
   Tag "Ice Stalker"
-  Translation "51:67=51:67", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32"  
+  Translation "51:66=51:66", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32", "67:80=67:74"  // Neutralizes the Translation from the Stalker Leader [for now]
 
   States
   {

@@ -1527,14 +1527,14 @@ ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
     WZRD E 3 A_Pain
     Goto See
   Pain.Fist:
-    WZRD H 3 A_GhostOff
-    WZRD H 3 A_Pain
-    WZRD HH 3
+    WZRD E 3 A_GhostOff
+    WZRD E 3 A_Pain
+    WZRD EE 3
     Goto See
   Pain.Kick:
-    WZRD H 3 A_GhostOff
-    WZRD H 3 A_Pain
-    WZRD HHHH 3
+    WZRD E 3 A_GhostOff
+    WZRD E 3 A_Pain
+    WZRD EEEE 3
     Goto See
   Death:
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)

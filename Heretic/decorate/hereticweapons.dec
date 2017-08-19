@@ -1067,7 +1067,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
     FX00 J 4 Bright
     FX00 KLM 3 Bright
     FX00 G 1 A_HideInCeiling
-    FX00 G 1 A_SkullRodStorm("RainPillar",231,16)
+    FX00 G 1 A_SkullRodStorm("RainPillarNew",231,16)
     Wait
   }
 }
@@ -1076,6 +1076,9 @@ ACTOR RainPillarNew : RainPillar replaces RainPillar
  Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",43)) //5
  DamageType "Magic" 
  Height 5
+ ProjectileKickback 0
+ +NODAMAGETHRUST
+ +FORCERADIUSDMG
 }
 
 ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod

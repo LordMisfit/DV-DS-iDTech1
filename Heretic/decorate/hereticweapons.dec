@@ -1807,7 +1807,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
   }
 }
 
-actor SuperCrossbowNew : HereticWeaponBase 25102
+actor SuperCrossbowNew : HereticWeaponBase 25100
 {
   spawnid 33
   obituary "%o was splattered by %k's super crossbow."

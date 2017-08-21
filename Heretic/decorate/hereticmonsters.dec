@@ -205,11 +205,9 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 44) { SetDamage(0+(user_monsterlevel/45)); }
-     else { SetDamage(0); }
 	 // A_ImpMsAttack; Emulation
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 22) { A_SkullAttack(12+(user_monsterlevel/23)); }
-     else { A_SkullAttack(12); }
+	 SetDamage(((0+(user_monsterlevel/45))*random(1,8)));
+     A_SkullAttack(12+(user_monsterlevel/random(22,23)));
 	}
     IMPX CBAB 6
 	{
@@ -751,7 +749,9 @@ actor MummyNew : AetheriusMonsterZSC // replaces Mummy
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
-	 A_CustomMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 	}
     MUMM G 6
 	{
@@ -842,7 +842,9 @@ actor MummyGhostNew : MummyNew // replaces MummyGhost
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
-	 A_CustomMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 	}
     MUMM G 6
 	{
@@ -895,7 +897,55 @@ actor FMummyGhost : MummyGhostNew
  dropitem NoItemSpawn 1
 }
 
-ACTOR MummyFX1New : MummyFX1 replaces MummyFX1 { DamageType "Fire" DamageType "Magic" }
+ACTOR MummyFX1New : MummyFX1 replaces MummyFX1 
+{
+  Damage (4 * random(1,8))
+  DamageType "Fire" 
+  DamageType "Magic" 
+}
+actor MummyFX1CrisisParticle : BaseCrisisParticle
+{ 
+ States
+ {
+  Spawn:
+    FX15 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCCBB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR MummyFX1Crisis : MummyFX1New
+{
+  Damage ((4 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    FX15 A 5 Bright 
+	{
+     A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+	 A_PlaySound("mummy/head");
+	}
+    FX15 B 5 Bright 
+	{
+     A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+	 A_SeekerMissile(10, 20);
+	}
+    FX15 C 5 Bright
+	{
+     A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+	}
+    FX15 B 5 Bright 
+	{
+     A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+	 A_SeekerMissile(10, 20);
+	}
+    Loop
+  Death:
+    FX15 DEFG 5 Bright
+    Stop
+  }
+}
 actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 {
   Health 100
@@ -953,7 +1003,8 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
-	 A_CustomMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 	}
     MUMM G 6
 	{
@@ -999,7 +1050,8 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
-	 A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
+	 A_MonsterCrisisCheck;
+	 A_CrisisComboAttack("MummyFX1", "MummyFX1Crisis", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
 	}
     Goto See
   Pain:
@@ -1085,7 +1137,8 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
-	 A_CustomMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 	}
     MUMM G 6
 	{
@@ -1131,7 +1184,8 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
-	 A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
+	 A_MonsterCrisisCheck;
+	 A_CrisisComboAttack("MummyFX1", "MummyFX1Crisis", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
 	}
     Goto See
   Pain:

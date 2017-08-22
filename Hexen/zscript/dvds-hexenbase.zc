@@ -191,22 +191,88 @@ class KoraxBase : AetheriusBossZSC
 	{
 		static const class<Actor> choices[] =
 		{
-			"WraithFX1", "Demon1FX1", "Demon2FX1", "FireDemonMissile", "CentaurFX", "SerpentFX", "ThrownMace"
+			"WraithFX1", 
+
+			"IceGuyFX", 
+
+			"Demon1FX1", 
+			"Demon2FX1", 
+			"Demon3FX",
+			"Demon4FX",
+			"Demon5FX1",
+
+			"FireDemonMissile", 
+			"FireDemonLeaderMissile", 
+			"FireDemonCommanderMissile", 
+			"FireDemonQueenMissile", 
+
+			"CentaurFX", 
+
+			"SerpentFX", 
+
+			"ThrownMace"
+		};
+		static const class<Actor> crisischoices[] =
+		{
+			"WraithFX1Crisis", 
+
+			"IceGuyFXCrisis", 
+
+			"Demon1FX1Crisis", 
+			"Demon2FX1Crisis", 
+			"Demon3FXCrisis",
+			"Demon4FXCrisis",
+			"Demon5FX1Crisis",
+
+			"FireDemonMissileCrisis", 
+			"FireDemonLeaderMissileCrisis", 
+			"FireDemonCommanderMissileCrisis", 
+			"FireDemonQueenMissileCrisis", 
+
+			"CentaurFXCrisis", 
+
+			"SerpentFXCrisis", 
+
+			"ThrownMaceCrisis"
 		};
 		static const sound sounds[] = 
 		{
-			"WraithMissileFire", "DemonMissileFire", "DemonMissileFire", "FireDemonAttack", "CentaurLeaderAttack", "SerpentLeaderAttack", "FighterHammerMiss"
+			"WraithMissileFire", 
+
+			"IceGuyAttack", 
+
+			"DemonMissileFire", 
+			"DemonMissileFire", 
+			"DemonMissileFire", 
+			"DemonMissileFire", 
+			"DemonMissileFire", 
+
+			"FireDemonAttack", 
+			"FireDemonAttack", 
+			"FireDemonAttack", 
+			"FireDemonAttack", 
+
+			"CentaurLeaderAttack", 
+
+			"SerpentLeaderAttack", 
+
+			"FighterHammerMiss"
 		};
-		int type = random[KoraxMissile]() % 7;
+		int type = random[KoraxMissile]() % 14;
 
 		A_PlaySound("KoraxAttack", CHAN_VOICE);
 
 		// Fire all 6 missiles at once
 		A_PlaySound(sounds[type], CHAN_WEAPON, 1, false, ATTN_NONE);
-		class<Actor> info = choices[type];
+
+		A_MonsterCrisisCheck();
+	    class<Actor> info = choices[type];
+	    class<Actor> crisisinfo = crisischoices[type];
+
+		// Throws out the fireballs form Korax's arms
 		for (int i = 0; i < 6; ++i)
 		{
-			KoraxFire(info, i);
+			if(user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i); } else { KoraxFire(info, i); }
 		}
 	}
 

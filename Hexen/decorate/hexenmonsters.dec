@@ -5752,6 +5752,8 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
   DamageFactor "Poison", 0.67
   Painchance "PoisonElemental", 10
   DamageFactor "PoisonElemental", 0.2
+  Species "ChaosSerpent"
+  +DONTHURTSPECIES
 
   States
   {
@@ -6242,6 +6244,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
   Obituary "%o was blasted by a Magma Serpent."
   HitObituary "%o was swallowed by a Magma Serpent."
   Species "ChaosSerpent"
+  +DONTHURTSPECIES
   
   States
   {
@@ -6689,6 +6692,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
   DeathSound "DemonDeath"
   ActiveSound "DemonActive"
   Species "ChaosSerpent"
+  +DONTHURTSPECIES
   Obituary "%o was envenomed by a Black Serpent."
   
   States
@@ -6974,7 +6978,7 @@ ACTOR Demon5Jet : AetheriusProjectileZSC
 	Stop
   }
 }
-actor Ghost2BallCrisisParticle : BaseCrisisParticle
+actor Demon5JetCrisisParticle : BaseCrisisParticle
 {
  Alpha 0.334
 
@@ -6996,6 +7000,7 @@ ACTOR Demon5JetCrisis : Demon5Jet
   Spawn:
 	D5JT AABBCC 2 BRIGHT
 	{
+     A_SpawnItemEx("Demon5JetCrisisParticle",0,0,0,0,0,1.28);
 	 A_Weave(1, 2, 0.25, 0.5);
 	 A_FadeOut(0.034);
 	}
@@ -7059,6 +7064,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
   DeathSound "DemonDeath"
   ActiveSound "DemonActive"
   Species "ChaosSerpent"
+  +DONTHURTSPECIES
   Obituary "%o was blasted by a Spectral Chaos Serpent."
 
   States
@@ -7656,8 +7662,24 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
     goto Spawn+1
   See:
     ICEY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    ICEY A 4 A_Chase
-    ICEY B 4 A_IceGuyChase
+    ICEY A 4
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+	 A_Chase;
+	}
+    ICEY B 4 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+	 A_IceGuyChase;
+	}
     ICEY CD 4
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -7715,6 +7737,7 @@ actor FIceGuy : IceGuyNew
  dropitem NoItemSpawn 1
 }
 
+// TODO: Redo the Heresiarch code :V
 ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
 {
   var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
@@ -7929,8 +7952,23 @@ Actor SorcBall3New : SorcBall3 replaces SorcBall3
 		Stop
 	}
 }
+
+actor SorcFX1CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    SBS1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" BCD 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
 ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
 {
+  var int user_crisisprojectile;
   Speed 7
   Radius 5
   Height 5
@@ -7950,17 +7988,39 @@ ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
   States
   {
   Spawn:
+    SBS1 A 0 NoDelay
+	{
+	}
+  Idle:
     SBS1 A 2 Bright
     SBS1 BCD 3 Bright A_SorcFX1Seek
     Loop
   Death:
-    FHFX S 2 Bright A_Explode(30, 128)
+    FHFX S 2 Bright 
+	{
+	 A_Explode(30, 128);
+	 //A_LogInt(30);
+	}
     FHFX SS 6 Bright
     Stop
   }
 }
+
+actor SorcFX4CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    SBS4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
 ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
 {
+  var int user_crisisprojectile;
   Speed 12
   Radius 10
   Height 10
@@ -7973,11 +8033,22 @@ ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
   States
   {
   Spawn:
-    SBS4 ABC 2 Bright A_SorcFX4Check
+    SBS1 A 0 NoDelay
+	{
+	}
+  Idle:
+    SBS4 ABC 2 Bright 
+	{
+	 A_SorcFX4Check;
+	}
     Loop
   Death:
     SBS4 D 2 Bright
-    SBS4 E 2 Bright A_Explode(20, 128)
+    SBS4 E 2 Bright
+	{
+	 A_Explode(20, 128);
+	 //A_LogInt(20);
+	}
     SBS4 FGH 2 Bright
     Stop
   }
@@ -8013,6 +8084,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
   DeathSound "KoraxDeath"
   ActiveSound "KoraxActive"
   Obituary "$OB_KORAX" // "%o was swept from the board by Korax."
+  var int user_koraxrepeatchance;
 
   States
   {
@@ -8139,6 +8211,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
+  AttackLoop:
     KORX F 8 Bright 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -8153,6 +8226,15 @@ ACTOR KoraxNew : KoraxBase replaces Korax
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+	}
+    KORX E 0 Bright
+	{
+	 user_koraxrepeatchance = 32 + (user_monsterlevel/5);
+	 if (user_koraxrepeatchance >= 160) { user_koraxrepeatchance = 160; }
+	 A_LogInt(user_koraxrepeatchance);
+
+	 if (random(1,256) <= user_koraxrepeatchance) { return state("AttackLoop"); }
+	 return state("");
 	}
     Goto See
   Command:
@@ -8253,7 +8335,16 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
     DRAG A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DRAG CB 5
     DRAG A 5 A_DragonInitFlight
-    DRAG B 3 A_DragonFlap
+    DRAG B 3 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+
+     A_DragonFlap(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
+	}
     DRAG BCCDDCCBBAA 3
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -8261,7 +8352,8 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-	 A_DragonFlight;
+
+	 A_DragonFlight(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
 	}
     Goto See+4
   Pain:
@@ -8283,7 +8375,9 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(7); }
-	 A_DragonAttack;
+
+	 A_MonsterCrisisCheck;
+	 A_DragonAttack("DragonFireball","DragonFireballCrisis");
 	}
     Goto See+4
 
@@ -8309,6 +8403,118 @@ actor FDragon : DragonNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball
+{
+  Damage (6 * random(1,8))
+  Speed 24
+  Radius 12
+  Height 10
+  DamageType "Fire"
+  Projectile
+  -ACTIVATEIMPACT
+  -ACTIVATEPCROSS
+  RenderStyle Add
+  DeathSound "DragonFireballExplode"
+
+  States
+  {
+  Spawn:
+    DRFX AABBCCDDEEFF 2 Bright
+	{
+	}
+    Loop
+  Death:
+    DRFX GHI 4 Bright
+    DRFX J 4 Bright 
+	{
+	 A_DragonFX2("DragonExplosion");
+	}
+    DRFX KL 3 Bright
+    Stop
+  }
+}
+actor DragonFireballCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    DRFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR DragonFireballCrisis : DragonFireballNew
+{
+  Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    DRFX AABBCCDDEEFF 2 Bright
+	{
+     A_SpawnItemEx("DragonFireballCrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    DRFX GHI 4 Bright
+    DRFX J 4 Bright 
+	{
+	 A_DragonFX2("DragonExplosionCrisis");
+	}
+    DRFX KL 3 Bright
+    Stop
+  }
+}
+
+ACTOR DragonExplosionNew : DragonExplosion replaces DragonExplosion
+{
+  Radius 8
+  Height 8
+  DamageType "Fire"
+  +NOBLOCKMAP
+  +NOTELEPORT
+  +INVISIBLE
+  RenderStyle Add
+  DeathSound "DragonFireballExplode"
+  States
+  {
+  Spawn:
+    CFCF Q 1 Bright
+    CFCF Q 4 Bright A_UnHideThing
+    CFCF R 3 Bright A_Scream
+    CFCF S 4 Bright
+    CFCF T 3 Bright A_Explode(80, 128, 0)
+    CFCF U 4 Bright
+    CFCF V 3 Bright
+    CFCF W 4 Bright
+    CFCF X 3 Bright
+    CFCF Y 4 Bright
+    CFCF Z 3 Bright
+    Stop
+  }
+}
+ACTOR DragonExplosionCrisis : DragonExplosionNew
+{
+  States
+  {
+  Spawn:
+    CFCF Q 1 Bright
+    CFCF Q 4 Bright A_UnHideThing
+    CFCF R 3 Bright A_Scream
+    CFCF S 4 Bright
+    CFCF T 3 Bright A_Explode(80*CallACS("CrisisMultiplier"), 128, 0)
+    CFCF U 4 Bright
+    CFCF V 3 Bright
+    CFCF W 4 Bright
+    CFCF X 3 Bright
+    CFCF Y 4 Bright
+    CFCF Z 3 Bright
+    Stop
+  }
+}
+
+
 ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 {
   Health 12800
@@ -8325,6 +8531,8 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
   Radius 16
   Height 64
   Monster
+  Reactiontime 8
+  MaxTargetRange 2048
   +FLOORCLIP
   +TELESTOMP
   +DONTMORPH
@@ -8339,7 +8547,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
   Spawn:
     CLER A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     CLER A 2
-    CLER A 3 A_ClassBossHealth
+    CLER A 3 //A_ClassBossHealth
     CLER A 5 A_Look
     goto Spawn+1
   See:
@@ -8351,7 +8559,8 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-	 A_FastChase;
+ 
+	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
     Loop
   Pain:
@@ -8386,7 +8595,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-	 A_ClericAttack;
+	 A_ClericAttack("HolyMissile","HolyMissileCrisis");
 	}
     Goto See
 
@@ -8437,12 +8646,13 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
     Stop
   }
 }
-ACTOR HolyMissileNew : HolyMissile replaces HolyMissile
+
+ACTOR HolyMissileNew : AetheriusProjectileZSC replaces HolyMissile
 {
+  Damage (4 * random(1,8))
   Speed 30
   Radius 15
   Height 8
-  Damage 4
   Projectile
   DamageType "Holy"
   -ACTIVATEIMPACT
@@ -8452,19 +8662,66 @@ ACTOR HolyMissileNew : HolyMissile replaces HolyMissile
   States
   {
   Spawn:
-    SPIR PPPP 3 Bright A_SpawnItemEx("HolyMissilePuff")
+    SPIR PPPP 3 Bright 
+	{
+	 A_SpawnItemEx("HolyMissilePuff");
+	}
   Death:
-    SPIR P 1 Bright A_CHolyAttack2
+    SPIR P 1 Bright 
+	{
+	 A_CHolyAttack2("HolySpiritNew",4,105,85);
+	}
     Stop
   }
 }
-ACTOR HolySpiritNew : HolySpirit replaces HolySpirit
+actor HolyMissileCrisisParticle : BaseCrisisParticle
 {
+ States
+ {
+  Spawn:
+    SPIR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" PPPP 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR HolyMissileCrisis : HolyMissileNew
+{
+  Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+  Speed 30
+  Radius 15
+  Height 8
+  Projectile
+  DamageType "Holy"
+  -ACTIVATEIMPACT
+  -ACTIVATEPCROSS
+  +EXTREMEDEATH
+
+  States
+  {
+  Spawn:
+    SPIR PPPP 3 Bright 
+	{
+     A_SpawnItemEx("HolyMissileCrisisParticle",0,0,0,0,0,1.28);
+	 A_SpawnItemEx("HolyMissilePuff");
+	}
+  Death:
+    SPIR P 1 Bright 
+	{
+	 A_CHolyAttack2("HolySpiritCrisis",4,105,85);
+	}
+    Stop
+  }
+}
+
+ACTOR HolySpiritNew : HolySpiritBase replaces HolySpirit
+{
+  Damage (3 * random(1,8))
   Health 105
   Speed 12
   Radius 10
   Height 6
-  Damage 3
   Projectile
   +RIPPER
   +SEEKERMISSILE
@@ -8482,8 +8739,50 @@ ACTOR HolySpiritNew : HolySpirit replaces HolySpirit
   States
   {
   Spawn:
-    SPIR AAB 2 A_CHolySeek
-    SPIR B 2 A_CHolyCheckScream
+    SPIR AAB 2 
+	{
+ 	 A_CHolySeek;
+	}
+    SPIR B 2 
+	{
+ 	 A_CHolyCheckScream;
+	}
+    Loop
+  Death:
+    SPIR D 4
+    SPIR E 4 A_Scream
+    SPIR FGHI 4
+    Stop
+  }
+}
+actor HolySpiritCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    SPIR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR HolySpiritCrisis : HolySpiritNew
+{
+  Stamina 30
+  Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    SPIR AAB 2 
+	{
+     A_SpawnItemEx("HolySpiritCrisisParticle",0,0,0,0,0,1.28);
+ 	 A_CHolySeek;
+	}
+    SPIR B 2 
+	{
+ 	 A_CHolyCheckScream;
+	}
     Loop
   Death:
     SPIR D 4
@@ -8505,6 +8804,8 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
   Painchance "GravityHPMP", 16
   DamageFactor "Normal", 0.833
   DamageFactor "Crush", 2.4
+  Reactiontime 8
+  MaxTargetRange 2048
   Speed 25
   Radius 16
   Height 64
@@ -8523,7 +8824,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
   Spawn:
     PLAY A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     PLAY A 2
-    PLAY A 3 A_ClassBossHealth
+    PLAY A 3 //A_ClassBossHealth
     PLAY A 5 A_Look
     goto Spawn+1
   See:
@@ -8535,7 +8836,8 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-	 A_FastChase;
+
+	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
     Loop
   Pain:
@@ -8543,14 +8845,14 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
     PLAY G 4 A_Pain
     Goto See
   Pain.Fist:
-    PLAY H 4
-    PLAY H 4 A_Pain
-    PLAY HH 4
+    PLAY G 4
+    PLAY G 4 A_Pain
+    PLAY GG 4
     Goto See
   Pain.Kick:
-    PLAY H 4
-    PLAY H 4 A_Pain
-    PLAY HHHH 4
+    PLAY G 4
+    PLAY G 4 A_Pain
+    PLAY GGGG 4
     Goto See
   Melee:
   Missile:
@@ -8569,7 +8871,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_FighterAttack;
+	 A_FighterAttack("FSwordMissile","FSwordMissileCrisis");
 	}
     Goto See
 
@@ -8620,12 +8922,13 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
     Stop
   }
 }
+
 ACTOR FSwordMissileNew : FSwordMissile replaces FSwordMissile
 {
+  Damage (8 * random(1,8))
   Speed 30
   Radius 16
   Height 8
-  Damage 8
   Projectile
   +EXTREMEDEATH
   DamageType "Magic"
@@ -8637,11 +8940,48 @@ ACTOR FSwordMissileNew : FSwordMissile replaces FSwordMissile
   {
   Spawn:
     FSFX ABC 3 Bright
+	{
+	}
     Loop
   Death:
     FSFX D 4 Bright
     FSFX E 3 Bright A_FSwordFlames
     FSFX F 4 Bright A_Explode(64, 128, 0)
+    FSFX G 3 Bright
+    FSFX H 4 Bright
+    FSFX I 3 Bright
+    FSFX J 4 Bright
+    FSFX KLM 3 Bright
+    Stop
+  }
+}
+actor FSwordMissileCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    FSFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR FSwordMissileCrisis : FSwordMissileNew
+{
+  Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    FSFX ABC 3 Bright
+	{
+     A_SpawnItemEx("FSwordMissileCrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    FSFX D 4 Bright
+    FSFX E 3 Bright A_FSwordFlames
+    FSFX F 4 Bright A_Explode(64*CallACS("CrisisMultiplier"), 128, 0)
     FSFX G 3 Bright
     FSFX H 4 Bright
     FSFX I 3 Bright
@@ -8666,6 +9006,8 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
   Speed 25
   Radius 16
   Height 64
+  Reactiontime 8
+  MaxTargetRange 2048
   Monster
   +FLOORCLIP
   +TELESTOMP
@@ -8681,7 +9023,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
   Spawn:
     MAGE A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
     MAGE A 2
-    MAGE A 3 A_ClassBossHealth
+    MAGE A 3 //A_ClassBossHealth
     MAGE A 5 A_Look
     goto Spawn+1
   See:
@@ -8693,7 +9035,8 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-	 A_FastChase;
+
+	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
     Loop
   Pain:
@@ -8701,14 +9044,14 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
     MAGE G 4 A_Pain
     Goto See
   Pain.Fist:
-    MAGE H 4
-    MAGE H 4 A_Pain
-    MAGE HH 4
+    MAGE G 4
+    MAGE G 4 A_Pain
+    MAGE GG 4
     Goto See
   Pain.Kick:
-    MAGE H 4
-    MAGE H 4 A_Pain
-    MAGE HHHH 4
+    MAGE G 4
+    MAGE G 4 A_Pain
+    MAGE GGGG 4
     Goto See
   Melee:
   Missile:
@@ -8727,7 +9070,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-	 A_MageAttack;
+	 A_MageAttack("MageStaffFX2New","MageStaffFX2Crisis");
 	}
     Goto See
 
@@ -8782,11 +9125,11 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
     Stop
   }
 }
-ACTOR MageStaffFX2New : MageStaffFX2 replaces MageStaffFX2
+ACTOR MageStaffFX2New : MageStaffFX2Base replaces MageStaffFX2
 {
+  Damage (4 * random(1,8))
   Speed 17
   Height 8
-  Damage 4
   DamageType "Fire"
   Projectile
   +SEEKERMISSILE
@@ -8798,11 +9141,57 @@ ACTOR MageStaffFX2New : MageStaffFX2 replaces MageStaffFX2
   States
   {
   Spawn:
-    MSP2 ABCD 2 Bright A_MStaffTrack
+    MSP2 ABCD 2 Bright 
+	{
+	 A_MStaffTrack;
+	}
     Loop
   Death:
     MSP2 E 4 Bright A_SetTranslucent(1, 1)
     MSP2 F 5 Bright A_Explode(80, 192, 0)
+    MSP2 GH 5 Bright
+    MSP2 I 4 Bright
+    Stop
+  }
+}
+actor MageStaffFX2CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    MSP2 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABCD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR MageStaffFX2Crisis : MageStaffFX2New
+{
+  Stamina 30
+  Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+  Speed 17
+  Height 8
+  DamageType "Fire"
+  Projectile
+  +SEEKERMISSILE
+  +SCREENSEEKER
+  +EXTREMEDEATH
+  DeathSound "MageStaffExplode"
+  Obituary "$OB_MPMWEAPBLOODSCOURGE"
+
+  States
+  {
+  Spawn:
+    MSP2 ABCD 2 Bright 
+	{
+     A_SpawnItemEx("MageStaffFX2CrisisParticle",0,0,0,0,0,1.28);
+	 A_MStaffTrack;
+	}
+    Loop
+  Death:
+    MSP2 E 4 Bright A_SetTranslucent(1, 1)
+    MSP2 F 5 Bright A_Explode(80*CallACS("CrisisMultiplier"), 192, 0)
     MSP2 GH 5 Bright
     MSP2 I 4 Bright
     Stop

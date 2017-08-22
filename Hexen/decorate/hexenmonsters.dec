@@ -45,7 +45,7 @@ actor MinotaurFX1CrisisParticle : BaseCrisisParticle
 }
 ACTOR MinotaurFX1Crisis : MinotaurFX1New
 {
-  Damage ((3 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -103,7 +103,7 @@ actor MinotaurFX2CrisisParticle : BaseCrisisParticle
 }
 ACTOR MinotaurFX2Crisis : MinotaurFX2New 
 {
-  Damage ((4 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -115,7 +115,7 @@ ACTOR MinotaurFX2Crisis : MinotaurFX2New
   Death:
     FX13 I 4 Bright 
 	{
-	 A_Explode(24*ACS_NamedExecuteWithResult("CrisisMultiplier"),64);
+	 A_Explode(24*CallACS("CrisisMultiplier"),64);
 	}
     FX13 JKLM 4 Bright
     Stop
@@ -412,7 +412,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	 if(user_canusecrisisatk == 1) 
 	 { 
 	  A_PlayCrisisAtkSound;
-	  SetDamage((7*random(1,8))*ACS_NamedExecuteWithResult("CrisisMultiplier"));
+	  SetDamage((7*random(1,8))*CallACS("CrisisMultiplier"));
 	 }
 	}
     MNTR U 2 A_MinotaurCharge
@@ -895,7 +895,7 @@ actor ThrownMaceCrisisParticle : BaseCrisisParticle
 }
 ACTOR ThrownMaceCrisis : ThrownMace
 {
-  Damage (((Random(2,8)*4)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage (((Random(2,8)*4)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -1271,7 +1271,7 @@ actor WraithFX1CrisisParticle : BaseCrisisParticle
 }
 ACTOR WraithFX1Crisis : WraithFX1New
 {
-  Damage ((5 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -1343,7 +1343,7 @@ actor BormerethFX1CrisisParticle : BaseCrisisParticle
 }
 Actor BormerethFX1Crisis : BormerethFX1
 {
-  Damage ((8 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
   DeathSound "bormereth/missilesimpledeath"
   Scale 0.85
   Decal DoomImpScorch
@@ -1510,7 +1510,7 @@ actor PossEttFireBallCrisisParticle : BaseCrisisParticle
 }
 Actor PossEttFireBallCrisis : PossEttFireBall
 {
-	Damage ((15 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+	Damage ((15 * random(1,8)) * CallACS("CrisisMultiplier"))
 	States
 	{
 	Spawn:
@@ -1805,7 +1805,7 @@ actor FirePillarShotCrisisParticle : BaseCrisisParticle
 }
 Actor FirePillarShotCrisis : FirePillarShot
 {
-	Damage ((3 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
 	DamageType Fire
 	Projectile
 	ProjectileKickback 0
@@ -1840,7 +1840,7 @@ Actor FirePillarShot2 : FirePillarShot	//this one wont have light definition
 }
 Actor FirePillarShot2Crisis : FirePillarShotCrisis
 {
-	Damage ((3 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
 }
 	
 ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
@@ -2115,7 +2115,7 @@ actor CentaurFXNewCrisisParticle : BaseCrisisParticle
 }
 ACTOR CentaurFXCrisis : CentaurFXNew
 {
-  Damage ((4 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
   Speed 20
   Projectile
   +SPAWNSOUNDSOURCE
@@ -2408,7 +2408,7 @@ actor FireDemonMissileCrisisParticle : BaseCrisisParticle
 }
 Actor FireDemonMissileCrisis : FireDemonMissileNew
 {
-  Damage ((1 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -2744,7 +2744,7 @@ actor FireDemonLeaderMissileCrisisParticle : BaseCrisisParticle
 }
 Actor FireDemonLeaderMissileCrisis : FireDemonLeaderMissile
 {
-  Damage ((random(1,2) * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((random(1,2) * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -3025,7 +3025,7 @@ actor FireDemonCommanderMissileCrisisParticle : BaseCrisisParticle
 }
 Actor FireDemonCommanderMissileCrisis : FireDemonCommanderMissile
 {
-  Damage (((random(1,2) * random(1,8)) + random(4,12)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage (((random(1,2) * random(1,8)) + random(4,12)) * CallACS("CrisisMultiplier"))
   Speed 15
   FastSpeed 20
   +NODAMAGETHRUST
@@ -3394,7 +3394,7 @@ actor FireDemonQueenMissileCrisisParticle : BaseCrisisParticle
 }
 Actor FireDemonQueenMissileCrisis : FireDemonQueenMissile
 {
-  Damage (((random(2,4) * random(1,8)) + random(2,6)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage (((random(2,4) * random(1,8)) + random(2,6)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -3504,6 +3504,7 @@ Actor FireDemonQueenSplotch2 : FireDemonQueenSplotch1
        Stop
    }
 }
+
 
 ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 {
@@ -3635,13 +3636,13 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_BishopAttack;
+	 A_BishopAttack(4*random(1,8), (random(1,256) & 3) + 5 + (user_monsterlevel/30));
 	}
     BISH F 5 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_BishopAttack2;
+	 A_BishopAttack2("BishopFXNew","BishopFXCrisis");
 	}
     Wait
   Death:
@@ -3681,10 +3682,10 @@ actor FBishop : BishopNew
 
 ACTOR BishopFXNew : BishopFX replaces BishopFX
 {
+  Damage (random(2,6)+random(1,4))
   Radius 10
   Height 6
   Speed 10
-  Damage (random(2,6)+random(1,4))
   Projectile
   +SEEKERMISSILE
   -ACTIVATEIMPACT
@@ -3696,8 +3697,48 @@ ACTOR BishopFXNew : BishopFX replaces BishopFX
   States
   {
   Spawn:
-    BPFX ABAB 1 Bright A_Weave(2, 2, 2.0, 1.0)
-    BPFX B 0 Bright A_SeekerMissile(2, 3)
+    BPFX ABAB 1 Bright 
+	{
+	 A_Weave(2, 2, 2.0, 1.0);
+	}
+    BPFX B 0 Bright 
+	{
+	 A_SeekerMissile(2, 3);
+	}
+    Loop
+  Death:
+    BPFX CDEF 4 Bright
+    BPFX GH 3 Bright
+    Stop
+  }
+}
+actor BishopFXCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    BPFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABAB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR BishopFXCrisis : BishopFXNew
+{
+  Damage ((random(2,6)+random(1,4)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    BPFX ABAB 1 Bright 
+	{
+     A_SpawnItemEx("BishopFXCrisisParticle",0,0,0,0,0,1.28);
+	 A_Weave(2, 2, 2.0, 1.0);
+	}
+    BPFX B 0 Bright 
+	{
+	 A_SeekerMissile(2, 3);
+	}
     Loop
   Death:
     BPFX CDEF 4 Bright
@@ -3882,33 +3923,34 @@ Actor DarkDisciple : BishopNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
-	TNT1 A 0 A_JumpIfCloser(64,"Missile2")
-	Goto Missile3
-  Missile2:
 	HDIS F 3
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_BishopAttack;
-	}
-	Goto See
-  Missile3:
-	HDIS F 3
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+	 A_BishopAttack(5*random(1,8));
+	 user_shotsfired = 0;
+	 user_shotsfiredmax = (random(1,256) & 3) + 5 + (user_monsterlevel/25);
+	 // A_LogInt(user_shotsfiredmax);
 	 A_PlaySound("BishopAttack");
 	}
-	TNT1 A 0 A_Jump(256,1,2,3,4)
-	HDIS FFFFFFFF 5 
+  MissileLoop:
+	HDIS F 5 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile("DiscipleSpreadFX",32,0,-60,1);
-	 A_CustomMissile("DiscipleSpreadFX",32,0,60,1);
-     A_CustomMissile("DiscipleFX",32);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,-60,1);
+	 A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,60,1);
+     A_CrisisSpawnProjectile("DiscipleFX","DiscipleFXCrisis",32);
+	 user_shotsfired += 1;
 	}
-	Goto See
+	HDIS F 0 
+	{
+	 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+	 return state("");
+	}
+	loop
   Death:
 	HDIS A 0 A_ChangeFlag("GHOST",0)
 	HDIS A 0 A_SetTranslucent(1,0)
@@ -3970,11 +4012,11 @@ Actor DiscipleBlur
 
 Actor DiscipleFX
 {
+   Damage (random(1,4)*random(1,4))
    Radius 10
    Height 6
    Speed 10
    FastSpeed 15
-   Damage (random(1,4)*random(1,4))
    Projectile
    +NODAMAGETHRUST
    +SEEKERMISSILE
@@ -3986,7 +4028,41 @@ Actor DiscipleFX
    States
    {
    Spawn:
-      HDFX ABAB 1 Bright A_BishopMissileWeave
+      HDFX ABAB 1 Bright 
+	  {
+	   A_BishopMissileWeave;
+	  }
+      TNT1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
+      loop
+   Death:
+      HDFX CDEF 4 Bright
+	  HDFX GH 3 Bright
+      stop
+   }
+}
+actor DiscipleFXCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    HDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+Actor DiscipleFXCrisis : DiscipleFX
+{
+   Damage ((random(1,4)*random(1,4)) * CallACS("CrisisMultiplier"))
+   States
+   {
+   Spawn:
+      HDFX ABAB 1 Bright 
+	  {
+       A_SpawnItemEx("DiscipleFXCrisisParticle",0,0,0,0,0,1.28);
+	   A_BishopMissileWeave;
+	  }
       TNT1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
       loop
    Death:
@@ -4020,6 +4096,48 @@ Actor DiscipleSpreadFX : DiscipleFX
       HDFX ABAB 1 Bright A_BishopMissileWeave
       TNT1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
       Goto Spawn+16
+   Death:
+      HDFX CDEF 4 Bright
+	  HDFX GH 3 Bright
+      stop
+   }
+}
+actor DiscipleSpreadFXCrisisParticle : DiscipleFXCrisisParticle
+{
+ States
+ {
+  Spawn:
+    HDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+Actor DiscipleSpreadFXCrisis : DiscipleFXCrisis
+{
+   States
+   {
+   Spawn:
+      HDFX ABABABAB 1 Bright 
+	  {
+       A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
+	   A_BishopMissileWeave;
+	   A_SeekerMissile(2,9,SMF_PRECISE);
+	  }
+   Idle:
+      HDFX ABAB 1 Bright 
+	  {
+       A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
+	   A_BishopMissileWeave;
+	  }
+      TNT1 A 0 
+	  {
+	   if (random(1,256) <= 16) { return state("Spawn"); }
+	   A_SeekerMissile(2,3,SMF_PRECISE);
+	   return state("");
+	  }
+      loop
    Death:
       HDFX CDEF 4 Bright
 	  HDFX GH 3 Bright
@@ -4238,9 +4356,24 @@ ACTOR VampireDVDS : BishopNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
+	 user_shotsfired = 0;
+	 user_shotsfiredmax = 9 + (random(1,256) & 3) + (user_monsterlevel/45);
+	 //A_LogInt(user_shotsfiredmax);
 	}
-    TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
-    TNT1 AAAAAAAAAAAA 0 Bright A_CustomMissile("BatAttack",Random(8,64),Random(-32,32),Random(20,-20),1)
+   BatAttack:
+    TNT1 A 0 Bright 
+	{
+	 A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("BatAttack","BatAttackCrisis",Random(8,64),Random(-32,32),Random(20,-20),1);
+
+	 user_shotsfired += 1;
+	 if (user_shotsfired >= user_shotsfiredmax) { return state("BatEnd"); }
+	 return state("");
+	}
+	loop
+   BatEnd:
     VAM1 Y 8 Bright 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -4249,6 +4382,7 @@ ACTOR VampireDVDS : BishopNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	}
     goto see
+
    Missile2:
     VAM1 E 8 Bright
 	{
@@ -4257,10 +4391,22 @@ ACTOR VampireDVDS : BishopNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
+	 user_shotsfired = 0;
+	 user_shotsfiredmax = 42 + (random(1,256) & 14) + (user_monsterlevel/20);
+	 //A_LogInt(user_shotsfiredmax);
 	}
 	VAM1 AAAAAAAAAAAAAA 0 A_SpawnDebris("VampireBloodBoom",1)
-    VAM1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 1 Bright A_CustomMissile("VampireRoundBeam",32,0,0,1)
-    Goto See
+   BeamLoop: // 56
+    VAM1 F 1 Bright 
+	{
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("VampireRoundBeam","VampireRoundBeamCrisis",32,0,0,1);
+
+	 user_shotsfired += 1;
+	 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+	 return state("");
+	}
+	loop
  
    Pain:
     VAM1 C 6 A_Pain
@@ -4402,10 +4548,10 @@ Actor VampireBlur
 
 ACTOR VampireRoundBeam
 {
+   Damage (random(1,5))
    Radius 2
    Height 4
    Speed 10
-   Damage 1
    Scale 0.50
    PROJECTILE
    +THRUGHOST
@@ -4413,20 +4559,59 @@ ACTOR VampireRoundBeam
    States
    {
    Spawn:
-      VAM2 A 0 Bright A_PlaySound("vampire/beam")
-	  VAM2 A 0 Bright A_PlaySound("vampire/beam")
-	  VAM2 A 0 Bright A_PlaySound("vampire/beam")
-	  VAM2 A 0 Bright A_PlaySound("vampire/beam")
-	  VAM2 A 0 Bright A_PlaySound("vampire/beam")
-      VAM2 A 1 Bright A_CStaffMissileSlither
-      VAM2 A 0 Bright A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128)
-      VAM2 A 1 Bright A_CStaffMissileSlither
-      VAM2 A 0 Bright A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128)
-      VAM2 A 1 Bright A_CStaffMissileSlither
-      VAM2 A 0 Bright A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128)
-      VAM2 A 1 Bright A_CStaffMissileSlither
-      VAM2 A 0 Bright A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128)
-      VAM2 A 0 Bright
+      VAM2 A 0 Bright 
+	  {
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	  }
+      VAM2 AAAA 1 Bright 
+	  {
+	   A_CStaffMissileSlither;
+       A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
+	  }
+      loop
+   Death:
+      VAM2 CDEFGH 3 Bright
+      stop
+   }
+}
+actor VampireRoundBeamCrisisParticle : BaseCrisisParticle
+{
+ Scale 0.334
+
+ States
+ {
+  Spawn:
+    VAM2 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR VampireRoundBeamCrisis : VampireRoundBeam
+{
+   Damage ((random(1,5)) * CallACS("CrisisMultiplier"))
+   States
+   {
+   Spawn:
+      VAM2 A 0 Bright 
+	  {
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	   A_PlaySound("vampire/beam");
+	  }
+      VAM2 AAAA 1 Bright 
+	  {
+       A_SpawnItemEx("VampireRoundBeamCrisisParticle",0,0,0,0,0,1.28);
+	   A_CStaffMissileSlither;
+       A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
+	  }
       loop
    Death:
       VAM2 CDEFGH 3 Bright
@@ -4555,10 +4740,10 @@ actor VampireBloodTrail
 
 ACTOR BatAttack
 {
+  Damage (3 * random(1,8))
   Radius 8
   Height 16
   Speed 12 
-  Damage 3
   PROJECTILE
   +Randomize
   +NoGravity
@@ -4567,11 +4752,65 @@ ACTOR BatAttack
   states
   {
   Spawn:
-    VAM4 ABCABCABCABC 3 BRIGHT A_SpawnItemEx("BatTrail")
-	VAM4 ABCABCABCABC 3 BRIGHT A_SpawnItemEx("BatTrail")
-	VAM4 ABCABCABCABC 3 BRIGHT A_SpawnItemEx("BatTrail")
-	VAM4 ABCABCABCABC 3 BRIGHT A_SpawnItemEx("BatTrail")
-	VAM4 ABCABCABCABC 3 BRIGHT A_SpawnItemEx("BatTrail")
+    VAM4 ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC 3 BRIGHT
+	{
+	 A_SpawnItemEx("BatTrail");
+	}
+    Goto death
+  Death:
+    TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+    VAM4 A 2 A_SetTranslucent(0.9) 
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 B 2 A_SetTranslucent(0.8)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 C 2 A_SetTranslucent(0.7)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 A 2 A_SetTranslucent(0.6)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 B 2 A_SetTranslucent(0.5)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 C 2 A_SetTranslucent(0.4)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 A 2 A_SetTranslucent(0.3)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 B 2 A_SetTranslucent(0.2)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+	VAM4 C 2 A_SetTranslucent(0.1)
+	TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
+    Stop
+  }
+}
+actor BatAttackCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    VAM4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR BatAttackCrisis : BatAttack
+{
+  Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+  Radius 8
+  Height 16
+  Speed 12 
+  PROJECTILE
+  +Randomize
+  +NoGravity
+  +Float
+  seesound "vampire/bats"
+  states
+  {
+  Spawn:
+    VAM4 ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC 3 BRIGHT
+	{
+     A_SpawnItemEx("BatAttackCrisisParticle",0,0,0,0,0,1.28);
+	 A_SpawnItemEx("BatTrail");
+	}
     Goto death
   Death:
     TNT1 A 0 A_SpawnItemEx("BatCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128)
@@ -4994,7 +5233,7 @@ actor SerpentFXCrisisParticle : BaseCrisisParticle
 }
 ACTOR SerpentFXCrisis : SerpentFXNew
 {
-  Damage ((4 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+  Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
@@ -5044,6 +5283,293 @@ actor FStalkerLeader : StalkerLeaderNew
  dropitem NoItemSpawn 1
 }
 
+ACTOR IceStalker : StalkerNew
+{
+  Health 180
+  Speed 10
+  Monster
+  Meleerange 72
+  damagetype Ice
+  DamageFactor "Ice", 0.05
+  DamageFactor "Fire", 2.5
+  -SHOOTABLE
+  +NOBLOOD
+  +CANTLEAVEFLOORPIC +NONSHOOTABLE
+  +STAYMORPHED +DONTBLAST +NOTELEOTHER
+  +INVISIBLE
+  +NOICEDEATH
+  +NODAMAGETHRUST
+  Obituary "%o caught a chill from an ice stalker."
+  HitObituary "%o caught a chill from an ice stalker."
+  Tag "Ice Stalker"
+  States
+  {
+  Spawn:
+    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+	ISPT H 10 A_Look
+	goto Spawn+1
+  See:
+    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    ISPT HH 1 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+	}
+    ISPT H 2
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+	 A_SerpentHumpDecide;
+	}
+	Loop
+  Pain:
+	ISPT L 5
+	ISPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT L 5
+	goto Dive
+  Pain.Kick:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT LLLLL 5
+	goto Dive
+  Dive:
+	ISDV ABC 4
+	ISDV D 4 A_UnSetShootable
+	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+	ISDV F 3
+	ISDV GH 4
+	ISDV I 3
+	ISDV J 3 A_SerpentHide
+	Goto See
+  Melee:
+	ISPT A 1 A_UnHideThing
+	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+	ISPT B 3 A_SetShootable
+	ISPT C 3
+	ISPT D 4 A_SerpentCheckForAttack
+	Goto Dive
+  Death:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  XDeath:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  Ice:
+	Stop
+  Walk:
+	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
+	ISPT J 5 A_SerpentCheckForAttack
+	Goto Dive
+  Hump:
+	ISPT H 3 A_SerpentUnHide
+	ISPT EFGEF 3 A_SerpentRaiseHump
+	ISPT GEF 3
+	ISPT GEFGE 3 A_SerpentLowerHump
+	ISPT F 3 A_SerpentHide
+	Goto See
+  Attack:
+	ISPT K 6 A_FaceTarget
+	ISPT L 5 A_SerpentChooseAttack
+	Goto MeleeAttack
+  MeleeAttack:
+	ISPT N 5 
+	{
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(15,30));
+	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+	}
+	Goto Dive
+  }
+}
+
+ACTOR IceStalkerLeader : StalkerLeaderNew
+{
+  Health 240
+  Speed 10
+  Monster
+  Meleerange 72
+  damagetype ice
+  DamageFactor "Ice", 0.05
+  DamageFactor "Fire", 2.5
+  -SHOOTABLE
+  +NOBLOOD
+  +CANTLEAVEFLOORPIC +NONSHOOTABLE
+  +STAYMORPHED +DONTBLAST +NOTELEOTHER
+  +INVISIBLE
+  +NOICEDEATH
+  +NODAMAGETHRUST
+  Obituary "%o caught a chill from an ice stalker."
+  HitObituary "%o caught a chill from an ice stalker."
+  Tag "Ice Stalker"
+  Translation "51:66=51:66", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32", "67:80=67:74"  // Neutralizes the Translation from the Stalker Leader [for now]
+
+  States
+  {
+  Spawn:
+    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
+	ISPT H 10 A_Look
+	goto Spawn+1
+  See:
+    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+    ISPT HH 1 
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+	}
+    ISPT H 2
+	{
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+	 A_SerpentHumpDecide;
+	}
+	Loop
+  Pain:
+	ISPT L 5
+	ISPT L 5 A_Pain
+	goto Dive
+  Pain.Fist:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT L 5
+	goto Dive
+  Pain.Kick:
+    ISPT L 5
+    ISPT L 5 A_Pain
+    ISPT LLLLL 5
+	goto Dive
+  Dive:
+	ISDV ABC 4
+	ISDV D 4 A_UnSetShootable
+	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+	ISDV F 3
+	ISDV GH 4
+	ISDV I 3
+	ISDV J 3 A_SerpentHide
+	Goto See
+  Melee:
+	ISPT A 1 A_UnHideThing
+	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+	ISPT B 3 A_SetShootable
+	ISPT C 3
+	ISPT D 4 A_SerpentCheckForAttack
+	Goto Dive
+  Missile:
+	ISPT N 5 
+	{
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
+	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
+	}
+	Goto Dive
+  Death:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  XDeath:
+    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+	ISPT [ 1 A_IceGuyDie
+	Stop
+  Ice:
+	STOP
+  Walk:
+	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
+	ISPT J 5 A_SerpentCheckForAttack
+	Goto Dive
+  Hump:
+	ISPT H 3 A_SerpentUnHide
+	ISPT EFGEF 3 A_SerpentRaiseHump
+	ISPT GEF 3
+	ISPT GEFGE 3 A_SerpentLowerHump
+	ISPT F 3 A_SerpentHide
+	Goto See
+  Attack:
+	ISPT K 6 A_FaceTarget
+	ISPT L 5 A_SerpentChooseAttack
+	Goto MeleeAttack
+  MeleeAttack:
+	ISPT N 5 
+	{
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(15,30));
+	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+	}
+	Goto Dive
+  }
+}
+
+
+ACTOR Demon1FX1New : Demon1FX1 replaces Demon1FX1
+{
+  Damage (5 * random(1,8))
+  DamageType "Fire"
+  Speed 15
+  Radius 10
+  Height 6
+  Projectile
+  +SPAWNSOUNDSOURCE
+  RenderStyle Add
+  SeeSound "DemonMissileFire"
+  DeathSound "DemonMissileExplode"
+  States
+  {
+  Spawn:
+    DMFX AABBCC 2 Bright
+	{
+	}
+    Loop
+  Death:
+    DMFX DE 4 Bright
+    DMFX FGH 3 Bright
+    Stop
+  }
+}
+actor Demon1FX1CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    DMFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR Demon1FX1Crisis : Demon1FX1New
+{
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    DMFX AABBCC 2 Bright
+	{
+     A_SpawnItemEx("Demon1FX1CrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    DMFX DE 4 Bright
+    DMFX FGH 3 Bright
+    Stop
+  }
+}
 
 
 ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
@@ -5071,7 +5597,6 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
   ActiveSound "DemonActive"
   Obituary "$OB_DEMON1"
   const int ChunkFlags = SXF_TRANSFERTRANSLATION|SXF_ABSOLUTEVELOCITY;
-
 
   States
   {
@@ -5127,7 +5652,9 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_CustomMeleeAttack(random[DemonAttack1](1, 8)*2);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(2,3) * random(1,8));
 	}
     Goto See
   Missile:
@@ -5149,7 +5676,9 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile("Demon1FX1", 62, 0);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon1FX1New", "Demon1FX1Crisis", 62, 0);
 	}
     Goto See
   Death:
@@ -5278,7 +5807,9 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_CustomMeleeAttack(random[DemonAttack1](1, 8)*2);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(2,3) * random(1,8));
 	}
     Goto See
   Missile:
@@ -5300,7 +5831,9 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile("Demon2FX1New", 62, 0);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon2FX1New", "Demon2FX1Crisis", 62, 0);
 	}
     Goto See
   Death:
@@ -5347,13 +5880,12 @@ actor FBrownChaosSerpent : BrownChaosSerpentNew
  dropitem NoItemSpawn 1
 }
 
-ACTOR Demon2FX1New : Demon2FX1 replaces Demon2FX1
+ACTOR Demon2FX1New : AetheriusProjectileZSC replaces Demon2FX1
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
+  Damage (5 * random(1,8))
   Speed 15
   Radius 10
   Height 6
-  Damage 5
   DamageType "Fire"
   DamageType "Poison"
   Projectile
@@ -5365,7 +5897,9 @@ ACTOR Demon2FX1New : Demon2FX1 replaces Demon2FX1
   States
   {
   Spawn:
-    D2FX ABCDEF 4 Bright
+    D2FX AABBCCDDEEFF 2 Bright
+	{
+	}
     Loop
   Death:
     TNT1 A 0 Bright
@@ -5380,6 +5914,52 @@ ACTOR Demon2FX1New : Demon2FX1 replaces Demon2FX1
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	  }
+	 }
+	 return state("");
+	}
+  Death2:
+    D2FX GHIJ 4 Bright
+    D2FX KL 3 Bright
+    Stop
+  }
+}
+actor Demon2FX1CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    D2FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR Demon2FX1Crisis : Demon2FX1New
+{
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    D2FX AABBCCDDEEFF 2 Bright
+	{
+     A_SpawnItemEx("Demon2FX1CrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    TNT1 A 0 Bright
+	{
+	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+	 {
+	  A_SetUserVar("user_ailmentmaxchance",8);
+	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (random(1,user_ailmentmaxchance) <= 3)
+	  {
+	   ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
 	 }
 	 return state("");
@@ -5487,13 +6067,13 @@ Actor Demon3Chunk5 : DemonChunk
   }
 }
 
-Actor Demon3FX
+Actor Demon3FX : AetheriusProjectileZSC
 {
+  Damage (5 * random(1,8))
   Speed 15
   FastSpeed 20
   Radius 10
   Height 6
-  Damage ((random(1,8)*5))
   +NODAMAGETHRUST
   DamageType Fire
   Projectile
@@ -5504,14 +6084,51 @@ Actor Demon3FX
   States
   {
   Spawn:
-	RDFX AABBCC 2 Bright A_spawnitemEx("Demon3FX1Trail")
+	RDFX AABBCC 2 Bright 
+	{
+	 A_SpawnItemEx("Demon3FX1Trail");
+	}
     Loop
   Death:
   	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
 	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
   	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
     XPL1 A 4 BRIGHT A_CustomMissile("HrVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
-    XPL1 B 4 BRIGHT //A_SpawnItemEx("RedDemonFXExplosion")
+    XPL1 B 4 BRIGHT A_Explode(32,52,0)
+    XPL1 CDEF 4 BRIGHT
+    Stop
+  }
+}
+actor Demon3FXCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    RDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+Actor Demon3FXCrisis : Demon3FX
+{
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+	RDFX AABBCC 2 Bright 
+	{
+     A_SpawnItemEx("Demon3FXCrisisParticle",0,0,0,0,0,1.28);
+	 A_SpawnItemEx("Demon3FX1Trail");
+	}
+    Loop
+  Death:
+  	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+  	TNT1 AA 0 A_CustomMissile("HrVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+    XPL1 A 4 BRIGHT A_CustomMissile("HrVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+    XPL1 B 4 BRIGHT A_Explode(32*CallACS("CrisisMultiplier"),52,0)
     XPL1 CDEF 4 BRIGHT
     Stop
   }
@@ -5542,10 +6159,10 @@ ACTOR Demon3FX1Trail
 
 ACTOR HrVolcanoTBlast
 {
+  Damage (random(1,8))
   Radius 8
   Height 6
   Speed 20
-  Damage (random(1,8))
   +NODAMAGETHRUST
   Gravity 0.825
   +NOBLOCKMAP
@@ -5557,25 +6174,41 @@ ACTOR HrVolcanoTBlast
   States
   {
   Spawn:
-    VTFB AB 4 BRIGHT
+    VTFB AABB 2 BRIGHT
+	{
+	}
     Loop
   Death:
     SFFI CBABCDE 4 BRIGHT
     Stop
   }
 }
-
-Actor RedDemonFXExplosion
+actor HrVolcanoTBlastCrisisParticle : BaseCrisisParticle
 {
-  DamageType "MagmaSerpentFire"
-  +NODAMAGETHRUST
+ States
+ {
+  Spawn:
+    VTFB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR HrVolcanoTBlastCrisis : HrVolcanoTBlast
+{
+  Damage ((random(1,8)) * CallACS("CrisisMultiplier"))
   States
   {
   Spawn:
-  	TNT1 A 0 A_Explode(32,52,0)
+    VTFB AABB 2 BRIGHT
+	{
+     A_SpawnItemEx("HrVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
   Death:
-    TNT1 A 0
-  	Stop
+    SFFI CBABCDE 4 BRIGHT
+    Stop
   }
 }
 
@@ -5650,7 +6283,9 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_CustomMeleeAttack((Random(1,8)*2));
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(3,4) * random(1,8));
 	}
     Goto See
   Missile:
@@ -5672,7 +6307,9 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile("Demon3FX",62,0,0,0);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon3FX","Demon3FXCrisis",62,0,0,0);
 	}
     Goto See
 
@@ -5803,14 +6440,13 @@ Actor Demon4Chunk5 : DemonChunk
   }
 }
 
-Actor Demon4FX
+Actor Demon4FX : AetheriusProjectileZSC
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
+  Damage (5 * random(1,8))
   Speed 15
   FastSpeed 20
   Radius 10
   Height 6
-  Damage ((random(1,8)*5))
   +NODAMAGETHRUST
   DamageType "Fire"
   DamageType "Poison"
@@ -5824,8 +6460,10 @@ Actor Demon4FX
   States
   {
   Spawn:
-    D4FX AABB 2 Bright A_SpawnItemEx("BlackDemonTrail", 0, 0,
-                                0, 0, 0, 0, 0, 0)
+    D4FX AABB 2 Bright 
+	{
+	 A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
+	}
     Loop
   Death:
     TNT1 A 0 Bright
@@ -5849,7 +6487,59 @@ Actor Demon4FX
 	TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
   	TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
     D4FX C 4 BRIGHT A_CustomMissile("PoisonVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
-    D4FX DEFGH 4 BRIGHT
+    D4FX D 4 BRIGHT A_Explode(32,52,0)
+    D4FX EFGH 4 BRIGHT
+    Stop
+  }
+}
+actor Demon4FXCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    D4FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+Actor Demon4FXCrisis : Demon4FX
+{
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    D4FX AABB 2 Bright 
+	{
+     A_SpawnItemEx("Demon4FXCrisisParticle",0,0,0,0,0,1.28);
+	 A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
+	}
+    Loop
+  Death:
+    TNT1 A 0 Bright
+	{
+	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+	 {
+	  A_SetUserVar("user_ailmentmaxchance",4);
+	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (random(1,user_ailmentmaxchance) <= 3)
+	  {
+	   ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(280,420)*CallACS("CrisisMultiplier",5)) ); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	  }
+	 }
+	 return state("");
+	}
+  Death2:
+	TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+	TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+  	TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+    D4FX C 4 BRIGHT A_CustomMissile("PoisonVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
+    D4FX D 4 BRIGHT A_Explode(32*CallACS("CrisisMultiplier"),52,0)
+    D4FX EFGH 4 BRIGHT
     Stop
   }
 }
@@ -5875,13 +6565,12 @@ ACTOR BlackDemonTrail
   }
 }
 
-Actor PoisonVolcanoTBlast
+Actor PoisonVolcanoTBlast : AetheriusProjectileZSC
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
+  Damage (random(1,8))
   Radius 8
   Height 6
   Speed 20
-  Damage (random(1,8))
   +NODAMAGETHRUST
   Gravity 0.825
   PoisonDamage 5
@@ -5897,7 +6586,9 @@ Actor PoisonVolcanoTBlast
   States
   {
   Spawn:
-    BPBL AB 4 BRIGHT
+    BPBL AABB 2 BRIGHT
+	{
+	}
     Loop
   Death:
     TNT1 A 0 Bright
@@ -5912,6 +6603,51 @@ Actor PoisonVolcanoTBlast
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(35,53)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	  }
+	 }
+	 return state("");
+	}
+  Death2:
+    BPBL EDCDEFG 4 BRIGHT
+    Stop
+  }
+}
+actor PoisonVolcanoTBlastCrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    BPBL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+Actor PoisonVolcanoTBlastCrisis : PoisonVolcanoTBlast
+{
+  Damage ((random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    BPBL AABB 2 BRIGHT
+	{
+     A_SpawnItemEx("PoisonVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    TNT1 A 0 Bright
+	{
+	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+	 {
+	  A_SetUserVar("user_ailmentmaxchance",24);
+	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (random(1,user_ailmentmaxchance) <= 3)
+	  {
+	   ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(35,53)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
 	 }
 	 return state("");
@@ -5995,7 +6731,9 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_CustomMeleeAttack((Random(1, 8)*2));
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(3,4) * random(1,8));
 	}
 	Goto See
   Missile:
@@ -6017,7 +6755,9 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile("Demon4FX",62,0,0,0);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon4FX","Demon4FXCrisis",62,0,0,0);
 	}
     Goto See
 
@@ -6070,14 +6810,13 @@ actor FBlackChaosSerpentNew : BlackChaosSerpentNew
 }
 
 // Ethereal Serpent [Demon5]
-ACTOR Demon5FX1
+ACTOR Demon5FX1 : AetheriusProjectileZSC
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
+  Damage (5 * random(1,8))
   Speed 15
   FastSpeed 20
   Radius 10
   Height 6
-  Damage (random(1,8)*5)
   +NODAMAGETHRUST
   +HITMASTER
   //DamageType ManaDrain
@@ -6089,7 +6828,9 @@ ACTOR Demon5FX1
   States
   {
   Spawn:
-    D5FX ABCDEF 4 Bright
+    D5FX AABBCCDDEEFF 2 Bright
+	{
+	}
     Loop
   Death:
     TNT1 A 0 Bright
@@ -6103,27 +6844,89 @@ ACTOR Demon5FX1
 	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
-	   ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   A_SetUserVar("user_random",random(1,6));
+	        if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", random(7,9), 1, 0, 0); } // Drain 4-6% mana
+	   else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140)); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+       else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
+	   {
+	    ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140));
+        CallACS("ManaDrain", random(7,9), 1, 0, 0);
+	   }	   
 	  }
 	 }
 	 return state("");
 	}
   Death2:
-    D5FX GHIJ 4 Bright
+    D5FX G 4 Bright A_Explode(32,52,0)
+    D5FX HIJ 4 Bright
+    D5FX KL 3 Bright
+    Stop
+  }
+}
+actor Demon5FX1CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    D5FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR Demon5FX1Crisis : Demon5FX1
+{
+  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+    D5FX AABBCCDDEEFF 2 Bright
+	{
+     A_SpawnItemEx("Demon5FX1CrisisParticle",0,0,0,0,0,1.28);
+	}
+    Loop
+  Death:
+    TNT1 A 0 Bright
+	{
+	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+	 {
+	  A_SetUserVar("user_ailmentmaxchance",5);
+	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (random(1,user_ailmentmaxchance) <= 3)
+	  {
+	   A_SetUserVar("user_random",random(1,6));
+	        if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0); } // Drain 4-6% mana
+	   else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) ); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+       else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
+	   {
+	    ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) );
+        CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0);
+	   }	   
+	  }
+	 }
+	 return state("");
+	}
+  Death2:
+    D5FX G 4 Bright A_Explode(32,52,0)
+    D5FX HIJ 4 Bright
     D5FX KL 3 Bright
     Stop
   }
 }
 
-ACTOR Demon5Jet
+ACTOR Demon5Jet : AetheriusProjectileZSC
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
+  Damage (random(1,4))
   Radius 14
   Height 12
   Speed 16
-  Damage (random(1,4))
   PROJECTILE
-  +RIPPER
+  ProjectileKickback 0
+  // +RIPPER
   +BLOODLESSIMPACT
   +NODAMAGETHRUST
   +HITMASTER
@@ -6135,27 +6938,95 @@ ACTOR Demon5Jet
   States
   {
   Spawn:
-	D5JT ABC 4 BRIGHT
+	D5JT AABBCC 2 BRIGHT
+	{
+	 A_Weave(1, 2, 0.25, 0.5);
+	 A_FadeOut(0.034);
+	}
 	Loop
   Death:
     TNT1 A 0 Bright
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",25);
+	  A_SetUserVar("user_ailmentmaxchance",15);
 	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
 	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
 	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
-	   ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,105)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   A_SetUserVar("user_random",random(1,12));
+	        if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", random(1,2), 0, 0, 0); } // Drain 0-1 mana
+	   else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(5,10)); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+       else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
+	   {
+	    ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(10,20));
+        CallACS("ManaDrain", random(2,3), 0, 0, 0);
+	   }	   
+	   	   
 	  }
 	 }
 	 return state("");
 	}
   Death2:
-	D5JT DEFG 4 BRIGHT
+	D5JT DEFG 2 BRIGHT
+	Stop
+  }
+}
+actor Ghost2BallCrisisParticle : BaseCrisisParticle
+{
+ Alpha 0.334
+
+ States
+ {
+  Spawn:
+    D5JT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR Demon5JetCrisis : Demon5Jet
+{
+  Damage ((random(1,4)) * CallACS("CrisisMultiplier"))
+  States
+  {
+  Spawn:
+	D5JT AABBCC 2 BRIGHT
+	{
+	 A_Weave(1, 2, 0.25, 0.5);
+	 A_FadeOut(0.034);
+	}
+	Loop
+  Death:
+    TNT1 A 0 Bright
+	{
+	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+	 {
+	  A_SetUserVar("user_ailmentmaxchance",15);
+	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
+	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
+	  if (random(1,user_ailmentmaxchance) <= 3)
+	  {
+	   A_SetUserVar("user_random",random(1,12));
+	        if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana
+	   else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(5,10)*CallACS("CrisisMultiplier",5)) ); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+       else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
+	   {
+	    ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(10,20)*CallACS("CrisisMultiplier",5)) );
+        CallACS("ManaDrain", (random(2,3)*CallACS("CrisisMultiplier",2)) , 0, 0, 0);
+	   }	   
+	   	   
+	  }
+	 }
+	 return state("");
+	}
+  Death2:
+	D5JT DEFG 2 BRIGHT
 	Stop
   }
 }
@@ -6230,7 +7101,9 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_CustomMeleeAttack((Random(1, 8)*2));
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisMeleeAttack(random(4,5) * random(2,9));
 	}
 	Goto See
   Missile:
@@ -6248,23 +7121,46 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
-	DEM5 G 0 A_Jump(128,"Missile2")
+	DEM5 G 0 
+	{
+	 if (A_JumpIfCloser(512,"Missile2") && random (1,256) <= 208) 
+	 { 
+      user_shotsfired = 0;	  
+      user_shotsfiredmax = 10 + (random(1,256) & 2) + (user_monsterlevel/30) + (user_monsterlevel/60) + (user_monsterlevel/120);	 
+      A_LogInt(user_shotsfiredmax);
+	  return state("Missile2"); 
+	 }
+	 return state("");
+	}
     DEM5 G 5
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_CustomMissile ("Demon5FX1", 62, 0, -10);
-     A_CustomMissile ("Demon5FX1", 62, 0, 0);
-   	 A_CustomMissile ("Demon5FX1", 62, 0, 10);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -10);
+     A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 0);
+   	 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 10);
+	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120)
+	 {
+	  A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -20);
+      A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 20);
+	 }
 	}
 	Goto See
   Missile2:
-	DEM5 GGGGGGGGGG 2 
+	DEM5 G 2 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-	 A_CustomMissile("Demon5Jet", 62, 0);
+
+	 A_MonsterCrisisCheck;
+	 A_CrisisSpawnProjectile("Demon5Jet", "Demon5JetCrisis", 62, 0);
+
+	 user_shotsfired += 1;
+	 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+	 return state("");
 	}
-	Goto See
+	loop
 
   Pain:
     DEM5 E 4
@@ -6603,7 +7499,7 @@ actor IceGuyFXCrisisParticle : BaseCrisisParticle
 }
 ACTOR IceGuyFXCrisis : IceGuyFXNew
 {
-  Damage (((1 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier")))
+  Damage (((1 * random(1,8)) * CallACS("CrisisMultiplier")))
   States
   {
   Spawn:
@@ -6625,7 +7521,7 @@ ACTOR IceGuyFXCrisis : IceGuyFXNew
 	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
-	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,(random(70,105)*ACS_NamedExecuteWithResult("CrisisMultiplier"))); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(70,105)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
 	 }
 	 return state("");
@@ -6696,7 +7592,7 @@ actor IceGuyFX2CrisisParticle : BaseCrisisParticle
 }
 ACTOR IceGuyFX2Crisis : IceGuyFX2New
 {
-  Damage (((1 * random(1,8)) * ACS_NamedExecuteWithResult("CrisisMultiplier")))
+  Damage (((1 * random(1,8)) * CallACS("CrisisMultiplier")))
   States
   {
   Spawn:
@@ -6717,7 +7613,7 @@ ACTOR IceGuyFX2Crisis : IceGuyFX2New
 	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0) { return state("Death2"); }
 	  if (random(1,user_ailmentmaxchance) <= 3)
 	  {
-	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,(random(12,17)*ACS_NamedExecuteWithResult("CrisisMultiplier"))); // Deceleratle for 0.3-0.48 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(12,17)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 0.3-0.48 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
 	 }
 	 return state("");
@@ -6995,6 +7891,7 @@ actor FHeresiarch : HeresiarchNew
  Species "FriendlyMonsters"
  dropitem NoItemSpawn 1
 }
+
 Actor SorcBall1New : SorcBall1 replaces SorcBall1
 {
 	States
@@ -7085,6 +7982,7 @@ ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
     Stop
   }
 }
+
 ACTOR KoraxNew : KoraxBase replaces Korax
 {
   Health 80000
@@ -7960,238 +8858,6 @@ actor BishopSpawner : CustomInventory replaces Bishop
    BISH A 0 A_SpawnItemEx("BishopNew",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG | SXF_NOCHECKPOSITION | SXF_TRANSFERSPECIAL | SXF_CLEARCALLERSPECIAL,0,tid)
    stop
  }
-}
-
-ACTOR IceStalker : StalkerNew
-{
-  Health 180
-  Speed 10
-  Monster
-  Meleerange 72
-  damagetype Ice
-  DamageFactor "Ice", 0.05
-  DamageFactor "Fire", 2.5
-  -SHOOTABLE
-  +NOBLOOD
-  +CANTLEAVEFLOORPIC +NONSHOOTABLE
-  +STAYMORPHED +DONTBLAST +NOTELEOTHER
-  +INVISIBLE
-  +NOICEDEATH
-  +NODAMAGETHRUST
-  Obituary "%o caught a chill from an ice stalker."
-  HitObituary "%o caught a chill from an ice stalker."
-  Tag "Ice Stalker"
-  States
-  {
-  Spawn:
-    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-	ISPT H 10 A_Look
-	goto Spawn+1
-  See:
-    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    ISPT HH 1 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
-	}
-    ISPT H 2
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-	 A_SerpentHumpDecide;
-	}
-	Loop
-  Pain:
-	ISPT L 5
-	ISPT L 5 A_Pain
-	goto Dive
-  Pain.Fist:
-    ISPT L 5
-    ISPT L 5 A_Pain
-    ISPT L 5
-	goto Dive
-  Pain.Kick:
-    ISPT L 5
-    ISPT L 5 A_Pain
-    ISPT LLLLL 5
-	goto Dive
-  Dive:
-	ISDV ABC 4
-	ISDV D 4 A_UnSetShootable
-	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
-	ISDV F 3
-	ISDV GH 4
-	ISDV I 3
-	ISDV J 3 A_SerpentHide
-	Goto See
-  Melee:
-	ISPT A 1 A_UnHideThing
-	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
-	ISPT B 3 A_SetShootable
-	ISPT C 3
-	ISPT D 4 A_SerpentCheckForAttack
-	Goto Dive
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-	ISPT [ 1 A_IceGuyDie
-	Stop
-  XDeath:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-	ISPT [ 1 A_IceGuyDie
-	Stop
-  Ice:
-	Stop
-  Walk:
-	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
-	ISPT J 5 A_SerpentCheckForAttack
-	Goto Dive
-  Hump:
-	ISPT H 3 A_SerpentUnHide
-	ISPT EFGEF 3 A_SerpentRaiseHump
-	ISPT GEF 3
-	ISPT GEFGE 3 A_SerpentLowerHump
-	ISPT F 3 A_SerpentHide
-	Goto See
-  Attack:
-	ISPT K 6 A_FaceTarget
-	ISPT L 5 A_SerpentChooseAttack
-	Goto MeleeAttack
-  MeleeAttack:
-	ISPT N 5 
-	{
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random(15,30));
-	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
-	}
-	Goto Dive
-  }
-}
-
-ACTOR IceStalkerLeader : StalkerLeaderNew
-{
-  Health 240
-  Speed 10
-  Monster
-  Meleerange 72
-  damagetype ice
-  DamageFactor "Ice", 0.05
-  DamageFactor "Fire", 2.5
-  -SHOOTABLE
-  +NOBLOOD
-  +CANTLEAVEFLOORPIC +NONSHOOTABLE
-  +STAYMORPHED +DONTBLAST +NOTELEOTHER
-  +INVISIBLE
-  +NOICEDEATH
-  +NODAMAGETHRUST
-  Obituary "%o caught a chill from an ice stalker."
-  HitObituary "%o caught a chill from an ice stalker."
-  Tag "Ice Stalker"
-  Translation "51:66=51:66", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32", "67:80=67:74"  // Neutralizes the Translation from the Stalker Leader [for now]
-
-  States
-  {
-  Spawn:
-    ISPT A 0 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-	ISPT H 10 A_Look
-	goto Spawn+1
-  See:
-    ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    ISPT HH 1 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
-	}
-    ISPT H 2
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-	 A_SerpentHumpDecide;
-	}
-	Loop
-  Pain:
-	ISPT L 5
-	ISPT L 5 A_Pain
-	goto Dive
-  Pain.Fist:
-    ISPT L 5
-    ISPT L 5 A_Pain
-    ISPT L 5
-	goto Dive
-  Pain.Kick:
-    ISPT L 5
-    ISPT L 5 A_Pain
-    ISPT LLLLL 5
-	goto Dive
-  Dive:
-	ISDV ABC 4
-	ISDV D 4 A_UnSetShootable
-	ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
-	ISDV F 3
-	ISDV GH 4
-	ISDV I 3
-	ISDV J 3 A_SerpentHide
-	Goto See
-  Melee:
-	ISPT A 1 A_UnHideThing
-	ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
-	ISPT B 3 A_SetShootable
-	ISPT C 3
-	ISPT D 4 A_SerpentCheckForAttack
-	Goto Dive
-  Missile:
-	ISPT N 5 
-	{
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
-	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
-	}
-	Goto Dive
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-	ISPT [ 1 A_IceGuyDie
-	Stop
-  XDeath:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-	ISPT [ 1 A_IceGuyDie
-	Stop
-  Ice:
-	STOP
-  Walk:
-	ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
-	ISPT J 5 A_SerpentCheckForAttack
-	Goto Dive
-  Hump:
-	ISPT H 3 A_SerpentUnHide
-	ISPT EFGEF 3 A_SerpentRaiseHump
-	ISPT GEF 3
-	ISPT GEFGE 3 A_SerpentLowerHump
-	ISPT F 3 A_SerpentHide
-	Goto See
-  Attack:
-	ISPT K 6 A_FaceTarget
-	ISPT L 5 A_SerpentChooseAttack
-	Goto MeleeAttack
-  MeleeAttack:
-	ISPT N 5 
-	{
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random(15,30));
-	 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
-	}
-	Goto Dive
-  }
 }
 
 actor StalkerSpawner : CustomInventory replaces Serpent

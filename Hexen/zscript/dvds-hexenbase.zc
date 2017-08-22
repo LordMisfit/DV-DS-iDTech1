@@ -278,3 +278,5 @@ class KoraxBase : AetheriusBossZSC
 		ACS_Execute(250 + (random[KoraxCommand]()%numcommands), 0);
 	}
 }
+
+//#include "zscript/dvds-hexen-heresiarch.zc"

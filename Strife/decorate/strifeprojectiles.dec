@@ -47,7 +47,7 @@ ACTOR StrifeGenBulletTracer2 : StrifeGenBulletTracer
 
 ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
 {
-   Damage ((Random(1,5) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(1,5) * 3) * CallACS("CrisisMultiplier"))
    States
    {
    Spawn:
@@ -65,7 +65,7 @@ ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
 
 ACTOR StrifeGenBulletTracerCrisis2 : StrifeGenBulletTracerCrisis
 {
-   Damage ((Random(3,15) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(3,15) * 3) * CallACS("CrisisMultiplier"))
 }
 
 actor StrifeGenBulletTracerTrail
@@ -138,7 +138,7 @@ ACTOR StrifeReaverBulletTracer2 : StrifeReaverBulletTracer
 
 ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
 {
-   Damage ((Random(1,8) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(1,8) * 3) * CallACS("CrisisMultiplier"))
    States
    {
    Spawn:
@@ -156,7 +156,7 @@ ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
 
 ACTOR StrifeReaverBulletTracerCrisis2 : StrifeReaverBulletTracerCrisis
 {
-   Damage ((Random(3,24) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(3,24) * 3) * CallACS("CrisisMultiplier"))
 }
    
 actor StrifeReaverBulletTracerTrail
@@ -229,7 +229,7 @@ ACTOR StrifeMaulerTracer2 : StrifeMaulerTracer
    
 ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 {
-   Damage ((Random(1,4) * 2) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(1,4) * 2) * CallACS("CrisisMultiplier"))
    States
    {
    Spawn:
@@ -247,7 +247,7 @@ ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 
 ACTOR StrifeMaulerTracerCrisis2 : StrifeMaulerTracerCrisis
 {
-   Damage ((Random(3,12) * 2) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(3,12) * 2) * CallACS("CrisisMultiplier"))
 }
 
 ACTOR StrifeMaulerTracerRetail : StrifeMaulerTracer
@@ -262,12 +262,12 @@ ACTOR StrifeMaulerTracerRetail2 : StrifeMaulerTracerRetail
 
 ACTOR StrifeMaulerTracerRetailCrisis : StrifeMaulerTracer
 {
-   Damage ((Random(1,5) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(1,5) * 3) * CallACS("CrisisMultiplier"))
 }
 
 ACTOR StrifeMaulerTracerRetailCrisis2 : StrifeMaulerTracerRetailCrisis
 {
-   Damage ((Random(3,15) * 3) * ACS_NamedExecuteWithResult("CrisisMultiplier"))
+   Damage ((Random(3,15) * 3) * CallACS("CrisisMultiplier"))
 }
 
 actor StrifeMaulerTracerTrail

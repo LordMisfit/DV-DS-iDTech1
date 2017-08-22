@@ -296,7 +296,7 @@ pointlight OrangeSmallPoint3
 
 
 
-Object WraithFX12
+Object BormerethFX1
 {
 	Frame WRBLA { Light OrangeMediumFlicker3 }
 	Frame WRBLB { Light OrangeMediumFlicker3 }

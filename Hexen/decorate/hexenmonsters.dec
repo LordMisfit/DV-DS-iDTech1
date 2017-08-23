@@ -7133,7 +7133,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 	 { 
       user_shotsfired = 0;	  
       user_shotsfiredmax = 10 + (random(1,256) & 2) + (user_monsterlevel/30) + (user_monsterlevel/60) + (user_monsterlevel/120);	 
-      A_LogInt(user_shotsfiredmax);
+      //A_LogInt(user_shotsfiredmax);
 	  return state("Missile2"); 
 	 }
 	 return state("");
@@ -7737,176 +7737,6 @@ actor FIceGuy : IceGuyNew
  dropitem NoItemSpawn 1
 }
 
-// TODO: Redo the Heresiarch code :V
-ACTOR HeresiarchNew : Heresiarch replaces Heresiarch
-{
-  var int user_theta; var int user_dormant; var int user_isstealth; var int user_basespeed; var int user_baseattack; var int user_basedefense; var int user_basemass; var int user_monsterlevel; var int user_legendaryevolved; var int user_extraevolvechance; var int user_extrastealthchance;
-  var int user_MaxHP; var int user_HPLowRange; var int user_HPCritRange; var int user_HPBuffRange; var int user_HPXDeathRange;
-  var int user_checkmapskill; var int user_ressurrectstr; var int user_resurrectedtimes; var int user_canusecrisisatk; // For checking if a monster has been given Skill/Map inventory items yet.
-
-  Health 5000
-  Painchance 10
-  Painchance "Fist", 15 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 25 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "GravityHP", 16
-  Painchance "GravityMP", 16
-  Painchance "GravityHPMP", 16 
-  DamageFactor "Normal", 0.833
-  DamageFactor "Crush", 2.4
-  Speed 16
-  Radius 40
-  Height 110
-  Mass 500
-  Damage 9
-  Monster
-  +FLOORCLIP
-  +BOSS
-  +DONTMORPH
-  +NOTARGET
-  +NOICEDEATH
-  +DEFLECT
-  +NOBLOOD
-  +AVOIDMELEE
-  SeeSound "SorcererSight"
-  PainSound "SorcererPain"
-  DeathSound "SorcererDeathScream"
-  ActiveSound "SorcererActive"
-  Obituary "$OB_HERESIARCH" // "%o had %p bones rolled by the Heresiarch."
-
-  States
-  {
-  Pain.Charm: Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See
-  Spawn:
-    SORC A 3 NoDelay ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,0)
-    SORC A 2 A_SorcSpinBalls
-  Idle:
-    SORC A 10 A_Look
-    Wait
-  See:
-    SORC A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    SORC ABCD 5
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
-	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-	 A_Chase;
-	}
-    Loop
-  Pain:
-    SORC G 8
-    SORC G 8 A_Pain
-    Goto See
-  Pain.Fist:
-    SORC G 8
-    SORC G 8 A_Pain
-    SORC G 8
-    Goto See
-  Pain.Kick:
-    SORC G 8
-    SORC G 8 A_Pain
-    SORC GG 8
-    Goto See
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    SORC F 6 Bright
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    SORC F 6 Bright 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_SpeedBalls;
-	}
-    SORC F 6 Bright
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    Wait
-  Attack1:
-    SORC E 6 Bright
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	}
-    SORC E 6 Bright 
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_SpawnFizzle;
-	}
-    SORC E 5 Bright
-	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(4); }
-	 A_FaceTarget;
-	}
-    Goto Attack1+1
-  Attack2:
-    SORC E 2 Bright
-	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-    }
-    SORC E 2 Bright 
-	{
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-	 A_SorcBossAttack;
-    }
-    Goto See
-
-  Pain.GravityHP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,0,0,0)
-    Goto See
-  Pain.GravityMP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,1,0,0)
-    Goto See
-  Pain.GravityHPMP:
-    TNT1 A 0 ACS_NamedExecuteAlways("Hand-GravityAttack",0,2,0,0)
-    Goto See
-  Pain.Sceptre:
-    TNT1 A 0 A_CheckFlag("FRIENDLY",2,AAPTR_DEFAULT)
-    TNT1 A 0 ACS_NamedExecuteAlways("AddSceptreEXP",0,0,0,10) // Increase EXP for Sceptre [1+(HP/300)]
-    TNT1 A 0 
-    Goto Pain
-  Death.Sceptre:
-    TNT1 A 0 A_CheckFlag("FRIENDLY",2,AAPTR_DEFAULT)
-    TNT1 A 0 ACS_NamedExecuteAlways("AddSceptreEXP",0,0,0,1) // Increase EXP for Sceptre [1+(HP/300)]
-    TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
-    Goto Death
-  Pain.Gauntlets:
-    TNT1 A 0 ACS_NamedExecuteAlways("SauronGauntletsHit",0,0,1,0) // Give some life when hurting a monster [1+(HP/500)]
-    Goto Pain
-  Death.Gauntlets:
-    TNT1 A 0 ACS_NamedExecuteAlways("SauronGauntletsHit",0,0,2,0) // Give some life when killing a monster [3+(HP/100)]
-    TNT1 A 0 A_JumpIfHealthLower(user_HPXDeathRange,"XDeath")
-    Goto Death
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 ACS_NamedExecuteAlways("MonsterStatsHP_ATK_DEF_SPD",0,1)
-    SORC H 5 Bright
-    SORC I 5 Bright A_FaceTarget
-    SORC J 5 Bright A_Scream
-    SORC KLMNOPQRST 5 Bright
-    SORC U 5 Bright A_NoBlocking
-    SORC VWXY 5 Bright
-    SORC Z -1 Bright
-    Stop
-  }
-}
 actor FHeresiarch : HeresiarchNew
 {
  -COUNTKILL 
@@ -7953,22 +7783,8 @@ Actor SorcBall3New : SorcBall3 replaces SorcBall3
 	}
 }
 
-actor SorcFX1CrisisParticle : BaseCrisisParticle
-{
- States
- {
-  Spawn:
-    SBS1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
-	goto Idle
-  Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    "####" BCD 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    loop
- }
-}
 ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
 {
-  var int user_crisisprojectile;
   Speed 7
   Radius 5
   Height 5
@@ -7988,17 +7804,67 @@ ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
   States
   {
   Spawn:
-    SBS1 A 0 NoDelay
-	{
-	}
-  Idle:
     SBS1 A 2 Bright
     SBS1 BCD 3 Bright A_SorcFX1Seek
     Loop
   Death:
     FHFX S 2 Bright 
 	{
-	 A_Explode(30, 128);
+	 A_Explode(30, 128, 0);
+	 //A_LogInt(30);
+	}
+    FHFX SS 6 Bright
+    Stop
+  }
+}
+actor SorcFX1CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    SBS1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" BCD 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR SorcFX1Crisis : SorcFX1New
+{
+  Speed 7
+  Radius 5
+  Height 5
+  Projectile
+  -ACTIVATEIMPACT
+  -ACTIVATEPCROSS
+  -NOGRAVITY
+  +FULLVOLDEATH
+  +CANBOUNCEWATER
+  +NOWALLBOUNCESND
+  BounceFactor 1.0
+  DamageType "Magic"
+  +HEXENBOUNCE
+  SeeSound "SorcererBallBounce"
+  DeathSound "SorcererHeadScream"
+
+  States
+  {
+  Spawn:
+    SBS1 A 2 Bright
+	{
+     A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
+	}
+    SBS1 BCD 3 Bright 
+	{
+     A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
+	 A_SorcFX1Seek;
+	}
+    Loop
+  Death:
+    FHFX S 2 Bright 
+	{
+	 A_Explode(30*CallACS("CrisisMultiplier"), 128, 0);
 	 //A_LogInt(30);
 	}
     FHFX SS 6 Bright
@@ -8006,21 +7872,8 @@ ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
   }
 }
 
-actor SorcFX4CrisisParticle : BaseCrisisParticle
-{
- States
- {
-  Spawn:
-    SBS4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
-	goto Idle
-  Idle:
-    "####" ABC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    loop
- }
-}
 ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
 {
-  var int user_crisisprojectile;
   Speed 12
   Radius 10
   Height 10
@@ -8033,10 +7886,6 @@ ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
   States
   {
   Spawn:
-    SBS1 A 0 NoDelay
-	{
-	}
-  Idle:
     SBS4 ABC 2 Bright 
 	{
 	 A_SorcFX4Check;
@@ -8046,7 +7895,50 @@ ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
     SBS4 D 2 Bright
     SBS4 E 2 Bright
 	{
-	 A_Explode(20, 128);
+	 A_Explode(20, 128, 0);
+	 //A_LogInt(20);
+	}
+    SBS4 FGH 2 Bright
+    Stop
+  }
+}
+actor SorcFX4CrisisParticle : BaseCrisisParticle
+{
+ States
+ {
+  Spawn:
+    SBS4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+	goto Idle
+  Idle:
+    "####" ABC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    loop
+ }
+}
+ACTOR SorcFX4Crisis : SorcFX4New
+{
+  Speed 12
+  Radius 10
+  Height 10
+  Projectile
+  DamageType "Magic"
+  -ACTIVATEIMPACT
+  -ACTIVATEPCROSS
+  DeathSound "SorcererBallExplode"
+
+  States
+  {
+  Spawn:
+    SBS4 ABC 2 Bright 
+	{
+     A_SpawnItemEx("SorcFX4CrisisParticle",0,0,0,0,0,1.28);
+	 A_SorcFX4Check;
+	}
+    Loop
+  Death:
+    SBS4 D 2 Bright
+    SBS4 E 2 Bright
+	{
+	 A_Explode(20*CallACS("CrisisMultiplier"), 128, 0);
 	 //A_LogInt(20);
 	}
     SBS4 FGH 2 Bright

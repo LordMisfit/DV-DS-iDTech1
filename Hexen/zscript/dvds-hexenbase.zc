@@ -345,4 +345,4 @@ class KoraxBase : AetheriusBossZSC
 	}
 }
 
-//#include "zscript/dvds-hexen-heresiarch.zc"
+#include "zscript/dvds-hexen-heresiarch.zc"

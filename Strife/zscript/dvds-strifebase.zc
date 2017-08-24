@@ -10,7 +10,27 @@ class SpectralMonsterBase : AetheriusBossZSC
 	
 	override void Touch (Actor toucher)
 	{
-	    toucher.DamageMobj (self, self, 5, 'Melee');
+	    int dmg = (random(1,256) & 9) * 5;
+	    if (CheckClass("AlienSpectre1New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 5;
+	    if (CheckClass("AlienSpectre2New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * random(5,6);
+	    if (CheckClass("AlienSpectre3New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 6;
+	    if (CheckClass("AlienSpectre4New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * random(6,7);
+	    if (CheckClass("AlienSpectre5New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 7;
+	    if (CheckClass("EntityBossNew", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 10) * 7;
+ 	    if (CheckClass("EntitySecondNew", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 6;
+	    if (CheckClass("EntityAscended", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 11) * 8;
+		dmg /= 5;
+		A_MonsterCrisisCheck();
+		if(user_canusecrisisatk == 1) 
+		{
+ 		 dmg *= CallACS("CrisisMultiplier");
+		 if (self.health > 0) A_PlayCrisisAtkSound(); 
+		}
+
+		if (self.health > 0)
+		{
+	     toucher.DamageMobj (self, self, dmg, 'SpectralTouch');
+		}
 	}
 	
 
@@ -52,12 +72,22 @@ class SpectralMonsterBase : AetheriusBossZSC
 		}
 	}
 
-	void A_Spectre3Attack ()
+	void A_Spectre3Attack (string centerball = "SpectralLightningV2Monster", string centerballcrisis = "SpectralLightningV2MonsterCrisis", string subball = "SpectralLightningBall2Monster", string subballcrisis = "SpectralLightningBall2MonsterCrisis")
 	{
+		string atktype1 = centerball;
+		string atktype2 = subball;
+		A_MonsterCrisisCheck();
+		if(user_canusecrisisatk == 1) 
+		{
+		 atktype1 = centerballcrisis;
+		 atktype2 = subballcrisis;
+		 A_PlayCrisisAtkSound(); 
+		}
+
 		if (target == null)
 			return;
 
-		Actor foo = Spawn("SpectralLightningV2", Pos + (0, 0, 32), ALLOW_REPLACE);
+		Actor foo = Spawn(atktype1, Pos + (0, 0, 32), ALLOW_REPLACE);
 		if (foo != null)
 		{
 			foo.Vel.Z = -12;
@@ -70,31 +100,11 @@ class SpectralMonsterBase : AetheriusBossZSC
 		for (int i = 0; i < 20; ++i)
 		{
 			Angle += 9.;
-			SpawnSubMissile ("SpectralLightningBall2", self);
+			SpawnSubMissile (atktype2, self);
 		}
 		Angle -= 90.;
 	}
 	
-	//============================================================================
-	//
-	// A_SpotLightning
-	//
-	//============================================================================
-
-	void A_SpotLightning()
-	{
-		if (target == null) return;
-
-		Actor spot = Spawn("SpectralLightningSpot", (target.pos.xy, target.floorz), ALLOW_REPLACE);
-		if (spot != null)
-		{
-			spot.threshold = 25;
-			spot.target = self;
-			spot.FriendPlayer = 0;
-			spot.tracer = target;
-		}
-	}
-
 	// Spectres
 	void A_AlienSpectreDeath ()
 	{
@@ -224,23 +234,26 @@ class SpectralMonsterBase : AetheriusBossZSC
 		switch (random[Entity]() % 5)
 		{
 		case 0:
-			A_SpotLightning();
+			A_SpotLightning("SpectralLightningSpotNew","SpectralLightningSpotCrisis");
 			break;
 
 		case 2:
-			A_SpectralMissile ("SpectralLightningH3");
+			A_MonsterCrisisCheck();
+			A_CrisisSpawnProjectile("SpectralLightningH3Monster", "SpectralLightningH3MonsterCrisis", 32, 0);
 			break;
 
 		case 3:
-			A_Spectre3Attack();
+			A_Spectre3Attack("SpectralLightningV2Monster","SpectralLightningV2MonsterCrisis","SpectralLightningBall2Monster","SpectralLightningBall2MonsterCrisis");
 			break;
 
 		case 4:
-			A_SpectralMissile ("SpectralLightningBigV2");
+			A_MonsterCrisisCheck();
+			A_CrisisSpawnProjectile("SpectralLightningBigV2Monster", "SpectralLightningBigV2MonsterCrisis", 32, 0);
 			break;
 
 		default:
-			A_SpectralMissile ("SpectralLightningBigBall2");
+			A_MonsterCrisisCheck();
+			A_CrisisSpawnProjectile("SpectralLightningBigBall2New", "SpectralLightningBigBall2Crisis", 32, 0);
 			break;
 		}
 	}

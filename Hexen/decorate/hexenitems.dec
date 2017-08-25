@@ -802,9 +802,8 @@ Actor Pottery3New : Pottery3 replaces Pottery3
  }
 }
 
-Actor DartNew : Dart replaces Dart
+Actor DartNew : AetheriusEffectProjectile replaces Dart
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
   Speed 6
   Radius 8
   Height 4
@@ -814,7 +813,6 @@ Actor DartNew : Dart replaces Dart
   +DROPOFF
   +MISSILE
   +NOTELEPORT
-  +HITMASTER
   States
   {
   Spawn:
@@ -843,10 +841,16 @@ Actor DartNew : Dart replaces Dart
   }
 }
 
-ACTOR IceShardNew : IceShard replaces IceShard
+ACTOR IceShardNew : AetheriusEffectProjectile replaces IceShard
 {
-  var int user_random; var int user_ailment1; var int user_ailmentmaxchance;
-  +HITMASTER
+  Speed 25
+  Radius 13
+  Height 8
+  Damage 1
+  DamageType "Ice"
+  Projectile
+  DeathSound "MageShardsExplode"
+  Obituary "$OB_MPMWEAPFROST"
   States
   {
   Spawn:

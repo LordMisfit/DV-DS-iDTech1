@@ -332,7 +332,10 @@ class KoraxBase : AetheriusBossZSC
 		Vector3 pos = Vec3Angle(KORAX_COMMAND_OFFSET, ang, KORAX_COMMAND_HEIGHT);
 		Spawn("KoraxBolt", pos, ALLOW_REPLACE);
 
-		if (health <= (SpawnHealth() >> 1))
+		int commandhealth;
+		if (User_MaxHP <= 0) commandhealth = SpawnHealth() >> 1; else commandhealth = User_MaxHP >> 1;
+
+		if (health <= commandhealth)
 		{
 			numcommands = 5;
 		}

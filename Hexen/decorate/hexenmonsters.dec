@@ -8078,7 +8078,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 	{
 	 user_koraxrepeatchance = 32 + (user_monsterlevel/5);
 	 if (user_koraxrepeatchance >= 160) { user_koraxrepeatchance = 160; }
-	 A_LogInt(user_koraxrepeatchance);
+	 //A_LogInt(user_koraxrepeatchance);
 
 	 if (random(1,256) <= user_koraxrepeatchance) { return state("AttackLoop"); }
 	 return state("");

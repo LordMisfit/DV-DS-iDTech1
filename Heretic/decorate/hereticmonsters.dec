@@ -1647,7 +1647,7 @@ Actor IceGolem : AetheriusMonsterZSC
      A_ChangeFlag("CANTSEEK",0);
 	 A_ChangeFlag("NOPAIN",0);
      A_ChangeFlag("NOTHRUST",0);
-     A_TakeInventory("IceGolemArmor",9999);
+     A_TakeInventory("IceGolemArmor",0x7FFFFFFF);
 	}
     Goto See
   Pain:
@@ -3977,6 +3977,7 @@ ACTOR WhirlwindNew : AetheriusWhirlwind replaces Whirlwind
   Radius 16
   Height 74
   Speed 10
+  Accuracy 8 // Sets how long [tics] to wait between hits when the tornado is touching a target
   Projectile
   -ACTIVATEIMPACT
   -ACTIVATEMCROSS
@@ -4020,7 +4021,8 @@ actor WhirlwindCrisisParticle : BaseCrisisParticle
 ACTOR WhirlwindCrisis : WhirlwindNew 
 {
   Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
-  Stamina 30
+  Stamina 30 // Set this to 30 to allow Crisis Checking
+  Accuracy 8 // Sets how long [tics] to wait between hits when the tornado is touching a target
   States
   {
   Spawn:
@@ -5394,7 +5396,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
     CLNK A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CLNK ABCD 3
 	{
-	 if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); }
+	 if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); }
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
@@ -5481,7 +5483,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(4); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(5); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); }
+     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); }
 
      A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(6,18), "clink/attack", "clink/attack", "Melee", 1);
@@ -5492,7 +5494,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
     TNT1 A 0 
 	{
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
-     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); }
+     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); }
     }
     CLNK E 5 
 	{
@@ -5517,16 +5519,16 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 	}
     Goto See
   Pain:
-    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); } }
+    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); } }
     CLNK H 3 A_Pain
     Goto See
   Pain.Fist:
-    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); } }
+    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); } }
     CLNK H 3 A_Pain
     CLNK HH 3 
     Goto See
   Pain.Kick:
-    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); } }
+    CLNK H 3 { if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); } }
     CLNK H 3 A_Pain
     CLNK HHHH 3 
     Goto See
@@ -5534,7 +5536,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
     CLNK IJ 6
 	{
-     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",9999); }
+     if (CountInv("ClinkLungeAttackStatus",AAPTR_DEFAULT) > 0) { A_TakeInventory("ClinkLungeAttackStatus",0x7FFFFFFF); }
 	}
     CLNK K 5 A_Scream
     CLNK L 5 A_NoBlocking
@@ -6063,7 +6065,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
     MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MNTR ABCD 5
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
@@ -6078,7 +6080,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
     MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MNTR ABCD 5 
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
@@ -6092,7 +6094,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
   Melee:
     TNT1 A 0 
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 	}
     MNTR V 10 
@@ -6122,7 +6124,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
   Missile:
     TNT1 A 0 
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 	}
     MNTR V 10
@@ -6150,7 +6152,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
   Hammer:
     TNT1 A 0 
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 	}
     MNTR V 10 
@@ -6180,7 +6182,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
   HammerLoop:
     TNT1 A 0 
 	{
-     A_TakeInventory("MaulotaurChargeDefense",9999);
+     A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 	}
     MNTR X 12

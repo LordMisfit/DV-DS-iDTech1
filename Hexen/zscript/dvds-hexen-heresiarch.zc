@@ -67,7 +67,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 	States
 	{
 	Spawn:
-		SORC A 3 NoDelay; //A_AetheriusStats(0);
+		SORC A 3 NoDelay;
 		SORC A 0
 		{
 		 HPLowRange = user_HPLowRange;
@@ -227,7 +227,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		TNT1 A 0 
 		{
 		 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-		 //A_AetheriusStats(1);
 		 A_ShieldCheck();
 		}
 		SORC H 5 Bright

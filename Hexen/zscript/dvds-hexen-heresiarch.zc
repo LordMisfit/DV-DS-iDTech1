@@ -46,7 +46,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		Speed 16;
 		Radius 40;
 		Height 110;
-		Mass 500;
+		Mass 5000;
 		Damage 9;
 		Monster;
 		+FLOORCLIP
@@ -67,7 +67,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 	States
 	{
 	Spawn:
-		SORC A 3 NoDelay A_AetheriusStats(0);
+		SORC A 3 NoDelay; //A_AetheriusStats(0);
 		SORC A 0
 		{
 		 HPLowRange = user_HPLowRange;
@@ -227,7 +227,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		TNT1 A 0 
 		{
 		 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-		 A_AetheriusStats(1);
+		 //A_AetheriusStats(1);
 		 A_ShieldCheck();
 		}
 		SORC H 5 Bright
@@ -613,8 +613,11 @@ class SorcBallBase : AetheriusProjectileZSC
 	    // Heresiarch's Purple Fireballs
 		string basemissile4 = "SorcFX4New";
 
+		let parentHeresiarch = HeresiarchNew(parent);
+
 		int canusecrisisatk = 0;
-		if(parent.health <= parent.Accuracy) { if(parent.health <= parent.Stamina) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
+		A_LogInt(parentHeresiarch.health);
+		if(parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
 		if(GetCVar("dvds_monstercrisisattacks") == 0) { canusecrisisatk = 0; }
 		if(canusecrisisatk == 1) 
 		{
@@ -780,8 +783,11 @@ class SorcBall1Base : SorcBallBase
 
 	    // Heresiarch's Bouncing Lavaballs
 		string basemissile1 = "SorcFX1New";
+
+		let parentHeresiarch = HeresiarchNew(parent);
 		int canusecrisisatk = 0;
-		if(parent.health <= parent.Accuracy) { if(parent.health <= parent.Stamina) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
+		A_LogInt(parentHeresiarch.health);
+		if(parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
 		if(GetCVar("dvds_monstercrisisattacks") == 0) { canusecrisisatk = 0; }
 		if(canusecrisisatk == 1) 
 		{

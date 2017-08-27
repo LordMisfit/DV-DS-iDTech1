@@ -61,7 +61,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
   States
   {
   Spawn:
-    PEAS A 0 NoDelay A_AetheriusStats(0)
+    PEAS A 0 NoDelay //A_AetheriusStats(0)
     PEAS A 10 A_Look2
     goto Spawn+1
   See:
@@ -136,7 +136,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
     Goto Wound+1
   Death:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     PEAS G 5
     PEAS H 5 A_Scream
     PEAS I 6
@@ -150,7 +150,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
     Stop
   XDeath:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     GIBS M 5 A_TossGib
     GIBS N 5 A_XScream
     GIBS O 5 A_NoBlocking
@@ -158,7 +158,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
     Goto Death+9
   Burn:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
     BURN B 3 Bright A_DropFire
     BURN C 3 Bright A_Wander
@@ -174,7 +174,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
     Stop
   Disintegrate:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
     DISR BC 5
     DISR D 5 A_NoBlocking
@@ -348,7 +348,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
   States
   {
   Spawn:
-    BEGR A 0 NoDelay A_AetheriusStats(0)
+    BEGR A 0 NoDelay //A_AetheriusStats(0)
     BEGR A 10 A_Look
     goto Spawn+1
   See:
@@ -403,7 +403,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
     Goto Melee
   Death:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BEGR F 4
     BEGR G 4 A_Scream
     BEGR H 4
@@ -413,7 +413,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
     Stop
   XDeath:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BEGR F 5 A_TossGib
     GIBS M 5 A_TossGib
     GIBS N 5 A_XScream
@@ -424,7 +424,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
     Stop
   Burn:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
     BURN B 3 Bright A_DropFire
     BURN C 3 Bright A_Wander
@@ -440,7 +440,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
     Stop
   Disintegrate:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
     DISR BC 5
     DISR D 5 A_NoBlocking
@@ -589,22 +589,22 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
   States
   {
   Spawn:
-    HMN1 P 0 NoDelay A_AetheriusStats(0)
+    HMN1 P 0 NoDelay //A_AetheriusStats(0)
     HMN1 P 5 A_Look2
     goto Spawn+1
-    HMN1 Q 0 A_AetheriusStats(0)
+    HMN1 Q 0 //A_AetheriusStats(0)
     HMN1 Q 8
     goto Spawn+1
-    HMN1 R 0 A_AetheriusStats(0)
+    HMN1 R 0 //A_AetheriusStats(0)
     HMN1 R 8
     goto Spawn+1
-    HMN1 A 0 A_AetheriusStats(0)
+    HMN1 A 0 //A_AetheriusStats(0)
     HMN1 ABCDABCD 6 A_Wander
     goto Spawn+1
   See:
     HMN1 A 0 
 	{
-	 if (CountInv("MonsterHasBuffs") >= 0) { A_AetheriusStats(0); }
+	 //A_AetheriusStats(0);
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0);	 
 	}
     HMN1 AABBCCDD 3
@@ -717,7 +717,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
     Goto See
   Death:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     HMN1 G 5
     HMN1 H 5 A_Scream
     HMN1 I 3 A_NoBlocking
@@ -727,7 +727,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
     Stop
   XDeath:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     RGIB A 4 A_TossGib
     RGIB B 4 A_XScream
     RGIB C 3 A_NoBlocking
@@ -737,7 +737,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
     Stop
   Burn:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
     BURN B 3 Bright A_DropFire
     BURN C 3 Bright A_Wander
@@ -753,7 +753,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
     Stop
   Disintegrate:
     TNT1 A 0 A_GiveGold(random(3,8))
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
     DISR BC 5
     DISR D 5 A_NoBlocking
@@ -836,7 +836,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   States
   {
   Spawn:
-    AGRD A 0 NoDelay A_AetheriusStats(0)
+    AGRD A 0 NoDelay //A_AetheriusStats(0)
     AGRD A 5
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
@@ -1048,7 +1048,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   Death:
     TNT1 A 0 A_GiveGold(random(3,8))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     AGRD G 4
     AGRD H 4 A_Scream
     AGRD I 4
@@ -1061,7 +1061,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   XDeath:
     TNT1 A 0 A_GiveGold(random(3,8))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     GIBS A 5 A_NoBlocking
     GIBS BC 5 A_TossGib
     GIBS D 4 A_TossGib
@@ -1076,20 +1076,20 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   Ice:
     TNT1 A 0 A_GiveGold(random(3,8))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
     AGRD O 5 A_FreezeDeath
     AGRD O 1 A_FreezeDeathChunks
     Wait
   Raise:
-    AGRD M 3 A_AetheriusStats(0)
+    AGRD M 3 //A_AetheriusStats(0)
     AGRD LKJ 3 
     AGRD IHG 4 
     goto See
   Burn:
     TNT1 A 0 A_GiveGold(random(3,8))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
     BURN B 3 Bright A_DropFire
     BURN C 3 Bright A_Wander
@@ -1107,7 +1107,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
   Disintegrate:
     TNT1 A 0 A_GiveGold(random(3,8))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
     DISR BC 5
     DISR D 5 A_NoBlocking
@@ -1317,7 +1317,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
   States
   {
   Spawn:
-    PGRD A 0 NoDelay A_AetheriusStats(0)
+    PGRD A 0 NoDelay //A_AetheriusStats(0)
     PGRD A 5 A_Look2
     goto Spawn+1
     PGRD B 10
@@ -1450,7 +1450,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
   Death:
     TNT1 A 0 A_GiveGold(random(6,12))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     PGRD I 4 A_TossGib
     PGRD J 4 A_Scream
     PGRD K 4 A_TossGib
@@ -1469,7 +1469,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
     PGRD A 1 A_FreezeDeathChunks
     Wait
   Raise:
-    PGRD "\" 4 A_AetheriusStats(0)
+    PGRD "\" 4 //A_AetheriusStats(0)
     PGRD "PQRSTUVWXYZ[" 4 
     PGRD ONMLKJI 4
     goto See
@@ -1511,7 +1511,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
   States
   {
   Spawn:
-    ROB1 A 0 NoDelay A_AetheriusStats(0)
+    ROB1 A 0 NoDelay //A_AetheriusStats(0)
     ROB1 A 10 A_Look
     goto Spawn+1
   See:
@@ -1607,7 +1607,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
   Death:
     TNT1 A 0 A_GiveGold(random(5,10))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     ROB1 J 6
     ROB1 K 6 A_Scream
     ROB1 L 5
@@ -1619,7 +1619,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
   XDeath:
     TNT1 A 0 A_GiveGold(random(5,10))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     ROB1 L 5 A_TossGib
     ROB1 M 5 A_Scream
     ROB1 N 5 A_TossGib
@@ -1635,7 +1635,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
     ROB1 A 1 A_FreezeDeathChunks
     Wait
   Raise:
-    ROB1 Q 6 A_AetheriusStats(0)
+    ROB1 Q 6 //A_AetheriusStats(0)
     ROB1 PONML 5 
     ROB1 KJ 6 
     goto See
@@ -1682,7 +1682,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
   States
   {
   Spawn:
-    ROB2 A 0 NoDelay A_AetheriusStats(0)
+    ROB2 A 0 NoDelay //A_AetheriusStats(0)
     ROB2 Q 10 A_Look
     goto Spawn+1
   See:
@@ -1753,7 +1753,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
   Death:
     TNT1 A 0 A_GiveGold(random(7,16))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     ROB2 G 3 A_Scream
     ROB2 H 5 A_TossGib
     ROB2 I 4 Bright A_TossGib
@@ -1773,7 +1773,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
     ROB2 D 1 A_FreezeDeathChunks
     Wait
   Raise:
-    ROB2 O 6 A_AetheriusStats(0)
+    ROB2 O 6 //A_AetheriusStats(0)
     ROB2 NMLKJI 6 
     ROB2 H 5 
     ROB2 G 3 
@@ -2028,7 +2028,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
   States
   {
   Spawn:
-    SEWR A 0 NoDelay A_AetheriusStats(0)
+    SEWR A 0 NoDelay //A_AetheriusStats(0)
     SEWR A 10 A_Look
     goto Spawn+1
   See:
@@ -2094,7 +2094,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
   Death:
 	TNT1 A 0 A_GiveGold(random(4,7))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     SEWR D 7 A_Fall
     SEWR E 8 Bright A_TossGib
     SEWR F 5 Bright A_Scream
@@ -2150,9 +2150,8 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
-    STLK A 0 NoDelay A_AetheriusStats(0)
+    STLK A 0 NoDelay //A_AetheriusStats(0)
     STLK A 1 A_StalkerLookInit
     goto Spawn+1
   LookCeiling:
@@ -2376,7 +2375,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
   Death:
     STLK O 0 A_GiveGold(random(3,6))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     STLK O 4
     STLK P 4 A_Scream
     STLK QRST 4
@@ -2426,9 +2425,8 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 
   States
   {
-  Pain.Charm: TNT1 A 0 { A_PlaySound("Munchies/Charmed"); A_ChangeFlag("FRIENDLY",1); Thing_ChangeTID(0,1000); } Goto See  Pain.Heal1: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,0); } Goto See  Pain.Heal2: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,1); } Goto See  Pain.Heal3: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,2); } Goto See  Pain.Heal4: TNT1 A 0 { ACS_NamedExecuteAlways("Healing_Actor",0,3); } Goto See Goto See
   Spawn:
-    TURT A 0 NoDelay A_AetheriusStats(0)
+    TURT A 0 NoDelay //A_AetheriusStats(0)
     TURT A 5 
 	{
      if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(2); }
@@ -2484,7 +2482,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
   Death:
     TNT1 A 0 A_GiveGold(random(4,7))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     BALL A 6 Bright A_Scream
     BALL BCDE 6 Bright
     TURT C -1
@@ -2524,7 +2522,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
   States
   {
   Spawn:
-    ROB3 A 0 NoDelay A_AetheriusStats(0)
+    ROB3 A 0 NoDelay //A_AetheriusStats(0)
     ROB3 AB 10 A_Look
     goto Spawn+1
   See:
@@ -2708,7 +2706,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
   Death:
     TNT1 A 0 A_GiveGold(random(100,150))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     ROB3 L 0 A_StopSoundEx("Item")
     ROB3 L 4 A_TossGib
     ROB3 M 4 A_Scream
@@ -2737,7 +2735,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
     ROB3 A 1 A_FreezeDeathChunks
     Wait
   Raise:
-    RBB3 C 3 A_AetheriusStats(0)
+    RBB3 C 3 //A_AetheriusStats(0)
     RBB3 DBA 3 
     ROB3 "]" 3 
     ROB3 "\" 3 
@@ -2854,7 +2852,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
   States
   {
   Spawn:
-    ROB4 A 0 NoDelay A_AetheriusStats(0)
+    ROB4 A 0 NoDelay //A_AetheriusStats(0)
 	ROB4 A 0 A_ChangeFlag("Float", 0)
     ROB4 A 0 A_ChangeFlag("NoGravity", 0)
     ROB4 A 0 A_TakeInventory("FlightToken", 0)
@@ -3122,7 +3120,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
   Death:
     TNT1 A 0 A_GiveGold(random(250,375))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
 	ROB4 A 0 A_TakeInventory("FlightToken", 1)
 	ROB4 A 0 A_ChangeFlag ("FLOAT", 0)
 	ROB4 A 0 A_ChangeFlag ("NOGRAVITY", 0)
@@ -3188,7 +3186,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
   States
   {
   Spawn:
-    PRGR A 0 NoDelay A_AetheriusStats(0)
+    PRGR A 0 NoDelay //A_AetheriusStats(0)
     PRGR A 5 A_Look
     PRGR A 1 A_SentinelBob
     goto Spawn+1
@@ -3291,7 +3289,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
   Death:
     PRGR L 0 A_GiveGold(random(1350,1800))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     PRGR L 7 Bright A_TossGib
     PRGR M 7 Bright A_Scream
     PRGR N 7 Bright A_TossGib
@@ -3440,7 +3438,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
   States
   {
   Spawn:
-    MLDR A 0 NoDelay A_AetheriusStats(0)
+    MLDR A 0 NoDelay //A_AetheriusStats(0)
     MLDR A 10 A_Look
     goto Spawn+1
   See:
@@ -3482,7 +3480,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
   Death:
     MLDR G 0 A_GiveGold(random(1350,1800))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     MLDR G 3 Bright
     MLDR H 5 Bright A_Scream
     MLDR I 4 Bright A_TossGib
@@ -3530,7 +3528,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
   States
   {
   Spawn:
-    ORCL A 0 NoDelay A_AetheriusStats(0)
+    ORCL A 0 NoDelay //A_AetheriusStats(0)
   Idle:
     ORCL A -1
     Stop
@@ -3544,7 +3542,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
   Death:
     ORCL B 0 A_GiveGold(random(675,900))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     ORCL BCDEFGHIJK 5
     ORCL L 5 A_NoBlocking
     ORCL M 5
@@ -3600,7 +3598,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
   States
   {
   Spawn:
-    LEDR C 0 NoDelay A_AetheriusStats(0)
+    LEDR C 0 NoDelay //A_AetheriusStats(0)
     LEDR C 5 A_Look2
     goto Spawn+1
     LEDR A 8
@@ -3763,7 +3761,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
   Death:
     LEAD G 0 A_GiveGold(random(1350,1800))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     LEAD G 5
     LEAD H 5 A_Scream
     LEAD IJ 4
@@ -3875,7 +3873,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
   States
   {
   Spawn:
-    PRST A 0 NoDelay A_AetheriusStats(0)
+    PRST A 0 NoDelay //A_AetheriusStats(0)
     PRST A 10 A_Look
     PRST B 10 A_SentinelBob
     goto Spawn+1
@@ -4009,7 +4007,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
   Death:
     PDED A 0 A_GiveGold(random(1350,1800))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     PDED A 6
     PDED B 6 A_Scream
     PDED C 6
@@ -4098,7 +4096,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
   {
   Pain.Charm: goto See
   Spawn:
-    ALN1 A 0 NoDelay A_AetheriusStats(0)
+    ALN1 A 0 NoDelay //A_AetheriusStats(0)
     ALN1 A 10 A_Look
     ALN1 B 10 A_SentinelBob
     goto Spawn+1
@@ -4216,7 +4214,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	{
 	 A_GiveGold(random(1350,1800));
      ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-     A_AetheriusStats(1);
+     //A_AetheriusStats(1);
 	 //A_PrintBold("SPECTRE 1");
 	}
     AL1P A 6 Bright A_SpectreChunkSmall
@@ -4309,7 +4307,7 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 	{
 	 A_GiveGold(random(1350,1800));
      ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-     A_AetheriusStats(1);
+     //A_AetheriusStats(1);
 	 //A_PrintBold("SPECTRE 2");
 	}
     AL1P A 6 Bright A_SpectreChunkSmall
@@ -4357,7 +4355,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
   States
   {
   Spawn:
-    ALN1 A 0 NoDelay A_AetheriusStats(0)
+    ALN1 A 0 NoDelay //A_AetheriusStats(0)
     ALN1 ABCDEFGHIJK 5
     goto Spawn+1
   See:
@@ -4481,7 +4479,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 	{
 	 A_GiveGold(random(1350,1800));
      ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-     A_AetheriusStats(1);
+     //A_AetheriusStats(1);
 	 //A_PrintBold("SPECTRE 3");
 	}
     AL1P A 6 Bright A_SpectreChunkSmall
@@ -4598,7 +4596,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 	{
 	 A_GiveGold(random(1350,1800));
      ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-     A_AetheriusStats(1);
+     //A_AetheriusStats(1);
 	 //A_PrintBold("SPECTRE 4");
 	}
     AL1P A 6 Bright A_SpectreChunkSmall
@@ -4712,7 +4710,7 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 	{
 	 A_GiveGold(random(1350,1800));
      ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
-     A_AetheriusStats(1);
+     //A_AetheriusStats(1);
 	 //A_PrintBold("SPECTRE 5");
 	}
     AL1P A 6 Bright A_SpectreChunkSmall
@@ -4820,7 +4818,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
   States
   {
   Spawn:
-    ALN1 A 0 NoDelay A_AetheriusStats(0)
+    ALN1 A 0 NoDelay //A_AetheriusStats(0)
     MNAM A 100
     MNAM B 60 Bright
     MNAM CDEFGHIJKL 4 Bright
@@ -4939,7 +4937,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
   Death:
     MNAL L 0 A_GiveGold(random(2250,3000))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     MNAL L 7 Bright A_SpectreChunkSmall
     MNAL M 7 Bright A_Scream
     MNAL NO 7 Bright A_SpectreChunkSmall
@@ -5018,7 +5016,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
   States
   {
   Spawn:
-    MNAL R 0 NoDelay A_AetheriusStats(0)
+    MNAL R 0 NoDelay //A_AetheriusStats(0)
     MNAL R 10 Bright A_Look
     goto Spawn+1
   See:
@@ -5143,7 +5141,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
   Death:
     MDTH O 0 A_GiveGold(random(1350,1800))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
 	TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"Asension",AAPTR_PLAYER1)
   TrueDeath:
     MDTH A 3 Bright A_Scream
@@ -5234,7 +5232,7 @@ ACTOR EntityAscended : EntityBossNew
   States
   {
   Spawn:
-    MNAL A 0 NoDelay A_AetheriusStats(0)
+    MNAL A 0 NoDelay //A_AetheriusStats(0)
     MNAL A 4 Bright A_Look
     MNAL B 4 Bright A_SentinelBob
     goto Spawn+1
@@ -5350,7 +5348,7 @@ ACTOR EntityAscended : EntityBossNew
   Death:
     MNAL L 0 A_GiveGold(random(3000,4000))
     TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_AetheriusStats(1)
+    TNT1 A 0 //A_AetheriusStats(1)
     MNAL L 7 Bright A_SpectreChunkSmall
     MNAL M 7 Bright A_Scream
     MNAL NO 7 Bright A_SpectreChunkSmall
@@ -5396,7 +5394,7 @@ actor AlienSpectreModel : AetheriusMonsterZSC
   States
   {
   Spawn:
-    TNT1 A 0 NoDelay A_AetheriusStats(0)
+    TNT1 A 0 NoDelay //A_AetheriusStats(0)
     TNT1 A 0 A_JumpIfInventory("FloraInPlay",1,"Check1",AAPTR_PLAYER1)
     TNT1 A 0 A_FadeOut(1.0)
 	stop
@@ -5632,7 +5630,7 @@ actor OrderCultistBase 27407
   States
   {
   Spawn:
-    TNT1 A 0 NoDelay // A_AetheriusStats(0)
+    TNT1 A 0 NoDelay // //A_AetheriusStats(0)
     TNT1 A 0 A_JumpIfInventory("FloraInPlay",1,"Check1",AAPTR_PLAYER1)
     TNT1 A 0 A_FadeOut(1.0)
 	stop

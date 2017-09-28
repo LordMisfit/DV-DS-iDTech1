@@ -29,7 +29,6 @@ class DSparilBase : AetheriusBossZSC
 		 projtype = crisismissiletype;
 		 meleedamage *= CallACS("CrisisMultiplier"); 
 		}
-		//A_LogInt(meleedamage);
 
 		if (!target)
 		{

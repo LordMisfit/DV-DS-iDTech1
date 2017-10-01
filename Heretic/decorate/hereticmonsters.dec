@@ -221,12 +221,12 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
 	 // A_ImpMsAttack; Emulation
-	 SetDamage(((0+(user_monsterlevel/45))*random(1,8)));
+	 SetDamage(((0+(user_monsterlevel/45))));
 	 A_MonsterCrisisCheck;
 	 if(user_canusecrisisatk == 1) 
 	 { 
 	  if (user_monsterlevel >= 45) { A_PlayCrisisAtkSound; } 
-	  SetDamage((((0+(user_monsterlevel/45))*random(1,8))*CallACS("CrisisMultiplier"))); 
+	  SetDamage((((0+(user_monsterlevel/45)))*CallACS("CrisisMultiplier"))); 
 	 } 
      A_SkullAttack(12+(user_monsterlevel/random(22,23)));
 	}
@@ -540,12 +540,8 @@ ACTOR PlagueShot : AetheriusEffectProjectile
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",8);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(3);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -587,12 +583,8 @@ ACTOR PlagueShotCrisis : PlagueShot
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",8);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(8);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -3665,12 +3657,8 @@ ACTOR HeadFX1New : AetheriusEffectProjectile replaces HeadFX1
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",12);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(12);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(105,175)); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -3711,12 +3699,8 @@ ACTOR HeadFX1Crisis : HeadFX1New
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",12);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(12);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(105,175)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -3755,12 +3739,8 @@ ACTOR HeadFX2New : AetheriusEffectProjectile replaces HeadFX2
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",24);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(24);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -3810,12 +3790,8 @@ ACTOR HeadFX2Crisis : HeadFX2New
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",24);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(24);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(35,52)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4320,12 +4296,8 @@ ACTOR IceGuyFXNew : AetheriusEffectProjectile replaces IceGuyFX
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",16);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(16);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,105)); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4369,12 +4341,8 @@ ACTOR IceGuyFXCrisis : IceGuyFXNew
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",16);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(16);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(70,105)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4415,12 +4383,8 @@ ACTOR IceGuyFX2New : AetheriusEffectProjectile replaces IceGuyFX2
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",32);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(32);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4460,12 +4424,8 @@ ACTOR IceGuyFX2Crisis : IceGuyFX2New
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",32);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(32);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(12,17)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 0.3-0.48 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4507,12 +4467,8 @@ ACTOR IceBreath : AetheriusEffectProjectile
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",16);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(16);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -4552,12 +4508,8 @@ ACTOR IceBreathCrisis : IceBreath
 	{
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",16);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 3)
+	  A_StatusEffectChecker(16);
+	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
 	   ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(35,52)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	  }
@@ -5268,12 +5220,8 @@ ACTOR CurseSpell : AetheriusEffectProjectile
 	{	 
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",4);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 2)
+	  A_StatusEffectChecker(4);
+	  if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
 	  {
 	   A_SetUserVar("user_random",random(1,13));
 	   if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(315,525)); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -5329,12 +5277,8 @@ ACTOR CurseSpellCrisis : CurseSpell
 	{	 
 	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 	 {
-	  A_SetUserVar("user_ailmentmaxchance",4);
-	  if (CountInv("EWShieldIdleMode",AAPTR_PLAYER1) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CallACS("GetBuffTimer",7) > 0) { A_SetUserVar("user_ailmentmaxchance",user_ailmentmaxchance*4); }
-	  if (CountInv("EvadeAnAttack",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (CountInv("InvulnerabilitySpell",AAPTR_PLAYER1) > 0 || CountInv("IsInvulnerable",AAPTR_PLAYER1) > 0) { return state("Death2"); }
-	  if (random(1,user_ailmentmaxchance) <= 2)
+	  A_StatusEffectChecker(4);
+	  if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
 	  {
 	   A_SetUserVar("user_random",random(1,13));
 	   if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -6197,12 +6141,12 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
     TNT1 A 0 
 	{
 	 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
-	 SetDamage(7*random(1,8));
+	 SetDamage(7+(user_monsterlevel/45));
 	 A_MonsterCrisisCheck;
 	 if(user_canusecrisisatk == 1) 
 	 { 
 	  A_PlayCrisisAtkSound;
-	  SetDamage((7*random(1,8))*CallACS("CrisisMultiplier"));
+	  SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
 	 }
 	}
     MNTR U 2 A_MinotaurCharge

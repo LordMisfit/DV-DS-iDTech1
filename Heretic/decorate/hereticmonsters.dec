@@ -400,7 +400,6 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 {  
   Health 120
   DamageFactor "Crush", 7.6
-  Translation "145:168=225:240", "255:248=0:0"
   Scale 1
   Painchance 160
   Painchance "Fist", 240 // Fist attacks have a +50% chance of stunning an enemy
@@ -410,6 +409,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
   Species "Gargoyle"
   Obituary "%o was poisoned by a plague gargoyle"
   HitObituary "%o was ripped up by a plague gargoyle"
+  Translation "145:168=225:240", "255:248=0:0"
 
   States
   {

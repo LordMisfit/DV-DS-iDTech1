@@ -5660,3 +5660,24 @@ actor TalkToTeiytenth : PlaceholderItem
  +INVENTORY.KEEPDEPLETED
  Inventory.MaxAmount 1
 }
+
+ACTOR ExplosiveBarrel2New : ExplosiveBarrel2 replaces ExplosiveBarrel2
+{
+ +PUSHABLE
+ DamageType "Explosive"
+  States
+  {
+  Spawn:
+    BART A -1
+    Stop
+  Death:
+    BART B 2 Bright A_Scream
+    BART CD 2 Bright
+    BART E 2 Bright A_NoBlocking
+    BART F 2 Bright A_Explode(64,64,XF_HURTSOURCE, 1,0,0, 0,"BulletPuff","Explosive")
+    BART GHIJ 2 Bright
+    BART K 3 Bright
+    BART L -1
+    Stop
+  }
+}

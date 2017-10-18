@@ -496,15 +496,15 @@ ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
   {
   Spawn:
     MRST A 10 A_Look2
-    goto Spawn+1
+    loop
     MRLK A 30 A_ActiveSound
-    goto Spawn+1
+    loop
     MRLK B 30
-    goto Spawn+1
+    loop
     MRBD ABCDEDCB 4
     MRBD A 5
     MRBD F 6
-    goto Spawn+1
+    loop
   See:
   Pain:
     MRPN A 1

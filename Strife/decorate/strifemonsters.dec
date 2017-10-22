@@ -5389,7 +5389,7 @@ actor AlienSpectreModel : AetheriusMonsterZSC
   {
   Spawn:
     TNT1 A 0 NoDelay 
-    TNT1 A 0 A_JumpIfInventory("FloraInPlay",1,"Check1",AAPTR_PLAYER1)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "Check1")
     TNT1 A 0 A_FadeOut(1.0)
 	stop
   Check1:
@@ -5595,6 +5595,128 @@ ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
   }
 }
 
+// Barrels
+ACTOR WoodenBarrel2 : WoodenBarrelNew 32544
+{
+  Translation "1:31=16:24", "192:223=208:223"
+  States
+  {
+  Spawn:
+    BARW A -1
+    Stop
+  Death:
+    BARW B 2 A_Scream
+    BARW C 2
+    BARW D 2 
+	{
+	 A_NoBlocking;
+	 if (random(1,4) <= 2) // Chance for item to spawn at all
+	 {
+	  if (random(1,8) <= 1) // Chance to upgrade to "tier 3"
+      {
+	   if (random(1,2) == 1) { A_SpawnItemEx("SpecialMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+		                else { A_SpawnItemEx("ElfinElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+
+	   if (random(1,2) == 1)
+	   {
+	     if (random(1,2) == 1) { A_SpawnItemEx("SpecialMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+		                  else { A_SpawnItemEx("ElfinElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	   }
+      }
+	  else
+	  if (random(1,6) <= 1) // Chance to upgrade to "tier 2"
+      {
+	   if (random(1,2) == 1) { A_SpawnItemEx("StrongMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	                    else { A_SpawnItemEx("SageElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+
+	   if (random(1,2) == 1)
+	   {
+	     if (random(1,2) == 1) { A_SpawnItemEx("StrongMedicine",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	                      else { A_SpawnItemEx("SageElixir",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	   }
+      }
+	  else // Tier 1
+	  {
+	   if (random(1,2) == 1) { A_SpawnItemEx("MedicinalHerb",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	                    else { A_SpawnItemEx("MagicWater",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+
+	   if (random(1,2) == 1)
+	   {
+	    if (random(1,2) == 1) { A_SpawnItemEx("MedicinalHerb",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	                     else { A_SpawnItemEx("MagicWater",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	   }
+ 	  }
+	 }
+	 else
+	 {
+      // Money
+	  if (random(1,64) <= 4) 
+	  {
+ 	   A_SpawnItemEx("Gold50Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+ 	   A_SpawnItemEx("Gold50Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,192); 
+ 	   A_SpawnItemEx("Gold50Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,248); 
+ 	   A_SpawnItemEx("Gold50Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,255); 
+	  }
+	  else
+	  if (random(1,32) <= 4) 
+	  {
+ 	   A_SpawnItemEx("Gold25Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+ 	   A_SpawnItemEx("Gold25Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,128); 
+ 	   A_SpawnItemEx("Gold25Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,160); 
+ 	   A_SpawnItemEx("Gold25Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,212); 
+ 	   A_SpawnItemEx("Gold25Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,224); 
+	  }
+	  else
+	  if (random(1,16) <= 4) 
+	  {
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,85); 
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,128); 
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,170); 
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,192); 
+ 	   A_SpawnItemEx("Gold10Actual",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,255); 
+	  }
+	  else
+	  {
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); 
+
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,48); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,48); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,48); 
+
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,96); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,96); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,96); 
+
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,144); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,144); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,144); 
+
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,192); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,192); 
+ 	   A_SpawnItemEx("Coin",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,192); 
+	  }
+
+      // Seeds
+	  if (random(1,32) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,64) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,128) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,256) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,512) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,1024) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,2048) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,4096) <= 4) { A_SpawnItemEx("RandomSeedDropAlways",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	  if (random(1,16384) <= 4) { A_SpawnItemEx("FloraRandomArmorAlwaysDrop",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0,0,SXF_NOCHECKPOSITION,0); }
+	 }
+	}
+    BARW EFG 2
+    BARW H -1
+    Stop
+  }
+}
+
 actor OrderCultistBase 27407
 {
   Health 1000000
@@ -5625,7 +5747,7 @@ actor OrderCultistBase 27407
   {
   Spawn:
     TNT1 A 0 NoDelay // 
-    TNT1 A 0 A_JumpIfInventory("FloraInPlay",1,"Check1",AAPTR_PLAYER1)
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2,"Check1")
     TNT1 A 0 A_FadeOut(1.0)
 	stop
   Check1:

@@ -351,9 +351,9 @@ ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
     Loop
 
    Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    BLIT A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    BLIT A 1
+    loop
   }
 }
 
@@ -378,9 +378,9 @@ ACTOR BoxOfBulletsNew : BoxOfBullets replaces BoxOfBullets
     Loop
 
    Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    BBOX A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    BBOX A 1
+    loop
   }
 }
 
@@ -410,9 +410,10 @@ ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    RIFL A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    RIFL A 1
+    loop
+
   Ready:
     RIFG A 1 A_WeaponReady
     Loop
@@ -458,9 +459,9 @@ ACTOR AssaultGunStandingNew : AssaultGunStanding replaces AssaultGunStanding
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    RIFL B -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    RIFL B 1
+    loop
   }
 }
 
@@ -485,9 +486,9 @@ ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    MSSL A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    MSSL A 1
+    loop
   }
 }
 
@@ -512,9 +513,9 @@ ACTOR CrateOfMissilesNew : CrateOfMissiles replaces CrateOfMissiles
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    ROKT A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    ROKT A 1
+    loop
   }
 }
 
@@ -544,9 +545,10 @@ ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    MMSL A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    MMSL A 1
+    loop
+
   Ready:
     MMIS A 1 A_WeaponReady
     Loop
@@ -594,9 +596,10 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    FLAM A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    FLAM A 1
+    loop
+
   Ready:
     FLMT AB 3 A_WeaponReady
     Loop
@@ -634,9 +637,9 @@ ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    MSSL A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    MSSL A 1
+    loop
   }
 }
 
@@ -665,9 +668,9 @@ ACTOR PhosphorusGrenadeRoundsNew : PhosphorusGrenadeRounds replaces PhosphorusGr
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    ROKT A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    ROKT A 1
+    loop
   }
 }
 
@@ -703,9 +706,10 @@ ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLau
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    GRND A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    GRND A 1
+    loop
+
   Ready:
     GREN A 1 A_WeaponReady
     Loop
@@ -782,9 +786,9 @@ ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    MSSL A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    MSSL A 1
+    loop
   }
 }
 
@@ -809,9 +813,9 @@ ACTOR EnergyPackNew : EnergyPack replaces EnergyPack
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    ROKT A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    ROKT A 1
+    loop
   }
 }
 
@@ -842,9 +846,10 @@ ACTOR MaulerNew : Mauler replaces Mauler
     Loop
 
   Spawn:
-    TNT1 A 0 NoDelay A_JumpIfInventory("FloraInPlay", 1, "FloraDetected", AAPTR_PLAYER1)
-    TRPD A -1
-    Stop
+    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+    TRPD A 1
+    loop
+
   Ready:
     MAUL FGHA 6 A_WeaponReady
     Loop

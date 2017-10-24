@@ -5781,6 +5781,7 @@ actor TalkToTeiytenth : PlaceholderItem
 { 
  +INVENTORY.KEEPDEPLETED
  Inventory.MaxAmount 1
+ ConversationID 672
 }
 
 ACTOR ExplosiveBarrel2New : ExplosiveBarrel2 replaces ExplosiveBarrel2

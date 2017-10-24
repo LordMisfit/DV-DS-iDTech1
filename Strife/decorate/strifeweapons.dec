@@ -1253,7 +1253,7 @@ ACTOR SpectralLightningBaseNew : AetheriusProjectileZSC replaces SpectralLightni
   Death:
     ZAP1 B 3 
 	{
-	 A_Explode(ACS_NamedExecuteWithResult("GetSigilDamage",0,0), ACS_NamedExecuteWithResult("GetSigilDamage",0,1));
+	 A_Explode(ACS_NamedExecuteWithResult("GetSigilDamage",0,0), ACS_NamedExecuteWithResult("GetSigilDamage",0,1), 0);
 	}
     ZAP1 A 3 
 	{

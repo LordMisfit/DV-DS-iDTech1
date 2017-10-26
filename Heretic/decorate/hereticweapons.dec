@@ -336,7 +336,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
     GWND D 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostwand") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     GWND B 3 
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -434,7 +434,7 @@ ACTOR DualGoldWandNew : GoldWandNew
     GWN2 E 0 A_ReFire
     Goto Ready
   AltFire: // 10 Frames
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostwand") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     GWN2 B 3 
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -624,7 +624,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
     CRBW C 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostcrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     CRBW D 5 // A_FireCrossbowPL2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 1) { A_SetTics(4); }
@@ -751,7 +751,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
     CRBD C 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostcrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     CRBD D 5 // A_FireCrossbowPL2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 1) { A_SetTics(4); }
@@ -927,7 +927,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
   AltFire:
     FBLS BC 0
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostdragonclaw") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     FBLS D 3 
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -1009,7 +1009,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
   AltFire:
     FDBL BC 0
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostdragonclaw") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     FDBL DE 3 
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -1138,7 +1138,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
     HROD B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcosthellstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     HROD C 2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(1); }
@@ -1234,7 +1234,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
     DHRD B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcosthellstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     DHRD C 2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(1); }
@@ -1382,7 +1382,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
     PHNX B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     PHNX B 3 // A_InitPhoenixPL2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -1483,7 +1483,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
     PHND B 0 A_ReFire
     Goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     PHND B 3 // A_InitPhoenixPL2
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(2); }
@@ -1669,7 +1669,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
     Goto Ready
   AltFire:
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostfiremace") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     MACE B 4
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(3); }
@@ -1775,7 +1775,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
     Goto Ready
   AltFire:
   AltHold:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostfiremace") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     DMAC B 4
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(3); }
@@ -1907,7 +1907,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
     CRB2 H 0 A_ReFire
     goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostscrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
     CRB2 A 3
 	{
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(2); }
@@ -2066,7 +2066,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
     SCRD H 0 A_ReFire
     goto Ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostscrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
     SCRD A 3
 	{
 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(2); }
@@ -2277,7 +2277,7 @@ actor DSparilStaff : HereticWeaponBase
 	}
 	goto ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostdsparilstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100),2) == 0, "Ready")
 	DSTF B 4 bright 
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
@@ -2400,7 +2400,7 @@ actor DualDSparilStaff : HereticWeaponBase
 	}
 	goto ready
   AltFire:
-    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",(GetCVar("dvds_floratomedmpcostheretic")*2),2) == 0, "Ready")
+    TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("UseManaAttack",((GetCVar("dvds_floratomedmpcostdsparilstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100)*2,2) == 0, "Ready")
 	DSTD B 4 bright
 	{
  	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }

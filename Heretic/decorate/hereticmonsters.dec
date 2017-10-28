@@ -381,7 +381,7 @@ actor HereticImpLeaderNew : HereticImpNew // replaces HereticImpLeader
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("HereticImpBallNew", "HereticImpBallCrisis", 32, random[ImpMsAttack2](5,12), "himp/leaderattack");
+	 A_CrisisComboAttack("HereticImpBallNew", "HereticImpBallCrisis", 16, random[ImpMsAttack2](5,12), "himp/leaderattack");
 	}
     Goto See
  }
@@ -458,7 +458,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("PlagueShot", "PlagueShotCrisis", 32, 0, random(-6,6));
+	 A_CrisisSpawnProjectile("PlagueShot", "PlagueShotCrisis", 16, 0, random(-6,6));
 	}
     Goto See
   Pain:
@@ -702,7 +702,7 @@ ACTOR WatcherImp : HereticImpNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
 	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 28, 14, "himp/leaderattack");
+	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
 	}
     WATC "[\" 4 BRIGHT
 	{
@@ -716,7 +716,7 @@ ACTOR WatcherImp : HereticImpNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
 	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 28, 14, "himp/leaderattack");
+	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
 	}
 	WATC ] 0 BRIGHT
 	{
@@ -738,7 +738,7 @@ ACTOR WatcherImp : HereticImpNew
      else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("BeastBall2", "BeastBall2Crisis", 28, random[BeastAttack](1,8)*3, "beast/attack");
+	 A_CrisisComboAttack("BeastBall2", "BeastBall2Crisis", 14, random[BeastAttack](1,8)*3, "beast/attack");
 	}
     Goto See
   Pain:

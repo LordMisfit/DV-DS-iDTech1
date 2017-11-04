@@ -266,7 +266,7 @@ ACTOR GoldWandFX2New : GoldWandFX2
 ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 {
   +BLOODSPLATTER
-  Weapon.Kickback 150
+  Weapon.Kickback 25
   Weapon.SelectionOrder 2000
   Weapon.AmmoGive 25
   Weapon.AmmoType1 "GoldWandAmmo"
@@ -376,7 +376,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 ACTOR DualGoldWandNew : GoldWandNew
 {
   +BLOODSPLATTER
-  Weapon.Kickback 150
+  Weapon.Kickback 25
   Weapon.SelectionOrder 2000
   Weapon.AmmoGive 25
   Weapon.AmmoType1 "GoldWandAmmo"
@@ -859,6 +859,7 @@ ACTOR BlasterFX1New : BlasterFX1
 ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 {
   +BLOODSPLATTER
+  Weapon.Kickback 50
   Weapon.SelectionOrder 500
   Weapon.AmmoGive 30
   Weapon.AmmoUse1 1
@@ -951,6 +952,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 ACTOR DualDragonClawNew : HereticWeaponBase
 {
   +BLOODSPLATTER
+  Weapon.Kickback 50
   Weapon.SelectionOrder 500
   Weapon.AmmoGive 30
   Weapon.AmmoUse1 1
@@ -1084,6 +1086,7 @@ ACTOR RainPillarNew : RainPillar replaces RainPillar
 ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 {
   Weapon.SelectionOrder 200
+  Weapon.Kickback 50
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoGive1 50
@@ -1187,6 +1190,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 ACTOR DualHellStaffNew : HereticWeaponBase
 {
   Weapon.SelectionOrder 200
+  Weapon.Kickback 50
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoGive1 50
@@ -1315,7 +1319,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 {
   +WEAPON.NOAUTOFIRE
   Weapon.SelectionOrder 2600
-  Weapon.Kickback 150
+  Weapon.Kickback 75
   Weapon.YAdjust 0
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
@@ -1423,7 +1427,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 {
   +WEAPON.NOAUTOFIRE
   Weapon.SelectionOrder 2600
-  Weapon.Kickback 150
+  Weapon.Kickback 75
   Weapon.YAdjust 0
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 1
@@ -1590,6 +1594,7 @@ ACTOR MaceSpawnerNew : MaceSpawner replaces MaceSpawner
 ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 {
   Weapon.SelectionOrder 1400
+  Weapon.Kickback 25
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoGive1 50
@@ -1702,6 +1707,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 ACTOR DualFiremaceNew : HereticWeaponBase
 {
   Weapon.SelectionOrder 1400
+  Weapon.Kickback 25
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 5
   Weapon.AmmoGive1 50
@@ -1817,7 +1823,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
-  weapon.kickback 150
+  weapon.kickback 100
   weapon.AmmoUse1 2
   weapon.AmmoUse2 2
   weapon.AmmoGive 8
@@ -1973,7 +1979,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
   weapon.selectionorder 400
   Weapon.AmmoType1 "CrossbowAmmo"
   Weapon.AmmoType2 "CrossbowAmmo"
-  weapon.kickback 150
+  weapon.kickback 100
   weapon.AmmoUse1 2
   weapon.AmmoUse2 2
   weapon.AmmoGive 8
@@ -2204,6 +2210,7 @@ actor Sorcerer2FX3
 
 actor DSparilStaff : HereticWeaponBase
 {
+  Weapon.Kickback 125
   Weapon.Ammouse1 5
   Weapon.Ammouse2 15
   Weapon.Ammogive 50
@@ -2315,6 +2322,7 @@ actor DSparilStaff : HereticWeaponBase
 
 actor DualDSparilStaff : HereticWeaponBase
 {
+  Weapon.Kickback 125
   Weapon.Ammouse1 5
   Weapon.Ammouse2 15
   Weapon.Ammogive 50

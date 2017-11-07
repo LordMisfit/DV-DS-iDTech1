@@ -638,7 +638,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 
 	 A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
  	  if (levelbehavior > 0 && user_monsterlevel > 75) 
 	  { 
@@ -670,7 +670,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 
 	 A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
  	  if (levelbehavior > 0 && user_monsterlevel > 75) 
 	  { 
@@ -950,7 +950,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 
 	 A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
@@ -980,7 +980,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
      A_AcolyteShieldOn;
 
 	 A_PlaySound ("monsters/rifle", CHAN_WEAPON);
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
@@ -1381,7 +1381,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	 A_MonsterCrisisCheck;
 	 if (GetCVar("dvds_shotgunnerspread") == 0) // Original Attack [10 pellets @ 2*1d4 damage, original Templar's version of the Mauler]
 	 {
-	  if (GetCVar("dvds_monsterbulletstracers") == 0) // Hitscan
+	  if (bullet_tracer_mode == 0) // Hitscan
 	  {
 	   if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (11.25, 7, 10, 2*random(3,12), "MaulerPuff", 2048, CBAF_NORANDOM); }
 	   else { A_CrisisBulletAttack (11.25, 7, 10, 2*random(1,4), "MaulerPuff", 2048, CBAF_NORANDOM); }	 
@@ -1406,7 +1406,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	 }
 	 else // "Retail" Attack [20 pellets @ 5*1d3 damage, with a wider spread: like the Strife player's Mauler (harder to deal with)]
 	 {
-	  if (GetCVar("dvds_monsterbulletstracers") == 0) // Hitscan
+	  if (bullet_tracer_mode == 0) // Hitscan
 	  {
 	   if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (22.5, 14, 20, 3*random(3,15), "MaulerPuff", 2048, CBAF_NORANDOM); }
 	   else { A_CrisisBulletAttack (22.5, 14, 20, 3*random(1,5), "MaulerPuff", 2048, CBAF_NORANDOM); }	 
@@ -1573,7 +1573,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 
 	 A_PlaySound ("reaver/attack", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
@@ -2453,7 +2453,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 
 	 A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
@@ -2600,7 +2600,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
      A_FaceTarget;
      A_PlaySound ("reaver/attack", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
@@ -2622,7 +2622,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
      else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
      A_FaceTarget;
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }	 
@@ -3635,7 +3635,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 
      A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
@@ -3739,7 +3739,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 
      A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 	 A_MonsterCrisisCheck;
-	 if (GetCVar("dvds_monsterbulletstracers") == 0)
+	 if (bullet_tracer_mode == 0)
 	 {
 	  if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
 	  else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }

@@ -270,13 +270,13 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
     MNTR ABCD 5
 	{
      A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_MinotaurRoam;
 	}
     Loop
@@ -285,13 +285,13 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
     MNTR ABCD 5
 	{
      A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_MinotaurChase;
 	}
     Loop
@@ -303,25 +303,25 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	}
     MNTR V 10 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	 A_FaceTarget;
 	}
     MNTR W 7
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 	 A_FaceTarget;
 	}
     MNTR X 12 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+     else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+     else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
 	 A_MinotaurAtk1(4*random(1,8), -16);
 	}
     Goto See
@@ -333,23 +333,23 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	}
     MNTR V 10
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	 if (random(1,256) <= 170) { A_MinotaurDecide; }
 	}
     MNTR Y 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
     MNTR Z 9 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(8); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(8); }
 	 A_MinotaurAtk2("MinotaurFX1","MinotaurFX1Crisis",5*random(1,8),3*random(1,8));
 	}
     Goto See
@@ -361,25 +361,25 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	}
     MNTR V 10 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	 A_FaceTarget;
 	}
     MNTR W 7
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 	 A_FaceTarget;
 	}
     MNTR X 12 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+     else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+     else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
 	 A_MinotaurAtk3(4*random(1,8), -16, "MinotaurFX2New", "MinotaurFX2Crisis");
 	}
     Goto See
@@ -391,10 +391,10 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	}
     MNTR X 12
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+     else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+     else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
 	}
     Goto Hammer
   Charge:
@@ -496,11 +496,11 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
     PIGY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PIGY ABCD 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_Chase;
 	}
     Loop
@@ -596,12 +596,12 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
     ETTN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ETTN ABCD 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -609,14 +609,14 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     ETTN EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     ETTN G 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 
 	 A_MonsterCrisisCheck;
@@ -732,12 +732,12 @@ Actor EttinCommander : EttinNew
     CETN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CETN ABCD 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -756,14 +756,14 @@ Actor EttinCommander : EttinNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     CETN EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     CETN G 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 
 	 A_MonsterCrisisCheck;
@@ -774,14 +774,14 @@ Actor EttinCommander : EttinNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     CETN EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	CETN G 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	 A_PlaySound("FighterHammerMiss");
 
@@ -957,11 +957,11 @@ ACTOR Bormereth : AetheriusMonsterZSC
     BORM A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     BORM AABBCCDD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -971,14 +971,14 @@ ACTOR Bormereth : AetheriusMonsterZSC
     TNT1 A 0 A_Jump(128,"Missile1b")
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -987,14 +987,14 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1003,14 +1003,14 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1019,14 +1019,14 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1039,18 +1039,18 @@ ACTOR Bormereth : AetheriusMonsterZSC
     TNT1 A 0 A_Jump(128,"Missile1c")
 	BORM E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM F 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
 	BORM F 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1059,7 +1059,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM G 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1068,7 +1068,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM G 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1080,14 +1080,14 @@ ACTOR Bormereth : AetheriusMonsterZSC
   Missile1c:
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 Bright
     {
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
@@ -1100,21 +1100,21 @@ ACTOR Bormereth : AetheriusMonsterZSC
   Missile2:
 	BORM F 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
 	TNT1 A 0 A_PlaySoundEx("bormereth/missile2prepare","SoundSlot5")
 	TNT1 A 0 A_SpawnItemEx("PossEttFakeFireBall",5,25,64,0,0,0,0,128)
 	BORM EEEEE 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
 	BORM E 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
 	TNT1 A 0 
@@ -1124,22 +1124,22 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	}
 	BORM FG 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
 	goto see
   Melee:
 	BORM EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	BORM G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisComboAttack("BormerethFX1","BormerethFX1Crisis",randompick(25,28,31),8*random(1,8));
@@ -1914,11 +1914,11 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
     CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CENT ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 	 A_CentaurShieldOff;
 	 A_SlaughtaurShieldOff;
 	 A_Chase;
@@ -1928,20 +1928,20 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     CENT H 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     CENT I 4 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
     CENT J 7
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 	 A_FaceTarget;
 
 	 A_MonsterCrisisCheck;
@@ -1969,9 +1969,9 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
      if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",5); }
+     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",5); }
 	 else { A_SetUserVar("user_defendtimermax",6); }
 
 	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
@@ -1985,9 +1985,9 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
      A_CentaurShieldOn;
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
 	 else { A_SetUserVar("user_defendtimermax",15); }
 
 	 if (user_defendtimer >= user_defendtimermax)
@@ -2183,20 +2183,20 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     CENT H 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     CENT I 4 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
     CENT J 7
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 	 A_FaceTarget;
 
 	 A_MonsterCrisisCheck;
@@ -2212,9 +2212,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	 A_FaceTarget;
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
 	 else { A_SetUserVar("user_defendtimermax",10); }
 
 	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase2"); }
@@ -2233,9 +2233,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	  A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 	 }
 	 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
 	 else { A_SetUserVar("user_defendtimermax",8); }
 
 	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase3"); }
@@ -2249,9 +2249,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	 A_FaceTarget;
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
 	 else { A_SetUserVar("user_defendtimermax",10); }
 
 	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase4"); }
@@ -2270,9 +2270,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	  A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 	 }
 	 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
+     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
 	 else { A_SetUserVar("user_defendtimermax",8); }
 
 	 if (user_defendtimer >= user_defendtimermax) 
@@ -2305,9 +2305,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
      if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 315) { A_SetUserVar("user_defendtimermax",2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 210) { A_SetUserVar("user_defendtimermax",3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 105) { A_SetUserVar("user_defendtimermax",4); }
+     if (levelbehavior > 0 && user_monsterlevel > 315) { A_SetUserVar("user_defendtimermax",2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 210) { A_SetUserVar("user_defendtimermax",3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 105) { A_SetUserVar("user_defendtimermax",4); }
 	 else { A_SetUserVar("user_defendtimermax",5); }
 
 	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
@@ -2321,9 +2321,9 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
      A_SlaughtaurShieldOn;
 	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(21,22)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(19,20)); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(18,19)); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(21,22)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(19,20)); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(18,19)); }
 	 else { A_SetUserVar("user_defendtimermax",18); }
 
 	 if (user_defendtimer >= user_defendtimermax)
@@ -2349,15 +2349,15 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
      A_SlaughtaurShieldOff;
 	 A_FaceTarget;
 
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetUserVar("user_paintomissile",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetUserVar("user_paintomissile",2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 140) { A_SetUserVar("user_paintomissile",3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetUserVar("user_paintomissile",4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 100) { A_SetUserVar("user_paintomissile",5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetUserVar("user_paintomissile",6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetUserVar("user_paintomissile",7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetUserVar("user_paintomissile",8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 20) { A_SetUserVar("user_paintomissile",9); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_paintomissile",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetUserVar("user_paintomissile",2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 140) { A_SetUserVar("user_paintomissile",3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_paintomissile",4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetUserVar("user_paintomissile",5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetUserVar("user_paintomissile",6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_paintomissile",7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetUserVar("user_paintomissile",8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 20) { A_SetUserVar("user_paintomissile",9); }
 	 else { A_SetUserVar("user_paintomissile",10); }
 
 	 if (random(1,user_paintomissile) == 1) { return state("Missile"); }
@@ -2473,13 +2473,13 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDMN ABC 5 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_FireDChase(32,4,20,13);
 	}
     Loop
@@ -2501,14 +2501,14 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDMN K 3 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     FDMN KKK 5 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_PlaySound("FireDemonAttack");
 	 A_MonsterCrisisCheck;
@@ -2611,12 +2611,12 @@ Actor FireDemonLeader : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDNL AABBCC 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FireDChase(40,8,15,10);
 	}
     Loop
@@ -2638,14 +2638,14 @@ Actor FireDemonLeader : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDNL K 3 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     FDNL KKKKK 5 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	 A_PlaySound("FireDemonAttack");
 	 A_MonsterCrisisCheck;
@@ -2897,12 +2897,12 @@ Actor FireDemonCommander : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDNC AABBCC 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FireDChase(48,6,18,12);
 	}
     Loop
@@ -2924,14 +2924,14 @@ Actor FireDemonCommander : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDNC K 3 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     FDNC KKKKKKK 5 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	 A_PlaySound("FireDemonAttack");
 	 A_MonsterCrisisCheck;
@@ -3185,12 +3185,12 @@ Actor FireDemonQueen : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     FDNQ AABBCC 3 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_FireDChase(64,3,36,24);
 	}
     Loop
@@ -3213,14 +3213,14 @@ Actor FireDemonQueen : FireDemonNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDNQ K 3 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     FDNQ KKKKKKKKK 4 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 	 A_FaceTarget;
 	 A_PlaySound("FireDemonAttack");
 	 A_MonsterCrisisCheck;
@@ -3317,14 +3317,14 @@ actor FireDemonQueenClone : FireDemonQueen
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     FDNQ K 3 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     FDNQ KKK 4 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 	 A_FaceTarget;
 	 A_PlaySound("FireDemonAttack");
 
@@ -3540,61 +3540,61 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
     BISH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     BISH A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_Chase;
 	}
     BISH A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
     BISH A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	}
     BISH B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
     BISH B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_Chase;
 	}
     BISH B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
     BISH A 1 A_BishopDecide
@@ -3624,20 +3624,20 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     BISH ADE 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     BISH F 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_BishopAttack(4*random(1,8), (random(1,256) & 3) + 5 + (user_monsterlevel/30));
 	}
     BISH F 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_BishopAttack2("BishopFXNew","BishopFXCrisis");
 	}
     Wait
@@ -3787,66 +3787,66 @@ Actor DarkDisciple : BishopNew
 	}
     HDIS A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	 A_Chase;
 	}
     HDIS A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	 A_BishopChase;
 	}
     HDIS A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	}
     HDIS B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	 A_BishopChase;
 	}
     HDIS B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	 A_Chase;
 	}
     HDIS B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
      A_BishopDecide;
 	 A_BishopChase;
 	}
@@ -3915,14 +3915,14 @@ Actor DarkDisciple : BishopNew
   Missile:
 	HDIS ADE 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
 	HDIS F 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_BishopAttack(5*random(1,8));
 	 user_shotsfired = 0;
 	 user_shotsfiredmax = (random(1,256) & 3) + 5 + (user_monsterlevel/25);
@@ -3931,8 +3931,8 @@ Actor DarkDisciple : BishopNew
   MissileLoop:
 	HDIS F 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,-60,1);
@@ -4305,66 +4305,66 @@ ACTOR VampireDVDS : BishopNew
     VAM1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     VAM1 A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_Chase;
 	}
 	VAM1 A 0 A_BishopDecide
 	VAM1 A 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
 	VAM1 A 0 A_BishopDecide
 	VAM1 B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
 	VAM1 A 0 A_BishopDecide
 	VAM1 B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_Chase;
 	}
 	VAM1 A 0 A_BishopDecide
 	VAM1 B 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_BishopChase;
 	}
 	VAM1 A 1
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
 	 A_BishopDecide;
 	}
     Loop
@@ -4384,10 +4384,10 @@ ACTOR VampireDVDS : BishopNew
     VAM1 X 0 Bright A_Jump(96,"Missile2")
     VAM1 X 8 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	 user_shotsfired = 0;
 	 user_shotsfiredmax = 9 + (random(1,256) & 3) + (user_monsterlevel/45);
@@ -4408,20 +4408,20 @@ ACTOR VampireDVDS : BishopNew
    BatEnd:
     VAM1 Y 8 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	}
     goto see
 
    Missile2:
     VAM1 E 8 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	 user_shotsfired = 0;
 	 user_shotsfiredmax = 42 + (random(1,256) & 14) + (user_monsterlevel/20);
@@ -5068,19 +5068,19 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
     SSPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     SSPT HH 1 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 	}
     SSPT H 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_SerpentHumpDecide;
 	}
     Loop
@@ -5101,40 +5101,40 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
   Dive:
     SSDV ABC 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	}
     SSDV D 4 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_UnSetShootable;
 	}
     SSDV E 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_PlaySoundEx("SerpentActive", "Body");
 	}
     SSDV F 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	}
     SSDV GH 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	}
     SSDV I 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	}
     SSDV J 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_SerpentHide;
 	}
     Goto See
@@ -5143,24 +5143,24 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
     SSPT A 1 A_UnHideThing
     SSPT A 1 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
 	 A_PlaySoundEx("SerpentBirth", "Voice");
 	}
     SSPT B 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_SetShootable;
 	}
     SSPT C 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	}
     SSPT D 4 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_SerpentCheckForAttack;
 	}
     Goto Dive
@@ -5297,8 +5297,8 @@ ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     SSPT N 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("SerpentFXNew", "SerpentFXCrisis", 32, 0);
@@ -5343,19 +5343,19 @@ ACTOR IceStalker : StalkerNew
     ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ISPT HH 1 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 	}
     ISPT H 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_SerpentHumpDecide;
 	}
 	Loop
@@ -5453,19 +5453,19 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
     ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ISPT HH 1 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 	}
     ISPT H 2
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_SerpentHumpDecide;
 	}
 	Loop
@@ -5633,11 +5633,11 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
     DEMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEMN ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -5659,24 +5659,24 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEMN E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEMN F 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     DEMN G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(2,3) * random(1,8));
@@ -5686,21 +5686,21 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEMN E 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     DEMN F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEMN G 5 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon1FX1New", "Demon1FX1Crisis", 62, 0);
@@ -5790,11 +5790,11 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
     DEM2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEM2 ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -5816,24 +5816,24 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM2 E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEM2 F 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     DEM2 G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(2,3) * random(1,8));
@@ -5843,21 +5843,21 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM2 E 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     DEM2 F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEM2 G 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon2FX1New", "Demon2FX1Crisis", 62, 0);
@@ -6272,11 +6272,11 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
     RDMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     RDMN ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -6284,24 +6284,24 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     RDMN E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     RDMN F 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     RDMN G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(3,4) * random(1,8));
@@ -6311,21 +6311,21 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     RDMN E 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     RDMN F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     RDMN G 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon3FX","Demon3FXCrisis",62,0,0,0);
@@ -6703,11 +6703,11 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
     DEM4 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEM4 ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -6715,24 +6715,24 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM4 E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEM4 F 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     DEM4 G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(3,4) * random(1,8));
@@ -6742,21 +6742,21 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM4 E 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     DEM4 F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEM4 G 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon4FX","Demon4FXCrisis",62,0,0,0);
@@ -7056,11 +7056,11 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
     DEM5 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     DEM5 ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -7068,24 +7068,24 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM5 E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     DEM5 F 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     DEM5 G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisMeleeAttack(random(4,5) * random(2,9));
@@ -7095,15 +7095,15 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DEM5 E 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     DEM5 F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
 	DEM5 G 0 
@@ -7118,14 +7118,14 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 	}
     DEM5 G 5
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -10);
      A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 0);
    	 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 10);
-	 if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120)
+	 if (levelbehavior > 0 && user_monsterlevel > 120)
 	 {
 	  A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -20);
       A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 20);
@@ -7135,7 +7135,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
   Missile2:
 	DEM5 G 2 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("Demon5Jet", "Demon5JetCrisis", 62, 0);
@@ -7270,11 +7270,11 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
     WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_WraithChase;
 	}
     Loop
@@ -7296,23 +7296,23 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     WRTH E 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     WRTH F 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_WraithFX3;
 	}
     WRTH G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_WraithMelee(random[StealHealth](1,8)*2);
 	}
     Goto See
@@ -7320,16 +7320,16 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     WRTH EF 6
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 	 A_FaceTarget;
 	}
     WRTH G 6 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
 	 A_MonsterCrisisCheck;
 	 A_CrisisSpawnProjectile("WraithFX1", "WraithFX1Crisis", 32, 0);
@@ -7412,11 +7412,11 @@ ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     WRTH ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_WraithChase;
 	}
     Loop
@@ -7624,29 +7624,29 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
     ICEY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     ICEY A 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     ICEY B 4 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_IceGuyChase;
 	}
     ICEY CD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 	 A_Chase;
 	}
     Loop
@@ -7657,24 +7657,24 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     ICEY EF 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 	 A_FaceTarget;
 	}
     ICEY G 8 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 
 	 A_MonsterCrisisCheck;
 	 A_IceGuyAttack("IceGuyFXNew","IceGuyFXCrisis");
 	}
     ICEY F 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
     Goto See
@@ -7944,84 +7944,84 @@ ACTOR KoraxNew : KoraxBase replaces Korax
     KORX A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     KORX AAA 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_KoraxChase;
 	}
     KORX B 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_Chase;
 	}
     KORX BBB 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_KoraxChase;
 	}
     KORX C 0 A_PlaySound("KoraxStep")
     KORX C 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_Chase;
 	}
     KORX CCC 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_KoraxChase;
 	}
     KORX D 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_Chase;
 	}
     KORX DDD 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_KoraxChase;
 	}
     KORX A 0 A_PlaySound("KoraxStep")
     KORX A 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 	 A_Chase;
 	}
     Loop
@@ -8041,38 +8041,38 @@ ACTOR KoraxNew : KoraxBase replaces Korax
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     KORX E 2 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 	 A_FaceTarget;
 	}
     KORX E 5 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_KoraxDecide;
 	}
     Wait
   Attack:
     KORX E 4 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 	 A_FaceTarget;
 	}
   AttackLoop:
     KORX F 8 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_KoraxMissile;
 	}
     KORX E 8 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	}
     KORX E 0 Bright
 	{
@@ -8086,41 +8086,41 @@ ACTOR KoraxNew : KoraxBase replaces Korax
   Command:
     KORX E 5 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	 A_FaceTarget;
 	}
     KORX W 10 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	 A_FaceTarget;
 	}
     KORX G 15 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 150) { A_SetTics(9); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 125) { A_SetTics(10); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 100) { A_SetTics(11); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 75) { A_SetTics(12); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 50) { A_SetTics(13); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 25) { A_SetTics(14); }
+     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(9); }
+     else if (levelbehavior > 0 && user_monsterlevel > 125) { A_SetTics(10); }
+     else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(11); }
+     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(12); }
+     else if (levelbehavior > 0 && user_monsterlevel > 50) { A_SetTics(13); }
+     else if (levelbehavior > 0 && user_monsterlevel > 25) { A_SetTics(14); }
 	 A_KoraxCommand;
 	}
     KORX W 10 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	}
     KORX E 5 Bright
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 	}
     Goto See
 
@@ -8183,21 +8183,21 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
     DRAG A 5 A_DragonInitFlight
     DRAG B 3 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
      A_DragonFlap(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
 	}
     DRAG BCCDDCCBBAA 3
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
 	 A_DragonFlight(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
 	}
@@ -8217,10 +8217,10 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     DRAG E 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 135) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 90) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 45) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(7); }
 
 	 A_MonsterCrisisCheck;
 	 A_DragonAttack("DragonFireball","DragonFireballCrisis");
@@ -8400,11 +8400,11 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
     CLER A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     CLER ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
  
 	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
@@ -8428,19 +8428,19 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     CLER EF 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     CLER G 10 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 	 A_ClericAttack("HolyMissile","HolyMissileCrisis");
 	}
     Goto See
@@ -8677,11 +8677,11 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
     PLAY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     PLAY ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
 	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
@@ -8705,18 +8705,18 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     PLAY E 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     PLAY F 8 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FighterAttack("FSwordMissile","FSwordMissileCrisis");
 	}
     Goto See
@@ -8876,11 +8876,11 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
     MAGE A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
     MAGE ABCD 4
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
+     if (levelbehavior > 0 && user_monsterlevel > 180) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",1); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_ChangeFlag("MISSILEEVENMORE",1); A_ChangeFlag("MISSILEMORE",0); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("MISSILEMORE",1); A_ChangeFlag("MISSILEEVENMORE",0); }
 	 else { A_ChangeFlag("MISSILEMORE",0); A_ChangeFlag("MISSILEEVENMORE",0); }
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
 	 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 	}
@@ -8904,18 +8904,18 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
     TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
     MAGE E 8
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_FaceTarget;
 	}
     MAGE F 8 Bright 
 	{
-     if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-     else if (GetCVar("dvds_monsterlevelbehavior") > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 	 A_MageAttack("MageStaffFX2New","MageStaffFX2Crisis");
 	}
     Goto See

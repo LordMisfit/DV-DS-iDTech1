@@ -93,10 +93,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		}
 		SORC ABCD 5
 		{
-		 if (levelbehavior > 0 && user_monsterlevel > 180) { bMISSILEEVENMORE = 1; bMISSILEMORE = 1; }
-		 else if (levelbehavior > 0 && user_monsterlevel > 120) { bMISSILEEVENMORE = 1; bMISSILEMORE = 0; }
-		 else if (levelbehavior > 0 && user_monsterlevel > 60) { bMISSILEEVENMORE = 0; bMISSILEMORE = 1; }
-		 else { bMISSILEEVENMORE = 0; bMISSILEMORE = 1; }
 		 if (levelbehavior > 0 && user_monsterlevel > 60) { bAVOIDMELEE = 1; }
 		 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 		 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }

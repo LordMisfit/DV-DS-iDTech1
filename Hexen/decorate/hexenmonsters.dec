@@ -30,10 +30,10 @@ actor MinotaurFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX12 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX12 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -88,10 +88,10 @@ actor MinotaurFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX13 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX13 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -165,10 +165,10 @@ actor MinotaurFX3CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX13 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX13 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" DDCCBBCCDDEEFFGGHH 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" DDCCBBCCDDEEFFGGHH 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -860,10 +860,10 @@ actor ThrownMaceCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    AEMC A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    AEMC A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCDEFG 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCDEFG 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1272,10 +1272,10 @@ actor WraithFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    WRBL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    WRBL A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1344,10 +1344,10 @@ actor BormerethFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    WRBL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    WRBL A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1511,10 +1511,10 @@ actor PossEttFireBallCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    WRBL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    WRBL A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBBCCC 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBBCCC 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1806,10 +1806,10 @@ actor FirePillarShotCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    INFE A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    INFE A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCDEFGHIJKLMNOPQRST 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCDEFGHIJKLMNOPQRST 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1855,188 +1855,189 @@ Actor FirePillarShot2Crisis : FirePillarShotCrisis
 	
 ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 {
-  Health 200
-  Painchance 135
-  Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
-  DamageFactor "Shock", 3
-  DamageFactor "Electric", 3
-  DamageFactor "Thunder", 3
-  DamageFactor "Normal", 0.875
-  DamageFactor "Crush", 8
-  Speed 13
-  Height 64
-  Mass 120
-  Monster
-  +FLOORCLIP
-  +TELESTOMP
-  +SHIELDREFLECT
-  SeeSound "CentaurSight"
-  AttackSound "CentaurAttack"
-  PainSound "CentaurPain"
-  DeathSound "CentaurDeath"
-  ActiveSound "CentaurActive"
-  HowlSound "PuppyBeat"
-  Obituary "$OB_CENTAUR"
-  
-  States
-  {
-  Spawn:
-    CENT A 0 NoDelay 
-    CENT AB 10 A_Look
-    goto Spawn+1
-  See:
-    CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    CENT ABCD 4
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-	 A_CentaurShieldOff;
-	 A_SlaughtaurShieldOff;
-	 A_Chase;
-	}
-    Loop
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    CENT H 5 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_FaceTarget;
-	}
-    CENT I 4 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    CENT J 7
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-	 A_FaceTarget;
+	Health 200
+	Painchance 135
+	Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Shock", 3
+	DamageFactor "Electric", 3
+	DamageFactor "Thunder", 3
+	DamageFactor "Normal", 0.875
+	DamageFactor "Crush", 8
+	Speed 13
+	Height 64
+	Mass 120
+	Monster
+	+FLOORCLIP
+	+TELESTOMP
+	+SHIELDREFLECT
+	SeeSound "CentaurSight"
+	AttackSound "CentaurAttack"
+	PainSound "CentaurPain"
+	DeathSound "CentaurDeath"
+	ActiveSound "CentaurActive"
+	HowlSound "PuppyBeat"
+	Obituary "$OB_CENTAUR"
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
-	}
-    Goto See
-  Pain:
-    CENT G 6 A_Pain
-    Goto ShieldDefend
-  Pain.Fist:
-    CENT G 6 A_Pain
-    CENT GG 6
-    Goto ShieldDefend
-  Pain.Kick:
-    CENT G 6 A_Pain
-    CENT GGGG 6
-    Goto ShieldDefend
-  ShieldDefend:
-    CENT G 1 // A_SetReflectiveInvulnerable
+	States
 	{
-     A_CentaurShieldOn;
-	 A_FaceTarget;
+		Spawn:
+			CENT A 0 NoDelay 
+			CENT AB 10 A_Look
+			goto Spawn+1
+		See:
+			CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			CENT ABCD 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+			 A_CentaurShieldOff;
+			 A_SlaughtaurShieldOff;
+			 A_Chase;
+			}
+			Loop
+		Melee:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			CENT H 5 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+			 A_FaceTarget;
+			}
+			CENT I 4 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			 A_FaceTarget;
+			}
+			CENT J 7
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+			 A_FaceTarget;
 
-     if (random(1,32) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
-     if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
+			}
+			Goto See
+		Pain:
+			CENT G 6 A_Pain
+			Goto ShieldDefend
+		Pain.Fist:
+			CENT G 6 A_Pain
+			CENT GG 6
+			Goto ShieldDefend
+		Pain.Kick:
+			CENT G 6 A_Pain
+			CENT GGGG 6
+			Goto ShieldDefend
+		ShieldDefend:
+			CENT G 1 // A_SetReflectiveInvulnerable
+			{
+			 A_CentaurShieldOn;
+			 A_FaceTarget;
 
-     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",5); }
-	 else { A_SetUserVar("user_defendtimermax",6); }
+			 if (random(1,32) == 1) { user_defendtimer += 1; }
+			 if (random(1,8) == 1) { user_defendtimer += 1; }
+			 user_defendtimer += 1;
 
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
-	 return state("");
+			 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = 3; }
+			 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = 4; }
+			 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = 5; }
+			 else { user_defendtimermax = 6; }
+
+			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
+			 return state("");
+			}
+			loop
+		ShieldBlocking:
+			// Defense Cycles
+			CENT E 1 // A_CentaurDefend
+			{
+			 A_CentaurShieldOn;
+			 user_defendtimer += 1;
+
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(17,18); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(16,17); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(15,16); }
+			 else { user_defendtimermax = 15; }
+
+			 if (user_defendtimer >= user_defendtimermax)
+			 {
+				user_defendtimer = 0;
+				user_defendcycles += 1;
+				if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+				{
+				 A_CentaurShieldOff;
+				 A_SlaughtaurShieldOff;
+				 return state("Melee");
+				}
+				A_FaceTarget;
+			 }
+			 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+			 return state("");
+			}
+			loop
+		ShieldEnding:
+			CENT E 1 // A_UnsetReflectiveInvulnerable
+			{
+			 A_CentaurShieldOff;
+			 A_SlaughtaurShieldOff;
+			 A_FaceTarget;
+			}
+			Goto See
+
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			CENT K 4
+			CENT L 4 A_Scream
+			CENT MN 4
+			CENT O 4 A_NoBlocking
+			CENT PQ 4
+			CENT R 4 A_QueueCorpse
+			CENT S 4
+			TNT1 A 0 
+			CENT T -1
+			Stop
+
+		XDeath:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			CTXD A 4
+			CTXD B 4 A_NoBlocking
+			CTXD C 0 A_SpawnItemEx("CentaurSword", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
+														 1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 270)
+			CTXD C 4 
+			{
+			 if (random(1,256) == 1)
+			 {
+					A_CustomMissile("EvilWarriorShield",44,-32,90,0);
+			 }
+			 else
+			 {
+				A_SpawnItemEx("CentaurShield", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
+																	1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 90);
+			 }
+			}
+			CTXD D 3 A_Scream
+			CTXD E 4 A_QueueCorpse
+			CTXD F 3
+			CTXD G 4
+			CTXD H 3
+			CTXD I 4
+			CTXD J 3
+			TNT1 A 0 
+			CTXD K -1
+		Ice:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			CENT U 5 A_FreezeDeath
+			CENT U 1 A_FreezeDeathChunks
+			Wait
+		Raise:
+			CENT T 4 
+			CENT SRQPONMLK 4 
+			goto See
 	}
-	loop
-  ShieldBlocking:
-    // Defense Cycles
-    CENT E 1 // A_CentaurDefend
-	{	 
-     A_CentaurShieldOn;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
-	 else { A_SetUserVar("user_defendtimermax",15); }
-
-	 if (user_defendtimer >= user_defendtimermax)
-	 {
-	  A_SetUserVar("user_defendtimer",0);
-	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
-	  if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
-	  {
-	   A_CentaurShieldOff;
-	   A_SlaughtaurShieldOff;
-	   return state("Melee");
-	  }
-	  A_FaceTarget;
-	 }
-	 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
-	 return state("");
-	}
-	loop
-  ShieldEnding:
-    CENT E 1 // A_UnsetReflectiveInvulnerable
-	{
-	 A_CentaurShieldOff;
-	 A_SlaughtaurShieldOff;
-	 A_FaceTarget;
-	}
-    Goto See
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    CENT K 4
-    CENT L 4 A_Scream
-    CENT MN 4
-    CENT O 4 A_NoBlocking
-    CENT PQ 4
-    CENT R 4 A_QueueCorpse
-    CENT S 4
-    TNT1 A 0 
-    CENT T -1
-    Stop
-
-  XDeath:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    CTXD A 4
-    CTXD B 4 A_NoBlocking
-    CTXD C 0 A_SpawnItemEx("CentaurSword", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
-                           1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 270)
-    CTXD C 4 
-	{
-     if (random(1,256) == 1)
-	 {
-      A_CustomMissile("EvilWarriorShield",44,-32,90,0);
-	 }
-	 else
-	 {
-	  A_SpawnItemEx("CentaurShield", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
-                              1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 90);
-	 }
-    }
-    CTXD D 3 A_Scream
-    CTXD E 4 A_QueueCorpse
-    CTXD F 3
-    CTXD G 4
-    CTXD H 3
-    CTXD I 4
-    CTXD J 3
-    TNT1 A 0 
-    CTXD K -1
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    CENT U 5 A_FreezeDeath
-    CENT U 1 A_FreezeDeathChunks
-    Wait
-  Raise:
-    CENT T 4 
-    CENT SRQPONMLK 4 
-    goto See
-  }
 }
 actor FCentaur : CentaurNew
 {
@@ -2097,10 +2098,10 @@ actor CentaurFXNewCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    CTFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    CTFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2133,210 +2134,210 @@ ACTOR CentaurFXCrisis : CentaurFXNew
 
 ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 {
-  Health 325
-  Speed 12.5
-  Painchance 84
-  Painchance "Fist", 126 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 210 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 126 // Fist attacks have a +50% chance of stunning an enemy
-  DamageFactor "Normal", 0.75
-  DamageFactor "Fire", 0.75
-  RadiusDamageFactor 0.75
-  DamageFactor "Explosive", 0.75
-  DamageFactor "Magic", 1.1167
-  DamageFactor "Thunder", 3
-  DamageFactor "Crush", 8
+	Health 325
+	Speed 12.5
+	Painchance 84
+	Painchance "Fist", 126 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 210 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 126 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Normal", 0.75
+	DamageFactor "Fire", 0.75
+	RadiusDamageFactor 0.75
+	DamageFactor "Explosive", 0.75
+	DamageFactor "Magic", 1.1167
+	DamageFactor "Thunder", 3
+	DamageFactor "Crush", 8
 
-  Translation "81:96=85:92", "97:121=101:113", "0:32=231:235", "33:50=231:235"  // Dark Skin, Obsidian Armor
+	Translation "81:96=85:92", "97:121=101:113", "0:32=231:235", "33:50=231:235"  // Dark Skin, Obsidian Armor
 
-  States
-  {
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    CENT H 5 
+	States
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-	 A_FaceTarget;
-	}
-    CENT I 4 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    CENT J 7
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-	 A_FaceTarget;
+	Melee:
+		TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+		CENT H 5 
+		{
+		 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+		 A_FaceTarget;
+		}
+		CENT I 4 
+		{
+		 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+		 A_FaceTarget;
+		}
+		CENT J 7
+		{
+		 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+		 A_FaceTarget;
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
-	}
-    Goto See
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-  MissilePhase1:
-    CENT E 1
-	{
-     A_SlaughtaurShieldOn;
-	 A_FaceTarget;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+		 A_MonsterCrisisCheck;
+		 A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
+		}
+		Goto See
+	Missile:
+		TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+	MissilePhase1:
+		CENT E 1
+		{
+		 A_SlaughtaurShieldOn;
+		 A_FaceTarget;
+		 user_defendtimer += 1;
 
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
-	 else { A_SetUserVar("user_defendtimermax",10); }
+		 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
+		 else { user_defendtimermax = 10; }
 
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase2"); }
-	 return state(""); 
-	}
-	loop
-  MissilePhase2:
-    CENT F 1 Bright 
-	{
-     A_SlaughtaurShieldOn;
-	 A_FaceTarget;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-     if (user_defendtimer == 1) 
-	 { 
-	  A_MonsterCrisisCheck;
-	  A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
-	 }
+		 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase2"); }
+		 return state(""); 
+		}
+		loop
+	MissilePhase2:
+		CENT F 1 Bright 
+		{
+		 A_SlaughtaurShieldOn;
+		 A_FaceTarget;
+		 user_defendtimer += 1;
+		 if (user_defendtimer == 1) 
+		 { 
+			A_MonsterCrisisCheck;
+			A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
+		 }
 	 
-     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-	 else { A_SetUserVar("user_defendtimermax",8); }
+		 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
+		 else { user_defendtimermax = 8; }
 
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase3"); }
-	 return state(""); 
-	}
-    loop
-  MissilePhase3:
-    CENT E 1
-	{
-     A_SlaughtaurShieldOn;
-	 A_FaceTarget;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+		 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase3"); }
+		 return state(""); 
+		}
+		loop
+	MissilePhase3:
+		CENT E 1
+		{
+		 A_SlaughtaurShieldOn;
+		 A_FaceTarget;
+		 user_defendtimer += 1;
 
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(8,9)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(9,10)); }
-	 else { A_SetUserVar("user_defendtimermax",10); }
+		 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
+		 else { user_defendtimermax = 10; }
 
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("MissilePhase4"); }
-	 return state(""); 
-	}
-	loop
-  MissilePhase4:
-    CENT F 1 Bright 
-	{
-     A_SlaughtaurShieldOn;
-	 A_FaceTarget;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-     if (user_defendtimer == 1) 
-	 { 
-	  A_MonsterCrisisCheck;
-	  A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
-	 }
+		 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase4"); }
+		 return state(""); 
+		}
+		loop
+	MissilePhase4:
+		CENT F 1 Bright 
+		{
+		 A_SlaughtaurShieldOn;
+		 A_FaceTarget;
+		 user_defendtimer += 1;
+		 if (user_defendtimer == 1) 
+		 { 
+			A_MonsterCrisisCheck;
+			A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
+		 }
 	 
-     if (levelbehavior > 0 && user_monsterlevel > 270) { A_SetUserVar("user_defendtimermax",random(5,6)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(6,7)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetUserVar("user_defendtimermax",random(7,8)); }
-	 else { A_SetUserVar("user_defendtimermax",8); }
+		 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
+		 else { user_defendtimermax = 8; }
 
-	 if (user_defendtimer >= user_defendtimermax) 
-	 { 
-	  A_CentaurShieldOff;
-	  A_SlaughtaurShieldOff;
-	  return state("See"); 
-	 }
-	 return state(""); 
+		 if (user_defendtimer >= user_defendtimermax) 
+		 { 
+			A_CentaurShieldOff;
+			A_SlaughtaurShieldOff;
+			return state("See"); 
+		 }
+		 return state(""); 
+		}
+		loop
+	Pain:
+		CENT G 5 A_Pain
+		Goto ShieldDefend
+	Pain.Fist:
+		CENT G 5 A_Pain
+		CENT GG 5
+		Goto ShieldDefend
+	Pain.Kick:
+		CENT G 5 A_Pain
+		CENT GGGG 5
+		Goto ShieldDefend
+	ShieldDefend:
+		CENT G 1 // A_SetReflectiveInvulnerable
+		{
+		 A_SlaughtaurShieldOn;
+		 A_FaceTarget;
+
+		 if (random(1,32) == 1) { user_defendtimer += 1; }
+		 if (random(1,8) == 1) { user_defendtimer += 1; }
+		 user_defendtimer += 1;
+
+		 if (levelbehavior > 0 && user_monsterlevel > 315) { user_defendtimermax = 2; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 210) { user_defendtimermax = 3; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 105) { user_defendtimermax = 4; }
+		 else { user_defendtimermax = 5; }
+
+		 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
+		 return state("");
+		}
+		loop
+	ShieldBlocking:
+		// Defense Cycles
+		CENT E 1 // A_CentaurDefend
+		{	 
+		 A_SlaughtaurShieldOn;
+		 user_defendtimer += 1;
+
+		 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(21,22); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(19,20); }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(18,19); }
+		 else { user_defendtimermax = 18; }
+
+		 if (user_defendtimer >= user_defendtimermax)
+		 {
+			user_defendtimer = 0;
+			user_defendcycles += 1;
+			if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+			{
+			 A_CentaurShieldOff;
+			 A_SlaughtaurShieldOff;
+			 return state("Melee");
+			}
+			A_FaceTarget;
+		 }
+		 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+		 return state("");
+		}
+		loop
+	ShieldEnding:
+		CENT E 1 // A_UnsetReflectiveInvulnerable
+		{
+		 A_CentaurShieldOff;
+		 A_SlaughtaurShieldOff;
+		 A_FaceTarget;
+
+		 if (levelbehavior > 0 && user_monsterlevel > 180) { user_paintomissile = 1; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 160) { user_paintomissile = 2; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 140) { user_paintomissile = 3; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_paintomissile = 4; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 100) { user_paintomissile = 5; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 80) { user_paintomissile = 6; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_paintomissile = 7; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 40) { user_paintomissile = 8; }
+		 else if (levelbehavior > 0 && user_monsterlevel > 20) { user_paintomissile = 9; }
+		 else { user_paintomissile = 10; }
+
+		 if (random(1,user_paintomissile) == 1) { return state("Missile"); }
+		 return state("");
+		}
+		Goto See
 	}
-    loop
-  Pain:
-    CENT G 5 A_Pain
-    Goto ShieldDefend
-  Pain.Fist:
-    CENT G 5 A_Pain
-    CENT GG 5
-    Goto ShieldDefend
-  Pain.Kick:
-    CENT G 5 A_Pain
-    CENT GGGG 5
-    Goto ShieldDefend
-  ShieldDefend:
-    CENT G 1 // A_SetReflectiveInvulnerable
-	{
-     A_SlaughtaurShieldOn;
-	 A_FaceTarget;
-
-     if (random(1,32) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
-     if (random(1,8) == 1) { A_SetUserVar("user_defendtimer",user_defendtimer+1); }
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-
-     if (levelbehavior > 0 && user_monsterlevel > 315) { A_SetUserVar("user_defendtimermax",2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 210) { A_SetUserVar("user_defendtimermax",3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 105) { A_SetUserVar("user_defendtimermax",4); }
-	 else { A_SetUserVar("user_defendtimermax",5); }
-
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("ShieldBlocking"); }
-	 return state("");
-	}
-	loop
-  ShieldBlocking:
-    // Defense Cycles
-    CENT E 1 // A_CentaurDefend
-	{	 
-     A_SlaughtaurShieldOn;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(21,22)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(19,20)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(18,19)); }
-	 else { A_SetUserVar("user_defendtimermax",18); }
-
-	 if (user_defendtimer >= user_defendtimermax)
-	 {
-	  A_SetUserVar("user_defendtimer",0);
-	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
-	  if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
-	  {
-	   A_CentaurShieldOff;
-	   A_SlaughtaurShieldOff;
-	   return state("Melee");
-	  }
-	  A_FaceTarget;
-	 }
-	 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
-	 return state("");
-	}
-	loop
-  ShieldEnding:
-    CENT E 1 // A_UnsetReflectiveInvulnerable
-	{
-	 A_CentaurShieldOff;
-     A_SlaughtaurShieldOff;
-	 A_FaceTarget;
-
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_paintomissile",1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetUserVar("user_paintomissile",2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 140) { A_SetUserVar("user_paintomissile",3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_paintomissile",4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetUserVar("user_paintomissile",5); }
-     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetUserVar("user_paintomissile",6); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_paintomissile",7); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetUserVar("user_paintomissile",8); }
-     else if (levelbehavior > 0 && user_monsterlevel > 20) { A_SetUserVar("user_paintomissile",9); }
-	 else { A_SetUserVar("user_paintomissile",10); }
-
-	 if (random(1,user_paintomissile) == 1) { return state("Missile"); }
-	 return state("");
-	}
-    Goto See
-  }
 }
 actor FSlaughtaur : SlaughtaurNew
 {
@@ -2366,10 +2367,10 @@ actor FireDemonMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FDMB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FDMB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2695,10 +2696,10 @@ actor FireDemonLeaderMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FDLB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FDLB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2972,10 +2973,10 @@ actor FireDemonCommanderMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FDCB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FDCB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3337,10 +3338,10 @@ actor FireDemonQueenMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FDQB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FDQB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3645,10 +3646,10 @@ actor BishopFXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BPFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BPFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABAB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABAB 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3948,10 +3949,10 @@ actor DiscipleFXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    HDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    HDFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AB 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4010,10 +4011,10 @@ actor DiscipleSpreadFXCrisisParticle : DiscipleFXCrisisParticle
  States
  {
   Spawn:
-    HDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    HDFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AB 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4500,10 +4501,10 @@ actor VampireRoundBeamCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    VAM2 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    VAM2 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4700,10 +4701,10 @@ actor BatAttackCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    VAM4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    VAM4 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5131,10 +5132,10 @@ actor SerpentFXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SSFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SSFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABAB 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABAB 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5431,10 +5432,10 @@ actor Demon1FX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    DMFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    DMFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5803,10 +5804,10 @@ actor Demon2FX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    D2FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    D2FX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDDEEFF 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5974,10 +5975,10 @@ actor Demon3FXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    RDFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    RDFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6058,10 +6059,10 @@ actor HrVolcanoTBlastCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    VTFB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    VTFB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6359,10 +6360,10 @@ actor Demon4FXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    D4FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    D4FX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6470,10 +6471,10 @@ actor PoisonVolcanoTBlastCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BPBL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BPBL A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6684,7 +6685,7 @@ ACTOR Demon5FX1 : AetheriusEffectProjectile
 	  A_StatusEffectChecker(5);
 	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
-	   A_SetUserVar("user_random",random(1,6));
+	   user_random = random(1,6);
 	        if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", random(7,9), 1, 0, 0); } // Drain 4-6% mana
 	   else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140)); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
        else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
@@ -6708,10 +6709,10 @@ actor Demon5FX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    D5FX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    D5FX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDDEEFF 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6734,7 +6735,7 @@ ACTOR Demon5FX1Crisis : Demon5FX1
 	  A_StatusEffectChecker(5);
 	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
-	   A_SetUserVar("user_random",random(1,6));
+	   user_random = random(1,6);
 	        if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0); } // Drain 4-6% mana
 	   else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) ); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
        else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
@@ -6787,7 +6788,7 @@ ACTOR Demon5Jet : AetheriusEffectProjectile
 	  A_StatusEffectChecker(15);
 	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 	  {
-	   A_SetUserVar("user_random",random(1,12));
+	   user_random = random(1,12);
 	        if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", random(1,2), 0, 0, 0); } // Drain 0-1 mana
 	   else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(5,10)); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
        else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
@@ -6812,10 +6813,10 @@ actor Demon5JetCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    D5JT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    D5JT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6824,38 +6825,37 @@ ACTOR Demon5JetCrisis : Demon5Jet
   Damage ((random(1,4)) * CallACS("CrisisMultiplier"))
   States
   {
-  Spawn:
-	D5JT AABBCC 2 BRIGHT
-	{
-     A_SpawnItemEx("Demon5JetCrisisParticle",0,0,0,0,0,1.28);
-	 A_Weave(1, 2, 0.25, 0.5);
-	 A_FadeOut(0.034);
-	}
-	Loop
-  Death:
-    TNT1 A 0 Bright
-	{
-	 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-	 {
-	  A_StatusEffectChecker(15);
-	  if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
-	  {
-	   A_SetUserVar("user_random",random(1,12));
-	        if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana
-	   else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(5,10)*CallACS("CrisisMultiplier",5)) ); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-       else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
-	   {
-	    ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(10,20)*CallACS("CrisisMultiplier",5)) );
-        CallACS("ManaDrain", (random(2,3)*CallACS("CrisisMultiplier",2)) , 0, 0, 0);
-	   }	   
-	   	   
-	  }
-	 }
-	 return state("");
-	}
-  Death2:
-	D5JT DEFG 2 BRIGHT
-	Stop
+		Spawn:
+			D5JT AABBCC 2 BRIGHT
+			{
+				 A_SpawnItemEx("Demon5JetCrisisParticle",0,0,0,0,0,1.28);
+			 A_Weave(1, 2, 0.25, 0.5);
+			 A_FadeOut(0.034);
+			}
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+			 {
+				A_StatusEffectChecker(15);
+				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				{
+				 user_random = random(1,12);
+							if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana
+				 else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(5,10)*CallACS("CrisisMultiplier",5)) ); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+				 else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
+				 {
+					ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(10,20)*CallACS("CrisisMultiplier",5)) );
+						CallACS("ManaDrain", (random(2,3)*CallACS("CrisisMultiplier",2)) , 0, 0, 0);
+				 }	   
+				}
+			 }
+			 return state("");
+			}
+		Death2:
+			D5JT DEFG 2 BRIGHT
+			Stop
   }
 }
 
@@ -7301,10 +7301,10 @@ actor IceGuyFXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ICPR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ICPR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -7385,10 +7385,10 @@ actor IceGuyFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ICPR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ICPR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" NOP 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" NOP 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -7600,11 +7600,11 @@ actor SorcFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SBS1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SBS1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    "####" BCD 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
+    "####" BCD 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -7683,10 +7683,10 @@ actor SorcFX4CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SBS4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SBS4 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -8064,10 +8064,10 @@ actor DragonFireballCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    DRFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    DRFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDDEEFF 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDDEEFF 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -8301,10 +8301,10 @@ actor HolyMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SPIR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SPIR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" PPPP 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" PPPP 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -8382,10 +8382,10 @@ actor HolySpiritCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SPIR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SPIR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -8578,10 +8578,10 @@ actor FSwordMissileCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FSFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FSFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -8773,10 +8773,10 @@ actor MageStaffFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    MSP2 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    MSP2 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCD 2 Bright A_CrisisParticleDo
     loop
  }
 }

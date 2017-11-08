@@ -172,22 +172,22 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
   Missile:
     IMPX A 0
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetUserVar("user_chargechance",70); }
-     else if (levelbehavior > 0 && user_monsterlevel > 280) { A_SetUserVar("user_chargechance",67); }
-     else if (levelbehavior > 0 && user_monsterlevel > 260) { A_SetUserVar("user_chargechance",64); }
-     else if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetUserVar("user_chargechance",61); }
-     else if (levelbehavior > 0 && user_monsterlevel > 220) { A_SetUserVar("user_chargechance",58); }
-     else if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetUserVar("user_chargechance",55); }
-     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_chargechance",52); }
-     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetUserVar("user_chargechance",49); }
-     else if (levelbehavior > 0 && user_monsterlevel > 140) { A_SetUserVar("user_chargechance",46); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_chargechance",43); }
-     else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetUserVar("user_chargechance",40); }
-     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetUserVar("user_chargechance",37); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_chargechance",34); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetUserVar("user_chargechance",31); }
-     else if (levelbehavior > 0 && user_monsterlevel > 20) { A_SetUserVar("user_chargechance",28); }
-	 else { A_SetUserVar("user_chargechance",25); }
+     if (levelbehavior > 0 && user_monsterlevel > 300) { user_chargechance = 70; }
+     else if (levelbehavior > 0 && user_monsterlevel > 280) { user_chargechance = 67; }
+     else if (levelbehavior > 0 && user_monsterlevel > 260) { user_chargechance = 64; }
+     else if (levelbehavior > 0 && user_monsterlevel > 240) { user_chargechance = 61; }
+     else if (levelbehavior > 0 && user_monsterlevel > 220) { user_chargechance = 58; }
+     else if (levelbehavior > 0 && user_monsterlevel > 200) { user_chargechance = 55; }
+     else if (levelbehavior > 0 && user_monsterlevel > 180) { user_chargechance = 52; }
+     else if (levelbehavior > 0 && user_monsterlevel > 160) { user_chargechance = 49; }
+     else if (levelbehavior > 0 && user_monsterlevel > 140) { user_chargechance = 46; }
+     else if (levelbehavior > 0 && user_monsterlevel > 120) { user_chargechance = 43; }
+     else if (levelbehavior > 0 && user_monsterlevel > 100) { user_chargechance = 40; }
+     else if (levelbehavior > 0 && user_monsterlevel > 80) { user_chargechance = 37; }
+     else if (levelbehavior > 0 && user_monsterlevel > 60) { user_chargechance = 34; }
+     else if (levelbehavior > 0 && user_monsterlevel > 40) { user_chargechance = 31; }
+     else if (levelbehavior > 0 && user_monsterlevel > 20) { user_chargechance = 28; }
+	 else { user_chargechance = 25; }
 
 	 if (random(1,100) > user_chargechance) { return state("See"); }
 	 else 
@@ -316,11 +316,11 @@ actor HereticImpBallCrisisParticle : BaseCrisisParticle
 {
  States
  {
-  Spawn:
-    FX10 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
-	goto Idle
+	Spawn:
+		FX10 A 0 NoDelay A_CrisisParticleInit
+		goto Idle
   Idle:
-    "####" AAABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -547,10 +547,10 @@ actor PlagueShotCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FVUL A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FVUL A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBB 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBB 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -587,198 +587,198 @@ ACTOR PlagueShotCrisis : PlagueShot
 // Dark/Watcher Gargoyle
 ACTOR WatcherImp : HereticImpNew 
 {
-  Health 120
-  Radius 16
-  Height 36
-  Mass 50
-  Speed 15
-  scale 1.2
-  Monster
-  +FLOAT
-  +NOGRAVITY
-  +SPAWNFLOAT
-  +DONTOVERLAP
-  +MISSILEMORE
-  SeeSound "himp/sight"
-  AttackSound "himp/attack"
-  PainSound "himp/pain"
-  DeathSound "himp/death"
-  ActiveSound "himp/active"
-  Obituary "%o was burnt by a Watcher Gargoyle."
-  HitObituary "%o was slashed by a Watcher Gargoyle."
+	Health 120
+	Radius 16
+	Height 36
+	Mass 50
+	Speed 15
+	scale 1.2
+	Monster
+	+FLOAT
+	+NOGRAVITY
+	+SPAWNFLOAT
+	+DONTOVERLAP
+	+MISSILEMORE
+	SeeSound "himp/sight"
+	AttackSound "himp/attack"
+	PainSound "himp/pain"
+	DeathSound "himp/death"
+	ActiveSound "himp/active"
+	Obituary "%o was burnt by a Watcher Gargoyle."
+	HitObituary "%o was slashed by a Watcher Gargoyle."
 
-  DamageFactor "Fire", 0.5
-  DamageFactor "Crush", 7.6
-  PainChance 50
-  Painchance "Fire", 25 // Fire attacks have a -50% chance of stunning an enemy
-  Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-  +DONTHARMSPECIES
-  Species "Gargoyle"
-  
-  States
-  {
-  Spawn:
-    WATC A 0 NoDelay 
-    WATC ABCB 10 A_Look
-    goto Spawn+1
-  See:
-    WATC A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    WATC AABBCCBB 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-	 A_Chase;
-	}
-    Loop
+	DamageFactor "Fire", 0.5
+	DamageFactor "Crush", 7.6
+	PainChance 50
+	Painchance "Fire", 25 // Fire attacks have a -50% chance of stunning an enemy
+	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
+	+DONTHARMSPECIES
+	Species "Gargoyle"
 
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    WATC DE 4 BRIGHT
+	States
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    WATC F 4 BRIGHT 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+		Spawn:
+			WATC A 0 NoDelay 
+			WATC ABCB 10 A_Look
+			goto Spawn+1
+		See:
+			WATC A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			WATC AABBCCBB 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+			 A_Chase;
+			}
+			Loop
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
-	}
-    WATC "[\" 4 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    WATC ] 4 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+		Melee:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			WATC DE 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_FaceTarget;
+			}
+			WATC F 4 BRIGHT 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
-	}
-    Goto See
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
+			}
+			WATC "[\" 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_FaceTarget;
+			}
+			WATC ] 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-	WATC D 0
-	{
-     A_SetUserVar("user_firevolleys",0);
-	 A_SetUserVar("user_firevolleymax",random(2,3));
-	 if (random(1,16) == 1) { A_SetUserVar("user_firevolleymax",user_firevolleymax*4); }
-	}
-    WATC D 0 BRIGHT A_Jump(85,"Beastball")	
-  MissileLoop:
-    WATC DE 4 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    WATC F 4 BRIGHT 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
+			}
+			Goto See
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
-	}
-    WATC "[\" 4 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-	 A_FaceTarget;
-	}
-    WATC ] 4 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			WATC D 0
+			{
+			 user_firevolleys = 0;
+			 user_firevolleymax = random(2,3);
+			 if (random(1,16) == 1) { user_firevolleymax *= 4; }
+			}
+			WATC D 0 BRIGHT A_Jump(85,"Beastball")	
+		MissileLoop:
+			WATC DE 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_FaceTarget;
+			}
+			WATC F 4 BRIGHT 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
-	}
-	WATC ] 0 BRIGHT
-	{
-	 A_SetUserVar("user_firevolleys",user_firevolleys+1);
-	 if (user_firevolleys >= user_firevolleymax) { return state("See"); }
-	 return state("");
-	}
-    loop
-  Beastball:
-    WATC DE 6 BRIGHT
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    WATC F 6 BRIGHT 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
+			 A_MonsterCrisisCheck;
+			 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
+			}
+			WATC "[\" 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_FaceTarget;
+			}
+			WATC ] 4 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisComboAttack("BeastBall2", "BeastBall2Crisis", 14, random[BeastAttack](1,8)*3, "beast/attack");
+			 A_MonsterCrisisCheck;
+			 A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
+			}
+			WATC ] 0 BRIGHT
+			{
+			 user_firevolleys += 1;
+			 if (user_firevolleys >= user_firevolleymax) { return state("See"); }
+			 return state("");
+			}
+			loop
+		Beastball:
+			WATC DE 6 BRIGHT
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			WATC F 6 BRIGHT 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
+
+			 A_MonsterCrisisCheck;
+			 A_CrisisComboAttack("BeastBall2", "BeastBall2Crisis", 14, random[BeastAttack](1,8)*3, "beast/attack");
+			}
+			Goto See
+		Pain:
+			WATC G 3
+			WATC G 3 A_Pain
+			Goto See
+		Pain.Fist:
+			WATC G 3
+			WATC G 3 A_Pain
+			WATC GG 3
+			Goto See
+		Pain.Kick:
+			WATC G 3
+			WATC G 3 A_Pain
+			WATC GGGG 3
+			Goto See
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			WATC G 4 A_ImpDeath
+			WATC H 5
+			Wait
+		XDeath:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			WATC S 5 A_ImpXDeath1
+			WATC TU 5
+			WATC V 5 A_Gravity
+			WATC W 5 
+			Wait
+		Crash:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			WATC I 7 A_ImpExplode
+			WATC J 7 A_Scream
+			WATC K 7
+			WATC L -1
+			Stop
+		XCrash:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			WATC X 7
+			WATC Y 7
+			WATC Z -1
+			Stop
+		Ice:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			WATC G 5 A_GenericFreezeDeath
+			WATC G 1 A_FreezeDeathChunks
+			wait
+		Raise:
+			WATC H 5 
+			WATC G 4
+			goto See
 	}
-    Goto See
-  Pain:
-    WATC G 3
-    WATC G 3 A_Pain
-    Goto See
-  Pain.Fist:
-    WATC G 3
-    WATC G 3 A_Pain
-    WATC GG 3
-    Goto See
-  Pain.Kick:
-    WATC G 3
-    WATC G 3 A_Pain
-    WATC GGGG 3
-    Goto See
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    WATC G 4 A_ImpDeath
-    WATC H 5
-    Wait
-  XDeath:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    WATC S 5 A_ImpXDeath1
-    WATC TU 5
-    WATC V 5 A_Gravity
-    WATC W 5 
-    Wait
-  Crash:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    WATC I 7 A_ImpExplode
-    WATC J 7 A_Scream
-    WATC K 7
-    WATC L -1
-    Stop
-  XCrash:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    WATC X 7
-    WATC Y 7
-    WATC Z -1
-    Stop
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    WATC G 5 A_GenericFreezeDeath
-    WATC G 1 A_FreezeDeathChunks
-    wait
-  Raise:
-    WATC H 5 
-    WATC G 4
-    goto See
-  }
 }
 
 Actor HereticImpBall2 : HereticImpBallNew
@@ -801,10 +801,10 @@ actor HereticImpBall2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    HIB1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    HIB1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -861,10 +861,10 @@ actor BeastBallCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FRB1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FRB1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -910,10 +910,10 @@ actor Beastball2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FRB1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FRB1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1141,10 +1141,10 @@ actor MummyFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX15 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX15 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCBB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCBB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1460,213 +1460,213 @@ actor FMummyLeaderGhost : MummyLeaderGhostNew
 // Ice Golem
 Actor IceGolem : AetheriusMonsterZSC
 {
-  Health 450
-  Radius 22
-  Height 62
-  Mass 900
-  Speed 16
-  Painchance 32
-  Painchance "Fire", 56 // Fire attacks have a +80% chance of stunning an enemy
-  Painchance "Ice", 11 // Ice attacks have a -67% chance of stunning an enemy
-  Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-  RadiusDamageFactor 0.625
-  DamageFactor "Crush", 5.6
-  DamageFactor "Normal", 0.925
-  DamageFactor "Fire", 1.8
-  DamageFactor "Ice", 0.334
-  Monster
-  +FloorClip
-  +NoBlood
-  +DONTHARMSPECIES
-  RenderStyle Translucent
-  Alpha 0.8
-  Scale 1.0
-  SeeSound "mummy/sight"
-  AttackSound "mummy/attack1"
-  PainSound "mummy/pain"
-  ActiveSound "mummy/active"
-  HitObituary "%o was bludgeoned by an ice golem"
-  Species "Golem"
-  var int user_HalfMaxHP;
-  var int user_regenchance;
+	Health 450
+	Radius 22
+	Height 62
+	Mass 900
+	Speed 16
+	Painchance 32
+	Painchance "Fire", 56 // Fire attacks have a +80% chance of stunning an enemy
+	Painchance "Ice", 11 // Ice attacks have a -67% chance of stunning an enemy
+	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
+	RadiusDamageFactor 0.625
+	DamageFactor "Crush", 5.6
+	DamageFactor "Normal", 0.925
+	DamageFactor "Fire", 1.8
+	DamageFactor "Ice", 0.334
+	Monster
+	+FloorClip
+	+NoBlood
+	+DONTHARMSPECIES
+	RenderStyle Translucent
+	Alpha 0.8
+	Scale 1.0
+	SeeSound "mummy/sight"
+	AttackSound "mummy/attack1"
+	PainSound "mummy/pain"
+	ActiveSound "mummy/active"
+	HitObituary "%o was bludgeoned by an ice golem"
+	Species "Golem"
+	var int user_HalfMaxHP;
+	var int user_regenchance;
 
-  States
-  {
-  Spawn:
-    IGLM A 0 NoDelay 
-    IGLM AB 10 A_Look
-    goto Spawn+1
-  See:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    IGLM ABCD 5
+	States
 	{
-	 A_SetUserVar("user_HalfMaxHP",user_MaxHP/2);
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-	 A_Chase;
-	 
-	 if (health <= user_HPCritRange) { user_regenchance = 32; }
-	 else if (health <= user_HPLowRange) { user_regenchance = 8; }
-	 else if (health <= user_HalfMaxHP) { user_regenchance = 4; }
-	 else if (health <= user_MaxHP) { user_regenchance = 2; }
+		Spawn:
+			IGLM A 0 NoDelay 
+			IGLM AB 10 A_Look
+			goto Spawn+1
+		See:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			IGLM ABCD 5
+			{
+			 user_HalfMaxHP = user_MaxHP / 2;
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			 A_Chase;
+			 
+			 if (health <= user_HPCritRange) { user_regenchance = 32; }
+			 else if (health <= user_HPLowRange) { user_regenchance = 8; }
+			 else if (health <= user_HalfMaxHP) { user_regenchance = 4; }
+			 else if (health <= user_MaxHP) { user_regenchance = 2; }
 
-	 if (random(1,256) <= user_regenchance) 
-	 {
-	  return state("RegenerateStart"); 
-	 }
-	 return state("");
-	}
-    Loop
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    IGLM E 0 A_Jump(128, "Melee2")
-    IGLM E 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    IGLM F 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
+			 if (random(1,256) <= user_regenchance) 
+			 {
+				return state("RegenerateStart"); 
+			 }
+			 return state("");
+			}
+			Loop
+		Melee:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			IGLM E 0 A_Jump(128, "Melee2")
+			IGLM E 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			A_FaceTarget;
+			}
+			IGLM F 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			 A_FaceTarget;
 
-     A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
-	}
-    IGLM G 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    Goto See
-  Melee2:
-    IGLM H 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    IGLM I 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
+			}
+			IGLM G 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			Goto See
+		Melee2:
+			IGLM H 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			IGLM I 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			 A_FaceTarget;
 
-     A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
+			}
+			IGLM J 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			Goto See
+		RegenerateStart:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			IGLM K 10
+			{
+			 user_regencyclemax = 10;
+			 A_PlayWeaponSound("misc/freeze");
+			 A_ChangeFlag("CANTSEEK",1);
+			 A_ChangeFlag("NOPAIN",1);
+			 A_ChangeFlag("NOTHRUST",1);
+			 A_GiveInventory("IceGolemArmor",1);
+			}
+		Regenerate:
+			IGLM K 0 { if (health < user_MaxHP) { HealThing((user_MaxHP/random(18,22))); user_regencycles += 1; } else { return state("RegenerateEnd"); } return state(""); }
+			IGLM KKKKKKKKKK 1 A_SpawnItemEx("IceGolemParticleA", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128)
+		RegenerateCheck:
+			IGLM K 0
+			{
+			 if (user_regencycles < user_regencyclemax) { return state("Regenerate"); }
+			 if (health < user_MaxHP)
+			 {
+				if (random(1,8) == 1) { user_regencycles = 0; return state("Regenerate"); }
+				return state("");
+			 }
+			 return state("");
+			}
+		RegenerateEnd:
+			IGLM K 0
+			{
+			 user_regencycles = 0;
+			 user_regencyclemax = 0;
+			 A_ChangeFlag("CANTSEEK",0);
+			 A_ChangeFlag("NOPAIN",0);
+			 A_ChangeFlag("NOTHRUST",0);
+			 A_TakeInventory("IceGolemArmor",0x7FFFFFFF);
+			}
+			Goto See
+		Pain:
+			IGLM L 4
+			IGLM L 4 A_Pain
+			Goto See
+		Pain.Fist:
+			IGLM L 4
+			IGLM L 4 A_Pain
+			IGLM LL 4
+			Goto See
+		Pain.Kick:
+			IGLM L 4
+			IGLM L 4 A_Pain
+			IGLM LLLL 4
+			Goto See
+		Pain.Fire:
+			IGLM L 4
+			IGLM L 4 A_Pain
+			IGLM L 4
+			Goto See
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			IGLM L 12
+			IGLM L 0 A_SetTranslucent(1.0, 0)
+			IGLM L 1 A_IceGuyDie
+			Stop
 	}
-    IGLM J 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    Goto See
-  RegenerateStart:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    IGLM K 10
-	{
-	 A_SetUserVar("user_regencyclemax",10);
-     A_PlayWeaponSound("misc/freeze");
-     A_ChangeFlag("CANTSEEK",1);
-     A_ChangeFlag("NOPAIN",1);
-     A_ChangeFlag("NOTHRUST",1);
-     A_GiveInventory("IceGolemArmor",1);
-	}
-  Regenerate:
-    IGLM K 0 { if (health < user_MaxHP) { HealThing((user_MaxHP/random(18,22))); A_SetUserVar("user_regencycles",user_regencycles+1); } else { return state("RegenerateEnd"); } return state(""); }
-    IGLM KKKKKKKKKK 1 A_SpawnItemEx("IceGolemParticleA", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128)
-  RegenerateCheck:
-    IGLM K 0
-	{
-	 if (user_regencycles < user_regencyclemax) { return state("Regenerate"); }
-	 if (health < user_MaxHP)
-	 {
-	  if (random(1,8) == 1) { A_SetUserVar("user_regencycles",0); return state("Regenerate"); }
-	  return state("");
-	 }
-	 return state("");
-	}
-  RegenerateEnd:
-    IGLM K 0
-    {
-	 A_SetUserVar("user_regencycles",0);
-	 A_SetUserVar("user_regencyclemax",0);
-     A_ChangeFlag("CANTSEEK",0);
-	 A_ChangeFlag("NOPAIN",0);
-     A_ChangeFlag("NOTHRUST",0);
-     A_TakeInventory("IceGolemArmor",0x7FFFFFFF);
-	}
-    Goto See
-  Pain:
-    IGLM L 4
-    IGLM L 4 A_Pain
-    Goto See
-  Pain.Fist:
-    IGLM L 4
-    IGLM L 4 A_Pain
-    IGLM LL 4
-    Goto See
-  Pain.Kick:
-    IGLM L 4
-    IGLM L 4 A_Pain
-    IGLM LLLL 4
-    Goto See
-  Pain.Fire:
-    IGLM L 4
-    IGLM L 4 A_Pain
-    IGLM L 4
-    Goto See
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    IGLM L 12
-    IGLM L 0 A_SetTranslucent(1.0, 0)
-    IGLM L 1 A_IceGuyDie
-    Stop
-  }
 }
 
 Actor IceGolemGhost : IceGolem
 {
-  +SHADOW
-  +GHOST
-  RenderStyle Translucent
-  Alpha 0.32
+	+SHADOW
+	+GHOST
+	RenderStyle Translucent
+	Alpha 0.32
 }
 
 Actor IceGolemArmor : PowerProtection
 {
- damagefactor "normal", 0.01 
- inventory.icon ""
- Powerup.Duration 2147483646
+	damagefactor "normal", 0.01 
+	inventory.icon ""
+	Powerup.Duration 2147483646
 }
 
 Actor IceGolemParticleA
 {
-  Height 0
-  Radius 0
-  Mass 0
-  +Missile
-  +NoBlockMap
-  +NoGravity
-  +DontSplash
-  +NoClip
-  RenderStyle Add
-  Scale 0.0275
-  States
-  {
-  Spawn:
-    IGLP A 0 A_SpawnItemEx("IceGolemParticleTrail", -(MomX*1.2), -(MomY*1.2), (MomZ*-1.2), (MomX*0.8), (MomY*0.8), (MomZ*0.8), -Angle, 138)
-    IGLP A 1 A_FadeOut(0.065)
-    Loop
-  }
+	Height 0
+	Radius 0
+	Mass 0
+	+Missile
+	+NoBlockMap
+	+NoGravity
+	+DontSplash
+	+NoClip
+	RenderStyle Add
+	Scale 0.0275
+	States
+	{
+		Spawn:
+			IGLP A 0 A_SpawnItemEx("IceGolemParticleTrail", -(MomX*1.2), -(MomY*1.2), (MomZ*-1.2), (MomX*0.8), (MomY*0.8), (MomZ*0.8), -Angle, 138)
+			IGLP A 1 A_FadeOut(0.065)
+			Loop
+	}
 }
 
 Actor IceGolemParticleTrail : IceGolemParticleA
@@ -1716,10 +1716,10 @@ actor KnightAxeCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SPAX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SPAX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1779,10 +1779,10 @@ actor RedAxeCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    RAXE A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    RAXE A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1996,328 +1996,328 @@ actor FKnightGhost : KnightGhostNew
 // Death Knight
 ACTOR DeathKnight : AetheriusMonsterZSC 30114 
 { 
-  Health 1100
-  Radius 24
-  Height 72
-  Mass 700 
-  Speed 10
-  MeleeDamage 10
-  PainChance 20 
-  Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Holy", 35 // Holy attacks have a +75% chance of stunning an enemy
-  DamageFactor "Normal", 0.875
-  DamageFactor "Holy", 1.75
-  DamageFactor "Crush", 7.2
-  MONSTER
-  +FLOORCLIP 
-  +NOTARGET 
-  +NORADIUSDMG
-  +MISSILEMORE
-  +BOSS
-  +DEFLECT
-  +AVOIDMELEE
-  +DONTHARMSPECIES
-  Obituary "%o got thought %g could kill a Death Knight."
-  HitObituary "A Death Knight hacked %o into pieces." 
-  MeleeSound "monster/dknhit" 
-  SeeSound "monster/dknsit" 
-  PainSound "monster/dknpai" 
-  DeathSound "monster/dkndth" 
-  ActiveSound "monster/dknact" 
-  Species "UndeadWarrior"
+	Health 1100
+	Radius 24
+	Height 72
+	Mass 700 
+	Speed 10
+	MeleeDamage 10
+	PainChance 20 
+	Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Holy", 35 // Holy attacks have a +75% chance of stunning an enemy
+	DamageFactor "Normal", 0.875
+	DamageFactor "Holy", 1.75
+	DamageFactor "Crush", 7.2
+	MONSTER
+	+FLOORCLIP 
+	+NOTARGET 
+	+NORADIUSDMG
+	+MISSILEMORE
+	+BOSS
+	+DEFLECT
+	+AVOIDMELEE
+	+DONTHARMSPECIES
+	Obituary "%o got thought %g could kill a Death Knight."
+	HitObituary "A Death Knight hacked %o into pieces." 
+	MeleeSound "monster/dknhit" 
+	SeeSound "monster/dknsit" 
+	PainSound "monster/dknpai" 
+	DeathSound "monster/dkndth" 
+	ActiveSound "monster/dknact" 
+	Species "UndeadWarrior"
 
-  States 
-  { 
-  Spawn: 
-    DKNT A 0 NoDelay 
-    DKNT AB 10 A_Look 
-    goto Spawn+1 
-  See:
-    DKNT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    DKNT A 0 A_Jump(51,"SeeShielded")
-    DKNT AABBCCDD 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-     if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-	 A_DeathKnightShieldOff;
-	 A_Chase;
-	}
-    loop
-  SeeShielded:
-    DKNT P 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    DKNT PPQQRRSS 3 // A_SetReflectiveInvulnerable
-	{
-     A_DeathKnightShieldOn;
-	 A_Chase;
-	}
-    DKNT S 0
-	{
-	 if (random(1,100) >= 20) { return state("See"); }
-	 return state("");
-	}
-    loop
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    DKNT E 0 // A_UnSetReflectiveInvulnerable
-	{
-	 A_DeathKnightShieldOff;
-	}
-    DKNT E 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    DKNT F 6 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	 A_Playsound("monster/dknswg");
-	}
-    DKNT G 6
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+	States 
+	{ 
+		Spawn: 
+			DKNT A 0 NoDelay 
+			DKNT AB 10 A_Look 
+			goto Spawn+1 
+		See:
+			DKNT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			DKNT A 0 A_Jump(51,"SeeShielded")
+			DKNT AABBCCDD 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+			 A_DeathKnightShieldOff;
+			 A_Chase;
+			}
+			loop
+		SeeShielded:
+			DKNT P 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			DKNT PPQQRRSS 3 // A_SetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOn;
+			 A_Chase;
+			}
+			DKNT S 0
+			{
+			 if (random(1,100) >= 20) { return state("See"); }
+			 return state("");
+			}
+			loop
+		Melee:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			DKNT E 0 // A_UnSetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOff;
+			}
+			DKNT E 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			DKNT F 6 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
+			 A_Playsound("monster/dknswg");
+			}
+			DKNT G 6
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-     A_MonsterCrisisCheck;
-	 A_CrisisMeleeAttack(10*random(1,8), "monster/dknhit");
-	}
-    Goto See
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    DKNT E 0 A_Jump(88,"Attack1")
-    DKNT E 0 A_Jump(88,"Attack2")
-    DKNT E 0 Bright // A_UnSetReflectiveInvulnerable
-	{
-	 A_DeathKnightShieldOff;
-	}
-    DKNT E 6 Bright
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	}
-    DKNT F 6 Bright
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	 A_Playsound("monster/kntswg");
-	}
-    DKNT G 5 Bright
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+			 A_MonsterCrisisCheck;
+			 A_CrisisMeleeAttack(10*random(1,8), "monster/dknhit");
+			}
+			Goto See
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			DKNT E 0 A_Jump(88,"Attack1")
+			DKNT E 0 A_Jump(88,"Attack2")
+			DKNT E 0 Bright // A_UnSetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOff;
+			}
+			DKNT E 6 Bright
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
+			}
+			DKNT F 6 Bright
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
+			 A_Playsound("monster/kntswg");
+			}
+			DKNT G 5 Bright
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-     A_MonsterCrisisCheck;
-     A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-3,0);
-     A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-1,0);
-     A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,1,0);
-	 A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,3,0);
-	 if (levelbehavior > 0 && user_monsterlevel > 60)
-	 {
-      A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-5,0);
-	  A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,5,0);
-	 }
-	 if (levelbehavior > 0 && user_monsterlevel > 120)
-	 {
-      A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-7,0);
-	  A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,7,0);
-	 }
-	}
-    DKNT A 0 A_Jump(64,"Attack2")
-    Goto See
-  Attack1:
-    DKNT T 1 Bright // A_SetReflectiveInvulnerable
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-3,0);
+			 A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-1,0);
+			 A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,1,0);
+			 A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,3,0);
+			 if (levelbehavior > 0 && user_monsterlevel > 60)
+			 {
+				A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-5,0);
+				A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,5,0);
+			 }
+			 if (levelbehavior > 0 && user_monsterlevel > 120)
+			 {
+				A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,-7,0);
+				A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,7,0);
+			 }
+			}
+			DKNT A 0 A_Jump(64,"Attack2")
+			Goto See
+		Attack1:
+			DKNT T 1 Bright // A_SetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;
 
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+			 user_defendtimer += 1;
 
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",5); }
-     else { A_SetUserVar("user_defendtimermax",6); }
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("Attack1Phase2"); }
-	 return state("");
-	}
-	loop
-  Attack1Phase2:
-    DKNT U 1 Bright
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;
-	}
-  Attack1Phase3:
-    DKNT U 1 Bright 
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = 4; }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = 5; }
+			 else { user_defendtimermax = 6; }
+			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Attack1Phase2"); }
+			 return state("");
+			}
+			loop
+		Attack1Phase2:
+			DKNT U 1 Bright
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;
+			}
+		Attack1Phase3:
+			DKNT U 1 Bright 
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;
 
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-	 if (user_defendtimer == 2) 
-	 {
-      A_MonsterCrisisCheck;
-	  A_CrisisSpawnProjectile("FHeadShot","FHeadShotCrisis",44,-4,-12,0);
-	  A_CrisisSpawnProjectile("FHeadShot","FHeadShotCrisis",44,-4,12,0);
-	 }
-	 
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",4); }
-	 else { A_SetUserVar("user_defendtimermax",5); }
-	 if (user_defendtimer >= user_defendtimermax) { A_SetUserVar("user_defendtimer",0); return state("Attack1End"); }
-	 return state("");
-	}
-	loop
-  Attack1End:
-    DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
-	{
-	 A_DeathKnightShieldOff;
-	}
-    DKNT U 0 A_Jump(64,"Attack2")
-    Goto See
-  Attack2:
-    DKNT T 0 Bright // A_SetReflectiveInvulnerable
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;
-	}
-  Attack2Phase1: // 6 times
-    DKNT T 1 Bright 
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;
+			 user_defendtimer += 1;
+			 if (user_defendtimer == 2) 
+			 {
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FHeadShot","FHeadShotCrisis",44,-4,-12,0);
+				A_CrisisSpawnProjectile("FHeadShot","FHeadShotCrisis",44,-4,12,0);
+			 }
+			 
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = 3; }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = 4; }
+			 else { user_defendtimermax = 5; }
+			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Attack1End"); }
+			 return state("");
+			}
+			loop
+		Attack1End:
+			DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOff;
+			}
+			DKNT U 0 A_Jump(64,"Attack2")
+			Goto See
+		Attack2:
+			DKNT T 0 Bright // A_SetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;
+			}
+		Attack2Phase1: // 6 times
+			DKNT T 1 Bright 
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;
 
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+			 user_defendtimer += 1;
 
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",2); }
-	 else { A_SetUserVar("user_defendtimermax",3); }
-	 if (user_defendtimer >= user_defendtimermax) 
-	 {
-	  A_SetUserVar("user_defendtimer",0); 
-	  return state("Attack2Phase2"); 
-	 }
-	 return state("");
-	}
-	loop
-  Attack2Phase2: // 6 times
-    DKNT U 1 Bright 
-	{
-     A_DeathKnightShieldOn;
-	 A_FaceTarget;	 
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = 2; }
+			 else { user_defendtimermax = 3; }
+			 if (user_defendtimer >= user_defendtimermax) 
+			 {
+				user_defendtimer = 0; 
+				return state("Attack2Phase2"); 
+			 }
+			 return state("");
+			}
+			loop
+		Attack2Phase2: // 6 times
+			DKNT U 1 Bright 
+			{
+			 A_DeathKnightShieldOn;
+			 A_FaceTarget;	 
 
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
-	 if (user_defendtimer == 1) 
-	 { 
-      A_MonsterCrisisCheck;
-	  A_CrisisSpawnProjectile("DKbolt","DKboltCrisis",44,-4,0,0); 
-	 }
+			 user_defendtimer += 1;
+			 if (user_defendtimer == 1) 
+			 { 
+					A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DKbolt","DKboltCrisis",44,-4,0,0); 
+			 }
 
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",2); }
-	 else { A_SetUserVar("user_defendtimermax",3); }
-	 if (user_defendtimer >= user_defendtimermax) 
-	 {
-	  A_SetUserVar("user_defendtimer",0); 
-	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
-	  
-	  if (user_defendcycles >= 6) { return state("Attack2End"); } else { return state("Attack2Phase1"); }
-	  return state(""); 
-	 }
-	 return state("");
-	}
-	loop
-  Attack2End:
-    DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
-	{
-	 A_DeathKnightShieldOff;
-	 A_FaceTarget;
-	}
-    Goto See
-  Pain:
-    DKNT H 2 
-    DKNT H 2 A_Pain
-	goto PainShield
-  Pain.Fist:
-    DKNT H 2 
-    DKNT H 2 A_Pain
-    DKNT HH 2 
-	goto PainShield
-  Pain.Kick:
-    DKNT H 2 
-    DKNT H 2 A_Pain
-    DKNT HHHH 2 
-	goto PainShield
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = 2; }
+			 else { user_defendtimermax = 3; }
+			 if (user_defendtimer >= user_defendtimermax) 
+			 {
+				user_defendtimer = 0; 
+				user_defendcycles += 1;
+				
+				if (user_defendcycles >= 6) { return state("Attack2End"); } else { return state("Attack2Phase1"); }
+				return state(""); 
+			 }
+			 return state("");
+			}
+			loop
+		Attack2End:
+			DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOff;
+			 A_FaceTarget;
+			}
+			Goto See
+		Pain:
+			DKNT H 2 
+			DKNT H 2 A_Pain
+			goto PainShield
+		Pain.Fist:
+			DKNT H 2 
+			DKNT H 2 A_Pain
+			DKNT HH 2 
+			goto PainShield
+		Pain.Kick:
+			DKNT H 2 
+			DKNT H 2 A_Pain
+			DKNT HHHH 2 
+			goto PainShield
 
-  PainShield:
-    DKNT T 1 // A_SetReflectiveInvulnerable
-	{
-     A_DeathKnightShieldOn;
-	 A_SetUserVar("user_defendtimer",user_defendtimer+1);
+		PainShield:
+			DKNT T 1 // A_SetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOn;
+			 user_defendtimer += 1;
 
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetUserVar("user_defendtimermax",random(17,18)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetUserVar("user_defendtimermax",random(16,17)); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetUserVar("user_defendtimermax",random(15,16)); }
-	 else { A_SetUserVar("user_defendtimermax",15); }
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(17,18); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(16,17); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(15,16); }
+			 else { user_defendtimermax = 15; }
 
-	 if (user_defendtimer >= user_defendtimermax)
-	 {
-	  A_SetUserVar("user_defendtimer",0);
-	  A_SetUserVar("user_defendcycles",user_defendcycles+1);
-	  if (random(1,4) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
-	  {
-	   A_DeathKnightShieldOff;
-	   return state("Melee");
-	  }
-	  A_FaceTarget;
-	 }
-	 if (user_defendcycles >= 7) { return state("PainShieldEnd"); }
-	 return state("");
-	}
-	loop
-  PainShieldEnd:
-    DKNT T 0 // A_UnSetReflectiveInvulnerable
-	{
-	 A_DeathKnightShieldOff;
-	 A_FaceTarget;
+			 if (user_defendtimer >= user_defendtimermax)
+			 {
+				user_defendtimer = 0;
+				user_defendcycles += 1;
+				if (random(1,4) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+				{
+				 A_DeathKnightShieldOff;
+				 return state("Melee");
+				}
+				A_FaceTarget;
+			 }
+			 if (user_defendcycles >= 7) { return state("PainShieldEnd"); }
+			 return state("");
+			}
+			loop
+		PainShieldEnd:
+			DKNT T 0 // A_UnSetReflectiveInvulnerable
+			{
+			 A_DeathKnightShieldOff;
+			 A_FaceTarget;
 
-	 if (random(1,16) == 1) { return state("SeeShielded"); }
-	 return state("");
-	}
-    DKNT H 1
-	{
-	 A_DeathKnightShieldOff;
-	 A_FaceTarget;
-	}
-    Goto See
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    DKNT I 0 Bright A_CustomMissile("DKSword",44,32,-90,0)
-    DKNT I 8 Bright 
-	{
-	 if (random(1,4) == 1) { A_CustomMissile("EvilWarriorShield",44,-32,90,0); }
-	 else { A_CustomMissile("DKShield",44,-32,90,0); }
-	}
-    DKNT J 8 Bright A_Scream 
-    DKNT K 8 Bright
-    DKNT L 8 Bright A_NoBlocking 
-    DKNT M 8 Bright 
-    DKNT N 8 Bright 
-    DKNT O -1 
-    Stop 
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    DKNT H 5 A_GenericFreezeDeath
-    DKNT H 1 A_FreezeDeathChunks
-    wait
-  Raise:
-    DKNT Q 8 Bright   
-    DKNT NMLKJI 8 Bright
-    Goto See 
-  } 
+			 if (random(1,16) == 1) { return state("SeeShielded"); }
+			 return state("");
+			}
+			DKNT H 1
+			{
+			 A_DeathKnightShieldOff;
+			 A_FaceTarget;
+			}
+			Goto See
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			DKNT I 0 Bright A_CustomMissile("DKSword",44,32,-90,0)
+			DKNT I 8 Bright 
+			{
+			 if (random(1,4) == 1) { A_CustomMissile("EvilWarriorShield",44,-32,90,0); }
+			 else { A_CustomMissile("DKShield",44,-32,90,0); }
+			}
+			DKNT J 8 Bright A_Scream 
+			DKNT K 8 Bright
+			DKNT L 8 Bright A_NoBlocking 
+			DKNT M 8 Bright 
+			DKNT N 8 Bright 
+			DKNT O -1 
+			Stop 
+		Ice:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			DKNT H 5 A_GenericFreezeDeath
+			DKNT H 1 A_FreezeDeathChunks
+			wait
+		Raise:
+			DKNT Q 8 Bright   
+			DKNT NMLKJI 8 Bright
+			Goto See 
+	} 
 }
 
 Actor DeathKnightGhost : DeathKnight
@@ -2376,10 +2376,10 @@ actor DKDartCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    DKAT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    DKAT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2447,10 +2447,10 @@ actor FHeadShotCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FHED A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FHED A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCD 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCD 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2506,10 +2506,10 @@ actor DKboltCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BOLT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BOLT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2606,10 +2606,10 @@ actor DKFireCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    DKAT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    DKAT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -2685,10 +2685,10 @@ actor WizardFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX11 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX11 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3213,10 +3213,10 @@ actor BansheeFireCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BANB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BANB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3263,10 +3263,10 @@ actor BansheeFire2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BANB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BANB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3323,10 +3323,10 @@ actor BansheeFire3CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BANB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BANB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3377,10 +3377,10 @@ actor BansheeFire4CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BANF A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BANF A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCDEFGH 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCDEFGH 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3435,10 +3435,10 @@ actor BansheeFire5CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    BAFT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    BAFT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3589,10 +3589,10 @@ actor HeadFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX05 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX05 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBBCCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBBCCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3669,10 +3669,10 @@ actor HeadFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX05 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX05 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" HHHIIIJJJ 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" HHHIIIJJJ 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3786,10 +3786,10 @@ actor HeadFX3CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX06 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX06 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -3898,10 +3898,10 @@ actor WhirlwindCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX07 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX07 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4044,126 +4044,126 @@ actor FIronlich : IronlichNew
 // Ice Lich
 ACTOR IceLich : AetheriusMonsterZSC
 {
-  health 700
-  painchance 16
-  Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
-  Damagefactor "Ice", 0
-  Damagefactor "Fire", 2
-  DamageFactor "Crush", 4.0
-  speed 6
-  radius 40
-  height 72
-  mass 500
-  MONSTER
-  +NOGRAVITY
-  +NOBLOOD
-  +FLOAT
-  +MISSILEMORE
-  +DONTBLAST
-  +DONTMORPH
-  +DONTSQUASH
-  +NOICEDEATH
-  +DONTSPLASH
-  +BOSSDEATH
-  seesound "ironlich/sight"
-  attacksound ""
-  painsound "ironlich/pain"
-  deathsound "freeze/shatter"
-  activesound "ironlich/active"
-  obituary "%o was frozen by an Ice Lich"
+	health 700
+	painchance 16
+	Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
+	Damagefactor "Ice", 0
+	Damagefactor "Fire", 2
+	DamageFactor "Crush", 4.0
+	speed 6
+	radius 40
+	height 72
+	mass 500
+	MONSTER
+	+NOGRAVITY
+	+NOBLOOD
+	+FLOAT
+	+MISSILEMORE
+	+DONTBLAST
+	+DONTMORPH
+	+DONTSQUASH
+	+NOICEDEATH
+	+DONTSPLASH
+	+BOSSDEATH
+	seesound "ironlich/sight"
+	attacksound ""
+	painsound "ironlich/pain"
+	deathsound "freeze/shatter"
+	activesound "ironlich/active"
+	obituary "%o was frozen by an Ice Lich"
 
-  states
-  {
-  Spawn:
-    ILCH A 0 NoDelay 
-    ILCH A 10 A_Look
-    goto Spawn+1
-  See:
-    LICH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    ILCH A 4
+	states
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+		Spawn:
+			ILCH A 0 NoDelay 
+			ILCH A 10 A_Look
+			goto Spawn+1
+		See:
+			LICH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			ILCH A 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-	 A_Chase;
-     A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
-	}
-    ILCH A 4
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+			 A_Chase;
+			 A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
+			}
+			ILCH A 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-	 A_Chase;
-     A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
-	}
-    ILCH A 4
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+			 A_Chase;
+			 A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
+			}
+			ILCH A 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-	 A_Chase;
-	}
-    loop
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    ILCH B 0 bright A_JumpIfCloser(300, "Breath")
-    ILCH B 20 bright 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(10); }
-     else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(11); }
-     else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(12); }
-     else if (levelbehavior > 0 && user_monsterlevel > 140) { A_SetTics(13); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(14); }
-     else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(15); }
-     else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(16); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(17); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(18); }
-     else if (levelbehavior > 0 && user_monsterlevel > 20) { A_SetTics(19); }
-	 A_FaceTarget;
-	 A_PlaySoundEx("IceGuyAttack", auto);
+			 A_Chase;
+			}
+			loop
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			ILCH B 0 bright A_JumpIfCloser(300, "Breath")
+			ILCH B 20 bright 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(10); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(11); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(12); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 140) { A_SetTics(13); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(14); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(15); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(16); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(17); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(18); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 20) { A_SetTics(19); }
+			 A_FaceTarget;
+			 A_PlaySoundEx("IceGuyAttack", auto);
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 44, 10, 0, 1);
-	 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 44, -10, 0, 1);
-	}
-    goto See
-  Breath:
-    ILCH B 0 bright 
-	{
-	 user_shotsfired = 0;
-	 A_SetUserVar("user_shotsfiredmax",5+(user_monsterlevel/45));
-	}
-  BreathLoop: // 5 times
-    ILCH B 0 bright 
-	{
-	 A_PlaySoundEx("FrostBreath", auto);
-     A_FaceTarget;
-	}
-    ILCH BBB 2 bright
-    {
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 44, 10, 0, 1);
+			 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 44, -10, 0, 1);
+			}
+			goto See
+		Breath:
+			ILCH B 0 bright 
+			{
+			 user_shotsfired = 0;
+			 user_shotsfiredmax = 5 + (user_monsterlevel/45);
+			}
+		BreathLoop: // 5 times
+			ILCH B 0 bright 
+			{
+			 A_PlaySoundEx("FrostBreath", auto);
+			 A_FaceTarget;
+			}
+			ILCH BBB 2 bright
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("IceBreath", "IceBreathCrisis", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
-	}
-    ILCH B 0 
-	{
-	 A_FaceTarget;
-	 A_SetUserVar("user_shotsfired",user_shotsfired+1);
-	 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
-	 return state("");
-	}
-	loop
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("IceBreath", "IceBreathCrisis", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			}
+			ILCH B 0 
+			{
+			 A_FaceTarget;
+			 user_shotsfired += 1;
+			 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+			 return state("");
+			}
+			loop
 
-  Pain:
-    ILCH A 0 A_Pain
-    goto See
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    ILCH A 3 A_Scream
-    ILCH A 1 A_IceGuyDie
-    stop
-  }
+		Pain:
+			ILCH A 0 A_Pain
+			goto See
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			ILCH A 3 A_Scream
+			ILCH A 1 A_IceGuyDie
+			stop
+	}
 }
 
 ACTOR IceGuyFXNew : AetheriusEffectProjectile replaces IceGuyFX
@@ -4212,10 +4212,10 @@ actor IceGuyFXCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ICPR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ICPR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4296,10 +4296,10 @@ actor IceGuyFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ICPR A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ICPR A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" NOP 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" NOP 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4381,10 +4381,10 @@ actor IceBreathCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    IBRT A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    IBRT A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AB 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AB 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4420,224 +4420,218 @@ ACTOR IceBreathCrisis : IceBreath
 // Gold Lich
 ACTOR Goldlich : IronlichNew 31044
 {
-  Mass 2000
-  Speed 10
-  Health 1400
-  Painchance 8
-  Painchance "Fist", 12 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 20 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 12 // Fist attacks have a +50% chance of stunning an enemy
-  DamageFactor "Crush", 4.0
-  SeeSound "goldlich/sight"
-  PainSound "goldlich/pain"
-  DeathSound "goldlich/death"
-  ActiveSound "goldlich/active"  
-  Translation "0:17=112:121", "18:35=137:144", "36:42=116:121", "43:51=137:144", "52:58=114:121", "59:65=137:144"
-  Obituary "%o was annihilated by the goldlich's power."
-  Species "GoldLich"
-  DropItem "BlasterHefty", 84, 50
-  DropItem "ArtiEgg", 51, 0
+	Mass 2000
+	Speed 10
+	Health 1400
+	Painchance 8
+	Painchance "Fist", 12 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 20 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 12 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Crush", 4.0
+	SeeSound "goldlich/sight"
+	PainSound "goldlich/pain"
+	DeathSound "goldlich/death"
+	ActiveSound "goldlich/active"  
+	Translation "0:17=112:121", "18:35=137:144", "36:42=116:121", "43:51=137:144", "52:58=114:121", "59:65=137:144"
+	Obituary "%o was annihilated by the goldlich's power."
+	Species "GoldLich"
+	DropItem "BlasterHefty", 84, 50
+	DropItem "ArtiEgg", 51, 0
 
-  States
-  {
-  Spawn:
-    LICH A 0 NoDelay 
-    LICH A 1 A_Look
-    LICH A 3 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0)
-    goto Spawn+1
-  See:
-    LICH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-    LICH A 4
+	States
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+		Spawn:
+			LICH A 0 NoDelay 
+			LICH A 1 A_Look
+			LICH A 3 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0)
+			goto Spawn+1
+		See:
+			LICH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			LICH A 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	 A_Chase;
-	}
-    Loop
-  Melee:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    LICH A 5
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
- 	 A_FaceTarget;
-	}
-    LICH B 5
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			 A_Chase;
+			}
+			Loop
+		Melee:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			LICH A 5
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			 A_FaceTarget;
+			}
+			LICH B 5
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
 
-	 A_LichAttack(5+(user_monsterlevel/20), 1+(user_monsterlevel/30), 8*random(1,8), "HeadFX1New", "HeadFX1Crisis", "HeadFX3New", "HeadFX3Crisis", "WhirlwindNew", "WhirlwindCrisis", 1);
-	}
-    LICH BBB 5
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
- 	 A_FaceTarget;
-	}
-    Goto See
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-    LICH A 1 A_FaceTarget
-    LICH A 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 0 A_FaceTarget
-    LICH B 0 
-	{
-     A_MonsterCrisisCheck;
-	 if (random(1,256) <= 85 && CheckClass("Goldlich") == 1 && user_canusecrisisatk == 0) { return state("Missile2"); }
-	 if (random(1,256) <= 128) { return state("Missile3"); }
-	 if (random(1,256) <= 255) { return state("Missile4"); }
-	 return state("");
-	}
-    Goto See
-  Missile2:
-    LICH BBBBBBBB 1 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0)
-    TNT1 A 0 A_SpawnItemEx("TeleportFog")
-    TNT1 AAAAAAAAAAAAAAAA 0 A_Wander
-    TNT1 A 0 
-	{
-	 A_SpawnItemEx("TeleportFog");
-     A_UnsetSolid;
-     A_SpawnItemEx("FakeGoldlich", 0,0,0, 0,0,0, 0, SXF_TRANSFERTRANSLATION);
-	}
-    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
-    TNT1 A 4 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-     else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-	 A_SetSolid;
-	}
-    TNT1 A 0 A_SpawnItemEx("TeleportFog")
-    Goto See
-  Missile3:
-    LICH B 3 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_PlaySound("goldlich/attack2");
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 1 A_FaceTarget
-    LICH B 3 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_LichAttack(5+(user_monsterlevel/20), 1+(user_monsterlevel/30), 8*random(1,8), "HeadFX1New", "HeadFX1Crisis", "HeadFX3New", "HeadFX3Crisis", "WhirlwindNew", "WhirlwindCrisis", 1);
+			}
+			LICH BBB 5
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			 A_FaceTarget;
+			}
+			Goto See
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			LICH A 1 A_FaceTarget
+			LICH A 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 0 A_FaceTarget
+			LICH B 0 
+			{
+			 A_MonsterCrisisCheck;
+			 if (random(1,256) <= 85 && CheckClass("Goldlich") == 1 && user_canusecrisisatk == 0) { return state("Missile2"); }
+			 if (random(1,256) <= 128) { return state("Missile3"); }
+			 if (random(1,256) <= 255) { return state("Missile4"); }
+			 return state("");
+			}
+			Goto See
+		Missile2:
+			LICH BBBBBBBB 1 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0)
+			TNT1 A 0 A_SpawnItemEx("TeleportFog")
+			TNT1 AAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 A 0 
+			{
+			 A_SpawnItemEx("TeleportFog");
+			 A_UnsetSolid;
+			 A_SpawnItemEx("FakeGoldlich", 0,0,0, 0,0,0, 0, SXF_TRANSFERTRANSLATION);
+			}
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 A 4 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+			 A_SetSolid;
+			}
+			TNT1 A 0 A_SpawnItemEx("TeleportFog")
+			Goto See
+		Missile3:
+			LICH B 3 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_PlaySound("goldlich/attack2");
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+			LICH B 3 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 
-     A_MonsterCrisisCheck;
-     for (A_SetUserVar(user_barragecounter, 0); user_barragecounter < 12; A_SetUserVar(user_barragecounter, user_barragecounter + 1))
-     {
-	  A_CrisisSpawnProjectile("GoldLichBounce","GoldLichBounceCrisis",32,0,user_barragecounter*30);
-	 }
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 1 A_FaceTarget
-    LICH B 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 1 A_FaceTarget
-    LICH B 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 1 A_FaceTarget
-    LICH B 3
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-	 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	}
-    LICH B 1 A_FaceTarget
-    Goto See
-  Missile4:
-    LICH B 3 
-    {
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-     A_PlaySound("goldlich/attack1");
+			 A_MonsterCrisisCheck;
+			 for (user_barragecounter = 0; user_barragecounter < 12; user_barragecounter++)
+			 {
+				A_CrisisSpawnProjectile("GoldLichBounce","GoldLichBounceCrisis",32,0,user_barragecounter*30);
+			 }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+			LICH B 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+			LICH B 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+			LICH B 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+			Goto See
+		Missile4:
+			LICH B 3 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 A_PlaySound("goldlich/attack1");
 
-	 user_shotsfired = 0;
-	 A_SetUserVar("user_shotsfiredmax",4+(user_monsterlevel/45));
-	 if (random (1,2) == 1)
-	 {
-      A_MonsterCrisisCheck;
-      A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
-	 }
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-    }
-    LICH B 1 A_FaceTarget
-  Missile4Loop: // 4 times
-    LICH B 3
-    {
-     if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			 user_shotsfired = 0;
+			 user_shotsfiredmax = 4 + (user_monsterlevel/45);
+			 if (random (1,2) == 1)
+			 {
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+			 }
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget
+		Missile4Loop: // 4 times
+			LICH B 3
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 
-     A_MonsterCrisisCheck;
-     A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
-     A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-	 A_SetUserVar("user_shotsfired",user_shotsfired+1);
-    }
-    LICH B 1 
-	{
-	 A_FaceTarget;
-	 if (user_shotsfired >= user_shotsfiredmax) { return state("Missile4End"); }
-	 return state("");
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+			 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			 user_shotsfired += 1;
+			}
+			LICH B 1 
+			{
+			 A_FaceTarget;
+			 if (user_shotsfired >= user_shotsfiredmax) { return state("Missile4End"); }
+			 return state("");
+			}
+			loop
+		Missile4End:
+			LICH B 0 
+			{
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+			}
+			Goto See
+
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			LICH CC 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
+			LICH D 1 A_Scream
+			LICH D 3 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
+			LICH D 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
+			LICH EE 4 A_SpawnItemEx("GoldLichGlitter", random(-40,40), random(-40,40), random(0,112),0,0,0, 0,0, 0)
+			LICH FF 4 A_SpawnItemEx("GoldLichGlitter", random(-44,44), random(-44,44), random(0,96),0,0,0, 0,0, 0)
+			LICH G 0 A_NoBlocking
+			LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
+			LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
+			LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,56), random(-56,56), random(0,64),0,0,0, 0,0, 0)
+			LICH I 4 A_SpawnItemEx("GoldLichGlitter", random(-64,64), random(-64,64), random(0,48),0,0,0, 0,0, 0)
+			LICH I -1 A_BossDeath
+			Stop
+		Ice:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			LICH A 5 A_GenericFreezeDeath
+			LICH A 1 A_FreezeDeathChunks
+			wait
+		Raise:
+			LICH H 7 
+			LICH GFEDC 7
+			goto See
 	}
-	loop
-  Missile4End:
-    LICH B 0 
-	{
-     A_MonsterCrisisCheck;
-     A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
-	}
-    Goto See
-
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-    LICH CC 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
-    
-    LICH D 1 A_Scream
-    LICH D 3 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
-    LICH D 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0)
-
-    LICH EE 4 A_SpawnItemEx("GoldLichGlitter", random(-40,40), random(-40,40), random(0,112),0,0,0, 0,0, 0)
-
-    LICH FF 4 A_SpawnItemEx("GoldLichGlitter", random(-44,44), random(-44,44), random(0,96),0,0,0, 0,0, 0)
-    
-    LICH G 0 A_NoBlocking
-    LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
-    LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
-    
-    LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,56), random(-56,56), random(0,64),0,0,0, 0,0, 0)
-    
-    LICH I 4 A_SpawnItemEx("GoldLichGlitter", random(-64,64), random(-64,64), random(0,48),0,0,0, 0,0, 0)
-    LICH I -1 A_BossDeath
-    Stop
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    LICH A 5 A_GenericFreezeDeath
-    LICH A 1 A_FreezeDeathChunks
-    wait
-  Raise:
-    LICH H 7 
-    LICH GFEDC 7
-    goto See
-  }
 }
 
 
@@ -4696,10 +4690,10 @@ actor GoldLichBounceCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FXA1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FXA1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -4725,92 +4719,92 @@ ACTOR GoldLichBounceCrisis : GoldLichBounce
 
 ACTOR GoldLichFire
 {
-  Damage (5 * random(1,8))
-  Radius 14
-  Height 12
-  Speed 15
-  FastSpeed 24
-  Projectile
-  +NOGRAVITY
-  +WINDTHRUST  
-  -ACTIVATEIMPACT
-  -ACTIVATEPCROSS
-  -NOBLOCKMAP
-  +SEEKERMISSILE
-  RenderStyle Add
-  var int user_tracks;
-  
-  States
-  {
-  Spawn:
-    FX06 A 0 A_SetUserVar("user_tracks", 5)
-  Weave:
-    TNT1 A 0 A_PlaySound("goldlich/attack1")
-    FX06 AAAABBBBCCCC 1 BRIGHT
+	Damage (5 * random(1,8))
+	Radius 14
+	Height 12
+	Speed 15
+	FastSpeed 24
+	Projectile
+	+NOGRAVITY
+	+WINDTHRUST  
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOBLOCKMAP
+	+SEEKERMISSILE
+	RenderStyle Add
+	var int user_tracks;
+
+	States
 	{
-	 A_Weave(3, 0, 4.0, 0.0);
+		Spawn:
+			FX06 A 0 { user_tracks = 5; }
+		Weave:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+			 A_Weave(3, 0, 4.0, 0.0);
+			}
+			TNT1 A 0 A_Jump(128, "Track")
+			Loop
+		Track:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
+			TNT1 A 0 { user_tracks - 1; }
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+			 A_SeekerMissile(360, 1);
+			}
+			TNT1 A 0 A_Jump(128, "Weave")
+			Loop
+		Death:
+			FX06 DEFG 5 BRIGHT
+			Stop
 	}
-    TNT1 A 0 A_Jump(128, "Track")
-    Loop
-  Track:
-    TNT1 A 0 A_PlaySound("goldlich/attack1")
-    TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
-    TNT1 A 0 A_SetUserVar(user_tracks, user_tracks - 1)
-    FX06 AAAABBBBCCCC 1 BRIGHT
-	{
-	 A_SeekerMissile(360, 1);
-	}
-    TNT1 A 0 A_Jump(128, "Weave")
-    Loop
-  Death:
-    FX06 DEFG 5 BRIGHT
-    Stop
-  }
 }
 actor GoldLichFireCrisisParticle : BaseCrisisParticle
 {
  States
  {
   Spawn:
-    FX06 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX06 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAAABBBBCCCC 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAAABBBBCCCC 1 Bright A_CrisisParticleDo
     loop
  }
 }
 ACTOR GoldLichFireCrisis : GoldLichFire
 {
-  Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
-  
-  States
-  {
-  Spawn:
-    FX06 A 0 A_SetUserVar("user_tracks", 5)
-  Weave:
-    TNT1 A 0 A_PlaySound("goldlich/attack1")
-    FX06 AAAABBBBCCCC 1 BRIGHT
+	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+
+	States
 	{
-     A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
-	 A_Weave(3, 0, 4.0, 0.0);
+		Spawn:
+			FX06 A 0 { user_tracks = 5; }
+		Weave:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+			 A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+			 A_Weave(3, 0, 4.0, 0.0);
+			}
+			TNT1 A 0 A_Jump(128, "Track")
+			Loop
+		Track:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
+			TNT1 A 0 { user_tracks - 1; }
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+			 A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+			 A_SeekerMissile(360, 1);
+			}
+			TNT1 A 0 A_Jump(128, "Weave")
+			Loop
+		Death:
+			FX06 DEFG 5 BRIGHT
+			Stop
 	}
-    TNT1 A 0 A_Jump(128, "Track")
-    Loop
-  Track:
-    TNT1 A 0 A_PlaySound("goldlich/attack1")
-    TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
-    TNT1 A 0 A_SetUserVar(user_tracks, user_tracks - 1)
-    FX06 AAAABBBBCCCC 1 BRIGHT
-	{
-     A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
-	 A_SeekerMissile(360, 1);
-	}
-    TNT1 A 0 A_Jump(128, "Weave")
-    Loop
-  Death:
-    FX06 DEFG 5 BRIGHT
-    Stop
-  }
 }
 
 ACTOR GoldLichGlitter
@@ -4835,140 +4829,139 @@ ACTOR FakeGoldLich : GoldLich
 // Blood Lich
 ACTOR BloodLich : AetheriusMonsterZSC
 {
-  Health 2100
-  Radius 40
-  Height 72
-  Mass 2100
-  Speed 10
-  PainChance 16
-  Painchance "Fire", 8 // Fire attacks have a -50% chance of stunning an enemy
-  Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
-  Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
-  Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
-  DamageFactor "Fire", 0.5
-  DamageFactor "Crush", 2.4
-  MONSTER
-  +NOGRAVITY
-  +NOTARGET
-  +NOFEAR
-  +SPAWNCEILING
-  +FLOAT
-  +MISSILEMORE
-  +MISSILEEVENMORE
-  +DONTBLAST
-  +DONTMORPH
-  +DONTRIP
-  +DONTSPLASH
-  +BOSS
-  +BOSSDEATH
-  SeeSound "ironlich/sight"
-  AttackSound ""
-  PainSound "ironlich/pain"
-  DeathSound "ironlich/death"
-  ActiveSound "ironlich/active"
-  Obituary "%o was reduced to a pile of ash by a Blood Lich."
+	Health 2100
+	Radius 40
+	Height 72
+	Mass 2100
+	Speed 10
+	PainChance 16
+	Painchance "Fire", 8 // Fire attacks have a -50% chance of stunning an enemy
+	Painchance "Fist", 24 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Fire", 0.5
+	DamageFactor "Crush", 2.4
+	MONSTER
+	+NOGRAVITY
+	+NOTARGET
+	+NOFEAR
+	+SPAWNCEILING
+	+FLOAT
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+DONTBLAST
+	+DONTMORPH
+	+DONTRIP
+	+DONTSPLASH
+	+BOSS
+	+BOSSDEATH
+	SeeSound "ironlich/sight"
+	AttackSound ""
+	PainSound "ironlich/pain"
+	DeathSound "ironlich/death"
+	ActiveSound "ironlich/active"
+	Obituary "%o was reduced to a pile of ash by a Blood Lich."
 
-  States
-  {
-  Spawn:
-    BLCH A 0 NoDelay 
-	BLCH A 10 A_Look
-	goto Spawn+1
-  See:
-    BLCH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
-	BLCH A 4
+	States
 	{
-     if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+		Spawn:
+			BLCH A 0 NoDelay 
+			BLCH A 10 A_Look
+			goto Spawn+1
+		See:
+			BLCH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			BLCH A 4
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-	 A_Chase;
-	}
-	Loop
-  Missile:
-    TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-	BLCH B 0 Bright A_JumpIfCloser(300, "Breath")
-	BLCH B 0 Bright A_Jump(96,"Curse")
-	BLCH B 6 Bright 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-	 A_FaceTarget;
-	 A_PlaySoundEx("MageStaffFire", CHAN_AUTO);
+			 A_Chase;
+			}
+			Loop
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			BLCH B 0 Bright A_JumpIfCloser(300, "Breath")
+			BLCH B 0 Bright A_Jump(96,"Curse")
+			BLCH B 6 Bright 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
+			 A_PlaySoundEx("MageStaffFire", CHAN_AUTO);
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, 10, -2, 1);
-	 A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, -10, 2, 1);
-	}
-	Goto See
-  Breath:
-    BLCH B 0 bright 
-	{
-	 user_shotsfired = 0;
-	 A_SetUserVar("user_shotsfiredmax",5+(user_monsterlevel/45));
-	}
-  BreathLoop: // 5
-	BLCH B 0 Bright
-	{
-	 A_PlaySoundEx("FlameBreath", CHAN_AUTO);
-	 A_FaceTarget;
-	}
-	BLCH BBB 2 Bright 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, 10, -2, 1);
+			 A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, -10, 2, 1);
+			}
+			Goto See
+		Breath:
+			BLCH B 0 bright 
+			{
+			 user_shotsfired = 0;
+			 user_shotsfiredmax = 5 + (user_monsterlevel/45);
+			}
+		BreathLoop: // 5
+			BLCH B 0 Bright
+			{
+			 A_PlaySoundEx("FlameBreath", CHAN_AUTO);
+			 A_FaceTarget;
+			}
+			BLCH BBB 2 Bright 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("FireBreath", "FireBreathCrisis", 20, 0, frandom(-3,3), CMF_CHECKTARGETDEAD);
-	}
-    BLCH B 0 
-	{
-	 A_FaceTarget;
-	 A_SetUserVar("user_shotsfired",user_shotsfired+1);
-	 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
-	 return state("");
-	}
-	loop
-  Curse:
-	BLCH B 0 Bright A_JumpIfCloser(300, "Breath")
-	BLCH B 6 Bright 
-	{
-     if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-     else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-     else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-     A_FaceTarget;
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("FireBreath", "FireBreathCrisis", 20, 0, frandom(-3,3), CMF_CHECKTARGETDEAD);
+			}
+			BLCH B 0 
+			{
+			 A_FaceTarget;
+			 user_shotsfired += 1;
+			 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+			 return state("");
+			}
+			loop
+		Curse:
+			BLCH B 0 Bright A_JumpIfCloser(300, "Breath")
+			BLCH B 6 Bright 
+			{
+			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+			 A_FaceTarget;
 
-	 A_MonsterCrisisCheck;
-	 A_CrisisSpawnProjectile("CurseSpell", "CurseSpellCrisis", 20, 0, 0, 1);
-	}
-	Goto See
-  Pain:
-	BLCH A 0 A_Pain
-	Goto See
+			 A_MonsterCrisisCheck;
+			 A_CrisisSpawnProjectile("CurseSpell", "CurseSpellCrisis", 20, 0, 0, 1);
+			}
+			Goto See
+		Pain:
+			BLCH A 0 A_Pain
+			Goto See
 
-  Death:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 
-	BLCH C 7 
-	{
-	 if (random(1,256) <= 160) { A_PainDie("HereticImpLeader"); }
+		Death:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 
+			BLCH C 7 
+			{
+			 if (random(1,256) <= 160) { A_PainDie("HereticImpLeader"); }
+			}
+			BLCH D 7 A_Scream
+			BLCH EF 7
+			BLCH G 7 A_NoBlocking
+			BLCH H 7
+			BLCH I -1 A_BossDeath
+			Stop
+		Ice:
+			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			BLCH A 5 A_GenericFreezeDeath
+			BLCH A 1 A_FreezeDeathChunks
+			wait
+		Raise:
+			BLCH H 7 
+			BLCH GFEDC 7
+			goto See
 	}
-	BLCH D 7 A_Scream
-	BLCH EF 7
-	BLCH G 7 A_NoBlocking
-	BLCH H 7
-	BLCH I -1 A_BossDeath
-	Stop
-  Ice:
-    TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-    TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
-    BLCH A 5 A_GenericFreezeDeath
-    BLCH A 1 A_FreezeDeathChunks
-    wait
-  Raise:
-    BLCH H 7 
-    BLCH GFEDC 7
-    goto See
-
-  }
 }
 
 ACTOR FireBreath
@@ -5005,10 +4998,10 @@ actor FireBreathCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FRBS A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FRBS A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" EFG 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" EFG 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5057,10 +5050,10 @@ actor BloodLichFireballCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    MSP4 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    MSP4 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCD 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5110,7 +5103,7 @@ ACTOR CurseSpell : AetheriusEffectProjectile
 	  A_StatusEffectChecker(4);
 	  if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
 	  {
-	   A_SetUserVar("user_random",random(1,13));
+	   user_random = random(1,13);
 	   if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(315,525)); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,19,random(315,525)); } // Blind for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,20,random(315,525)); } // Sleep for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -5139,10 +5132,10 @@ actor CurseSpellCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    CURS A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    CURS A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCDEF 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCDEF 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5167,7 +5160,7 @@ ACTOR CurseSpellCrisis : CurseSpell
 	  A_StatusEffectChecker(4);
 	  if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
 	  {
-	   A_SetUserVar("user_random",random(1,13));
+	   user_random = random(1,13);
 	   if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,19, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Blind for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 	   else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,20, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Sleep for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -5465,10 +5458,10 @@ actor ClinkAxeCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    CLAX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    CLAX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5656,10 +5649,10 @@ actor MinotaurFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX12 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX12 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBB 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5714,10 +5707,10 @@ actor MinotaurFX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX13 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX13 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -5791,10 +5784,10 @@ actor MinotaurFX3CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX13 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX13 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" DDCCBBCCDDEEFFGGHH 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" DDCCBBCCDDEEFFGGHH 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6133,10 +6126,10 @@ actor SnakeProjACrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SNFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SNFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDD 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6197,10 +6190,10 @@ actor SnakeProjBCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    SNFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    SNFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" JJJKKK 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" JJJKKK 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6548,10 +6541,10 @@ actor HellGuardBallCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    HGFB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    HGFB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCD 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6606,10 +6599,10 @@ actor SorcererFX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX14 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX14 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBBCCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBBCCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6810,10 +6803,10 @@ actor Sorcerer2FX1CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX16 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX16 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABC 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABC 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -6872,10 +6865,10 @@ actor Sorcerer2FX2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    FX11 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    FX11 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" A 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" A 3 Bright A_CrisisParticleDo
     loop
  }
 }

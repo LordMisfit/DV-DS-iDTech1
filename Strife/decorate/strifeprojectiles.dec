@@ -373,10 +373,10 @@ actor EMPGrenadeCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    TEFX A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    TEFX A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" ABCDEFGHIJKLMNOPQRST 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" ABCDEFGHIJKLMNOPQRST 1 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -699,10 +699,10 @@ actor DarkMatterBallCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    DMGB A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    DMGB A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AAABBBCCC 1 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AAABBBCCC 1 Bright A_CrisisParticleDo
     loop
  }
 }

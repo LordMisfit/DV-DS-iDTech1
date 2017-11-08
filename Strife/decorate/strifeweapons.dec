@@ -1330,10 +1330,10 @@ actor SpectralLightningBall2MonsterCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZOT3 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZOT3 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDDEE 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDDEE 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1441,10 +1441,10 @@ actor SpectralLightningBigV2MonsterCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZOT2 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZOT2 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDDEE 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDDEE 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1563,11 +1563,11 @@ actor SpectralLightningBigBall2CrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZAP7 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZAP7 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    "####" CCDDEE 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
+    "####" CCDDEE 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1656,11 +1656,11 @@ actor SpectralLightningV1MonsterCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZOT1 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZOT1 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABB 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    "####" CCDDEE 3 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABB 2 Bright A_CrisisParticleDo
+    "####" CCDDEE 3 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1881,11 +1881,11 @@ actor SpectralLightningH3MonsterCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZAP6 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZAP6 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AA 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
-    "####" BBCC 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AA 2 Bright A_CrisisParticleDo
+    "####" BBCC 2 Bright A_CrisisParticleDo
     loop
  }
 }
@@ -1949,10 +1949,10 @@ actor SpectralLightningSpotCrisisParticle : BaseCrisisParticle
  States
  {
   Spawn:
-    ZAP5 A 0 NoDelay { A_SetUserVarFloat("user_basealpha",alpha*0.10); A_SetUserVarFloat("user_basescaleX",scaleX*0.10); A_SetUserVarFloat("user_basescaleY",scaleY*0.10); }
+    ZAP5 A 0 NoDelay A_CrisisParticleInit
 	goto Idle
   Idle:
-    "####" AABBCCDD 2 Bright { A_SetScale(scaleX-user_basescaleX,scaleY-user_basescaleY); if (scalex < 0.00 && scaley < 0.00) { A_FadeOut(2); } A_FadeOut(user_basealpha); }
+    "####" AABBCCDD 2 Bright A_CrisisParticleDo
     loop
  }
 }

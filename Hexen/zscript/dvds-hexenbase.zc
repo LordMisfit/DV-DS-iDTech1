@@ -42,26 +42,26 @@ class MaulotaurFriendBase : MaulotaurBase
 
 class KoraxBase : AetheriusBossZSC
 {
- // Korax
- const KORAX_ARM_EXTENSION_SHORT	= 40;
- const KORAX_ARM_EXTENSION_LONG		= 55;
+	// Korax
+	const KORAX_ARM_EXTENSION_SHORT	= 40;
+	const KORAX_ARM_EXTENSION_LONG		= 55;
 
- const KORAX_ARM1_HEIGHT			= 108;
- const KORAX_ARM2_HEIGHT			= 82;
- const KORAX_ARM3_HEIGHT			= 54;
- const KORAX_ARM4_HEIGHT			= 104;
- const KORAX_ARM5_HEIGHT			= 86;
- const KORAX_ARM6_HEIGHT			= 53;
+	const KORAX_ARM1_HEIGHT			= 108;
+	const KORAX_ARM2_HEIGHT			= 82;
+	const KORAX_ARM3_HEIGHT			= 54;
+	const KORAX_ARM4_HEIGHT			= 104;
+	const KORAX_ARM5_HEIGHT			= 86;
+	const KORAX_ARM6_HEIGHT			= 53;
 
- const KORAX_FIRST_TELEPORT_TID		= 248;
- const KORAX_TELEPORT_TID			= 249;
+	const KORAX_FIRST_TELEPORT_TID		= 248;
+	const KORAX_TELEPORT_TID			= 249;
 
- const KORAX_DELTAANGLE				= 85;
+	const KORAX_DELTAANGLE				= 85;
 
- const KORAX_COMMAND_HEIGHT			= 120;
- const KORAX_COMMAND_OFFSET			= 27;
+	const KORAX_COMMAND_HEIGHT			= 120;
+	const KORAX_COMMAND_OFFSET			= 27;
 
- const KORAX_SPIRIT_LIFETIME 		= 5*TICRATE/5;	// 5 seconds
+	const KORAX_SPIRIT_LIFETIME 		= 5*TICRATE/5;	// 5 seconds
  
 	//*******
 	//*Korax*
@@ -91,7 +91,7 @@ class KoraxBase : AetheriusBossZSC
 
 	void A_KoraxChase()
 	{
-	    int teleporthealth;
+		int teleporthealth;
 		if (User_MaxHP <= 0) teleporthealth = SpawnHealth()/2; else teleporthealth = User_MaxHP/2;
 		if ((!special2) && (health <= (teleporthealth)))
 		{
@@ -120,7 +120,7 @@ class KoraxBase : AetheriusBossZSC
 		}
 
 		// Teleport away
-	    int teleporthealth2;
+		int teleporthealth2;
 		if (User_MaxHP <= 0) teleporthealth2 = SpawnHealth() >> 1; else teleporthealth2 = User_MaxHP >> 1;
 		if (health < (teleporthealth2))
 		{
@@ -266,8 +266,8 @@ class KoraxBase : AetheriusBossZSC
 		A_PlaySound(sounds[type], CHAN_WEAPON, 1, false, ATTN_NONE);
 
 		A_MonsterCrisisCheck();
-	    class<Actor> info = choices[type];
-	    class<Actor> crisisinfo = crisischoices[type];
+		class<Actor> info = choices[type];
+		class<Actor> crisisinfo = crisischoices[type];
 
 		// Throws out the fireballs form Korax's arms
 		for (int i = 0; i < 6; ++i)

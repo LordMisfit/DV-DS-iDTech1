@@ -22,7 +22,7 @@ class DSparilBase : AetheriusBossZSC
 
 	void A_Srcr1Attack(int meleedamage = 8, string missiletype = "SorcererFX1New", string crisismissiletype = "SorcererFX1Crisis")
 	{
-	    A_MonsterCrisisCheck();
+		A_MonsterCrisisCheck();
 		string projtype = missiletype;
 		if(user_canusecrisisatk == 1) 
 		{
@@ -37,14 +37,14 @@ class DSparilBase : AetheriusBossZSC
 		A_PlaySound (AttackSound, CHAN_BODY);
 		if (CheckMeleeRange ())
 		{
-		    if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
+			if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
 			int damage = meleedamage;
 			int newdam = target.DamageMobj (self, self, damage, 'Melee');
 			target.TraceBleed (newdam > 0 ? newdam : damage, self);
 			return;
 		}
 
-	    if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
+		if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
 		int fireballhealth1;
 		if (User_MaxHP <= 0) fireballhealth1 = SpawnHealth()/3*2; else fireballhealth1 = User_MaxHP/3*2;
 		int fireballhealth2;
@@ -137,17 +137,17 @@ class DSparilBase : AetheriusBossZSC
 
 	void A_Srcr2Attack (int meleedamage = 20, string missiletype1 = "Sorcerer2FX1New", string missiletype1crisis = "Sorcerer2FX1Crisis", string missiletype2 = "Sorcerer2FX2New",  string missiletype2crisis = "Sorcerer2FX2Crisis")
 	{
-	    A_MonsterCrisisCheck();
+		A_MonsterCrisisCheck();
 		string attacktype1 = missiletype1;
 		string attacktype2 = missiletype2;
-	    if(user_canusecrisisatk == 1) 
+		if(user_canusecrisisatk == 1) 
 		{
 		 attacktype1 = missiletype1crisis;
 		 attacktype2 = missiletype2crisis;
 		 meleedamage *= CallACS("CrisisMultiplier");
 		}
 
-	    int attackhealth;
+		int attackhealth;
 		if (User_MaxHP <= 0) attackhealth = SpawnHealth(); else attackhealth = User_MaxHP;
 		if (!target)
 		{
@@ -156,13 +156,13 @@ class DSparilBase : AetheriusBossZSC
 		A_PlaySound (AttackSound, CHAN_BODY, 1, false, ATTN_NONE);
 		if (CheckMeleeRange())
 		{
-		    if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
+			if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
 			int damage = meleedamage;
 			int newdam = target.DamageMobj (self, self, damage, 'Melee');
 			target.TraceBleed (newdam > 0 ? newdam : damage, self);
 			return;
 		}
-	    if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
+		if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
 		int chance = health < attackhealth/2 ? 96 : 48;
 		if (random[Srcr2Atk]() < chance)
 		{ // Wizard spawners

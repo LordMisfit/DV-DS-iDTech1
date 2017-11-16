@@ -3,378 +3,377 @@
 
 actor BaseSellItem : CustomInventory
 {
- radius 5
- height 5
- RenderStyle Add
- Alpha 0.0
- scale 0.44
- mass 666
- +DONTGIB
- +FLOATBOB
+	radius 5
+	height 5
+	RenderStyle Add
+	Alpha 0.0
+	scale 0.44
+	mass 666
+	+DONTGIB
+	+FLOATBOB
 }
 
 // MEDICAL ITEMS
 actor MedicinalHerbSellItem1 : BaseSellItem
 {
- ConversationID 501 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",10,AAPTR_PLAYER1);
-    A_TakeInventory("MedicinalHerbSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 501 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",10,AAPTR_PLAYER1);
+			 A_TakeInventory("MedicinalHerbSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor StrongMediceneSellItem1 : BaseSellItem
 {
- ConversationID 502 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",25,AAPTR_PLAYER1);
-    A_TakeInventory("StrongMediceneSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 502 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				A_GiveInventory("Coin",25,AAPTR_PLAYER1);
+				A_TakeInventory("StrongMediceneSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor SpecialMediceneSellItem1 : BaseSellItem
 {
- ConversationID 503 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",75,AAPTR_PLAYER1);
-    A_TakeInventory("SpecialMediceneSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 503 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				A_GiveInventory("Coin",75,AAPTR_PLAYER1);
+				A_TakeInventory("SpecialMediceneSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor YggdrasilDewSellItem1 : BaseSellItem
 {
- ConversationID 504 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",312,AAPTR_PLAYER1);
-    A_TakeInventory("YggdrasilDewSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 504 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				A_GiveInventory("Coin",312,AAPTR_PLAYER1);
+				A_TakeInventory("YggdrasilDewSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor MedPatchSellItem1 : BaseSellItem
 {
- ConversationID 505 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",5,AAPTR_PLAYER1);
-    A_TakeInventory("MedPatchSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 505 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				A_GiveInventory("Coin",5,AAPTR_PLAYER1);
+				A_TakeInventory("MedPatchSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor MedicalKitSellItem1 : BaseSellItem
 {
- ConversationID 506 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",12,AAPTR_PLAYER1);
-    A_TakeInventory("MedicalKitSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 506 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",12,AAPTR_PLAYER1);
+			 A_TakeInventory("MedicalKitSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor SurgeryKitSellItem1 : BaseSellItem
 {
- ConversationID 507 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",37,AAPTR_PLAYER1);
-    A_TakeInventory("SurgeryKitSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 507 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",37,AAPTR_PLAYER1);
+			 A_TakeInventory("SurgeryKitSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 // BUFF ITEMS
 actor PaxaPunchSellItem1 : BaseSellItem
 {
- ConversationID 508 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",250,AAPTR_PLAYER1);
-    A_TakeInventory("PaxaPunchSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 508 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",250,AAPTR_PLAYER1);
+			 A_TakeInventory("PaxaPunchSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor MercuryBandanaSellItem1 : BaseSellItem
 {
- ConversationID 509 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",250,AAPTR_PLAYER1);
-    A_TakeInventory("MercuryBandanaSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 509 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",250,AAPTR_PLAYER1);
+			 A_TakeInventory("MercuryBandanaSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 // MAGICAL ITEMS
 actor MagicWaterSellItem1 : BaseSellItem
 {
- ConversationID 510 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",87,AAPTR_PLAYER1);
-    A_TakeInventory("MagicWaterSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 510 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				 A_GiveInventory("Coin",87,AAPTR_PLAYER1);
+				 A_TakeInventory("MagicWaterSellItem1",1,0,AAPTR_PLAYER1);
+				 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor SageElixirSellItem1 : BaseSellItem
 {
- ConversationID 511 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",225,AAPTR_PLAYER1);
-    A_TakeInventory("SageElixirSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 511 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",225,AAPTR_PLAYER1);
+			 A_TakeInventory("SageElixirSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor ElfinElixirItem1 : BaseSellItem
 {
- ConversationID 512 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",500,AAPTR_PLAYER1);
-    A_TakeInventory("ElfinElixirItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
+	ConversationID 512 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",500,AAPTR_PLAYER1);
+			 A_TakeInventory("ElfinElixirItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
  }
 }
 
 // UNIQUE ITEMS
 actor EnvironmentalSuitSellItem1 : BaseSellItem
 {
- ConversationID 513 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",12,AAPTR_PLAYER1);
-    A_TakeInventory("EnvironmentalSuitSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 513 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",12,AAPTR_PLAYER1);
+			 A_TakeInventory("EnvironmentalSuitSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor TargeterSellItem1 : BaseSellItem
 {
- ConversationID 514 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",125,AAPTR_PLAYER1);
-    A_TakeInventory("TargeterSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 514 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",125,AAPTR_PLAYER1);
+			 A_TakeInventory("TargeterSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor DegninOreSellItem1 : BaseSellItem
 {
- ConversationID 515 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",1375,AAPTR_PLAYER1);
-    A_TakeInventory("DegninOreSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 515 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",1375,AAPTR_PLAYER1);
+			 A_TakeInventory("DegninOreSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor ShadowArmorSellItem1 : BaseSellItem
 {
- ConversationID 516 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",500,AAPTR_PLAYER1);
-    A_TakeInventory("ShadowArmorSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 516 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",500,AAPTR_PLAYER1);
+			 A_TakeInventory("ShadowArmorSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor TeleporterBeaconSellItem1 : BaseSellItem
 {
- ConversationID 517 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",150,AAPTR_PLAYER1);
-    A_TakeInventory("TeleporterBeaconSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 517 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",150,AAPTR_PLAYER1);
+			 A_TakeInventory("TeleporterBeaconSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor ScannerSellItem1 : BaseSellItem
 {
- ConversationID 520 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",750,AAPTR_PLAYER1);
-    A_TakeInventory("ScannerSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 520 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",750,AAPTR_PLAYER1);
+			 A_TakeInventory("ScannerSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 // VIMSTONE ITEMS
 actor LesserVimstoneSellItem1 : BaseSellItem
 {
- ConversationID 518 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",1125,AAPTR_PLAYER1);
-    A_TakeInventory("LesserVimstoneSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 518 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",1125,AAPTR_PLAYER1);
+			 A_TakeInventory("LesserVimstoneSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 actor GreaterVimstoneSellItem1 : BaseSellItem
 {
- ConversationID 519 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",4020,AAPTR_PLAYER1);
-    A_TakeInventory("GreaterVimstoneSellItem1",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 519 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",4020,AAPTR_PLAYER1);
+			 A_TakeInventory("GreaterVimstoneSellItem1",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
 
 // OTHER "JUNK"
 actor OfferingChaliceItem1 : BaseSellItem
 {
- ConversationID 521 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
- States
- {
-  Pickup:
-  Use:
-   TNT1 A 1 
-   {
-    A_GiveInventory("Coin",7500,AAPTR_PLAYER1);
-    A_GiveInventory("SeedOfSkillForced",2,AAPTR_PLAYER1);
-    A_TakeInventory("OfferingChaliceItem1",1,0,AAPTR_PLAYER1);
-    A_TakeInventory("QuestItem2",1,0,AAPTR_PLAYER1);
-	A_PlaySound("Grabbed/Coins",0);
-   }
-   stop
- }
+	ConversationID 521 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+			 A_GiveInventory("Coin",7500,AAPTR_PLAYER1);
+			 A_GiveInventory("SeedOfSkillForced",2,AAPTR_PLAYER1);
+			 A_TakeInventory("OfferingChaliceItem1",1,0,AAPTR_PLAYER1);
+			 A_TakeInventory("QuestItem2",1,0,AAPTR_PLAYER1);
+			 A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
 }
-

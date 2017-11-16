@@ -1,899 +1,899 @@
 // Crossbow Projectiles
 ACTOR ElectricBoltNew : ElectricBolt replaces ElectricBolt
 {
-  Speed 30
-  Radius 10
-  Height 10
-  Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",25)) // 50
-  Projectile
-  +STRIFEDAMAGE
-  +NOBLOCKMAP
-  +NOGRAVITY
-  +DROPOFF
-  DamageType "Thunder"
-  MaxStepHeight 4
-  SeeSound "misc/swish"
-  ActiveSound "misc/swish"
-  DeathSound "weapons/xbowhit"
-  Obituary "$OB_MPELECTRICBOLT" // "%o got bolted to the wall by %k."
-  States
-  {
-  Spawn:
-    AROW A 0 NoDelay
-  Idle:
-    AROW A 10 A_LoopActiveSound
-    Loop
-  Death:
-    ZAP1 A 3 // A_AlertMonsters
-    ZAP1 BCDEFE 3
-    ZAP1 DCB 2
-    ZAP1 A 1
-    Stop
-  }
+	Speed 30
+	Radius 10
+	Height 10
+	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",25)) // 50
+	Projectile
+	+STRIFEDAMAGE
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	DamageType "Thunder"
+	MaxStepHeight 4
+	SeeSound "misc/swish"
+	ActiveSound "misc/swish"
+	DeathSound "weapons/xbowhit"
+	Obituary "$OB_MPELECTRICBOLT" // "%o got bolted to the wall by %k."
+	States
+	{
+		Spawn:
+			AROW A 0 NoDelay
+		Idle:
+			AROW A 10 A_LoopActiveSound
+			Loop
+		Death:
+			ZAP1 A 3 // A_AlertMonsters
+			ZAP1 BCDEFE 3
+			ZAP1 DCB 2
+			ZAP1 A 1
+			Stop
+	}
 }
 
 ACTOR PoisonBoltNew : PoisonBolt replaces PoisonBolt
 {
-  Speed 30
-  Radius 10
-  Height 10
-  Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",26)) // 50
-  Projectile
-  +STRIFEDAMAGE
-  DamageType "PoisonBolt"
-  MaxStepHeight 4
-  SeeSound "misc/swish"
-  ActiveSound "misc/swish"
-  Obituary "$OB_MPPOISONBOLT" // "%o recieved a lethal dose of %k's wrath."
-  States
-  {
-  Spawn:
-    ARWP A 0 NoDelay
-  Idle:
-    ARWP A 10 A_LoopActiveSound
-    Loop
-  Death:
-    AROW A 1
-    Stop
-  }
+	Speed 30
+	Radius 10
+	Height 10
+	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",26)) // 50
+	Projectile
+	+STRIFEDAMAGE
+	DamageType "PoisonBolt"
+	MaxStepHeight 4
+	SeeSound "misc/swish"
+	ActiveSound "misc/swish"
+	Obituary "$OB_MPPOISONBOLT" // "%o recieved a lethal dose of %k's wrath."
+	States
+	{
+		Spawn:
+			ARWP A 0 NoDelay
+		Idle:
+			ARWP A 10 A_LoopActiveSound
+			Loop
+		Death:
+			AROW A 1
+			Stop
+	}
 }
 
 // Crossbow
 ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 {
-  +FLOORCLIP
-  Weapon.SelectionOrder 1200
-  +WEAPON.NOALERT
-  Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 8
-  Weapon.AmmoType1 "ElectricBolts"
-  Weapon.SisterWeapon "StrifeCrossbow2New"
-  Inventory.PickupMessage "$TXT_STRIFECROSSBOW" // "You picked up the crossbow"
-  Tag "$TAG_STRIFECROSSBOW1" // "Crossbow"
-  Inventory.Icon "CBOWA0"
-  ConversationID 194
+	+FLOORCLIP
+	Weapon.SelectionOrder 1200
+	+WEAPON.NOALERT
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 8
+	Weapon.AmmoType1 "ElectricBolts"
+	Weapon.SisterWeapon "StrifeCrossbow2New"
+	Inventory.PickupMessage "$TXT_STRIFECROSSBOW" // "You picked up the crossbow"
+	Tag "$TAG_STRIFECROSSBOW1" // "Crossbow"
+	Inventory.Icon "CBOWA0"
+	ConversationID 194
 
-  States
-  {
-  Spawn:
-    CBOW A -1
-    Stop
-  Ready:
-    XBOW A 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-    XBOW A 1 A_WeaponReady(WRF_ALLOWUSER1)
-    Wait
-  Deselect:
-    TNT1 A 0 
- 	{
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
-    }
-    TNT1 A 0 A_Lower
-    XBOW A 1 A_Lower
-    Loop
-  Select:
-    TNT1 A 0 
- 	{
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
-    }
-    TNT1 A 0 A_Raise
-    XBOW A 1 A_Raise
-    Loop
+	States
+	{
+		Spawn:
+			CBOW A -1
+			Stop
+		Ready:
+			XBOW A 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
+			XBOW A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			Wait
+		Deselect:
+			TNT1 A 0 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
+			}
+			TNT1 A 0 A_Lower
+			XBOW A 1 A_Lower
+			Loop
+		Select:
+			TNT1 A 0 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
+			}
+			TNT1 A 0 A_Raise
+			XBOW A 1 A_Raise
+			Loop
 
-  Fire:
-    TNT1 A 0
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("Fire5"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("Fire4"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("Fire3"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("Fire2"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("Fire1"); }
-	 return state("Fire0");
-	}
-  Fire0:
-    // 32 [3]
-    XBOW A 3 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  Fire1:
-    // 29 [3]
-    XBOW A 3 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  Fire2:
-    // 27 [2]
-    XBOW A 2 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  Fire3:
-    // 24 [2]
-    XBOW A 2 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  Fire4:
-    // 22 [1]
-    XBOW A 1 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  Fire5:
-    // 19 [1]
-    XBOW A 1 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
-	goto FireArrow
-  FireArrow:
-    TNT1 A 0 
-	{
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-     A_PlaySound("weapons/xbowshoot",1);
-     A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"ElectricBolts",0,0,0,0);
-	}
-    XBOW B 6
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(5); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
-	}
-    XBOW C 4
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
-	}
-    XBOW D 6
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
-	}
-    XBOW E 3
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
-	}
-    XBOW F 5
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
-	}
-    XBOW G 5
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+		Fire:
+			TNT1 A 0
+		{
+		 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("Fire5"); }
+		 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("Fire4"); }
+		 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("Fire3"); }
+		 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("Fire2"); }
+		 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("Fire1"); }
+		 return state("Fire0");
+		}
+		Fire0:
+			// 32 [3]
+			XBOW A 3 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		Fire1:
+			// 29 [3]
+			XBOW A 3 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		Fire2:
+			// 27 [2]
+			XBOW A 2 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		Fire3:
+			// 24 [2]
+			XBOW A 2 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		Fire4:
+			// 22 [1]
+			XBOW A 1 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		Fire5:
+			// 19 [1]
+			XBOW A 1 A_GunFlash("LightDone",GFF_NOEXTCHANGE)
+			goto FireArrow
+		FireArrow:
+			TNT1 A 0 
+			{
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_PlaySound("weapons/xbowshoot",1);
+			 A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"ElectricBolts",0,0,0,0);
+			}
+			XBOW B 6
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+			}
+			XBOW C 4
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+			}
+			XBOW D 6
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+			}
+			XBOW E 3
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+			}
+			XBOW F 5
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+			}
+			XBOW G 5
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
 
-     A_GunFlash ("Flash", GFF_NOEXTCHANGE);
-     A_CheckReload;
+			 A_GunFlash ("Flash", GFF_NOEXTCHANGE);
+			 A_CheckReload;
+			}
+			Goto Ready+1
+		Flash:
+			XBOW KLM 5
+			Loop
 	}
-    Goto Ready+1
-  Flash:
-    XBOW KLM 5
-    Loop
-  }
 }
 
 ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 {
-  Weapon.SelectionOrder 2700
-  +WEAPON.NOALERT
-  Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 0
-  Weapon.AmmoType1 "PoisonBolts"
-  Weapon.SisterWeapon "StrifeCrossbowNew"
-  Tag "$TAG_STRIFECROSSBOW2" // "Crossbow"
+	Weapon.SelectionOrder 2700
+	+WEAPON.NOALERT
+	Weapon.AmmoUse1 1
+	Weapon.AmmoGive1 0
+	Weapon.AmmoType1 "PoisonBolts"
+	Weapon.SisterWeapon "StrifeCrossbowNew"
+	Tag "$TAG_STRIFECROSSBOW2" // "Crossbow"
 
-  States
-  {
-  Ready:
-    XBOW H 1 A_WeaponReady(WRF_ALLOWUSER1)
-    Loop
-  Deselect:
-    TNT1 A 0 
- 	{
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
-    }
-    TNT1 A 0 A_Lower
-    XBOW H 1 A_Lower
-    Loop
-  Select:
-    TNT1 A 0 
- 	{
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
-    }
-    TNT1 A 0 A_Raise
-    XBOW H 1 A_Raise
-    Loop
-  Fire:
-    TNT1 A 0
+	States
 	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("Fire5"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("Fire4"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("Fire3"); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("Fire2"); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("Fire1"); }
-	 return state("Fire0");
-	}
-  Fire0:
-    // 32 [3]
-    XBOW H 3
-	goto FireArrow
-  Fire1:
-    // 29 [3]
-    XBOW H 3
-	goto FireArrow
-  Fire2:
-    // 27 [2]
-    XBOW H 2
-	goto FireArrow
-  Fire3:
-    // 24 [2]
-    XBOW H 2
-	goto FireArrow
-  Fire4:
-    // 22 [1]
-    XBOW H 1
-	goto FireArrow
-  Fire5:
-    // 19 [1]
-    XBOW H 1
-	goto FireArrow
-  FireArrow:
-    TNT1 A 0 
-	{
-	 ACS_NamedExecuteAlways("StartTensionCountDown");
-     A_PlaySound("weapons/xbowshoot",1);
-     A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"PoisonBolts",0,0,0,0);
-	}
-    XBOW B 6 
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(5); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
-	}
-    XBOW C 4
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
-	}
-    XBOW D 6
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
-	}
-    XBOW E 3
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
-	}
-    XBOW I 5
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
-	}
-    XBOW J 5 
-	{
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
- 	 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+		Ready:
+			XBOW H 1 A_WeaponReady(WRF_ALLOWUSER1)
+			Loop
+		Deselect:
+			TNT1 A 0 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
+			}
+			TNT1 A 0 A_Lower
+			XBOW H 1 A_Lower
+			Loop
+		Select:
+			TNT1 A 0 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
+			}
+			TNT1 A 0 A_Raise
+			XBOW H 1 A_Raise
+			Loop
+		Fire:
+			TNT1 A 0
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { return state("Fire5"); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { return state("Fire4"); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { return state("Fire3"); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { return state("Fire2"); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { return state("Fire1"); }
+			 return state("Fire0");
+			}
+		Fire0:
+			// 32 [3]
+			XBOW H 3
+			goto FireArrow
+		Fire1:
+			// 29 [3]
+			XBOW H 3
+			goto FireArrow
+		Fire2:
+			// 27 [2]
+			XBOW H 2
+			goto FireArrow
+		Fire3:
+			// 24 [2]
+			XBOW H 2
+			goto FireArrow
+		Fire4:
+			// 22 [1]
+			XBOW H 1
+			goto FireArrow
+		Fire5:
+			// 19 [1]
+			XBOW H 1
+			goto FireArrow
+		FireArrow:
+			TNT1 A 0 
+			{
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_PlaySound("weapons/xbowshoot",1);
+			 A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-ACS_NamedExecuteWithResult("GetHitScanXSpread",6),ACS_NamedExecuteWithResult("GetHitScanXSpread",6)),1,"PoisonBolts",0,0,0,0);
+			}
+			XBOW B 6 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+			}
+			XBOW C 4
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+			}
+			XBOW D 6
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+			}
+			XBOW E 3
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+			}
+			XBOW I 5
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+			}
+			XBOW J 5 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
 
-	 A_CheckReload;
+			 A_CheckReload;
+			}
+			Goto Ready
+		Flash:
+			Stop
 	}
-    Goto Ready
-  Flash:
-    Stop
-  }
 }
 
 // Bullet Clip
 ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 1)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 48)
-	 {
-      A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 1)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 48)
+			 {
+				A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-   Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    BLIT A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			BLIT A 1
+			loop
+	}
 }
 
 // Box of Bullets
 ACTOR BoxOfBulletsNew : BoxOfBullets replaces BoxOfBullets
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 3)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 144)
-	 {
-      A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-	 }
-     A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 3)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 144)
+			 {
+				A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-   Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    BBOX A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			BBOX A 1
+			loop
+	}
 }
 
 // Assault Gun
 ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
 {
-  ConversationID 188
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 188
+	States
 	{
-	 if (random(1,256) <= 32)
-	 {
-      A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 16)
-	 {
-      A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 4)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 32)
+			 {
+				A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 16)
+			 {
+				A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 4)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
+
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			RIFL A 1
+			loop
+
+		Ready:
+			RIFG A 1 A_WeaponReady
+			Loop
+		Deselect:
+			RIFG B 1 A_Lower
+			Loop
+		Select:
+			RIFG A 1 A_Raise
+			Loop
+		Fire:
+			RIFF AB 3 A_FireAssaultGun
+			RIFG D 3 A_FireAssaultGun
+			RIFG C 0 A_ReFire
+			RIFG B 2 A_Light0
+			Goto Ready
 	}
-    Loop
-
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    RIFL A 1
-    loop
-
-  Ready:
-    RIFG A 1 A_WeaponReady
-    Loop
-  Deselect:
-    RIFG B 1 A_Lower
-    Loop
-  Select:
-    RIFG A 1 A_Raise
-    Loop
-  Fire:
-    RIFF AB 3 A_FireAssaultGun
-    RIFG D 3 A_FireAssaultGun
-    RIFG C 0 A_ReFire
-    RIFG B 2 A_Light0
-    Goto Ready
-  }
 }
 
 ACTOR AssaultGunStandingNew : AssaultGunStanding replaces AssaultGunStanding
 {
-  ConversationID 189
-  DropItem "AssaultGunNew"
-  Inventory.PickupMessage "$TXT_ASSAULTGUN" // "You picked up the assault gun."
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 189
+	DropItem "AssaultGunNew"
+	Inventory.PickupMessage "$TXT_ASSAULTGUN" // "You picked up the assault gun."
+	States
 	{
-	 if (random(1,256) <= 32)
-	 {
-      A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 16)
-	 {
-      A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 4)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 32)
+			 {
+				A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 16)
+			 {
+				A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 4)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    RIFL B 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			RIFL B 1
+			loop
+	}
 }
 
 // Mini Missiles
 ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 1)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 48)
-	 {
-      A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 1)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 48)
+			 {
+				A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    MSSL A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			MSSL A 1
+			loop
+	}
 }
 
 // Crate Of Missiles
 ACTOR CrateOfMissilesNew : CrateOfMissiles replaces CrateOfMissiles
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 3)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 144)
-	 {
-      A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-	 }
-     A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 3)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 144)
+			 {
+				A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    ROKT A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			ROKT A 1
+			loop
+	}
 }
 
 // Mini Missile Launcher
 ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
 {
-  ConversationID 192
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 192
+	States
 	{
-	 if (random(1,256) <= 48)
-	 {
-      A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 24)
-	 {
-      A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 6)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 48)
+			 {
+				A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 24)
+			 {
+				A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 6)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
+
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			MMSL A 1
+			loop
+
+		Ready:
+			MMIS A 1 A_WeaponReady
+			Loop
+		Deselect:
+			MMIS A 1 A_Lower
+			Loop
+		Select:
+			MMIS A 1 A_Raise
+			Loop
+		Fire:
+			MMIS A 4 A_FireMiniMissile
+			MMIS B 4 A_Light1
+			MMIS C 5 Bright
+			MMIS D 2 Bright A_Light2
+			MMIS E 2 Bright
+			MMIS F 2 Bright A_Light0
+			MMIS F 0 A_ReFire
+			Goto Ready
 	}
-    Loop
-
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    MMSL A 1
-    loop
-
-  Ready:
-    MMIS A 1 A_WeaponReady
-    Loop
-  Deselect:
-    MMIS A 1 A_Lower
-    Loop
-  Select:
-    MMIS A 1 A_Raise
-    Loop
-  Fire:
-    MMIS A 4 A_FireMiniMissile
-    MMIS B 4 A_Light1
-    MMIS C 5 Bright
-    MMIS D 2 Bright A_Light2
-    MMIS E 2 Bright
-    MMIS F 2 Bright A_Light0
-    MMIS F 0 A_ReFire
-    Goto Ready
-  }
 }
 
 // Flamethrower
 ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 {
-  ConversationID 190
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 190
+	States
 	{
-	 if (random(1,256) <= 64)
-	 {
-      A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 32)
-	 {
-      A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 8)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 64)
+			 {
+				A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 32)
+			 {
+				A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 8)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
+
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			FLAM A 1
+			loop
+
+		Ready:
+			FLMT AB 3 A_WeaponReady
+			Loop
+		Deselect:
+			FLMT A 1 A_Lower
+			Loop
+		Select:
+			FLMT A 1 A_Raise
+			Loop
+		Fire:
+			FLMF A 2 A_FireFlamer
+			FLMF B 3 A_ReFire
+			Goto Ready
 	}
-    Loop
-
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    FLAM A 1
-    loop
-
-  Ready:
-    FLMT AB 3 A_WeaponReady
-    Loop
-  Deselect:
-    FLMT A 1 A_Lower
-    Loop
-  Select:
-    FLMT A 1 A_Raise
-    Loop
-  Fire:
-    FLMF A 2 A_FireFlamer
-    FLMF B 3 A_ReFire
-    Goto Ready
-  }
 }
 
 // HE Grenade Rounds
 ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    MSSL A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			MSSL A 1
+			loop
+	}
 }
 
 // Phosphorus Grenades
 ACTOR PhosphorusGrenadeRoundsNew : PhosphorusGrenadeRounds replaces PhosphorusGrenadeRounds
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-     A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    ROKT A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			ROKT A 1
+			loop
+	}
 }
 
 // Grenade Launcher
 ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLauncher
 {
-  ConversationID 195
-  Weapon.AmmoType1 "HEGrenadeRounds"
-  Weapon.SisterWeapon "StrifeGrenadeLauncher2New"
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 195
+	Weapon.AmmoType1 "HEGrenadeRounds"
+	Weapon.SisterWeapon "StrifeGrenadeLauncher2New"
+	States
 	{
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-	 A_FadeOut(1.0);
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+			 A_FadeOut(1.0);
+			}
+			Loop
+
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			GRND A 1
+			loop
+
+		Ready:
+			GREN A 1 A_WeaponReady
+			Loop
+		Deselect:
+			GREN A 1 A_Lower
+			Loop
+		Select:
+			GREN A 1 A_Raise
+			Loop
+		Fire:
+			GREN A 5 A_FireGrenade("HEGrenade", -90, "Flash")
+			GREN B 10
+			GREN A 5 A_FireGrenade("HEGrenade", 90, "Flash2")
+			GREN C 10
+			GREN A 0 A_ReFire
+			Goto Ready
+		Flash:
+			GREF A 5 Bright A_Light1
+			Goto LightDone
+		Flash2:
+			GREF B 5 Bright A_Light2
+			Goto LightDone
 	}
-    Loop
-
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    GRND A 1
-    loop
-
-  Ready:
-    GREN A 1 A_WeaponReady
-    Loop
-  Deselect:
-    GREN A 1 A_Lower
-    Loop
-  Select:
-    GREN A 1 A_Raise
-    Loop
-  Fire:
-    GREN A 5 A_FireGrenade("HEGrenade", -90, "Flash")
-    GREN B 10
-    GREN A 5 A_FireGrenade("HEGrenade", 90, "Flash2")
-    GREN C 10
-    GREN A 0 A_ReFire
-    Goto Ready
-  Flash:
-    GREF A 5 Bright A_Light1
-    Goto LightDone
-  Flash2:
-    GREF B 5 Bright A_Light2
-    Goto LightDone
-  }
 }
 ACTOR StrifeGrenadeLauncher2New : StrifeGrenadeLauncher2 replaces StrifeGrenadeLauncher2
 {
-  Weapon.AmmoType1 "PhosphorusGrenadeRounds"
-  Weapon.SisterWeapon "StrifeGrenadeLauncherNew"
-  States
-  {
-  Ready:
-    GREN D 1 A_WeaponReady
-    Loop
-  Deselect:
-    GREN D 1 A_Lower
-    Loop
-  Select:
-    GREN D 1 A_Raise
-    Loop
-  Fire:
-    GREN D 5 A_FireGrenade("PhosphorousGrenade", -90, "Flash")
-    GREN E 10
-    GREN D 5 A_FireGrenade("PhosphorousGrenade", 90, "Flash2")
-    GREN F 10
-    GREN A 0 A_ReFire
-    Goto Ready
-  Flash:
-    GREF C 5 Bright A_Light1
-    Goto LightDone
-  Flash2:
-    GREF D 5 Bright A_Light2
-    Goto LightDone
-  }
+	Weapon.AmmoType1 "PhosphorusGrenadeRounds"
+	Weapon.SisterWeapon "StrifeGrenadeLauncherNew"
+	States
+	{
+		Ready:
+			GREN D 1 A_WeaponReady
+			Loop
+		Deselect:
+			GREN D 1 A_Lower
+			Loop
+		Select:
+			GREN D 1 A_Raise
+			Loop
+		Fire:
+			GREN D 5 A_FireGrenade("PhosphorousGrenade", -90, "Flash")
+			GREN E 10
+			GREN D 5 A_FireGrenade("PhosphorousGrenade", 90, "Flash2")
+			GREN F 10
+			GREN A 0 A_ReFire
+			Goto Ready
+		Flash:
+			GREF C 5 Bright A_Light1
+			Goto LightDone
+		Flash2:
+			GREF D 5 Bright A_Light2
+			Goto LightDone
+	}
 }
 
 // Energy Pod
 ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 5)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 240)
-	 {
-      A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 5)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 240)
+			 {
+				A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    MSSL A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			MSSL A 1
+			loop
+	}
 }
 
 // Energy Pack
 ACTOR EnergyPackNew : EnergyPack replaces EnergyPack
 {
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	States
 	{
-	 if (random(1,256) <= 15)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 240)
-	 {
-      A_SpawnItemEx("DoomSpellMana2",0,0,0,0,0,0,0,0,0);
-	 }
-     A_FadeOut(1.0);
-	}
-    Loop
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 15)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 240)
+			 {
+				A_SpawnItemEx("DoomSpellMana2",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
 
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    ROKT A 1
-    loop
-  }
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			ROKT A 1
+			loop
+	}
 }
 
 // Mauler [both modes]
 ACTOR MaulerNew : Mauler replaces Mauler
 {
-  ConversationID 193
-  Weapon.SisterWeapon "Mauler2New"
-  States
-  {
-   FloraDetected: // bonus will be turned into something else
-    TNT1 A 0
+	ConversationID 193
+	Weapon.SisterWeapon "Mauler2New"
+	States
 	{
-	 if (random(1,256) <= 256)
-	 {
-      A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 64)
-	 {
-      A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-	 }
-	 if (random(1,256) <= 16)
-	 {
-      A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-	 }
-	 A_FadeOut(1.0);
+		FloraDetected: // bonus will be turned into something else
+			TNT1 A 0
+			{
+			 if (random(1,256) <= 256)
+			 {
+				A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 64)
+			 {
+				A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+			 }
+			 if (random(1,256) <= 16)
+			 {
+				A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+			 }
+			 A_FadeOut(1.0);
+			}
+			Loop
+
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
+			TRPD A 1
+			loop
+
+		Ready:
+			MAUL FGHA 6 A_WeaponReady
+			Loop
+		Deselect:
+			MAUL A 1 A_Lower
+			Loop
+		Select:
+			MAUL A 1 A_Raise
+			Loop
+		Fire:
+			BLSF A 5 Bright A_FireMauler1 // see MaulerPuff
+			MAUL B 3 Bright A_Light1
+			MAUL C 2 A_Light2
+			MAUL DE 2
+			MAUL A 7 A_Light0
+			MAUL H 7
+			MAUL G 7 A_CheckReload
+			Goto Ready
 	}
-    Loop
-
-  Spawn:
-    TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CheckCharacterClass") == 2, "FloraDetected")
-    TRPD A 1
-    loop
-
-  Ready:
-    MAUL FGHA 6 A_WeaponReady
-    Loop
-  Deselect:
-    MAUL A 1 A_Lower
-    Loop
-  Select:
-    MAUL A 1 A_Raise
-    Loop
-  Fire:
-    BLSF A 5 Bright A_FireMauler1 // see MaulerPuff
-    MAUL B 3 Bright A_Light1
-    MAUL C 2 A_Light2
-    MAUL DE 2
-    MAUL A 7 A_Light0
-    MAUL H 7
-    MAUL G 7 A_CheckReload
-    Goto Ready
-  }
 }
 ACTOR Mauler2New : Mauler2 replaces Mauler2
 {
-  Weapon.SisterWeapon "MaulerNew"
-  States
-  {
-  Ready:
-    MAUL IJKL 7 A_WeaponReady
-    Loop
-  Deselect:
-    MAUL I 1 A_Lower
-    Loop
-  Select:
-    MAUL I 1 A_Raise
-    Loop
-  Fire:
-    MAUL I 20 A_FireMauler2Pre
-    MAUL J 10 A_Light1
-    BLSF A 10 Bright A_FireMauler2 // see MaulerTorpedo
-    MAUL B 10 Bright A_Light2
-    MAUL C 2
-    MAUL D 2 A_Light0
-    MAUL E 2 A_ReFire
-    Goto Ready
-  }
+	Weapon.SisterWeapon "MaulerNew"
+	States
+	{
+		Ready:
+			MAUL IJKL 7 A_WeaponReady
+			Loop
+		Deselect:
+			MAUL I 1 A_Lower
+			Loop
+		Select:
+			MAUL I 1 A_Raise
+			Loop
+		Fire:
+			MAUL I 20 A_FireMauler2Pre
+			MAUL J 10 A_Light1
+			BLSF A 10 Bright A_FireMauler2 // see MaulerTorpedo
+			MAUL B 10 Bright A_Light2
+			MAUL C 2
+			MAUL D 2 A_Light0
+			MAUL E 2 A_ReFire
+			Goto Ready
+	}
 }
 
 //**********
@@ -903,331 +903,331 @@ ACTOR Mauler2New : Mauler2 replaces Mauler2
 
 Actor NNSigil : StrifeWeaponBase
 {
-  Weapon.Kickback 100
-  Weapon.SelectionOrder 4000
-  +WEAPON.CHEATNOTWEAPON
-  +WEAPON.NOALERT
-  Tag "$TAG_SIGIL"
-  States
-  {
-   Deselect:
-      "----" A 1 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Deselect5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Deselect5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Deselect4")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Deselect3")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Deselect2")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Deselect1")
-   Deselect1:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
-	  }
-      SGLA A 1 Bright { A_Lower; A_Lower; }
-      Loop
-   Deselect2:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
-	  }
-      SGLB A 1 Bright { A_Lower; A_Lower; }
-      Loop
-   Deselect3:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
-	  }
-      SGLC A 1 Bright { A_Lower; A_Lower; }
-      Loop
-   Deselect4:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
-	  }
-      SGLD A 1 Bright { A_Lower; A_Lower; }
-      Loop
-   Deselect5:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
-	  }
-      SGLE A 1 Bright { A_Lower; A_Lower; }
-      Loop
-   //
-   Select:
-      "----" A 1 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Select5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Select5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Select4")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Select3")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Select2")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Select1")
-   Select1:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
-	  }
-      SGLA A 1 Bright { A_Raise; A_Raise; }
-      Loop
-   Select2:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
-	  }
-      SGLB A 1 Bright { A_Raise; A_Raise; }
-      Loop
-   Select3:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
-	  }
-      SGLC A 1 Bright { A_Raise; A_Raise; }
-      Loop
-   Select4:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
-	  }
-      SGLD A 1 Bright { A_Raise; A_Raise; }
-      Loop
-   Select5:
-      TNT1 A 0 Bright 
-	  { 
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
-	  }
-      SGLE A 1 Bright { A_Raise; A_Raise; }
-      Loop
-   //
-      //Well, it seems using "----" A in 'Ready' makes ZDoom refuse
-      //to give you the item. Interesting.
-   Ready:
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Ready5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Ready4")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Ready3")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Ready2")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Ready1")
-   Ready1:
-      SGLA A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
-      goto Ready
-   Ready2:
-      SGLB A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
-      goto Ready
-   Ready3:
-      SGLC A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
-      goto Ready
-   Ready4:
-      SGLD A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
-      goto Ready
-   Ready5:
-      SGLE A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
-      goto Ready
-   //
-   Fire:
-      SGLA A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Fire5")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Fire4")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Fire3")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Fire2")
-      TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Fire1")
-   Fire1:
-      SGLA A 18 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
-	   A_Light2;
-	  }
-      SGLA A 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_GunFlash;
-	  }
-      SGLA B 15 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
-       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
-       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 4);
-       ACS_NamedExecuteAlways("StartTensionCountDown");
-       A_SpreadAuraFireProjectile("NNSigilLightningSpot",0,0,"",0,0,0,0);
-	  }
-      Goto Ready
-   Fire2:
-      SGLB A 18 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
-	   A_Light2;
-	  }
-      SGLB A 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_GunFlash;
-	  }
-      SGLB B 15
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
-       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
-       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 8);
-       ACS_NamedExecuteAlways("StartTensionCountDown");
-       A_SpreadAuraFireProjectile("SpectralLightningH1",0,0,"",0,0,0,0);
-	  }
-      Goto Ready
-   Fire3:
-      SGLC A 18 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
-	   A_Light2;
-	  }
-      SGLC A 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_GunFlash;
-	  }
-      TNT1 A 0 
-	  {
-       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
-       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 12);
-	   A_GiveInventory("NNSigil3AttackCounter", 20);
-	  }
-      TNT1 A 0 A_SetAngle(angle-90)
-   Fire3Loop:
-      TNT1 A 0 A_SetAngle(angle+9)
-      TNT1 A 0
-	  {
-       ACS_NamedExecuteAlways("StartTensionCountDown");
-       A_SpreadAuraFireProjectile("SpectralLightningBall1",0,0,"",0,0,0,0);
-	  }
-      TNT1 A 0 A_TakeInventory("NNSigil3AttackCounter", 1)
-      TNT1 A 0 A_JumpIfInventory("NNSigil3AttackCounter", 1, "Fire3Loop")
-      SGLC B 15 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
-	   A_SetAngle(angle-90);
-	  }
-      Goto Ready
-   Fire4:
-      SGLD A 18 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
-	   A_Light2;
-	  }
-      SGLD A 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_GunFlash;
-	  }
-      SGLD B 15
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
-       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
-       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 16);
-       A_SpreadAuraFireProjectile("NNSigilLightningBigV",0,0,"",0,0,0,0);
-	  }
-      Goto Ready
-   Fire5:
-      SGLE A 18 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
-	   A_Light2;
-	  }
-      SGLE A 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_GunFlash;
-	  }
-      SGLE B 15
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
-       A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
-       ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 20);
-       ACS_NamedExecuteAlways("StartTensionCountDown");
-       A_SpreadAuraFireProjectile("SpectralLightningBigBall1",0,0,"",0,0,0,0);
-	  }
-      Goto Ready
-   //
-   Flash:
-      SGLF A 3 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_Light2;
-	  }
-      SGLF B 4 Bright
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
-	   A_Light2;
-	  }
-      SGLF C 3 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
-	   A_LightInverse;
-	  }
-      SGLF B 4 Bright 
-	  {
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
-	   if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
-	   A_Light1;
-	  }
-      SGLF B 0 A_Light0
-      Stop
-   }
+	Weapon.Kickback 100
+	Weapon.SelectionOrder 4000
+	+WEAPON.CHEATNOTWEAPON
+	+WEAPON.NOALERT
+	Tag "$TAG_SIGIL"
+	States
+	{
+		Deselect:
+			"----" A 1 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Deselect5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Deselect5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Deselect4")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Deselect3")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Deselect2")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Deselect1")
+		Deselect1:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
+			}
+			SGLA A 1 Bright { A_Lower; A_Lower; }
+			Loop
+		Deselect2:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
+			}
+			SGLB A 1 Bright { A_Lower; A_Lower; }
+			Loop
+		Deselect3:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
+			}
+			SGLC A 1 Bright { A_Lower; A_Lower; }
+			Loop
+		Deselect4:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
+			}
+			SGLD A 1 Bright { A_Lower; A_Lower; }
+			Loop
+		Deselect5:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
+			}
+			SGLE A 1 Bright { A_Lower; A_Lower; }
+			Loop
+		//
+		Select:
+			"----" A 1 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Select5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Select5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Select4")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Select3")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Select2")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Select1")
+		Select1:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
+			}
+			SGLA A 1 Bright { A_Raise; A_Raise; }
+			Loop
+		Select2:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
+			}
+			SGLB A 1 Bright { A_Raise; A_Raise; }
+			Loop
+		Select3:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
+			}
+			SGLC A 1 Bright { A_Raise; A_Raise; }
+			Loop
+		Select4:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
+			}
+			SGLD A 1 Bright { A_Raise; A_Raise; }
+			Loop
+		Select5:
+			TNT1 A 0 Bright 
+			{ 
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
+			}
+			SGLE A 1 Bright { A_Raise; A_Raise; }
+			Loop
+
+		//Well, it seems using "----" A in 'Ready' makes ZDoom refuse
+		//to give you the item. Interesting.
+		Ready:
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Ready5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Ready4")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Ready3")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Ready2")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Ready1")
+		Ready1:
+			SGLA A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			goto Ready
+		Ready2:
+			SGLB A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			goto Ready
+		Ready3:
+			SGLC A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			goto Ready
+		Ready4:
+			SGLD A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			goto Ready
+		Ready5:
+			SGLE A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			goto Ready
+
+		Fire:
+			SGLA A 0 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON)
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 5, "Fire5")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 4, "Fire4")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 3, "Fire3")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Fire2")
+			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Fire1")
+		Fire1:
+			SGLA A 18 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+			 A_Light2;
+			}
+			SGLA A 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_GunFlash;
+			}
+			SGLA B 15 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+			 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+			 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 4);
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_SpreadAuraFireProjectile("NNSigilLightningSpot",0,0,"",0,0,0,0);
+			}
+			Goto Ready
+		Fire2:
+			SGLB A 18 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+			 A_Light2;
+			}
+			SGLB A 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_GunFlash;
+			}
+			SGLB B 15
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+			 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+			 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 8);
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_SpreadAuraFireProjectile("SpectralLightningH1",0,0,"",0,0,0,0);
+			}
+			Goto Ready
+		Fire3:
+			SGLC A 18 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+			 A_Light2;
+			}
+			SGLC A 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_GunFlash;
+			}
+			TNT1 A 0 
+			{
+			 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+			 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 12);
+			 A_GiveInventory("NNSigil3AttackCounter", 20);
+			}
+			TNT1 A 0 A_SetAngle(angle-90)
+		Fire3Loop:
+			TNT1 A 0 A_SetAngle(angle+9)
+			TNT1 A 0
+			{
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_SpreadAuraFireProjectile("SpectralLightningBall1",0,0,"",0,0,0,0);
+			}
+			TNT1 A 0 A_TakeInventory("NNSigil3AttackCounter", 1)
+			TNT1 A 0 A_JumpIfInventory("NNSigil3AttackCounter", 1, "Fire3Loop")
+			SGLC B 15 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+			 A_SetAngle(angle-90);
+			}
+			Goto Ready
+		Fire4:
+			SGLD A 18 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+			 A_Light2;
+			}
+			SGLD A 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_GunFlash;
+			}
+			SGLD B 15
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+			 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+			 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 16);
+			 A_SpreadAuraFireProjectile("NNSigilLightningBigV",0,0,"",0,0,0,0);
+			}
+			Goto Ready
+		Fire5:
+			SGLE A 18 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(17); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 3) { A_SetTics(16); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(15); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 9) { A_SetTics(12); }
+			 A_Light2;
+			}
+			SGLE A 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_GunFlash;
+			}
+			SGLE B 15
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 2) { A_SetTics(14); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 4) { A_SetTics(13); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 6) { A_SetTics(12); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 8) { A_SetTics(11); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
+			 A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
+			 ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 20);
+			 ACS_NamedExecuteAlways("StartTensionCountDown");
+			 A_SpreadAuraFireProjectile("SpectralLightningBigBall1",0,0,"",0,0,0,0);
+			}
+			Goto Ready
+		//
+		Flash:
+			SGLF A 3 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_Light2;
+			}
+			SGLF B 4 Bright
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
+			 A_Light2;
+			}
+			SGLF C 3 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(2); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(1); }
+			 A_LightInverse;
+			}
+			SGLF B 4 Bright 
+			{
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 5) { A_SetTics(3); }
+			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(2); }
+			 A_Light1;
+			}
+			SGLF B 0 A_Light0
+			Stop
+	}
 }
 
 // ******************************
@@ -1238,274 +1238,274 @@ Actor NNSigil : StrifeWeaponBase
 // The base class also has a bit of explosive radius for their impact, although not all of their inheritors use said explosive damage.
 ACTOR SpectralLightningBaseNew : AetheriusProjectileZSC replaces SpectralLightningBase 
 {
-  +SPECTRAL 
-  DamageType "Sigil"
-  +NOTELEPORT
-  +ACTIVATEIMPACT
-  +ACTIVATEPCROSS
-  +STRIFEDAMAGE
-  MaxStepHeight 4
-  RenderStyle Add
-  SeeSound "weapons/sigil"
-  DeathSound "weapons/sigilhit"
-  States
-  {
-  Death:
-    ZAP1 B 3 
+	+SPECTRAL 
+	DamageType "Sigil"
+	+NOTELEPORT
+	+ACTIVATEIMPACT
+	+ACTIVATEPCROSS
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	RenderStyle Add
+	SeeSound "weapons/sigil"
+	DeathSound "weapons/sigilhit"
+	States
 	{
-	 A_Explode(ACS_NamedExecuteWithResult("GetSigilDamage",0,0), ACS_NamedExecuteWithResult("GetSigilDamage",0,1), 0);
+		Death:
+			ZAP1 B 3 
+			{
+			 A_Explode(ACS_NamedExecuteWithResult("GetSigilDamage",0,0), ACS_NamedExecuteWithResult("GetSigilDamage",0,1), 0);
+			}
+			ZAP1 A 3 
+			{
+			 if (random(1,256) > 96)
+			 {
+				A_AlertMonsters;
+			 }
+			}
+			ZAP1 BCDEFE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZAP1 A 3 
-	{
-     if (random(1,256) > 96)
-	 {
-	  A_AlertMonsters;
-	 }
-	}
-    ZAP1 BCDEFE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 
 // The Player's version of Sigil 3 shots, which have three and a half times the base damage as the versions the 3rd Spectre 
 // and The Entity use, probably for balance reasons.
 ACTOR SpectralLightningBall1New : SpectralLightningBaseNew replaces SpectralLightningBall1
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",1,0)) // 70
-  Speed 30
-  Radius 8
-  Height 16
-  Projectile
-  States
-  {
-  Spawn:
-    ZOT3 ABCDE 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",1,0)) // 70
+	Speed 30
+	Radius 8
+	Height 16
+	Projectile
+	States
 	{
+		Spawn:
+			ZOT3 ABCDE 4 Bright
+			{
+			}
+			Loop
 	}
-    Loop
-  }
 }
 // The 3rd Spectre and The Entity's version of Sigil 3 shots, which have less than one third the base damage as 
 // the original, probably for balance reasons.
 ACTOR SpectralLightningBall2New : SpectralLightningBall1New replaces SpectralLightningBall2
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",2,0)) // 20
-  States
-  {
-  Spawn:
-    ZOT3 ABCDE 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",2,0)) // 20
+	States
 	{
+		Spawn:
+			ZOT3 ABCDE 4 Bright
+			{
+			}
+			Loop
 	}
-    Loop
-  }
 }
 ACTOR SpectralLightningBall2Monster : SpectralLightningBall2New
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (20 * random(1,4))
-  States
-  {
-  Spawn:
-    ZOT3 ABCDE 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (20 * random(1,4))
+	States
 	{
+		Spawn:
+			ZOT3 ABCDE 4 Bright
+			{
+			}
+			Loop
 	}
-    Loop
-  }
 }
 actor SpectralLightningBall2MonsterCrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZOT3 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AABBCCDDEE 2 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZOT3 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCCDDEE 2 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningBall2MonsterCrisis : SpectralLightningBall2Monster
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage ((20 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZOT3 ABCDE 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage ((20 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningBall2MonsterCrisisParticle",0,0,0,0,0,1.28);
+		Spawn:
+			ZOT3 ABCDE 4 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningBall2MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
 	}
-    Loop
-  }
 }
 
 // A variant of SpectralLightningBase that skips the first frame of it's death animation.
 // This prevents the Explosive Damage on contact from occuring.
 ACTOR SpectralLightningDeath1New : SpectralLightningBaseNew replaces SpectralLightningDeath1
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  States
-  {
-  Death:
-    ZAP1 A 3 
+	+SPECTRAL 
+	DamageType "Sigil" 
+	States
 	{
-     if (random(1,256) > 96)
-	 {
-	  A_AlertMonsters;
-	 }
-	}
-    ZAP1 BCDEFE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  } 
+		Death:
+			ZAP1 A 3 
+			{
+			 if (random(1,256) > 96)
+			 {
+				A_AlertMonsters;
+			 }
+			}
+			ZAP1 BCDEFE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
+	} 
 }
 
 // The Player's version of Sigil 4 shots, which have double the base damage as the versions the 
 // 4th Spectre and The Entity use, probably for balance reasons.
 ACTOR SpectralLightningBigV1New : SpectralLightningDeath1New replaces SpectralLightningBigV1
 {
-  DamageType "Sigil"
-  +SPECTRAL
-  Speed 28
-  Radius 8
-  Height 16
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
-  Projectile
-  States
-  {
-  Spawn:
-    ZOT2 ABCDE 4 Bright 
+	DamageType "Sigil"
+	+SPECTRAL
+	Speed 28
+	Radius 8
+	Height 16
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
+	Projectile
+	States
 	{
-	 A_Tracer2;
+		Spawn:
+			ZOT2 ABCDE 4 Bright 
+			{
+			 A_Tracer2;
+			}
+			Loop
 	}
-    Loop
-  }
 }
 
 // The 4th Spectre and The Entity's version of Sigil 4 shots, which have half the base 
 // damage as the original, probably for balance reasons.
 ACTOR SpectralLightningBigV2New : SpectralLightningBigV1New
 {
-  DamageType "Sigil"
-  +SPECTRAL
-  Damage 60
-  States
-  {
-  Spawn:
-    ZOT2 ABCDE 4 Bright 
+	DamageType "Sigil"
+	+SPECTRAL
+	Damage 60
+	States
 	{
-	 A_Tracer2;
+		Spawn:
+			ZOT2 ABCDE 4 Bright 
+			{
+			 A_Tracer2;
+			}
+			Loop
 	}
-    Loop
-  }
 }
 ACTOR SpectralLightningBigV2Monster : SpectralLightningBigV2New
 {
-  DamageType "Sigil"
-  +SPECTRAL
-  Damage (60 * random(1,4))
-  States
-  {
-  Spawn:
-    ZOT2 ABCDE 4 Bright 
+	DamageType "Sigil"
+	+SPECTRAL
+	Damage (60 * random(1,4))
+	States
 	{
-	 A_Tracer2;
+		Spawn:
+			ZOT2 ABCDE 4 Bright 
+			{
+			 A_Tracer2;
+			}
+			Loop
 	}
-    Loop
-  }
 }
 actor SpectralLightningBigV2MonsterCrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZOT2 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AABBCCDDEE 2 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZOT2 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCCDDEE 2 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningBigV2MonsterCrisis : SpectralLightningBigV2Monster
 {
-  DamageType "Sigil"
-  +SPECTRAL
-  Damage ((60 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZOT2 ABCDE 4 Bright 
+	DamageType "Sigil"
+	+SPECTRAL
+	Damage ((60 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningBigV2MonsterCrisisParticle",0,0,0,0,0,1.28);
-	 A_Tracer2;
+		Spawn:
+			ZOT2 ABCDE 4 Bright 
+			{
+			 A_SpawnItemEx("SpectralLightningBigV2MonsterCrisisParticle",0,0,0,0,0,1.28);
+			 A_Tracer2;
+			}
+			Loop
 	}
-    Loop
-  }
 }
 
 // A variant of SpectralLightningBase that skips the first two frames of it's death animation.
 // This skips both the alert potential and the explosive damage normally dealt on contact.
 ACTOR SpectralLightningDeath2New : SpectralLightningBaseNew replaces SpectralLightningDeath2
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  States
-  {
-  Death:
-    ZAP1 BCDEFE 3
+	+SPECTRAL 
+	DamageType "Sigil" 
+	States
 	{
+		Death:
+			ZAP1 BCDEFE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 
 // A variant of SpectralLightningBase that skips the first SIX frames of it's death animation.
 ACTOR SpectralLightningDeathShortNew : SpectralLightningBaseNew replaces SpectralLightningDeathShort
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  States
-  {
-  Death:
-    ZAP1 FE 3
+	+SPECTRAL 
+	DamageType "Sigil" 
+	States
 	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  } 
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
+	} 
 }
 
 // The giant ball of spectral energy fired by the Player's Sigil 5 weapon. It shoots three SpectralLightningH3 
@@ -1513,27 +1513,27 @@ ACTOR SpectralLightningDeathShortNew : SpectralLightningBaseNew replaces Spectra
 // and another ahead of it).
 ACTOR SpectralLightningBigBall1New : SpectralLightningDeath2New replaces SpectralLightningBigBall1
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",8,0)) // 130
-  Speed 18
-  Radius 20
-  Height 40
-  Projectile
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",8,0)) // 130
+	Speed 18
+	Radius 20
+	Height 40
+	Projectile
 
-  States
-  {
-  Spawn:
-    ZAP7 AB 4 Bright 
+	States
 	{
-	 A_SpectralBigBallLightning("SpectralLightningH3");
+		Spawn:
+			ZAP7 AB 4 Bright 
+			{
+			 A_SpectralBigBallLightning("SpectralLightningH3");
+			}
+			ZAP7 CDE 6 Bright
+			{
+			 A_SpectralBigBallLightning("SpectralLightningH3");
+			}
+			Loop
 	}
-    ZAP7 CDE 6 Bright
-	{
-	 A_SpectralBigBallLightning("SpectralLightningH3");
-	}
-    Loop
-  }
 }
 
 // The Fifth Spectre and The Entity's version of the Sigil 5 attack, which is less than one fourth the strength of the
@@ -1541,55 +1541,55 @@ ACTOR SpectralLightningBigBall1New : SpectralLightningDeath2New replaces Spectra
 // every few tics on multiple sides of it as it travels (one to its left, another to its right, and another ahead of it).
 ACTOR SpectralLightningBigBall2New : SpectralLightningBigBall1New replaces SpectralLightningBigBall2
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (30 * random(1,4))
-  States
-  {
-  Spawn:
-    ZAP7 AB 4 Bright 
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (30 * random(1,4))
+	States
 	{
-	 A_SpectralBigBallLightning("SpectralLightningH3Monster");
+		Spawn:
+			ZAP7 AB 4 Bright 
+			{
+			 A_SpectralBigBallLightning("SpectralLightningH3Monster");
+			}
+			ZAP7 CDE 6 Bright
+			{
+			 A_SpectralBigBallLightning("SpectralLightningH3Monster");
+			}
+			Loop
 	}
-    ZAP7 CDE 6 Bright
-	{
-	 A_SpectralBigBallLightning("SpectralLightningH3Monster");
-	}
-    Loop
-  }
 }
 actor SpectralLightningBigBall2CrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZAP7 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AABB 2 Bright A_CrisisParticleDo
-    "####" CCDDEE 3 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZAP7 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABB 2 Bright A_CrisisParticleDo
+			"####" CCDDEE 3 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage ((30 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZAP7 AB 4 Bright 
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage ((30 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningBigBall2CrisisParticle",0,0,0,0,0,1.28);
-	 A_SpectralBigBallLightning("SpectralLightningH3MonsterCrisis");
+		Spawn:
+			ZAP7 AB 4 Bright 
+			{
+			 A_SpawnItemEx("SpectralLightningBigBall2CrisisParticle",0,0,0,0,0,1.28);
+			 A_SpectralBigBallLightning("SpectralLightningH3MonsterCrisis");
+			}
+			ZAP7 CDE 6 Bright
+			{
+			 A_SpectralBigBallLightning("SpectralLightningH3MonsterCrisis");
+			}
+			Loop
 	}
-    ZAP7 CDE 6 Bright
-	{
-	 A_SpectralBigBallLightning("SpectralLightningH3MonsterCrisis");
-	}
-    Loop
-  }
 }
 
 // The stronger attack emitted by a SpectralLightningSpot. A weaker variant can also be emitted by the same spot. 
@@ -1597,103 +1597,103 @@ ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 // Does NOT deal Area of Effect damage, since it's death animation skips the frame where the explosion happens.
 ACTOR SpectralLightningV1New : SpectralLightningDeathShortNew replaces SpectralLightningV1 
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow"
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
-  Speed 22
-  Radius 8
-  Height 24
-  Projectile
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow"
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
+	Speed 22
+	Radius 8
+	Height 24
+	Projectile
+	States
 	{
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			}
+			ZOT1 CDE 6 Bright
+			{
+			}
+			Loop
 	}
-    ZOT1 CDE 6 Bright
-	{
-	}
-    Loop
-  }
 }
 // Programmer/Spectral Monster only version
 ACTOR SpectralLightningV1Monster : SpectralLightningV1New
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow"
-  Damage (100 * random(1,4))
-  Speed 22
-  Radius 8
-  Height 24
-  Projectile
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow"
+	Damage (100 * random(1,4))
+	Speed 22
+	Radius 8
+	Height 24
+	Projectile
+	States
 	{
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			}
+			ZOT1 CDE 6 Bright
+			{
+			}
+			Loop
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZOT1 CDE 6 Bright
-	{
-	}
-    Loop
-  Death:
-    ZAP1 FE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 actor SpectralLightningV1MonsterCrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZOT1 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AABB 2 Bright A_CrisisParticleDo
-    "####" CCDDEE 3 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZOT1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABB 2 Bright A_CrisisParticleDo
+			"####" CCDDEE 3 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow"
-  Damage ((100 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow"
+	Damage ((100 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			ZOT1 CDE 6 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZOT1 CDE 6 Bright
-	{
-     A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
-	}
-    Loop
-  Death:
-    ZAP1 FE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 
 // The weaker attack emitted by a SpectralLightningSpot. A stronger variant can also be emitted by the same spot. 
@@ -1701,140 +1701,140 @@ ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 // Does NOT deal Area of Effect damage, since it's death animation skips the frame where the explosion happens.
 ACTOR SpectralLightningV2New : SpectralLightningV1New replaces SpectralLightningV2
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",4,0)) // 60
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",4,0)) // 60
+	States
 	{
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			}
+			ZOT1 CDE 6 Bright
+			{
+			}
+			Loop
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZOT1 CDE 6 Bright
-	{
-	}
-    Loop
-  Death:
-    ZAP1 FE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 // Programmer/Spectral Monster only version
 ACTOR SpectralLightningV2Monster : SpectralLightningV2New
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow" 
-  Damage (50 * random(1,4))
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow" 
+	Damage (50 * random(1,4))
+	States
 	{
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			}
+			ZOT1 CDE 6 Bright
+			{
+			}
+			Loop
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZOT1 CDE 6 Bright
-	{
-	}
-    Loop
-  Death:
-    ZAP1 FE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 ACTOR SpectralLightningV2MonsterCrisis : SpectralLightningV2Monster
 { 
-  +SPECTRAL 
-  DamageType "Sigil" 
-  DamageType "SpectralLow" 
-  Damage ((50 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZOT1 AB 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	DamageType "SpectralLow" 
+	Damage ((50 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+		Spawn:
+			ZOT1 AB 4 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			ZOT1 CDE 6 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			ZAP1 FE 3
+			{
+			}
+			ZAP1 DCB 2
+			{
+			}
+			ZAP1 A 1
+			{
+			}
+			Stop
 	}
-    ZOT1 CDE 6 Bright
-	{
-     A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
-	}
-    Loop
-  Death:
-    ZAP1 FE 3
-	{
-	}
-    ZAP1 DCB 2
-	{
-	}
-    ZAP1 A 1
-	{
-	}
-    Stop
-  }
 }
 
 // The Player's version of Sigil 2 shots, which are at least three and a half times strong than any other version. 
 // Probably for balance purposes. It also leaves a "tail" like afterimage of itself behind it as it travels.
 ACTOR SpectralLightningH1New : SpectralLightningBaseNew replaces SpectralLightningH1
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",5,0)) // 70
-  Speed 30
-  Radius 8
-  Height 16
-  Projectile
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",5,0)) // 70
+	Speed 30
+	Radius 8
+	Height 16
+	Projectile
 
-  States
-  {
-  Spawn:
-    ZAP6 A 4 Bright
+	States
 	{
+		Spawn:
+			ZAP6 A 4 Bright
+			{
+			}
+			ZAP6 BC 4 Bright 
+			{
+			 A_SpectralLightningTail;
+			}
+			Loop
 	}
-    ZAP6 BC 4 Bright 
-	{
-	 A_SpectralLightningTail;
-	}
-    Loop
-  }
 }
 
 // A seemingly unused variant of SpectralLightningH1 that neither the Player or any Spectral Monster will use. 
 // It's double the power of SpectralLightningH3 but less than one third the power of SpectralLightningH1.
 ACTOR SpectralLightningH2New : SpectralLightningH1New replaces SpectralLightningH2
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",6,0)) // 20
-  States
-  {
-  Spawn:
-    ZAP6 A 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",6,0)) // 20
+	States
 	{
+		Spawn:
+			ZAP6 A 4 Bright
+			{
+			}
+			ZAP6 BC 4 Bright 
+			{
+			 A_SpectralLightningTail;
+			}
+			Loop
 	}
-    ZAP6 BC 4 Bright 
-	{
-	 A_SpectralLightningTail;
-	}
-    Loop
-  }
 }
 
 // These projectiles are additionally emitted by SpectralLightningBigBall1 (Sigil 5) and SpectralLightningBigBall2 
@@ -1842,72 +1842,72 @@ ACTOR SpectralLightningH2New : SpectralLightningH1New replaces SpectralLightning
 // and one to its right, at the same time.
 ACTOR SpectralLightningH3New : SpectralLightningH1New replaces SpectralLightningH3
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",7,0)) // 10
-  States
-  {
-  Spawn:
-    ZAP6 A 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",7,0)) // 10
+	States
 	{
+		Spawn:
+			ZAP6 A 4 Bright
+			{
+			}
+			ZAP6 BC 4 Bright 
+			{
+			 A_SpectralLightningTail;
+			}
+			Loop
 	}
-    ZAP6 BC 4 Bright 
-	{
-	 A_SpectralLightningTail;
-	}
-    Loop
-  }
 }
 ACTOR SpectralLightningH3Monster : SpectralLightningH3New
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage (10 * random(1,4))
-  States
-  {
-  Spawn:
-    ZAP6 A 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage (10 * random(1,4))
+	States
 	{
+		Spawn:
+			ZAP6 A 4 Bright
+			{
+			}
+			ZAP6 BC 4 Bright 
+			{
+			 A_SpectralLightningTail;
+			}
+			Loop
 	}
-    ZAP6 BC 4 Bright 
-	{
-	 A_SpectralLightningTail;
-	}
-    Loop
-  }
 }
 actor SpectralLightningH3MonsterCrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZAP6 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AA 2 Bright A_CrisisParticleDo
-    "####" BBCC 2 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZAP6 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AA 2 Bright A_CrisisParticleDo
+			"####" BBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier"))
-  States
-  {
-  Spawn:
-    ZAP6 A 4 Bright
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
 	{
-     A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
+		Spawn:
+			ZAP6 A 4 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
+			}
+			ZAP6 BC 4 Bright 
+			{
+			 A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
+			 A_SpectralLightningTail;
+			}
+			Loop
 	}
-    ZAP6 BC 4 Bright 
-	{
-     A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
-	 A_SpectralLightningTail;
-	}
-    Loop
-  }
 }
 
 // The spot-beacon created by the Player using Sigil 1, the first Spectre, the Entity, and their Sub Entities. 
@@ -1916,120 +1916,119 @@ ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 // enough to be standing there. The spot fades out after about 8 seconds of activity.
 ACTOR SpectralLightningSpotNew : SpectralLightningDeath1New replaces SpectralLightningSpot
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  Speed 18
-  ReactionTime 70
-  +NOBLOCKMAP
-  +NOBLOCKMONST
-  +NODROPOFF
-  RenderStyle Translucent
-  Alpha 0.6
+	+SPECTRAL 
+	DamageType "Sigil" 
+	Speed 18
+	ReactionTime 70
+	+NOBLOCKMAP
+	+NOBLOCKMONST
+	+NODROPOFF
+	RenderStyle Translucent
+	Alpha 0.6
 
-  States
-  {
-  Spawn:
-    ZAP5 A 4 Bright 
+	States
 	{
-	 A_Countdown;
-	}
-    ZAP5 B 4 Bright 
-	{
-	 A_SpectralLightning("SpectralLightningV1Monster","SpectralLightningV2Monster");
-	}
-    ZAP5 CD 4 Bright
-	{
-	 A_Countdown;
-	}
-    Loop
-  } 
+		Spawn:
+			ZAP5 A 4 Bright 
+			{
+			 A_Countdown;
+			}
+			ZAP5 B 4 Bright 
+			{
+			 A_SpectralLightning("SpectralLightningV1Monster","SpectralLightningV2Monster");
+			}
+			ZAP5 CD 4 Bright
+			{
+			 A_Countdown;
+			}
+			Loop
+	} 
 }
 actor SpectralLightningSpotCrisisParticle : BaseCrisisParticle
 {
- States
- {
-  Spawn:
-    ZAP5 A 0 NoDelay A_CrisisParticleInit
-	goto Idle
-  Idle:
-    "####" AABBCCDD 2 Bright A_CrisisParticleDo
-    loop
- }
+	States
+	{
+		Spawn:
+			ZAP5 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCCDD 2 Bright A_CrisisParticleDo
+			loop
+	}
 }
 ACTOR SpectralLightningSpotCrisis : SpectralLightningSpotNew
 {
-  +SPECTRAL 
-  DamageType "Sigil" 
-  States
-  {
-  Spawn:
-    ZAP5 A 4 Bright 
+	+SPECTRAL 
+	DamageType "Sigil" 
+	States
 	{
-     A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
-	 A_Countdown;
-	}
-    ZAP5 B 4 Bright 
-	{
-     A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
-	 A_SpectralLightning("SpectralLightningV1MonsterCrisis","SpectralLightningV2MonsterCrisis");
-	}
-    ZAP5 CD 4 Bright
-	{
-     A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
-	 A_Countdown;
-	}
-    Loop
-  } 
+		Spawn:
+			ZAP5 A 4 Bright 
+			{
+			 A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+			 A_Countdown;
+			}
+			ZAP5 B 4 Bright 
+			{
+			 A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+			 A_SpectralLightning("SpectralLightningV1MonsterCrisis","SpectralLightningV2MonsterCrisis");
+			}
+			ZAP5 CD 4 Bright
+			{
+			 A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+			 A_Countdown;
+			}
+			Loop
+	} 
 }
 
 // Modded Sigil's version of SpectralLightningSpot
 Actor NNSigilLightningSpot : SpectralLightningSpotNew
 {
-   +SPECTRAL //This flag is needed, otherwise the SpectralLightningV1/V2
-   DamageType "Sigil"
-   States    //actors won't damage the spectres. Wierd.
-   {
-   Spawn:
-      TNT1 A 0
-      TNT1 A 0 A_TransferPointer(AAPTR_TARGET, AAPTR_DEFAULT, AAPTR_PLAYER_GETTARGET, AAPTR_TRACER)
-      TNT1 A 0 A_CheckFlag("SHOOTABLE", 3, AAPTR_TRACER)
-      TNT1 A 0 A_Warp(AAPTR_TARGET) //Try to stick to the player's feet.
-      ZAP5 A 4 Bright A_ChangeVelocity(28,0,0, CVF_RELATIVE|CVF_REPLACE)
-      Goto Super::Spawn+1
-      ZAP5 A 4 Bright A_Warp(AAPTR_TRACER, 0,0,0, 0, WARPF_NOCHECKPOSITION|WARPF_STOP|WARPF_TOFLOOR)
-      Goto Super::Spawn+1
-   }
+	+SPECTRAL //This flag is needed, otherwise the SpectralLightningV1/V2
+	DamageType "Sigil"
+	States    //actors won't damage the spectres. Wierd.
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_TransferPointer(AAPTR_TARGET, AAPTR_DEFAULT, AAPTR_PLAYER_GETTARGET, AAPTR_TRACER)
+			TNT1 A 0 A_CheckFlag("SHOOTABLE", 3, AAPTR_TRACER)
+			TNT1 A 0 A_Warp(AAPTR_TARGET) //Try to stick to the player's feet.
+			ZAP5 A 4 Bright A_ChangeVelocity(28,0,0, CVF_RELATIVE|CVF_REPLACE)
+			Goto Super::Spawn+1
+			ZAP5 A 4 Bright A_Warp(AAPTR_TRACER, 0,0,0, 0, WARPF_NOCHECKPOSITION|WARPF_STOP|WARPF_TOFLOOR)
+			Goto Super::Spawn+1
+	}
 }
 
 // Modded version of SpectralLightningBigV1New for the new Sigil
 Actor NNSigilLightningBigV : SpectralLightningBigV1New
 {
-  Decal "BaronScorch"
-  DamageType "Sigil"
-  +SPECTRAL
-  Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
-  States
-  {
-  Spawn:
-    TNT1 A 0
-    TNT1 A 0 A_TransferPointer(AAPTR_TARGET, AAPTR_DEFAULT, AAPTR_PLAYER_GETTARGET, AAPTR_TRACER)
-    TNT1 A 0 A_CheckFlag("SHOOTABLE", 2, AAPTR_TRACER)
-    ZOT2 A 4 Bright A_ChangeVelocity(28,0,0, CVF_RELATIVE)
-    Goto Super::Spawn+1
-    ZOT2 A 4 Bright
-    Goto Super::Spawn+1
-  }
+	Decal "BaronScorch"
+	DamageType "Sigil"
+	+SPECTRAL
+	Damage (ACS_NamedExecuteWithResult("GetSigilDamage",3,0)) // 120
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_TransferPointer(AAPTR_TARGET, AAPTR_DEFAULT, AAPTR_PLAYER_GETTARGET, AAPTR_TRACER)
+			TNT1 A 0 A_CheckFlag("SHOOTABLE", 2, AAPTR_TRACER)
+			ZOT2 A 4 Bright A_ChangeVelocity(28,0,0, CVF_RELATIVE)
+			Goto Super::Spawn+1
+			ZOT2 A 4 Bright
+			Goto Super::Spawn+1
+	}
 }
 
 // Tracks the number of shots emitted by the Sigil's third mode due to lack of player-centric variables in DECORATE
 Actor NNSigil3AttackCounter : Inventory
 {
-   Inventory.MaxAmount 20
+	Inventory.MaxAmount 20
 }
 
 DamageType NNSigilUse
 {
-   Factor 1.0
-   NoArmor
+	Factor 1.0
+	NoArmor
 }
-

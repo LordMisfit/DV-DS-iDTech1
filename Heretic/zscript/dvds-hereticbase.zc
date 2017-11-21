@@ -192,3 +192,268 @@ class DSparilBase : AetheriusBossZSC
 
 }
 
+
+// MONSTER SPAWNERS
+
+// Gargoyle spawner
+class GargoyleSpawner : AetheriusMonsterSpawner replaces HereticImp
+{
+	Default
+	{
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,256) <= evolveChance)
+			{
+				if (random(1,2) == 1)
+					return "WatcherImp";
+				else
+					return "PlagueImp";
+			}
+			else
+				return "HereticImpLeaderNew";
+		}
+		else
+			return "HereticImpNew";
+	}
+}
+
+// Gargoyle Leader spawner
+class GargoyleLeaderSpawner : AetheriusMonsterSpawner replaces HereticImpLeader
+{
+	Default
+	{
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,2) == 1)
+				return "WatcherImp";
+			else
+				return "PlagueImp";
+		}
+		else
+			return "HereticImpLeaderNew";
+	}
+}
+
+// Golem Spawner
+class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,256) <= evolveChance)
+			{
+				if (random(1,256) <= evolveChance)
+				{
+					if (random(1,2048) <= evolveChance)
+					{
+						if (random(1,4) == 1)
+							return "IceGolemGhost";
+						else
+							return "IceGolem";
+					}
+					else
+						return "MummyLeaderGhostNew";
+				}
+				else
+					return "MummyLeaderNew";
+			}
+			else
+				return "MummyGhostNew";
+		}
+		else
+			return "MummyNew";
+	}
+}
+
+// Golem Ghost Spawner
+class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,256) <= evolveChance)
+			{
+				if (random(1,2048) <= evolveChance)
+				{
+					if (random(1,4) == 1)
+						return "IceGolemGhost";
+					else
+						return "IceGolem";
+				}
+				else
+					return "MummyLeaderGhostNew";
+			}
+			else
+				return "MummyLeaderNew";
+		}
+		else
+			return "MummyGhostNew";
+	}
+}
+
+// NitroGolem Spawner
+class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,2048) <= evolveChance)
+			{
+				if (random(1,4) == 1)
+					return "IceGolemGhost";
+				else
+					return "IceGolem";
+			}
+			else
+				return "MummyLeaderGhostNew";
+		}
+		else
+			return "MummyLeaderNew";
+	}
+}
+
+// NitroGolem Ghost Spawner
+class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,2048) <= evolveChance)
+		{
+			if (random(1,4) == 1)
+				return "IceGolemGhost";
+			else
+				return "IceGolem";
+		}
+		else
+			return "MummyLeaderGhostNew";
+	}
+}
+
+// Undead Warrior/Knight spawner
+class KnightSpawner : AetheriusMonsterSpawner replaces Knight
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,2048) <= evolveChance)
+			{
+				if (random(1,4) == 1)
+					return "DeathKnightGhost";
+				else
+					return "DeathKnight";
+			}
+			else
+				return "KnightGhostNew";
+		}
+		else
+			return "KnightNew";
+	}
+}
+
+// Undead Warrior/Knight spawner
+class KnightGhostSpawner : AetheriusMonsterSpawner replaces KnightGhost
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+
+		if (random(1,2048) <= evolveChance)
+			return "DeathKnightGhost";
+		else
+			return "KnightNew";
+	}
+}
+
+// Disciple Spawner
+class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
+{
+	Default
+	{
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,2048) <= evolveChance)
+			return "Banshee";
+		else
+			return "WizardNew";
+	}
+}
+
+// IronLich Spawner
+class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,512) <= evolveChance)
+			{
+				if (random(1,1024) <= evolveChance)
+					return "BloodLich";
+				else
+					return "GoldLich";
+			}
+			else
+				return "IceLich";
+		}
+		else
+			return "IronLichNew";
+	}
+}
+
+// Ophidian spawner
+class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,512) <= evolveChance)
+			return "HellGuard";
+		else
+			return "SnakeNew";
+	}
+}

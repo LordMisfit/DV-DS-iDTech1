@@ -162,11 +162,11 @@ class SpectralMonsterBase : AetheriusBossZSC
 				player.GiveInventoryType ("QuestItem22");
 			}
 			if (player.FindInventory ("QuestItem24") == null)
-			{	// Macil is calling us back...
+			{ // Macil is calling us back...
 				log = 87;
 			}
 			else
-			{	// You wield the power of the complete Sigil.
+			{ // You wield the power of the complete Sigil.
 				log = 85;
 			}
 			Door_Open(222, 64);
@@ -176,11 +176,11 @@ class SpectralMonsterBase : AetheriusBossZSC
 			Console.MidPrint("SmallFont", "$TXT_KILLED_MACIL");
 			player.GiveInventoryType ("QuestItem24");
 			if (player.FindInventory ("QuestItem25") == null)
-			{	// Richter has taken over. Macil is a snake.
+			{ // Richter has taken over. Macil is a snake.
 				log = 79;
 			}
 			else
-			{	// Back to the factory for another Sigil!
+			{ // Back to the factory for another Sigil!
 				log = 106;
 			}
 		}
@@ -196,11 +196,11 @@ class SpectralMonsterBase : AetheriusBossZSC
 			}
 			Sigil sigl = Sigil(player.FindInventory("Sigil"));
 			if (sigl != null && sigl.health == 5)
-			{	// You wield the power of the complete Sigil.
+			{ // You wield the power of the complete Sigil.
 				log = 85;
 			}
 			else
-			{	// Another Sigil piece. Woohoo!
+			{ // Another Sigil piece. Woohoo!
 				log = 83;
 			}
 			Floor_LowerToLowest(666, 8);
@@ -291,5 +291,29 @@ class SpectralMonsterBase : AetheriusBossZSC
 			Exit_Normal(0);
 		}
 	}
+}
 
+
+// MONSTER SPAWNERS
+
+class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
+{
+	Default
+	{
+		Radius 40;
+		Height 110;
+	}
+
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let modType = CallACS("CheckModType");
+		let evolveChance = CallACS("GetEvolveChance");
+		let monstersoption = CallACS("CheckDVIIMonstersOption");
+		let checkbombers = CallACS("CheckBombersOption");
+		
+		if (random(1,1024) <= evolveChance)
+			return "DarkInquisitor";
+		else
+			return "InquisitorNew";
+	}
 }

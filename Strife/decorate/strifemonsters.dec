@@ -5131,26 +5131,6 @@ actor AlienSpectre5Model : AlienSpectreModel 27405
 	Health 2000
 }
 
-actor InquisitorSpawner : BaseMonsterSpawner replaces Inquisitor 16
-{
-	Radius 40
-	Height 110
-	+ISMONSTER
-	+RANDOMIZE
-	states
-	{
-			UpgradeClass:
-				ROB3 A 0 A_SpawnItemEx("DarkInquisitor",0,0,0,0,0,0,0,SpawnerFlags,0,tid)
-				stop
-
-		Spawn:
-			ROB3 A 0 
-			ROB3 A 0 A_JumpIf( random(1,1024) <= ACS_NamedExecuteWithResult("GetEvolveChance") , "UpgradeClass")
-			ROB3 A 0 A_SpawnItemEx("InquisitorNew",0,0,0,0,0,0,0,SpawnerFlags,0,tid)
-			stop
-	}
-}
-
 // Barrels
 ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
 {

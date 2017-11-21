@@ -130,7 +130,7 @@ class KoraxBase : AetheriusBossZSC
 				Actor spot;
 
 				if (tracer != null)
-				{	// Find the previous teleport destination
+				{ // Find the previous teleport destination
 					do
 					{
 						spot = it.Next ();
@@ -349,3 +349,130 @@ class KoraxBase : AetheriusBossZSC
 }
 
 #include "zscript/dvds-hexen-heresiarch.zc"
+
+
+// MONSTER SPAWNERS
+
+// Ettin
+class EttinSpawner : AetheriusMonsterSpawner replaces Ettin
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,1024) <= evolveChance)
+		{
+			if (random(1,4096) <= evolveChance)
+				return "Bormereth";
+			else
+				return "EttinCommander";
+		}
+		else
+			return "EttinNew";
+	}
+}
+
+// Green Chaos Serpent Spawner
+class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,512) <= evolveChance)
+		{
+			if (random(1,16384) <= evolveChance)
+				return "EtherealChaosSerpentNew";
+			else
+				return "MagmaChaosSerpentNew";
+		}
+		else
+			return "GreenChaosSerpentNew";
+	}
+}
+
+// Brown Chaos Serpent Spawner
+class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,512) <= evolveChance)
+		{
+			if (random(1,16384) <= evolveChance)
+				return "EtherealChaosSerpentNew";
+			else
+				return "BlackChaosSerpentNew";
+		}
+		else
+			return "BrownChaosSerpentNew";
+	}
+}
+
+class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,512) <= evolveChance)
+			{
+				if (random(1,1024) <= evolveChance)
+					return "FireDemonQueen";
+				else
+					return "FireDemonCommander";
+			}
+			else
+				return "FireDemonLeader";
+		}
+		else
+			return "FireDemonNew";
+	}
+}
+
+class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+		{
+			if (random(1,512) <= evolveChance)
+				return "VampireDVDS";
+			else
+				return "DarkDisciple";
+		}
+		else
+			return "BishopNew";
+	}
+}
+
+class StalkerSpawner : AetheriusMonsterSpawner replaces Serpent
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+			return "IceStalker";
+		else
+			return "StalkerNew";
+	}
+}
+
+class StalkerLeaderSpawner : AetheriusMonsterSpawner replaces SerpentLeader
+{
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,256) <= evolveChance)
+			return "IceStalkerLeader";
+		else
+			return "StalkerLeaderNew";
+	}
+}

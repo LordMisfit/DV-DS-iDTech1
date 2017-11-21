@@ -945,7 +945,7 @@ class SorcBall3Base : SorcBallBase
 		Class<Actor> cls = "SorcFX3";
 
 		if (parent.health < (parent.Score/4))
-		{	// Spawn 2 at a time
+		{ // Spawn 2 at a time
 			mo = parent.SpawnMissileAngle(cls, ang1, 4.);
 			if (mo) mo.target = parent;
 			mo = parent.SpawnMissileAngle(cls, ang2, 4.);

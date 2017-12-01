@@ -325,7 +325,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 			 ACS_NamedExecuteAlways("StartTensionCountDown");
 		 
-			 A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",0,FBF_USEAMMO,0,"",0,0,1,"GoldWandAmmo");
+			 A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,16384,"",0,0,1,"GoldWandAmmo");
 			 A_PlaySound("weapons/wandhit",1);
 			}
 			GWND D 3
@@ -351,15 +351,15 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 			 A_PlaySound("weapons/wandhit",1);
 			 A_SetAngle(angle-5.625);
 			 A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SpreadAuraFireProjectile("GoldWandFX2New",0,1,"GoldWandAmmo",0,0,0,0);
 			 A_SetAngle(angle-5.625);
 			}
@@ -423,7 +423,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 			 if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 			 ACS_NamedExecuteAlways("StartTensionCountDown");
 		 
-			 A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",0,FBF_USEAMMO,0,"",0,0,1,"GoldWandAmmo");
+			 A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,0,"",0,0,1,"GoldWandAmmo");
 			 A_PlaySound("weapons/wandhit",1);
 			}
 			GWN2 E 3
@@ -449,15 +449,15 @@ ACTOR DualGoldWandNew : GoldWandNew
 			 A_PlaySound("weapons/wandhit",1);
 			 A_SetAngle(angle-5.625);
 			 A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SetAngle(angle+2.8125);
-			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",0,0,0,"",0,0,0,"");
+			 A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 			 A_SpreadAuraFireProjectile("GoldWandFX2New",0,1,"GoldWandAmmo",0,0,0,0);
 			 A_SetAngle(angle-5.625);
 			}
@@ -917,7 +917,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 
 			 ACS_NamedExecuteAlways("StartTensionCountDown");	
 			 A_PlaySound("weapons/blastershoot",1);
-			 A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",0,0,0,"",0,0,1,"BlasterAmmo");
+			 A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FBLS CB 2
 			{
@@ -1000,7 +1000,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 
 			 ACS_NamedExecuteAlways("StartTensionCountDown");
 			 A_PlaySound("weapons/blastershoot",1);
-			 A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",0,0,0,"",0,0,1,"BlasterAmmo");
+			 A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FDBL FG 2
 			{

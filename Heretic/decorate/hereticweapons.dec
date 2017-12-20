@@ -253,12 +253,12 @@ ACTOR SkullRodHeftySpawner : SkullRodHefty replaces SkullRodHefty
 ACTOR GoldWandPuff1New : GoldWandPuff1 { DamageType "Magic" }
 ACTOR GoldWandPuff2New : GoldWandPuff2 { DamageType "Magic" }
 ACTOR GoldWandFX1New : GoldWandFX1 
-{ 
+{
 	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",41)) // 2
 	DamageType "Magic" 
 }
 ACTOR GoldWandFX2New : GoldWandFX2 
-{ 
+{
 	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",42)) // 1
 	DamageType "Magic" 
 }
@@ -1044,7 +1044,16 @@ ACTOR HornRodFX1New : HornRodFX1
 		Spawn:
 			FX00 AB 6 Bright
 			Loop
-	}	
+		Death:
+			FX00 H 5 Bright
+			{
+				A_Explode((ACS_NamedExecuteWithResult("GetPlayerATKDMG",31)/8),(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*20)),0,0,(8+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*4)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*10)));
+			}
+			FX00 I 5 Bright
+			FX00 JK 4 Bright
+			FX00 LM 3 Bright
+			Stop
+	}
 }
 ACTOR HornRodFX2New : HornRodFX2Base
 { 
@@ -1065,7 +1074,10 @@ ACTOR HornRodFX2New : HornRodFX2Base
 			Loop
 		Death:
 			FX00 H 5 Bright // A_AddPlayerRain
-			FX00 I 5 Bright A_Explode(16+random(-9,9),32,0)
+			FX00 I 5 Bright 
+			{
+				A_Explode(16+random(-9,9)+(ACS_NamedExecuteWithResult("GetPlayerATKDMG",32)/8),(32+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*16)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*40)),0,0,(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*20)));
+			}
 			FX00 J 4 Bright
 			FX00 KLM 3 Bright
 			FX00 G 1 A_HideInCeiling

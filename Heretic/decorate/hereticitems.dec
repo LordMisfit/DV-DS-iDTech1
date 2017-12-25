@@ -19,12 +19,12 @@ ACTOR ArtiTimeBombNew replaces ArtiTimeBomb
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-			 if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard"); }
-			 if (random(1,256) <= 85) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-			 if (random(1,256) <= 28) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-			 if (random(1,256) <= 9) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-			 if (random(1,256) <= 3) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-			 A_Fadeout(1.0);
+				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard"); }
+				if (random(1,256) <= 85) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+				if (random(1,256) <= 28) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+				if (random(1,256) <= 9) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+				if (random(1,256) <= 3) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+				A_Fadeout(1.0);
 			}
 			stop
 	}
@@ -61,17 +61,17 @@ ACTOR ArtiEggNew : AetheriusBaseCustomInventoryZSC replaces ArtiEgg
 		Use:
 			TNT1 A 0 
 			{
-			 A_SpreadAuraFireProjectile("EggFX", -18.75, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", -15.0, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", -11.25, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", -7.5, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", -3.75, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 0.0, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 3.75, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 7.5, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 11.25, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 15.0, 0,"", 0, 0, 1, 0);
-			 A_SpreadAuraFireProjectile("EggFX", 18.75, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", -18.75, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", -15.0, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", -11.25, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", -7.5, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", -3.75, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 0.0, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 3.75, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 7.5, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 11.25, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 15.0, 0,"", 0, 0, 1, 0);
+				A_SpreadAuraFireProjectile("EggFX", 18.75, 0,"", 0, 0, 1, 0);
 			}
 			Stop
 	}
@@ -262,23 +262,23 @@ ACTOR CrystalVialNew : CustomInventory replaces CrystalVial
 			TNT1 A 0
 			TNT1 A 0
 			{
-			 // Monster Munchies
-			 if (random(1,128) <= 1)
-			 {
-				A_SpawnItemEx("MonsterMunchies",0,0,0,random(-4,4),random(-4,4),random(-4,4),0,0,0);
-			 }
-			 // Vimstones
-			 if (random(1,1024) <= 1)
-			 {
-				if (random(1,4) <= 3)
+				// Monster Munchies
+				if (random(1,128) <= 1)
 				{
-				 A_SpawnItemEx("LesserVimstone",0,0,0,0,0,0,0,0,0);
+					A_SpawnItemEx("MonsterMunchies",0,0,0,random(-4,4),random(-4,4),random(-4,4),0,0,0);
 				}
-				else
+				// Vimstones
+				if (random(1,1024) <= 1)
 				{
-					 A_SpawnItemEx("GreaterVimstone",0,0,0,0,0,0,0,0,0);
+					if (random(1,4) <= 3)
+					{
+						A_SpawnItemEx("LesserVimstone",0,0,0,0,0,0,0,0,0);
+					}
+					else
+					{
+						A_SpawnItemEx("GreaterVimstone",0,0,0,0,0,0,0,0,0);
+					}
 				}
-			 }
 			}
 			TNT1 A 0 A_Jump(36,"TurnIntoHerb") 
 		Idle:
@@ -365,37 +365,37 @@ actor BagOfHoldingNew : CustomInventory replaces BagOfHolding
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("GoldWandHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("CrossbowHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("BlasterHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("PhoenixRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("MaceHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 667) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("SkullRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 333) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 167) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <=  84) { A_SpawnItemEx("DiarisArrowQuiver",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("GoldWandAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("GoldWandHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("CrossbowAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("CrossbowHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("BlasterAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("BlasterHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("PhoenixRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("MaceAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("MaceHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 667) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("SkullRodAmmoNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("SkullRodHeftyNew",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 333) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 167) { A_SpawnItemEx("DiarisArrow",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <=  84) { A_SpawnItemEx("DiarisArrowQuiver",0,0,0,random(-5,5),random(-5,5),0); }
 
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
 
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-			 if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
 			}
 		Idle:
 			BAGH A -1 

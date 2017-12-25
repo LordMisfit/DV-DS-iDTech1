@@ -23,9 +23,9 @@ actor MedicinalHerbSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",10,AAPTR_PLAYER1);
-			 A_TakeInventory("MedicinalHerbSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",10,AAPTR_PLAYER1);
+				A_TakeInventory("MedicinalHerbSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -108,9 +108,9 @@ actor MedicalKitSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",12,AAPTR_PLAYER1);
-			 A_TakeInventory("MedicalKitSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",12,AAPTR_PLAYER1);
+				A_TakeInventory("MedicalKitSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -125,9 +125,9 @@ actor SurgeryKitSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",37,AAPTR_PLAYER1);
-			 A_TakeInventory("SurgeryKitSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",37,AAPTR_PLAYER1);
+				A_TakeInventory("SurgeryKitSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -143,9 +143,9 @@ actor PaxaPunchSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",250,AAPTR_PLAYER1);
-			 A_TakeInventory("PaxaPunchSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",250,AAPTR_PLAYER1);
+				A_TakeInventory("PaxaPunchSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -160,9 +160,9 @@ actor MercuryBandanaSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",250,AAPTR_PLAYER1);
-			 A_TakeInventory("MercuryBandanaSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",250,AAPTR_PLAYER1);
+				A_TakeInventory("MercuryBandanaSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -178,9 +178,9 @@ actor MagicWaterSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-				 A_GiveInventory("Coin",87,AAPTR_PLAYER1);
-				 A_TakeInventory("MagicWaterSellItem1",1,0,AAPTR_PLAYER1);
-				 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",87,AAPTR_PLAYER1);
+				A_TakeInventory("MagicWaterSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -195,9 +195,9 @@ actor SageElixirSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",225,AAPTR_PLAYER1);
-			 A_TakeInventory("SageElixirSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",225,AAPTR_PLAYER1);
+				A_TakeInventory("SageElixirSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -212,9 +212,9 @@ actor ElfinElixirItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",500,AAPTR_PLAYER1);
-			 A_TakeInventory("ElfinElixirItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",500,AAPTR_PLAYER1);
+				A_TakeInventory("ElfinElixirItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
  }
@@ -230,9 +230,9 @@ actor EnvironmentalSuitSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",12,AAPTR_PLAYER1);
-			 A_TakeInventory("EnvironmentalSuitSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",12,AAPTR_PLAYER1);
+				A_TakeInventory("EnvironmentalSuitSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -247,9 +247,9 @@ actor TargeterSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",125,AAPTR_PLAYER1);
-			 A_TakeInventory("TargeterSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",125,AAPTR_PLAYER1);
+				A_TakeInventory("TargeterSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -264,9 +264,9 @@ actor DegninOreSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",1375,AAPTR_PLAYER1);
-			 A_TakeInventory("DegninOreSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",1375,AAPTR_PLAYER1);
+				A_TakeInventory("DegninOreSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -281,9 +281,9 @@ actor ShadowArmorSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",500,AAPTR_PLAYER1);
-			 A_TakeInventory("ShadowArmorSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",500,AAPTR_PLAYER1);
+				A_TakeInventory("ShadowArmorSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -298,9 +298,9 @@ actor TeleporterBeaconSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",150,AAPTR_PLAYER1);
-			 A_TakeInventory("TeleporterBeaconSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",150,AAPTR_PLAYER1);
+				A_TakeInventory("TeleporterBeaconSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -315,9 +315,9 @@ actor ScannerSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",750,AAPTR_PLAYER1);
-			 A_TakeInventory("ScannerSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",750,AAPTR_PLAYER1);
+				A_TakeInventory("ScannerSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -333,9 +333,9 @@ actor LesserVimstoneSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",1125,AAPTR_PLAYER1);
-			 A_TakeInventory("LesserVimstoneSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",1125,AAPTR_PLAYER1);
+				A_TakeInventory("LesserVimstoneSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -350,9 +350,9 @@ actor GreaterVimstoneSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",4020,AAPTR_PLAYER1);
-			 A_TakeInventory("GreaterVimstoneSellItem1",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",4020,AAPTR_PLAYER1);
+				A_TakeInventory("GreaterVimstoneSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}
@@ -368,11 +368,11 @@ actor OfferingChaliceItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-			 A_GiveInventory("Coin",7500,AAPTR_PLAYER1);
-			 A_GiveInventory("SeedOfSkillForced",2,AAPTR_PLAYER1);
-			 A_TakeInventory("OfferingChaliceItem1",1,0,AAPTR_PLAYER1);
-			 A_TakeInventory("QuestItem2",1,0,AAPTR_PLAYER1);
-			 A_PlaySound("Grabbed/Coins",0);
+				A_GiveInventory("Coin",7500,AAPTR_PLAYER1);
+				A_GiveInventory("SeedOfSkillForced",2,AAPTR_PLAYER1);
+				A_TakeInventory("OfferingChaliceItem1",1,0,AAPTR_PLAYER1);
+				A_TakeInventory("QuestItem2",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
 			}
 			stop
 	}

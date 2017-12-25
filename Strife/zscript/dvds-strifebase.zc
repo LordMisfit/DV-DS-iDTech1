@@ -79,9 +79,9 @@ class SpectralMonsterBase : AetheriusBossZSC
 		A_MonsterCrisisCheck();
 		if(user_canusecrisisatk == 1) 
 		{
-		 atktype1 = centerballcrisis;
-		 atktype2 = subballcrisis;
-		 A_PlayCrisisAtkSound(); 
+			atktype1 = centerballcrisis;
+			atktype2 = subballcrisis;
+			A_PlayCrisisAtkSound(); 
 		}
 
 		if (target == null)

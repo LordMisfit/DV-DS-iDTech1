@@ -43,7 +43,7 @@ ACTOR MinotaurFX1Crisis : MinotaurFX1New
 		Spawn:
 			FX12 AAABBB 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -69,13 +69,13 @@ ACTOR MinotaurFX2New : MinotaurFX1New replaces MinotaurFX2
 		Spawn:
 			FX13 A 2 Bright 
 			{
-			 A_MntrFloorFire("MinotaurFX3New");
+				A_MntrFloorFire("MinotaurFX3New");
 			}
 			Loop
 		Death:
 			FX13 I 4 Bright 
 			{
-			 A_Explode(24,64);
+				A_Explode(24,64);
 			}
 			FX13 JKLM 4 Bright
 			Stop
@@ -101,13 +101,13 @@ ACTOR MinotaurFX2Crisis : MinotaurFX2New
 		Spawn:
 			FX13 A 2 Bright 
 			{
-			 A_MntrFloorFire("MinotaurFX3Crisis");
+				A_MntrFloorFire("MinotaurFX3Crisis");
 			}
 			Loop
 		Death:
 			FX13 I 4 Bright 
 			{
-			 A_Explode(24*CallACS("CrisisMultiplier"),64);
+				A_Explode(24*CallACS("CrisisMultiplier"),64);
 			}
 			FX13 JKLM 4 Bright
 			Stop
@@ -157,31 +157,31 @@ ACTOR MinotaurFX3Crisis : MinotaurFX3New
 		Spawn:
 			FX13 DDCC 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			FX13 BB 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			FX13 B 1 Bright
 			FX13 CC 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			FX13 C 1 Bright
 			FX13 DD 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			FX13 D 1 Bright
 			FX13 EE 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			FX13 E 1 Bright
 			FX13 FFGGHH 2 Bright
 			{
-			 A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Stop
 	}
@@ -239,137 +239,137 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			MNTR ABCD 5
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_MinotaurRoam;
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_MinotaurRoam;
 			}
 			Loop
 		See:
 			MNTR A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			MNTR ABCD 5
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_MinotaurChase;
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_MinotaurChase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget;
 			}
 			MNTR W 7
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget;
 			}
 			MNTR X 12 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
-			 A_MinotaurAtk1(4*random(1,8), -16);
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+				else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+				A_MinotaurAtk1(4*random(1,8), -16);
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-			 if (random(1,256) <= 170) { A_MinotaurDecide; }
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (random(1,256) <= 170) { A_MinotaurDecide; }
 			}
 			MNTR Y 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+				A_FaceTarget;
 			}
 			MNTR Z 9 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(8); }
-			 A_MinotaurAtk2("MinotaurFX1","MinotaurFX1Crisis",5*random(1,8),3*random(1,8));
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(8); }
+				A_MinotaurAtk2("MinotaurFX1","MinotaurFX1Crisis",5*random(1,8),3*random(1,8));
 			}
 			Goto See
 		Hammer:
 			TNT1 A 0 
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget;
 			}
 			MNTR W 7
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget;
 			}
 			MNTR X 12 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
-			 A_MinotaurAtk3(4*random(1,8), -16, "MinotaurFX2New", "MinotaurFX2Crisis");
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+				else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+				A_MinotaurAtk3(4*random(1,8), -16, "MinotaurFX2New", "MinotaurFX2Crisis");
 			}
 			Goto See
 		HammerLoop:
 			TNT1 A 0 
 			{
-			 A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
+				A_TakeInventory("MaulotaurChargeDefense",0x7FFFFFFF);
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
 			}
 			MNTR X 12
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
+				else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
 			}
 			Goto Hammer
 		Charge:
 			TNT1 A 0 
 			{
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
-			 SetDamage(7+(user_monsterlevel/45));
-			 A_MonsterCrisisCheck;
-			 if(user_canusecrisisatk == 1) 
-			 { 
-				A_PlayCrisisAtkSound;
-				SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
-			 }
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,1); // makes a Stealth Monster become more visible
+				SetDamage(7+(user_monsterlevel/45));
+				A_MonsterCrisisCheck;
+				if(user_canusecrisisatk == 1) 
+				{ 
+					A_PlayCrisisAtkSound;
+					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
+				}
 			}
 			MNTR U 2 A_MinotaurCharge
 			Loop
@@ -458,8 +458,8 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 			PIGY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			PIGY ABCD 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
 			}
 			Loop
 		Melee:
@@ -530,27 +530,27 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			ETTN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			ETTN ABCD 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			ETTN EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			ETTN G 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random[EttinAttack](1, 8)*2);
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random[EttinAttack](1, 8)*2);
 			}
 			Goto See
 		Pain:
@@ -580,8 +580,8 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			ETTB A 4
 			ETTB B 4 A_NoBlocking
 			ETTB C 4 A_SpawnItemEx("EttinMace", 0, 0, 8.5, random[DropMace](-128, 127)*0.03125,
-														 random[DropMace](-128, 127)*0.03125, 10+random[DropMace](0, 255)*0.015625, 0,
-														 SXF_ABSOLUTEVELOCITY)
+															random[DropMace](-128, 127)*0.03125, 10+random[DropMace](0, 255)*0.015625, 0,
+															SXF_ABSOLUTEVELOCITY)
 			ETTB D 4 A_Scream
 			ETTB E 4 A_QueueCorpse
 			ETTB FGHIJK 4
@@ -662,9 +662,9 @@ Actor EttinCommander : EttinNew
 			CETN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			CETN ABCD 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Pain:
@@ -682,37 +682,37 @@ Actor EttinCommander : EttinNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			CETN EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			CETN G 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
+				A_MonsterCrisisCheck;
+				A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			CETN EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			CETN G 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
-			 A_PlaySound("FighterHammerMiss");
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
+				A_PlaySound("FighterHammerMiss");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
+				A_MonsterCrisisCheck;
+				A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
 			}
 			Goto See
 
@@ -784,7 +784,7 @@ ACTOR ThrownMace
 			}
 			AEMC H 3
 			{
-			 A_PlaySound("FighterHammerContinuous");
+				A_PlaySound("FighterHammerContinuous");
 			}
 			Loop
 		Death:
@@ -821,12 +821,12 @@ ACTOR ThrownMaceCrisis : ThrownMace
 		Spawn:
 			AEMC ABCDEFG 3
 			{
-			 A_SpawnItemEx("ThrownMaceCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("ThrownMaceCrisisParticle",0,0,0,0,0,1.28);
 			}
 			AEMC H 3
 			{
-			 A_SpawnItemEx("ThrownMaceCrisisParticle",0,0,0,0,0,1.28);
-			 A_PlaySound("FighterHammerContinuous");
+				A_SpawnItemEx("ThrownMaceCrisisParticle",0,0,0,0,0,1.28);
+				A_PlaySound("FighterHammerContinuous");
 			}
 			Loop
 		Death:
@@ -883,8 +883,8 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			BORM A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			BORM AABBCCDD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Missile:
@@ -893,67 +893,67 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			TNT1 A 0 A_Jump(128,"Missile1b")
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			Goto see
 
@@ -961,146 +961,146 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			TNT1 A 0 A_Jump(128,"Missile1c")
 			BORM E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM F 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			BORM F 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",31,10,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",31,10,0);
 			}
 			BORM G 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",28,5,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",28,5,0);
 			}
 			BORM G 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			Goto see
 
 		Missile1c:
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
-			 A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,20);
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
-			 A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,-20);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,20);
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
+				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,-20);
 			}
 			Goto see
 		Missile2:
 			BORM F 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			TNT1 A 0 A_PlaySoundEx("bormereth/missile2prepare","SoundSlot5")
 			TNT1 A 0 A_SpawnItemEx("PossEttFakeFireBall",5,25,64,0,0,0,0,128)
 			BORM EEEEE 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			BORM E 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			TNT1 A 0 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("PossEttFireBall","PossEttFireBallCrisis",64,25,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("PossEttFireBall","PossEttFireBallCrisis",64,25,0);
 			}
 			BORM FG 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			goto see
 		Melee:
 			BORM EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			BORM G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisComboAttack("BormerethFX1","BormerethFX1Crisis",randompick(25,28,31),8*random(1,8));
+				A_MonsterCrisisCheck;
+				A_CrisisComboAttack("BormerethFX1","BormerethFX1Crisis",randompick(25,28,31),8*random(1,8));
 			}
 			BORM E 0 A_CPosRefire
 			Goto see
 		Pain:
 			TNT1 A 0 
 			{
-			 if (random(1,256) <= 224)
-			 {
-				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
-			 }
+				if (random(1,256) <= 224)
+				{
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+				}
 			}
 			BORM H 2 A_Pain
 			goto PainReact
 		Pain.Fist:
 			TNT1 A 0 
 			{
-			 if (random(1,256) <= 224)
-			 {
-				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
-			 }
+				if (random(1,256) <= 224)
+				{
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+				}
 			}
 			BORM H 2 A_Pain
 			BORM HH 2
@@ -1108,18 +1108,18 @@ ACTOR Bormereth : AetheriusMonsterZSC
 		Pain.Kick:
 			TNT1 A 0 
 			{
-			 if (random(1,256) <= 224)
-			 {
-				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-				A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
-			 }
+				if (random(1,256) <= 224)
+				{
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+				}
 			}
 			BORM H 2 A_Pain
 			BORM HHHH 2
@@ -1198,7 +1198,7 @@ ACTOR WraithFX1New : WraithFX1 replaces WraithFX1
 			}
 			WRBL B 3 Bright 
 			{
-			 A_WraithFX2;
+				A_WraithFX2;
 			}
 			WRBL C 3 Bright
 			{
@@ -1233,16 +1233,16 @@ ACTOR WraithFX1Crisis : WraithFX1New
 		Spawn:
 			WRBL A 3 Bright
 			{
-			 A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			WRBL B 3 Bright 
 			{
-			 A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
-			 A_WraithFX2;
+				A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_WraithFX2;
 			}
 			WRBL C 3 Bright
 			{
-			 A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("WraithFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -1269,7 +1269,7 @@ Actor BormerethFX1 : WraithFX1New
 			}
 			WRBL B 3 Bright 
 			{
-			 A_WraithFX2;
+				A_WraithFX2;
 			}
 			WRBL C 3 Bright
 			{
@@ -1308,16 +1308,16 @@ Actor BormerethFX1Crisis : BormerethFX1
 		Spawn:
 			WRBL A 3 Bright
 			{
-			 A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			WRBL B 3 Bright 
 			{
-			 A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
-			 A_WraithFX2;
+				A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_WraithFX2;
 			}
 			WRBL C 3 Bright
 			{
-			 A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("BormerethFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -1389,56 +1389,56 @@ Actor PossEttFireBall : WraithFX1New
 			TNT1 A 0 
 			WRBL A 1 Bright 
 			{
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL AA 1 Bright 
 			{
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL B 1 Bright 
 			{
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL BB 1 Bright 
 			{
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL C 1 Bright 
 			{
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL CC 1 Bright 
 			{
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			TNT1 A 0 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128)
 			Loop
@@ -1473,62 +1473,62 @@ Actor PossEttFireBallCrisis : PossEttFireBall
 			TNT1 A 0 
 			WRBL A 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL AA 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL B 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL BB 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL C 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SpawnItemEx("WraithFX22",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(1,360),128);
+				A_SeekerMissile(5,5);
 			}
 			WRBL CC 1 Bright 
 			{
-			 A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
-			 A_SeekerMissile(5,5);
+				A_SpawnItemEx("PossEttFireBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128);
+				A_SeekerMissile(5,5);
 			}
 			TNT1 A 0 A_SpawnItemEx("PEFBTrail",0,0,0,0,0,0,0,128)
 			Loop
@@ -1674,17 +1674,17 @@ Actor FirePillarBase
 		Spawn: // 5
 			PLAY A 2 
 			{
-			 A_CustomMissile("FirePillarShot",5,0,0);
+				A_CustomMissile("FirePillarShot",5,0,0);
 			}
 			PLAY A 2
 			{
-			 A_CustomMissile("FirePillarShot2",5,0,0);
+				A_CustomMissile("FirePillarShot2",5,0,0);
 			}
 			TNT1 A 0
 			{
-			 user_times++;
-			 if (user_times >= 5) { return state("Expire"); }
-			 return state("");
+				user_times++;
+				if (user_times >= 5) { return state("Expire"); }
+				return state("");
 			}
 			loop
 		Expire:
@@ -1699,17 +1699,17 @@ Actor FirePillarBaseCrisis : FirePillarBase
 		Spawn: // 5
 			PLAY A 2 
 			{
-			 A_CustomMissile("FirePillarShotCrisis",5,0,0);
+				A_CustomMissile("FirePillarShotCrisis",5,0,0);
 			}
 			PLAY A 2
 			{
-			 A_CustomMissile("FirePillarShot2Crisis",5,0,0);
+				A_CustomMissile("FirePillarShot2Crisis",5,0,0);
 			}
 			TNT1 A 0
 			{
-			 user_times++;
-			 if (user_times >= 5) { return state("Expire"); }
-			 return state("");
+				user_times++;
+				if (user_times >= 5) { return state("Expire"); }
+				return state("");
 			}
 			loop
 		Expire:
@@ -1737,7 +1737,7 @@ Actor FirePillarShot
 			TNT1 AAAA 0
 			INFE ABCD 1 Bright 
 			{
-			 ThrustThingZ(0,7,0,1);
+				ThrustThingZ(0,7,0,1);
 			}
 			INFE EFGHIJKLMNOPQRST 1 Bright 
 			{
@@ -1778,12 +1778,12 @@ Actor FirePillarShotCrisis : FirePillarShot
 			TNT1 AAAA 0
 			INFE ABCD 1 Bright 
 			{
-			 A_SpawnItemEx("FirePillarShotCrisisParticle",0,0,0,0,0,1.28);
-			 ThrustThingZ(0,7,0,1);
+				A_SpawnItemEx("FirePillarShotCrisisParticle",0,0,0,0,0,1.28);
+				ThrustThingZ(0,7,0,1);
 			}
 			INFE EFGHIJKLMNOPQRST 1 Bright 
 			{
-			 A_SpawnItemEx("FirePillarShotCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("FirePillarShotCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Stop
 	}
@@ -1836,34 +1836,34 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			CENT A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			CENT ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-			 A_CentaurShieldOff;
-			 A_SlaughtaurShieldOff;
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				A_CentaurShieldOff;
+				A_SlaughtaurShieldOff;
+				A_Chase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			CENT H 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			CENT I 4 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_FaceTarget;
 			}
 			CENT J 7
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget;
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
 			}
 			Goto See
 		Pain:
@@ -1880,56 +1880,56 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 		ShieldDefend:
 			CENT G 1 // A_SetReflectiveInvulnerable
 			{
-			 A_CentaurShieldOn;
-			 A_FaceTarget;
+				A_CentaurShieldOn;
+				A_FaceTarget;
 
-			 if (random(1,32) == 1) { user_defendtimer += 1; }
-			 if (random(1,8) == 1) { user_defendtimer += 1; }
-			 user_defendtimer += 1;
+				if (random(1,32) == 1) { user_defendtimer += 1; }
+				if (random(1,8) == 1) { user_defendtimer += 1; }
+				user_defendtimer += 1;
 
-			 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = 3; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = 4; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = 5; }
-			 else { user_defendtimermax = 6; }
+				if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = 3; }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = 4; }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = 5; }
+				else { user_defendtimermax = 6; }
 
-			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
-			 return state("");
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
+				return state("");
 			}
 			loop
 		ShieldBlocking:
 			// Defense Cycles
 			CENT E 1 // A_CentaurDefend
 			{
-			 A_CentaurShieldOn;
-			 user_defendtimer += 1;
+				A_CentaurShieldOn;
+				user_defendtimer += 1;
 
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(17,18); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(16,17); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(15,16); }
-			 else { user_defendtimermax = 15; }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(17,18); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(16,17); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(15,16); }
+				else { user_defendtimermax = 15; }
 
-			 if (user_defendtimer >= user_defendtimermax)
-			 {
-				user_defendtimer = 0;
-				user_defendcycles += 1;
-				if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+				if (user_defendtimer >= user_defendtimermax)
 				{
-				 A_CentaurShieldOff;
-				 A_SlaughtaurShieldOff;
-				 return state("Melee");
+					user_defendtimer = 0;
+					user_defendcycles += 1;
+					if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+					{
+						A_CentaurShieldOff;
+						A_SlaughtaurShieldOff;
+						return state("Melee");
+					}
+					A_FaceTarget;
 				}
-				A_FaceTarget;
-			 }
-			 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
-			 return state("");
+				if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+				return state("");
 			}
 			loop
 		ShieldEnding:
 			CENT E 1 // A_UnsetReflectiveInvulnerable
 			{
-			 A_CentaurShieldOff;
-			 A_SlaughtaurShieldOff;
-			 A_FaceTarget;
+				A_CentaurShieldOff;
+				A_SlaughtaurShieldOff;
+				A_FaceTarget;
 			}
 			Goto See
 
@@ -1951,18 +1951,18 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			CTXD A 4
 			CTXD B 4 A_NoBlocking
 			CTXD C 0 A_SpawnItemEx("CentaurSword", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
-														 1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 270)
+															1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 270)
 			CTXD C 4 
 			{
-			 if (random(1,256) == 1)
-			 {
+				if (random(1,256) == 1)
+				{
 					A_CustomMissile("EvilWarriorShield",44,-32,90,0);
-			 }
-			 else
-			 {
-				A_SpawnItemEx("CentaurShield", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
-																	1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 90);
-			 }
+				}
+				else
+				{
+					A_SpawnItemEx("CentaurShield", 0, 0, 45, 1 + random[CentaurDrop](-128,127)*0.03125,
+												1 + random[CentaurDrop](-128,127)*0.03125, 8 + random[CentaurDrop](0,255)*0.015625, 90);
+				}
 			}
 			CTXD D 3 A_Scream
 			CTXD E 4 A_QueueCorpse
@@ -2063,7 +2063,7 @@ ACTOR CentaurFXCrisis : CentaurFXNew
 		Spawn:
 			CTFX A 2 Bright
 			{
-			 A_SpawnItemEx("CentaurFXNewCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("CentaurFXNewCrisisParticle",0,0,0,0,0,1.28);
 			}
 			loop
 		Death:
@@ -2100,24 +2100,24 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			CENT H 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			CENT I 4 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_FaceTarget;
 			}
 			CENT J 7
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget;
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
 			}
 			Goto See
 		Missile:
@@ -2125,80 +2125,80 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 		MissilePhase1:
 			CENT E 1
 			{
-			 A_SlaughtaurShieldOn;
-			 A_FaceTarget;
-			 user_defendtimer += 1;
+				A_SlaughtaurShieldOn;
+				A_FaceTarget;
+				user_defendtimer += 1;
 
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
-			 else { user_defendtimermax = 10; }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
+				else { user_defendtimermax = 10; }
 
-			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase2"); }
-			 return state(""); 
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase2"); }
+				return state(""); 
 			}
 			loop
 		MissilePhase2:
 			CENT F 1 Bright 
 			{
-			 A_SlaughtaurShieldOn;
-			 A_FaceTarget;
-			 user_defendtimer += 1;
-			 if (user_defendtimer == 1) 
-			 { 
-				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
-			 }
-		 
-			 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
-			 else { user_defendtimermax = 8; }
+				A_SlaughtaurShieldOn;
+				A_FaceTarget;
+				user_defendtimer += 1;
+				if (user_defendtimer == 1) 
+				{ 
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
+				}
 
-			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase3"); }
-			 return state(""); 
+				if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
+				else { user_defendtimermax = 8; }
+
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase3"); }
+				return state(""); 
 			}
 			loop
 		MissilePhase3:
 			CENT E 1
 			{
-			 A_SlaughtaurShieldOn;
-			 A_FaceTarget;
-			 user_defendtimer += 1;
-
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
-			 else { user_defendtimermax = 10; }
-
-			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase4"); }
-			 return state(""); 
+				A_SlaughtaurShieldOn;
+				A_FaceTarget;
+				user_defendtimer += 1;
+	
+				if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(7,8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(8,9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(9,10); }
+				else { user_defendtimermax = 10; }
+	
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("MissilePhase4"); }
+				return state(""); 
 			}
 			loop
 		MissilePhase4:
 			CENT F 1 Bright 
 			{
-			 A_SlaughtaurShieldOn;
-			 A_FaceTarget;
-			 user_defendtimer += 1;
-			 if (user_defendtimer == 1) 
-			 { 
-				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
-			 }
-		 
-			 if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
-			 else { user_defendtimermax = 8; }
-
-			 if (user_defendtimer >= user_defendtimermax) 
-			 { 
-				A_CentaurShieldOff;
-				A_SlaughtaurShieldOff;
-				return state("See"); 
-			 }
-			 return state(""); 
+				A_SlaughtaurShieldOn;
+				A_FaceTarget;
+				user_defendtimer += 1;
+				if (user_defendtimer == 1) 
+				{ 
+					A_MonsterCrisisCheck;
+					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
+				}
+			
+				if (levelbehavior > 0 && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(6,7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { user_defendtimermax = random(7,8); }
+				else { user_defendtimermax = 8; }
+	
+				if (user_defendtimer >= user_defendtimermax) 
+				{ 
+					A_CentaurShieldOff;
+					A_SlaughtaurShieldOff;
+					return state("See"); 
+				}
+				return state(""); 
 			}
 			loop
 		Pain:
@@ -2215,70 +2215,70 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 		ShieldDefend:
 			CENT G 1 // A_SetReflectiveInvulnerable
 			{
-			 A_SlaughtaurShieldOn;
-			 A_FaceTarget;
-
-			 if (random(1,32) == 1) { user_defendtimer += 1; }
-			 if (random(1,8) == 1) { user_defendtimer += 1; }
-			 user_defendtimer += 1;
-
-			 if (levelbehavior > 0 && user_monsterlevel > 315) { user_defendtimermax = 2; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 210) { user_defendtimermax = 3; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 105) { user_defendtimermax = 4; }
-			 else { user_defendtimermax = 5; }
-
-			 if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
-			 return state("");
+				A_SlaughtaurShieldOn;
+				A_FaceTarget;
+	
+				if (random(1,32) == 1) { user_defendtimer += 1; }
+				if (random(1,8) == 1) { user_defendtimer += 1; }
+				user_defendtimer += 1;
+	
+				if (levelbehavior > 0 && user_monsterlevel > 315) { user_defendtimermax = 2; }
+				else if (levelbehavior > 0 && user_monsterlevel > 210) { user_defendtimermax = 3; }
+				else if (levelbehavior > 0 && user_monsterlevel > 105) { user_defendtimermax = 4; }
+				else { user_defendtimermax = 5; }
+	
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("ShieldBlocking"); }
+				return state("");
 			}
 			loop
 		ShieldBlocking:
 			// Defense Cycles
 			CENT E 1 // A_CentaurDefend
 			{ 
-			 A_SlaughtaurShieldOn;
-			 user_defendtimer += 1;
-
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(21,22); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(19,20); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(18,19); }
-			 else { user_defendtimermax = 18; }
-
-			 if (user_defendtimer >= user_defendtimermax)
-			 {
-				user_defendtimer = 0;
-				user_defendcycles += 1;
-				if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+				A_SlaughtaurShieldOn;
+				user_defendtimer += 1;
+	
+				if (levelbehavior > 0 && user_monsterlevel > 180) { user_defendtimermax = random(21,22); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { user_defendtimermax = random(19,20); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { user_defendtimermax = random(18,19); }
+				else { user_defendtimermax = 18; }
+	
+				if (user_defendtimer >= user_defendtimermax)
 				{
-				 A_CentaurShieldOff;
-				 A_SlaughtaurShieldOff;
-				 return state("Melee");
+					user_defendtimer = 0;
+					user_defendcycles += 1;
+					if (random(1,8) == 1 && A_JumpIfTargetInsideMeleeRange("Melee"))
+					{
+						A_CentaurShieldOff;
+						A_SlaughtaurShieldOff;
+						return state("Melee");
+					}
+					A_FaceTarget;
 				}
-				A_FaceTarget;
-			 }
-			 if (user_defendcycles >= 3) { return state("ShieldEnding"); }
-			 return state("");
+				if (user_defendcycles >= 3) { return state("ShieldEnding"); }
+				return state("");
 			}
 			loop
 		ShieldEnding:
 			CENT E 1 // A_UnsetReflectiveInvulnerable
 			{
-			 A_CentaurShieldOff;
-			 A_SlaughtaurShieldOff;
-			 A_FaceTarget;
-
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { user_paintomissile = 1; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { user_paintomissile = 2; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 140) { user_paintomissile = 3; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { user_paintomissile = 4; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 100) { user_paintomissile = 5; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { user_paintomissile = 6; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { user_paintomissile = 7; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { user_paintomissile = 8; }
-			 else if (levelbehavior > 0 && user_monsterlevel > 20) { user_paintomissile = 9; }
-			 else { user_paintomissile = 10; }
-
-			 if (random(1,user_paintomissile) == 1) { return state("Missile"); }
-			 return state("");
+				A_CentaurShieldOff;
+				A_SlaughtaurShieldOff;
+				A_FaceTarget;
+	
+				if (levelbehavior > 0 && user_monsterlevel > 180) { user_paintomissile = 1; }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { user_paintomissile = 2; }
+				else if (levelbehavior > 0 && user_monsterlevel > 140) { user_paintomissile = 3; }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { user_paintomissile = 4; }
+				else if (levelbehavior > 0 && user_monsterlevel > 100) { user_paintomissile = 5; }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { user_paintomissile = 6; }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { user_paintomissile = 7; }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { user_paintomissile = 8; }
+				else if (levelbehavior > 0 && user_monsterlevel > 20) { user_paintomissile = 9; }
+				else { user_paintomissile = 10; }
+	
+				if (random(1,user_paintomissile) == 1) { return state("Missile"); }
+				return state("");
 			}
 			Goto See
 	}
@@ -2324,7 +2324,7 @@ Actor FireDemonMissileCrisis : FireDemonMissileNew
 		Spawn:
 			FDMB A 1 Bright
 			{
-			 A_SpawnItemEx("FireDemonMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("FireDemonMissileCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -2388,10 +2388,10 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			FDMN ABC 5 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_FireDChase(32,4,20,13);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_FireDChase(32,4,20,13);
 			}
 			Loop
 		Pain:
@@ -2412,18 +2412,18 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			FDMN K 3 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			FDMN KKK 5 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_PlaySound("FireDemonAttack");
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("FireDemonMissile","FireDemonMissileCrisis",32);
+				A_PlaySound("FireDemonAttack");
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireDemonMissile","FireDemonMissileCrisis",32);
 			}
 			Goto Chase
 		Crash:
@@ -2522,9 +2522,9 @@ Actor FireDemonLeader : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			FDNL AABBCC 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FireDChase(40,8,15,10);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FireDChase(40,8,15,10);
 			}
 			Loop
 		Pain:
@@ -2545,18 +2545,18 @@ Actor FireDemonLeader : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			FDNL K 3 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			FDNL KKKKK 5 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
-			 A_PlaySound("FireDemonAttack");
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("FireDemonLeaderMissile","FireDemonLeaderMissileCrisis",32);
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+				A_PlaySound("FireDemonAttack");
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireDemonLeaderMissile","FireDemonLeaderMissileCrisis",32);
 			}
 			Goto Chase
 		Crash:
@@ -2564,8 +2564,8 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL N 5 A_NoBlocking
 			FDNL O 0 
 			{
-			 A_SpawnItemEx("FireDemonLeaderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonLeaderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonLeaderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonLeaderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNL O 5 //A_BossDeath
@@ -2576,8 +2576,8 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL N 5 A_NoBlocking
 			FDNL O 0 
 			{
-			 A_SpawnItemEx("FireDemonLeaderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonLeaderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonLeaderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonLeaderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNL O 5 //A_BossDeath
@@ -2621,11 +2621,11 @@ Actor FireDemonLeaderMissile : FireDemonMissile
 		Spawn:
 			FDLB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonLeaderTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_CustomMissile("FireDemonLeaderTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDLB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonLeaderTrail2",0,0,0,0);
+				A_CustomMissile("FireDemonLeaderTrail2",0,0,0,0);
 			}
 			Loop
 		Death:
@@ -2653,13 +2653,13 @@ Actor FireDemonLeaderMissileCrisis : FireDemonLeaderMissile
 		Spawn:
 			FDLB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonLeaderMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_CustomMissile("FireDemonLeaderTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_SpawnItemEx("FireDemonLeaderMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonLeaderTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDLB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonLeaderMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_CustomMissile("FireDemonLeaderTrail2",0,0,0,0);
+				A_SpawnItemEx("FireDemonLeaderMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonLeaderTrail2",0,0,0,0);
 			}
 			Loop
 		Death:
@@ -2804,9 +2804,9 @@ Actor FireDemonCommander : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			FDNC AABBCC 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FireDChase(48,6,18,12);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FireDChase(48,6,18,12);
 			}
 			Loop
 		Pain:
@@ -2827,18 +2827,18 @@ Actor FireDemonCommander : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			FDNC K 3 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			FDNC KKKKKKK 5 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
-			 A_PlaySound("FireDemonAttack");
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("FireDemonCommanderMissile","FireDemonCommanderMissileCrisis",32);
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+				A_PlaySound("FireDemonAttack");
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireDemonCommanderMissile","FireDemonCommanderMissileCrisis",32);
 			}
 			Goto Chase
 		Crash:
@@ -2846,8 +2846,8 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC N 5 A_NoBlocking
 			FDNC O 0 
 			{
-			 A_SpawnItemEx("FireDemonCommanderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonCommanderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonCommanderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonCommanderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNC O 5 //A_BossDeath
@@ -2858,8 +2858,8 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC N 5 A_NoBlocking
 			FDNC O 0 
 			{
-			 A_SpawnItemEx("FireDemonCommanderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonCommanderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonCommanderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonCommanderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNC O 5 //A_BossDeath
@@ -2898,11 +2898,11 @@ Actor FireDemonCommanderMissile : FireDemonMissile
 		Spawn:
 			FDCB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonCommanderTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_CustomMissile("FireDemonCommanderTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDCB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonCommanderTrail2",0,0,0,0);
+				A_CustomMissile("FireDemonCommanderTrail2",0,0,0,0);
 			}
 			Loop
 		Death:
@@ -2935,12 +2935,12 @@ Actor FireDemonCommanderMissileCrisis : FireDemonCommanderMissile
 		Spawn:
 			FDCB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonCommanderMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_CustomMissile("FireDemonCommanderTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_SpawnItemEx("FireDemonCommanderMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonCommanderTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDCB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonCommanderMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("FireDemonCommanderMissileCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -3088,9 +3088,9 @@ Actor FireDemonQueen : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			FDNQ AABBCC 3 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_FireDChase(64,3,36,24);
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_FireDChase(64,3,36,24);
 			}
 			Loop
 		Pain:
@@ -3112,18 +3112,18 @@ Actor FireDemonQueen : FireDemonNew
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			FDNQ K 3 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			FDNQ KKKKKKKKK 4 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-			 A_FaceTarget;
-			 A_PlaySound("FireDemonAttack");
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				A_FaceTarget;
+				A_PlaySound("FireDemonAttack");
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
 			}
 			Goto Chase
 		Clone:
@@ -3133,11 +3133,11 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ AAAAAAAAA 1 Bright A_FadeOut(0.10)
 			FDNQ A 1 Bright
 			{
-			 A_SetTranslucent(0.0);
-			 A_SpawnItemEx("FireDemonQueenClone",-50,100,0,0,0,0,0,16);
-			 A_SpawnItemEx("FireDemonQueenClone",50,-100,0,0,0,0,0,16);
-			 A_SpawnItemEx("FireDemonQueenClone",100,100,0,0,0,0,0,16);
-			 A_SpawnItemEx("FireDemonQueenClone",-100,-50,0,0,0,0,0,16);
+				A_SetTranslucent(0.0);
+				A_SpawnItemEx("FireDemonQueenClone",-50,100,0,0,0,0,0,16);
+				A_SpawnItemEx("FireDemonQueenClone",50,-100,0,0,0,0,0,16);
+				A_SpawnItemEx("FireDemonQueenClone",100,100,0,0,0,0,0,16);
+				A_SpawnItemEx("FireDemonQueenClone",-100,-50,0,0,0,0,0,16);
 			}
 			FDNQ AAAAAAAAAA 1 Bright A_FadeIn(0.10)
 			TNT1 A 0 A_SetShootable
@@ -3149,8 +3149,8 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ N 5
 			FDNQ O 0 
 			{
-			 A_SpawnItemEx("FireDemonQueenSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonQueenSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonQueenSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonQueenSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNQ O 5 //A_BossDeath
@@ -3163,8 +3163,8 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ N 5
 			FDNQ O 0 
 			{
-			 A_SpawnItemEx("FireDemonQueenSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
-			 A_SpawnItemEx("FireDemonQueenSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonQueenSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
+				A_SpawnItemEx("FireDemonQueenSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
 			TNT1 A 0 
 			FDNQ O 5 //A_BossDeath
@@ -3189,7 +3189,7 @@ Actor FireDemonQueen : FireDemonNew
 		Raise:
 			FDNQ L 4 
 			FDNQ LD 4
-			goto Chase	   
+			goto Chase 
 	}
 }
 
@@ -3216,19 +3216,19 @@ actor FireDemonQueenClone : FireDemonQueen
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			FDNQ K 3 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			FDNQ KKK 4 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-			 A_FaceTarget;
-			 A_PlaySound("FireDemonAttack");
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				A_FaceTarget;
+				A_PlaySound("FireDemonAttack");
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
 			}
 			Goto Chase
 		Crash:
@@ -3254,19 +3254,19 @@ Actor FireDemonQueenMissile : FireDemonMissile
 		Spawn:
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
 			}
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
 			}
 			FDQB A 0 Bright A_SeekerMissile(14,14,SMF_PRECISE)
 			Loop
@@ -3295,21 +3295,21 @@ Actor FireDemonQueenMissileCrisis : FireDemonQueenMissile
 		Spawn:
 			FDQB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonQueenMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_SpawnItemEx("FireDemonQueenMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDQB A 1 Bright 
 			{
-			 A_SpawnItemEx("FireDemonQueenMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+				A_SpawnItemEx("FireDemonQueenMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
 			}
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
 			}
 			FDQB A 1 Bright 
 			{
-			 A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
 			}
 			FDQB A 0 Bright A_SeekerMissile(14,14,SMF_PRECISE)
 			Loop
@@ -3392,7 +3392,7 @@ Actor FireDemonQueenSplotch2 : FireDemonQueenSplotch1
 {
 	States
 	{
-	 Spawn:
+		Spawn:
 			FDNQ Q 3
 			FDNQ Q 6 A_QueueCorpse
 			FDMN Z -1
@@ -3439,38 +3439,38 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			BISH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			BISH A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_Chase;
 			}
 			BISH A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			BISH A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 			}
 			BISH B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			BISH B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_Chase;
 			}
 			BISH B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			BISH A 1 A_BishopDecide
 			Loop
@@ -3499,21 +3499,21 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			BISH ADE 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			BISH F 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_BishopAttack(4*random(1,8), (random(1,256) & 3) + 5 + (user_monsterlevel/30));
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_BishopAttack(4*random(1,8), (random(1,256) & 3) + 5 + (user_monsterlevel/30));
 			}
 			BISH F 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_BishopAttack2("BishopFXNew","BishopFXCrisis");
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_BishopAttack2("BishopFXNew","BishopFXCrisis");
 			}
 			Wait
 		Death:
@@ -3570,11 +3570,11 @@ ACTOR BishopFXNew : BishopFX replaces BishopFX
 		Spawn:
 			BPFX ABAB 1 Bright 
 			{
-			 A_Weave(2, 2, 2.0, 1.0);
+				A_Weave(2, 2, 2.0, 1.0);
 			}
 			BPFX B 0 Bright 
 			{
-			 A_SeekerMissile(2, 3);
+				A_SeekerMissile(2, 3);
 			}
 			Loop
 		Death:
@@ -3603,12 +3603,12 @@ ACTOR BishopFXCrisis : BishopFXNew
 		Spawn:
 			BPFX ABAB 1 Bright 
 			{
-			 A_SpawnItemEx("BishopFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_Weave(2, 2, 2.0, 1.0);
+				A_SpawnItemEx("BishopFXCrisisParticle",0,0,0,0,0,1.28);
+				A_Weave(2, 2, 2.0, 1.0);
 			}
 			BPFX B 0 Bright 
 			{
-			 A_SeekerMissile(2, 3);
+				A_SeekerMissile(2, 3);
 			}
 			Loop
 		Death:
@@ -3656,50 +3656,50 @@ Actor DarkDisciple : BishopNew
 		See:
 			HDIS A 0 
 			{
-			 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0);
-			 A_ChangeFlag("GHOST",0);
-			 A_SetTranslucent(1,0);
+				ACS_NamedExecuteAlways("RefreshStealthInfo",0,0);
+				A_ChangeFlag("GHOST",0);
+				A_SetTranslucent(1,0);
 			}
 			HDIS A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
+				A_Chase;
 			}
 			HDIS A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
+				A_BishopChase;
 			}
 			HDIS A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
 			}
 			HDIS B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
+				A_BishopChase;
 			}
 			HDIS B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
+				A_Chase;
 			}
 			HDIS B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopDecide;
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopDecide;
+				A_BishopChase;
 			}
 			Loop
 
@@ -3719,82 +3719,82 @@ Actor DarkDisciple : BishopNew
 		Pain:
 			HDIS A 0
 			{
-			 A_ChangeFlag("GHOST",0);
-			 A_SetTranslucent(1,0);
+				A_ChangeFlag("GHOST",0);
+				A_SetTranslucent(1,0);
 			}
 			HDIS C 6 A_Pain
 			HDIS CCC 6
 			{
-			 if (random(1,4) == 1) { return state("Blur"); }
-			 A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
-			 return state("");
+				if (random(1,4) == 1) { return state("Blur"); }
+				A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
+				return state("");
 			}
 			HDIS C 0
 			Goto See
 		Pain.Fist:
 			HDIS A 0
 			{
-			 A_ChangeFlag("GHOST",0);
-			 A_SetTranslucent(1,0);
+				A_ChangeFlag("GHOST",0);
+				A_SetTranslucent(1,0);
 			}
 			HDIS C 6 A_Pain
 			HDIS CC 6
 			HDIS CCC 6
 			{
-			 if (random(1,4) == 1) { return state("Blur"); }
-			 A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
-			 return state("");
+				if (random(1,4) == 1) { return state("Blur"); }
+				A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
+				return state("");
 			}
 			HDIS C 0
 			Goto See
 		Pain.Kick:
 			HDIS A 0
 			{
-			 A_ChangeFlag("GHOST",0);
-			 A_SetTranslucent(1,0);
+				A_ChangeFlag("GHOST",0);
+				A_SetTranslucent(1,0);
 			}
 			HDIS C 6 A_Pain
 			HDIS CCCC 6
 			HDIS CCC 6
 			{
-			 if (random(1,4) == 1) { return state("Blur"); }
-			 A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
-			 return state("");
+				if (random(1,4) == 1) { return state("Blur"); }
+				A_SpawnItemEx("DisciplePainBlur",Random(-10,10),Random(-10,10),Random(-10,10));
+				return state("");
 			}
 			HDIS C 0
 			Goto See
 		Missile:
 			HDIS ADE 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			HDIS F 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_BishopAttack(5*random(1,8));
-			 user_shotsfired = 0;
-			 user_shotsfiredmax = (random(1,256) & 3) + 5 + (user_monsterlevel/25);
-			 A_PlaySound("BishopAttack");
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_BishopAttack(5*random(1,8));
+				user_shotsfired = 0;
+				user_shotsfiredmax = (random(1,256) & 3) + 5 + (user_monsterlevel/25);
+				A_PlaySound("BishopAttack");
 			}
 		MissileLoop:
 			HDIS F 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,-60,1);
-			 A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,60,1);
-			 A_CrisisSpawnProjectile("DiscipleFX","DiscipleFXCrisis",32);
-			 user_shotsfired += 1;
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,-60,1);
+				A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,60,1);
+				A_CrisisSpawnProjectile("DiscipleFX","DiscipleFXCrisis",32);
+				user_shotsfired += 1;
 			}
 			HDIS F 0 
 			{
-			 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
-			 return state("");
+				if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+				return state("");
 			}
 			loop
 		Death:
@@ -3876,7 +3876,7 @@ Actor DiscipleFX
 		Spawn:
 			HDFX ABAB 1 Bright 
 			{
-			 A_BishopMissileWeave;
+				A_BishopMissileWeave;
 			}
 			TNT1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			loop
@@ -3906,8 +3906,8 @@ Actor DiscipleFXCrisis : DiscipleFX
 		Spawn:
 			HDFX ABAB 1 Bright 
 			{
-			 A_SpawnItemEx("DiscipleFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_BishopMissileWeave;
+				A_SpawnItemEx("DiscipleFXCrisisParticle",0,0,0,0,0,1.28);
+				A_BishopMissileWeave;
 			}
 			TNT1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			loop
@@ -3967,21 +3967,21 @@ Actor DiscipleSpreadFXCrisis : DiscipleFXCrisis
 		Spawn:
 			HDFX ABABABAB 1 Bright 
 			{
-			 A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_BishopMissileWeave;
-			 A_SeekerMissile(2,9,SMF_PRECISE);
+				A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
+				A_BishopMissileWeave;
+				A_SeekerMissile(2,9,SMF_PRECISE);
 			}
 		Idle:
 			HDFX ABAB 1 Bright 
 			{
-			 A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_BishopMissileWeave;
+				A_SpawnItemEx("DiscipleSpreadFXCrisisParticle",0,0,0,0,0,1.28);
+				A_BishopMissileWeave;
 			}
 			TNT1 A 0 
 			{
-			 if (random(1,256) <= 16) { return state("Spawn"); }
-			 A_SeekerMissile(2,3,SMF_PRECISE);
-			 return state("");
+				if (random(1,256) <= 16) { return state("Spawn"); }
+				A_SeekerMissile(2,3,SMF_PRECISE);
+				return state("");
 			}
 			loop
 		Death:
@@ -4004,20 +4004,20 @@ Actor EtherealBloodPurple
 			TNT1 A 0
 			TNT1 A 1
 			{
-			 if (GetCVar("dvds_gfxeffectlevel") <= 0)
-			 {
-				A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") <= 1)
-			 {
-				A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") == 2)
-			 {
-				A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
+				if (GetCVar("dvds_gfxeffectlevel") <= 0)
+				{
+					A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") <= 1)
+				{
+					A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") == 2)
+				{
+					A_SpawnItemEx("EtherealBloodPurpleParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
 			}
 			Stop
 	}
@@ -4051,20 +4051,20 @@ Actor EtherealBloodGreen : EtherealBloodPurple
 			TNT1 A 0
 			TNT1 A 1
 			{
-			 if (GetCVar("dvds_gfxeffectlevel") <= 0)
-			 {
-				A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") <= 1)
-			 {
-				A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") == 2)
-			 {
-				A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
+				if (GetCVar("dvds_gfxeffectlevel") <= 0)
+				{
+					A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") <= 1)
+				{
+					A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") == 2)
+				{
+					A_SpawnItemEx("EtherealBloodGreenParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
 			}
 			Stop
 	}
@@ -4088,20 +4088,20 @@ Actor EtherealBloodRed : EtherealBloodPurple
 			TNT1 A 0
 			TNT1 A 1
 			{
-			 if (GetCVar("dvds_gfxeffectlevel") <= 0)
-			 {
-				A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") <= 1)
-			 {
-				A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-				A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
-			 if (GetCVar("dvds_gfxeffectlevel") == 2)
-			 {
-				A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
-			 }
+				if (GetCVar("dvds_gfxeffectlevel") <= 0)
+				{
+					A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") <= 1)
+				{
+					A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+					A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
+				if (GetCVar("dvds_gfxeffectlevel") == 2)
+				{
+					A_SpawnItemEx("EtherealBloodRedParticle", 0, 0, 0, Random(1, 5), 0, Random(0, 3), Random(0, 360), 0);
+				}
 			}
 			Stop
 	}
@@ -4156,43 +4156,43 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			VAM1 A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_Chase;
 			}
 			VAM1 A 0 A_BishopDecide
 			VAM1 A 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			VAM1 A 0 A_BishopDecide
 			VAM1 B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			VAM1 A 0 A_BishopDecide
 			VAM1 B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_Chase;
 			}
 			VAM1 A 0 A_BishopDecide
 			VAM1 B 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_BishopChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_BishopChase;
 			}
 			VAM1 A 1
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
-			 A_BishopDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+				A_BishopDecide;
 			}
 			Loop
 
@@ -4211,58 +4211,58 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 X 0 Bright A_Jump(96,"Missile2")
 			VAM1 X 8 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
-			 user_shotsfired = 0;
-			 user_shotsfiredmax = 9 + (random(1,256) & 3) + (user_monsterlevel/45);
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
+				user_shotsfired = 0;
+				user_shotsfiredmax = 9 + (random(1,256) & 3) + (user_monsterlevel/45);
 			}
 		BatAttack:
 			TNT1 A 0 Bright 
 			{
-			 A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128);
+				A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128);
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("BatAttack","BatAttackCrisis",Random(8,64),Random(-32,32),Random(20,-20),1);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("BatAttack","BatAttackCrisis",Random(8,64),Random(-32,32),Random(20,-20),1);
 
-			 user_shotsfired += 1;
-			 if (user_shotsfired >= user_shotsfiredmax) { return state("BatEnd"); }
-			 return state("");
+				user_shotsfired += 1;
+				if (user_shotsfired >= user_shotsfiredmax) { return state("BatEnd"); }
+				return state("");
 			}
 			loop
 		BatEnd:
 			VAM1 Y 8 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 			}
 			goto see
 
-		 Missile2:
+			Missile2:
 			VAM1 E 8 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
-			 user_shotsfired = 0;
-			 user_shotsfiredmax = 42 + (random(1,256) & 14) + (user_monsterlevel/20);
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
+				user_shotsfired = 0;
+				user_shotsfiredmax = 42 + (random(1,256) & 14) + (user_monsterlevel/20);
 			}
 			VAM1 AAAAAAAAAAAAAA 0 A_SpawnDebris("VampireBloodBoom",1)
 		BeamLoop: // 56
 			VAM1 F 1 Bright 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("VampireRoundBeam","VampireRoundBeamCrisis",32,0,0,1);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("VampireRoundBeam","VampireRoundBeamCrisis",32,0,0,1);
 
-			 user_shotsfired += 1;
-			 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
-			 return state("");
+				user_shotsfired += 1;
+				if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+				return state("");
 			}
 			loop
 
@@ -4419,16 +4419,16 @@ ACTOR VampireRoundBeam
 		Spawn:
 			VAM2 A 0 Bright 
 			{
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
 			}
 			VAM2 AAAA 1 Bright 
 			{
-			 A_CStaffMissileSlither;
-			 A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
+				A_CStaffMissileSlither;
+				A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
 			}
 			loop
 		Death:
@@ -4458,17 +4458,17 @@ ACTOR VampireRoundBeamCrisis : VampireRoundBeam
 		Spawn:
 			VAM2 A 0 Bright 
 			{
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
-			 A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
+				A_PlaySound("vampire/beam");
 			}
 			VAM2 AAAA 1 Bright 
 			{
-			 A_SpawnItemEx("VampireRoundBeamCrisisParticle",0,0,0,0,0,1.28);
-			 A_CStaffMissileSlither;
-			 A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
+				A_SpawnItemEx("VampireRoundBeamCrisisParticle",0,0,0,0,0,1.28);
+				A_CStaffMissileSlither;
+				A_SpawnItemEx("VampireRoundBeamTrail", 0, 0, 0, 0, 0, 0, 0, 128);
 			}
 			loop
 		Death:
@@ -4612,7 +4612,7 @@ ACTOR BatAttack
 		Spawn:
 			VAM4 ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC 3 BRIGHT
 			{
-			 A_SpawnItemEx("BatTrail");
+				A_SpawnItemEx("BatTrail");
 			}
 			Goto death
 		Death:
@@ -4666,8 +4666,8 @@ ACTOR BatAttackCrisis : BatAttack
 		Spawn:
 			VAM4 ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC 3 BRIGHT
 			{
-			 A_SpawnItemEx("BatAttackCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("BatTrail");
+				A_SpawnItemEx("BatAttackCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("BatTrail");
 			}
 			Goto death
 		Death:
@@ -4895,12 +4895,12 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			SSPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			SSPT HH 1 
 			{
-			 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 			}
 			SSPT H 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_SerpentHumpDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_SerpentHumpDecide;
 			}
 			Loop
 		Pain:
@@ -4920,41 +4920,41 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 		Dive:
 			SSDV ABC 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 			}
 			SSDV D 4 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_UnSetShootable;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_UnSetShootable;
 			}
 			SSDV E 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_PlaySoundEx("SerpentActive", "Body");
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_PlaySoundEx("SerpentActive", "Body");
 			}
 			SSDV F 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 			}
 			SSDV GH 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 			}
 			SSDV I 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 			}
 			SSDV J 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_SerpentHide;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
 			}
 			Goto See
 		Melee:
@@ -4962,25 +4962,25 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			SSPT A 1 A_UnHideThing
 			SSPT A 1 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
-			 A_PlaySoundEx("SerpentBirth", "Voice");
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(0); }
+				A_PlaySoundEx("SerpentBirth", "Voice");
 			}
 			SSPT B 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_SetShootable;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SetShootable;
 			}
 			SSPT C 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 			}
 			SSPT D 4 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_SerpentCheckForAttack;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_SerpentCheckForAttack;
 			}
 			Goto Dive
 		Death:
@@ -5025,9 +5025,9 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 		MeleeAttack:
 			SSPT N 5 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(5*random(1,8));
-			 if (random (1,256) < 96) { A_SerpentCheckForAttack; }
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(5*random(1,8));
+				if (random (1,256) < 96) { A_SerpentCheckForAttack; }
 			}
 			Goto Dive
 	}
@@ -5057,7 +5057,7 @@ ACTOR SerpentFXNew : AetheriusProjectileZSC replaces SerpentFX
 			SSFX A 0
 			SSFX A 3 Bright
 			{
-			 A_PlaySoundEx("SerpentFXContinuous", "Body", 1);
+				A_PlaySoundEx("SerpentFXContinuous", "Body", 1);
 			}
 			SSFX BAB 3 Bright
 			{
@@ -5090,12 +5090,12 @@ ACTOR SerpentFXCrisis : SerpentFXNew
 			SSFX A 0
 			SSFX A 3 Bright
 			{
-			 A_SpawnItemEx("SerpentFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_PlaySoundEx("SerpentFXContinuous", "Body", 1);
+				A_SpawnItemEx("SerpentFXCrisisParticle",0,0,0,0,0,1.28);
+				A_PlaySoundEx("SerpentFXContinuous", "Body", 1);
 			}
 			SSFX BAB 3 Bright
 			{
-			 A_SpawnItemEx("SerpentFXCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("SerpentFXCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Goto Spawn+1
 		Death:
@@ -5116,11 +5116,11 @@ ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			SSPT N 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("SerpentFXNew", "SerpentFXCrisis", 32, 0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("SerpentFXNew", "SerpentFXCrisis", 32, 0);
 			}
 			Goto Dive
 	}
@@ -5162,12 +5162,12 @@ ACTOR IceStalker : StalkerNew
 			ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			ISPT HH 1 
 			{
-			 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 			}
 			ISPT H 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_SerpentHumpDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_SerpentHumpDecide;
 			}
 			Loop
 		Pain:
@@ -5225,9 +5225,9 @@ ACTOR IceStalker : StalkerNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(15,30));
-			 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(15,30));
+				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
 			Goto Dive
 	}
@@ -5264,12 +5264,12 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			ISPT H 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			ISPT HH 1 
 			{
-			 A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
+				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
 			}
 			ISPT H 2
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_SerpentHumpDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_SerpentHumpDecide;
 			}
 			Loop
 		Pain:
@@ -5305,9 +5305,9 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		Missile:
 			ISPT N 5 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
-			 A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
+				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
 			}
 			Goto Dive
 		Death:
@@ -5335,9 +5335,9 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(15,30));
-			 if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(15,30));
+				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
 			Goto Dive
 	}
@@ -5387,7 +5387,7 @@ ACTOR Demon1FX1Crisis : Demon1FX1New
 		Spawn:
 			DMFX AABBCC 2 Bright
 			{
-			 A_SpawnItemEx("Demon1FX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Demon1FX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -5434,8 +5434,8 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			DEMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			DEMN ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Pain:
@@ -5456,51 +5456,51 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEMN E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEMN F 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			DEMN G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(2,3) * random(1,8));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEMN E 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			DEMN F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEMN G 5 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon1FX1New", "Demon1FX1Crisis", 62, 0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon1FX1New", "Demon1FX1Crisis", 62, 0);
 			}
 			Goto See
 		Death:
@@ -5517,15 +5517,15 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
 			DEMN H 6
 			DEMN I 0 A_SpawnItemEx("Demon1Chunk1", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle+90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle+90), 8, 90, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle+90), 8, 90, ChunkFlags)
 			DEMN I 0 A_SpawnItemEx("Demon1Chunk2", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEMN I 0 A_SpawnItemEx("Demon1Chunk3", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEMN I 0 A_SpawnItemEx("Demon1Chunk4", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEMN I 6 A_SpawnItemEx("Demon1Chunk5", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			Goto Death+4
 		Ice:
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
@@ -5587,8 +5587,8 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			DEM2 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			DEM2 ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Pain:
@@ -5609,51 +5609,51 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM2 E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM2 F 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			DEM2 G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(2,3) * random(1,8));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM2 E 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			DEM2 F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM2 G 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon2FX1New", "Demon2FX1Crisis", 62, 0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon2FX1New", "Demon2FX1Crisis", 62, 0);
 			}
 			Goto See
 		Death:
@@ -5670,15 +5670,15 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
 			DEM2 H 6
 			DEM2 I 0 A_SpawnItemEx("Demon2Chunk1", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle+90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle+90), 8, 90, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle+90), 8, 90, ChunkFlags)
 			DEM2 I 0 A_SpawnItemEx("Demon2Chunk2", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEM2 I 0 A_SpawnItemEx("Demon2Chunk3", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEM2 I 0 A_SpawnItemEx("Demon2Chunk4", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEM2 I 6 A_SpawnItemEx("Demon2Chunk5", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
-														 frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
+															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			Goto Death+4
 		Ice:
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
@@ -5721,15 +5721,15 @@ ACTOR Demon2FX1New : AetheriusEffectProjectile replaces Demon2FX1
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(8);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D2FX GHIJ 4 Bright
@@ -5757,21 +5757,21 @@ ACTOR Demon2FX1Crisis : Demon2FX1New
 		Spawn:
 			D2FX AABBCCDDEEFF 2 Bright
 			{
-			 A_SpawnItemEx("Demon2FX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Demon2FX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(8);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D2FX GHIJ 4 Bright
@@ -5895,7 +5895,7 @@ Actor Demon3FX : AetheriusProjectileZSC
 		Spawn:
 			RDFX AABBCC 2 Bright 
 			{
-			 A_SpawnItemEx("Demon3FX1Trail");
+				A_SpawnItemEx("Demon3FX1Trail");
 			}
 			Loop
 		Death:
@@ -5928,8 +5928,8 @@ Actor Demon3FXCrisis : Demon3FX
 		Spawn:
 			RDFX AABBCC 2 Bright 
 			{
-			 A_SpawnItemEx("Demon3FXCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("Demon3FX1Trail");
+				A_SpawnItemEx("Demon3FXCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Demon3FX1Trail");
 			}
 			Loop
 		Death:
@@ -6010,7 +6010,7 @@ ACTOR HrVolcanoTBlastCrisis : HrVolcanoTBlast
 		Spawn:
 			VTFB AABB 2 BRIGHT
 			{
-			 A_SpawnItemEx("HrVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("HrVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -6061,59 +6061,59 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 			RDMN A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			RDMN ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			RDMN E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			RDMN F 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			RDMN G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(3,4) * random(1,8));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			RDMN E 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			RDMN F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			RDMN G 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon3FX","Demon3FXCrisis",62,0,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon3FX","Demon3FXCrisis",62,0,0,0);
 			}
 			Goto See
 
@@ -6265,21 +6265,21 @@ Actor Demon4FX : AetheriusEffectProjectile
 		Spawn:
 			D4FX AABB 2 Bright 
 			{
-			 A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
+				A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(4);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(280,420)); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(280,420)); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlast",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
@@ -6311,22 +6311,22 @@ Actor Demon4FXCrisis : Demon4FX
 		Spawn:
 			D4FX AABB 2 Bright 
 			{
-			 A_SpawnItemEx("Demon4FXCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
+				A_SpawnItemEx("Demon4FXCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("BlackDemonTrail", 0, 0, 0, 0, 0, 0, 0, 0);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(4);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(280,420)*CallACS("CrisisMultiplier",5)) ); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(280,420)*CallACS("CrisisMultiplier",5)) ); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			TNT1 AA 0 A_CustomMissile("PoisonVolcanoTBlastCrisis",0,0,random(0,359),CMF_TRACKOWNER,random(0,60))
@@ -6385,15 +6385,15 @@ Actor PoisonVolcanoTBlast : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(24);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(35,53)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(24);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(35,53)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			BPBL EDCDEFG 4 BRIGHT
@@ -6420,21 +6420,21 @@ Actor PoisonVolcanoTBlastCrisis : PoisonVolcanoTBlast
 		Spawn:
 			BPBL AABB 2 BRIGHT
 			{
-			 A_SpawnItemEx("PoisonVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("PoisonVolcanoTBlastCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(24);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(35,53)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(24);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(35,53)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			BPBL EDCDEFG 4 BRIGHT
@@ -6486,59 +6486,59 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			DEM4 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			DEM4 ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM4 E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM4 F 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			DEM4 G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(3,4) * random(1,8));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM4 E 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			DEM4 F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM4 G 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon4FX","Demon4FXCrisis",62,0,0,0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon4FX","Demon4FXCrisis",62,0,0,0);
 			}
 			Goto See
 
@@ -6614,22 +6614,22 @@ ACTOR Demon5FX1 : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(5);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 user_random = random(1,6);
-							if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", random(7,9), 1, 0, 0); } // Drain 4-6% mana
-				 else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140)); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					 else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
-				 {
-					ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140));
-						CallACS("ManaDrain", random(7,9), 1, 0, 0);
-				 }	   
+					A_StatusEffectChecker(5);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						user_random = random(1,6);
+						if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", random(7,9), 1, 0, 0); } // Drain 4-6% mana
+						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140)); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
+						{
+							ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(70,140));
+							CallACS("ManaDrain", random(7,9), 1, 0, 0);
+						}
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D5FX G 4 Bright A_Explode(32,52,0)
@@ -6658,28 +6658,28 @@ ACTOR Demon5FX1Crisis : Demon5FX1
 		Spawn:
 			D5FX AABBCCDDEEFF 2 Bright
 			{
-			 A_SpawnItemEx("Demon5FX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Demon5FX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(5);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 user_random = random(1,6);
-							if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0); } // Drain 4-6% mana
-				 else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) ); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					 else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
-				 {
-					ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) );
-						CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0);
-				 }	   
+					A_StatusEffectChecker(5);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						user_random = random(1,6);
+						if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0); } // Drain 4-6% mana
+						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) ); } // Silence for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 6) // Silence for 2-4 seconds & drain 4-6% mana
+						{
+							ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(70,140)*CallACS("CrisisMultiplier",5)) );
+							CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0);
+						}
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D5FX G 4 Bright A_Explode(32,52,0)
@@ -6710,30 +6710,29 @@ ACTOR Demon5Jet : AetheriusEffectProjectile
 		Spawn:
 			D5JT AABBCC 2 BRIGHT
 			{
-			 A_Weave(1, 2, 0.25, 0.5);
-			 A_FadeOut(0.034);
+				A_Weave(1, 2, 0.25, 0.5);
+				A_FadeOut(0.034);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(15);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 user_random = random(1,12);
-							if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", random(1,2), 0, 0, 0); } // Drain 0-1 mana
-				 else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(5,10)); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					 else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
-				 {
-					ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(10,20));
-						CallACS("ManaDrain", random(2,3), 0, 0, 0);
-				 }	   
-						 
+					A_StatusEffectChecker(15);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						user_random = random(1,12);
+						if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", random(1,2), 0, 0, 0); } // Drain 0-1 mana
+						else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(5,10)); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
+						{
+							ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(10,20));
+							CallACS("ManaDrain", random(2,3), 0, 0, 0);
+						}
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D5JT DEFG 2 BRIGHT
@@ -6762,30 +6761,30 @@ ACTOR Demon5JetCrisis : Demon5Jet
 		Spawn:
 			D5JT AABBCC 2 BRIGHT
 			{
-				 A_SpawnItemEx("Demon5JetCrisisParticle",0,0,0,0,0,1.28);
-			 A_Weave(1, 2, 0.25, 0.5);
-			 A_FadeOut(0.034);
+				A_SpawnItemEx("Demon5JetCrisisParticle",0,0,0,0,0,1.28);
+				A_Weave(1, 2, 0.25, 0.5);
+				A_FadeOut(0.034);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(15);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 user_random = random(1,12);
-							if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana
-				 else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(5,10)*CallACS("CrisisMultiplier",5)) ); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-				 else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
-				 {
-					ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(10,20)*CallACS("CrisisMultiplier",5)) );
-						CallACS("ManaDrain", (random(2,3)*CallACS("CrisisMultiplier",2)) , 0, 0, 0);
-				 }	   
+					A_StatusEffectChecker(15);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						user_random = random(1,12);
+						if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana
+						else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(5,10)*CallACS("CrisisMultiplier",5)) ); } // Silence for 0.14-0.28 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 12) // Silence for 0.28-0.56 seconds & drain 1-2 mana
+						{
+							ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(10,20)*CallACS("CrisisMultiplier",5)) );
+							CallACS("ManaDrain", (random(2,3)*CallACS("CrisisMultiplier",2)) , 0, 0, 0);
+						}
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			D5JT DEFG 2 BRIGHT
@@ -6834,89 +6833,89 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			DEM5 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			DEM5 ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Melee:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM5 E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM5 F 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			DEM5 G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisMeleeAttack(random(4,5) * random(2,9));
+				A_MonsterCrisisCheck;
+				A_CrisisMeleeAttack(random(4,5) * random(2,9));
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DEM5 E 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			DEM5 F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			DEM5 G 0 
 			{
-			 if (A_JumpIfCloser(512,"Missile2") && random (1,256) <= 208) 
-			 { 
-				user_shotsfired = 0;	  
-				user_shotsfiredmax = 10 + (random(1,256) & 2) + (user_monsterlevel/30) + (user_monsterlevel/60) + (user_monsterlevel/120);	 
-				return state("Missile2"); 
-			 }
-			 return state("");
+				if (A_JumpIfCloser(512,"Missile2") && random (1,256) <= 208) 
+				{ 
+					user_shotsfired = 0;
+					user_shotsfiredmax = 10 + (random(1,256) & 2) + (user_monsterlevel/30) + (user_monsterlevel/60) + (user_monsterlevel/120);		
+					return state("Missile2"); 
+				}
+				return state("");
 			}
 			DEM5 G 5
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -10);
-			 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 0);
-			 A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 10);
-			 if (levelbehavior > 0 && user_monsterlevel > 120)
-			 {
-				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -20);
-				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 20);
-			 }
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -10);
+				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 0);
+				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 10);
+				if (levelbehavior > 0 && user_monsterlevel > 120)
+				{
+					A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -20);
+					A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 20);
+				}
 			}
 			Goto See
 		Missile2:
 			DEM5 G 2 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("Demon5Jet", "Demon5JetCrisis", 62, 0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("Demon5Jet", "Demon5JetCrisis", 62, 0);
 
-			 user_shotsfired += 1;
-			 if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
-			 return state("");
+				user_shotsfired += 1;
+				if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+				return state("");
 			}
 			loop
 
@@ -6995,8 +6994,8 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			WRTH A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			WRTH ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_WraithChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_WraithChase;
 			}
 			Loop
 		Pain:
@@ -7017,43 +7016,43 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			WRTH E 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			WRTH F 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_WraithFX3;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_WraithFX3;
 			}
 			WRTH G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_WraithMelee(random[StealHealth](1,8)*2);
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_WraithMelee(random[StealHealth](1,8)*2);
 			}
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			WRTH EF 6
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
 			}
 			WRTH G 6 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-			 A_MonsterCrisisCheck;
-			 A_CrisisSpawnProjectile("WraithFX1", "WraithFX1Crisis", 32, 0);
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("WraithFX1", "WraithFX1Crisis", 32, 0);
 			}
 			Goto See
 		Death:
@@ -7133,8 +7132,8 @@ ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			WRTH ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_WraithChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_WraithChase;
 			}
 			Loop
 	}
@@ -7157,21 +7156,21 @@ ACTOR IceGuyFXNew : AetheriusEffectProjectile replaces IceGuyFX
 		Spawn:
 			ICPR ABC 3 Bright 
 			{
-			 A_SpawnItemEx("IceFXPuff", 0, 0, 2);
+				A_SpawnItemEx("IceFXPuff", 0, 0, 2);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(16);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,105)); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(16);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,105)); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			ICPR D 4 Bright
@@ -7201,22 +7200,22 @@ ACTOR IceGuyFXCrisis : IceGuyFXNew
 		Spawn:
 			ICPR ABC 3 Bright 
 			{
-			 A_SpawnItemEx("IceGuyFXCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("IceFXPuff", 0, 0, 2);
+				A_SpawnItemEx("IceGuyFXCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("IceFXPuff", 0, 0, 2);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(16);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(70,105)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(16);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(70,105)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			ICPR D 4 Bright
@@ -7250,15 +7249,15 @@ ACTOR IceGuyFX2New : AetheriusEffectProjectile replaces IceGuyFX2
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(32);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(32);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			TNT1 A 0 Bright
@@ -7285,21 +7284,21 @@ ACTOR IceGuyFX2Crisis : IceGuyFX2New
 		Spawn:
 			ICPR NOP 3 Bright
 			{
-			 A_SpawnItemEx("IceGuyFX2CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("IceGuyFX2CrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
 			TNT1 A 0 Bright
 			{
-			 if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-			 {
-				A_StatusEffectChecker(32);
-				if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-				 ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(12,17)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 0.3-0.48 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					A_StatusEffectChecker(32);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(12,17)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 0.3-0.48 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
 				}
-			 }
-			 return state("");
+				return state("");
 			}
 		Death2:
 			TNT1 A 0 Bright
@@ -7341,18 +7340,18 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 			ICEY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			ICEY A 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			ICEY B 4 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_IceGuyChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_IceGuyChase;
 			}
 			ICEY CD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				A_Chase;
 			}
 			Loop
 		Pain:
@@ -7362,25 +7361,25 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			ICEY EF 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_FaceTarget;
 			}
 			ICEY G 8 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 
-			 A_MonsterCrisisCheck;
-			 A_IceGuyAttack("IceGuyFXNew","IceGuyFXCrisis");
+				A_MonsterCrisisCheck;
+				A_IceGuyAttack("IceGuyFXNew","IceGuyFXCrisis");
 			}
 			ICEY F 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_FaceTarget;
 			}
 			Goto See
 		Death:
@@ -7474,7 +7473,7 @@ ACTOR SorcFX1New : SorcFX1 replaces SorcFX1
 		Death:
 			FHFX S 2 Bright 
 			{
-			 A_Explode(30, 128, 0);
+				A_Explode(30, 128, 0);
 			}
 			FHFX SS 6 Bright
 			Stop
@@ -7516,18 +7515,18 @@ ACTOR SorcFX1Crisis : SorcFX1New
 		Spawn:
 			SBS1 A 2 Bright
 			{
-			 A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
 			}
 			SBS1 BCD 3 Bright 
 			{
-			 A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
-			 A_SorcFX1Seek;
+				A_SpawnItemEx("SorcFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SorcFX1Seek;
 			}
 			Loop
 		Death:
 			FHFX S 2 Bright 
 			{
-			 A_Explode(30*CallACS("CrisisMultiplier"), 128, 0);
+				A_Explode(30*CallACS("CrisisMultiplier"), 128, 0);
 			}
 			FHFX SS 6 Bright
 			Stop
@@ -7550,14 +7549,14 @@ ACTOR SorcFX4New : SorcFX4 replaces SorcFX4
 		Spawn:
 			SBS4 ABC 2 Bright 
 			{
-			 A_SorcFX4Check;
+				A_SorcFX4Check;
 			}
 			Loop
 		Death:
 			SBS4 D 2 Bright
 			SBS4 E 2 Bright
 			{
-			 A_Explode(20, 128, 0);
+				A_Explode(20, 128, 0);
 			}
 			SBS4 FGH 2 Bright
 			Stop
@@ -7591,15 +7590,15 @@ ACTOR SorcFX4Crisis : SorcFX4New
 		Spawn:
 			SBS4 ABC 2 Bright 
 			{
-			 A_SpawnItemEx("SorcFX4CrisisParticle",0,0,0,0,0,1.28);
-			 A_SorcFX4Check;
+				A_SpawnItemEx("SorcFX4CrisisParticle",0,0,0,0,0,1.28);
+				A_SorcFX4Check;
 			}
 			Loop
 		Death:
 			SBS4 D 2 Bright
 			SBS4 E 2 Bright
 			{
-			 A_Explode(20*CallACS("CrisisMultiplier"), 128, 0);
+				A_Explode(20*CallACS("CrisisMultiplier"), 128, 0);
 			}
 			SBS4 FGH 2 Bright
 			Stop
@@ -7649,53 +7648,53 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			KORX A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			KORX AAA 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_KoraxChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_KoraxChase;
 			}
 			KORX B 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
 			}
 			KORX BBB 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_KoraxChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_KoraxChase;
 			}
 			KORX C 0 A_PlaySound("KoraxStep")
 			KORX C 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
 			}
 			KORX CCC 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_KoraxChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_KoraxChase;
 			}
 			KORX D 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
 			}
 			KORX DDD 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_KoraxChase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_KoraxChase;
 			}
 			KORX A 0 A_PlaySound("KoraxStep")
 			KORX A 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-			 A_Chase;
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
 			}
 			Loop
 		Pain:
@@ -7714,86 +7713,86 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			KORX E 2 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_FaceTarget;
 			}
 			KORX E 5 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_KoraxDecide;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_KoraxDecide;
 			}
 			Wait
 		Attack:
 			KORX E 4 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				A_FaceTarget;
 			}
 		AttackLoop:
 			KORX F 8 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_KoraxMissile;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_KoraxMissile;
 			}
 			KORX E 8 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 			}
 			KORX E 0 Bright
 			{
-			 user_koraxrepeatchance = 32 + (user_monsterlevel/5);
-			 if (user_koraxrepeatchance >= 160) { user_koraxrepeatchance = 160; }
+				user_koraxrepeatchance = 32 + (user_monsterlevel/5);
+				if (user_koraxrepeatchance >= 160) { user_koraxrepeatchance = 160; }
 
-			 if (random(1,256) <= user_koraxrepeatchance) { return state("AttackLoop"); }
-			 return state("");
+				if (random(1,256) <= user_koraxrepeatchance) { return state("AttackLoop"); }
+				return state("");
 			}
 			Goto See
 		Command:
 			KORX E 5 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			KORX W 10 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget;
 			}
 			KORX G 15 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(9); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 125) { A_SetTics(10); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(11); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(12); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 50) { A_SetTics(13); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 25) { A_SetTics(14); }
-			 A_KoraxCommand;
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(9); }
+				else if (levelbehavior > 0 && user_monsterlevel > 125) { A_SetTics(10); }
+				else if (levelbehavior > 0 && user_monsterlevel > 100) { A_SetTics(11); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(12); }
+				else if (levelbehavior > 0 && user_monsterlevel > 50) { A_SetTics(13); }
+				else if (levelbehavior > 0 && user_monsterlevel > 25) { A_SetTics(14); }
+				A_KoraxCommand;
 			}
 			KORX W 10 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 			}
 			KORX E 5 Bright
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 			}
 			Goto See
 
@@ -7856,15 +7855,15 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 			DRAG A 5 A_DragonInitFlight
 			DRAG B 3 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
-			 A_DragonFlap(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
+				A_DragonFlap(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
 			}
 			DRAG BCCDDCCBBAA 3
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
-			 A_DragonFlight(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
+				A_DragonFlight(4.0,8.0,10*random(1,8), "DragonFireball", "DragonFireballCrisis");
 			}
 			Goto See+4
 		Pain:
@@ -7882,13 +7881,13 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			DRAG E 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(7); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 135) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(7); }
 
-			 A_MonsterCrisisCheck;
-			 A_DragonAttack("DragonFireball","DragonFireballCrisis");
+				A_MonsterCrisisCheck;
+				A_DragonAttack("DragonFireball","DragonFireballCrisis");
 			}
 			Goto See+4
 
@@ -7938,7 +7937,7 @@ ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball
 			DRFX GHI 4 Bright
 			DRFX J 4 Bright 
 			{
-			 A_DragonFX2("DragonExplosion");
+				A_DragonFX2("DragonExplosion");
 			}
 			DRFX KL 3 Bright
 			Stop
@@ -7964,14 +7963,14 @@ ACTOR DragonFireballCrisis : DragonFireballNew
 		Spawn:
 			DRFX AABBCCDDEEFF 2 Bright
 			{
-			 A_SpawnItemEx("DragonFireballCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("DragonFireballCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
 			DRFX GHI 4 Bright
 			DRFX J 4 Bright 
 			{
-			 A_DragonFX2("DragonExplosionCrisis");
+				A_DragonFX2("DragonExplosionCrisis");
 			}
 			DRFX KL 3 Bright
 			Stop
@@ -8065,9 +8064,9 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			CLER A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			CLER ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-			 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
+				if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 			}
 			Loop
 		Pain:
@@ -8089,20 +8088,20 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			CLER EF 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			CLER G 10 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-			 A_ClericAttack("HolyMissile","HolyMissileCrisis");
+				if (levelbehavior > 0 && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				A_ClericAttack("HolyMissile","HolyMissileCrisis");
 			}
 			Goto See
 
@@ -8171,12 +8170,12 @@ ACTOR HolyMissileNew : AetheriusProjectileZSC replaces HolyMissile
 		Spawn:
 			SPIR PPPP 3 Bright 
 			{
-			 A_SpawnItemEx("HolyMissilePuff");
+				A_SpawnItemEx("HolyMissilePuff");
 			}
 		Death:
 			SPIR P 1 Bright 
 			{
-			 A_CHolyAttack2("HolySpiritNew",4,105,85);
+				A_CHolyAttack2("HolySpiritNew",4,105,85);
 			}
 			Stop
 	}
@@ -8210,13 +8209,13 @@ ACTOR HolyMissileCrisis : HolyMissileNew
 		Spawn:
 			SPIR PPPP 3 Bright 
 			{
-			 A_SpawnItemEx("HolyMissileCrisisParticle",0,0,0,0,0,1.28);
-			 A_SpawnItemEx("HolyMissilePuff");
+				A_SpawnItemEx("HolyMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("HolyMissilePuff");
 			}
 		Death:
 			SPIR P 1 Bright 
 			{
-			 A_CHolyAttack2("HolySpiritCrisis",4,105,85);
+				A_CHolyAttack2("HolySpiritCrisis",4,105,85);
 			}
 			Stop
 	}
@@ -8248,11 +8247,11 @@ ACTOR HolySpiritNew : HolySpiritBase replaces HolySpirit
 		Spawn:
 			SPIR AAB 2 
 			{
-			 A_CHolySeek;
+				A_CHolySeek;
 			}
 			SPIR B 2 
 			{
-			 A_CHolyCheckScream;
+				A_CHolyCheckScream;
 			}
 			Loop
 		Death:
@@ -8283,12 +8282,12 @@ ACTOR HolySpiritCrisis : HolySpiritNew
 		Spawn:
 			SPIR AAB 2 
 			{
-			 A_SpawnItemEx("HolySpiritCrisisParticle",0,0,0,0,0,1.28);
-			 A_CHolySeek;
+				A_SpawnItemEx("HolySpiritCrisisParticle",0,0,0,0,0,1.28);
+				A_CHolySeek;
 			}
 			SPIR B 2 
 			{
-			 A_CHolyCheckScream;
+				A_CHolyCheckScream;
 			}
 			Loop
 		Death:
@@ -8338,9 +8337,9 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			PLAY A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			PLAY ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-			 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
+				if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 			}
 			Loop
 		Pain:
@@ -8362,19 +8361,19 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			PLAY E 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			PLAY F 8 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FighterAttack("FSwordMissile","FSwordMissileCrisis");
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FighterAttack("FSwordMissile","FSwordMissileCrisis");
 			}
 			Goto See
 
@@ -8476,7 +8475,7 @@ ACTOR FSwordMissileCrisis : FSwordMissileNew
 		Spawn:
 			FSFX ABC 3 Bright
 			{
-			 A_SpawnItemEx("FSwordMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("FSwordMissileCrisisParticle",0,0,0,0,0,1.28);
 			}
 			Loop
 		Death:
@@ -8531,9 +8530,9 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			MAGE A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
 			MAGE ABCD 4
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-			 if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
+				if (random(1,3) == 1) { A_Chase("Melee","Missile",CHF_FASTCHASE); } else { A_Chase("Melee","Missile"); }
 			}
 			Loop
 		Pain:
@@ -8555,19 +8554,19 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
 			MAGE E 8
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			MAGE F 8 Bright 
 			{
-			 if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-			 else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-			 A_MageAttack("MageStaffFX2New","MageStaffFX2Crisis");
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_MageAttack("MageStaffFX2New","MageStaffFX2Crisis");
 			}
 			Goto See
 
@@ -8640,7 +8639,7 @@ ACTOR MageStaffFX2New : MageStaffFX2Base replaces MageStaffFX2
 		Spawn:
 			MSP2 ABCD 2 Bright 
 			{
-			 A_MStaffTrack;
+				A_MStaffTrack;
 			}
 			Loop
 		Death:
@@ -8682,8 +8681,8 @@ ACTOR MageStaffFX2Crisis : MageStaffFX2New
 		Spawn:
 			MSP2 ABCD 2 Bright 
 			{
-			 A_SpawnItemEx("MageStaffFX2CrisisParticle",0,0,0,0,0,1.28);
-			 A_MStaffTrack;
+				A_SpawnItemEx("MageStaffFX2CrisisParticle",0,0,0,0,0,1.28);
+				A_MStaffTrack;
 			}
 			Loop
 		Death:

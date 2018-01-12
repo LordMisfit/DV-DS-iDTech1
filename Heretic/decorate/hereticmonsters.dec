@@ -191,7 +191,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 
 				if (random(1,100) > user_chargechance) { return state("See"); }
 				else 
-				{ 
+				{
 					if (AAPTR_TARGET == AAPTR_NULL) { return state("See"); }
 					return state("");
 				}
@@ -216,10 +216,10 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				SetDamage(((0+(user_monsterlevel/45))));
 				A_MonsterCrisisCheck;
 				if(user_canusecrisisatk == 1) 
-				{ 
+				{
 					if (user_monsterlevel >= 45) { A_PlayCrisisAtkSound; } 
 					SetDamage((((0+(user_monsterlevel/45)))*CallACS("CrisisMultiplier"))); 
-				} 
+				}
 				A_SkullAttack(12+(user_monsterlevel/random(22,23)));
 			}
 			IMPX CBAB 6
@@ -1701,7 +1701,7 @@ ACTOR KnightAxeNew : AetheriusProjectileZSC replaces KnightAxe
 		Death:
 			SPAX DDEEFF 3 Bright
 			Stop
-	} 
+	}
 }
 actor KnightAxeCrisisParticle : BaseCrisisParticle
 {
@@ -1734,7 +1734,7 @@ ACTOR KnightAxeCrisis : KnightAxeNew
 		Death:
 			SPAX DDEEFF 3 Bright
 			Stop
-	} 
+	}
 }
 
 ACTOR RedAxeNew : KnightAxeNew replaces RedAxe 
@@ -2017,7 +2017,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 	Species "UndeadWarrior"
 
 	States 
-	{ 
+	{
 		Spawn: 
 			DKNT A 0 NoDelay 
 			DKNT AB 10 A_Look 
@@ -2199,7 +2199,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 	
 				user_defendtimer += 1;
 				if (user_defendtimer == 1) 
-				{ 
+				{
 					A_MonsterCrisisCheck;
 					A_CrisisSpawnProjectile("DKbolt","DKboltCrisis",44,-4,0,0); 
 				}
@@ -2305,7 +2305,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			DKNT Q 8 Bright   
 			DKNT NMLKJI 8 Bright
 			Goto See 
-	} 
+	}
 }
 
 Actor DeathKnightGhost : DeathKnight
@@ -2954,7 +2954,7 @@ ACTOR Banshee : AetheriusMonsterZSC
 
 				A_VileChase;
 				A_SpawnItem("BansheeTrail",0,0);
-			} 
+			}
 			BANS A 0 A_Jump(2,"BansheeTeleport")
 			Loop
 		Missile:
@@ -5026,7 +5026,7 @@ ACTOR CurseSpell : AetheriusEffectProjectile
 			Loop
 		Death:
 			TNT1 A 0 Bright
-			{ 
+			{
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
@@ -5083,7 +5083,7 @@ ACTOR CurseSpellCrisis : CurseSpell
 			Loop
 		Death:
 			TNT1 A 0 Bright
-			{ 
+			{
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
@@ -5905,7 +5905,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 				SetDamage(7+(user_monsterlevel/45));
 				A_MonsterCrisisCheck;
 				if(user_canusecrisisatk == 1) 
-				{ 
+				{
 					A_PlayCrisisAtkSound;
 					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
 				}
@@ -6303,12 +6303,12 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
-				{ 
+				{
 					A_MonsterCrisisCheck;
 					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
-				} 
+				}
 				else 
-				{ 
+				{
 					A_SetTics(0); 
 				}
 			}
@@ -6337,12 +6337,12 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
-				{ 
+				{
 					A_MonsterCrisisCheck;
 					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
-				} 
+				}
 				else 
-				{ 
+				{
 					A_SetTics(0); 
 				}
 			}

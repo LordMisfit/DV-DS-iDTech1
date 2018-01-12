@@ -84,10 +84,10 @@ class KoraxBase : AetheriusBossZSC
 	//	255		For use in death script (spawn spots)
 	//===========================================================================
 	void A_KoraxStep()
-	{ 
+	{
 		A_PlaySound("KoraxStep"); 
 		A_Chase(); 
-	}	
+	}
 
 	void A_KoraxChase()
 	{
@@ -130,7 +130,8 @@ class KoraxBase : AetheriusBossZSC
 				Actor spot;
 
 				if (tracer != null)
-				{ // Find the previous teleport destination
+				{
+					// Find the previous teleport destination
 					do
 					{
 						spot = it.Next ();
@@ -310,7 +311,8 @@ class KoraxBase : AetheriusBossZSC
 			th.target = self; // Originator
 			double an = th.AngleTo(dest);
 			if (dest.bShadow)
-			{ // Invisible target
+			{
+				// Invisible target
 				an += Random2[KoraxMissile]() * (45/256.);
 			}
 			th.angle = an;

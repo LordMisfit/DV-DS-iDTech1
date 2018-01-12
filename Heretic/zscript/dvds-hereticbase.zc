@@ -50,11 +50,13 @@ class DSparilBase : AetheriusBossZSC
 		int fireballhealth2;
 		if (User_MaxHP <= 0) fireballhealth2 = SpawnHealth()/3; else fireballhealth2 = User_MaxHP/3;
 		if (health > fireballhealth1)
-		{ // Spit one fireball
+		{
+			// Spit one fireball
 			SpawnMissileZ (pos.z + 48, target, projtype);
 		}
 		else
-		{ // Spit three fireballs
+		{
+			// Spit three fireballs
 			Actor mo = SpawnMissileZ (pos.z + 48, target, projtype);
 			if (mo != null)
 			{
@@ -63,13 +65,16 @@ class DSparilBase : AetheriusBossZSC
 				SpawnMissileAngleZ(pos.z + 48, projtype, ang + 3, mo.Vel.Z);
 			}
 			if (health < fireballhealth2)
-			{ // Maybe attack again
+			{
+				// Maybe attack again
 				if (special1)
-				{ // Just attacked, so don't attack again
+				{
+					// Just attacked, so don't attack again
 					special1 = 0;
 				}
 				else
-				{ // Set state to attack again
+				{
+					// Set state to attack again
 					special1 = 1;
 					SetStateLabel("Missile2");
 				}
@@ -165,13 +170,14 @@ class DSparilBase : AetheriusBossZSC
 		if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
 		int chance = health < attackhealth/2 ? 96 : 48;
 		if (random[Srcr2Atk]() < chance)
-		{ // Wizard spawners
-
+		{
+			// Wizard spawners
 			SpawnMissileAngle(attacktype2, Angle - 45, 0.5);
 			SpawnMissileAngle(attacktype2, Angle + 45, 0.5);
 		}
 		else
-		{ // Blue bolt
+		{
+			// Blue bolt
 			SpawnMissile (target, attacktype1);
 		}
 	}
@@ -185,7 +191,8 @@ class DSparilBase : AetheriusBossZSC
 	void A_Sor2DthLoop ()
 	{
 		if (--special1)
-		{ // Need to loop
+		{
+			// Need to loop
 			SetStateLabel("DeathLoop");
 		}
 	}

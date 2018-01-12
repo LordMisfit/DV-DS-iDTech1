@@ -366,7 +366,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 				SetDamage(7+(user_monsterlevel/45));
 				A_MonsterCrisisCheck;
 				if(user_canusecrisisatk == 1) 
-				{ 
+				{
 					A_PlayCrisisAtkSound;
 					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
 				}
@@ -2145,7 +2145,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				A_FaceTarget;
 				user_defendtimer += 1;
 				if (user_defendtimer == 1) 
-				{ 
+				{
 					A_MonsterCrisisCheck;
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
@@ -2182,7 +2182,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				A_FaceTarget;
 				user_defendtimer += 1;
 				if (user_defendtimer == 1) 
-				{ 
+				{
 					A_MonsterCrisisCheck;
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
@@ -2193,7 +2193,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				else { user_defendtimermax = 8; }
 	
 				if (user_defendtimer >= user_defendtimermax) 
-				{ 
+				{
 					A_CentaurShieldOff;
 					A_SlaughtaurShieldOff;
 					return state("See"); 
@@ -2234,7 +2234,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 		ShieldBlocking:
 			// Defense Cycles
 			CENT E 1 // A_CentaurDefend
-			{ 
+			{
 				A_SlaughtaurShieldOn;
 				user_defendtimer += 1;
 	
@@ -4147,7 +4147,7 @@ ACTOR VampireDVDS : BishopNew
 	-FLOAT
 	Obituary "A Vampire drained all of %o's life."
 	States 
-	{ 
+	{
 		Spawn: 
 			VAM1 A 0 NoDelay 
 			VAM1 AB 10 A_Look 
@@ -4362,7 +4362,7 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 P 5 
 			VAM1 ONMLKJIHG 5 
 			Goto See
-	} 
+	}
 }
 
 actor FVampire : VampireDVDS
@@ -6882,7 +6882,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			DEM5 G 0 
 			{
 				if (A_JumpIfCloser(512,"Missile2") && random (1,256) <= 208) 
-				{ 
+				{
 					user_shotsfired = 0;
 					user_shotsfiredmax = 10 + (random(1,256) & 2) + (user_monsterlevel/30) + (user_monsterlevel/60) + (user_monsterlevel/120);		
 					return state("Missile2"); 

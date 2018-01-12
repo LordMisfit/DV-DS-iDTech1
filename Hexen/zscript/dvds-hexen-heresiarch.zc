@@ -456,7 +456,8 @@ class SorcBallBase : AetheriusProjectileZSC
 	}
 	
 	override bool SpecialBlastHandling (Actor source, double strength)
-	{ // don't blast sorcerer balls
+	{
+		// don't blast sorcerer balls
 		return false;
 	}
 	
@@ -945,7 +946,8 @@ class SorcBall3Base : SorcBallBase
 		Class<Actor> cls = "SorcFX3";
 
 		if (parent.health < (parent.Score/4))
-		{ // Spawn 2 at a time
+		{
+			// Spawn 2 at a time
 			mo = parent.SpawnMissileAngle(cls, ang1, 4.);
 			if (mo) mo.target = parent;
 			mo = parent.SpawnMissileAngle(cls, ang2, 4.);
@@ -1220,7 +1222,8 @@ class SorcFX3Base : AetheriusProjectileZSC
 				mo.Destroy ();
 			}
 			else if (target != null)
-			{ // [RH] Make the new bishops inherit the Heriarch's target
+			{
+				// [RH] Make the new bishops inherit the Heriarch's target
 				mo.CopyFriendliness (target, true);
 				mo.master = target;
 			}

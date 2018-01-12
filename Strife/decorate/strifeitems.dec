@@ -563,7 +563,7 @@ ACTOR BaseProp // Used for the basic properties of shop displays
 		Spawn:
 			TNT1 A -1
 			Stop
-	} 
+	}
 }
 
 ACTOR AssaultGunProp : BaseProp 25001

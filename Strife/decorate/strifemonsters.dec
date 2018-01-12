@@ -637,22 +637,22 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 				if (bullet_tracer_mode == 0)
 				{
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
-					{ 
+					{
 						A_CrisisBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 					else 
-					{ 
+					{
 						A_CrisisBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 				}
 				else
 				{
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
-					{ 
+					{
 						A_CrisisSpawnProjectile("StrifeGenBulletTracer2", "StrifeGenBulletTracer2Crisis", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH|CMF_BADPITCH, 0); 
 					}
 					else 
-					{ 
+					{
 						A_CrisisSpawnProjectile("StrifeGenBulletTracer", "StrifeGenBulletTracerCrisis", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH|CMF_BADPITCH, 0); 
 					}
 				}
@@ -669,22 +669,22 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 				if (bullet_tracer_mode == 0)
 				{
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
-					{ 
+					{
 						A_CrisisBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 					else 
-					{ 
+					{
 						A_CrisisBulletAttack (frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 				}
 				else
 				{
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
-					{ 
+					{
 						A_CrisisSpawnProjectile("StrifeGenBulletTracer2", "StrifeGenBulletTracer2Crisis", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH|CMF_BADPITCH, 0); 
 					}
 					else 
-					{ 
+					{
 						A_CrisisSpawnProjectile("StrifeGenBulletTracer", "StrifeGenBulletTracerCrisis", 32, 12, frandom(ACS_NamedExecuteWithResult("GetHitScanXSpread",101)*-1,ACS_NamedExecuteWithResult("GetHitScanXSpread",101)), CMF_OFFSETPITCH|CMF_BADPITCH, 0); 
 					}
 				}
@@ -1377,20 +1377,20 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 					}
 					else // Tracers
 					{
-					if (levelbehavior > 0 && user_monsterlevel > 75) 
-					{
-						for (user_pelletsfired = 0; user_pelletsfired < 20; user_pelletsfired++)
+						if (levelbehavior > 0 && user_monsterlevel > 75) 
 						{
-							A_CrisisSpawnProjectile("StrifeMaulerTracerRetail2", "StrifeMaulerTracerRetail2Crisis", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-7.0,7.0)); 
+							for (user_pelletsfired = 0; user_pelletsfired < 20; user_pelletsfired++)
+							{
+								A_CrisisSpawnProjectile("StrifeMaulerTracerRetail2", "StrifeMaulerTracerRetail2Crisis", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-7.0,7.0)); 
+							}
 						}
-					}
-					else 
-					{ 
-						for (user_pelletsfired = 0; user_pelletsfired < 20; user_pelletsfired++)
+						else 
 						{
-							A_CrisisSpawnProjectile("StrifeMaulerTracerRetail", "StrifeMaulerTracerRetailCrisis", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-7.0,7.0)); 
+							for (user_pelletsfired = 0; user_pelletsfired < 20; user_pelletsfired++)
+							{
+								A_CrisisSpawnProjectile("StrifeMaulerTracerRetail", "StrifeMaulerTracerRetailCrisis", 32, 12, frandom(-11.25,11.25), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-7.0,7.0)); 
+							}
 						}
-					}
 					}
 				}
 			}

@@ -444,7 +444,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("PlagueShot", "PlagueShotCrisis", 16, 0, random(-6,6));
+				A_CrisisSpawnProjectile("PlagueShot", "PlagueShotCrisis", 16, 0, frandom(-6.0,6.0));
 			}
 			Goto See
 		Pain:
@@ -4080,7 +4080,7 @@ ACTOR IceLich : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("IceBreath", "IceBreathCrisis", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+				A_CrisisSpawnProjectile("IceBreath", "IceBreathCrisis", 20, 0, frandom(-10.0,10.0), CMF_CHECKTARGETDEAD);
 			}
 			ILCH B 0 
 			{
@@ -4842,7 +4842,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("FireBreath", "FireBreathCrisis", 20, 0, frandom(-3,3), CMF_CHECKTARGETDEAD);
+				A_CrisisSpawnProjectile("FireBreath", "FireBreathCrisis", 20, 0, frandom(-3.0,3.0), CMF_CHECKTARGETDEAD);
 			}
 			BLCH B 0 
 			{
@@ -6284,13 +6284,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 			}
 			HLGD F 4 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
+				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
 			}
 			HLGD E 4
 			{
@@ -6305,7 +6303,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
 				{
 					A_MonsterCrisisCheck;
-					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
+					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
 				}
 				else 
 				{
@@ -6324,7 +6322,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
+				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
 			}
 			HLGD E 4
 			{
@@ -6339,7 +6337,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
 				{
 					A_MonsterCrisisCheck;
-					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
+					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
 				}
 				else 
 				{
@@ -6358,7 +6356,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (random(-4,4)*2), 33, random(-3,3));
+				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
 			}
 			Goto See
 		Pain:

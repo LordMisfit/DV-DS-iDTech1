@@ -128,7 +128,7 @@ conversation
 		name = "MACIL";
 		panel = "M_LEDR0";
 		voice = "MAE03";
-		dialog = "You have made the right decision. Its clear that the ORACLE is controlled by whatever evil is driving The ORDER. Return to it and claim the third piece of the SIGIL.";
+		dialog = "You have made the right decision. Its clear that the ORACLE is controlled by whatever evil is driving The ORDER. Return to it and claim the third piece of the SIGIL. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 0;
 		link = 9;
 		ifitem

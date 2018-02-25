@@ -217,7 +217,7 @@ conversation
 		name = "DERWIN";
 		panel = "M_DERWIN";
 		voice = "DER03";
-		dialog = "BUSINESS MY ASS. HELP, GUARDS, I'VE GOT A LIVE ONE.";
+		dialog = "BUSINESS MY ASS. HELP, GUARDS, I'VE GOT A LIVE ONE. \n\n(BLACKBIRD IS LISTENING...)";
 		drop = 175;
 		link = 0;
 	}

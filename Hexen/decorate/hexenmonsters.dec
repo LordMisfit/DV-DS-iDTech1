@@ -3214,21 +3214,21 @@ actor FireDemonQueenClone : FireDemonQueen
 			Goto Chase
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
-			FDNQ K 3 Bright 
+			FDNQ K 4 Bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				A_FaceTarget;
 			}
-			FDNQ KKK 4 Bright 
+			FDNQ KKK 5 Bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				A_PlaySound("FireDemonAttack");
 
 				A_MonsterCrisisCheck;
-				A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
+				A_CrisisSpawnProjectile("FireDemonQueenCloneMissile","FireDemonQueenCloneMissileCrisis",32);
 			}
 			Goto Chase
 		Crash:
@@ -3275,8 +3275,73 @@ Actor FireDemonQueenMissile : FireDemonMissile
 			Stop
 	}
 }
+Actor FireDemonQueenCloneMissile : FireDemonQueenMissile
+{
+	Damage (((random(2,3) * random(1,6)) + random(1,4)) / 4)
+	Speed 15
+	FastSpeed 20
+	Scale 0.5
+	+NODAMAGETHRUST
+	+FLOORCLIP
+	+SEEKERMISSILE
+	DeathSound "FireDemonMissileHit"
+	States
+	{
+		Spawn:
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 0 Bright A_SeekerMissile(14,14,SMF_PRECISE)
+			Loop
+		Death:
+			FDQB BCDE 5 Bright
+			Stop
+	}
+}
 actor FireDemonQueenMissileCrisisParticle : BaseCrisisParticle
 {
+	States
+	{
+		Spawn:
+			FDQB A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 1 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor FireDemonQueenCloneMissileCrisisParticle : BaseCrisisParticle
+{
+	Scale 0.5
 	States
 	{
 		Spawn:
@@ -3301,6 +3366,55 @@ Actor FireDemonQueenMissileCrisis : FireDemonQueenMissile
 			FDQB A 1 Bright 
 			{
 				A_SpawnItemEx("FireDemonQueenMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 0 Bright A_SeekerMissile(14,14,SMF_PRECISE)
+			Loop
+		Death:
+			FDQB BCDE 5 Bright
+			Stop
+	}
+}
+Actor FireDemonQueenCloneMissileCrisis : FireDemonQueenMissileCrisis
+{
+	Damage ((((random(2,4) * random(1,8)) + random(2,6)) * CallACS("CrisisMultiplier")) / 4)
+	States
+	{
+		Spawn:
+			FDQB A 1 Bright 
+			{
+				A_SpawnItemEx("FireDemonQueenCloneMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_SpawnItemEx("FireDemonQueenCloneMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
+			}
+			FDQB A 1 Bright 
+			{
+				A_SpawnItemEx("FireDemonQueenMissileFakeCrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("FireDemonQueenTrail1",0,0,Random(-200,200),50,Random(-200,200));
+			}
+			FDQB A 1 Bright 
+			{
+				A_SpawnItemEx("FireDemonQueenMissileFakeCrisisParticle",0,0,0,0,0,1.28);
 				A_CustomMissile("FireDemonQueenTrail2",0,0,0,0);
 			}
 			FDQB A 1 Bright 
@@ -5410,6 +5524,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 	Speed 13
 	Radius 32
 	Height 64
+	ProjectilePassHeight 92
 	Mass 220
 	Monster
 	Species "ChaosSerpent"
@@ -5526,7 +5641,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEMN I 6 A_SpawnItemEx("Demon1Chunk5", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
-			Goto Death+4
+			Goto Death+3
 		Ice:
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
 			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
@@ -5679,7 +5794,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			DEM2 I 6 A_SpawnItemEx("Demon2Chunk5", 0, 0, 45, frandom[DemonChunks](1, 4.984375)*cos(angle-90),
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
-			Goto Death+4
+			Goto Death+3
 		Ice:
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
 			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
@@ -6134,8 +6249,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 
 		Death:
 			RDMN A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			RDMN H 6
-			RDMN I 6
+			RDMN HI 6
 			RDMN J 6 A_Scream
 			RDMN K 6 A_NoBlocking
 			RDMN L 6  A_QueueCorpse
@@ -6573,7 +6687,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			TNT1 A 0 A_SpawnItemEx("Demon4Chunk3", 0,0,45, 1+(random[DemonChunks](0,255)*0.015625), 1+(random[DemonChunks](0,255)*0.015625), ChunkFlags, 270)
 			TNT1 A 0 A_SpawnItemEx("Demon4Chunk4", 0,0,45, 1+(random[DemonChunks](0,255)*0.015625), 1+(random[DemonChunks](0,255)*0.015625), ChunkFlags, 270)
 			DEM4 I 6 A_SpawnItemEx("Demon4Chunk5", 0,0,45, 1+(random[DemonChunks](0,255)*0.015625), 1+(random[DemonChunks](0,255)*0.015625), ChunkFlags, 270)
-			Goto Death+4
+			Goto Death+3
 		Ice:
 			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
 			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)

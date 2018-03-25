@@ -422,7 +422,7 @@ class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 		{
 			if (random(1,512) <= evolveChance)
 			{
-				if (random(1,2048) <= evolveChance)
+				if (random(1,1024) <= evolveChance)
 					return "FireDemonQueen";
 				else
 					return "FireDemonCommander";

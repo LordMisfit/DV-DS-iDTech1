@@ -177,3 +177,18 @@ hellguard/idle hgidle
 hellguard/shot hgshot1
 hellguard/shothit hgshot2
 hellguard/pain hgpain
+
+shadowbeast/attack	BDMATK1
+shadowbeast/death	BDMDTH1
+shadowbeast/idle1	BDMIDL1
+shadowbeast/idle2	BDMIDL2
+$random shadowbeast/active { shadowbeast/idle2 shadowbeast/idle1 }
+shadowbeast/pain	BDMPAN1
+shadowbeast/sight	BDMSIT1
+shadowbeast/pr1death	BDPD1
+shadowbeast/pr1sight	BDPS1
+shadowbeast/pr2death	BDPD2
+shadowbeast/pr2sight	BDPS2
+shadowbeast/spread	BDPSPR
+shadowbeast/spiritsit	BDSPR2
+shadowbeast/spiritdth	BDSPR1

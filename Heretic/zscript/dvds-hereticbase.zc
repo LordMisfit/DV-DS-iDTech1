@@ -451,6 +451,31 @@ class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 	}
 }
 
+// Disciple Spawner
+class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
+{
+	Default
+	{
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Class<Actor> ChooseWhatToSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,768) <= evolveChance)
+		{
+			if (CanFitHere("ShadowBeast")) return "ShadowBeast";
+			else return "BeastNew";
+		}
+		else
+			return "BeastNew";
+	}
+}
+
 // Ophidian spawner
 class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
 {

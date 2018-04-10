@@ -1,5 +1,8 @@
+// Flora [extra Heretic specfic sounds]
 FloraGiggle1			NERAGIG1
+$pitchshift FloraGiggle1 0
 FloraGiggle2			NERAGIG2
+$pitchshift FloraGiggle2 0
 $random FloraLaugh		{ FloraGiggle1 FloraGiggle2 }
 $limit FloraLaugh 1
 

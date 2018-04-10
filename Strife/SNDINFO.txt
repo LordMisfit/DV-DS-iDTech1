@@ -1,5 +1,6 @@
-// Environmental Suit
+// Environmental Suit [Flora Breathing Sounds]
 misc/mask			dsmaskf
+$pitchshift misc/mask 0
 
 // Acolyte
 

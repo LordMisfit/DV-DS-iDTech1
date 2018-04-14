@@ -5427,6 +5427,8 @@ actor ClinkLungeAttackStatus : PowerProtection
 	Damagefactor "Kick", 1.5
 	Damagefactor "Gauntlets", 1.5
 	Damagefactor "Chainsaw", 1.5
+	DamageFactor "Stomp", 1.5
+	DamageFactor "Trample", 1.5
 	inventory.icon "" 
 }
 

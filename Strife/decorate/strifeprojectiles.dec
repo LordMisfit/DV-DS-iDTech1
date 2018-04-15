@@ -1,6 +1,6 @@
 // General Bullet Tracers
 
-ACTOR StrifeGenBulletTracer : FastProjectile
+ACTOR StrifeGenBulletTracer : AetheriusFastProjectileZSC
 {
 	Damage ((Random(1,5) * 3))
 	Damagetype "Bullet"
@@ -91,7 +91,7 @@ actor StrifeGenBulletTracerTrail
 
 // Reaver Tracer
 
-ACTOR StrifeReaverBulletTracer : FastProjectile
+ACTOR StrifeReaverBulletTracer : AetheriusFastProjectileZSC
 {
 	Damage ((Random(1,8) * 3))
 	Damagetype "Bullet"
@@ -182,7 +182,7 @@ actor StrifeReaverBulletTracerTrail
 
 // Mauler Tracers
 
-ACTOR StrifeMaulerTracer : FastProjectile
+ACTOR StrifeMaulerTracer : AetheriusFastProjectileZSC
 {
 	Damage ((Random(1,4) * 2))
 	Damagetype "Disintegrate"

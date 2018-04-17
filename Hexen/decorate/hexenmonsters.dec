@@ -480,8 +480,7 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 			PIGY L -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			PIGY M 5 A_FreezeDeath
 			PIGY M 1 A_FreezeDeathChunks
 			Wait
@@ -589,8 +588,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			ETTB L -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ETTN R 5 A_FreezeDeath
 			ETTN R 1 A_FreezeDeathChunks
 			Wait
@@ -620,8 +618,7 @@ ACTOR EttinGhostNew : EttinNew replaces EttinMash
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			TNT1 A 3 
 			Stop
 	}
@@ -739,8 +736,7 @@ Actor EttinCommander : EttinNew
 			ETTB L -1 //A_BossDeath
 			Stop
 		Ice:
-			"----" I 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			"----" I 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			"----" E 5 A_GenericFreezeDeath
 			"----" E 1 A_FreezeDeathChunks
 			Wait
@@ -1974,8 +1970,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			TNT1 A 0 
 			CTXD K -1
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			CENT U 5 A_FreezeDeath
 			CENT U 1 A_FreezeDeathChunks
 			Wait
@@ -2007,8 +2002,7 @@ ACTOR CentaurGhostNew : CentaurNew replaces CentaurMash
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			TNT1 A 3 
 			Stop
 	}
@@ -2449,8 +2443,7 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			FDMN L 200 Bright
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			FDMN R 5 A_FreezeDeath
 			FDMN R 1 A_FreezeDeathChunks
 			Wait
@@ -2592,8 +2585,7 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL L 200 Bright
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			FDNL R 5 A_FreezeDeath
 			FDNL R 1 A_FreezeDeathChunks
 			Wait
@@ -2873,8 +2865,7 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC L 200 Bright
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			FDNC R 5 A_FreezeDeath
 			FDNC R 1 A_FreezeDeathChunks
 			Wait
@@ -3181,8 +3172,7 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ L 200 Bright
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			FDNQ R 5 A_FreezeDeath
 			FDNQ R 1 A_FreezeDeathChunks
 			Wait
@@ -3653,8 +3643,7 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			BISH P -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			BISH X 5 A_FreezeDeath
 			BISH X 1 A_FreezeDeathChunks
 			Wait
@@ -3942,8 +3931,7 @@ Actor DarkDisciple : BishopNew
 			HDIS P -1 //A_BossDeath
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			HDIS C 5 A_GenericFreezeDeath
 			HDIS C 1 A_FreezeDeathChunks
 			Wait
@@ -4490,8 +4478,7 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 P -1 
 			Stop 
 		Ice:
-			VAM1 C 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			VAM1 C 5 A_GenericFreezeDeath
 			VAM1 C 1 A_FreezeDeathChunks
 			Wait
@@ -5139,8 +5126,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			TNT1 A 0 
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			SSPT [ 5 A_FreezeDeath
 			SSPT [ 1 A_FreezeDeathChunks
 			Wait
@@ -5340,7 +5326,7 @@ ACTOR IceStalker : StalkerNew
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ISPT [ 1
 			ISPT [ 1 A_IceGuyDie
 			Stop
@@ -5450,7 +5436,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ISPT [ 1
 			ISPT [ 1 A_IceGuyDie
 			Stop
@@ -5666,8 +5652,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			Goto Death+3
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			DEMN Q 5 A_FreezeDeath
 			DEMN Q 1 A_FreezeDeathChunks
 			Wait
@@ -5699,8 +5684,7 @@ ACTOR GreenChaosSerpentGhostNew : GreenChaosSerpentNew replaces Demon1Mash
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			TNT1 A 3 
 			Stop
 	}
@@ -5819,8 +5803,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 															frandom[DemonChunks](1, 4.984375)*sin(angle-90), 8, 270, ChunkFlags)
 			Goto Death+3
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			DEMN Q 5 A_FreezeDeath
 			DEMN Q 1 A_FreezeDeathChunks
 			Wait
@@ -5931,8 +5914,7 @@ ACTOR BrownChaosSerpentGhostNew : BrownChaosSerpentNew replaces Demon2Mash
 		Death:
 		XDeath:
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			TNT1 A 3 
 			Stop
 	}
@@ -6290,8 +6272,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 			RDMN I 6 A_SpawnItemEx("Demon3Chunk5", 0,0,45, 1+(random[DemonChunks](0,255)*0.015625),1+(random[DemonChunks](0,255)*0.015625), ChunkFlags, 270)
 			Goto Death+3
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			DEMN Q 5 A_FreezeDeath
 			DEMN Q 1 A_FreezeDeathChunks
 			Wait
@@ -6712,8 +6693,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			DEM4 I 6 A_SpawnItemEx("Demon4Chunk5", 0,0,45, 1+(random[DemonChunks](0,255)*0.015625), 1+(random[DemonChunks](0,255)*0.015625), ChunkFlags, 270)
 			Goto Death+3
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			DEMN Q 5 A_FreezeDeath
 			DEMN Q 1 A_FreezeDeathChunks
 			Wait
@@ -7217,8 +7197,7 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			WRT2 H -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			WRT2 I 5 A_FreezeDeath
 			WRT2 I 1 A_FreezeDeathChunks
 			Wait
@@ -8262,8 +8241,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			CLER "[" -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			CLER "\" 5 A_FreezeDeath
 			CLER "\" 1 A_FreezeDeathChunks
 			Wait
@@ -8534,8 +8512,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			PLAY W -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			PLAY X 5 A_FreezeDeath
 			PLAY X 1 A_FreezeDeathChunks
 			Wait
@@ -8731,8 +8708,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			MAGE X -1
 			Stop
 		Ice:
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			MAGE Y 5 A_FreezeDeath
 			MAGE Y 1 A_FreezeDeathChunks
 			Wait

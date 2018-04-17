@@ -1046,9 +1046,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			Stop
 		Ice:
 			TNT1 A 0 A_GiveGold(random(3,8))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			AGRD O 5 A_FreezeDeath
 			AGRD O 1 A_FreezeDeathChunks
 			Wait
@@ -1426,8 +1424,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 
 		Ice:
 			TNT1 A 0 A_GiveGold(random(6,12))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			PGRD A 5 A_FreezeDeath
 			PGRD A 1 A_FreezeDeathChunks
 			Wait
@@ -1588,8 +1585,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 
 		Ice:
 			TNT1 A 0 A_GiveGold(random(5,10))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ROB1 A 5 A_FreezeDeath
 			ROB1 A 1 A_FreezeDeathChunks
 			Wait
@@ -1721,8 +1717,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 
 		Ice:
 			TNT1 A 0 A_GiveGold(random(7,16))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ROB2 D 5 A_FreezeDeath
 			ROB2 D 1 A_FreezeDeathChunks
 			Wait
@@ -2051,8 +2046,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 
 		Ice:
 			TNT1 A 0 A_GiveGold(random(4,7))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			SEWR D 5 A_FreezeDeath
 			SEWR D 1 A_FreezeDeathChunks
 			Wait
@@ -2299,8 +2293,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 			Stop
 		Ice:
 			TNT1 A 0 A_GiveGold(random(3,6))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			STLK O 5 A_FreezeDeath
 			STLK O 1 A_FreezeDeathChunks
 			Wait
@@ -2615,8 +2608,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 
 		Ice:
 			TNT1 A 0 A_GiveGold(random(100,150))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ROB3 A 5 A_FreezeDeath
 			ROB3 A 1 A_FreezeDeathChunks
 			Wait
@@ -2968,8 +2960,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 			Stop
 		Ice:
 			TNT1 A 0 A_GiveGold(random(250,375))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
-			TNT1 A 0 A_ChangeFlag("CANTSEEK", TRUE)
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			ROB4 A 5 A_FreezeDeath
 			ROB4 A 1 A_FreezeDeathChunks
 			Wait

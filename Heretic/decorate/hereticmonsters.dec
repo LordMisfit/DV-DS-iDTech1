@@ -4359,8 +4359,8 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 			SRCR ABCD 5 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
-				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 				A_Sor1Chase;
 			}
 			Loop
@@ -4500,7 +4500,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			SOR2 MNOP 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_Sor2Chase;
 			}
 			Loop
 		Rise:
@@ -4513,16 +4513,16 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			Goto See
 		Pain:
 			SOR2 Q 3
-			SOR2 Q 6 A_Pain
+			SOR2 Q 6 A_Sor2Pain
 			Goto See
 		Pain.Fist:
 			SOR2 Q 3
-			SOR2 Q 6 A_Pain
+			SOR2 Q 6 A_Sor2Pain
 			SOR2 Q 3
 			Goto See
 		Pain.Kick:
 			SOR2 Q 3
-			SOR2 Q 6 A_Pain
+			SOR2 Q 6 A_Sor2Pain
 			SOR2 QQ 3
 			Goto See
 		Missile:

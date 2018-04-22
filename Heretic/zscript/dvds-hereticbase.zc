@@ -6,7 +6,9 @@ class DSparilBase : AetheriusBossZSC
 	// w/ Chaos Serpent
 	void A_Sor1Pain ()
 	{
-		special1 = 20; // Number of steps to walk fast
+		int extrasteps;
+		if (levelbehavior > 0) extrasteps = user_monsterlevel / 8;
+		special1 = random(18,22) + extrasteps; // Number of steps to walk fast
 		A_Pain();
 	}
 
@@ -16,6 +18,7 @@ class DSparilBase : AetheriusBossZSC
 		{
 			special1--;
 			tics -= 3;
+			if (tics < 1) tics = 1;
 		}
 		A_Chase();
 	}
@@ -92,6 +95,28 @@ class DSparilBase : AetheriusBossZSC
 			mo.SetStateLabel("Rise");
 			mo.angle = angle;
 			mo.CopyFriendliness (self, true);
+		}
+	}
+
+	void A_Sor2Chase ()
+	{
+		if (special2)
+		{
+			special2--;
+			tics -= 2;
+			if (tics < 1) tics = 1;
+		}
+		A_Chase();
+	}
+
+	void A_Sor2Pain ()
+	{
+		if (random[Sorc2Pain](1,4) <= 3)
+		{
+			int extrasteps;
+			if (levelbehavior > 0) extrasteps = user_monsterlevel / 6;
+			special2 = random(16,24) + extrasteps; // Number of steps to walk fast
+			A_Pain();
 		}
 	}
 

@@ -1,2 +1,3 @@
 #include "decorate/hexenmonsters.dec"
+#include "decorate/hexenprojectiles.dec"
 #include "decorate/hexenitems.dec"

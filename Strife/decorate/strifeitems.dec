@@ -11,15 +11,15 @@ ACTOR AmmoSatchelNew : CustomInventory replaces AmmoSatchel
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
 
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
-				if (Random(1,1000) <= 125) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
+				if (Random(1,8) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-5,5),random(-5,5),0); }
 			}
 		Idle:
 			BKPK A -1

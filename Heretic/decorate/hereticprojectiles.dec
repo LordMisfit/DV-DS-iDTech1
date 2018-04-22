@@ -1,0 +1,2858 @@
+// EggFX
+ACTOR EggFXNew : EggFX replaces EggFX
+{
+	Radius 8
+	Height 8
+	Speed 18
+	MorphProjectile.PlayerClass "ChickenPlayer"
+	MorphProjectile.MonsterClass "Chicken"
+	MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE
+	States
+	{
+		Spawn:
+			EGGM ABCDE 4
+			Loop
+		Death:
+			FX01 FFGH 3 Bright
+			Stop
+	}
+}
+
+// Gargoyles
+ACTOR HereticImpBallNew : AetheriusProjectileZSC replaces HereticImpBall 
+{ 
+	Radius 8
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage (1 * random(1,8))
+	DamageType "Fire" 
+	Projectile
+	SeeSound "himp/leaderattack"
+	+SPAWNSOUNDSOURCE
+	-ACTIVATEPCROSS
+	-ACTIVATEIMPACT
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			FX10 AAABBBCCC 2 Bright
+			Loop
+		Death:
+			FX10 DEFG 5 Bright
+			Stop
+	}
+}
+actor HereticImpBallCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX10 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR HereticImpBallCrisis : HereticImpBallNew
+{ 
+	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX10 AAABBBCCC 2 Bright
+			{
+				A_SpawnItemEx("HereticImpBallCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			FX10 DEFG 5 Bright
+			Stop
+	}
+}
+
+// WereDragons
+ACTOR BeastBallNew : AetheriusProjectileZSC replaces BeastBall 
+{ 
+	Damage (4 * random(1,8))
+	DamageType "Fire" 
+	Radius 9
+	Height 8
+	Speed 12
+	FastSpeed 20
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOBLOCKMAP
+	+WINDTHRUST
+	+SPAWNSOUNDSOURCE
+	RenderStyle Add
+	SeeSound "beast/attack"
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop
+		Death:
+			FRB1 DEFGH 4
+			Stop
+	}
+}
+actor BeastBallCrisisParticle : BaseCrisisParticle
+{
+	scale 0.667
+
+	States
+	{
+		Spawn:
+			FRB1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR BeastBallCrisis : BeastBallNew
+{ 
+	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("BeastBallCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop
+		Death:
+			FRB1 DEFGH 4
+			Stop
+	}
+}
+Actor Beastball2 : BeastBallNew
+{
+	Damage (4 * random(1,8))
+	DamageType "Fire" 
+
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,0,0,0,0,SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop
+		Death:
+			HIB2 DEFGH 4
+			Stop
+	}
+}
+actor Beastball2CrisisParticle : BaseCrisisParticle
+{
+	scale 0.667
+
+	States
+	{
+		Spawn:
+			FRB1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+Actor Beastball2Crisis : Beastball2
+{
+	Damage ((4 * random(1,8)) )
+
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("Beastball2CrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,0,0,0,0,SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop
+		Death:
+			HIB2 DEFGH 4
+			Stop
+	}
+}
+
+// Golems
+ACTOR MummyFX1New : AetheriusProjectileZSC replaces MummyFX1 
+{
+	Radius 8
+	Height 14
+	Speed 9
+	FastSpeed 18
+	Damage (4 * random(1,8))
+	DamageType "Fire" 
+	RenderStyle Add
+	Projectile
+	-ACTIVATEPCROSS
+	-ACTIVATEIMPACT
+	+SEEKERMISSILE
+	States
+	{
+		Spawn:
+			FX15 A 5 Bright A_PlaySound("mummy/head")
+			FX15 B 5 Bright A_SeekerMissile(10, 20)
+			FX15 C 5 Bright
+			FX15 B 5 Bright A_SeekerMissile(10, 20)
+			Loop
+		Death:
+			FX15 DEFG 5 Bright
+			Stop
+	}
+}
+actor MummyFX1CrisisParticle : BaseCrisisParticle
+{ 
+	States
+	{
+		Spawn:
+			FX15 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCCBB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR MummyFX1Crisis : MummyFX1New
+{
+	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX15 A 5 Bright 
+			{
+				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_PlaySound("mummy/head");
+			}
+			FX15 B 5 Bright 
+			{
+				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(10, 20);
+			}
+			FX15 C 5 Bright
+			{
+				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX15 B 5 Bright 
+			{
+				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(10, 20);
+			}
+			Loop
+		Death:
+			FX15 DEFG 5 Bright
+			Stop
+	}
+}
+
+// Undead Knights
+ACTOR KnightAxeNew : AetheriusEffectProjectile replaces KnightAxe 
+{
+	Damage (2 * random(1,8))
+	DamageType "Magic" 
+	Radius 10
+	Height 8
+	Speed 9
+	FastSpeed 18
+	Projectile
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+WINDTHRUST
+	+THRUGHOST
+	DeathSound "hknight/hit"
+	States
+	{
+		Spawn:
+			SPAX A 3 Bright
+			{
+				A_PlaySound("hknight/axewhoosh");
+			}
+			SPAX BC 3 Bright
+			Loop
+		Death:
+			SPAX DDEEFF 3 Bright
+			Stop
+	}
+}
+actor KnightAxeCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			SPAX A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABC 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR KnightAxeCrisis : KnightAxeNew 
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			SPAX A 3 Bright
+			{
+				A_SpawnItemEx("KnightAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_PlaySound("hknight/axewhoosh");
+			}
+			SPAX BC 3 Bright
+			{
+				A_SpawnItemEx("KnightAxeCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			SPAX DDEEFF 3 Bright
+			Stop
+	}
+}
+
+ACTOR RedAxeNew : KnightAxeNew replaces RedAxe 
+{
+	Damage (7 * random(1,8))
+	+NOBLOCKMAP
+	-WINDTHRUST
+
+	States
+	{
+		Spawn:
+			RAXE AA 2 Bright 
+			RAXE A 1 Bright 
+			{
+				A_DripBlood;
+			}
+			RAXE BB 2 Bright 
+			RAXE B 1 Bright 
+			{
+				A_DripBlood;
+			}
+			Loop
+		Death:
+			RAXE CDE 6 Bright
+			Stop
+	}
+}
+actor RedAxeCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			RAXE A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR RedAxeCrisis : RedAxeNew 
+{
+	Damage ((7 * random(1,8)) * CallACS("CrisisMultiplier"))
+	+NOBLOCKMAP
+	-WINDTHRUST
+
+	States
+	{
+		Spawn:
+			RAXE AA 2 Bright 
+			{
+				A_SpawnItemEx("RedAxeCrisisParticle",0,0,0,0,0,1.28);
+			}
+			RAXE A 1 Bright 
+			{
+				A_DripBlood;
+				A_DripBlood;
+				A_DripBlood;
+				A_DripBlood;
+			}
+			RAXE BB 2 Bright 
+			{
+				A_SpawnItemEx("RedAxeCrisisParticle",0,0,0,0,0,1.28);
+			}
+			RAXE B 1 Bright 
+			{
+				A_DripBlood;
+				A_DripBlood;
+				A_DripBlood;
+				A_DripBlood;
+			}
+			Loop
+		Death:
+			RAXE CDE 6 Bright
+			Stop
+	}
+}
+
+// Death Knight Attacks
+ACTOR DKDart : AetheriusProjectileZSC
+{
+	Damage (5 * random(1,8))
+	Radius 3
+	Height 12
+	Speed 25
+	ExplosionDamage 64
+	ExplosionRadius 64
+	RENDERSTYLE ADD
+	ALPHA 1.00
+	PROJECTILE
+	+THRUGHOST
+	Seesound "monster/dkndrt"
+	DeathSound "weapons/firex2"
+	States
+	{
+		Spawn:
+			DKAT ABC 3 Bright
+			loop
+		Death:
+			DKAT D 0 Bright A_SetTranslucent (0.85,1)
+			DKAT D 3 Bright
+			DKAT E 3 Bright A_Explode(64,64)
+			DKAT FG 3 Bright
+			DKAT H 3 Bright 
+			{
+				A_CustomMissile("DKFire",0,0,0,2);
+				A_CustomMissile("DKFire",0,0,45,2);
+				A_CustomMissile("DKFire",0,0,90,2);
+				A_CustomMissile("DKFire",0,0,135,2);
+				A_CustomMissile("DKFire",0,0,180,2);
+				A_CustomMissile("DKFire",0,0,225,2);
+				A_CustomMissile("DKFire",0,0,270,2);
+				A_CustomMissile("DKFire",0,0,315,2);
+			}
+			DKAT IJKLM 3 Bright
+			stop
+	}
+}
+actor DKDartCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			DKAT A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABC 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR DKDartCrisis : DKDart
+{
+	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			DKAT ABC 3 Bright
+			{
+				A_SpawnItemEx("DKDartCrisisParticle",0,0,0,0,0,1.28);
+			}
+			loop
+		Death:
+			DKAT D 0 Bright A_SetTranslucent (0.85,1)
+			DKAT D 3 Bright
+			DKAT E 3 Bright A_Explode(64*CallACS("CrisisMultiplier"),64)
+			DKAT FG 3 Bright
+			DKAT H 3 Bright 
+			{
+				A_CustomMissile("DKFireCrisis",0,0,0,2);
+				A_CustomMissile("DKFireCrisis",0,0,45,2);
+				A_CustomMissile("DKFireCrisis",0,0,90,2);
+				A_CustomMissile("DKFireCrisis",0,0,135,2);
+				A_CustomMissile("DKFireCrisis",0,0,180,2);
+				A_CustomMissile("DKFireCrisis",0,0,225,2);
+				A_CustomMissile("DKFireCrisis",0,0,270,2);
+				A_CustomMissile("DKFireCrisis",0,0,315,2);
+			}
+			DKAT IJKLM 3 Bright
+			stop
+	}
+}
+
+ACTOR FHeadShot : AetheriusProjectileZSC
+{
+	Damage (10 * random(1,8))
+	Radius 12
+	Height 12
+	Speed 15
+	RENDERSTYLE ADD
+	ALPHA 1.00
+	PROJECTILE
+	DamageType Fire
+	+SEEKERMISSILE
+	+THRUGHOST
+	Seesound "monster/dknmsl"
+	DeathSound "weapons/boom1"
+	States
+	{
+		Spawn:
+			FHED ABCD 3 Bright 
+			{
+				A_SeekerMissile(5,15);
+			}
+			loop
+		Death:
+			RIP1 DEFGH 5 Bright
+			stop
+	}
+}
+actor FHeadShotCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FHED A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCD 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR FHeadShotCrisis : FHeadShot
+{
+	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FHED ABCD 3 Bright 
+			{
+				A_SpawnItemEx("FHeadShotCrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(5,15);
+			}
+			loop
+		Death:
+			RIP1 DEFGH 5 Bright
+			stop
+	}
+}
+
+ACTOR DKbolt : AetheriusProjectileZSC
+{
+	Damage (8 * random(1,8))
+	Radius 8
+	Height 8
+	Speed 15
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.80
+	DamageType Fire
+	+THRUGHOST
+	SeeSound "Weapons/boltfi"
+	DeathSound "weapons/firex4"
+	States
+	{
+		Spawn:
+			BOLT A 1 Bright 
+			{
+				A_BishopMissileWeave;
+				A_SpawnItem("RedPuff",0,0);
+			}
+			loop
+		Death:
+			HBAL EFHI 2 Bright
+			stop
+	}
+}
+actor DKboltCrisisParticle : BaseCrisisParticle
+{
+	ALPHA 0.536
+
+	States
+	{
+		Spawn:
+			BOLT A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 1 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR DKboltCrisis : DKbolt
+{
+	Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BOLT A 1 Bright 
+			{
+				A_SpawnItemEx("DKboltCrisisParticle",0,0,0,0,0,1.28);
+				A_BishopMissileWeave;
+				A_SpawnItem("RedPuff",0,0);
+			}
+			loop
+		Death:
+			HBAL EFHI 2 Bright
+			stop
+	}
+}
+
+ACTOR DKSword : AetheriusProjectileZSC // Death piece
+{   
+	Radius 8
+	Height 8
+	Speed 1
+	PROJECTILE
+	RENDERSTYLE Normal
+	-NOGRAVITY
+	+LOWGRAVITY
+	States
+	{
+		Spawn:
+			SWRD KLMNOPQ 3 BRIGHT
+			goto Death 
+		Death:
+			SWRD RS 4 BRIGHT
+			SWRD T 4 BRIGHT
+			SWRD U 4
+			SWRD T 4 BRIGHT
+			SWRD U 8
+			SWRD T 4 BRIGHT
+			SWRD U 16
+			SWRD T 4 BRIGHT
+			SWRD U -1
+	}
+}
+
+ACTOR DKShield : AetheriusProjectileZSC // Death piece
+{   
+	Radius 8
+	Height 8
+	Speed 1
+	PROJECTILE
+	RENDERSTYLE Normal
+	-NOGRAVITY
+	+LOWGRAVITY
+	States
+	{
+		Spawn:
+			SHLD ABCDEFGHI 3
+			goto death 
+		Death:
+			SHLD H -1
+	}
+}
+
+ACTOR DKFire : AetheriusProjectileZSC
+{
+	Damage 0
+	ExplosionDamage 4
+	ExplosionRadius 8
+	Radius 2
+	Height 6
+	Speed 4
+	RENDERSTYLE ADD
+	ALPHA 0.95
+	PROJECTILE
+	+THRUGHOST
+	DeathSound "weapons/scorch"
+	States
+	{
+		Spawn:
+			DKAT NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright 
+			{
+				A_Explode(4,8);
+			}
+			stop
+	}
+}
+actor DKFireCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			DKAT A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR DKFireCrisis : DKFire
+{
+	Damage 0
+	ExplosionDamage 4
+	ExplosionRadius 8
+	Radius 2
+	Height 6
+	Speed 4
+	RENDERSTYLE ADD
+	ALPHA 0.95
+	PROJECTILE
+	+THRUGHOST
+	DeathSound "weapons/scorch"
+	States
+	{
+		Spawn:
+			DKAT NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright 
+			{
+				A_SpawnItemEx("DKFireCrisisParticle",0,0,0,0,0,1.28);
+				A_Explode(4*CallACS("CrisisMultiplier"),8);
+			}
+			stop
+	}
+}
+
+ACTOR RedPuff : AetheriusProjectileZSC
+{   
+	Radius 0
+	Height 1
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.85
+	States
+	{
+		Spawn:
+			NULL A 3 Bright
+			RPUF ABCDE 3 Bright
+			Stop 
+	}
+}
+
+// Disciple
+ACTOR WizardFX1New : AetheriusProjectileZSC replaces WizardFX1 
+{
+	DamageType "Magic" 
+	Radius 10
+	Height 6
+	Speed 18
+	FastSpeed 24
+	Damage (3 * random(1,8))
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			FX11 AAABBB 2 Bright
+			Loop
+		Death:
+			FX11 CDEFG 5 Bright
+			Stop
+	}
+}
+actor WizardFX1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX11 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR WizardFX1Crisis : WizardFX1New 
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX11 AAABBB 2 Bright
+			{
+				A_SpawnItemEx("WizardFX1CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			FX11 CDEFG 5 Bright
+			Stop
+	}
+}
+
+// Banshee
+actor BansheeFire : AetheriusEffectProjectile
+{
+	Damage (2 * random(1,8))
+	Game Doom
+	SpawnID 51
+	Radius 13
+	Height 8
+	Speed 15
+	Projectile
+	+RANDOMIZE
+	+RIPPER
+	+DEHEXPLOSION
+	+ROCKETTRAIL
+	SeeSound "Banshee/ASpawn"
+	DeathSound "Banshee/ADeath"
+	Obituary "%o Heard The Banshee's Wail."
+	Decal "DoomImpScorch"
+	DamageType Fire
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2
+			loop
+		Death:
+			BAL1 CDE 3 bright
+			stop
+	}
+}
+actor BansheeFireCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BANB A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor BansheeFireCrisis : BansheeFire
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItemEx("BansheeFireCrisisParticle",0,0,0,0,0,1.28);
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2
+			loop
+		Death:
+			BAL1 CDE 3 bright
+			stop
+	}
+}
+
+actor BansheeFire2 : BansheeFire
+{
+	Damage (2 * random(1,8))
+	-RIPPER
+	States
+	{
+	Spawn:
+		BANB A 1 BRIGHT 
+		{
+			A_SpawnItem("BansheeFireTrail",0,0);
+		}
+		BANB AA 2
+		loop
+	}
+}
+actor BansheeFire2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BANB A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor BansheeFire2Crisis : BansheeFire2
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2
+			{
+				A_SpawnItemEx("BansheeFire2CrisisParticle",0,0,0,0,0,1.28);
+			}
+			loop
+	}
+}
+
+actor BansheeFire3 : BansheeFire
+{
+	Damage (100 * random(1,8))
+	Radius 24
+	Height 24
+	-RIPPER
+	+NOGRAVITY
+	+SPAWNCEILING
+	+SEEKERMISSILE
+	Scale 3.0
+	Decal "Scorch"
+	States
+	{
+		Spawn:
+			BANB A 1 NoDelay BRIGHT A_SeekerMissile (50,50)
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) { return state("Death"); }
+				return state("");
+			}
+			loop
+		Death:
+			BAL1 CDE 3 bright
+			stop
+	}
+}
+actor BansheeFire3CrisisParticle : BaseCrisisParticle
+{
+	Scale 2.0
+
+	States
+	{
+		Spawn:
+			BANB A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor BansheeFire3Crisis : BansheeFire3
+{
+	Damage ((100 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BANB A 1 NoDelay BRIGHT 
+			{
+				A_SpawnItemEx("BansheeFire3CrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(50,50);
+			}
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) { return state("Death"); }
+				return state("");
+			}
+			loop
+		Death:
+			BAL1 CDE 3 bright
+			stop
+	}
+}
+
+actor BansheeFire4 : BansheeFire
+{
+	Damage (2 * random(1,8))
+	Speed 25
+	-RIPPER
+	States
+	{
+		Spawn:
+			BANF ABCDEFGH 3 bright
+			Stop
+		Death:
+			BANF H 3 bright
+			stop
+	}
+}
+actor BansheeFire4CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BANF A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCDEFGH 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor BansheeFire4Crisis : BansheeFire4
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BANF ABCDEFGH 3 bright
+			{
+				A_SpawnItemEx("BansheeFire4CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Stop
+		Death:
+			BANF H 3 bright
+			stop
+	}
+}
+
+actor BansheeFire5 : BansheeFire
+{
+	Damage (2 * random(1,8))
+	Speed 20 
+	+SEEKERMISSILE
+	+FLOORHUGGER
+	States
+	{
+		Spawn:
+			BAFT A 1 BRIGHT 
+			{
+				A_SeekerMissile(50,50);
+			}
+			BAFT A 2 
+			{
+				A_SpawnItem("BansheeFireTrail2",0,0);
+			}
+			BAFT A 1 BRIGHT
+			{
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) { return state("Death"); }
+				return state("");
+			}
+			Goto Spawn
+		Death:
+			BAFT BCDEFGH 3 bright
+			stop
+	}
+}
+actor BansheeFire5CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BAFT A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor BansheeFire5Crisis : BansheeFire5
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BAFT A 2 BRIGHT 
+			{
+				A_SpawnItemEx("BansheeFire5CrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(50,50);
+				A_SpawnItem("BansheeFireTrail2",0,0);
+			}
+			BAFT A 2 BRIGHT
+			{
+				A_SpawnItemEx("BansheeFire5CrisisParticle",0,0,0,0,0,1.28);
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) { return state("Death"); }
+				return state("");
+			}
+			Goto Spawn
+		Death:
+			BAFT BCDEFGH 3 bright
+			stop
+	}
+}
+
+ACTOR BansheeTrail : AetheriusProjectileZSC
+{   
+	Radius 20
+	Height 56
+	VSpeed 1
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE Translucent
+	ALPHA 0.90
+	scale 0.80
+	States
+	{
+		Spawn:
+			TNT1 A 3
+		Idle:
+			BANS A 3 
+			{
+				A_SetScale(scalex-0.06,scaley-0.06);
+				A_FadeOut(0.09);
+			}
+			loop
+	}
+}
+
+ACTOR BansheeFireTrail : AetheriusProjectileZSC
+{   
+	Radius 20
+	Height 56
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE Translucent
+	Scale 0.50
+	ALPHA 0.90
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			BANF ABCDEFGH 3 Bright A_FadeOut(0.10)
+			Stop
+	}
+}
+
+ACTOR BansheeFireTrail2 : AetheriusProjectileZSC
+{   
+	Radius 20
+	Height 56
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE Translucent
+	Scale 0.50
+	ALPHA 0.90
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			BAFT ABCDEFG 3 Bright A_FadeOut(0.10)
+			Stop
+	}
+}
+
+// Lich Iceball
+ACTOR HeadFX1New : AetheriusEffectProjectile replaces HeadFX1 
+{
+	Damage (1 * random(1,8))
+	Radius 12
+	Height 6
+	Speed 13
+	FastSpeed 20
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+THRUGHOST
+	DamageType "Ice" 
+	RenderStyle Add
+
+	States
+	{
+		Spawn:
+			FX05 AAABBBCCC 2 Bright
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(12);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(105,175)); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			FX05 D 5 Bright A_LichIceImpact("HeadFX2New")
+			FX05 EFG 5 Bright
+			Stop
+	}
+}
+actor HeadFX1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX05 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBBCCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR HeadFX1Crisis : HeadFX1New 
+{
+	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX05 AAABBBCCC 2 Bright
+			{
+				A_SpawnItemEx("HeadFX1CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(12);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(105,175)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			FX05 D 5 Bright A_LichIceImpact("HeadFX2Crisis")
+			FX05 EFG 5 Bright
+			Stop
+	}
+}
+// Ice Shard
+ACTOR HeadFX2New : AetheriusEffectProjectile replaces HeadFX2 
+{
+	Damage (3 * random(1,8))
+	DamageType "Ice" 
+	Radius 12
+	Height 6
+	Speed 8
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+
+	States
+	{
+		Spawn:
+			FX05 HHHIIIJJJ 2 Bright
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(24);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			FX05 DEFG 5 Bright
+			Stop
+	}
+}
+actor HeadFX2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX05 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" HHHIIIJJJ 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR HeadFX2Crisis : HeadFX2New 
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	DamageType "Ice" 
+	Radius 12
+	Height 6
+	Speed 8
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+
+	States
+	{
+		Spawn:
+			FX05 HHHIIIJJJ 2 Bright
+			{
+				A_SpawnItemEx("HeadFX2CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(24);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(35,52)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			FX05 DEFG 5 Bright
+			Stop
+	}
+}
+
+// Lich Fire Pillar
+ACTOR HeadFX3New : AetheriusEffectProjectile replaces HeadFX3 
+{ 
+	Damage (5 * random(1,8))
+	DamageType "Fire" 
+	Radius 14
+	Height 12
+	Speed 10
+	FastSpeed 18
+	Projectile
+	+WINDTHRUST
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOBLOCKMAP
+	RenderStyle Add
+
+	States
+	{
+		Spawn:
+			FX06 A 2 Bright 
+			FX06 A 2 Bright 
+			{
+				A_LichFireGrow;
+			}
+			FX06 B 2 Bright 
+			FX06 B 2 Bright 
+			{
+				A_LichFireGrow;
+			}
+			FX06 C 2 Bright 
+			FX06 C 2 Bright 
+			{
+				A_LichFireGrow;
+			}
+			Loop
+		NoGrow:
+			FX06 AA 2 Bright
+			FX06 A 1 Bright
+			FX06 BB 2 Bright
+			FX06 B 1 Bright
+			FX06 CC 2 Bright
+			FX06 C 1 Bright
+			Loop
+		Death:
+			FX06 DEFG 5 Bright
+			Stop
+	}
+}
+actor HeadFX3CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX06 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR HeadFX3Crisis : HeadFX3New 
+{ 
+	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX06 A 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 A 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_LichFireGrow;
+			}
+			FX06 B 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 B 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_LichFireGrow;
+			}
+			FX06 C 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 C 2 Bright 
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_LichFireGrow;
+			}
+			Loop
+		NoGrow:
+			FX06 AA 2 Bright
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 A 1 Bright
+			FX06 BB 2 Bright
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 B 1 Bright
+			FX06 CC 2 Bright
+			{
+				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX06 C 1 Bright
+			Loop
+		Death:
+			FX06 DEFG 5 Bright
+			Stop
+	}
+}
+
+// Lich Whirlwind
+ACTOR WhirlwindNew : AetheriusWhirlwind replaces Whirlwind 
+{
+	Damage (1 * random(1,8))
+	DamageType "Wind" 
+	Radius 16
+	Height 74
+	Speed 10
+	Accuracy 8 // Sets how long [tics] to wait between hits when the tornado is touching a target
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEMCROSS
+	+SEEKERMISSILE
+	+EXPLOCOUNT
+	+STEPMISSILE
+	RenderStyle Translucent
+	DefThreshold 60
+	Threshold 50
+	Alpha 0.4
+
+	States
+	{
+		Spawn:
+			FX07 DEFG 3
+		Idle:
+			FX07 ABC 3 
+			{
+				A_WhirlwindSeek;
+			}
+			loop
+		Death:
+			FX07 GFED 4
+			Stop
+	}
+}
+actor WhirlwindCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX07 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR WhirlwindCrisis : WhirlwindNew 
+{
+	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Stamina 30 // Set this to 30 to allow Crisis Checking
+	Accuracy 8 // Sets how long [tics] to wait between hits when the tornado is touching a target
+	States
+	{
+		Spawn:
+			FX07 D 0 
+			FX07 DEFG 3
+		Idle:
+			FX07 ABC 3 
+			{
+				A_SpawnItemEx("WhirlwindCrisisParticle",0,0,0,0,0,1.28);
+				A_WhirlwindSeek;
+			}
+			loop
+		Death:
+			FX07 GFED 4
+			Stop
+	}
+}
+
+// Ice Lich
+ACTOR IceBreath : AetheriusEffectProjectile
+{
+	damage (5 * random(1,8))
+	radius 12
+	height 8
+	speed 8
+	alpha 0.2
+	projectile
+	ProjectileKickBack 0
+	+NODAMAGETHRUST
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+WINDTHRUST
+	+SPAWNSOUNDSOURCE
+	+BLOODLESSIMPACT
+	+ICEDAMAGE
+	RenderStyle Add
+	states
+	{
+		Spawn:
+			IBRT ABABABABABABABABABAB 2 bright
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(16);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(35,52)); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			IBRT AB 2 bright
+			stop
+	}
+}
+actor IceBreathCrisisParticle : BaseCrisisParticle
+{
+	Alpha 0.1334
+	States
+	{
+		Spawn:
+			IBRT A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AB 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR IceBreathCrisis : IceBreath
+{
+	damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+	states
+	{
+		Spawn:
+			IBRT ABABABABABABABABABAB 2 bright
+			{
+				A_SpawnItemEx("IceBreathCrisisParticle",0,0,0,0,0,1.28);
+			}
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(16);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(35,52)*CallACS("CrisisMultiplier",5)) ); // Deceleratle for 1-1.5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			IBRT AB 2 bright
+			stop
+	}
+}
+
+// Gold Lich
+ACTOR GoldLichBounce : AetheriusProjectileZSC
+{
+	Damage (1 * random(1,8))
+	Radius 14
+	Height 12
+	Speed 15
+	FastSpeed 24
+	Projectile
+	+NOGRAVITY
+	+WINDTHRUST  
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOBLOCKMAP
+	+SEEKERMISSILE
+
+	BounceType "Doom"
+	BounceCount 2
+
+	+BOUNCEONWALLS
+	+BOUNCEONFLOORS
+	+BOUNCEONCEILINGS
+	+BOUNCEONACTORS
+	+CANBOUNCEWATER
+
+	States
+	{
+		Spawn:
+			FXA1 AABBCC 2 BRIGHT
+			Loop
+		Death:
+			FXA1 A 0 A_PlaySound("goldlich/attack2Blast")
+			FXA1 A 0 BRIGHT A_Stop
+			FXA1 A 0 BRIGHT A_Explode(64,160,0)
+			FXA1 GGGGGHHHHHIIIII 1 BRIGHT A_SpawnItemEx("GoldLichMiniExplodes", random(-32,32), random(-32,32), random(-32,32),0,0,0, 0,0, 0)
+			Stop
+	}
+}
+actor GoldLichBounceCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FXA1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR GoldLichBounceCrisis : GoldLichBounce
+{
+	Damage (1 * random(1,8) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FXA1 AABBCC 2 BRIGHT
+			{
+				A_SpawnItemEx("GoldLichBounceCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			FXA1 A 0 A_PlaySound("goldlich/attack2Blast")
+			FXA1 A 0 BRIGHT A_Stop
+			FXA1 A 0 BRIGHT A_Explode(64*CallACS("CrisisMultiplier"),160,0)
+			FXA1 GGGGGHHHHHIIIII 1 BRIGHT A_SpawnItemEx("GoldLichMiniExplodes", random(-32,32), random(-32,32), random(-32,32),0,0,0, 0,0, 0)
+			Stop
+	}
+}
+
+ACTOR GoldLichFire : AetheriusProjectileZSC
+{
+	Damage (5 * random(1,8))
+	Radius 14
+	Height 12
+	Speed 15
+	FastSpeed 24
+	Projectile
+	+NOGRAVITY
+	+WINDTHRUST  
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOBLOCKMAP
+	+SEEKERMISSILE
+	RenderStyle Add
+	var int user_tracks;
+
+	States
+	{
+		Spawn:
+			FX06 A 0 { user_tracks = 5; }
+		Weave:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+				A_Weave(3, 0, 4.0, 0.0);
+			}
+			TNT1 A 0 A_Jump(128, "Track")
+			Loop
+		Track:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
+			TNT1 A 0 { user_tracks - 1; }
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+				A_SeekerMissile(360, 1);
+			}
+			TNT1 A 0 A_Jump(128, "Weave")
+			Loop
+		Death:
+			FX06 DEFG 5 BRIGHT
+			Stop
+	}
+}
+actor GoldLichFireCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX06 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAAABBBBCCCC 1 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR GoldLichFireCrisis : GoldLichFire
+{
+	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+
+	States
+	{
+		Spawn:
+			FX06 A 0 { user_tracks = 5; }
+		Weave:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+				A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+				A_Weave(3, 0, 4.0, 0.0);
+			}
+			TNT1 A 0 A_Jump(128, "Track")
+			Loop
+		Track:
+			TNT1 A 0 A_PlaySound("goldlich/attack1")
+			TNT1 A 0 A_Jump(user_tracks <= 0, "Track")
+			TNT1 A 0 { user_tracks - 1; }
+			FX06 AAAABBBBCCCC 1 BRIGHT
+			{
+				A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(360, 1);
+			}
+			TNT1 A 0 A_Jump(128, "Weave")
+			Loop
+		Death:
+			FX06 DEFG 5 BRIGHT
+			Stop
+	}
+}
+
+// Blood Lich
+ACTOR FireBreath : AetheriusProjectileZSC
+{
+	Damage (3 * random(1,8))
+	Radius 12
+	Height 8
+	Speed 12
+	Alpha 0.2
+	PROJECTILE
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+SPAWNSOUNDSOURCE
+	+RIPPER
+	+BLOODLESSIMPACT
+	DamageType "Fire"
+	RenderStyle Add
+	States
+	{
+    Spawn:
+			FRBS EFGEFGEFGEFGEFGEFG 3
+		Death:
+			TNT1 A 0
+			Stop
+	}
+}
+actor FireBreathCrisisParticle : BaseCrisisParticle
+{
+	Alpha 0.133
+
+	States
+	{
+		Spawn:
+			FRBS A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" EFG 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR FireBreathCrisis : FireBreath
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+		FRBS EFGEFGEFGEFGEFGEFG 3
+		{
+			A_SpawnItemEx("FireBreathCrisisParticle",0,0,0,0,0,1.28);
+		}
+		Death:
+			TNT1 A 0
+			Stop
+	}
+}
+
+ACTOR BloodLichFireball : AetheriusProjectileZSC
+{
+	Damage (4 * random(1,8))
+	Speed 17
+	Height 8
+	PROJECTILE
+	+EXTREMEDEATH
+	DamageType "Fire"
+	DeathSound "MageStaffExplode"
+	States
+	{
+		Spawn:
+			MSP4 ABCD 2 Bright
+			{
+			}
+			Loop
+		Death:
+			MSP4 E 4 Bright A_SetTranslucent(1,1)
+			MSP4 F 5 Bright A_Explode(80,192,0)
+			MSP4 GH 5 Bright
+			MSP4 I 4 Bright
+			Stop
+	}
+}
+actor BloodLichFireballCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			MSP4 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCD 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR BloodLichFireballCrisis : BloodLichFireball
+{
+	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			MSP4 ABCD 2 Bright
+			{
+				A_SpawnItemEx("BloodLichFireballCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			MSP4 E 4 Bright A_SetTranslucent(1,1)
+			MSP4 F 5 Bright A_Explode(80*CallACS("CrisisMultiplier"),192,0)
+			MSP4 GH 5 Bright
+			MSP4 I 4 Bright
+			Stop
+	}
+}
+
+ACTOR CurseSpell : AetheriusEffectProjectile
+{
+	PROJECTILE
+	+SEEKERMISSILE
+	+BLOODLESSIMPACT
+	RenderStyle Add
+	Damage 0
+	DamageType "Dark"
+	Speed 15
+	Radius 10
+	Height 6
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			CURS A 0 A_PlaySound("CurseActive", CHAN_AUTO, 1.0, 1)
+			CURS ABCDEF 3 Bright A_SeekerMissile(50,50,2)
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
+					{
+						user_random = random(1,13);
+						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21,random(315,525)); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,19,random(315,525)); } // Blind for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,20,random(315,525)); } // Sleep for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,18,random(315,525)); } // Fatigue for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 6) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 7) { ACS_NamedExecuteAlways("BuffTimer",0,8,14,random(630,1050)); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 8) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 9) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 10) { ACS_NamedExecuteAlways("BuffTimer",0,8,13,random(630,1050)); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 12) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 13) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(630,1050)); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			TNT1 A 0 A_StopSound(CHAN_AUTO)
+			CURS GHIJKL 3 Bright
+			Stop
+	}
+}
+actor CurseSpellCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			CURS A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCDEF 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR CurseSpellCrisis : CurseSpell
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			CURS A 0 A_PlaySound("CurseActive", CHAN_AUTO, 1.0, 1)
+			CURS ABCDEF 3 Bright 
+			{
+				A_SpawnItemEx("CurseSpellCrisisParticle",0,0,0,0,0,1.28);
+				A_SeekerMissile(50,50,2);
+			}
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict > 0)
+					{
+						user_random = random(1,13);
+						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,21, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Silence for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,19, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Blind for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,20, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Sleep for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,18, (random(315,525)*CallACS("CrisisMultiplier",5)) ); } // Fatigue for 9-15 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,14, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 6) { ACS_NamedExecuteAlways("BuffTimer",0,8,14, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 7) { ACS_NamedExecuteAlways("BuffTimer",0,8,14, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Sap for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 8) { ACS_NamedExecuteAlways("BuffTimer",0,8,13, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 9) { ACS_NamedExecuteAlways("BuffTimer",0,8,13, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 10) { ACS_NamedExecuteAlways("BuffTimer",0,8,13, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Blunt for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 11) { ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 12) { ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 13) { ACS_NamedExecuteAlways("BuffTimer",0,8,15, (random(630,1050)*CallACS("CrisisMultiplier",5)) ); } // Deceleratle for 18-30 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			TNT1 A 0 A_StopSound(CHAN_AUTO)
+			CURS GHIJKL 3 Bright
+			Stop
+	}
+}
+
+// Sabreclaw
+ACTOR ClinkAxe : AetheriusProjectileZSC
+{
+	Damage (2 * random(1,8))
+	Radius 10
+	Height 8
+	Speed 25
+	FastSpeed 30
+	Projectile
+	+NODAMAGETHRUST
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+THRUGHOST
+	+WINDTHRUST
+	Renderstyle Add
+	Scale 0.6
+	DeathSound "hknight/hit"
+	States
+	{
+		Spawn:
+			CLAX A 3 Bright 
+			{
+				A_PlaySound("hknight/axewhoosh");
+			}
+			CLAX BC 3 Bright
+			Loop
+		Death:
+			CLAX DEF 6 Bright
+			Stop
+	}
+}
+actor ClinkAxeCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			CLAX A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABC 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR ClinkAxeCrisis : ClinkAxe
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			CLAX A 3 Bright 
+			{
+				A_SpawnItemEx("ClinkAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_PlaySound("hknight/axewhoosh");
+			}
+			CLAX BC 3 Bright
+			{
+				A_SpawnItemEx("ClinkAxeCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			CLAX DEF 6 Bright
+			Stop
+	}
+}
+
+// Shadow Beast
+ACTOR ShadowBeastSparkle : AetheriusProjectileZSC
+{   
+	Alpha 1.0
+	Renderstyle Add
+	Radius 1
+	Height 1
+	Damage 0
+	Speed 0
+	PROJECTILE
+	Scale 1.0
+
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_Jump(128,4)
+			TNT1 A 0 A_Jump(128,2)
+			BDP1 GHI 5
+			stop
+	}
+}
+
+ACTOR ShadowBeastBallFire : AetheriusEffectProjectile
+{
+	Alpha 1.0  
+	Renderstyle Add
+	Speed 15
+	Radius 10
+	Height 6
+	Damage (1 * random(1,8)) // 2
+	DamageType "PoisonElemental" // Poison
+	Projectile
+	+SPAWNSOUNDSOURCE
+	+RIPPER
+	RenderStyle Add
+	SeeSound "shadowbeast/pr1death"
+	Decal MummyScorch
+	States
+	{
+		Spawn:
+			BDP2 DEFGH 5 Bright
+			Goto Death
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			TNT1 A 0
+			Stop
+	}
+}
+actor ShadowBeastBallFireCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BDP2 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" DDEEFFGGHH 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR ShadowBeastBallFireCrisis : ShadowBeastBallFire
+{
+	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier")) // 2
+	States
+	{
+		Spawn:
+			BDP2 DD 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 DE 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 EE 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 FF 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 FG 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 GG 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 HH 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 H 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			Goto Death
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			TNT1 A 0
+			Stop
+	}
+}
+
+ACTOR ShadowBeastBall1 : AetheriusEffectProjectile
+{
+	Alpha 1.0  
+	Renderstyle Add
+	Speed 15
+	Radius 10
+	Height 6
+	Damage (5 * random(1,8))
+	DamageType "PoisonElemental" // Poison
+	Projectile
+	+SPAWNSOUNDSOURCE
+	RenderStyle Add
+	SeeSound "shadowbeast/pr1sight"
+	DeathSound "shadowbeast/pr1death"
+	States
+	{
+		Spawn:
+			BDP2 ABC 4 Bright
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			BDP2 DE 4 Bright
+			BDP2 FGH 3 Bright
+			Stop
+	}
+}
+actor ShadowBeastBall1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BDP2 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR ShadowBeastBall1Crisis : ShadowBeastBall1
+{
+	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BDP2 AABBCC 2 Bright A_SpawnItemEx("ShadowBeastBall1CrisisParticle",0,0,0,0,0,1.28)
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			BDP2 DE 4 Bright
+			BDP2 FGH 3 Bright
+			Stop
+	}
+}
+
+ACTOR ShadowBeastBall2 : AetheriusEffectProjectile
+{
+	Alpha 1.0
+	Renderstyle Add
+	Radius 8
+	Height 6
+	Damage (2 * random(1,8))
+	Speed 16
+	PROJECTILE
+	+Randomize
+	SeeSound "shadowbeast/pr2sight"
+	DeathSound "shadowbeast/pr2death"
+	Decal PlasmaScorchLower
+	States
+	{
+		Spawn:
+			BDP1 DE 1 A_BishopMissileWeave
+			loop
+		Death:
+			BDP1 FGHI 3
+			Stop
+	}
+}
+actor ShadowBeastBall2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			BDP1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" DDEE 1 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR ShadowBeastBall2Crisis : ShadowBeastBall2
+{
+	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BDP1 DE 1 
+			{
+				A_BishopMissileWeave;
+			}
+			BDP1 E 0
+			{
+				A_SpawnItemEx("ShadowBeastBall2CrisisParticle",0,0,0,0,0,1.28);
+			}
+			loop
+		Death:
+			BDP1 FGHI 3
+			Stop
+	}
+}
+
+ACTOR ShadowBeastBall3 : AetheriusEffectProjectile
+{
+	Alpha 1.0
+	Scale 1.4
+	Renderstyle Add
+	Radius 8
+	Height 6
+	Damage (10 * random(1,8))
+	Speed 20
+	PROJECTILE
+	+Randomize
+	SeeSound "shadowbeast/pr2sight"
+	DeathSound "shadowbeast/pr2death"
+	Decal PlasmaScorchLower
+	States
+	{
+		Spawn:
+			BDP1 DEDEDEDED 2 A_BishopMissileWeave
+			BDP1 ED 2 A_BishopMissileWeave
+			TNT1 A 0 A_FadeOut(0.20)
+			Goto Spawn+9
+		Death:
+			BDP1 FGHI 3
+			Stop
+	}
+}
+actor ShadowBeastBall3CrisisParticle : BaseCrisisParticle
+{
+	Scale 0.933
+	States
+	{
+		Spawn:
+			BDP1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" DEDEDEDEDED 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR ShadowBeastBall3Crisis : ShadowBeastBall3
+{
+	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			BDP1 DEDEDEDEDED 2 
+			{
+				A_SpawnItemEx("ShadowBeastBall3CrisisParticle",0,0,0,0,0,1.28);
+				A_BishopMissileWeave;
+			}
+			TNT1 A 0 A_FadeOut(0.20)
+			Goto Spawn+9
+		Death:
+			BDP1 FGHI 3
+			Stop
+	}
+}
+
+// Maulotaur
+ACTOR MinotaurFX1New : AetheriusEffectProjectile replaces MinotaurFX1 
+{
+	Damage (3 * random(1,8))
+	DamageType "Fire" 
+	Radius 10
+	Height 6
+	Speed 20
+	FastSpeed 26
+	DamageType Fire
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			FX12 AAABBB 2 Bright
+			Loop
+		Death:
+			FX12 CDEFGH 5 Bright
+			Stop
+	}
+}
+actor MinotaurFX1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX12 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR MinotaurFX1Crisis : MinotaurFX1New
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX12 AAABBB 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX1CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			FX12 CDEFGH 5 Bright
+			Stop
+	}
+}
+
+ACTOR MinotaurFX2New : MinotaurFX1New replaces MinotaurFX2 
+{
+	Damage (4 * random(1,8))
+	DamageType "Fire" 
+	Radius 5
+	Height 12
+	Speed 14
+	FastSpeed 20
+	+FLOORHUGGER
+	ExplosionDamage 24
+	DeathSound "minotaur/fx2hit"
+
+	States
+	{
+		Spawn:
+			FX13 A 2 Bright 
+			{
+				A_MntrFloorFire("MinotaurFX3New");
+			}
+			Loop
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode(24,64);
+			}
+			FX13 JKLM 4 Bright
+			Stop
+	}
+}
+actor MinotaurFX2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX13 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR MinotaurFX2Crisis : MinotaurFX2New 
+{
+	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX13 A 2 Bright 
+			{
+				A_MntrFloorFire("MinotaurFX3Crisis");
+			}
+			Loop
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode(24*CallACS("CrisisMultiplier"),64);
+			}
+			FX13 JKLM 4 Bright
+			Stop
+	}
+}
+
+ACTOR MinotaurFX3New : MinotaurFX2New replaces MinotaurFX3 
+{
+	DamageType "Fire" 
+	Radius 8
+	Height 16
+	Speed 0
+	DeathSound "minotaur/fx3hit"
+	ExplosionDamage 128
+	States
+	{
+		Spawn:
+			FX13 DDCC 2 Bright
+			FX13 BB 2 Bright
+			FX13 B 1 Bright
+			FX13 CC 2 Bright
+			FX13 C 1 Bright
+			FX13 DD 2 Bright
+			FX13 D 1 Bright
+			FX13 EE 2 Bright
+			FX13 E 1 Bright
+			FX13 FFGGHH 2 Bright
+			Stop
+	}
+}
+actor MinotaurFX3CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX13 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" DDCCBBCCDDEEFFGGHH 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR MinotaurFX3Crisis : MinotaurFX3New
+{
+	States
+	{
+		Spawn:
+			FX13 DDCC 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX13 BB 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX13 B 1 Bright
+			FX13 CC 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX13 C 1 Bright
+			FX13 DD 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX13 D 1 Bright
+			FX13 EE 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX13 E 1 Bright
+			FX13 FFGGHH 2 Bright
+			{
+				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Stop
+	}
+}
+
+// Ophidian
+ACTOR SnakeProjANew : AetheriusProjectileZSC replaces SnakeProjA 
+{
+	Damage (1 * random(1,8))
+	DamageType "Ice" 
+	Radius 12
+	Height 8
+	Speed 14
+	FastSpeed 20
+	Projectile
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+WINDTHRUST
+	+SPAWNSOUNDSOURCE
+	RenderStyle Add
+	SeeSound "snake/attack"
+	States
+	{
+		Spawn:
+			SNFX AABBCCDD 2 Bright
+			Loop
+		Death:
+			SNFX EF 5 Bright
+			SNFX G 4 Bright
+			SNFX HI 3 Bright
+			Stop
+	}
+}
+actor SnakeProjACrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			SNFX A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCCDD 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR SnakeProjACrisis : SnakeProjANew 
+{
+	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
+	DamageType "Ice" 
+	Radius 12
+	Height 8
+	Speed 14
+	FastSpeed 20
+	Projectile
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+WINDTHRUST
+	+SPAWNSOUNDSOURCE
+	RenderStyle Add
+	SeeSound "snake/attack"
+	States
+	{
+		Spawn:
+			SNFX AABBCCDD 2 Bright
+			{
+				A_SpawnItemEx("SnakeProjACrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			SNFX EF 5 Bright
+			SNFX G 4 Bright
+			SNFX HI 3 Bright
+			Stop
+	}
+}
+
+ACTOR SnakeProjBNew : SnakeProjANew replaces SnakeProjB 
+{
+	Damage (3 * random(1,8))
+	DamageType "Fire" 
+	+NOBLOCKMAP
+	-WINDTHRUST
+	States
+	{
+		Spawn:
+			SNFX JJJKKK 2 Bright
+			Loop
+		Death:
+			SNFX LM 5 Bright
+			SNFX N 4 Bright
+			SNFX O 3 Bright
+			Stop
+	}
+}
+actor SnakeProjBCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			SNFX A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" JJJKKK 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR SnakeProjBCrisis : SnakeProjBNew 
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	DamageType "Fire" 
+	+NOBLOCKMAP
+	-WINDTHRUST
+	States
+	{
+		Spawn:
+			SNFX JJJKKK 2 Bright
+			{
+				A_SpawnItemEx("SnakeProjBCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			SNFX LM 5 Bright
+			SNFX N 4 Bright
+			SNFX O 3 Bright
+			Stop
+	}
+}
+
+// Hell Guard
+actor HellGuardBall : AetheriusProjectileZSC
+{
+	Damage (6 * random(1,8))
+	Radius 13
+	Height 8
+	Speed 12
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	SeeSound "hellguard/shot"
+	DeathSound "hellguard/shothit"
+	Decal PlasmaScorchLower
+	States
+	{
+		Spawn:
+			HGFB A 0 Bright NoDelay 
+			{
+				A_ScaleVelocity(frandom(0.875,1.125));
+			}
+		Idle:
+			HGFB ABCD 2 Bright
+			Loop
+		Death:
+			HGFB EFGH 4 Bright
+			Stop
+	}
+}
+actor HellGuardBallCrisisParticle : BaseCrisisParticle
+{
+	alpha 0.4489
+
+	States
+	{
+		Spawn:
+			HGFB A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCD 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+actor HellGuardBallCrisis : HellGuardBall
+{
+	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			HGFB A 0 Bright NoDelay 
+			{
+				A_ScaleVelocity(frandom(0.875,1.125));
+			}
+		Idle:
+			HGFB ABCD 2 Bright
+			{
+				A_SpawnItemEx("HellGuardBallCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			HGFB EFGH 4 Bright
+			Stop
+	}
+}
+
+// D'Sparil Serpent
+ACTOR SorcererFX1New : AetheriusProjectileZSC replaces SorcererFX1 
+{
+	Damage (10 * random(1,8))
+	DamageType "Fire" 
+	Radius 10
+	Height 10
+	Speed 20
+	FastSpeed 28
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			FX14 AAABBBCCC 2 Bright
+			Loop
+		Death:
+			FX14 DEFGH 5 Bright
+			Stop
+	}
+}
+actor SorcererFX1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX14 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBBCCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR SorcererFX1Crisis : SorcererFX1New 
+{
+	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	DamageType "Fire" 
+	Radius 10
+	Height 10
+	Speed 20
+	FastSpeed 28
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			FX14 AAABBBCCC 2 Bright
+			{
+				A_SpawnItemEx("SorcererFX1CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			FX14 DEFGH 5 Bright
+			Stop
+	}
+}
+
+// D'Sparil
+ACTOR Sorcerer2FX1New : AetheriusProjectileZSC replaces Sorcerer2FX1 
+{ 
+	Damage (10 * random(1,8))  
+	DamageType "Thunder" 
+	Radius 10
+	Height 6
+	Speed 20
+	FastSpeed 28
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add  
+	States
+	{
+		Spawn:
+			FX16 ABC 3 Bright 
+			{
+				A_BlueSpark;
+			}
+			Loop
+		Death:
+			FX16 G 5 Bright A_Explode(random(80,111),random(80,111),0)
+			FX16 HIJKL 5 Bright
+			Stop
+	}
+}
+actor Sorcerer2FX1CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX16 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABC 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR Sorcerer2FX1Crisis : Sorcerer2FX1New 
+{ 
+	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX16 ABC 3 Bright 
+			{
+				A_SpawnItemEx("Sorcerer2FX1CrisisParticle",0,0,0,0,0,1.28);
+				A_BlueSpark;
+			}
+			Loop
+		Death:
+			FX16 G 5 Bright A_Explode((random(80,111)*CallACS("CrisisMultiplier")),random(80,111),0)
+			FX16 HIJKL 5 Bright
+			Stop
+	}
+}
+
+ACTOR Sorcerer2FX2New : AetheriusProjectileZSC replaces Sorcerer2FX2 
+{ 
+	Damage (10 * random(1,8))  
+	DamageType "Magic" 
+	Height 6
+	Speed 6
+	Damage 10
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	RenderStyle Add
+
+	States
+	{
+		Spawn:
+			FX11 AAAAAAA 5 Bright
+			FX11 A 5 Bright 
+			{
+				A_GenWizard;
+			}
+			FX11 B 5 Bright
+			Goto Spawn+1
+		Death:
+			FX11 CDEFG 5 Bright
+			Stop
+	}
+}
+actor Sorcerer2FX2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FX11 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR Sorcerer2FX2Crisis : Sorcerer2FX2New 
+{ 
+	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FX11 AAAAAAAAAAAAA 3 Bright
+			{
+				A_SpawnItemEx("Sorcerer2FX2CrisisParticle",0,0,0,0,0,1.28);
+			}
+			FX11 A 3 Bright 
+			{
+				A_GenWizard;
+			}
+			FX11 BB 3 Bright
+			Goto Spawn+1
+		Death:
+			FX11 CDEFG 5 Bright
+			Stop
+	}
+}
+

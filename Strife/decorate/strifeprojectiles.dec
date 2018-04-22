@@ -297,7 +297,7 @@ ACTOR FlightToken : Inventory //Used to keep the Dark Inquisitor in the air even
 }
 
 
-ACTOR EMPGrenade
+ACTOR EMPGrenade : AetheriusProjectileZSC
 {
 	Damage (10 * random(1,8))
 	Speed 30
@@ -471,7 +471,7 @@ actor DarkInquisitorGibber
 	}
 }
 
-actor Shrapnel1
+actor Shrapnel1 : AetheriusProjectileZSC
 {
 	+DOOMBOUNCE
 	PROJECTILE
@@ -512,7 +512,7 @@ actor Shrapnel1
 	}
 }
 
-actor Shrapnel2
+actor Shrapnel2 : AetheriusProjectileZSC
 {
 	+DOOMBOUNCE
 	PROJECTILE
@@ -553,7 +553,7 @@ actor Shrapnel2
 	}
 }
 
-actor Shrapnel3
+actor Shrapnel3 : AetheriusProjectileZSC
 {
 	+DOOMBOUNCE
 	PROJECTILE
@@ -594,7 +594,7 @@ actor Shrapnel3
 	}
 }
 
-actor InquisitorDeathExplosion
+actor InquisitorDeathExplosion : AetheriusProjectileZSC
 {
 	radius 10
 	height 12
@@ -618,7 +618,7 @@ actor InquisitorDeathExplosion
 	}
 }
 
-ACTOR DarkInquisitorBigExplosion
+ACTOR DarkInquisitorBigExplosion : AetheriusProjectileZSC
 {   
 	Radius 2
 	Height 2
@@ -641,7 +641,7 @@ ACTOR DarkInquisitorBigExplosion
 	}
 }
 
-Actor EMPTrail
+Actor EMPTrail : AetheriusProjectileZSC
 {
 	Height 0
 	Radius 0
@@ -660,7 +660,7 @@ Actor EMPTrail
 	}
 }
 
-ACTOR DarkMatterBall
+ACTOR DarkMatterBall : AetheriusProjectileZSC
 {
 	Damage (35 * random(1,4))
 	Radius 11
@@ -756,7 +756,7 @@ ACTOR ShadowVaporSpawner
 	}
 }
 
-ACTOR ShadowVapor
+ACTOR ShadowVapor : AetheriusProjectileZSC
 {
 	PROJECTILE
 	+RIPPER
@@ -779,7 +779,7 @@ ACTOR ShadowVapor
 	}
 }
 
-ACTOR DarkMatterSpark
+ACTOR DarkMatterSpark : AetheriusProjectileZSC
 {
 	RenderStyle translucent
 	Scale 0.75
@@ -792,3 +792,405 @@ ACTOR DarkMatterSpark
 			Loop
 	}
 }
+
+// Crusader
+ACTOR FlameMissileNew : AetheriusProjectileZSC 
+{
+	Speed 15
+	Height 11
+	Radius 8
+	Mass 10
+	Damage 4
+	DamageType Fire
+	ReactionTime 8
+	Projectile
+	-NOGRAVITY
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	RenderStyle Add
+	SeeSound "weapons/flamethrower"
+	Obituary "$OB_MPFLAMETHROWER" // "%o was barbecued by %k."
+	
+	States
+	{
+		Spawn:
+			FRBL AB 3 Bright
+			FRBL C 3 Bright A_Countdown
+			Loop
+		Death:
+			FRBL D 5 Bright A_FlameDie
+			FRBL EFGHI 5 Bright
+			Stop
+	}
+}
+
+ACTOR FastFlameMissileNew : FlameMissileNew
+{
+	Damage (1 * random(1,4))
+	DamageType "Fire"
+	Mass 50
+	Speed 35
+}
+actor FastFlameMissileCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			FRBL A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AB 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR FastFlameMissileCrisis : FastFlameMissileNew
+{
+	Damage (1 * random(1,4) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			FRBL AB 3 Bright
+			{
+				A_SpawnItemEx("FastFlameMissileCrisisParticle",0,0,0,0,0,1.28);
+			}
+			FRBL C 3 Bright 
+			{
+				A_Countdown;
+			}
+			Loop
+		Death:
+			FRBL D 5 Bright A_FlameDie
+			FRBL EFGHI 5 Bright
+			Stop
+	}
+}
+
+ACTOR CrusaderMissileNew : AetheriusProjectileZSC
+{
+	Damage (7 * random(1,4))
+	Speed 20
+	Radius 10
+	Height 14
+	Projectile
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	SeeSound "crusader/misl"
+	DeathSound "crusader/mislx"
+	States
+	{
+		Spawn:
+			MICR A 0 Bright A_RocketInFlight
+			MICR AAA 2 Bright
+			{
+			}
+			Loop
+		Death:
+			SMIS A 0 Bright A_SetTranslucent(1, 1)
+			SMIS A 5 Bright
+			SMIS B 5 Bright
+			SMIS C 4 Bright
+			SMIS DEFG 2 Bright
+			Stop
+	}
+}
+actor CrusaderMissileCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			MICR A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR CrusaderMissileCrisis : CrusaderMissileNew
+{
+	Damage ((7 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			MICR A 0 Bright A_RocketInFlight
+			MICR AAA 2 Bright
+			{
+				A_SpawnItemEx("CrusaderMissileCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			SMIS A 0 Bright A_SetTranslucent(1, 1)
+			SMIS A 5 Bright
+			SMIS B 5 Bright
+			SMIS C 4 Bright
+			SMIS DEFG 2 Bright
+			Stop
+	}
+}
+
+// Sentinel/Stalker
+ACTOR SentinelFX1New : AetheriusProjectileZSC
+{
+	Speed 40
+	Radius 10
+	Height 8
+	Damage 0
+	DamageType Disintegrate
+	Projectile
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	RenderStyle Add
+	States
+	{
+		Spawn:
+			SHT1 AB 4
+			Loop
+		Death:
+			POW1 J 4
+			Stop
+	}
+}
+
+ACTOR Sentinel2FX1New : SentinelFX1New
+{
+	SeeSound "sentinel/plasma"
+	Damage (1 * random(1,4))
+	States
+	{
+		Spawn:
+			SHT1 AB 4
+			{
+			}
+			Loop
+		Death:
+			POW1 FGHI 4
+			Goto Super::Death
+	}
+}
+actor Sentinel2FXCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			SHT1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR Sentinel2FX1Crisis : Sentinel2FX1New
+{
+	Damage ((1 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			SHT1 AB 4
+			{
+				A_SpawnItemEx("Sentinel2FXCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			POW1 FGHI 4
+			Goto Super::Death
+	}
+}
+
+ACTOR Sentinel2FX2New : Sentinel2FX1New { Damage 3 }
+ACTOR Sentinel2FX3New : Sentinel2FX1New { Damage 6 }
+ACTOR Sentinel2FX4New : Sentinel2FX1New { Damage 10 }
+ACTOR Sentinel2FX5New : Sentinel2FX1New { Damage 15 }
+ACTOR Sentinel2FX2Crisis : Sentinel2FX1Crisis { Damage ((3 * random(1,4)) * CallACS("CrisisMultiplier")) }
+ACTOR Sentinel2FX3Crisis : Sentinel2FX1Crisis { Damage ((6 * random(1,4)) * CallACS("CrisisMultiplier")) }
+ACTOR Sentinel2FX4Crisis : Sentinel2FX1Crisis { Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier")) }
+ACTOR Sentinel2FX5Crisis : Sentinel2FX1Crisis { Damage ((15 * random(1,4)) * CallACS("CrisisMultiplier")) }
+
+// Inquisitor
+ACTOR InquisitorShotNew : AetheriusProjectileZSC
+{
+	ReactionTime 15
+	Speed 25
+	Radius 13
+	Height 13
+	Mass 15
+	Projectile
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	-NOGRAVITY
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	SeeSound "inquisitor/attack"
+	DeathSound "inquisitor/atkexplode"
+	States
+	{
+		Spawn:
+			UBAM AB 3
+			{
+				A_Countdown;
+			}
+			Loop
+		Death:
+			BNG2 A 0 Bright A_SetTranslucent(1, 1)
+			BNG2 A 4 Bright A_Explode(192, 192, 1, 1)
+			BNG2 B 4 Bright
+			BNG2 C 4 Bright
+			BNG2 D 4 Bright
+			BNG2 E 4 Bright
+			BNG2 F 4 Bright
+			BNG2 G 4 Bright
+			BNG2 H 4 Bright
+			BNG2 I 4 Bright
+			Stop
+	}
+}
+actor InquisitorShotCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			UBAM A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AB 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR InquisitorShotCrisis : InquisitorShotNew
+{
+	States
+	{
+		Spawn:
+			UBAM AB 3
+			{
+				A_SpawnItemEx("InquisitorShotCrisisParticle",0,0,0,0,0,1.28);
+				A_Countdown;
+			}
+			Loop
+		Death:
+			BNG2 A 0 Bright A_SetTranslucent(1, 1)
+			BNG2 A 4 Bright A_Explode(192*CallACS("CrisisMultiplier"), 192, 1, 1)
+			BNG2 B 4 Bright
+			BNG2 C 4 Bright
+			BNG2 D 4 Bright
+			BNG2 E 4 Bright
+			BNG2 F 4 Bright
+			BNG2 G 4 Bright
+			BNG2 H 4 Bright
+			BNG2 I 4 Bright
+			Stop
+	}
+}
+
+// Bishop
+ACTOR BishopMissileNew : AetheriusProjectileZSC replaces BishopMissile
+{
+	Damage (10 * random(1,4))
+	Speed 20
+	Radius 10
+	Height 14
+	Projectile
+	+SEEKERMISSILE
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	SeeSound "bishop/misl"
+	DeathSound "bishop/mislx"
+	States
+	{
+		Spawn:
+			MISS A 4 Bright A_RocketInFlight
+			MISS B 3 Bright A_Tracer2
+			Loop
+		Death:
+			SMIS A 0 Bright A_SetTranslucent(1, 1)
+			SMIS A 0 Bright // State left for savegame compatibility
+			SMIS A 5 Bright A_Explode(64, 64, 1, 1)
+			SMIS B 5 Bright
+			SMIS C 4 Bright
+			SMIS DEFG 2 Bright
+			Stop
+	}
+}
+actor BishopMissileCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			MISS A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 4 Bright A_CrisisParticleDo
+			"####" B 3 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR BishopMissileCrisis : BishopMissileNew
+{
+	Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Speed 20
+	Radius 10
+	Height 14
+	Projectile
+	+SEEKERMISSILE
+	+STRIFEDAMAGE
+	MaxStepHeight 4
+	SeeSound "bishop/misl"
+	DeathSound "bishop/mislx"
+	States
+	{
+		Spawn:
+			MISS A 4 Bright 
+			{
+				A_SpawnItemEx("BishopMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_RocketInFlight;
+			}
+			MISS B 3 Bright 
+			{
+				A_SpawnItemEx("BishopMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_Tracer2;
+			}
+			Loop
+		Death:
+			SMIS A 0 Bright A_SetTranslucent(1, 1)
+			SMIS A 0 Bright // State left for savegame compatibility
+			SMIS A 5 Bright A_Explode(64*CallACS("CrisisMultiplier"), 64, 1, 1)
+			SMIS B 5 Bright
+			SMIS C 4 Bright
+			SMIS DEFG 2 Bright
+			Stop
+	}
+}
+
+// LoreMaster
+ACTOR LoreShotNew : LoreShotBase
+{
+	Damage (2 * random(1,4))
+}
+actor LoreShotCrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			OCLW A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR LoreShotCrisis : LoreShotNew
+{
+	Damage ((2 * random(1,4)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			OCLW A 2 
+			{
+				A_SpawnItemEx("LoreShotCrisisParticle",0,0,0,0,0,1.28);
+				A_LoremasterChain;
+			}
+			Loop
+		Death:
+			OCLW A 6
+			Stop
+	}
+}
+

@@ -43,6 +43,7 @@ ACTOR ArtiEggNew : AetheriusBaseCustomInventoryZSC replaces ArtiEgg
 	+INVENTORY.INVBAR
 	+INVENTORY.PICKUPFLASH
 	+INVENTORY.FANCYPICKUPSOUND
+	+INVENTORY.KEEPDEPLETED
 	Inventory.Icon "ARTIEGGC"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIEGG" // "MORPH OVUM"
@@ -80,6 +81,7 @@ ACTOR ArtiEggNew : AetheriusBaseCustomInventoryZSC replaces ArtiEgg
 ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 {
 	+DONTGIB
+	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 

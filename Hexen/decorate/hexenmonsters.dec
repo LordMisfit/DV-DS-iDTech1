@@ -4208,6 +4208,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 	Painchance "Gauntlets", 15 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Crush", 1.2
 	Monster
+	+BOSS
 	+TELESTOMP
 	+FLOORCLIP
 	+NODAMAGETHRUST

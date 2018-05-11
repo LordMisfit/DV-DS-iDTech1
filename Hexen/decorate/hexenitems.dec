@@ -11,6 +11,7 @@ ACTOR ArtiPorkNew : AetheriusBaseCustomInventoryZSC replaces ArtiPork
 	+INVENTORY.INVBAR
 	+INVENTORY.PICKUPFLASH
 	+INVENTORY.FANCYPICKUPSOUND
+	+INVENTORY.KEEPDEPLETED
 	Inventory.Icon "ARTIPORK"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIEGG2" // "PORKALATOR"
@@ -48,6 +49,7 @@ ACTOR ArtiPorkNew : AetheriusBaseCustomInventoryZSC replaces ArtiPork
 ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 {
 	+DONTGIB
+	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 
@@ -57,6 +59,7 @@ ACTOR ArtiDarkServantNew : ArtiDarkServant replaces ArtiDarkServant
 ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 {
 	+DONTGIB
+	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 
@@ -66,6 +69,7 @@ ACTOR ArtiTeleportOtherNew : ArtiTeleportOther replaces ArtiTeleportOther
 ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 {
 	+DONTGIB
+	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 

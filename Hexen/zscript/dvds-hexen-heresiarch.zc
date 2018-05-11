@@ -612,9 +612,9 @@ class SorcBallBase : AetheriusProjectileZSC
 		let parentHeresiarch = HeresiarchNew(parent);
 
 		int canusecrisisatk = 0;
-		if(parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
-		if(GetCVar("dvds_monstercrisisattacks") == 0) { canusecrisisatk = 0; }
-		if(canusecrisisatk == 1) 
+		if (parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
+		if (dvds_monstercrisisattacks == 0) { canusecrisisatk = 0; }
+		if (canusecrisisatk == 1) 
 		{
 			A_PlayCrisisAtkSound();
  			basemissile4 = "SorcFX4Crisis"; 
@@ -781,9 +781,9 @@ class SorcBall1Base : SorcBallBase
 
 		let parentHeresiarch = HeresiarchNew(parent);
 		int canusecrisisatk = 0;
-		if(parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
-		if(GetCVar("dvds_monstercrisisattacks") == 0) { canusecrisisatk = 0; }
-		if(canusecrisisatk == 1) 
+		if (parentHeresiarch.health <= parentHeresiarch.user_HPLowRange) { if(parentHeresiarch.health <= parentHeresiarch.user_HPCritRange) { canusecrisisatk = 1; } else { if (random(1,4) == 4) { canusecrisisatk = 1;	} } }
+		if (dvds_monstercrisisattacks == 0) { canusecrisisatk = 0; }
+		if (canusecrisisatk == 1) 
 		{
 			A_PlayCrisisAtkSound();
  			basemissile1 = "SorcFX1Crisis"; 

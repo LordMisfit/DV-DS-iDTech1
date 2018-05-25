@@ -892,7 +892,7 @@ ACTOR BlasterPuffNew : AetheriusProjectileZSC
 			Stop
 	}
 }
-ACTOR BlasterFX1New : AetheriusProjectileZSC 
+ACTOR BlasterFX1New : AetheriusFastProjectileZSC 
 {
 	Radius 12
 	Height 8

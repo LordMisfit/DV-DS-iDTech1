@@ -2215,7 +2215,30 @@ ACTOR Banshee : AetheriusMonsterZSC
 			}
 			BANS B 0 
 			{
-				if (random(1,256) <= 176) { A_PainAttack("DSLostSoul"); } else { A_DualPainAttack("DSLostSoul"); }
+				if (random(1,256) <= 176) 
+				{
+					if (random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance")) 
+					{
+						if (random(1,384) <= ACS_NamedExecuteWithResult("GetEvolveChance")) { A_PainAttack("ForgottenOne"); }
+						else { A_PainAttack("DSLostSoul2"); }
+					}
+					else 
+					{
+						A_PainAttack("DSLostSoul"); 
+					}
+				}
+				else
+				{
+					if (random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance")) 
+					{
+						if (random(1,384) <= ACS_NamedExecuteWithResult("GetEvolveChance")) { A_DualPainAttack("ForgottenOne"); }
+						else { A_DualPainAttack("DSLostSoul2"); }
+					}
+					else 
+					{
+						A_DualPainAttack("DSLostSoul"); 
+					}
+				}
 			}
 			Goto See
 		Missile2:  

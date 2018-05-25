@@ -298,7 +298,7 @@ ACTOR GoldWandPuff1New : AetheriusProjectileZSC
 			Stop
 	}
 }
-ACTOR GoldWandPuff2New : GoldWandFX1New 
+ACTOR GoldWandPuff2New : AetheriusProjectileZSC 
 { 
 	DamageType "Magic" 
 	+NOBLOCKMAP
@@ -307,7 +307,8 @@ ACTOR GoldWandPuff2New : GoldWandFX1New
 	States
 	{
 		Spawn:
-			Goto Super::Death
+			FX01 EFGH 3 Bright
+			Stop
 	}
 }
 

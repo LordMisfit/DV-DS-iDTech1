@@ -607,7 +607,7 @@ ACTOR WatcherImp : HereticImpNew
 				user_firevolleymax = random(2,3);
 				if (random(1,16) == 1) { user_firevolleymax *= random(3,4); }
 			}
-			WATC D 0 BRIGHT A_Jump(85,"Beastball")	
+			WATC D 0 BRIGHT A_Jump(85,"Beastball")
 		MissileLoop:
 			WATC DE 4 BRIGHT
 			{
@@ -3366,7 +3366,7 @@ ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
 
 				A_MonsterCrisisCheck;
-				A_CrisisComboAttack("BeastBall", "BeastBallCrisis", 32, random[BeastAttack](1,8)*3, "beast/attack");
+				A_CrisisComboAttack("BeastBallNew", "BeastBallCrisis", 32, random[BeastAttack](1,8)*3, "beast/attack");
 			}
 			Goto See
 		Pain:

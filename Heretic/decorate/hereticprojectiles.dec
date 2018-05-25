@@ -72,6 +72,46 @@ ACTOR HereticImpBallCrisis : HereticImpBallNew
 	}
 }
 
+Actor HereticImpBall2 : HereticImpBallNew
+{
+	States
+	{
+		Spawn:
+			HIB1 ABC 6 Bright
+			Loop
+		Death:
+			HIB1 DEFG 5 Bright
+			Stop
+	}
+}
+actor HereticImpBall2CrisisParticle : BaseCrisisParticle
+{
+	States
+	{
+		Spawn:
+			HIB1 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AAABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+Actor HereticImpBall2Crisis : HereticImpBallCrisis
+{
+	States
+	{
+		Spawn:
+			HIB1 AAABBBCCC 2 Bright
+			{
+				A_SpawnItemEx("HereticImpBall2CrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			HIB1 DEFG 5 Bright
+			Stop
+	}
+}
+
 // WereDragons
 ACTOR BeastBallNew : AetheriusProjectileZSC replaces BeastBall 
 { 

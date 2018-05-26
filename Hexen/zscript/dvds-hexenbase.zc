@@ -15,7 +15,7 @@ class MaulotaurFriendBase : MaulotaurBase
 		if (tracer && tracer.health > 0 && tracer.player)
 		{
 			// Search thinker list for minotaur
-			ThinkerIterator it = ThinkerIterator.Create("MinotaurFriend");
+			ThinkerIterator it = ThinkerIterator.Create("MaulotaurFriendBase");
 			MinotaurFriend mo;
 
 			while ((mo = MinotaurFriend(it.Next())) != null)

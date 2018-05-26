@@ -1017,7 +1017,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			Goto See
 		Death:
 			TNT1 A 0 A_GiveGold(random(3,8))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			AGRD G 4
 			AGRD H 4 A_Scream
@@ -1030,7 +1030,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			Stop
 		XDeath:
 			TNT1 A 0 A_GiveGold(random(3,8))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			GIBS A 5 A_NoBlocking
 			GIBS BC 5 A_TossGib
@@ -1056,7 +1056,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			goto See
 		Burn:
 			TNT1 A 0 A_GiveGold(random(3,8))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			BURN A 3 Bright A_PlaySoundEx("human/imonfire", "Voice")
 			BURN B 3 Bright A_DropFire
@@ -1074,7 +1074,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			Stop
 		Disintegrate:
 			TNT1 A 0 A_GiveGold(random(3,8))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			DISR A 5 A_PlaySoundEx("misc/disruptordeath", "Voice")
 			DISR BC 5
@@ -1409,7 +1409,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(6,12))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			PGRD I 4 A_TossGib
 			PGRD J 4 A_Scream
@@ -1561,7 +1561,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(5,10))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ROB1 J 6
 			ROB1 K 6 A_Scream
@@ -1573,7 +1573,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 			Stop
 		XDeath:
 			TNT1 A 0 A_GiveGold(random(5,10))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ROB1 L 5 A_TossGib
 			ROB1 M 5 A_Scream
@@ -1701,7 +1701,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(7,16))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ROB2 G 3 A_Scream
 			ROB2 H 5 A_TossGib
@@ -1827,7 +1827,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(4,7))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			SEWR D 7 A_Fall
 			SEWR E 8 Bright A_TossGib
@@ -2075,7 +2075,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 
 		Death:
 			STLK O 0 A_GiveGold(random(3,6))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			STLK O 4
 			STLK P 4 A_Scream
@@ -2181,7 +2181,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(4,7))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			BALL A 6 Bright A_Scream
 			BALL BCDE 6 Bright
@@ -2377,7 +2377,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 			Goto See
 		Death:
 			TNT1 A 0 A_GiveGold(random(100,150))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ROB3 L 0 A_StopSoundEx("Item")
 			ROB3 L 4 A_TossGib
@@ -2663,7 +2663,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 
 		Death:
 			TNT1 A 0 A_GiveGold(random(250,375))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ROB4 A 0 A_TakeInventory("FlightToken", 1)
 			ROB4 A 0 A_ChangeFlag ("FLOAT", 0)
@@ -2823,7 +2823,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 		Pain.GravityHPMP: Goto See
 		Death:
 			PRGR L 0 A_GiveGold(random(1350,1800))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			PRGR L 7 Bright A_TossGib
 			PRGR M 7 Bright A_Scream
@@ -2926,7 +2926,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 
 		Death:
 			MLDR G 0 A_GiveGold(random(1350,1800))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			MLDR G 3 Bright
 			MLDR H 5 Bright A_Scream
@@ -2988,7 +2988,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 		Pain.GravityHPMP: Goto Idle
 		Death:
 			ORCL B 0 A_GiveGold(random(675,900))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			ORCL BCDEFGHIJK 5
 			ORCL L 5 A_NoBlocking
@@ -3203,7 +3203,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 
 		Death:
 			LEAD G 0 A_GiveGold(random(1350,1800))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			LEAD G 5
 			LEAD H 5 A_Scream
@@ -3362,7 +3362,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 
 		Death:
 			PDED A 0 A_GiveGold(random(1350,1800))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			PDED A 6
 			PDED B 6 A_Scream
@@ -3545,7 +3545,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 			AL1P A 0
 			{
 				A_GiveGold(random(1350,1800));
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				//A_PrintBold("SPECTRE 1");
 			}
 			AL1P A 6 Bright A_SpectreChunkSmall
@@ -3637,7 +3637,7 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 			AL1P A 0
 			{
 				A_GiveGold(random(1350,1800));
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				//A_PrintBold("SPECTRE 2");
 			}
 			AL1P A 6 Bright A_SpectreChunkSmall
@@ -3784,7 +3784,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 			AL1P A 0
 			{
 				A_GiveGold(random(1350,1800));
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				//A_PrintBold("SPECTRE 3");
 			}
 			AL1P A 6 Bright A_SpectreChunkSmall
@@ -3900,7 +3900,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 			AL1P A 0
 			{
 				A_GiveGold(random(1350,1800));
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				//A_PrintBold("SPECTRE 4");
 			}
 			AL1P A 6 Bright A_SpectreChunkSmall
@@ -4013,7 +4013,7 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 			AL1P A 0
 			{
 				A_GiveGold(random(1350,1800));
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				//A_PrintBold("SPECTRE 5");
 			}
 			AL1P A 6 Bright A_SpectreChunkSmall
@@ -4215,7 +4215,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 		Ice:
 		Death:
 			MNAL L 0 A_GiveGold(random(2250,3000))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			MNAL L 7 Bright A_SpectreChunkSmall
 			MNAL M 7 Bright A_Scream
@@ -4398,7 +4398,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 
 		Death:
 			MDTH O 0 A_GiveGold(random(1350,1800))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"Asension",AAPTR_PLAYER1)
 		TrueDeath:
@@ -4581,7 +4581,7 @@ ACTOR EntityAscended : EntityBossNew
 		Ice:
 		Death:
 			MNAL L 0 A_GiveGold(random(3000,4000))
-			TNT1 A 0 ACS_NamedExecuteAlways("AddEXP",0,-2,0,1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("AddEXP",-2,0,1)
 			TNT1 A 0 
 			MNAL L 7 Bright A_SpectreChunkSmall
 			MNAL M 7 Bright A_Scream

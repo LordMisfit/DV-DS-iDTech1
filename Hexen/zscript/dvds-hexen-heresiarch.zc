@@ -222,7 +222,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		Death:
 			TNT1 A 0 
 			{
-				ACS_NamedExecuteAlways("AddEXP",0,-2,0,1);
+				ACS_NamedExecuteWithResult("AddEXP",-2,0,1);
 				A_ShieldCheck();
 			}
 			SORC H 5 Bright

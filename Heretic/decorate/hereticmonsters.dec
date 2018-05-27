@@ -3743,6 +3743,7 @@ ACTOR ShadowBeastCreature
 	MONSTER
 	-SOLID
 	-SHOOTABLE
+	-COUNTKILL
 	+FLOAT
 	+NOGRAVITY
 	states
@@ -3776,6 +3777,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 	MONSTER
 	-SOLID
 	-SHOOTABLE
+	-COUNTKILL
 	+FLOAT
 	+NOGRAVITY
 	states

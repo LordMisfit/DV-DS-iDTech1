@@ -255,7 +255,7 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 	Radius 10
 	Height 6
 	Speed 22
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",41)) // 2
+	Damage (finaldamagedealt) // 2
 	DamageType "Magic" 
 	Projectile
 	RenderStyle Add
@@ -264,6 +264,8 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 	States
 	{
 		Spawn:
+			FX01 A 0 NoDelay { A_GetPlayerAttackDamage(41,0); }
+		Idle:
 			FX01 AB 6 Bright
 			Loop
 		Death:
@@ -274,12 +276,14 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 ACTOR GoldWandFX2New : GoldWandFX1New 
 {
 	Speed 18
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",42)) // 1
+	Damage (finaldamagedealt) // 1
 	DamageType "Magic" 
 	DeathSound ""
 	States
 	{
 		Spawn:
+			FX01 C 0 NoDelay { A_GetPlayerAttackDamage(42,0); }
+		Idle:
 			FX01 CD 6 Bright
 			Loop
 	}
@@ -374,7 +378,8 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 				ACS_NamedExecuteAlways("StartTensionCountDown");
 			
-				A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,16384,"",0,0,1,"GoldWandAmmo");
+				A_GetPlayerAttackDamage(29,1);
+				A_SpreadAuraFireBullets(5.625,0,1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,16384,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWND D 3
@@ -400,15 +405,20 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				A_PlaySound("weapons/wandhit",1);
 				A_SetAngle(angle-5.625);
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,1,"GoldWandAmmo",0,0,0,0);
 				A_SetAngle(angle-5.625);
 			}
@@ -472,7 +482,8 @@ ACTOR DualGoldWandNew : GoldWandNew
 				if (ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 				ACS_NamedExecuteAlways("StartTensionCountDown");
 			
-				A_SpreadAuraFireBullets(5.625,0,1, ACS_NamedExecuteWithResult("GetPlayerATKDMG",29,1), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,0,"",0,0,1,"GoldWandAmmo");
+				A_GetPlayerAttackDamage(29,1);
+				A_SpreadAuraFireBullets(5.625,0,1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,0,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWN2 E 3
@@ -498,15 +509,20 @@ ACTOR DualGoldWandNew : GoldWandNew
 				A_PlaySound("weapons/wandhit",1);
 				A_SetAngle(angle-5.625);
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SetAngle(angle+2.8125);
-				A_SpreadAuraFireBullets(0,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",30,1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
+				A_GetPlayerAttackDamage(30,1);
+				A_SpreadAuraFireBullets(0,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"GoldWandPuff2New",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,0,"");
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,1,"GoldWandAmmo",0,0,0,0);
 				A_SetAngle(angle-5.625);
 			}
@@ -523,7 +539,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 ACTOR CrossbowFX1New : AetheriusProjectileZSC 
 {
 	DamageType "Magic"
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",21)) // 10
+	Damage (finaldamagedealt) // 10
 	Speed 30
 	Radius 11
 	Height 8
@@ -535,7 +551,7 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 	States
 	{
 		Spawn:
-			FX03 B 0 NoDelay
+			FX03 B 0 NoDelay { A_GetPlayerAttackDamage(21,0); }
 		Idle:
 			FX03 B 1 Bright
 			Loop
@@ -547,13 +563,13 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 ACTOR CrossbowFX2New : CrossbowFX1New
 {
 	DamageType "Magic" 
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",22)) // 6
+	Damage (finaldamagedealt) // 6
 	Speed 32
 	Obituary "$OB_MPPCROSSBOW"
 	States
 	{
 		Spawn:
-			FX03 B 0 NoDelay
+			FX03 B 0 NoDelay { A_GetPlayerAttackDamage(22,0); }
 		Idle:
 			FX03 B 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625,
 																		0, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 50)
@@ -563,7 +579,7 @@ ACTOR CrossbowFX2New : CrossbowFX1New
 ACTOR CrossbowFX3New : CrossbowFX1New
 {
 	DamageType "Magic" 
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",23)) // 2
+	Damage (finaldamagedealt) // 2
 	Speed 20
 	SeeSound ""
 	-NOBLOCKMAP
@@ -572,7 +588,7 @@ ACTOR CrossbowFX3New : CrossbowFX1New
 	States
 	{
 		Spawn:
-			FX03 A 0 NoDelay
+			FX03 A 0 NoDelay { A_GetPlayerAttackDamage(23,0); }
 		Idle:
 			FX03 A 1 Bright
 			Loop
@@ -858,7 +874,7 @@ ACTOR RipperNew : AetheriusProjectileZSC
 	Radius 8
 	Height 6
 	Speed 14
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",24)) // 1
+	Damage (finaldamagedealt) // 1
 	Projectile
 	+RIPPER
 	DeathSound "weapons/blasterpowhit"
@@ -866,8 +882,10 @@ ACTOR RipperNew : AetheriusProjectileZSC
 	States
 	{
 		Spawn:
-			FX18 M 4
-			FX18 N 5
+			FX18 M 0 NoDelay { A_GetPlayerAttackDamage(24,0); }
+		Idle:
+			FX18 MMMM 1 { A_GetPlayerAttackDamage(24,0); }
+			FX18 NNNNN 1 { A_GetPlayerAttackDamage(24,0); }
 			Loop
 		Death:
 			FX18 OPQRS 4 Bright
@@ -898,7 +916,7 @@ ACTOR BlasterFX1New : AetheriusFastProjectileZSC
 	Radius 12
 	Height 8
 	Speed 184
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",28)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Magic"
 	SeeSound "weapons/blastershoot"
 	DeathSound "weapons/blasterhit"
@@ -908,6 +926,8 @@ ACTOR BlasterFX1New : AetheriusFastProjectileZSC
 	States
 	{
 		Spawn:
+			ACLO E 0 NoDelay { A_GetPlayerAttackDamage(28,0); }
+		Idle:
 			ACLO E 200
 			Loop
 		Death:
@@ -989,7 +1009,8 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 
 				ACS_NamedExecuteAlways("StartTensionCountDown");	
 				A_PlaySound("weapons/blastershoot",1);
-				A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
+				A_GetPlayerAttackDamage(27,1);
+				A_SpreadAuraFireBullets(5.625,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FBLS CB 2
 			{
@@ -1072,7 +1093,8 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 
 				ACS_NamedExecuteAlways("StartTensionCountDown");
 				A_PlaySound("weapons/blastershoot",1);
-				A_SpreadAuraFireBullets(5.625,0,1,(ACS_NamedExecuteWithResult("GetPlayerATKDMG",27,1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
+				A_GetPlayerAttackDamage(27,1);
+				A_SpreadAuraFireBullets(5.625,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FDBL FG 2
 			{
@@ -1104,12 +1126,12 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 	}
 }
 
-ACTOR HornRodFX1New : HornRodFX1 
+ACTOR HornRodFX1New : AetheriusProjectileZSC 
 { 
 	Radius 12
 	Height 8
 	Speed 22
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",31)) //2
+	Damage (finaldamagedealt) // 3
 	DamageType "Magic" 
 	Projectile
 	+WINDTHRUST
@@ -1121,12 +1143,15 @@ ACTOR HornRodFX1New : HornRodFX1
 	States
 	{
 		Spawn:
+			FX00 A 0 Bright NoDelay { A_GetPlayerAttackDamage(31,0); }
+		Idle:
 			FX00 AB 6 Bright
 			Loop
 		Death:
 			FX00 H 5 Bright
 			{
-				A_Explode((ACS_NamedExecuteWithResult("GetPlayerATKDMG",31)/8),(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*20)),0,0,(8+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*4)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*10)));
+				A_GetPlayerAttackDamage(31,0);
+				A_Explode((finaldamagedealt/8),(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*20)),0,0,(8+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*4)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*10)));
 			}
 			FX00 I 5 Bright
 			FX00 JK 4 Bright
@@ -1137,15 +1162,20 @@ ACTOR HornRodFX1New : HornRodFX1
 ACTOR HornRodFX2New : HornRodFX2Base
 { 
 	var int user_fuse;
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",32)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Acid"
 	DamageType "Magic" 
 	+SEEKERMISSILE
 	States
 	{
 		Spawn:
-			FX00 C 0 Bright NoDelay A_ScaleVelocity(1.0625)
-			FX00 C 0 Bright { user_fuse = random(120,160); }
+			FX00 C 0 Bright NoDelay { A_GetPlayerAttackDamage(32,0); }
+		Idle:
+			FX00 C 0 Bright 
+			{ 
+				A_ScaleVelocity(1.0625);
+				user_fuse = random(120,160); 
+			}
 			FX00 C 3 Bright
 			FX00 D 3 Bright A_SeekerMissile(10,30,SMF_LOOK|SMF_PRECISE|SMF_CURSPEED,96,32)
 			FX00 E 3 Bright
@@ -1155,7 +1185,8 @@ ACTOR HornRodFX2New : HornRodFX2Base
 			FX00 H 5 Bright // A_AddPlayerRain
 			FX00 I 5 Bright 
 			{
-				A_Explode(16+random(-9,9)+(ACS_NamedExecuteWithResult("GetPlayerATKDMG",32)/8),(32+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*16)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*40)),0,0,(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*20)));
+				A_GetPlayerAttackDamage(32,0);
+				A_Explode((16+random(-9,9)+(finaldamagedealt/8)),(32+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*16)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*40)),0,0,(16+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*8)+(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*20)));
 			}
 			FX00 J 4 Bright
 			FX00 KLM 3 Bright
@@ -1166,8 +1197,23 @@ ACTOR HornRodFX2New : HornRodFX2Base
 }
 ACTOR RainPillarNew : RainPillarBase replaces RainPillar 
 {
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",43)) //5
+	Damage (finaldamagedealt) //5
 	DamageType "Magic" 
+	States
+	{
+		Spawn:
+			FX22 A 0 NoDelay { A_GetPlayerAttackDamage(43,0); }
+		Idle:
+			FX22 A -1 Bright
+			Stop
+		Death:
+			FX22 B 4 Bright A_RainImpact
+			FX22 CDEF 4 Bright
+			Stop
+		NotFloor:
+			FX22 GHI 4 Bright
+			Stop
+	}
 }
 
 ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
@@ -1372,13 +1418,35 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	}
 }
 
-ACTOR PhoenixFX1NoAOE : PhoenixFX1 // Spread shots of Phoenix Rod, cannot deal self-AOE [necessary due to how Spreader Aura spreads out extra shots]
+ACTOR PhoenixFX1New : PhoenixFX1Base
 {
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",33)) //2
-	DamageType "Magic"
+	Damage (finaldamagedealt) //2
 	DamageType "Fire"
 	States
 	{
+		Spawn:
+			FX04 A 0 Bright NoDelay { A_GetPlayerAttackDamage(33,0); }
+		Idle:
+			FX04 A 4 Bright A_PhoenixPuff
+			Loop
+		Death:
+			FX08 A 6 Bright A_Explode(128,128,1)
+			FX08 BC 5 Bright
+			FX08 DEFGH 4 Bright
+			Stop
+	}
+}
+ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot deal self-AOE [necessary due to how Spreader Aura spreads out extra shots]
+{
+	Damage (finaldamagedealt) //2
+	DamageType "Fire"
+	States
+	{
+		Spawn:
+			FX04 A 0 Bright NoDelay { A_GetPlayerAttackDamage(33,0); }
+		Idle:
+			FX04 A 4 Bright A_PhoenixPuff
+			Loop
 		Death:
 			FX08 A 6 Bright A_Explode(128,128,0)
 			FX08 BC 5 Bright
@@ -1386,18 +1454,28 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1 // Spread shots of Phoenix Rod, cannot deal s
 			Stop
 	}
 }
-
-ACTOR PhoenixFX1New : PhoenixFX1Base
-{
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",33)) //2
-	DamageType "Fire"
-}
 ACTOR PhoenixFX2New : PhoenixFX2Base
 {
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",34)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Fire"
 	ProjectileKickback 0
 	+NODAMAGETHRUST
+	States
+	{
+		Spawn:
+			FX09 A 0 NoDelay { A_GetPlayerAttackDamage(34,0); }
+		Idle:
+			FX09 ABABA 2 Bright
+			FX09 B 2 Bright A_FlameEnd
+			FX09 CDEF 2 Bright
+			Stop
+		Death:
+			FX09 G 3 Bright
+			FX09 H 3 Bright A_FloatPuff
+			FX09 I 4 Bright
+			FX09 JK 5 Bright
+			Stop
+	}
 }
 
 ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod 
@@ -1614,23 +1692,63 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 
 ACTOR MaceFX1New : MaceFX1Base
 {
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",35)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Magic"
+	States
+	{
+		Spawn:
+			FX02 A 0 NoDelay { A_GetPlayerAttackDamage(35,0); }
+		Idle:
+			FX02 AB 4 A_MacePL1Check
+			Loop
+		Death:
+			FX02 F 4 BRIGHT A_MaceBallImpact
+			FX02 GHIJ 4 BRIGHT
+			Stop
+	}
 }
 ACTOR MaceFX2New : MaceFX2Base 
 { 
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",36)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Magic" 
+	States
+	{
+		Spawn:
+			FX02 C 0 NoDelay { A_GetPlayerAttackDamage(36,0); }
+		Idle:
+			FX02 CD 4
+			Loop
+	}
 }
 ACTOR MaceFX3New : MaceFX3Base
 { 
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",37)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Magic" 
+	States
+	{
+		Spawn:
+			FX02 A 0 NoDelay { A_GetPlayerAttackDamage(37,0); }
+		Idle:
+			FX02 AB 4
+			Loop
+	}
 }
 ACTOR MaceFX4New : MaceFX4Base
 { 
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",38)) //2
+	Damage (finaldamagedealt) //2
 	DamageType "Magic" 
+	States
+	{
+		Spawn:
+			FX02 E 0 NoDelay { A_GetPlayerAttackDamage(38,0); }
+		Idle:
+			FX02 E 99
+			Loop
+		Death:
+			FX02 C 4 A_DeathBallImpact
+			FX02 GHIJ 4 BRIGHT
+			Stop
+	}
 }
 
 ACTOR MaceSpawnerNew : MaceSpawner replaces MaceSpawner
@@ -2215,7 +2333,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 	Height 6
 	Speed 20
 	FastSpeed 28
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",39)) //20
+	Damage (finaldamagedealt) //20
 	DamageType "Thunder"
 	DamageType "Magic"
 	Projectile
@@ -2226,6 +2344,8 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 	States
 	{
 		Spawn:
+			FX16 A 0 NoDelay { A_GetPlayerAttackDamage(39,0); }
+		Idle:
 			FX16 ABC 3 Bright A_BlueSpark
 			Loop
 		Death:
@@ -2240,7 +2360,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 	Radius 10
 	Height 6
 	Speed 6
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",40)) //10
+	Damage (finaldamagedealt) //10
 	DamageType "Magic"
 	PROJECTILE
 	Renderstyle Add
@@ -2248,6 +2368,8 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 	States
 	{
 		Spawn:
+			FX11 A 0 NoDelay { A_GetPlayerAttackDamage(40,0); }
+		Idle:
 			FX11 ABABABAB 5 bright
 			goto Summon
 		Summon:

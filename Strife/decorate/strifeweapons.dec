@@ -1,10 +1,10 @@
 // Crossbow Projectiles
-ACTOR ElectricBoltNew : ElectricBolt replaces ElectricBolt
+ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 {
 	Speed 30
 	Radius 10
 	Height 10
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",25)) // 50
+	Damage (finaldamagedealt)
 	Projectile
 	+STRIFEDAMAGE
 	+NOBLOCKMAP
@@ -19,7 +19,7 @@ ACTOR ElectricBoltNew : ElectricBolt replaces ElectricBolt
 	States
 	{
 		Spawn:
-			AROW A 0 NoDelay
+			AROW A 0 NoDelay { A_GetPlayerAttackDamage(25,0); }
 		Idle:
 			AROW A 10 A_LoopActiveSound
 			Loop
@@ -32,12 +32,12 @@ ACTOR ElectricBoltNew : ElectricBolt replaces ElectricBolt
 	}
 }
 
-ACTOR PoisonBoltNew : PoisonBolt replaces PoisonBolt
+ACTOR PoisonBoltNew : AetheriusProjectileZSC replaces PoisonBolt
 {
 	Speed 30
 	Radius 10
 	Height 10
-	Damage (ACS_NamedExecuteWithResult("GetPlayerATKDMG",26)) // 50
+	Damage (finaldamagedealt)
 	Projectile
 	+STRIFEDAMAGE
 	DamageType "PoisonBolt"
@@ -48,7 +48,7 @@ ACTOR PoisonBoltNew : PoisonBolt replaces PoisonBolt
 	States
 	{
 		Spawn:
-			ARWP A 0 NoDelay
+			ARWP A 0 NoDelay { A_GetPlayerAttackDamage(26,0); }
 		Idle:
 			ARWP A 10 A_LoopActiveSound
 			Loop

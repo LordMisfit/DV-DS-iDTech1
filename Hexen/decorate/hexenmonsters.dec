@@ -14,6 +14,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	Painchance "GravityMP", 85
 	Painchance "GravityHPMP", 85 
 	DamageFactor "Crush", 2.4
+	MeleeRange 96
 	Monster
 	+FLOORCLIP
 	+NORADIUSDMG
@@ -300,6 +301,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 	Painchance "Gauntlets", 90 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Crush", 8
 	Monster
+	MeleeRange 68
 	+FLOORCLIP
 	+TELESTOMP
 	SeeSound "EttinSight"
@@ -340,7 +342,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 				A_FaceTarget;
 
 				A_MonsterCrisisCheck;
-				A_CrisisMeleeAttack(random[EttinAttack](1, 8)*2);
+				A_CrisisMeleeAttack(random[EttinAttack](1,8)*2);
 			}
 			Goto See
 		Pain:
@@ -563,6 +565,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	DamageFactor "Crush", 3.2
 	Mass 2500
 	BloodColor Red
+	MeleeRange 68
 	MONSTER 
 	Meleedamage 8
 	+MISSILEEVENMORE
@@ -880,6 +883,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 	Speed 13
 	Height 64
 	Mass 120
+	MeleeRange 80
 	Monster
 	+FLOORCLIP
 	+TELESTOMP
@@ -1082,6 +1086,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 {
 	Health 325
 	Speed 12.5
+	MeleeRange 80
 	Painchance 84
 	Painchance "Fist", 126 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 210 // Kick attacks have a +150% chance of stunning an enemy
@@ -3018,6 +3023,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 	Painchance "Kick", 240 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 144 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Crush", 6.4
+	Meleerange 72
 	Speed 12
 	Radius 32
 	Height 70
@@ -3194,6 +3200,7 @@ actor FStalker : StalkerNew
 ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 {
 	Health 120
+	Meleerange 72
 	Translation "51:66=51:58", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16"  
 
 	States
@@ -5349,6 +5356,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 	DamageFactor "Normal", 0.833
 	DamageFactor "Crush", 2.4
 	Reactiontime 8
+	Meleerange 72
 	MaxTargetRange 2048
 	Speed 25
 	Radius 16

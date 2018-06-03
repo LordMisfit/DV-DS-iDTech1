@@ -313,10 +313,11 @@ class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
 
 	override Class<Actor> ChooseWhatToSpawn()
 	{
-		let modType = CallACS("CheckModType");
-		let evolveChance = CallACS("GetEvolveChance");
-		let monstersoption = CallACS("CheckDVIIMonstersOption");
-		let checkbombers = CallACS("CheckBombersOption");
+		int modtype = CallACS("CheckModType");
+		int doomtype = CallACS("CheckDoomType");
+		int evolvechance = CallACS("GetEvolveChance");
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,1024) <= evolveChance)
 			return "DarkInquisitor";

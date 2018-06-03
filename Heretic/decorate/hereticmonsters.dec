@@ -1419,11 +1419,13 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 	Height 78
 	Mass 150
 	Speed 12
+	MeleeRange 68
 	Painchance 100
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Crush", 7.2
+	MeleeRange 68
 	Monster
 	+FLOORCLIP
 	SeeSound "hknight/sight"
@@ -1589,6 +1591,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 	Mass 700 
 	Speed 10
 	MeleeDamage 10
+	MeleeRange 80
 	PainChance 20 
 	Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
@@ -2217,9 +2220,9 @@ ACTOR Banshee : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 176) 
 				{
-					if (random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance")) 
+					if (random(1,256) <= CallACS("GetEvolveChance")) 
 					{
-						if (random(1,384) <= ACS_NamedExecuteWithResult("GetEvolveChance")) { A_PainAttack("ForgottenOne"); }
+						if (random(1,384) <= CallACS("GetEvolveChance")) { A_PainAttack("ForgottenOne"); }
 						else { A_PainAttack("DSLostSoul2"); }
 					}
 					else 
@@ -2229,9 +2232,9 @@ ACTOR Banshee : AetheriusMonsterZSC
 				}
 				else
 				{
-					if (random(1,256) <= ACS_NamedExecuteWithResult("GetEvolveChance")) 
+					if (random(1,256) <= CallACS("GetEvolveChance")) 
 					{
-						if (random(1,384) <= ACS_NamedExecuteWithResult("GetEvolveChance")) { A_DualPainAttack("ForgottenOne"); }
+						if (random(1,384) <= CallACS("GetEvolveChance")) { A_DualPainAttack("ForgottenOne"); }
 						else { A_DualPainAttack("DSLostSoul2"); }
 					}
 					else 
@@ -3820,6 +3823,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 	Painchance "GravityMP", 85
 	Painchance "GravityHPMP", 85 
 	DamageFactor "Crush", 2.4
+	MeleeRange 96
 	Monster
 	+DROPOFF
 	+FLOORCLIP
@@ -4355,6 +4359,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 	Painchance "GravityMP", 1
 	Painchance "GravityHPMP", 1 
 	DamageFactor "Crush", 0.5
+	meleerange 82
 	Monster
 	+BOSS
 	+DONTMORPH
@@ -4495,6 +4500,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 	Painchance "GravityMP", 1
 	Painchance "GravityHPMP", 1 
 	DamageFactor "Crush", 0.5
+	MeleeRange 92
 	Monster
 	+DROPOFF
 	+BOSS

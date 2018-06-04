@@ -258,7 +258,458 @@ object Sorcerer2FX3
 
 //
 //
+
+object HereticImpBallNew
+{
+	frame FX10A { light HIMPBALL }
+	frame FX10B { light HIMPBALL }
+	frame FX10C { light HIMPBALL }
+	
+	frame FX10D { light HIMPBALL    }
+	frame FX10E { light HIMPBALL_X1 }
+	frame FX10F { light HIMPBALL_X2 }
+	frame FX10G { light HIMPBALL_X3 }
+}
+object HereticImpBallCrisis
+{
+	frame FX10A { light HIMPBALL }
+	frame FX10B { light HIMPBALL }
+	frame FX10C { light HIMPBALL }
+	
+	frame FX10D { light HIMPBALL    }
+	frame FX10E { light HIMPBALL_X1 }
+	frame FX10F { light HIMPBALL_X2 }
+	frame FX10G { light HIMPBALL_X3 }
+}
+object HereticImpBall2
+{
+	frame HIB1A { light HIMPBALL }
+	frame HIB1B { light HIMPBALL }
+	frame HIB1C { light HIMPBALL }
+	
+	frame HIB1D { light HIMPBALL    }
+	frame HIB1E { light HIMPBALL_X1 }
+	frame HIB1F { light HIMPBALL_X2 }
+	frame HIB1G { light HIMPBALL_X3 }
+}
+object HereticImpBall2Crisis
+{
+	frame HIB1A { light HIMPBALL }
+	frame HIB1B { light HIMPBALL }
+	frame HIB1C { light HIMPBALL }
+	
+	frame HIB1D { light HIMPBALL    }
+	frame HIB1E { light HIMPBALL_X1 }
+	frame HIB1F { light HIMPBALL_X2 }
+	frame HIB1G { light HIMPBALL_X3 }
+}
+
+object MummyFX1New
+{
+	frame FX15A { light MUMMYBALL }
+	frame FX15B { light MUMMYBALL }
+	frame FX15C { light MUMMYBALL }
+	
+	frame FX15D { light MUMMYBALL_X1 }
+	frame FX15E { light MUMMYBALL_X2 }
+	frame FX15F { light MUMMYBALL_X3 }
+}
+object MummyFX1Crisis
+{
+	frame FX15A { light MUMMYBALL }
+	frame FX15B { light MUMMYBALL }
+	frame FX15C { light MUMMYBALL }
+	
+	frame FX15D { light MUMMYBALL_X1 }
+	frame FX15E { light MUMMYBALL_X2 }
+	frame FX15F { light MUMMYBALL_X3 }
+}
+
+object KnightAxeNew
+{
+	frame SPAXA { light GREENAXE }
+	frame SPAXB { light GREENAXE }
+	frame SPAXC { light GREENAXE }
+	
+	frame SPAXD { light GREENAXE_X1 }
+	frame SPAXE { light GREENAXE_X2 }
+	frame SPAXF { light GREENAXE_X3 }
+}
+object KnightAxeCrisis
+{
+	frame SPAXA { light GREENAXE }
+	frame SPAXB { light GREENAXE }
+	frame SPAXC { light GREENAXE }
+	
+	frame SPAXD { light GREENAXE_X1 }
+	frame SPAXE { light GREENAXE_X2 }
+	frame SPAXF { light GREENAXE_X3 }
+}
+object RedAxeNew
+{
+	frame RAXEA { light REDAXE }
+	frame RAXEB { light REDAXE }
+	
+	frame RAXEC { light REDAXE_X1 }
+	frame RAXED { light REDAXE_X2 }
+	frame RAXEE { light REDAXE_X3 }
+}
+object RedAxeCrisis
+{
+	frame RAXEA { light REDAXE }
+	frame RAXEB { light REDAXE }
+	
+	frame RAXEC { light REDAXE_X1 }
+	frame RAXED { light REDAXE_X2 }
+	frame RAXEE { light REDAXE_X3 }
+}
+
+object IronlichNew
+{
+	frame LICHD { light IRONLICH1 }
+	frame LICHE { light IRONLICH2 }
+	frame LICHF { light IRONLICH3 }
+	frame LICHG { light IRONLICH4 }
+}
+
+object HeadFX1New
+{
+	frame FX05A { light FROSTBALL }
+	frame FX05B { light FROSTBALL }
+	frame FX05C { light FROSTBALL }
+	
+	frame FX05D { light FROSTBALL_X1 }
+	frame FX05E { light FROSTBALL_X2 }
+	frame FX05F { light FROSTBALL_X3 }
+	frame FX05G { light FROSTBALL_X4 }
+}
+object HeadFX1Crisis
+{
+	frame FX05A { light FROSTBALL }
+	frame FX05B { light FROSTBALL }
+	frame FX05C { light FROSTBALL }
+	
+	frame FX05D { light FROSTBALL_X1 }
+	frame FX05E { light FROSTBALL_X2 }
+	frame FX05F { light FROSTBALL_X3 }
+	frame FX05G { light FROSTBALL_X4 }
+}
+
+object HeadFX2New
+{
+	frame FX05H { light FROSTSHARD }
+	frame FX05I { light FROSTSHARD }
+	frame FX05J { light FROSTSHARD }
+}
+object HeadFX2Crisis
+{
+	frame FX05H { light FROSTSHARD }
+	frame FX05I { light FROSTSHARD }
+	frame FX05J { light FROSTSHARD }
+}
+
+object HeadFX3New
+{
+	frame FX06A { light LICHFIRE }
+	frame FX06B { light LICHFIRE }
+	frame FX06C { light LICHFIRE }
+	
+	frame FX06D { light LICHFIRE_X1 }
+	frame FX06E { light LICHFIRE_X2 }
+	frame FX06F { light LICHFIRE_X3 }
+	frame FX06G { light LICHFIRE_X4 }
+}
+object HeadFX3Crisis
+{
+	frame FX06A { light LICHFIRE }
+	frame FX06B { light LICHFIRE }
+	frame FX06C { light LICHFIRE }
+	
+	frame FX06D { light LICHFIRE_X1 }
+	frame FX06E { light LICHFIRE_X2 }
+	frame FX06F { light LICHFIRE_X3 }
+	frame FX06G { light LICHFIRE_X4 }
+}
+
+object ClinkNew
+{
+	frame CLNKK { light CLINK_X1 }
+	frame CLNKL { light CLINK_X2 }
+	frame CLNKM { light CLINK_X3 }
+	frame CLNKN { light CLINK_X4 }
+}
+
+object BeastBallNew
+{
+	frame FRB1A { light BEASTBALL }
+	frame FRB1B { light BEASTBALL }
+	frame FRB1C { light BEASTBALL }
+	
+	frame FRB1D { light BEASTBALL_X1 }
+	frame FRB1E { light BEASTBALL_X2 }
+	frame FRB1F { light BEASTBALL_X3 }
+	frame FRB1G { light BEASTBALL_X4 }
+}
+object BeastBallCrisis
+{
+	frame FRB1A { light BEASTBALL }
+	frame FRB1B { light BEASTBALL }
+	frame FRB1C { light BEASTBALL }
+	
+	frame FRB1D { light BEASTBALL_X1 }
+	frame FRB1E { light BEASTBALL_X2 }
+	frame FRB1F { light BEASTBALL_X3 }
+	frame FRB1G { light BEASTBALL_X4 }
+}
+object BeastBall2
+{
+	frame FRB1A { light BEASTBALL }
+	frame FRB1B { light BEASTBALL }
+	frame FRB1C { light BEASTBALL }
+	
+	frame HIB1D { light BEASTBALL_X1 }
+	frame HIB1E { light BEASTBALL_X2 }
+	frame HIB1F { light BEASTBALL_X3 }
+	frame HIB1G { light BEASTBALL_X4 }
+	frame HIB1H { light BEASTBALL_X4 }
+}
+object BeastBall2Crisis
+{
+	frame FRB1A { light BEASTBALL }
+	frame FRB1B { light BEASTBALL }
+	frame FRB1C { light BEASTBALL }
+	
+	frame HIB1D { light BEASTBALL_X1 }
+	frame HIB1E { light BEASTBALL_X2 }
+	frame HIB1F { light BEASTBALL_X3 }
+	frame HIB1G { light BEASTBALL_X4 }
+	frame HIB1H { light BEASTBALL_X4 }
+}
+
+object SnakeProjANew
+{
+	frame SNFXA { light SNAKESHOT1 }
+	frame SNFXB { light SNAKESHOT1 }
+	frame SNFXC { light SNAKESHOT1 }
+	frame SNFXD { light SNAKESHOT1 }
+	
+	frame SNFXE { light SNAKESHOT1_X1 }
+	frame SNFXF { light SNAKESHOT1_X2 }
+	frame SNFXG { light SNAKESHOT1_X3 }
+	frame SNFXH { light SNAKESHOT1_X4 }
+}
+object SnakeProjACrisis
+{
+	frame SNFXA { light SNAKESHOT1 }
+	frame SNFXB { light SNAKESHOT1 }
+	frame SNFXC { light SNAKESHOT1 }
+	frame SNFXD { light SNAKESHOT1 }
+	
+	frame SNFXE { light SNAKESHOT1_X1 }
+	frame SNFXF { light SNAKESHOT1_X2 }
+	frame SNFXG { light SNAKESHOT1_X3 }
+	frame SNFXH { light SNAKESHOT1_X4 }
+}
+
+object SnakeProjBNew
+{
+	frame SNFXJ { light SNAKESHOT2 }
+	frame SNFXK { light SNAKESHOT2 }
+	
+	frame SNFXL { light SNAKESHOT2_X1 }
+	frame SNFXM { light SNAKESHOT2_X2 }
+	frame SNFXN { light SNAKESHOT2_X3 }
+}
+object SnakeProjBCrisis
+{
+	frame SNFXJ { light SNAKESHOT2 }
+	frame SNFXK { light SNAKESHOT2 }
+	
+	frame SNFXL { light SNAKESHOT2_X1 }
+	frame SNFXM { light SNAKESHOT2_X2 }
+	frame SNFXN { light SNAKESHOT2_X3 }
+}
+
+object MinotaurFX1New
+{
+	frame FX12A { light MAULBALL }
+	frame FX12B { light MAULBALL }
+	
+	frame FX12C { light MAULBALL_X1 }
+	frame FX12D { light MAULBALL_X2 }
+	frame FX12E { light MAULBALL_X3 }
+	frame FX12F { light MAULBALL_X3 }
+	frame FX12G { light MAULBALL_X4 }
+	frame FX12H { light MAULBALL_X4 }
+}
+object MinotaurFX1Crisis
+{
+	frame FX12A { light MAULBALL }
+	frame FX12B { light MAULBALL }
+	
+	frame FX12C { light MAULBALL_X1 }
+	frame FX12D { light MAULBALL_X2 }
+	frame FX12E { light MAULBALL_X3 }
+	frame FX12F { light MAULBALL_X3 }
+	frame FX12G { light MAULBALL_X4 }
+	frame FX12H { light MAULBALL_X4 }
+}
+
+object MinotaurFX3New
+{
+	frame FX13B { light MAULFLAME }
+	frame FX13C { light MAULFLAME }
+	frame FX13D { light MAULFLAME }
+	frame FX13E { light MAULFLAME }
+	frame FX13F { light MAULFLAME }
+	frame FX13G { light MAULFLAME }
+	frame FX13H { light MAULFLAME }
+	
+	frame FX13I { light MAULFLAME_X1 }
+	frame FX13J { light MAULFLAME_X2 }
+	frame FX13K { light MAULFLAME_X3 }
+	frame FX13L { light MAULFLAME_X4 }
+	frame FX13M { light MAULFLAME_X5 }
+}
+object MinotaurFX3Crisis
+{
+	frame FX13B { light MAULFLAME }
+	frame FX13C { light MAULFLAME }
+	frame FX13D { light MAULFLAME }
+	frame FX13E { light MAULFLAME }
+	frame FX13F { light MAULFLAME }
+	frame FX13G { light MAULFLAME }
+	frame FX13H { light MAULFLAME }
+	
+	frame FX13I { light MAULFLAME_X1 }
+	frame FX13J { light MAULFLAME_X2 }
+	frame FX13K { light MAULFLAME_X3 }
+	frame FX13L { light MAULFLAME_X4 }
+	frame FX13M { light MAULFLAME_X5 }
+}
+
+object SorcererFX1New
+{
+	frame FX14A { light SERPENTBALL }
+	frame FX14B { light SERPENTBALL }
+	frame FX14C { light SERPENTBALL }
+	
+	frame FX14D { light SERPENTBALL_X1 }
+	frame FX14E { light SERPENTBALL_X2 }
+	frame FX14F { light SERPENTBALL_X3 }
+	frame FX14G { light SERPENTBALL_X4 }
+	frame FX14H { light SERPENTBALL_X4 }
+}
+object SorcererFX1Crisis
+{
+	frame FX14A { light SERPENTBALL }
+	frame FX14B { light SERPENTBALL }
+	frame FX14C { light SERPENTBALL }
+	
+	frame FX14D { light SERPENTBALL_X1 }
+	frame FX14E { light SERPENTBALL_X2 }
+	frame FX14F { light SERPENTBALL_X3 }
+	frame FX14G { light SERPENTBALL_X4 }
+	frame FX14H { light SERPENTBALL_X4 }
+}
 //
+//
+object GoldWandAmmoNew
+{
+	frame AMG1 { light SWANDAMMO }
+}
+object GoldWandHeftyNew
+{
+	frame AMG2 { light LWANDAMMO }
+}
+object CrossbowAmmoNew
+{
+	frame AMC1 { light ETHARROWS }
+}
+object CrossbowHeftyNew
+{
+	frame AMC2 { light ETHQUIVER }
+}
+object BlasterAmmoNew
+{
+	frame AMB1 { light SCLAWAMMO }
+}
+object BlasterHeftyNew
+{
+	frame AMB2 { light LCLAWAMMO }
+}
+object SkullRodAmmoNew
+{
+	frame AMS1 { light SSTAFFAMMO }
+}
+object SkullRodHeftyNew
+{
+	frame AMS2 { light LSTAFFAMMO }
+}
+object PhoenixRodAmmoNew
+{
+	frame AMP1 { light SRODAMMO }
+}
+object PhoenixRodHeftyNew
+{
+	frame AMP2 { light LRODAMMO }
+}
+
+//
+//
+Pointlight PlagueShot1
+{
+	color 0.738 0.488 0.082
+	size 68
+}
+Pointlight PlagueShot2
+{
+	color 0.738 0.488 0.082
+	size 68
+}
+Pointlight PlagueShotX1
+{
+	color 0.738 0.488 0.082
+	size 46
+}
+Pointlight PlagueShotX2
+{
+	color 0.738 0.488 0.082
+	size 34
+}
+Pointlight PlagueShotX3
+{
+	color 0.738 0.488 0.082
+	size 22
+}
+Pointlight PlagueShotX4
+{
+	color 0.738 0.488 0.082
+	size 10
+}
+object PlagueShot
+{
+	frame FVULA { light PlagueShot1 }
+	frame FVULB { light PlagueShot2 }
+
+	frame FVULC { light PlagueShotX1 }
+	frame FVULD { light PlagueShotX2 }
+	frame FVULE { light PlagueShotX3 }
+	frame FVULF { light PlagueShotX4 }
+	frame FVULG { light PlagueShotX5 }
+}
+object PlagueShotCrisis
+{
+	frame FVULA { light PlagueShot1 }
+	frame FVULB { light PlagueShot2 }
+
+	frame FVULC { light PlagueShotX1 }
+	frame FVULD { light PlagueShotX2 }
+	frame FVULE { light PlagueShotX3 }
+	frame FVULF { light PlagueShotX4 }
+	frame FVULG { light PlagueShotX5 }
+}
+
 Pointlight FireBreath1
 {
 	color 1.0 1.0 0.0

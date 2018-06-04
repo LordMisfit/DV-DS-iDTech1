@@ -1,3 +1,6 @@
+//****************
+// Heretic GLDefs
+//****************
 #include "GLDefs/brightmaps.gl"
 
 object GoldWandPuff1New

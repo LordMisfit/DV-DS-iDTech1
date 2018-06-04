@@ -1,75 +1,849 @@
+//***************
+// Strife GLDefs
+//***************
+
+//
+//
+object ElectricBoltNew
+{
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object FlameMissileNew
+{
+	frame FRBLA { light FLMMISSILE }
+	frame FRBLB { light FLMMISSILE }
+	frame FRBLC { light FLMMISSILE }
+	
+	frame FRBLD { light FLMMSL_X1  }
+	frame FRBLE { light FLMMSL_X2  }
+	frame FRBLF { light FLMMSL_X3  }
+	frame FRBLG { light FLMMSL_X4  }
+	frame FRBLH { light FLMMSL_X5  }
+}
+object FastFlameMissileNew
+{
+	frame FRBLA { light FLMMISSILE }
+	frame FRBLB { light FLMMISSILE }
+	frame FRBLC { light FLMMISSILE }
+	
+	frame FRBLD { light FLMMSL_X1  }
+	frame FRBLE { light FLMMSL_X2  }
+	frame FRBLF { light FLMMSL_X3  }
+	frame FRBLG { light FLMMSL_X4  }
+	frame FRBLH { light FLMMSL_X5  }
+}
+object FastFlameMissileCrisis
+{
+	frame FRBLA { light FLMMISSILE }
+	frame FRBLB { light FLMMISSILE }
+	frame FRBLC { light FLMMISSILE }
+	
+	frame FRBLD { light FLMMSL_X1  }
+	frame FRBLE { light FLMMSL_X2  }
+	frame FRBLF { light FLMMSL_X3  }
+	frame FRBLG { light FLMMSL_X4  }
+	frame FRBLH { light FLMMSL_X5  }
+}
+
+object DegninOreNew
+{
+	frame BNG3A { light DEGORE_X1 }
+	frame BNG3B { light DEGORE_X2 }
+	frame BNG3C { light DEGORE_X3 }
+	frame BNG3D { light DEGORE_X4 }
+	frame BNG3E { light DEGORE_X5 }
+	frame BNG3F { light DEGORE_X6 }
+	frame BNG3G { light DEGORE_X7 }
+	frame BNG3H { light DEGORE_X8 }
+}
+
+object AcolyteNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteTanNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteRedNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteRustNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteGrayNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteDGreenNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteGoldNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteLGreenNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteBlueNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object AcolyteShadowNew
+{
+	frame AGRDF { light HUMNDATK }
+}
+
+object RebelNew
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel1New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel2New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel3New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel4New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel5New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Rebel6New
+{
+	frame HMN1F { light HUMNDATK }
+}
+
+object Macil1New
+{
+	frame LEADF { light HUMNDATK }
+}
+
+object Macil2New
+{
+	frame LEADF { light HUMNDATK }
+}
+
+object CeilingTurretNew
+{
+	frame TURTB { light CTURRETATK1 }
+	frame TURTD { light CTURRETATK2 }
+	
+	frame BALLA { light CTURRETDTH1 }
+	frame BALLB { light CTURRETDTH2 }
+	frame BALLC { light CTURRETDTH3 }
+	frame BALLD { light CTURRETDTH4 }
+	frame BALLE { light CTURRETDTH5 }
+}
+
+object OStalkerNew
+{
+	frame STLKM { light STLKATK  } // Not used in Strife
+	
+	frame STLKQ { light STLKDTH1 }
+	frame STLKR { light STLKDTH1 }
+	frame STLKS { light STLKDTH1 }
+	frame STLKT { light STLKDTH2 }
+	frame STLKU { light STLKDTH3 }
+	frame STLKV { light STLKDTH4 }
+	frame STLKW { light STLKDTH5 }
+	frame STLKX { light STLKDTH6 }
+	frame STLKY { light STLKDTH7 }
+	frame STLKZ { light STLKDTH8 }
+	frame STLK[ { light STLKDTH9 }
+}
+
+object SentinelFX1New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX1New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX1Crisis
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX2New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX2Crisis
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX3New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX3Crisis
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX4New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX4Crisis
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX5New
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+object Sentinel2FX5Crisis
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+
+object SentinelFX2
+{
+	frame SHT1A { light SNTNL_FX1 }
+	frame SHT1B { light SNTNL_FX2 }
+	
+	frame POW1F { light SNTNL_FX3 }
+	frame POW1G { light SNTNL_FX4 }
+	frame POW1H { light SNTNL_FX5 }
+	frame POW1I { light SNTNL_FX6 }
+	frame POW1J { light SNTNL_FX7 }
+}
+
+object CrusaderNew
+{
+	frame ROB2H { light CRSDRDTH1 }
+	frame ROB2I { light CRSDRDTH2 }
+	frame ROB2J { light CRSDRDTH3 }
+	frame ROB2K { light CRSDRDTH4 }
+	frame ROB2L { light CRSDRDTH5 }
+	frame ROB2M { light CRSDRDTH4 }
+	frame ROB2N { light CRSDRDTH3 }
+	frame ROB2O { light CRSDRDTH2 }
+}
+
+object CrusaderMissileNew
+{
+	frame MICRA { light MISSILE    }
+	
+	frame SMISA { light MISSILE_X1 }
+	frame SMISB { light MISSILE_X2 }
+	frame SMISC { light MISSILE_X3 }
+	frame SMISD { light MISSILE_X4 }
+	frame SMISE { light MISSILE_X5 }
+	frame SMISF { light MISSILE_X6 }
+	frame SMISG { light MISSILE_X7 }
+}
+object CrusaderMissileCrisis
+{
+	frame MICRA { light MISSILE    }
+	
+	frame SMISA { light MISSILE_X1 }
+	frame SMISB { light MISSILE_X2 }
+	frame SMISC { light MISSILE_X3 }
+	frame SMISD { light MISSILE_X4 }
+	frame SMISE { light MISSILE_X5 }
+	frame SMISF { light MISSILE_X6 }
+	frame SMISG { light MISSILE_X7 }
+}
+
+object ReaverNew
+{
+	frame ROB1F { light HUMNDATK }
+	
+	frame ROB1K { light REAV_X1  }
+	frame ROB1L { light REAV_X2  }
+	frame ROB1M { light REAV_X3  }
+	frame ROB1N { light REAV_X4  }
+	frame ROB1O { light REAV_X5  }
+	frame ROB1P { light REAV_X6  }
+	frame ROB1Q { light REAV_X7  }
+}
+
+object TemplarNew
+{
+	frame PGRDG { light TEMPATK }
+	
+	frame PGRDI { light TEMP_X1 }
+	frame PGRDJ { light TEMP_X2 }
+	frame PGRDK { light TEMP_X3 }
+	frame PGRDL { light TEMP_X4 }
+	frame PGRDM { light TEMP_X5 }
+	frame PGRDN { light TEMP_X6 }
+}
+
+object InquisitorNew
+{
+	frame ROB3F { light INQATK1  }
+	frame ROB3J { light INQATK2  }
+	
+	frame ROB3H { light INQFLY1  }
+	frame ROB3I { light INQFLY2  }
+	
+	frame ROB3M { light INQDTH1  }
+	frame ROB3N { light INQDTH2  }
+	frame ROB3O { light INQDTH3  }
+	frame ROB3P { light INQDTH4  }
+	frame ROB3Q { light INQDTH5  }
+	frame ROB3R { light INQDTH6  }
+	frame ROB3S { light INQDTH6  }
+	frame ROB3T { light INQDTH6  }
+	frame ROB3U { light INQDTH7  }
+	frame ROB3V { light INQDTH8  }
+	frame ROB3W { light INQDTH6  }
+	frame ROB3X { light INQDTH6  }
+	frame ROB3Y { light INQDTH9  }
+	frame ROB3Z { light INQDTH10 }
+	frame ROB3[ { light INQDTH11 }
+	frame ROB3\ { light INQDTH12 }
+	frame RBB3] { light INQDTH13 }
+	frame RBB3A { light INQDTH12 }
+	frame RBB3B { light INQDTH13 }
+	frame RBB3C { light INQDTH14 }
+}
+
+object InquisitorShotNew
+{
+	frame BNG2A { light INQSHOT_X1 }
+	frame BNG2B { light INQSHOT_X2 }
+	frame BNG2C { light INQSHOT_X3 }
+	frame BNG2D { light INQSHOT_X4 }
+	frame BNG2E { light INQSHOT_X5 }
+	frame BNG2F { light INQSHOT_X6 }
+	frame BNG2G { light INQSHOT_X7 }
+	frame BNG2H { light INQSHOT_X8 }
+	frame BNG2I { light INQSHOT_X9 }
+}
+object InquisitorShotCrisis
+{
+	frame BNG2A { light INQSHOT_X1 }
+	frame BNG2B { light INQSHOT_X2 }
+	frame BNG2C { light INQSHOT_X3 }
+	frame BNG2D { light INQSHOT_X4 }
+	frame BNG2E { light INQSHOT_X5 }
+	frame BNG2F { light INQSHOT_X6 }
+	frame BNG2G { light INQSHOT_X7 }
+	frame BNG2H { light INQSHOT_X8 }
+	frame BNG2I { light INQSHOT_X9 }
+}
+
+object ProgrammerNew
+{
+	frame PRGRH { light PROGATK1 }
+	frame PRGRI { light PROGATK2 }
+	frame PRGRJ { light PROGATK3 }
+	
+	frame PRGRN { light PROGDTH1 }
+	frame PRGRO { light PROGDTH2 }
+}
+
+object StrifeBishopNew
+{
+	frame MLDRE { light BISHOP }
+}
+
+object BishopMissileNew
+{
+	frame MISS  { light MISSILE   }
+	
+	frame SMISA { light MISSILE_X1}
+	frame SMISB { light MISSILE_X2}
+	frame SMISC { light MISSILE_X3}
+	frame SMISD { light MISSILE_X4}
+	frame SMISE { light MISSILE_X5}
+	frame SMISF { light MISSILE_X6}
+	frame SMISG { light MISSILE_X7}
+}
+object BishopMissileCrisis
+{
+	frame MISS  { light MISSILE   }
+	
+	frame SMISA { light MISSILE_X1}
+	frame SMISB { light MISSILE_X2}
+	frame SMISC { light MISSILE_X3}
+	frame SMISD { light MISSILE_X4}
+	frame SMISE { light MISSILE_X5}
+	frame SMISF { light MISSILE_X6}
+	frame SMISG { light MISSILE_X7}
+}
+
+object ExplosiveBarrel2New
+{
+	frame BARTC { light BARREL_X1 }
+	frame BARTD { light BARREL_X2 }
+	frame BARTE { light BARREL_X3 }
+	frame BARTF { light BARREL_X4 }
+	frame BARTG { light BARREL_X5 }
+	frame BARTH { light BARREL_X6 }
+	frame BARTI { light BARREL_X7 }
+	frame BARTJ { light BARREL_X8 }
+	frame BARTK { light BARREL_X9 }
+}
+
+object SpectralLightningBaseNew
+{
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object SpectralLightningBall1New
+{
+	frame ZOT3  { light ZAPBALL1  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object SpectralLightningBall2New
+{
+	frame ZOT3  { light ZAPBALL1  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+object SpectralLightningBall2Monster
+{
+	frame ZOT3  { light ZAPBALL1  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+object SpectralLightningBall2MonsterCrisis
+{
+	frame ZOT3  { light ZAPBALL1  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object SpectralLightningBigBall1New
+{
+	frame ZOT7  { light ZAPBALL2  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object SpectralLightningBigBall2New
+{
+	frame ZOT7  { light ZAPBALL2  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+object SpectralLightningBigBall2Crisis
+{
+	frame ZOT7  { light ZAPBALL2  }
+	
+	frame ZAP1A { light ARROWZAP1 }
+	frame ZAP1B { light ARROWZAP2 }
+	frame ZAP1C { light ARROWZAP3 }
+	frame ZAP1D { light ARROWZAP4 }
+	frame ZAP1E { light ARROWZAP5 }
+	frame ZAP1F { light ARROWZAP6 }
+}
+
+object SpectralLightningH1New
+{
+	frame ZAP6  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningH2New
+{
+	frame ZAP6  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningH3New
+{
+	frame ZAP6  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningH3Monster
+{
+	frame ZAP6  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningH3MonsterCrisis
+{
+	frame ZAP6  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningV1New
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningV1Monster
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningV1MonsterCrisis
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningV2New
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningV2Monster
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningV2MonsterCrisis
+{
+	frame ZOT1  { light LIGHTNING1 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningSpot
+{
+	frame ZAP5 { light LIGHT_SPT }
+}
+object SpectralLightningSpotNew
+{
+	frame ZAP5 { light LIGHT_SPT }
+}
+object SpectralLightningSpotCrisis
+{
+	frame ZAP5 { light LIGHT_SPT }
+}
+
+object SpectralLightningBigV1New
+{
+	frame ZOT2  { light LIGHTNING2 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+object SpectralLightningBigV2
+{
+	frame ZOT2  { light LIGHTNING2 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningBigV2Monster
+{
+	frame ZOT2  { light LIGHTNING2 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+object SpectralLightningBigV2MonsterCrisis
+{
+	frame ZOT2  { light LIGHTNING2 }
+	
+	frame ZAP1A { light ARROWZAP1  }
+	frame ZAP1B { light ARROWZAP2  }
+	frame ZAP1C { light ARROWZAP3  }
+	frame ZAP1D { light ARROWZAP4  }
+	frame ZAP1E { light ARROWZAP5  }
+	frame ZAP1F { light ARROWZAP6  }
+}
+
+//
+//
 Object DarkMatterBall
-{	Frame DMGB { Light DarkMatterLight }	}
+{
+	Frame DMGB { Light DarkMatterLight }
+}
+
 Object ShadowVaporSpawner
 {
-	Frame PLAYA	{ Light DarkMatterLightExp2 }
-	Frame PLAYB	{ Light DarkMatterLightExp1 }
-	Frame PLAYC	{ Light DarkMatterLightExp2 }
-	Frame PLAYD	{ Light DarkMatterLightExp3 }
-	Frame PLAYE	{ Light DarkMatterLightExp4 }
-	Frame PLAYF	{ Light DarkMatterLightExp5 }
+	Frame PLAYA { Light DarkMatterLightExp2 }
+	Frame PLAYB { Light DarkMatterLightExp1 }
+	Frame PLAYC { Light DarkMatterLightExp2 }
+	Frame PLAYD { Light DarkMatterLightExp3 }
+	Frame PLAYE { Light DarkMatterLightExp4 }
+	Frame PLAYF { Light DarkMatterLightExp5 }
 }
 
 pulselight DarkMatterLight 
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 70
-    secondarySize 90
-    interval 0.7
-    Subtractive 90
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 70
+	secondarySize 90
+	interval 0.7
+	Subtractive 90
 }
 
 flickerlight DarkMatterLightExp1 
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 100
-    secondarysize 110
-    Subtractive 110
-    chance 0.4
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 100
+	secondarysize 110
+	Subtractive 110
+	chance 0.4
 }
 flickerlight DarkMatterLightExp2
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 85
-    secondarysize 95
-    Subtractive 100
-    chance 0.4
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 85
+	secondarysize 95
+	Subtractive 100
+	chance 0.4
 }
 flickerlight DarkMatterLightExp3
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 70
-    secondarysize 80
-    Subtractive 90
-    chance 0.4
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 70
+	secondarysize 80
+	Subtractive 90
+	chance 0.4
 }
 flickerlight DarkMatterLightExp4
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 55
-    secondarysize 65
-    Subtractive 80
-    chance 0.4
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 55
+	secondarysize 65
+	Subtractive 80
+	chance 0.4
 }
 flickerlight DarkMatterLightExp5
 {
-    offset 0 0 0
-    color 0.2 0.0 0.6
-    size 40
-    secondarysize 50
-    Subtractive 70
-    chance 0.4
+	offset 0 0 0
+	color 0.2 0.0 0.6
+	size 40
+	secondarysize 50
+	Subtractive 70
+	chance 0.4
 }
 
 pointlight EMPBall
 {
-    color 1.0 1.0 1.0
-    size 24
+	color 1.0 1.0 1.0
+	size 24
 }
 
 Object EMPGrenade
@@ -79,98 +853,98 @@ Object EMPGrenade
 
 pointlight TeslaExplode1
 {
-    color 0.75 0.75 1.0
-    size 32
+	color 0.75 0.75 1.0
+	size 32
 }
 
 pointlight TeslaExplode2
 {
-    color 0.75 0.75 1.0
-    size 40
+	color 0.75 0.75 1.0
+	size 40
 }
 
 pointlight TeslaExplode3
 {
-    color 0.75 0.75 1.0
-    size 48
+	color 0.75 0.75 1.0
+	size 48
 }
 
 pointlight TeslaExplode4
 {
-    color 0.75 0.75 1.0
-    size 56
+	color 0.75 0.75 1.0
+	size 56
 }
 
 pointlight TeslaExplode5
 {
-    color 0.75 0.75 1.0
-    size 64
+	color 0.75 0.75 1.0
+	size 64
 }
 
 pointlight TeslaExplode6
 {
-    color 0.75 0.75 1.0
-    size 72
+	color 0.75 0.75 1.0
+	size 72
 }
 
 pointlight TeslaExplode7
 {
-    color 0.75 0.75 1.0
-    size 80
+	color 0.75 0.75 1.0
+	size 80
 }
 
 pointlight TeslaExplode8
 {
-    color 0.75 0.75 1.0
-    size 88
+	color 0.75 0.75 1.0
+	size 88
 }
 
 pointlight TeslaExplode9
 {
-    color 0.75 0.75 1.0
-    size 96
+	color 0.75 0.75 1.0
+	size 96
 }
 
 pointlight TeslaExplode10
 {
-    color 0.75 0.75 1.0
-    size 104
+	color 0.75 0.75 1.0
+	size 104
 }
 
 pointlight TeslaExplode11
 {
-    color 0.75 0.75 1.0
-    size 112
+	color 0.75 0.75 1.0
+	size 112
 }
 
 pointlight TeslaExplode12
 {
-    color 0.75 0.75 1.0
-    size 120
+	color 0.75 0.75 1.0
+	size 120
 }
 
 pointlight TeslaExplode13
 {
-    color 0.75 0.75 1.0
-    size 128
+	color 0.75 0.75 1.0
+	size 128
 }
 
 pointlight TeslaExplode14
 {
-    color 0.75 0.75 1.0
-    size 136
+	color 0.75 0.75 1.0
+	size 136
 }
 
 pointlight TeslaExplode15
 {
-    color 0.75 0.75 1.0
-    size 144
+	color 0.75 0.75 1.0
+	size 144
 }
 
 pointlight TeslaExplode16
 {
-    color 0.75 0.75 1.0
-    size 152
+	color 0.75 0.75 1.0
+	size 152
 }
 
 Object EMPGrenade
@@ -195,159 +969,159 @@ Object EMPGrenade
 
 Pointlight SmithExplode1
 {
-Color 1.0 0.8 0.0
-Size 56
+	Color 1.0 0.8 0.0
+	Size 56
 }
 
 Pointlight SmithExplode2
 {
-Color 1.0 0.8 0.0
-Size 64
+	Color 1.0 0.8 0.0
+	Size 64
 }
 
 Pointlight SmithExplode3
 {
-Color 1.0 0.8 0.0
-Size 72
-Offset 0 8 0
+	Color 1.0 0.8 0.0
+	Size 72
+	Offset 0 8 0
 }
 
 Pointlight SmithExplode4
 {
-Color 1.0 0.8 0.0
-Size 80
-Offset 0 16 0
+	Color 1.0 0.8 0.0
+	Size 80
+	Offset 0 16 0
 }
 
 Pointlight SmithExplode5
 {
-Color 1.0 0.8 0.0
-Size 88
-Offset 0 24 0
+	Color 1.0 0.8 0.0
+	Size 88
+	Offset 0 24 0
 }
 
 Pointlight SmithExplode6
 {
-Color 1.0 0.8 0.0
-Size 96
-Offset 0 32 0
+	Color 1.0 0.8 0.0
+	Size 96
+	Offset 0 32 0
 }
 
 Pointlight SmithExplode7
 {
-Color 1.0 0.8 0.0
-Size 104
-Offset 0 40 0
+	Color 1.0 0.8 0.0
+	Size 104
+	Offset 0 40 0
 }
 
 Pointlight SmithExplode8
 {
-Color 1.0 0.8 0.0
-Size 112
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 112
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode9
 {
-Color 1.0 0.8 0.0
-Size 128
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 128
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode10
 {
-Color 1.0 0.8 0.0
-Size 136
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 136
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode11
 {
-Color 1.0 0.8 0.0
-Size 96
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 96
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode12
 {
-Color 1.0 0.8 0.0
-Size 80
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 80
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode13
 {
-Color 1.0 0.8 0.0
-Size 64
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 64
+	Offset 0 48 0
 }
 
 Pointlight SmithExplode14
 {
-Color 1.0 0.8 0.0
-Size 56
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 56
+	Offset 0 48 0
 }
 
 
 Object DarkInquisitorBigExplosion
 {
-Frame GRNEA { Light SmithExplode1 }
-Frame GRNEB { Light SmithExplode2 }
-Frame GRNEC { Light SmithExplode3 }
-Frame GRNED { Light SmithExplode4 }
-Frame GRNEE { Light SmithExplode5 }
-Frame GRNEF { Light SmithExplode6 }
-Frame GRNEG { Light SmithExplode7 }
-Frame GRNEH { Light SmithExplode8 }
-Frame GRNEI { Light SmithExplode9 }
-Frame GRNEJ { Light SmithExplode10 }
-Frame GRNEK { Light SmithExplode11 }
-Frame GRNEL { Light SmithExplode12 }
-Frame GRNEM { Light SmithExplode13 }
-Frame GRNEN { Light SmithExplode14 }
+	Frame GRNEA { Light SmithExplode1 }
+	Frame GRNEB { Light SmithExplode2 }
+	Frame GRNEC { Light SmithExplode3 }
+	Frame GRNED { Light SmithExplode4 }
+	Frame GRNEE { Light SmithExplode5 }
+	Frame GRNEF { Light SmithExplode6 }
+	Frame GRNEG { Light SmithExplode7 }
+	Frame GRNEH { Light SmithExplode8 }
+	Frame GRNEI { Light SmithExplode9 }
+	Frame GRNEJ { Light SmithExplode10 }
+	Frame GRNEK { Light SmithExplode11 }
+	Frame GRNEL { Light SmithExplode12 }
+	Frame GRNEM { Light SmithExplode13 }
+	Frame GRNEN { Light SmithExplode14 }
 }
 
 Pointlight DeathExplode1
 {
-Color 1.0 0.8 0.0
-Size 128
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 128
+	Offset 0 48 0
 }
 
 Pointlight DeathExplode2
 {
-Color 1.0 0.8 0.0
-Size 96
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 96
+	Offset 0 48 0
 }
 
 Pointlight DeathExplode3
 {
-Color 1.0 0.8 0.0
-Size 80
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 80
+	Offset 0 48 0
 }
 
 Pointlight DeathExplode4
 {
-Color 1.0 0.8 0.0
-Size 64
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 64
+	Offset 0 48 0
 }
 
 Pointlight DeathExplode5
 {
-Color 1.0 0.8 0.0
-Size 56
-Offset 0 48 0
+	Color 1.0 0.8 0.0
+	Size 56
+	Offset 0 48 0
 }
 
 Object InquisitorDeathExplosion
 {
-Frame R045M { Light DeathExplode1 }
-Frame R045N { Light DeathExplode2 }
-Frame R045O { Light DeathExplode3 }
-Frame R045P { Light DeathExplode4 }
-Frame R045Q { Light DeathExplode5 }
+	Frame R045M { Light DeathExplode1 }
+	Frame R045N { Light DeathExplode2 }
+	Frame R045O { Light DeathExplode3 }
+	Frame R045P { Light DeathExplode4 }
+	Frame R045Q { Light DeathExplode5 }
 }

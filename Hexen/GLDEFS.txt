@@ -3,6 +3,64 @@
 //**************
 #include "GLDefs/brightmaps.gl"
 
+Pulselight CRYSTALVIAL1
+{
+	Color 0.316 0.425 0.988
+	Size 32
+	SecondarySize 40
+	Attenuate 1
+}
+
+object CrystalVialNew
+{
+	frame PTN1A { light CRYSTALVIAL1 }
+	frame PTN1B { light CRYSTALVIAL1 }
+	frame PTN1C { light CRYSTALVIAL1 }
+}
+
+Pulselight QUARTZFLASK1
+{
+	Color 0.847 0.175 0.988
+	Size 40
+	SecondarySize 48
+	Attenuate 1
+}
+
+object ArtiHealthNew
+{
+	frame PTN2A { light QUARTZFLASK1 }
+	frame PTN2B { light QUARTZFLASK1 }
+	frame PTN2C { light QUARTZFLASK1 }
+}
+
+Pulselight MYSTICURN1
+{
+	Color 0.601 0.632 0.582
+	Size 56
+	SecondarySize 64
+	Attenuate 1
+}
+
+object ArtiSuperHealthNew
+{
+	frame PTN2A { light MYSTICURN1 }
+	frame PTN2B { light MYSTICURN1 }
+	frame PTN2C { light MYSTICURN1 }
+}
+
+Pulselight KRATEROFMIGHT
+{
+	Color 0.699 0.07 0.871
+	Size 56
+	SecondarySize 64
+	Attenuate 1
+}
+
+object ArtiBoostManaNew
+{
+	frame BMAN { light KRATEROFMIGHT }
+}
+
 object HolyMissileNew
 {
 	frame SPIRP { light GHOST }
@@ -439,6 +497,14 @@ object BishopFXCrisis
 	frame BPFXH { light BISHOPBALL_X4 }
 }
 
+flickerlight FGARG2
+{
+	attenuate 1
+	color 1.0 1.0 0.0
+	size 30
+	secondarysize 36
+	chance 0.4
+}
 object FireDemonNew
 {
 	frame FDMNA { light FGARG }
@@ -448,6 +514,10 @@ object FireDemonNew
 	frame FDMNH { light FGARG }
 	frame FDMNI { light FGARG }
 	frame FDMNJ { light FGARG }
+
+	frame FDMNE { light FGARG2 }
+	frame FDMNF { light FGARG2 }
+	frame FDMNG { light FGARG2 }
 	
 	frame FDMNK { light FGARGATK }
 }
@@ -475,6 +545,14 @@ flickerlight FGARGLEADER
 	color 0.93 0.0 0.0
 	size 60
 	secondarysize 72
+	chance 0.4
+}
+flickerlight FGARGLEADER2
+{
+	attenuate 1
+	color 0.93 0.0 0.0
+	size 30
+	secondarysize 36
 	chance 0.4
 }
 flickerlight FGARGLEADERATK
@@ -515,6 +593,11 @@ object FireDemonLeader
 	frame FDNLB { light FGARGLEADER }
 	frame FDNLC { light FGARGLEADER }
 	frame FDNLD { light FGARGLEADER }
+
+	frame FDNLE { light FGARGLEADER2 }
+	frame FDNLF { light FGARGLEADER2 }
+	frame FDNLG { light FGARGLEADER2 }
+
 	frame FDNLH { light FGARGLEADER }
 	frame FDNLI { light FGARGLEADER }
 	frame FDNLJ { light FGARGLEADER }
@@ -545,6 +628,14 @@ flickerlight FGARGCOMM
 	color 0.265 0.773 0.964
 	size 60
 	secondarysize 72
+	chance 0.4
+}
+flickerlight FGARGCOMM2
+{
+	attenuate 1
+	color 0.265 0.773 0.964
+	size 30
+	secondarysize 36
 	chance 0.4
 }
 flickerlight FGARGCOMMATK
@@ -585,6 +676,11 @@ object FireDemonCommander
 	frame FDNCB { light FGARGCOMM }
 	frame FDNCC { light FGARGCOMM }
 	frame FDNCD { light FGARGCOMM }
+
+	frame FDNCE { light FGARGCOMM2 }
+	frame FDNCF { light FGARGCOMM2 }
+	frame FDNCG { light FGARGCOMM2 }
+
 	frame FDNCH { light FGARGCOMM }
 	frame FDNCI { light FGARGCOMM }
 	frame FDNCJ { light FGARGCOMM }
@@ -615,6 +711,14 @@ flickerlight FGARGQUEEN
 	color 0.918 0.664 0.992
 	size 60
 	secondarysize 72
+	chance 0.4
+}
+flickerlight FGARGQUEEN2
+{
+	attenuate 1
+	color 0.918 0.664 0.992
+	size 30
+	secondarysize 36
 	chance 0.4
 }
 flickerlight FGARGQUEENATK
@@ -655,6 +759,11 @@ object FireDemonQueen
 	frame FDNQB { light FGARGQUEEN }
 	frame FDNQC { light FGARGQUEEN }
 	frame FDNQD { light FGARGQUEEN }
+
+	frame FDNQE { light FGARGQUEEN2 }
+	frame FDNQF { light FGARGQUEEN2 }
+	frame FDNQG { light FGARGQUEEN2 }
+
 	frame FDNQH { light FGARGQUEEN }
 	frame FDNQI { light FGARGQUEEN }
 	frame FDNQJ { light FGARGQUEEN }

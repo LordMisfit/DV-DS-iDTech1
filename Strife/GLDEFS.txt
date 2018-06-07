@@ -4,6 +4,26 @@
 
 //
 //
+object StrifeGenBulletTracerTrail
+{
+	Frame GTAC { light BULLERTRACERTRAIL }
+}
+object StrifeReaverBulletTracerTrail
+{
+	Frame GTAC { light BULLERTRACERTRAIL }
+}
+
+pointlight MAULERTRACERTRAIL
+{
+	attenuate 1
+	color 0.957 0.675 0.343
+	size 12
+}
+object StrifeMaulerTracerTrail
+{
+	Frame GTAC { light MAULERTRACERTRAIL }
+}
+
 object ElectricBoltNew
 {
 	frame ZAP1A { light ARROWZAP1 }

@@ -3,6 +3,51 @@
 //****************
 #include "GLDefs/brightmaps.gl"
 
+Pulselight CRYSTALVIAL1
+{
+	Color 0.316 0.425 0.988
+	Size 32
+	SecondarySize 40
+	Attenuate 1
+}
+
+object CrystalVialNew
+{
+	frame PTN1A { light CRYSTALVIAL1 }
+	frame PTN1B { light CRYSTALVIAL1 }
+	frame PTN1C { light CRYSTALVIAL1 }
+}
+
+Pulselight QUARTZFLASK1
+{
+	Color 0.847 0.175 0.988
+	Size 40
+	SecondarySize 48
+	Attenuate 1
+}
+
+object ArtiHealthNew
+{
+	frame PTN2A { light QUARTZFLASK1 }
+	frame PTN2B { light QUARTZFLASK1 }
+	frame PTN2C { light QUARTZFLASK1 }
+}
+
+Pulselight MYSTICURN1
+{
+	Color 0.601 0.632 0.582
+	Size 56
+	SecondarySize 64
+	Attenuate 1
+}
+
+object ArtiSuperHealthNew
+{
+	frame PTN2A { light MYSTICURN1 }
+	frame PTN2B { light MYSTICURN1 }
+	frame PTN2C { light MYSTICURN1 }
+}
+
 object GoldWandPuff1New
 {
 	frame PUF2A { light WANDPUFF1 }

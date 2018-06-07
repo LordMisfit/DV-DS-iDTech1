@@ -1,5 +1,5 @@
 // Bag/Satchel
-ACTOR AmmoSatchelNew : CustomInventory replaces AmmoSatchel
+ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 {
 	ConversationID 187
 	+FLOORCLIP
@@ -96,7 +96,7 @@ ACTOR MetalArmorNew : MetalArmor replaces MetalArmor
 // Degnin Ore [both variants]
 
 // This is the initial pickup. It will not explode if hit in this form.
-ACTOR DegninOrePickup : CustomInventory replaces DegninOre
+ACTOR DegninOrePickup : AetheriusCustomInventory replaces DegninOre
 {
 	Radius 16
 	Height 16
@@ -169,7 +169,7 @@ ACTOR DegninOreNew : DegninOre
 }
 
 // Others
-ACTOR EnvironmentalSuitNew : CustomInventory replaces EnvironmentalSuit // PowerupGiver
+ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit // PowerupGiver
 {
 	ConversationID 161, 157, 160
 	+FLOORCLIP
@@ -202,7 +202,7 @@ ACTOR EnvironmentalSuitNew : CustomInventory replaces EnvironmentalSuit // Power
 	}
 }
 
-ACTOR ShadowArmorNew : CustomInventory replaces ShadowArmor
+ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 {
 	ConversationID 160, 156, 159
 	+FLOORCLIP

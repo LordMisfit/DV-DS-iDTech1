@@ -928,7 +928,7 @@ ACTOR BlasterFX1New : AetheriusFastProjectileZSC
 		Spawn:
 			ACLO E 0 NoDelay { A_GetPlayerAttackDamage(28,0); }
 		Idle:
-			ACLO E 200
+			ACLO EEEEEEEE 1 { A_GetPlayerAttackDamage(28,0); }
 			Loop
 		Death:
 			FX18 A 3 Bright

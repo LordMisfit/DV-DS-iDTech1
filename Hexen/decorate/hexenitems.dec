@@ -76,7 +76,7 @@ ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 	Tag "Chaos Device: Teleports you away to near a level's entry point."
 }
   
-ACTOR ArtiSpeedBootsNew : CustomInventory replaces ArtiSpeedBoots
+ACTOR ArtiSpeedBootsNew : AetheriusCustomInventory replaces ArtiSpeedBoots
 {
 	+DONTGIB
 	+FLOATBOB
@@ -97,7 +97,7 @@ ACTOR ArtiSpeedBootsNew : CustomInventory replaces ArtiSpeedBoots
 			Loop
 	}
 }
-ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
+ACTOR ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
 {
 	+DONTGIB
 	+FLOATBOB
@@ -182,7 +182,7 @@ ACTOR ArtiFlyNew : CustomInventory replaces ArtiFly
 	}
 }
 
-ACTOR ArtiInvulnerability2New : CustomInventory replaces ArtiInvulnerability2
+ACTOR ArtiInvulnerability2New : AetheriusCustomInventory replaces ArtiInvulnerability2
 {
 	+DONTGIB
 	+COUNTITEM
@@ -211,7 +211,7 @@ ACTOR ArtiInvulnerability2New : CustomInventory replaces ArtiInvulnerability2
 	}
 }
 
-ACTOR ArtiHealingRadiusNew : CustomInventory replaces ArtiHealingRadius
+ACTOR ArtiHealingRadiusNew : AetheriusCustomInventory replaces ArtiHealingRadius
 {
 	+DONTGIB
 	+COUNTITEM
@@ -610,7 +610,7 @@ ACTOR Mana3New : Ammo replaces Mana3
 //****************
 //**Health Items**
 //****************
-ACTOR CrystalVialNew : CustomInventory replaces CrystalVial
+ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 {
 	+DONTGIB
 	+FLOATBOB
@@ -663,7 +663,7 @@ ACTOR CrystalVialNew : CustomInventory replaces CrystalVial
 			TNT1 A 0 A_Jump(16,"VimstoneSpawn")    
 			TNT1 A 0 A_Jump(36,"TurnIntoHerb") 
 		Idle:
-			PTN1 ABC 3
+			PTN1 ABC 3 bright
 			loop
 		Success:
 			TNT1 A 0 ACS_NamedExecuteAlways("PickupMedicalItem",0,0,0,0)
@@ -674,7 +674,7 @@ ACTOR CrystalVialNew : CustomInventory replaces CrystalVial
   }
 }
 
-ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
+ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
 {
 	+DONTGIB
 	+COUNTITEM
@@ -695,7 +695,7 @@ ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
 	States
 	{
 		Spawn:
-			PTN2 ABC 4
+			PTN2 ABC 4 bright
 			Loop
 		Use:
 			TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-1)
@@ -703,7 +703,7 @@ ACTOR ArtiHealthNew : CustomInventory replaces ArtiHealth
 	}
 }
 
-ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
+ACTOR ArtiSuperHealthNew : AetheriusCustomInventory replaces ArtiSuperHealth
 {
 	+DONTGIB
 	+COUNTITEM
@@ -724,7 +724,7 @@ ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
 	States
 	{
 		Spawn:
-			SPHL A 350
+			SPHL A 350 bright
 			Loop
 		Use:
 			TNT1 A 0 ACS_NamedExecuteAlways("UseCustomInventoryItem",0,-2)
@@ -732,7 +732,7 @@ ACTOR ArtiSuperHealthNew : CustomInventory replaces ArtiSuperHealth
 	}
 }
 
-ACTOR ArtiBoostManaNew : CustomInventory replaces ArtiBoostMana
+ACTOR ArtiBoostManaNew : AetheriusCustomInventory replaces ArtiBoostMana
 {
 	+DONTGIB
 	+FLOATBOB

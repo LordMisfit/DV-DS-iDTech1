@@ -99,16 +99,16 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 			Goto See
 		Pain:
 			PEAS O 3
-			PEAS O 3 A_Pain
+			PEAS O 3 A_DVDSPain
 			Goto Melee
 		Pain.Fist:
 			PEAS O 3
-			PEAS O 3 A_Pain
+			PEAS O 3 A_DVDSPain
 			PEAS OO 3
 			Goto Melee
 		Pain.Kick:
 			PEAS O 3
-			PEAS O 3 A_Pain
+			PEAS O 3 A_DVDSPain
 			PEAS OOOO 3
 			Goto Melee
 		Wound:
@@ -387,17 +387,17 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 			}
 			Loop
 		Pain:
-			BEGR A 3 A_Pain
+			BEGR A 3 A_DVDSPain
 			BEGR A 3 A_Chase
 			Goto Melee
 		Pain.Fist:
 			BEGR A 3
-			BEGR A 3 A_Pain
+			BEGR A 3 A_DVDSPain
 			BEGR AA 3
 			Goto Melee
 		Pain.Kick:
 			BEGR A 3
-			BEGR A 3 A_Pain
+			BEGR A 3 A_DVDSPain
 			BEGR AAAA 3
 			Goto Melee
 		Death:
@@ -508,7 +508,7 @@ ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 		Pain:
 			MRPN A 1
 			MRPN A 2 A_AlertMonsters
-			MRPN B 3 A_Pain
+			MRPN B 3 A_DVDSPain
 			MRPN C 3
 			MRPN D 9 Door_CloseWaitOpen(999, 64, 960)
 			MRPN C 4
@@ -694,18 +694,18 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 
 		Pain:
 			HMN1 O 2
-			HMN1 O 2 A_Pain
+			HMN1 O 2 A_DVDSPain
 			HMN1 O 0 A_Jump(80,"Missile")
 			Goto See
 		Pain.Fist:
 			HMN1 O 2
-			HMN1 O 2 A_Pain
+			HMN1 O 2 A_DVDSPain
 			HMN1 OO 2
 			HMN1 O 0 A_Jump(80,"Missile")
 			Goto See
 		Pain.Kick:
 			HMN1 O 2
-			HMN1 O 2 A_Pain
+			HMN1 O 2 A_DVDSPain
 			HMN1 OOOO 2
 			HMN1 O 0 A_Jump(80,"Missile")
 			Goto See
@@ -971,7 +971,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			AGRD O 4 Fast Slow
 			{
 				A_AcolyteShieldOn;
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD O 4 Fast Slow
 			{
@@ -986,7 +986,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			AGRD O 4 Fast Slow
 			{
 				A_AcolyteShieldOn;
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD OO 4 Fast Slow
 			{
@@ -1001,7 +1001,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			AGRD O 4 Fast Slow
 			{
 				A_AcolyteShieldOn;
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD OOOO 4 Fast Slow
 			{
@@ -1166,7 +1166,7 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
 				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
 				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD O 4 Fast Slow
 			{
@@ -1190,7 +1190,7 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
 				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
 				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD OO 4 Fast Slow
 			{
@@ -1214,7 +1214,7 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
 				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
 				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
-				A_Pain;
+				A_DVDSPain;
 			}
 			AGRD OOOO 4 Fast Slow
 			{
@@ -1394,16 +1394,16 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 			Goto See
 		Pain:
 			PGRD A 2
-			PGRD A 2 A_Pain
+			PGRD A 2 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			PGRD A 2
-			PGRD A 2 A_Pain
+			PGRD A 2 A_DVDSPain
 			PGRD AA 2
 			Goto See
 		Pain.Kick:
 			PGRD A 2
-			PGRD A 2 A_Pain
+			PGRD A 2 A_DVDSPain
 			PGRD AAAA 2
 			Goto See
 
@@ -1546,16 +1546,16 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 			Goto See
 		Pain:
 			ROB1 A 2 Slow
-			ROB1 A 2 A_Pain
+			ROB1 A 2 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			ROB1 A 2 Slow
-			ROB1 A 2 A_Pain
+			ROB1 A 2 A_DVDSPain
 			ROB1 AA 2 Slow
 			Goto See
 		Pain.Kick:
 			ROB1 A 2 Slow
-			ROB1 A 2 A_Pain
+			ROB1 A 2 A_DVDSPain
 			ROB1 AAAA 2 Slow
 			Goto See
 
@@ -1688,14 +1688,14 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 			}
 			Loop
 		Pain:
-			ROB2 D 1 Slow A_Pain
+			ROB2 D 1 Slow A_DVDSPain
 			Goto See
 		Pain.Fist:
-			ROB2 D 1 Slow A_Pain
+			ROB2 D 1 Slow A_DVDSPain
 			ROB2 DDD 1 Slow
 			Goto See
 		Pain.Kick:
-			ROB2 D 1 Slow A_Pain
+			ROB2 D 1 Slow A_DVDSPain
 			ROB2 DDDDD 1 Slow
 			Goto See
 
@@ -1814,14 +1814,14 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 			}
 			Goto Missile+2
 		Pain:
-			SEWR D 5 A_Pain
+			SEWR D 5 A_DVDSPain
 			Goto Missile+3
 		Pain.Fist:
-			SEWR D 5 A_Pain
+			SEWR D 5 A_DVDSPain
 			SEWR D 5
 			Goto Missile+3
 		Pain.Kick:
-			SEWR D 5 A_Pain
+			SEWR D 5 A_DVDSPain
 			SEWR DD 5
 			Goto Missile+3
 
@@ -2058,14 +2058,14 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 			loop
 
 		Pain:
-			STLK L 1 A_Pain
+			STLK L 1 A_DVDSPain
 			Goto See
 		Pain.Fist:
-			STLK L 1 A_Pain
+			STLK L 1 A_DVDSPain
 			STLK LL 1
 			Goto See
 		Pain.Kick:
-			STLK L 1 A_Pain
+			STLK L 1 A_DVDSPain
 			STLK LLLL 1
 			Goto See
 		Drop:
@@ -2363,16 +2363,16 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 
 		Pain:
 			ROB3 G 6
-			ROB3 G 6 A_Pain
+			ROB3 G 6 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			ROB3 G 6
-			ROB3 G 6 A_Pain
+			ROB3 G 6 A_DVDSPain
 			ROB3 G 6
 			Goto See
 		Pain.Kick:
 			ROB3 G 6
-			ROB3 G 6 A_Pain
+			ROB3 G 6 A_DVDSPain
 			ROB3 GG 6
 			Goto See
 		Death:
@@ -2636,18 +2636,18 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 			Goto See
 		Pain:
 			ROB4 G 6
-			ROB4 G 6 A_Pain
+			ROB4 G 6 A_DVDSPain
 			TNT1 A 0 A_JumpIfInventory("FlightToken", 1, "Fly")
 			Goto See
 		Pain.Fist:
 			ROB4 G 6
-			ROB4 G 6 A_Pain
+			ROB4 G 6 A_DVDSPain
 			ROB4 G 6
 			TNT1 A 0 A_JumpIfInventory("FlightToken", 1, "Fly")
 			Goto See
 		Pain.Kick:
 			ROB4 G 6
-			ROB4 G 6 A_Pain
+			ROB4 G 6 A_DVDSPain
 			ROB4 GG 6
 			TNT1 A 0 A_JumpIfInventory("FlightToken", 1, "Fly")
 			Goto See
@@ -2805,16 +2805,16 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 			}
 			Goto See+6
 		Pain:
-			PRGR K 5 A_Pain
+			PRGR K 5 A_DVDSPain
 			PRGR L 5 A_SentinelBob
 			Goto See+6
 		Pain.Fist:
-			PRGR K 5 A_Pain
+			PRGR K 5 A_DVDSPain
 			PRGR L 5 A_SentinelBob
 			PRGR L 5
 			Goto See+6
 		Pain.Kick:
-			PRGR K 5 A_Pain
+			PRGR K 5 A_DVDSPain
 			PRGR L 5 A_SentinelBob
 			PRGR LL 5
 			Goto See+6
@@ -2918,7 +2918,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 			}
 			Goto See+2
 		Pain:
-			MLDR D 1 A_Pain
+			MLDR D 1 A_DVDSPain
 			Goto See+2
 		Pain.GravityHP: Goto See
 		Pain.GravityMP: Goto See
@@ -2980,7 +2980,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 			ORCL A -1
 			Stop
 		Pain:
-			ORCL A 1 A_Pain
+			ORCL A 1 A_DVDSPain
 			ORCL A 1 A_Die
 			Goto Idle
 		Pain.GravityHP: Goto Idle
@@ -3099,16 +3099,16 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 
 		Pain:
 			LEAD Y 3
-			LEAD Y 3 A_Pain
+			LEAD Y 3 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			LEAD Y 3
-			LEAD Y 3 A_Pain
+			LEAD Y 3 A_DVDSPain
 			LEAD Y 3
 			Goto See
 		Pain.Kick:
 			LEAD Y 3
-			LEAD Y 3 A_Pain
+			LEAD Y 3 A_DVDSPain
 			LEAD YY 3
 			Goto See
 
@@ -3533,7 +3533,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 			}
 			Goto See+12
 		Pain:
-			ALN1 J 2 A_Pain
+			ALN1 J 2 A_DVDSPain
 			Goto See+8
 		Pain.GravityHP: Goto See
 		Pain.GravityMP: Goto See
@@ -3775,7 +3775,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 			}
 			Goto See+12
 		Pain:
-			ALN1 J 2 A_Pain
+			ALN1 J 2 A_DVDSPain
 			Goto See+8
 
 		XDeath:
@@ -4205,7 +4205,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 			}
 			Goto See+12
 		Pain:
-			MNAL J 2 Bright A_Pain
+			MNAL J 2 Bright A_DVDSPain
 			Goto See+8
 		Pain.GravityHP: Goto See
 		Pain.GravityMP: Goto See
@@ -4390,7 +4390,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 			}
 			Goto See+6
 		Pain:
-			MNAL R 2 Bright A_Pain
+			MNAL R 2 Bright A_DVDSPain
 			Goto See
 		Pain.GravityHP: Goto See
 		Pain.GravityMP: Goto See
@@ -4571,7 +4571,7 @@ ACTOR EntityAscended : EntityBossNew
 			}
 			Goto See+12
 		Pain:
-			MNAL J 2 Bright A_Pain
+			MNAL J 2 Bright A_DVDSPain
 			Goto See+8
 		Pain.GravityHP: Goto See
 		Pain.GravityMP: Goto See

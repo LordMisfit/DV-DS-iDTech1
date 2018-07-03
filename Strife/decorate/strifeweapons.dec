@@ -68,7 +68,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	Weapon.AmmoGive1 8
 	Weapon.AmmoType1 "ElectricBolts"
 	Weapon.SisterWeapon "StrifeCrossbow2New"
-	Inventory.PickupMessage "$TXT_STRIFECROSSBOW" // "You picked up the crossbow"
+	Inventory.PickupMessage "You picked up the crossbow \cx[Slot 2]\c-"
 	Tag "$TAG_STRIFECROSSBOW1" // "Crossbow"
 	Inventory.Icon "CBOWA0"
 	ConversationID 194

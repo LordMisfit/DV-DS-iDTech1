@@ -187,16 +187,16 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			Loop
 		Pain:
 			MNTR E 3
-			MNTR E 6 A_Pain
+			MNTR E 6 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			MNTR E 3
-			MNTR E 6 A_Pain
+			MNTR E 6 A_DVDSPain
 			MNTR EE 3
 			Goto See
 		Pain.Kick:
 			MNTR E 3
-			MNTR E 6 A_Pain
+			MNTR E 6 A_DVDSPain
 			MNTR EEEE 3
 			Goto See
 		Death:
@@ -346,14 +346,14 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			}
 			Goto See
 		Pain:
-			ETTN H 7 A_Pain
+			ETTN H 7 A_DVDSPain
 			Goto See
 		Pain.Fist:
-			ETTN H 7 A_Pain
+			ETTN H 7 A_DVDSPain
 			ETTN H 7
 			Goto See
 		Pain.Kick:
-			ETTN H 7 A_Pain
+			ETTN H 7 A_DVDSPain
 			ETTN HH 7
 			Goto See
 		Death:
@@ -458,14 +458,14 @@ Actor EttinCommander : EttinNew
 			}
 			Loop
 		Pain:
-			CETN H 7 A_Pain
+			CETN H 7 A_DVDSPain
 			Goto See
 		Pain.Fist:
-			CETN H 7 A_Pain
+			CETN H 7 A_DVDSPain
 			CETN H 7
 			Goto See
 		Pain.Kick:
-			CETN H 7 A_Pain
+			CETN H 7 A_DVDSPain
 			CETN HH 7
 			Goto See
 		Melee:
@@ -788,7 +788,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
 				}
 			}
-			BORM H 2 A_Pain
+			BORM H 2 A_DVDSPain
 			goto PainReact
 		Pain.Fist:
 			TNT1 A 0 
@@ -806,7 +806,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
 				}
 			}
-			BORM H 2 A_Pain
+			BORM H 2 A_DVDSPain
 			BORM HH 2
 			goto PainReact
 		Pain.Kick:
@@ -825,7 +825,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
 				}
 			}
-			BORM H 2 A_Pain
+			BORM H 2 A_DVDSPain
 			BORM HHHH 2
 			goto PainReact
 		PainReact:
@@ -937,14 +937,14 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			}
 			Goto See
 		Pain:
-			CENT G 6 A_Pain
+			CENT G 6 A_DVDSPain
 			Goto ShieldDefend
 		Pain.Fist:
-			CENT G 6 A_Pain
+			CENT G 6 A_DVDSPain
 			CENT GG 6
 			Goto ShieldDefend
 		Pain.Kick:
-			CENT G 6 A_Pain
+			CENT G 6 A_DVDSPain
 			CENT GGGG 6
 			Goto ShieldDefend
 		ShieldDefend:
@@ -1209,14 +1209,14 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 			}
 			loop
 		Pain:
-			CENT G 5 A_Pain
+			CENT G 5 A_DVDSPain
 			Goto ShieldDefend
 		Pain.Fist:
-			CENT G 5 A_Pain
+			CENT G 5 A_DVDSPain
 			CENT GG 5
 			Goto ShieldDefend
 		Pain.Kick:
-			CENT G 5 A_Pain
+			CENT G 5 A_DVDSPain
 			CENT GGGG 5
 			Goto ShieldDefend
 		ShieldDefend:
@@ -1361,16 +1361,16 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			Loop
 		Pain:
 			FDMN D 0 Bright A_UnSetInvulnerable
-			FDMN D 6 Bright A_Pain
+			FDMN D 6 Bright A_DVDSPain
 			Goto Chase
 		Pain.Fist:
 			FDMN D 0 Bright A_UnSetInvulnerable
-			FDMN D 6 Bright A_Pain
+			FDMN D 6 Bright A_DVDSPain
 			FDMN DD 6 Bright
 			Goto Chase
 		Pain.Kick:
 			FDMN D 0 Bright A_UnSetInvulnerable
-			FDMN D 6 Bright A_Pain
+			FDMN D 6 Bright A_DVDSPain
 			FDMN DDDD 6 Bright
 			Goto Chase
 		Missile:
@@ -1493,16 +1493,16 @@ Actor FireDemonLeader : FireDemonNew
 			Loop
 		Pain:
 			FDNL D 0 Bright A_UnSetInvulnerable
-			FDNL D 3 Bright A_Pain
+			FDNL D 3 Bright A_DVDSPain
 			Goto Chase
 		Pain.Fist:
 			FDNL D 0 Bright A_UnSetInvulnerable
-			FDNL D 3 Bright A_Pain
+			FDNL D 3 Bright A_DVDSPain
 			FDNL DD 3 Bright
 			Goto Chase
 		Pain.Kick:
 			FDNL D 0 Bright A_UnSetInvulnerable
-			FDNL D 3 Bright A_Pain
+			FDNL D 3 Bright A_DVDSPain
 			FDNL DDDD 3 Bright
 			Goto Chase
 		Missile:
@@ -1662,16 +1662,16 @@ Actor FireDemonCommander : FireDemonNew
 			Loop
 		Pain:
 			FDNC D 0 Bright A_UnSetInvulnerable
-			FDNC D 3 Bright A_Pain
+			FDNC D 3 Bright A_DVDSPain
 			Goto Chase
 		Pain.Fist:
 			FDNC D 0 Bright A_UnSetInvulnerable
-			FDNC D 3 Bright A_Pain
+			FDNC D 3 Bright A_DVDSPain
 			FDNC DD 3 Bright
 			Goto Chase
 		Pain.Kick:
 			FDNC D 0 Bright A_UnSetInvulnerable
-			FDNC D 3 Bright A_Pain
+			FDNC D 3 Bright A_DVDSPain
 			FDNC DDDD 3 Bright
 			Goto Chase
 		Missile:
@@ -1833,16 +1833,16 @@ Actor FireDemonQueen : FireDemonNew
 			Loop
 		Pain:
 			FDNQ D 0 Bright A_UnSetInvulnerable
-			FDNQ D 3 Bright A_Pain
+			FDNQ D 3 Bright A_DVDSPain
 			Goto Chase
 		Pain.Fist:
 			FDNQ D 0 Bright A_UnSetInvulnerable
-			FDNQ D 3 Bright A_Pain
+			FDNQ D 3 Bright A_DVDSPain
 			FDNQ DD 3 Bright
 			Goto Chase
 		Pain.Kick:
 			FDNQ D 0 Bright A_UnSetInvulnerable
-			FDNQ D 3 Bright A_Pain
+			FDNQ D 3 Bright A_DVDSPain
 			FDNQ DDDD 3 Bright
 			Goto Chase
 		Missile:
@@ -3063,16 +3063,16 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			Loop
 		Pain:
 			SSPT L 5
-			SSPT L 5 A_Pain
+			SSPT L 5 A_DVDSPain
 			goto Dive
 		Pain.Fist:
 			SSPT L 5
-			SSPT L 5 A_Pain
+			SSPT L 5 A_DVDSPain
 			SSPT L 5
 			goto Dive
 		Pain.Kick:
 			SSPT L 5
-			SSPT L 5 A_Pain
+			SSPT L 5 A_DVDSPain
 			SSPT LLLLL 5
 			goto Dive
 		Dive:
@@ -3265,16 +3265,16 @@ ACTOR IceStalker : StalkerNew
 			Loop
 		Pain:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			goto Dive
 		Pain.Fist:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			ISPT L 5
 			goto Dive
 		Pain.Kick:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			ISPT LLLLL 5
 			goto Dive
 		Dive:
@@ -3367,16 +3367,16 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			Loop
 		Pain:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			goto Dive
 		Pain.Fist:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			ISPT L 5
 			goto Dive
 		Pain.Kick:
 			ISPT L 5
-			ISPT L 5 A_Pain
+			ISPT L 5 A_DVDSPain
 			ISPT LLLLL 5
 			goto Dive
 		Dive:
@@ -3480,16 +3480,16 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			Loop
 		Pain:
 			DEMN E 4
-			DEMN E 4 A_Pain
+			DEMN E 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			DEMN E 4
-			DEMN E 4 A_Pain
+			DEMN E 4 A_DVDSPain
 			DEMN EE 4
 			Goto See
 		Pain.Kick:
 			DEMN E 4
-			DEMN E 4 A_Pain
+			DEMN E 4 A_DVDSPain
 			DEMN EEEE 4
 			Goto See
 		Melee:
@@ -3631,16 +3631,16 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			Loop
 		Pain:
 			DEM2 E 4
-			DEM2 E 4 A_Pain
+			DEM2 E 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			DEM2 E 4
-			DEM2 E 4 A_Pain
+			DEM2 E 4 A_DVDSPain
 			DEM2 EE 4
 			Goto See
 		Pain.Kick:
 			DEM2 E 4
-			DEM2 E 4 A_Pain
+			DEM2 E 4 A_DVDSPain
 			DEM2 EEEE 4
 			Goto See
 		Melee:
@@ -3932,16 +3932,16 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 
 		Pain:
 			RDMN E 4
-			RDMN E 4 A_Pain
+			RDMN E 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			RDMN E 4
-			RDMN E 4 A_Pain
+			RDMN E 4 A_DVDSPain
 			RDMN EE 4
 			Goto See
 		Pain.Kick:
 			RDMN E 4
-			RDMN E 4 A_Pain
+			RDMN E 4 A_DVDSPain
 			RDMN EEEE 4
 			Goto See
 
@@ -4157,16 +4157,16 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 
 		Pain:
 			DEM4 E 4
-			DEM4 E 4 A_Pain
+			DEM4 E 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			DEM4 E 4
-			DEM4 E 4 A_Pain
+			DEM4 E 4 A_DVDSPain
 			DEM4 EE 4
 			Goto See
 		Pain.Kick:
 			DEM4 E 4
-			DEM4 E 4 A_Pain
+			DEM4 E 4 A_DVDSPain
 			DEM4 EEEE 4
 			Goto See
 		Death:
@@ -4332,16 +4332,16 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 
 		Pain:
 			DEM5 E 4
-			DEM5 E 4 A_Pain
+			DEM5 E 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			DEM5 E 4
-			DEM5 E 4 A_Pain
+			DEM5 E 4 A_DVDSPain
 			DEM5 EE 4
 			Goto See
 		Pain.Kick:
 			DEM5 E 4
-			DEM5 E 4 A_Pain
+			DEM5 E 4 A_DVDSPain
 			DEM5 EEEE 4
 			Goto See
 		Death:
@@ -4411,16 +4411,16 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			Loop
 		Pain:
 			WRTH A 2
-			WRTH H 6 A_Pain
+			WRTH H 6 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			WRTH A 2
-			WRTH H 6 A_Pain
+			WRTH H 6 A_DVDSPain
 			WRTH H 6
 			Goto See
 		Pain.Kick:
 			WRTH A 2
-			WRTH H 6 A_Pain
+			WRTH H 6 A_DVDSPain
 			WRTH HH 6
 			Goto See
 		Melee:
@@ -4598,7 +4598,7 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 			}
 			Loop
 		Pain:
-			ICEY A 1 A_Pain
+			ICEY A 1 A_DVDSPain
 			Goto See
 		Missile:
 			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
@@ -4744,15 +4744,15 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			}
 			Loop
 		Pain:
-			KORX H 5 A_Pain
+			KORX H 5 A_DVDSPain
 			KORX H 5
 			Goto See
 		Pain.Fist:
-			KORX H 5 A_Pain
+			KORX H 5 A_DVDSPain
 			KORX HH 5
 			Goto See
 		Pain.Kick:
-			KORX H 5 A_Pain
+			KORX H 5 A_DVDSPain
 			KORX HHH 5
 			Goto See
 		Missile:
@@ -5117,16 +5117,16 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			Loop
 		Pain:
 			CLER H 4
-			CLER H 4 A_Pain
+			CLER H 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			CLER H 4
-			CLER H 4 A_Pain
+			CLER H 4 A_DVDSPain
 			CLER HH 4
 			Goto See
 		Pain.Kick:
 			CLER H 4
-			CLER H 4 A_Pain
+			CLER H 4 A_DVDSPain
 			CLER HHHH 4
 			Goto See
 		Melee:
@@ -5390,16 +5390,16 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			Loop
 		Pain:
 			PLAY G 4
-			PLAY G 4 A_Pain
+			PLAY G 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			PLAY G 4
-			PLAY G 4 A_Pain
+			PLAY G 4 A_DVDSPain
 			PLAY GG 4
 			Goto See
 		Pain.Kick:
 			PLAY G 4
-			PLAY G 4 A_Pain
+			PLAY G 4 A_DVDSPain
 			PLAY GGGG 4
 			Goto See
 		Melee:
@@ -5582,16 +5582,16 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			Loop
 		Pain:
 			MAGE G 4
-			MAGE G 4 A_Pain
+			MAGE G 4 A_DVDSPain
 			Goto See
 		Pain.Fist:
 			MAGE G 4
-			MAGE G 4 A_Pain
+			MAGE G 4 A_DVDSPain
 			MAGE GG 4
 			Goto See
 		Pain.Kick:
 			MAGE G 4
-			MAGE G 4 A_Pain
+			MAGE G 4 A_DVDSPain
 			MAGE GGGG 4
 			Goto See
 		Melee:

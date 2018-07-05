@@ -1,6 +1,6 @@
 // General Bullet Tracers
 
-ACTOR StrifeGenBulletTracer : AetheriusFastProjectileZSC
+ACTOR StrifeGenBulletTracer : AetheriusBulletTracerZSC
 {
 	Damage ((Random(1,5) * 3))
 	Damagetype "Bullet"
@@ -19,7 +19,7 @@ ACTOR StrifeGenBulletTracer : AetheriusFastProjectileZSC
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+			TNT1 A 0 NoDelay bright
 		Idle:
 			TNT1 A 0 bright
 			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
@@ -91,7 +91,7 @@ actor StrifeGenBulletTracerTrail
 
 // Reaver Tracer
 
-ACTOR StrifeReaverBulletTracer : AetheriusFastProjectileZSC
+ACTOR StrifeReaverBulletTracer : AetheriusBulletTracerZSC
 {
 	Damage ((Random(1,8) * 3))
 	Damagetype "Bullet"
@@ -110,7 +110,7 @@ ACTOR StrifeReaverBulletTracer : AetheriusFastProjectileZSC
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+			TNT1 A 0 NoDelay bright
 		Idle:
 			TNT1 A 0 bright
 			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
@@ -182,7 +182,7 @@ actor StrifeReaverBulletTracerTrail
 
 // Mauler Tracers
 
-ACTOR StrifeMaulerTracer : AetheriusFastProjectileZSC
+ACTOR StrifeMaulerTracer : AetheriusBulletTracerZSC
 {
 	Damage ((Random(1,4) * 2))
 	Damagetype "Disintegrate"
@@ -201,7 +201,7 @@ ACTOR StrifeMaulerTracer : AetheriusFastProjectileZSC
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay bright { A_ScaleVelocity(GetCVar("dvds_tracervelmulti")); }
+			TNT1 A 0 NoDelay bright
 		Idle:
 			TNT1 A 0 bright
 			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)

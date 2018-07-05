@@ -37,7 +37,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 {
 	Health 31
 	PainChance 200
-	DamageFactor "PoisonBolt", 10.0
+	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	Speed 8
 	Radius 20
@@ -323,7 +323,7 @@ ACTOR Peasant22New : PeasantNew replaces Peasant22
 // BEGGARS
 ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 {
-	DamageFactor "PoisonBolt", 10.0
+	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	Health 20
 	PainChance 250
@@ -566,7 +566,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 {
 	Health 75		// 1.25x the HP
 	PainChance 187	// 75% the original pain chance
-	DamageFactor "PoisonBolt", 10.0
+	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	Speed 10			// 25% more speed than before
 	Radius 20
@@ -802,7 +802,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 	Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 225 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "PoisonBolt", 10.0
+	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	DamageFactor "Fire", 0.875
 	DamageFactor "Ice", 0.9375
@@ -1254,7 +1254,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
 	DamageFactor "Thunder", 1.5
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 5.6
 	Speed 8
 	Radius 20
@@ -1445,7 +1445,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 	Painchance "GravityHP", 32
 	Painchance "GravityMP", 32
 	Painchance "GravityHPMP", 32 
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 5.6
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
@@ -1614,7 +1614,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "Thunder", 1.75
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 3.2
 	Monster
 	+FLOORCLIP
@@ -1741,7 +1741,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 	Painchance "GravityHP", 32
 	Painchance "GravityMP", 32
 	Painchance "GravityHPMP", 32
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 10
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
@@ -1860,7 +1860,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
 	DamageFactor "Thunder", 1.75
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 10
 	Speed 16
 	Radius 31
@@ -2104,7 +2104,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 	Painchance "GravityHP", 0
 	Painchance "GravityMP", 0
 	Painchance "GravityHPMP", 0
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 0.01
 	DamageFactor "Fire", 0.85
 	DamageFactor "Ice", 0.9375
@@ -2200,7 +2200,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 	Height 110
 	Mass 80000
 	Monster
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 1.6
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.5
@@ -2425,7 +2425,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 	DamageFactor "Fire", 0.15
 	Damagefactor "Ice", 0
 	DamageFactor "Thunder", 2.25
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 1.6
 	Speed 20
 	FloatSpeed 15
@@ -2697,7 +2697,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 	Painchance "GravityHP", 4
 	Painchance "GravityMP", 4
 	Painchance "GravityHPMP", 4
-	DamageFactor "PoisonBolt", 0.25
+	DamageFactor "PoisonBolt", 0.625
 	DamageFactor "Crush", 0.5
 	Speed 26
 	FloatSpeed 5
@@ -2860,7 +2860,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 	Painchance "GravityHP", 4
 	Painchance "GravityMP", 4
 	Painchance "GravityHPMP", 4
-	DamageFactor "PoisonBolt", 0.15
+	DamageFactor "PoisonBolt", 0.375
 	DamageFactor "Crush", 0.5
 	Speed 8
 	Radius 40
@@ -2966,7 +2966,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "SpectralLow", 0.125 // Sigil level 1 can barely hurt them
-	DamageFactor "PoisonBolt", 0.05
+	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 0.5
 	MaxDropoffHeight 32
 	Tag "$TAG_ORACLE" // "Oracle"
@@ -3021,7 +3021,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 	DamageFactor "Normal", 0.001
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
-	DamageFactor "PoisonBolt", 0.25
+	DamageFactor "PoisonBolt", 0.625
 	DamageFactor "Crush", 0.5
 	Monster
 	-COUNTKILL
@@ -3135,7 +3135,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 	Painchance "GravityHPMP", 4
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
-	DamageFactor "PoisonBolt", 0.25
+	DamageFactor "PoisonBolt", 0.625
 	DamageFactor "Crush", 0.5
 	DamageFactor "SpectralLow", 0.125 // Sigil level 1 cannot hurt them
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
@@ -3234,7 +3234,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 	Painchance "GravityHPMP", 4
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
-	DamageFactor "PoisonBolt", 0.25
+	DamageFactor "PoisonBolt", 0.625
 	DamageFactor "Crush", 0.5
 	Monster
 	+FLOAT
@@ -3396,7 +3396,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	Painchance "GravityMP", 1
 	Painchance "GravityHPMP", 1
 
-	DamageFactor "PoisonBolt", 0.001
+	DamageFactor "PoisonBolt", 0.0025
 	DamageFactor "Crush", 0.001
 	DamageFactor "SpectralLow", 2 // Sigil level 1 can hurt them
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
@@ -4064,7 +4064,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	Painchance "GravityHP", 1
 	Painchance "GravityMP", 1
 	Painchance "GravityHPMP", 1
-	DamageFactor "PoisonBolt", 0.01
+	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
@@ -4238,7 +4238,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	Painchance "GravityHP", 1
 	Painchance "GravityMP", 1
 	Painchance "GravityHPMP", 1
-	DamageFactor "PoisonBolt", 0.01
+	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
@@ -4432,7 +4432,7 @@ ACTOR EntityAscended : EntityBossNew
 	Painchance "GravityHP", 0
 	Painchance "GravityMP", 0
 	Painchance "GravityHPMP", 0
-	DamageFactor "PoisonBolt", 0.01
+	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P

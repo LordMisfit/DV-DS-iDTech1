@@ -1166,6 +1166,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 10) { A_SetTics(10); }
 				A_PlaySound("weapons/sigilcharge", CHAN_WEAPON);
 				ACS_NamedExecuteAlways("NNSigilDamageUser", 0, 16);
+				CallACS("StartTensionCountDown");
 				A_SpreadAuraFireProjectile("NNSigilLightningBigV",0,0,"",0,0,0,0);
 			}
 			Goto Ready

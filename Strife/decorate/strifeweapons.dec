@@ -152,9 +152,9 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 			}
 			XBOW C 4
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
 			}
@@ -176,8 +176,8 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 			}
 			XBOW F 5
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
@@ -284,9 +284,9 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 			}
 			XBOW C 4
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
 			}
@@ -308,8 +308,8 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 			}
 			XBOW I 5
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }

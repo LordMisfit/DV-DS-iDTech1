@@ -4613,3 +4613,10 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			goto Death
 	}
 }
+
+actor PodNew : Pod replaces Pod
+{
+	DamageType "Explosive"
+	DamageFactor "Dashing", 0
+	Painchance "Dashing", 0
+}

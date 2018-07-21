@@ -4712,6 +4712,8 @@ ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
 	+SHOOTABLE
 	+NOBLOOD
 	+INCOMBAT
+	DamageFactor "Dashing", 0
+	Painchance "Dashing", 0
 	DeathSound "woodenbarrel/death"
 	States
 	{
@@ -4818,6 +4820,8 @@ ACTOR WoodenBarrelNew : WoodenBarrel replaces WoodenBarrel
 // Barrels
 ACTOR WoodenBarrel2 : WoodenBarrelNew 32544
 {
+	DamageFactor "Dashing", 0
+	Painchance "Dashing", 0
 	Translation "1:31=16:24", "192:223=208:223"
 	States
 	{
@@ -5008,6 +5012,8 @@ ACTOR ExplosiveBarrel2New : ExplosiveBarrel2 replaces ExplosiveBarrel2
 {
 	+PUSHABLE
 	DamageType "Explosive"
+	DamageFactor "Dashing", 0
+	Painchance "Dashing", 0
 	States
 	{
 		Spawn:

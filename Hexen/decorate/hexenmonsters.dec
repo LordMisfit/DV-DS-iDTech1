@@ -3842,7 +3842,6 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "MagmaSerpentFire", 0
 	Painchance "Fire", 25
 	DamageFactor "Fire", 0.5
 	Painchance "Ice", 100

@@ -88,7 +88,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
 			}
-			TNT1 A 0 A_Lower
+			TNT1 A 0 { A_Lower; A_Lower; }
 			XBOW A 1 A_Lower
 			Loop
 		Select:
@@ -97,7 +97,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
 			}
-			TNT1 A 0 A_Raise
+			TNT1 A 0 { A_Raise; A_Raise; }
 			XBOW A 1 A_Raise
 			Loop
 
@@ -221,7 +221,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_Lower; }
 			}
-			TNT1 A 0 A_Lower
+			TNT1 A 0 { A_Lower; A_Lower; }
 			XBOW H 1 A_Lower
 			Loop
 		Select:
@@ -230,7 +230,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_Raise; }
 			}
-			TNT1 A 0 A_Raise
+			TNT1 A 0 { A_Raise; A_Raise; }
 			XBOW H 1 A_Raise
 			Loop
 		Fire:
@@ -418,9 +418,11 @@ ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
 			RIFG A 1 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			RIFG B 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			RIFG A 1 A_Raise
 			Loop
 		Fire:
@@ -553,9 +555,11 @@ ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
 			MMIS A 1 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			MMIS A 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			MMIS A 1 A_Raise
 			Loop
 		Fire:
@@ -604,9 +608,11 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 			FLMT AB 3 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			FLMT A 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			FLMT A 1 A_Raise
 			Loop
 		Fire:
@@ -714,9 +720,11 @@ ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLau
 			GREN A 1 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			GREN A 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			GREN A 1 A_Raise
 			Loop
 		Fire:
@@ -744,9 +752,11 @@ ACTOR StrifeGrenadeLauncher2New : StrifeGrenadeLauncher2 replaces StrifeGrenadeL
 			GREN D 1 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			GREN D 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			GREN D 1 A_Raise
 			Loop
 		Fire:
@@ -854,9 +864,11 @@ ACTOR MaulerNew : Mauler replaces Mauler
 			MAUL FGHA 6 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			MAUL A 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			MAUL A 1 A_Raise
 			Loop
 		Fire:
@@ -879,9 +891,11 @@ ACTOR Mauler2New : Mauler2 replaces Mauler2
 			MAUL IJKL 7 A_WeaponReady
 			Loop
 		Deselect:
+			TNT1 A 0 { A_Lower; A_Lower; }
 			MAUL I 1 A_Lower
 			Loop
 		Select:
+			TNT1 A 0 { A_Raise; A_Raise; }
 			MAUL I 1 A_Raise
 			Loop
 		Fire:
@@ -923,7 +937,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 			}
-			SGLA A 1 Bright { A_Lower; A_Lower; }
+			SGLA A 1 Bright { A_Lower; A_Lower; A_Lower; }
 			Loop
 		Deselect2:
 			TNT1 A 0 Bright 
@@ -931,7 +945,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 			}
-			SGLB A 1 Bright { A_Lower; A_Lower; }
+			SGLB A 1 Bright { A_Lower; A_Lower; A_Lower; }
 			Loop
 		Deselect3:
 			TNT1 A 0 Bright 
@@ -939,7 +953,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 			}
-			SGLC A 1 Bright { A_Lower; A_Lower; }
+			SGLC A 1 Bright { A_Lower; A_Lower; A_Lower; }
 			Loop
 		Deselect4:
 			TNT1 A 0 Bright 
@@ -947,7 +961,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 			}
-			SGLD A 1 Bright { A_Lower; A_Lower; }
+			SGLD A 1 Bright { A_Lower; A_Lower; A_Lower; }
 			Loop
 		Deselect5:
 			TNT1 A 0 Bright 
@@ -955,7 +969,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Lower; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Lower; }
 			}
-			SGLE A 1 Bright { A_Lower; A_Lower; }
+			SGLE A 1 Bright { A_Lower; A_Lower; A_Lower; }
 			Loop
 		//
 		Select:
@@ -971,7 +985,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 			}
-			SGLA A 1 Bright { A_Raise; A_Raise; }
+			SGLA A 1 Bright { A_Raise; A_Raise; A_Raise; }
 			Loop
 		Select2:
 			TNT1 A 0 Bright 
@@ -979,7 +993,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 			}
-			SGLB A 1 Bright { A_Raise; A_Raise; }
+			SGLB A 1 Bright { A_Raise; A_Raise; A_Raise; }
 			Loop
 		Select3:
 			TNT1 A 0 Bright 
@@ -987,7 +1001,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 			}
-			SGLC A 1 Bright { A_Raise; A_Raise; }
+			SGLC A 1 Bright { A_Raise; A_Raise; A_Raise; }
 			Loop
 		Select4:
 			TNT1 A 0 Bright 
@@ -995,7 +1009,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 			}
-			SGLD A 1 Bright { A_Raise; A_Raise; }
+			SGLD A 1 Bright { A_Raise; A_Raise; A_Raise; }
 			Loop
 		Select5:
 			TNT1 A 0 Bright 
@@ -1003,7 +1017,7 @@ Actor NNSigil : StrifeWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",317) >= 3) { A_Raise; }
 				if (CallACS("MiscVarCheckDECORATE",317) >= 7) { A_Raise; }
 			}
-			SGLE A 1 Bright { A_Raise; A_Raise; }
+			SGLE A 1 Bright { A_Raise; A_Raise; A_Raise; }
 			Loop
 
 		//Well, it seems using "----" A in 'Ready' makes ZDoom refuse

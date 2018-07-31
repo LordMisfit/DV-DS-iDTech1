@@ -238,7 +238,7 @@ class GargoyleSpawner : AetheriusMonsterSpawner replaces HereticImp
 		+DONTOVERLAP
 	}
 
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -270,7 +270,7 @@ class GargoyleLeaderSpawner : AetheriusMonsterSpawner replaces HereticImpLeader
 		+DONTOVERLAP
 	}
 
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -289,7 +289,7 @@ class GargoyleLeaderSpawner : AetheriusMonsterSpawner replaces HereticImpLeader
 // Golem Spawner
 class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -323,7 +323,7 @@ class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 // Golem Ghost Spawner
 class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -352,7 +352,7 @@ class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
 // NitroGolem Spawner
 class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -376,7 +376,7 @@ class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 // NitroGolem Ghost Spawner
 class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -395,7 +395,7 @@ class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
 // Undead Warrior/Knight spawner
 class KnightSpawner : AetheriusMonsterSpawner replaces Knight
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -419,7 +419,7 @@ class KnightSpawner : AetheriusMonsterSpawner replaces Knight
 // Undead Warrior/Knight spawner
 class KnightGhostSpawner : AetheriusMonsterSpawner replaces KnightGhost
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 
@@ -441,7 +441,7 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 		+DONTOVERLAP
 	}
 
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -455,7 +455,7 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 // IronLich Spawner
 class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -487,7 +487,7 @@ class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 		+DONTOVERLAP
 	}
 
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -504,7 +504,7 @@ class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 // Ophidian spawner
 class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		

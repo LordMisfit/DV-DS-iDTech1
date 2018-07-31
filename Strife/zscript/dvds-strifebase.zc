@@ -311,7 +311,7 @@ class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
 		Height 110;
 	}
 
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		int modtype = CallACS("CheckModType");
 		int doomtype = CallACS("CheckDoomType");

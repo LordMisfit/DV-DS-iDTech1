@@ -358,7 +358,7 @@ class KoraxBase : AetheriusBossZSC
 // Ettin
 class EttinSpawner : AetheriusMonsterSpawner replaces Ettin
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -377,7 +377,7 @@ class EttinSpawner : AetheriusMonsterSpawner replaces Ettin
 // Green Chaos Serpent Spawner
 class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -396,7 +396,7 @@ class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
 // Brown Chaos Serpent Spawner
 class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -414,7 +414,7 @@ class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
 
 class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -437,7 +437,7 @@ class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 
 class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -455,7 +455,7 @@ class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 
 class StalkerSpawner : AetheriusMonsterSpawner replaces Serpent
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
@@ -468,7 +468,7 @@ class StalkerSpawner : AetheriusMonsterSpawner replaces Serpent
 
 class StalkerLeaderSpawner : AetheriusMonsterSpawner replaces SerpentLeader
 {
-	override Class<Actor> ChooseWhatToSpawn()
+	override Name ChooseSpawn()
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		

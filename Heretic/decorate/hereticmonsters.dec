@@ -2,6 +2,7 @@
 
 ACTOR ChickenNew : AetheriusMorphedMonster replaces Chicken
 {
+	Tag "Chicken"
 	Health 10
 	Radius 9
 	Height 22
@@ -90,6 +91,7 @@ actor FChicken : ChickenNew
 
 actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 { 
+	Tag "Gargoyle"
 	Health 40
 	Radius 16
 	Height 36
@@ -269,6 +271,7 @@ actor FHereticImp : HereticImpNew
 
 actor HereticImpLeaderNew : HereticImpNew // replaces HereticImpLeader
 {
+	Tag "NitroGargoyle"
 	Health 80
 	Painchance 150
 	Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
@@ -316,7 +319,8 @@ actor FHereticImpLeader : HereticImpLeaderNew
 
 // Plague Gargoyle
 ACTOR PlagueImp : HereticImpLeaderNew 31026
-{  
+{
+	Tag "Plague Gargoyle"
 	Health 120
 	DamageFactor "Crush", 7.6
 	Scale 1
@@ -517,6 +521,7 @@ ACTOR PlagueShotCrisis : PlagueShot
 // Dark/Watcher Gargoyle
 ACTOR WatcherImp : HereticImpNew 
 {
+	Tag "Watcher Gargoyle"
 	Health 120
 	Radius 16
 	Height 36
@@ -723,6 +728,7 @@ ACTOR WatcherImp : HereticImpNew
 
 actor MummyNew : AetheriusMonsterZSC // replaces Mummy
 {
+	Tag "Golem"
 	Health 80
 	Radius 22
 	Height 62
@@ -828,6 +834,7 @@ actor FMummy : MummyNew
 
 actor MummyGhostNew : MummyNew // replaces MummyGhost
 {
+	Tag "Golem (Ghost)"
 	+SHADOW
 	+GHOST
 	RenderStyle Translucent
@@ -916,6 +923,7 @@ actor FMummyGhost : MummyGhostNew
 
 actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 {
+	Tag "NitroGolem"
 	Health 100
 	Radius 22
 	Height 62
@@ -1063,6 +1071,7 @@ actor FMummyLeader : MummyLeaderNew
 
 actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 {
+	Tag "NitroGolem (Ghost)"
 	+SHADOW
 	+GHOST
 	RenderStyle Translucent
@@ -1193,6 +1202,7 @@ actor FMummyLeaderGhost : MummyLeaderGhostNew
 // Ice Golem
 Actor IceGolem : AetheriusMonsterZSC
 {
+	Tag "Ice Golem"
 	Health 450
 	Radius 22
 	Height 62
@@ -1368,6 +1378,7 @@ Actor IceGolem : AetheriusMonsterZSC
 
 Actor IceGolemGhost : IceGolem
 {
+	Tag "Ice Golem (Ghost)"
 	+SHADOW
 	+GHOST
 	RenderStyle Translucent
@@ -1414,6 +1425,7 @@ Actor IceGolemParticleTrail : IceGolemParticleA
 
 ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 {
+	Tag "Undead Warrior"
 	Health 200
 	Radius 24
 	Height 78
@@ -1568,6 +1580,7 @@ actor FKnight : KnightNew
 }
 ACTOR KnightGhostNew : KnightNew // replaces KnightGhost
 {
+	Tag "Undead Warrior (Ghost)"
 	+SHADOW
 	+GHOST
 	RenderStyle Translucent
@@ -1585,6 +1598,7 @@ actor FKnightGhost : KnightGhostNew
 // Death Knight
 ACTOR DeathKnight : AetheriusMonsterZSC 30114 
 { 
+	Tag "Death Knight"
 	Health 1100
 	Radius 24
 	Height 72
@@ -1911,6 +1925,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 
 Actor DeathKnightGhost : DeathKnight
 {
+	Tag "Death Knight (Ghost)"
 	+SHADOW
 	+GHOST
 	RenderStyle Translucent
@@ -1921,6 +1936,7 @@ Actor DeathKnightGhost : DeathKnight
 
 ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 {
+	Tag "Disciple of D'Sparil"
 	Health 180
 	Radius 16
 	Height 68
@@ -2143,6 +2159,7 @@ actor FWizard : WizardNew
 
 ACTOR Banshee : AetheriusMonsterZSC
 {
+	Tag "Abyssal Banshee"
 	Health 720
 	Radius 12 // 15
 	Height 48 // 60
@@ -2452,6 +2469,7 @@ actor BansheeMissile5Token : Ammo
 
 ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 {
+	Tag "Iron Lich"
 	Health 700
 	Radius 40
 	Height 72
@@ -2560,6 +2578,7 @@ actor FIronlich : IronlichNew
 // Ice Lich
 ACTOR IceLich : AetheriusMonsterZSC
 {
+	Tag "Ice Lich"
 	health 700
 	painchance 16
 	Painchance "Ice", 0 // Ice can't stun Ice Liches
@@ -2683,6 +2702,7 @@ ACTOR IceLich : AetheriusMonsterZSC
 // Gold Lich
 ACTOR Goldlich : IronlichNew 31044
 {
+	Tag "Gold Lich"
 	Mass 2000
 	Speed 10
 	Health 1400
@@ -2921,6 +2941,7 @@ ACTOR GoldLichGlitter
 
 ACTOR FakeGoldLich : GoldLich
 {
+	Tag "'Gold Lich'"
 	DropItem "BlasterHefty", 255, 50
 	Mass 250
 	Health 175
@@ -2930,6 +2951,7 @@ ACTOR FakeGoldLich : GoldLich
 // Blood Lich
 ACTOR BloodLich : AetheriusMonsterZSC
 {
+	Tag "Blood Lich"
 	Health 2100
 	Radius 40
 	Height 72
@@ -3066,6 +3088,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 
 ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 {
+	Tag "Sabreclaw"
 	Health 150
 	Radius 20
 	Height 64
@@ -3314,6 +3337,7 @@ actor ClinkLungeAttackStatus : PowerProtection
 
 ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 {
+	Tag "Were-Dragon"
 	Health 220
 	Radius 32
 	Height 74
@@ -3432,6 +3456,7 @@ actor FBeast : BeastNew
 
 ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 {
+	Tag "Shadow Beast"
 	OBITUARY "%o was killed by a shadow beast."
 	Bloodcolor "70 AC 00"
 	Health 750 // 500
@@ -3809,6 +3834,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 
 ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 {
+	Tag "Maulotaur"
 	Health 3000
 	Radius 28
 	Height 100
@@ -4064,6 +4090,7 @@ actor FMaulotaur : MaulotaurNew
 
 ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 {
+	Tag "Ophidian"
 	Health 280
 	Radius 22
 	Height 70
@@ -4180,6 +4207,8 @@ actor FSnake : SnakeNew
 actor HellGuard : AetheriusMonsterZSC 3114
 {
 	//$Category "ZDoom Monster pack"
+	Tag "Abyssal Guard"
+
 	Health 420 // 300
 	Radius 24
 	Height 64
@@ -4346,6 +4375,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 
 ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 {
+	Tag "\cfD'Sparil\c- (w/ Chaos Serpent Mount)"
 	Health 24000
 	Radius 28
 	Height 100
@@ -4487,6 +4517,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 
 ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 {
+	Tag "\cfD'Sparil\c-"
 	Health 56000
 	Radius 16
 	Height 70

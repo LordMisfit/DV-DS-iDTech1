@@ -1,5 +1,6 @@
 ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 {
+	Tag "Maulotaur"
 	Health 2500
 	Radius 28
 	Height 100
@@ -221,6 +222,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 // Pig
 ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 {
+	Tag "Pig"
 	Health 25
 	Painchance 128
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
@@ -289,6 +291,7 @@ actor FPig : PigNew
 
 ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 {
+	Tag "Ettin"
 	Health 175
 	Radius 25
 	Height 68
@@ -401,6 +404,7 @@ actor FEttin : EttinNew
 
 ACTOR EttinGhostNew : EttinNew replaces EttinMash
 {
+	Tag "Ettin (Ghost)"
 	+NOBLOOD
 	+NOICEDEATH
 	RenderStyle Translucent
@@ -420,6 +424,7 @@ ACTOR EttinGhostNew : EttinNew replaces EttinMash
 // Ettin Commander [ported from Wrath of Cronos]
 Actor EttinCommander : EttinNew
 {
+	Tag "Ettin Commander"
 	Health 275
 	Mass 250
 	Speed 15
@@ -550,6 +555,7 @@ actor FEttinCommander : EttinCommander
 // Bormereth :V
 ACTOR Bormereth : AetheriusMonsterZSC
 {
+	Tag "Bormereth"
 	Health 1200
 	Radius 30
 	Height 64
@@ -870,6 +876,7 @@ actor FBormereth : Bormereth
 
 ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 {
+	Tag "Centaur"
 	Health 200
 	Painchance 135
 	Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
@@ -1064,6 +1071,7 @@ actor FCentaur : CentaurNew
 
 ACTOR CentaurGhostNew : CentaurNew replaces CentaurMash
 {
+	Tag "Centaur (Ghost)"
 	+NOBLOOD
 	+BLASTED
 	-TELESTOMP
@@ -1084,6 +1092,7 @@ ACTOR CentaurGhostNew : CentaurNew replaces CentaurMash
 
 ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 {
+	Tag "Slaughtaur"
 	Health 325
 	Speed 12.5
 	MeleeRange 80
@@ -1300,6 +1309,7 @@ actor FSlaughtaur : SlaughtaurNew
 
 ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 {
+	Tag "Afrit"
 	var int user_firedemonchase;
 	Health 80
 	ReactionTime 8
@@ -1325,7 +1335,6 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 	+LOOKALLAROUND
 	+DONTHARMSPECIES
 	Species "Afrit"
-	Tag "Afrit"
 	SeeSound "FireDemonSpawn"
 	PainSound "FireDemonPain"
 	DeathSound "FireDemonDeath"
@@ -1434,6 +1443,7 @@ actor FFireDemon : FireDemonNew
 
 Actor FireDemonLeader : FireDemonNew
 {
+	Tag "Afrit Leader"
 	Health 160
 	ReactionTime 8
 	PainChance 1
@@ -1463,7 +1473,6 @@ Actor FireDemonLeader : FireDemonNew
 	DeathSound "FireDemonDeath"
 	ActiveSound "FireDemonActive"
 	Obituary "%o tasted an Afrit Leader's fire."
-	Tag "Afrit Leader"
 	States
 	{
 		Spawn:
@@ -1602,6 +1611,7 @@ Actor FireDemonLeaderSplotch2 : FireDemonLeaderSplotch1
 
 Actor FireDemonCommander : FireDemonNew
 {
+	Tag "Afrit Commander"
 	Health 240
 	ReactionTime 8
 	PainChance 1
@@ -1631,7 +1641,6 @@ Actor FireDemonCommander : FireDemonNew
 	DeathSound "FireDemonDeath"
 	ActiveSound "FireDemonActive"
 	Obituary "%o tasted an Afrit Commander's fire."
-	Tag "Afrit Commander"
 
 	States
 	{
@@ -1770,6 +1779,7 @@ Actor FireDemonCommanderSplotch2 : FireDemonCommanderSplotch1
 
 Actor FireDemonQueen : FireDemonNew
 {
+	Tag "Afrit Queen"
 	Health 960
 	ReactionTime 8
 	Speed 8
@@ -1803,7 +1813,6 @@ Actor FireDemonQueen : FireDemonNew
 	DeathSound "FireDemonDeath"
 	ActiveSound "FireDemonActive"
 	Obituary "%o tasted an Afrit Queen's fire."
-	Tag "Afrit Queen"
 	States
 	{
 		Spawn:
@@ -1932,6 +1941,7 @@ Actor FireDemonQueen : FireDemonNew
 
 actor FireDemonQueenClone : FireDemonQueen
 {
+	Tag "Afrit Queen?"
 	Health 5
 	+NOBLOOD
 	-COUNTKILL
@@ -1941,7 +1951,6 @@ actor FireDemonQueenClone : FireDemonQueen
 	+GHOST
 	RenderStyle Translucent
 	Alpha 0.0
-	Tag "Afrit Queen?"
 	States
 	{
 		Spawn:
@@ -2013,6 +2022,7 @@ Actor FireDemonQueenSplotch2 : FireDemonQueenSplotch1
 
 ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 {
+	Tag "Dark Bishop"
 	Health 130
 	Radius 22
 	Height 65
@@ -2171,6 +2181,7 @@ actor FBishop : BishopNew
 
 Actor DarkDisciple : BishopNew
 {
+	Tag "Dark Disciple"
 	Health 220
 	Radius 22
 	Height 65
@@ -2196,7 +2207,6 @@ Actor DarkDisciple : BishopNew
 	ActiveSound "BishopActiveSounds"
 	Obituary "%o succumbed to a Disciple's dark power."
 	Bloodtype "EtherealBloodPurple"
-	Tag "Dark Disciple"
 
 	States
 	{
@@ -2541,6 +2551,7 @@ Actor EtherealBloodRedParticle : EtherealBloodPurpleParticle
 // Vampire
 ACTOR VampireDVDS : BishopNew
 { 
+	Tag "Vampire"
 	Health 450
 	PainChance 170
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -2792,7 +2803,6 @@ ACTOR VampireDVDS : BishopNew
 			Goto See
 	}
 }
-
 actor FVampire : VampireDVDS
 {
 	-COUNTKILL 
@@ -3017,6 +3027,7 @@ Actor BatCloud
 
 ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 {
+	Tag "Stalker"
 	Health 90
 	Painchance 96
 	Painchance "Fist", 144 // Fist attacks have a +50% chance of stunning an enemy
@@ -3199,6 +3210,7 @@ actor FStalker : StalkerNew
 
 ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 {
+	Tag "Alpha Stalker"
 	Health 120
 	Meleerange 72
 	Translation "51:66=51:58", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16"  
@@ -3228,6 +3240,7 @@ actor FStalkerLeader : StalkerLeaderNew
 
 ACTOR IceStalker : StalkerNew
 {
+	Tag "Ice Stalker"
 	Health 180
 	Speed 10
 	Monster
@@ -3244,7 +3257,6 @@ ACTOR IceStalker : StalkerNew
 	+NODAMAGETHRUST
 	Obituary "%o caught a chill from an ice stalker."
 	HitObituary "%o caught a chill from an ice stalker."
-	Tag "Ice Stalker"
 	States
 	{
 		Spawn:
@@ -3328,6 +3340,7 @@ ACTOR IceStalker : StalkerNew
 
 ACTOR IceStalkerLeader : StalkerLeaderNew
 {
+	Tag "Alpha Ice Stalker"
 	Health 240
 	Speed 10
 	Monster
@@ -3344,7 +3357,6 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 	+NODAMAGETHRUST
 	Obituary "%o caught a chill from an ice stalker."
 	HitObituary "%o caught a chill from an ice stalker."
-	Tag "Ice Stalker"
 	Translation "51:66=51:66", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32", "67:80=67:74"  // Neutralizes the Translation from the Stalker Leader [for now]
 
 	States
@@ -3439,6 +3451,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 
 ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 {
+	Tag "Chaos Serpent [Green]"
 	Health 250
 	meleerange 82
 	Painchance 50
@@ -3588,6 +3601,7 @@ actor FGreenChaosSerpent : GreenChaosSerpentNew
 
 ACTOR GreenChaosSerpentGhostNew : GreenChaosSerpentNew replaces Demon1Mash
 {
+	Tag "Chaos Serpent [Green] (Ghost)"
 	+NOBLOOD
 	+BLASTED
 	-TELESTOMP
@@ -3608,6 +3622,7 @@ ACTOR GreenChaosSerpentGhostNew : GreenChaosSerpentNew replaces Demon1Mash
 
 ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 {
+	Tag "Chaos Serpent [Brown]"
 	Painchance "Poison", 33
 	DamageFactor "Poison", 0.67
 	Painchance "PoisonElemental", 10
@@ -3739,6 +3754,7 @@ actor FBrownChaosSerpent : BrownChaosSerpentNew
 
 ACTOR BrownChaosSerpentGhostNew : BrownChaosSerpentNew replaces Demon2Mash
 {
+	Tag "Chaos Serpent [Brown] (Ghost)"
 	+NOBLOOD
 	+BLASTED
 	-TELESTOMP
@@ -3834,6 +3850,7 @@ Actor Demon3Chunk5 : DemonChunk
 
 Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 {
+	Tag "Chaos Serpent [Magma]"
 	Health 375 // 250
 	Speed 16 // 13
 	Radius 32
@@ -4056,6 +4073,7 @@ Actor Demon4Chunk5 : DemonChunk
 
 Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 {
+	Tag "Chaos Serpent [Black]"
 	Health 375 // 250
 	Speed 16 // 13
 	Radius 32
@@ -4203,6 +4221,7 @@ actor FBlackChaosSerpentNew : BlackChaosSerpentNew
 
 Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 {
+	Tag "Chaos Serpent [Ethereal]"
 	Health 1750 // 1400
 	Speed 19 // 13
 	Radius 32
@@ -4365,6 +4384,7 @@ actor FEtherealChaosSerpentNew : EtherealChaosSerpentNew
 // Wraiths
 ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 {
+	Tag "Reiver"
 	Health 150
 	Painchance 25
 	Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
@@ -4511,6 +4531,7 @@ actor FWraith : WraithNew
 
 ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
 {
+	Tag "Reiver"
 	Height 68
 	-SHOOTABLE
 	-SOLID
@@ -4550,6 +4571,7 @@ ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
 
 ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 {
+	Tag "Wendigo"
 	Health 120
 	Painchance 144
 	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
@@ -4652,6 +4674,7 @@ actor FHeresiarch : HeresiarchNew
 
 ACTOR KoraxNew : KoraxBase replaces Korax
 {
+	Tag "\cfKorax\c-"
 	Health 80000
 	Painchance 20
 	Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
@@ -4859,6 +4882,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 
 ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 {
+	Tag "Death Wyvern"
 	Health 10240
 	Mass 51200
 	PainChance 128
@@ -5072,6 +5096,7 @@ ACTOR DragonExplosionCrisis : DragonExplosionNew
 
 ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 {
+	Tag "\cfTraductus, Grand Patriarch of the Church\c-"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -5344,6 +5369,7 @@ ACTOR HolySpiritCrisis : HolySpiritNew
 
 ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 {
+	Tag "\cfZedek, Grand Marshal of the Legion\c-"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -5537,6 +5563,7 @@ ACTOR FSwordMissileCrisis : FSwordMissileNew
 
 ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 {
+	Tag "\cfMenelkir, Arch Mage of the Arcanum\c-"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy

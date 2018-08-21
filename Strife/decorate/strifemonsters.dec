@@ -35,6 +35,7 @@ ACTOR StrifeHumanoidBase : AetheriusMonsterZSC
 // PEASANTS
 ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 {
+	Tag "\cbPeasant\c-"
 	Health 31
 	PainChance 200
 	DamageFactor "PoisonBolt", 25.0
@@ -187,24 +188,28 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 
 ACTOR Peasant1New : PeasantNew replaces Peasant1
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 6
 	Speed 4
 }
 
 ACTOR Peasant2New : PeasantNew replaces Peasant2
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 7
 	Speed 5
 }
 
 ACTOR Peasant3New : PeasantNew replaces Peasant3
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 8
 	Speed 5
 }
 
 ACTOR Peasant4New : PeasantNew replaces Peasant4
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 9
 	Translation 0
 	Speed 7
@@ -212,6 +217,7 @@ ACTOR Peasant4New : PeasantNew replaces Peasant4
 
 ACTOR Peasant5New : PeasantNew replaces Peasant5
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 10
 	Translation 0
 	Speed 7
@@ -219,6 +225,7 @@ ACTOR Peasant5New : PeasantNew replaces Peasant5
 
 ACTOR Peasant6New : PeasantNew replaces Peasant6
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 11
 	Translation 0
 	Speed 7
@@ -226,96 +233,112 @@ ACTOR Peasant6New : PeasantNew replaces Peasant6
 
 ACTOR Peasant7New : PeasantNew replaces Peasant7
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 12
 	Translation 2
 }
 
 ACTOR Peasant8New : PeasantNew replaces Peasant8
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 13
 	Translation 2
 }
 
 ACTOR Peasant9New : PeasantNew replaces Peasant9
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 14
 	Translation 2
 }
 
 ACTOR Peasant10New : PeasantNew replaces Peasant10
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 15
 	Translation 1
 }
 
 ACTOR Peasant11New : PeasantNew replaces Peasant11
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 16
 	Translation 1
 }
 
 ACTOR Peasant12New : PeasantNew replaces Peasant12
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 17
 	Translation 1
 }
 
 ACTOR Peasant13New : PeasantNew replaces Peasant13
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 18
 	Translation 3
 }
 
 ACTOR Peasant14New : PeasantNew replaces Peasant14
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 19
 	Translation 3
 }
 
 ACTOR Peasant15New : PeasantNew replaces Peasant15
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 20
 	Translation 3
 }
 
 ACTOR Peasant16New : PeasantNew replaces Peasant16
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 21
 	Translation 5
 }
 
 ACTOR Peasant17New : PeasantNew replaces Peasant17
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 22
 	Translation 5
 }
 
 ACTOR Peasant18New : PeasantNew replaces Peasant18
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 23
 	Translation 5
 }
 
 ACTOR Peasant19New : PeasantNew replaces Peasant19
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 24
 	Translation 4
 }
 
 ACTOR Peasant20New : PeasantNew replaces Peasant20
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 25
 	Translation 4
 }
 
 ACTOR Peasant21New : PeasantNew replaces Peasant21
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 26
 	Translation 4
 }
 
 ACTOR Peasant22New : PeasantNew replaces Peasant22
 {
+	Tag "\cbPeasant\c-"
 	ConversationID 27
 	Translation 6
 }
@@ -323,6 +346,7 @@ ACTOR Peasant22New : PeasantNew replaces Peasant22
 // BEGGARS
 ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 {
+	Tag "\cbBeggar\c-"
 	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	Health 20
@@ -452,32 +476,38 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 
 ACTOR Beggar1New : BeggarNew replaces Beggar1 
 {
+	Tag "\cbBeggar\c-"
 	ConversationID 38
 }
 
 ACTOR Beggar2New : BeggarNew replaces Beggar2 
 {
+	Tag "\cbBeggar\c-"
 	ConversationID 39
 }
 
 ACTOR Beggar3New : BeggarNew replaces Beggar3 
 {
+	Tag "\cbBeggar\c-"
 	ConversationID 40
 }
 
 ACTOR Beggar4New : BeggarNew replaces Beggar4 
 {
+	Tag "\cbBeggar\c-"
 	ConversationID 41
 }
 
 ACTOR Beggar5New : BeggarNew replaces Beggar5 
 {
+	Tag "\cbBeggar\c-"
 	ConversationID 42
 }
 
 // MERCHANTS
 ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 {
+	Tag "\cbMerchant\c-"
 	Health 94
 	PainChance 256 // a merchant should always enter the pain state when getting hurt
 	Radius 20
@@ -531,6 +561,7 @@ ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 
 ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 {
+	Tag "\cbWeapon Smith\c-"
 	ConversationID 2
 	PainSound "smith/pain"
 	Tag "$TAG_WEAPONSMITH" // "Weapon Smith"
@@ -538,6 +569,7 @@ ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 
 ACTOR BarKeepNew : MerchantNew replaces BarKeep
 {
+	Tag "\cbBartender\c-"
 	ConversationID 3
 	Translation 4
 	PainSound "barkeep/pain"
@@ -547,6 +579,7 @@ ACTOR BarKeepNew : MerchantNew replaces BarKeep
 
 ACTOR ArmorerNew : MerchantNew replaces Armorer
 {
+	Tag "\cbArmorer\c-"
 	ConversationID 4
 	Translation 5
 	PainSound "armorer/pain"
@@ -555,6 +588,7 @@ ACTOR ArmorerNew : MerchantNew replaces Armorer
 
 ACTOR MedicNew : MerchantNew replaces Medic
 {
+	Tag "\cbMedic\c-"
 	ConversationID 5
 	Translation 6
 	PainSound "medic/pain"
@@ -564,6 +598,7 @@ ACTOR MedicNew : MerchantNew replaces Medic
 // THE FRONT
 ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 {
+	Tag "Front Rebel"
 	Health 75		// 1.25x the HP
 	PainChance 187	// 75% the original pain chance
 	DamageFactor "PoisonBolt", 25.0
@@ -765,38 +800,45 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 
 ACTOR Rebel1New : RebelNew replaces Rebel1
 {
+	Tag "Front Rebel"
 	ConversationID 43
 	DropItem "ClipOfBullets"
 }
 
 ACTOR Rebel2New : RebelNew replaces Rebel2
 {
+	Tag "Front Rebel"
 	ConversationID 44
 }
 
 ACTOR Rebel3New : RebelNew replaces Rebel3
 {
+	Tag "Front Rebel"
 	ConversationID 45
 }
 
 ACTOR Rebel4New : RebelNew replaces Rebel4
 {
+	Tag "Front Rebel"
 	ConversationID 46
 }
 
 ACTOR Rebel5New : RebelNew replaces Rebel5
 {
+	Tag "Front Rebel"
 	ConversationID 47
 }
 
 ACTOR Rebel6New : RebelNew replaces Rebel6
 {
+	Tag "Front Rebel"
 	ConversationID 48
 }
 
 // THE ORDER
 ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 {
+	Tag "Order Acolyte"
 	Health 70
 	Painchance 150
 	Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
@@ -1089,6 +1131,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 
 ACTOR AcolyteBlueNew : AcolyteNew replaces AcolyteBlue
 {
+	Tag "Order Acolyte"
 	ConversationID 60
 	Health 60
 	Translation 6
@@ -1096,6 +1139,7 @@ ACTOR AcolyteBlueNew : AcolyteNew replaces AcolyteBlue
 
 ACTOR AcolyteDGreenNew : AcolyteNew replaces AcolyteDGreen
 {
+	Tag "Order Acolyte"
 	ConversationID 57
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1104,6 +1148,7 @@ ACTOR AcolyteDGreenNew : AcolyteNew replaces AcolyteDGreen
 
 ACTOR AcolyteGoldNew : AcolyteNew replaces AcolyteGold
 {
+	Tag "Order Acolyte"
 	ConversationID 58
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1112,6 +1157,7 @@ ACTOR AcolyteGoldNew : AcolyteNew replaces AcolyteGold
 
 ACTOR AcolyteGrayNew : AcolyteNew replaces AcolyteGray
 {
+	Tag "Order Acolyte"
 	ConversationID 56
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1120,6 +1166,7 @@ ACTOR AcolyteGrayNew : AcolyteNew replaces AcolyteGray
 
 ACTOR AcolyteLGreenNew : AcolyteNew replaces AcolyteLGreen
 {
+	Tag "Order Acolyte"
 	ConversationID 59
 	Health 60
 	Translation 5
@@ -1127,6 +1174,7 @@ ACTOR AcolyteLGreenNew : AcolyteNew replaces AcolyteLGreen
 
 ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
 {
+	Tag "Order Acolyte"
 	ConversationID 54
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1135,6 +1183,7 @@ ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
 
 ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
 {
+	Tag "Order Acolyte"
 	ConversationID 55
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1143,6 +1192,7 @@ ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
 
 ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 {
+	Tag "Shadow Acolyte"
 	ConversationID 61
 	+MISSILEMORE
 	DropItem "ClipOfBullets"
@@ -1235,6 +1285,7 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 
 ACTOR AcolyteTanNew : AcolyteNew replaces AcolyteTan
 {
+	Tag "Order Acolyte"
 	ConversationID 53
 	+MISSILEMORE
 	+MISSILEEVENMORE
@@ -1243,6 +1294,7 @@ ACTOR AcolyteTanNew : AcolyteNew replaces AcolyteTan
 
 ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 {
+	Tag "Order Templar"
 	Health 300
 	Painchance 100
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
@@ -1437,6 +1489,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 
 ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 {
+	Tag "Order Reaver"
 	Health 150
 	PainChance 128
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
@@ -1598,6 +1651,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 
 ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 {
+	Tag "Order Crusader"
 	ConversationID 63
 	Speed 8
 	Radius 40
@@ -1733,6 +1787,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 
 ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 {
+	Tag "Order Sentinel"
 	Health 100
 	Painchance 255
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -1848,6 +1903,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 
 ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 {
+	Tag "Order Stalker"
 	ConversationID 92
 	Health 80
 	PainChance 40
@@ -2095,6 +2151,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 
 ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 {
+	Tag "Ceiling Turret"
 	Health 125
 	Speed 0
 	PainChance 0
@@ -2194,6 +2251,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 
 ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 {
+	Tag "Order Inquisitor"
 	Health 1000
 	Speed 12
 	Radius 40
@@ -2419,6 +2477,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 // DARK INQUISITOR
 ACTOR DarkInquisitor : InquisitorNew 27406
 {
+	Tag "Order Dark Inquisitor"
 	Health 2400 //If using in Strife, reduce to 1200.
 	PainChance 1
 	Damagefactor "Disintegrate", 0.25
@@ -2688,6 +2747,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 // ORDER LEADERS/ETC
 ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 {
+	Tag "\cfThe Programmer\c-"
 	ConversationID 95
 	Health 1100
 	PainChance 50
@@ -2851,6 +2911,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 
 ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 { 
+	Tag "\cfThe Bishop\c-"
 	ConversationID 64
 	Health 500
 	PainChance 128
@@ -2954,6 +3015,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 
 ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 {
+	Tag "\cfThe Oracle\c-"
 	ConversationID 65
 	Health 250
 	Radius 15
@@ -3006,6 +3068,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 
 ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 {
+	Tag "\cfMacil, Leader of the Front\c-"
 	ConversationID 49
 	Health 285
 	Radius 20
@@ -3125,6 +3188,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 
 ACTOR Macil2New : Macil1New replaces Macil2
 {
+	Tag "\cfMacil, Leader of the Front\c-"
 	ConversationID 50
 	PainChance 200
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -3223,6 +3287,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 
 ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 {
+	Tag "\cfThe Loremaster\c-"
 	ConversationID 66
 	Health 800
 	Speed 10
@@ -3386,6 +3451,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 // SPECTRES
 ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 {
+	Tag "\cfThe Programmer's Spectre\c-"
 	ConversationID 67
 	Health 1000
 	PainChance 250
@@ -3571,6 +3637,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 
 ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 {
+	Tag "\cfThe Bishop's Spectre\c-"
 	ConversationID 70
 	Health 1200
 	PainChance 50
@@ -3665,6 +3732,7 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 
 ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 {
+	Tag "\cfThe Oracle's Spectre\c-"
 	ConversationID 71
 	Health 1500
 	Mass 500000000
@@ -3831,6 +3899,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 
 ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 { 
+	Tag "\cfMacil's Spectre\c-"
 	ConversationID 72
 	Health 1700
 	Mass 500000000
@@ -3945,6 +4014,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 
 ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 {
+	Tag "\cfThe Loremaster's Spectre\c-"
 	ConversationID 73
 	Health 2000
 	Mass 500000000
@@ -4055,6 +4125,7 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 // ENTITY
 ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 {
+	Tag "\cfThe Entity: The One God\c-"
 	ConversationID 74
 	Health 2500
 	PainChance 255
@@ -4229,6 +4300,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 
 ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 {
+	Tag "\cfMiniature Entity\c-"
 	ConversationID 75
 	Health 990
 	PainChance 255
@@ -4424,6 +4496,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 
 ACTOR EntityAscended : EntityBossNew
 {
+	Tag "\cfThe Entity: The One God: Ascendant\c-"
 	Health 3250
 	PainChance 64
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
@@ -4656,7 +4729,8 @@ actor AlienSpectre1Model : AlienSpectreModel 27401
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "Programmer's Spectre [NPC]"
+	Tag "\cfGhost of The Programmer's Spectre\c-"
+
 	ConversationID 666
 	Health 1000
 }
@@ -4666,7 +4740,8 @@ actor AlienSpectre2Model : AlienSpectreModel 27402
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "Bishop's Spectre [NPC]"
+	Tag "\cfGhost of The Bishop's Spectre\c-"
+
 	ConversationID 667
 	Health 1200
 }
@@ -4676,7 +4751,8 @@ actor AlienSpectre3Model : AlienSpectreModel 27403
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "The Oracle's Spectre [NPC]"
+	Tag "\cfGhost of The Oracle's Spectre\c-"
+
 	ConversationID 668
 	Health 1500
 }
@@ -4686,7 +4762,8 @@ actor AlienSpectre4Model : AlienSpectreModel 27404
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "Macil's Spectre [NPC]"
+	Tag "\cfGhost of Macil's Spectre\c-"
+
 	ConversationID 669
 	Health 1700
 }
@@ -4696,7 +4773,8 @@ actor AlienSpectre5Model : AlienSpectreModel 27405
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "The Loremaster's Spectre [NPC]"
+	Tag "\cfGhost of The Loremaster's Spectre\c-"
+
 	ConversationID 670
 	Health 2000
 }

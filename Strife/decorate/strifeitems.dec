@@ -3,6 +3,7 @@ ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 {
 	ConversationID 187
 	+FLOORCLIP
+	+DONTGIB
 	Inventory.Icon "I_BKPK"
 	Tag "Ammo Satchel"
 	Inventory.PickupMessage "You picked up the \ceammo satchel\c-."
@@ -37,6 +38,7 @@ ACTOR LeatherArmorNew : LeatherArmor replaces LeatherArmor
 	Radius 20
 	Height 16
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.AUTOACTIVATE
 	+INVENTORY.INVBAR
 	Inventory.MaxAmount 5
@@ -65,6 +67,7 @@ ACTOR MetalArmorNew : MetalArmor replaces MetalArmor
 	Radius 20
 	Height 16
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.AUTOACTIVATE
 	+INVENTORY.INVBAR
 	Inventory.MaxAmount 3
@@ -100,6 +103,7 @@ ACTOR DegninOrePickup : AetheriusCustomInventory replaces DegninOre
 {
 	Radius 16
 	Height 16
+	+DONTGIB
 	Mass 0x7FFFFFFD // So it's unaffected by a Poison Cloud spell's vortexes
 	DeathSound "ore/explode"
 	Inventory.Icon "I_XPRK"
@@ -137,6 +141,7 @@ ACTOR DegninOreNew : DegninOre
 	+NOBLOOD
 	+FLOORCLIP
 	+INCOMBAT
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	Tag "Degnin Ore: Explodes when shot. Will destroy forcefields."
@@ -173,12 +178,12 @@ ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit
 {
 	ConversationID 161, 157, 160
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
 	-INVENTORY.FANCYPICKUPSOUND
-	+DONTGIB
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 	Inventory.PickupSound "misc/i_pkup"
@@ -206,6 +211,7 @@ ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 {
 	ConversationID 160, 156, 159
 	+FLOORCLIP
+	+DONTGIB
 	+VISIBILITYPULSE
 	+INVENTORY.INVBAR
 	+INVENTORY.HUBPOWER
@@ -245,6 +251,7 @@ ACTOR TeleporterBeaconNew : TeleporterBeacon replaces TeleporterBeacon
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 	+DROPPED
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	Inventory.Icon "I_BEAC"
@@ -270,6 +277,7 @@ ACTOR TargeterNew : Targeter replaces Targeter
 {
 	ConversationID 167
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	-INVENTORY.FANCYPICKUPSOUND
@@ -292,6 +300,7 @@ ACTOR ScannerNew : Scanner replaces Scanner
 {
 	ConversationID 165
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.KEEPDEPLETED
 	+INVENTORY.FANCYPICKUPSOUND
 	inventory.maxamount 9999
@@ -316,6 +325,7 @@ ACTOR MedPatchNew : MedPatch replaces MedPatch // : HealthPickup 2011
 	ConversationID 125, 121, 124
 	Health 10
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
@@ -345,6 +355,7 @@ ACTOR MedicalKitNew : MedicalKit replaces MedicalKit // HealthPickup 2012
 	ConversationID 126, 122, 125
 	Health 25
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	inventory.maxamount 9999
@@ -372,6 +383,7 @@ ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
 	Game Strife
 	ConversationID 127, 123, 126
 	+FLOORCLIP
+	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
 	Health -100
@@ -400,6 +412,7 @@ ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
 ACTOR CoinNew : Coin replaces Coin
 {
 	+DROPPED
+	+DONTGIB
 	+NOTDMATCH
 	+FLOORCLIP
 	Inventory.MaxAmount 0x7fffffff
@@ -420,6 +433,7 @@ ACTOR CoinNew : Coin replaces Coin
 // Spawns the 10 Gold pickup plus a possible few extra coins
 ACTOR Gold10New : Gold10 replaces Gold10
 {
+	+DONTGIB
 	Inventory.Amount 10
 	Tag "$TAG_10GOLD" // "10 gold"
 	Inventory.PickupMessage "You picked up \cf10 gold\c-."
@@ -444,6 +458,7 @@ ACTOR Gold10New : Gold10 replaces Gold10
 // The proper "10 Gold" pickup
 ACTOR Gold10Actual : Coin
 {
+	+DONTGIB
 	Inventory.Amount 10
 	Tag "$TAG_10GOLD" // "10 gold"
 	Inventory.PickupMessage "You picked up \cf10 gold\c-."
@@ -458,6 +473,7 @@ ACTOR Gold10Actual : Coin
 
 ACTOR Gold25New : Gold25 replaces Gold25
 {
+	+DONTGIB
 	Inventory.Amount 25
 	Tag "$TAG_25GOLD" // "25 gold"
 	Inventory.PickupMessage "You picked up \cf25 gold\c-."
@@ -485,6 +501,7 @@ ACTOR Gold25New : Gold25 replaces Gold25
 
 ACTOR Gold25Actual : Coin
 {
+	+DONTGIB
 	Inventory.Amount 25
 	Tag "$TAG_25GOLD" // "25 gold"
 	Inventory.PickupMessage "You picked up \cf25 gold\c-."
@@ -499,6 +516,7 @@ ACTOR Gold25Actual : Coin
 
 ACTOR Gold50New : Gold50 replaces Gold50
 {
+	+DONTGIB
 	Inventory.Amount 50
 	Tag "$TAG_50GOLD" // "50 gold"
 	Inventory.PickupMessage "You picked up \cf50 gold\c-."
@@ -540,6 +558,7 @@ ACTOR Gold50New : Gold50 replaces Gold50
 
 ACTOR Gold50Actual : Coin
 {
+	+DONTGIB
 	Inventory.Amount 50
 	Tag "$TAG_50GOLD" // "50 gold"
 	Inventory.PickupMessage "You picked up \cf50 gold\c-."
@@ -558,6 +577,7 @@ ACTOR BaseProp // Used for the basic properties of shop displays
 	Height 16
 	Radius 16
 	+FLOORCLIP
+	+DONTGIB
 	States
 	{
 		Spawn:

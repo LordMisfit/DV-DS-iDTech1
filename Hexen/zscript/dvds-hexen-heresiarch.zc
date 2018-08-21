@@ -33,6 +33,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 	
 	Default
 	{
+		Tag "Heresiarch";
 		Health 50000;
 		Painchance 10;
 		Painchance "Fist", 15; // Fist attacks have a +50% chance of stunning an enemy

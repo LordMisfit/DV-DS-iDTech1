@@ -4651,3 +4651,374 @@ actor PodNew : Pod replaces Pod
 	DamageFactor "Dashing", 0
 	Painchance "Dashing", 0
 }
+
+// Greater Disciple
+ACTOR GreaterDisciple : AetheriusMonsterZSC 30117 
+{ 
+	Tag "Greater Disciple"
+	Health 300 
+	PainChance 140
+	Painchance "Fist", 210 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 210 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Crush", 6.4
+	Speed 8
+	Scale 0.90
+	Radius 20 
+	Height 56 
+	Mass 320 
+	MONSTER
+	+FLOORCLIP
+	+DONTHURTSPECIES
+	+FLOAT
+	+NOGRAVITY
+	Obituary "%o was smote by a Greater Discple."
+	SeeSound "monster/dissit" 
+	PainSound "monster/dispai" 
+	DeathSound "monster/disdth" 
+	ActiveSound "monster/disact"
+	States 
+	{ 
+		Spawn: 
+			DISC A 0 NoDelay 
+			DISC AB 10 A_Look 
+			goto Spawn+1
+		See: 
+			DISC A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			DISC AAABBB 2
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				A_Chase;
+			}
+			DISC A 0 A_Jump(80,1)
+			Loop
+			DISC A 1
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+
+				A_PlaySound("monster/blur");
+				A_FastChase;
+			}
+			DISC AAABBBBAAAABBBB 1
+			{
+				A_SpawnItem("DSFX3",0,0);
+				A_FastChase;
+			}
+			DISC B 0 A_Jump(96,1)
+			Goto See+9
+			DISC B 0
+			Goto See
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			DISC A 1 A_Jump(192,"Missile2")
+			DISC A 1
+			{
+				A_FaceTarget;
+				A_SkullAttack;
+				A_PlaySound("monster/blur");
+			}
+			DISC AAAAAAAAAAA 1 
+			{
+				A_FaceTarget;
+				A_SkullAttack;
+				A_SpawnItem("DSFX3",0,0);
+			}
+			Goto See
+		Missile2:
+			DISC C 0 Bright A_Jump(128,"Missile3")
+			DISC C 1 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(0); }
+				A_PlaySound("monster/disat1");
+			}
+			DISC CC 5 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			DISC D 8 Bright
+			{
+				A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(7); }
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DiscipleShot1","DiscipleShot1Crisis",36,0,-4,0);
+				A_CrisisSpawnProjectile("DiscipleShot1","DiscipleShot1Crisis",36,0,4,0);
+				A_CrisisSpawnProjectile("DiscipleShot1","DiscipleShot1Crisis",36,0,-8,0);
+				A_CrisisSpawnProjectile("DiscipleShot1","DiscipleShot1Crisis",36,0,8,0);
+				A_CrisisSpawnProjectile("DiscipleShot1","DiscipleShot1Crisis",36,0,0,0);
+			}
+			DISC D 0 Bright A_Jump(64,"Missile3")
+			Goto See
+		Missile3:
+			DISC E 1 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(0); }
+				A_PlaySound("monster/disat2");
+			}
+			DISC EE 5 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			DISC F 8 Bright 
+			{
+				A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(7); }
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DiscipleShot2","DiscipleShot2Crisis",36,0,0,0);
+			}
+			DISC E 1 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(0); }
+				A_PlaySound("monster/disat2");
+			}
+			DISC EE 5 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			DISC F 8 Bright 
+			{
+				A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(7); }
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DiscipleShot2","DiscipleShot2Crisis",36,0,0,0);
+			}
+			DISC E 1 Bright
+		{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(0); }
+				A_PlaySound("monster/disat2");
+			}
+			DISC EE 5 Bright
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			DISC F 8 Bright 
+			{
+				A_FaceTarget;
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(6); }
+				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(7); }
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("DiscipleShot2","DiscipleShot2Crisis",36,0,0,0);
+			}
+			Goto See
+		Pain: 
+			DISC G 2 
+			DISC G 2 A_DVDSPain 
+			Goto See 
+		Pain.Fist: 
+			DISC G 2 
+			DISC G 2 A_DVDSPain 
+			DISC GG 2 
+			Goto See 
+		Pain.Kick: 
+			DISC G 2 
+			DISC G 2 A_DVDSPain 
+			DISC GGGG 2 
+			Goto See 
+
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
+			DISC H 8 Bright A_Scream 
+			DISC I 5 Bright
+			DISC J 5 Bright
+			DISC K 5 Bright A_NoBlocking 
+			DISC LMN 4 Bright 
+			DISC O -1 
+			Stop 
+		Raise: 
+			DISC O 5 
+			DISC NMLKJIH 5
+			Goto See 
+		XDeath:
+			goto Death
+		Ice:
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
+			DISC G 5 A_GenericFreezeDeath
+			DISC G 1 A_FreezeDeathChunks
+			wait
+	} 
+}
+
+
+ACTOR DSFX3
+{   
+	Radius 2
+	Height 2
+	Speed 0
+	Scale 0.90
+	PROJECTILE
+	RENDERSTYLE Translucent
+	ALPHA 0.90
+	States
+	{
+		Spawn:
+			NULL A 3
+			DISC A 3 A_FadeOut(0.10)
+			goto spawn+1
+	}
+}
+
+ACTOR DiscipleShot1 : AetheriusProjectileZSC
+{
+	Damage (3 * random(1,8))
+	Radius 8
+	Height 16
+	Speed 15
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	PROJECTILE
+	DeathSound "monster/disht1"
+	States
+	{
+		Spawn:
+			CFX2 ABCD 2 Bright 
+			{
+				A_CustomMissile("DSFX1",0,0,0,0);
+			}
+			loop
+		Death:
+			CFX2 EFGHI 3 Bright
+			stop
+	}
+}
+actor DiscipleShot1CrisisParticle : BaseCrisisParticle
+{
+	alpha 0.4489
+
+	States
+	{
+		Spawn:
+			CFX2 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" ABCD 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR DiscipleShot1Crisis : DiscipleShot1
+{
+	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			CFX2 ABCD 2 Bright 
+			{
+				A_SpawnItemEx("DiscipleShot1CrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("DSFX1",0,0,0,0);
+			}
+			loop
+		Death:
+			CFX2 EFGHI 3 Bright
+			stop
+	}
+}
+
+ACTOR DiscipleShot2 : AetheriusProjectileZSC
+{
+	Damage (6 * random(1,8))
+	Radius 8
+	Height 16
+	Speed 15
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	PROJECTILE
+	+SEEKERMISSILE
+	DeathSound "monster/disht2"
+	States
+	{
+		Spawn:
+			CFX3 AB 3 Bright 
+			{
+				A_CustomMissile("DSFX2",0,0,0,0);
+				A_SeekerMissile(5,8);
+			}
+			loop
+		Death:
+			CFX3 CDEFG 3 Bright
+			stop
+	}
+}
+actor DiscipleShot2CrisisParticle : BaseCrisisParticle
+{
+	alpha 0.4489
+
+	States
+	{
+		Spawn:
+			CFX3 A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AB 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR DiscipleShot2Crisis : DiscipleShot2
+{
+	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			CFX3 AB 3 Bright 
+			{
+				A_SpawnItemEx("DiscipleShot2CrisisParticle",0,0,0,0,0,1.28);
+				A_CustomMissile("DSFX2",0,0,0,0);
+				A_SeekerMissile(5,8);
+			}
+			loop
+		Death:
+			CFX3 CDEFG 3 Bright
+			stop
+	}
+}
+
+ACTOR DSFX1
+{   
+	Radius 2
+	Height 2
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	States
+	{
+		Spawn:
+			NULL A 3 Bright
+			CFX2 EFGHI 3 Bright
+			Stop 
+	}
+}
+
+ACTOR DSFX2
+{   
+	Radius 2
+	Height 2
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	States
+	{
+		Spawn:
+			NULL A 3 Bright
+			CFX3 HIJK 3 Bright
+			Stop 
+	}
+}

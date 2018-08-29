@@ -445,10 +445,16 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
-		if (random(1,2048) <= evolveChance)
-			return "Banshee";
+		if (random(1,512) <= evolveChance)
+		{
+			if (random(1,1024) <= evolveChance)
+				return "Banshee";
+			else
+				return "GreaterDisciple";
+		}
 		else
 			return "WizardNew";
+		
 	}
 }
 

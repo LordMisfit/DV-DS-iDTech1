@@ -5022,3 +5022,374 @@ ACTOR DSFX2
 			Stop 
 	}
 }
+
+// Apprentice of D'Sparil
+actor ApprenticeSheenMode : PowerProtection
+{
+	damagefactor "normal", 0.25
+	radiusdamagefactor 0.25
+	inventory.icon ""
+	Powerup.Duration 2147483646
+}
+
+ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Raven Style"
+	Tag "Apprentice of D'Sparil"
+	
+	Tag "Apprentice"
+
+	Health 500
+	Radius 20
+	Height 56
+	Speed 8
+	PainChance 100
+	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Normal", 0.8
+	DamageFactor "Magic", 0.8
+	DamageFactor "Crush", 6.4
+	MONSTER 
+	+FLOORCLIP
+	+NOGRAVITY
+	+FLOAT
+	SeeSound "wizard/sight"
+	PainSound "wizard/pain"
+	DeathSound "wizard/death"
+	ActiveSound "wizard/active"
+	OBITUARY "%o was spooked by an Apprentice of D'Sparil"
+
+	states
+	{
+		Spawn:
+			APDP A 0 NoDelay 
+			APDP AB 10 A_Look
+			goto Spawn+1
+		See:
+			APDP A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,0)
+			APDP A 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1,0);
+			}
+			APDP AABB 3
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
+				A_Chase;
+			}
+			Loop
+		Missile:
+			TNT1 A 0 ACS_NamedExecuteAlways("RefreshStealthInfo",0,1) // makes a Stealth Monster become more visible
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 0 A_Jump(128,"Missile2")
+			APDP C 0 A_Jump(64,"Missile3")
+			APDP D 6
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,0,0);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
+			}
+			Goto See
+		Missile2:
+			APDP CCCCCCCCC 1 { A_SetTranslucent(alpha-0.1,0); A_FaceTarget; }
+			APDP D 1 // A_SetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 1);
+				A_GiveInventory("ApprenticeSheenMode",1);
+				A_SetTranslucent(0.1,0);
+			}
+			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,0,0);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,0,0);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,0,0);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,0,0);
+				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP BABABABAB 1 { A_SetTranslucent(alpha+0.1,0); A_FaceTarget; }
+			APDP A 1 // A_UnsetInvulnerable
+			{
+				A_FaceTarget;
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1.0,0);
+			}
+			Goto See
+		Missile3:
+			APDP D 4
+			{
+				A_FaceTarget;
+				A_PlaySound("wizard/attack");
+
+				A_MonsterCrisisCheck;
+				A_CrisisSpawnProjectile("SuperFireBlast","SuperFireBlastCrisis",15,0,0);
+			}
+			Goto See
+		Pain:
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 2
+			APDP E 2 A_DVDSPain
+			Goto See
+		Pain.Fist:
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 2
+			APDP E 2 A_DVDSPain
+			APDP EE 2
+			Goto See
+		Pain.Kick:
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 2
+			APDP E 2 A_DVDSPain
+			APDP EEEE 2
+			Goto See
+
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_TakeInventory("ApprenticeSheenMode",0x7FFFFFFF);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 4
+			APDP F 4
+			APDP G 3 A_Scream
+			APDP H 3 A_CustomMissile("AoDGhost",8,0,0)
+			APDP I 3 A_Fall
+			APDP JKL 2
+			TNT1 A 0 
+			APDP M -1
+			Stop
+		Raise:
+			APDP M 8 
+			APDP L 8 
+			APDP KJI 6 
+			Goto See
+		XDeath:
+			goto Death
+		Ice:
+			"####" # 0 A_DVDSIceDeath(-2,0,1)
+			APDP E 5 A_GenericFreezeDeath
+			APDP E 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+Actor AoDGhost
+{
+  Radius 1
+  Height 1
+  Speed 0
+  Projectile
+  RenderStyle Translucent
+  Alpha 0.75
+  +NoClip
+  SeeSound "AoD/Ghost"
+  States
+  {
+  Spawn:
+  Death:
+    AODG ABCDEF 5 Bright
+    AODG G 5 Bright A_Fadeout
+    Stop
+  }
+}
+
+ACTOR FireBlast : AetheriusProjectileZSC
+{
+	Damage (3 * random(1,4))
+	Speed 25
+	Scale 0.75
+	PROJECTILE
+	+StrifeDamage
+	+NoGravity
+	DEATHSOUND "fireblast/explode"
+	states
+	{
+		Spawn:
+			PROJ AABBCC 2 BRIGHT
+			Loop
+    Death:
+			PROJ D 4 BRIGHT 
+			{
+				A_Explode(8,64,0);
+			}
+			PROJ EFGH 4 BRIGHT
+			PROJ I 4 BRIGHT A_FadeOut(0.50)
+			Stop
+	}
+}
+actor FireBlastCrisisParticle : BaseCrisisParticle
+{
+	scale 0.5
+
+	States
+	{
+		Spawn:
+			PROJ A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" AABBCC 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR FireBlastCrisis : FireBlast
+{
+	Damage ((3 * random(1,4)) * CallACS("CrisisMultiplier"))
+	states
+	{
+		Spawn:
+			PROJ AABBCC 2 BRIGHT
+			{
+				A_SpawnItemEx("FireBlastCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			PROJ D 4 BRIGHT 
+			{
+				A_Explode(8*CallACS("CrisisMultiplier"),64,0);
+			}
+			PROJ EFGH 4 BRIGHT
+			PROJ I 4 BRIGHT A_FadeOut(0.50)
+			Stop
+	}
+}
+
+ACTOR SuperFireBlast : FireBlast
+{
+	Damage (24 * random(1,4))
+	Speed 16
+	Scale 1.5
+	DEATHSOUND "superfireblast/explode"
+	states
+	{
+		Spawn:
+			PROJ AABBCC 2 BRIGHT
+			{
+			}
+			Loop
+    Death:
+			PROJ D 4 BRIGHT A_Explode(256,128,0)
+			PROJ EFGH 4 BRIGHT
+			PROJ I 4 BRIGHT A_FadeOut(0.50)
+			Stop
+	}
+}
+actor SuperFireBlastCrisisParticle : FireBlastCrisisParticle
+{
+	scale 1.0
+
+	States
+	{
+		Spawn:
+			GHBL A 0 NoDelay A_CrisisParticleInit
+			goto Idle
+		Idle:
+			"####" A 2 Bright A_CrisisParticleDo
+			loop
+	}
+}
+ACTOR SuperFireBlastCrisis : SuperFireBlast
+{
+	Damage ((24 * random(1,4)) * CallACS("CrisisMultiplier"))
+	states
+	{
+		Spawn:
+			PROJ AABBCC 2 BRIGHT
+			{
+				A_SpawnItemEx("SuperFireBlastCrisisParticle",0,0,0,0,0,1.28);
+			}
+			Loop
+		Death:
+			PROJ D 4 BRIGHT A_Explode(256*CallACS("CrisisMultiplier"),128,0)
+			PROJ EFGH 4 BRIGHT
+			PROJ I 4 BRIGHT A_FadeOut(0.50)
+			Stop
+	}
+}

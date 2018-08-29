@@ -205,3 +205,13 @@ monster/disat1 dsdisat1
 monster/disat2 dsdisat2
 monster/disht1 dsdisht1
 monster/disht2 dsdisht2
+
+AoD/Ghost				AODSCRM
+Wizard2/Sight			WIZ2SIT
+Wizard2/Attack			WIZ2ATK
+Wizard2/Death			WIZ2DTH
+Wizard2/Pain			WIZ2PAI
+Wizard2/Active1			WIZ2ACT
+$Random Wizard/Active 	{ Wizard2/Sight Wizard2/Active1 }
+FireBlast/Explode		DSFREXP
+SuperFireBlast/Explode	DSHELLEX

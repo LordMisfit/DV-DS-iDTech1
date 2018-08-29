@@ -448,7 +448,12 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 		if (random(1,512) <= evolveChance)
 		{
 			if (random(1,1024) <= evolveChance)
-				return "Banshee";
+			{
+				if (random(1,1536) <= evolveChance)
+					return "Banshee";
+				else 
+					return "HereticApprenticeNew";
+			}
 			else
 				return "GreaterDisciple";
 		}

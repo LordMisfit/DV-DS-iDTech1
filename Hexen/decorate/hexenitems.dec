@@ -1,7 +1,7 @@
 ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
 {
 	+DONTGIB
-	DropItem "RandomMagicSpawner", 256
+	DropItem "RandomMagicSpawner", 255
 }
 
 ACTOR ArtiPorkNew : AetheriusBaseCustomInventoryZSC replaces ArtiPork
@@ -249,6 +249,7 @@ actor FlechetteReplacer : RandomSpawner replaces ArtiPoisonBag
 	DropItem "StrongMedicine", 96, 10
 	DropItem "SpecialMedicine", 96, 10
 	DropItem "SapphireWandNew" 96, 10
+	DropItem "Experiessence", 96, 5
 	DropItem "RockBombShard", 96, 5
 	DropItem "PaxaPunch", 96, 5
 	DropItem "MercuryBandana", 96, 5
@@ -272,6 +273,7 @@ actor ArtiBlastRadiusNew : FlechetteReplacer replaces ArtiBlastRadius
 	DropItem "StrongMedicine", 96, 10
 	DropItem "SpecialMedicine", 96, 10
 	DropItem "SapphireWandNew" 96, 10
+	DropItem "Experiessence", 96, 5
 	DropItem "RockBombShard", 96, 5
 	DropItem "PaxaPunch", 96, 5
 	DropItem "MercuryBandana", 96, 5
@@ -336,6 +338,7 @@ actor MeshArmorNew : RandomSpawner replaces MeshArmor
 actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "ImpClawCI"
@@ -348,6 +351,7 @@ actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
 actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "ImpClawCI"
@@ -360,6 +364,7 @@ actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
 actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "ImpClawCI"
@@ -374,6 +379,7 @@ actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
 actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "IncarnateSkullCI"
@@ -386,6 +392,7 @@ actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
 actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "IncarnateSkullCI"
@@ -398,6 +405,7 @@ actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
 actor MWeapLightningNew : RandomSpawner replaces MWeapLightning
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
 	DropItem "IncarnateSkullCI"
@@ -411,6 +419,7 @@ actor MWeapLightningNew : RandomSpawner replaces MWeapLightning
 actor FWeaponPiece1New : RandomSpawner replaces FWeaponPiece1
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -419,6 +428,7 @@ actor FWeaponPiece1New : RandomSpawner replaces FWeaponPiece1
 actor FWeaponPiece2New : RandomSpawner replaces FWeaponPiece2
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -427,6 +437,7 @@ actor FWeaponPiece2New : RandomSpawner replaces FWeaponPiece2
 actor FWeaponPiece3New : RandomSpawner replaces FWeaponPiece3
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -435,6 +446,7 @@ actor FWeaponPiece3New : RandomSpawner replaces FWeaponPiece3
 actor FWeapQuietusNew : RandomSpawner replaces FWeapQuietus
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -443,6 +455,7 @@ actor FWeapQuietusNew : RandomSpawner replaces FWeapQuietus
 actor CWeaponPiece1New : RandomSpawner replaces CWeaponPiece1
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -451,6 +464,7 @@ actor CWeaponPiece1New : RandomSpawner replaces CWeaponPiece1
 actor CWeaponPiece2New : RandomSpawner replaces CWeaponPiece2
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -459,6 +473,7 @@ actor CWeaponPiece2New : RandomSpawner replaces CWeaponPiece2
 actor CWeaponPiece3New : RandomSpawner replaces CWeaponPiece3
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -467,6 +482,7 @@ actor CWeaponPiece3New : RandomSpawner replaces CWeaponPiece3
 actor CWeapWraithvergeNew : RandomSpawner replaces CWeapWraithverge
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -475,6 +491,7 @@ actor CWeapWraithvergeNew : RandomSpawner replaces CWeapWraithverge
 actor MWeaponPiece1New : RandomSpawner replaces MWeaponPiece1
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -483,6 +500,7 @@ actor MWeaponPiece1New : RandomSpawner replaces MWeaponPiece1
 actor MWeaponPiece2New : RandomSpawner replaces MWeaponPiece2
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -491,6 +509,7 @@ actor MWeaponPiece2New : RandomSpawner replaces MWeaponPiece2
 actor MWeaponPiece3New : RandomSpawner replaces MWeaponPiece3
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -499,6 +518,7 @@ actor MWeaponPiece3New : RandomSpawner replaces MWeaponPiece3
 actor MWeapBloodscourgeNew : RandomSpawner replaces MWeapBloodscourge
 {
 	+DONTGIB
+	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
 	DropItem "BalrogFistCI"
 	DropItem "ArchvileHandCI"
@@ -812,6 +832,7 @@ Actor DartNew : AetheriusEffectProjectile replaces Dart
 	+DROPOFF
 	+MISSILE
 	+NOTELEPORT
+	
 	States
 	{
 		Spawn:

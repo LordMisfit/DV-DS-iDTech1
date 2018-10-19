@@ -686,7 +686,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 			PTN1 ABC 3 bright
 			loop
 		Success:
-			TNT1 A 0 ACS_NamedExecuteAlways("PickupMedicalItem",0,0,0,0)
+			TNT1 A 0 A_PickupMedicalItem(0,0)
 			Stop
 		Pickup:
 			TNT1 A 0 { if (CallACS("CheckHealthLevels") > 0) { return state("Success"); } return state(""); }

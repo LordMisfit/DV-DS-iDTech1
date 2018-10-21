@@ -689,7 +689,11 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 			TNT1 A 0 A_PickupMedicalItem(0,0)
 			Stop
 		Pickup:
-			TNT1 A 0 { if (CallACS("CheckHealthLevels") > 0) { return state("Success"); } return state(""); }
+			TNT1 A 0 
+			{
+				A_CheckHealthLevels(0);
+				if (CountInv("HealthPickupResult") > 0) { return state("Success"); } return state(""); 
+			}
 			Fail
   }
 }

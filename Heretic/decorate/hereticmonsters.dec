@@ -5056,10 +5056,10 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 	+FLOORCLIP
 	+NOGRAVITY
 	+FLOAT
-	SeeSound "wizard/sight"
-	PainSound "wizard/pain"
-	DeathSound "wizard/death"
-	ActiveSound "wizard/active"
+	SeeSound "wizard2/sight"
+	PainSound "wizard2/pain"
+	DeathSound "wizard2/death"
+	ActiveSound "wizard2/active"
 	OBITUARY "%o was spooked by an Apprentice of D'Sparil"
 
 	states

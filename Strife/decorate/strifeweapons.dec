@@ -1,3 +1,41 @@
+ACTOR ElectricBoltsNew : ElectricBolts replaces ElectricBolts
+{
+	+FLOORCLIP
+	+DONTGIB
+	Inventory.Amount 20
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "I_XQRL"
+	Tag "$TAG_ELECTRICBOLTS" // "Electric Bolts"
+	Inventory.PickupMessage "$TXT_ELECTRICBOLTS" // "You picked up the electric bolts."
+	States
+	{
+		Spawn:
+			XQRL A -1
+			Stop
+	}
+}
+
+ACTOR PoisonBoltsNew : PoisonBolts replaces PoisonBolts
+{
+	+FLOORCLIP
+	+DONTGIB
+	Inventory.Amount 10
+	Inventory.MaxAmount 25
+	Ammo.BackpackAmount 2
+	Ammo.BackpackMaxAmount 50
+	Inventory.Icon "I_PQRL"
+	Tag "$TAG_POISONBOLTS" // "Poison Bolts"
+	Inventory.PickupMessage "$TXT_POISONBOLTS" // "You picked up the poison bolts."
+	States
+	{
+		Spawn:
+			PQRL A -1
+			Stop
+	}
+}
+
 // Crossbow Projectiles
 ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 {
@@ -335,6 +373,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 // Bullet Clip
 ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -362,6 +401,7 @@ ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
 // Box of Bullets
 ACTOR BoxOfBulletsNew : BoxOfBullets replaces BoxOfBullets
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -472,6 +512,7 @@ ACTOR AssaultGunStandingNew : AssaultGunStanding replaces AssaultGunStanding
 // Mini Missiles
 ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -499,6 +540,7 @@ ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
 // Crate Of Missiles
 ACTOR CrateOfMissilesNew : CrateOfMissiles replaces CrateOfMissiles
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -627,6 +669,7 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 // HE Grenade Rounds
 ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -654,6 +697,7 @@ ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
 // Phosphorus Grenades
 ACTOR PhosphorusGrenadeRoundsNew : PhosphorusGrenadeRounds replaces PhosphorusGrenadeRounds
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -780,6 +824,7 @@ ACTOR StrifeGrenadeLauncher2New : StrifeGrenadeLauncher2 replaces StrifeGrenadeL
 // Energy Pod
 ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else
@@ -807,6 +852,7 @@ ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
 // Energy Pack
 ACTOR EnergyPackNew : EnergyPack replaces EnergyPack
 {
+	+DONTGIB
 	States
 	{
 		FloraDetected: // bonus will be turned into something else

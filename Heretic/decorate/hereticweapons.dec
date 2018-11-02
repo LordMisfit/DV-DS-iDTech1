@@ -2,18 +2,18 @@
 // ***** AMMO *****
 // ****************
 
-ACTOR GoldWandAmmoNew : GoldWandAmmo { Inventory.Amount 10 Inventory.PickupMessage "Wand crystal [+10 Crystal Wand]" }
-ACTOR GoldWandHeftyNew : GoldWandHefty { Inventory.Amount 50 Inventory.PickupMessage "Crystal geode [+50 Crystal Wand]" }
-ACTOR CrossbowAmmoNew : CrossbowAmmo { Inventory.Amount 4 Inventory.PickupMessage "Ethereal arrows [+4] (Super) Ethereal Crossbow" }
-ACTOR CrossbowHeftyNew : CrossbowHefty { Inventory.Amount 20 Inventory.PickupMessage "Quiver of ethereal arrows [+20] (Super) Ethereal Crossbow" }
-ACTOR BlasterAmmoNew : BlasterAmmo { Inventory.Amount 10 Inventory.PickupMessage "Claw orb [+10 Dragon Claw]"  }
-ACTOR BlasterHeftyNew : BlasterHefty { Inventory.Amount 50 Inventory.PickupMessage "Energy orb [+50 Dragon Claw]" }
-ACTOR PhoenixRodAmmoNew : PhoenixRodAmmo { Inventory.Amount 1 Inventory.PickupMessage "Flame orb [+1 Phoenix Rod]" }
-ACTOR PhoenixRodHeftyNew : PhoenixRodHefty { Inventory.Amount 10 Inventory.PickupMessage "Inferno Orb [+10 Phoenix Rod]" }
-ACTOR MaceAmmoNew : MaceAmmo { Inventory.Amount 20 Inventory.PickupMessage "Mace Spheres [+20 Firemace]" }
-ACTOR MaceHeftyNew : MaceHefty { Inventory.Amount 100 Inventory.PickupMessage "Pile of mace spheres [+100 Firemace]" }
-ACTOR SkullRodAmmoNew : SkullRodAmmo { Inventory.Amount 20 Inventory.PickupMessage "Lesser Runes [+20 Hellstaff]" }
-ACTOR SkullRodHeftyNew : SkullRodHefty { Inventory.Amount 100 Inventory.PickupMessage "Greater Runes [+100 Hellstaff]" }
+ACTOR GoldWandAmmoNew : GoldWandAmmo { +DONTGIB Inventory.Amount 10 Inventory.PickupMessage "Wand crystal [+10 Crystal Wand]" }
+ACTOR GoldWandHeftyNew : GoldWandHefty { +DONTGIB Inventory.Amount 50 Inventory.PickupMessage "Crystal geode [+50 Crystal Wand]" }
+ACTOR CrossbowAmmoNew : CrossbowAmmo { +DONTGIB Inventory.Amount 4 Inventory.PickupMessage "Ethereal arrows [+4] (Super) Ethereal Crossbow" }
+ACTOR CrossbowHeftyNew : CrossbowHefty { +DONTGIB Inventory.Amount 20 Inventory.PickupMessage "Quiver of ethereal arrows [+20] (Super) Ethereal Crossbow" }
+ACTOR BlasterAmmoNew : BlasterAmmo { +DONTGIB Inventory.Amount 10 Inventory.PickupMessage "Claw orb [+10 Dragon Claw]"  }
+ACTOR BlasterHeftyNew : BlasterHefty { +DONTGIB Inventory.Amount 50 Inventory.PickupMessage "Energy orb [+50 Dragon Claw]" }
+ACTOR PhoenixRodAmmoNew : PhoenixRodAmmo { +DONTGIB Inventory.Amount 1 Inventory.PickupMessage "Flame orb [+1 Phoenix Rod]" }
+ACTOR PhoenixRodHeftyNew : PhoenixRodHefty { +DONTGIB Inventory.Amount 10 Inventory.PickupMessage "Inferno Orb [+10 Phoenix Rod]" }
+ACTOR MaceAmmoNew : MaceAmmo { +DONTGIB Inventory.Amount 20 Inventory.PickupMessage "Mace Spheres [+20 Firemace]" }
+ACTOR MaceHeftyNew : MaceHefty { +DONTGIB Inventory.Amount 100 Inventory.PickupMessage "Pile of mace spheres [+100 Firemace]" }
+ACTOR SkullRodAmmoNew : SkullRodAmmo { +DONTGIB Inventory.Amount 20 Inventory.PickupMessage "Lesser Runes [+20 Hellstaff]" }
+ACTOR SkullRodHeftyNew : SkullRodHefty { +DONTGIB Inventory.Amount 100 Inventory.PickupMessage "Greater Runes [+100 Hellstaff]" }
 
 // **************************
 // ***** AMMO REPLACERS *****

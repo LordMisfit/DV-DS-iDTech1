@@ -4669,7 +4669,7 @@ ACTOR EntityAscended : EntityBossNew
 			MDTH B 3 Bright A_TossGib
 			MDTH C 3 Bright A_NoBlocking
 			MDTH DEFGHIJKLMN 3 Bright A_TossGib
-			MDTH O 3 ACS_NamedExecuteAlways("EntityAscendantDies")
+			MDTH O 3 { CallACS("MiscVarSetDECORATE",299,1,1); }
 			Stop
 	}
 }

@@ -1052,9 +1052,9 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			AGRD OOOO 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 			}
 			AGRD O 0
 			{
@@ -1217,23 +1217,23 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 			AGRD O 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 				A_DVDSPain;
 			}
 			AGRD O 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 			}
 			AGRD O 0
 			{
 				A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0);
-				A_TakeInventory("AcolyteShieldDefend",0x7FFFFFFF); // A_UnSetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
+				A_SetInventory("AcolyteShieldDefend",0); // A_UnSetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
 			}
 			Goto See
 		Pain.Fist:
@@ -1241,23 +1241,23 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 			AGRD O 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 				A_DVDSPain;
 			}
 			AGRD OO 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 			}
 			AGRD O 0
 			{
 				A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0);
-				A_TakeInventory("AcolyteShieldDefend",0x7FFFFFFF); // A_UnSetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
+				A_SetInventory("AcolyteShieldDefend",0); // A_UnSetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
 			}
 			Goto See
 		Pain.Kick:
@@ -1265,23 +1265,23 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 			AGRD O 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 				A_DVDSPain;
 			}
 			AGRD OOOO 4 Fast Slow
 			{
 				if (random(1,2) == 1) { A_ChangeFlag("NOPAIN", 1); A_ChangeFlag("NOBLOOD", 1); } else { A_ChangeFlag("NOPAIN", 0); A_ChangeFlag("NOBLOOD", 0); }
-				A_GiveInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
-				if (random(1,4) == 1) { A_GiveInventory("AcolyteShieldDefendExtra",1); } 
+				A_SetInventory("AcolyteShieldDefend",1); // A_SetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
+				if (random(1,4) == 1) { A_SetInventory("AcolyteShieldDefendExtra",1); } 
 			}
 			AGRD O 0
 			{
 				A_ChangeFlag("NOBLOOD", 0); A_ChangeFlag("NOPAIN", 0);
-				A_TakeInventory("AcolyteShieldDefend",0x7FFFFFFF); // A_UnSetInvulnerable
-				A_TakeInventory("AcolyteShieldDefendExtra",0x7FFFFFFF);
+				A_SetInventory("AcolyteShieldDefend",0); // A_UnSetInvulnerable
+				A_SetInventory("AcolyteShieldDefendExtra",0);
 			}
 			Goto See
 	}

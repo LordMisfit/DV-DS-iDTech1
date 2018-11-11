@@ -181,55 +181,143 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 				CallACS("StartTensionCountDown");
 				A_PlaySound("weapons/xbowshoot",1);
 				A_GetHitScanXSpread(6);
-				A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-CountInv("XSpread",AAPTR_PLAYER1),CountInv("XSpread",AAPTR_PLAYER1)),1,"ElectricBolts",0,0,0,0);
+				A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-(CountInv("XSpread",AAPTR_PLAYER1)/100),(CountInv("XSpread",AAPTR_PLAYER1)/100)),1,"ElectricBolts",0,0,0,0);
 			}
 			XBOW B 6
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 1)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10035) >= 5)
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(1); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+					}
+					else
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+					}
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				}
 			}
 			XBOW C 4
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 4)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
 			}
 			XBOW D 6
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 1)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10035) >= 5)
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(1); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(1); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+					}
+					else
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+					}
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				}
 			}
 			XBOW E 3
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 5)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(2); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
 			}
 			XBOW F 5
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 3)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
 			}
 			XBOW G 5
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 3)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				}
 
 				A_GunFlash ("Flash", GFF_NOEXTCHANGE);
 				A_CheckReload;
@@ -316,55 +404,121 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 				CallACS("StartTensionCountDown");
 				A_PlaySound("weapons/xbowshoot",1);
 				A_GetHitScanXSpread(6);
-				A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-CountInv("XSpread",AAPTR_PLAYER1),CountInv("XSpread",AAPTR_PLAYER1)),1,"PoisonBolts",0,0,0,0);
+				A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-(CountInv("XSpread",AAPTR_PLAYER1)/100),(CountInv("XSpread",AAPTR_PLAYER1)/100)),1,"PoisonBolts",0,0,0,0);
 			}
 			XBOW B 6 
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 1)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10035) >= 5)
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(1); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+					}
+					else
+					{
+						if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+						else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+					}
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				}
 			}
 			XBOW C 4
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 4)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
 			}
 			XBOW D 6
 			{
 				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+				else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+				else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(5); }
+				else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
 			}
 			XBOW E 3
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 5)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(1); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(2); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
 			}
 			XBOW I 5
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 3)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(3); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
 			}
 			XBOW J 5 
 			{
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
-				if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				if (CallACS("MiscVarCheckDECORATE",10035) >= 3)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(2); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(4); }
+				}
+				else
+				{
+					if (CallACS("MiscVarCheckDECORATE",10031) >= 5) { A_SetTics(3); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 4) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 3) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 2) { A_SetTics(4); }
+					else if (CallACS("MiscVarCheckDECORATE",10031) >= 1) { A_SetTics(5); }
+				}
 
 				A_CheckReload;
 			}

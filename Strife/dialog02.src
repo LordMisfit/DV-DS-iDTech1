@@ -154,6 +154,21 @@ conversation
 			nextpage = 1;
 			closedialog = false;
 		}
+		choice
+		{
+			text = "(Spare) Poison Needle";
+			cost
+			{
+				item = 168; // Coin
+				amount = 975;
+			}
+			displaycost = true;
+			yesmessage = "DON'T POKE THE WRONG PERSON NOW.";
+			nomessage = "BIT DANGEROUS FOR SUCH LITTLE GOLD.";
+			giveitem = 415; // PoisonNeedleAmmo
+			nextpage = 1;
+			closedialog = false;
+		}
 	}
 	page
 	{
@@ -259,6 +274,21 @@ conversation
 			yesmessage = "HERE'S YOUR AMMO.";
 			nomessage = "MAYBE SOME OTHER TIME.";
 			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 4;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "(Spare) Poison Needle";
+			cost
+			{
+				item = 168; // Coin
+				amount = 825;
+			}
+			displaycost = true;
+			yesmessage = "DON'T POKE THE WRONG PERSON NOW.";
+			nomessage = "BIT DANGEROUS FOR SUCH LITTLE GOLD.";
+			giveitem = 415; // PoisonNeedleAmmo
 			nextpage = 4;
 			closedialog = false;
 		}
@@ -382,6 +412,21 @@ conversation
 			yesmessage = "MORE ARROWS FOR YOUR LONG BOW, MISS.";
 			nomessage = "MAYBE SOME OTHER TIME.";
 			giveitem = 365; // DiarisArrowQuiver
+			nextpage = 6;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "(Spare) Poison Needle";
+			cost
+			{
+				item = 168; // Coin
+				amount = 825;
+			}
+			displaycost = true;
+			yesmessage = "DON'T POKE THE WRONG PERSON NOW.";
+			nomessage = "BIT DANGEROUS FOR SUCH LITTLE GOLD.";
+			giveitem = 415; // PoisonNeedleAmmo
 			nextpage = 6;
 			closedialog = false;
 		}

@@ -336,7 +336,7 @@ ACTOR MedPatchNew : MedPatch replaces MedPatch // : HealthPickup 2011
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medicial Patch: Restores 10 HP."
+	Tag "Medical Patch: Restores 10 HP."
 	Inventory.Icon "I_STMP"
 	Inventory.PickupMessage "You picked up the \cdMed patch\c-."
 	HealthPickup.Autouse 3
@@ -366,7 +366,7 @@ ACTOR MedicalKitNew : MedicalKit replaces MedicalKit // HealthPickup 2012
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medicial Kit: Restores 25 HP."
+	Tag "Medical Kit: Restores 25 HP."
 	Inventory.Icon "I_MDKT"
 	Inventory.PickupMessage "You picked up the \cdMedical kit\c-."
 	HealthPickup.Autouse 3

@@ -319,7 +319,7 @@ ACTOR GoldWandPuff2New : AetheriusProjectileZSC
 ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 {
 	+BLOODSPLATTER
-	Weapon.Kickback 25
+	Weapon.Kickback 13
 	Weapon.SelectionOrder 2000
 	Weapon.AmmoGive 25
 	Weapon.AmmoType1 "GoldWandAmmo"
@@ -444,7 +444,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 ACTOR DualGoldWandNew : GoldWandNew
 {
 	+BLOODSPLATTER
-	Weapon.Kickback 25
+	Weapon.Kickback 13
 	Weapon.SelectionOrder 2000
 	Weapon.AmmoGive 25
 	Weapon.AmmoType1 "GoldWandAmmo"
@@ -625,6 +625,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
 	Weapon.YAdjust 0
+	Weapon.Kickback 75
 	Inventory.PickupMessage "$TXT_WPNCROSSBOW"
 	Tag "$TAG_CROSSBOW"
 	States
@@ -772,6 +773,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
 	Weapon.YAdjust 0
+	Weapon.Kickback 75
 	Inventory.PickupMessage "$TXT_WPNCROSSBOW"
 	Tag "Dual Ethereal Crossbows"
 
@@ -985,7 +987,7 @@ ACTOR BlasterFX1New : AetheriusFastProjectileZSC
 ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 {
 	+BLOODSPLATTER
-	Weapon.Kickback 50
+	Weapon.Kickback 25
 	Weapon.SelectionOrder 500
 	Weapon.AmmoGive 30
 	Weapon.AmmoUse1 1
@@ -1086,7 +1088,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 ACTOR DualDragonClawNew : HereticWeaponBase
 {
 	+BLOODSPLATTER
-	Weapon.Kickback 50
+	Weapon.Kickback 25
 	Weapon.SelectionOrder 500
 	Weapon.AmmoGive 30
 	Weapon.AmmoUse1 1
@@ -1269,7 +1271,7 @@ ACTOR RainPillarNew : RainPillarBase replaces RainPillar
 ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 {
 	Weapon.SelectionOrder 200
-	Weapon.Kickback 50
+	Weapon.Kickback 25
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 5
 	Weapon.AmmoGive1 50
@@ -1382,7 +1384,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 ACTOR DualHellStaffNew : HereticWeaponBase
 {
 	Weapon.SelectionOrder 200
-	Weapon.Kickback 50
+	Weapon.Kickback 25
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 5
 	Weapon.AmmoGive1 50
@@ -1550,7 +1552,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 {
 	+WEAPON.NOAUTOFIRE
 	Weapon.SelectionOrder 2600
-	Weapon.Kickback 75
+	Weapon.Kickback 38
 	Weapon.YAdjust 0
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 1
@@ -1669,7 +1671,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 {
 	+WEAPON.NOAUTOFIRE
 	Weapon.SelectionOrder 2600
-	Weapon.Kickback 75
+	Weapon.Kickback 38
 	Weapon.YAdjust 0
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 1
@@ -1857,7 +1859,7 @@ ACTOR MaceSpawnerNew : MaceSpawner replaces MaceSpawner
 ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 {
 	Weapon.SelectionOrder 1400
-	Weapon.Kickback 25
+	Weapon.Kickback 13
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 5
 	Weapon.AmmoGive1 50
@@ -1979,7 +1981,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 ACTOR DualFiremaceNew : HereticWeaponBase
 {
 	Weapon.SelectionOrder 1400
-	Weapon.Kickback 25
+	Weapon.Kickback 13
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 5
 	Weapon.AmmoGive1 50
@@ -2104,10 +2106,10 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 	weapon.selectionorder 400
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
-	weapon.kickback 100
-	weapon.AmmoUse1 2
-	weapon.AmmoUse2 2
-	weapon.AmmoGive 8
+	Weapon.Kickback 75
+	Weapon.AmmoUse1 2
+	Weapon.AmmoUse2 2
+	Weapon.AmmoGive 8
 	Tag "Super Ethereal Crossbow"
 	states
 	{
@@ -2267,7 +2269,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	weapon.selectionorder 400
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
-	weapon.kickback 100
+	Weapon.Kickback 75
 	weapon.AmmoUse1 2
 	weapon.AmmoUse2 2
 	weapon.AmmoGive 8
@@ -2509,7 +2511,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 
 actor DSparilStaff : HereticWeaponBase
 {
-	Weapon.Kickback 125
+	Weapon.Kickback 63
 	Weapon.Ammouse1 5
 	Weapon.Ammouse2 15
 	Weapon.Ammogive 50
@@ -2630,7 +2632,7 @@ actor DSparilStaff : HereticWeaponBase
 
 actor DualDSparilStaff : HereticWeaponBase
 {
-	Weapon.Kickback 125
+	Weapon.Kickback 63
 	Weapon.Ammouse1 5
 	Weapon.Ammouse2 15
 	Weapon.Ammogive 50

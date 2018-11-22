@@ -4375,7 +4375,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 
 ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 {
-	Tag "\cfD'Sparil\c- (w/ Chaos Serpent Mount)"
+	Tag "$DSPARIL1TAG"
 	Health 24000
 	Radius 28
 	Height 100

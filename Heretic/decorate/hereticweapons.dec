@@ -1785,6 +1785,9 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 ACTOR MaceFX1New : MaceFX1Base
 {
 	Damage (finaldamagedealt) //2
+	BounceType "HexenCompat"
+	BounceFactor 0.85
+	BounceCount 4
 	DamageType "Magic"
 	States
 	{
@@ -1802,6 +1805,9 @@ ACTOR MaceFX1New : MaceFX1Base
 ACTOR MaceFX2New : MaceFX2Base 
 { 
 	Damage (finaldamagedealt) //2
+	BounceType "HexenCompat"
+	BounceFactor 0.85
+	BounceCount 4
 	DamageType "Magic" 
 	States
 	{
@@ -1815,6 +1821,9 @@ ACTOR MaceFX2New : MaceFX2Base
 ACTOR MaceFX3New : MaceFX3Base
 { 
 	Damage (finaldamagedealt) //2
+	BounceType "HexenCompat"
+	BounceFactor 0.85
+	BounceCount 4
 	DamageType "Magic" 
 	States
 	{
@@ -1828,6 +1837,9 @@ ACTOR MaceFX3New : MaceFX3Base
 ACTOR MaceFX4New : MaceFX4Base
 { 
 	Damage (finaldamagedealt) //2
+	BounceType "HexenCompat"
+	BounceFactor 0.925
+	BounceCount 8
 	DamageType "Magic" 
 	States
 	{

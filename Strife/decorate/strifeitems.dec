@@ -6,12 +6,13 @@ ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 	+DONTGIB
 	Inventory.Icon "I_BKPK"
 	Tag "Ammo Satchel"
-	Inventory.PickupMessage "You picked up the \ceammo satchel\c-."
+	Inventory.PickupMessage "You picked up the \ceammo satchel\c-! \cy\cyAmmo and Inventory Limits increased\c-\c-!"
 	States
 	{
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				A_SetScale(frandom(0.667,1));
 				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
 				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
 				if (Random(1,8) <= 1) { A_SpawnItemEx("MonsterMunchies",0,0,0,random(-5,5),random(-5,5),0); }
@@ -26,6 +27,14 @@ ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 				if (Random(1,32) <= 1 && CountInv("PoisonNeedle",AAPTR_PLAYER1) > 0) { A_SpawnItemEx("PoisonNeedle",0,0,0,random(-5,5),random(-5,5),0); }
 				if (Random(1,32) <= 1 && CountInv("PoisonNeedle",AAPTR_PLAYER1) > 0) { A_SpawnItemEx("PoisonNeedle",0,0,0,random(-5,5),random(-5,5),0); }
 				if (Random(1,32) <= 1 && CountInv("PoisonNeedle",AAPTR_PLAYER1) > 0) { A_SpawnItemEx("PoisonNeedle",0,0,0,random(-5,5),random(-5,5),0); }
+			}
+			TNT1 A 0
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					A_SpawnItemEx("DimensionalBag",0,0,0,0,0,0,0,0,0,tid);
+					A_FadeOut(1.0,FTF_REMOVE);
+				}
 			}
 		Idle:
 			BKPK A -1

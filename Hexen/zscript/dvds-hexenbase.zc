@@ -444,7 +444,12 @@ class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 		if (random(1,256) <= evolveChance)
 		{
 			if (random(1,512) <= evolveChance)
-				return "VampireDVDS";
+			{
+				if (random(1,1024) <= evolveChance)
+					return "DarkPatriarch";
+				else
+					return "VampireDVDS";
+			}
 			else
 				return "DarkDisciple";
 		}

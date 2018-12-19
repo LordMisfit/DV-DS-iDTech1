@@ -483,3 +483,30 @@ class StalkerLeaderSpawner : AetheriusMonsterSpawner replaces SerpentLeader
 			return "StalkerLeaderNew";
 	}
 }
+
+class PatriarchRadiusHeal : AetheriusCustomInventory
+{
+	default
+	{
+		Inventory.MaxAmount 1;
+		+Inventory.AUTOACTIVATE
+	}
+
+	override void Tick()
+	{
+		Console.Printf("e324");
+		let healactor = AetheriusMonsterZSC(owner);
+		if (healactor)
+		{
+			if (healactor.health > 0 && healactor.health < healactor.user_MaxHP) { healactor.health += random(10,12); }
+		}
+		super.Tick();
+	}
+
+	States
+	{
+		Use:
+			TNT1 A 0;
+			Stop;
+	}
+}

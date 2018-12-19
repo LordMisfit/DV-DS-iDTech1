@@ -2027,6 +2027,7 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 	Radius 22
 	Height 65
 	Speed 10
+	Mass 100
 	PainChance 110
 	Painchance "Fist", 165 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
@@ -2187,6 +2188,7 @@ Actor DarkDisciple : BishopNew
 	Height 65
 	Speed 10
 	PainChance 110
+	Mass 140
 	Painchance "Fist", 165 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 165 // Fist attacks have a +50% chance of stunning an enemy
@@ -2566,7 +2568,7 @@ ACTOR VampireDVDS : BishopNew
 	Scale 0.90
 	Radius 20 
 	Height 56 
-	Mass 150 
+	Mass 200
 	SeeSound "vampire/see"
 	DeathSound "vampire/death"
 	PainSound "vampire/pain"
@@ -3056,6 +3058,7 @@ Actor DarkPatriarch : BishopNew
 	Radius 22
 	Height 65
 	Speed 10
+	Mass 250 
 	PainChance 0
 	Species "Bishop"
 	Monster
@@ -3224,6 +3227,7 @@ Actor DarkPatriarch : BishopNew
 	}
 }
 
+/*
 Actor PatriarchRadiusHeal : Custominventory
 {
 	Inventory.MaxAmount 0
@@ -3235,6 +3239,7 @@ Actor PatriarchRadiusHeal : Custominventory
 			Stop
 	}
 }
+*/
 
 Actor PatriarchPainBlur
 {
@@ -3276,6 +3281,7 @@ Actor PatriarchBlur
 Actor DarkPatriarchClone : DarkPatriarch
 {
 	Health 100
+	Mass 125 
 	DropItem "None"
 	DamageType "Spiritual"
 	Bloodtype "EtherealBloodWhite"

@@ -174,9 +174,9 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				else { user_chargechance = 25; }
 
 				if (random(1,100) > user_chargechance) { return state("See"); }
-				else 
+				else
 				{
-					if (AAPTR_TARGET == AAPTR_NULL) { return state("See"); }
+					A_GargDashCheck; // if (AAPTR_TARGET == AAPTR_NULL) { return state("See"); }
 					return state("");
 				}
 				return state("");
@@ -212,6 +212,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
+			IMPX A 0 A_GargDashCheck2
 			Goto Charge+2
 		Pain:
 			IMPX G 3

@@ -2903,7 +2903,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 			{
 				A_GiveInventory("Sigil1",1,AAPTR_PLAYER1); // Programmer dead
 				A_GiveInventory("ProgLevelEnder",1,AAPTR_PLAYER1); // Programmer dead
-				A_BossDeath;
+				A_DVDSBossDeath;
 			}
 			Stop
 		XDeath:

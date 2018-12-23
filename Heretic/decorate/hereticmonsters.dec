@@ -2555,7 +2555,7 @@ ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 			LICH EF 7
 			LICH G 7 A_NoBlocking
 			LICH H 7 
-			LICH I -1 A_BossDeath
+			LICH I -1 A_DVDSBossDeath
 			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
@@ -2903,7 +2903,7 @@ ACTOR Goldlich : IronlichNew 31044
 			LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0)
 			LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,56), random(-56,56), random(0,64),0,0,0, 0,0, 0)
 			LICH I 4 A_SpawnItemEx("GoldLichGlitter", random(-64,64), random(-64,64), random(0,48),0,0,0, 0,0, 0)
-			LICH I -1 A_BossDeath
+			LICH I -1 A_DVDSBossDeath
 			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
@@ -3073,7 +3073,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 			BLCH EF 7
 			BLCH G 7 A_NoBlocking
 			BLCH H 7
-			BLCH I -1 A_BossDeath
+			BLCH I -1 A_DVDSBossDeath
 			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
@@ -4044,7 +4044,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 			MNTR Q 5
 			MNTR R 6
 			MNTR S 5 
-			MNTR T -1 A_BossDeath
+			MNTR T -1 A_DVDSBossDeath
 			Stop
 		FadeOut:
 			MNTR E 6
@@ -4056,7 +4056,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 			MNTR E 5 A_SetTranslucent(0.66, 0)
 			MNTR E 5 A_SetTranslucent(0.33, 0)
 			MNTR E 0 
-			MNTR E 10 A_BossDeath
+			MNTR E 10 A_DVDSBossDeath
 			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
@@ -4639,7 +4639,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			SDTH J 6 A_NoBlocking
 			SDTH K 6 A_PlaySound("dsparil/bones", CHAN_BODY, 1, FALSE, ATTN_NONE)
 			SDTH LMN 6 
-			SDTH O -1 A_BossDeath
+			SDTH O -1 A_DVDSBossDeath
 			Stop
 		Ice:
 			goto Death

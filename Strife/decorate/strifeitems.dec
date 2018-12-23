@@ -41,7 +41,7 @@ ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 			Stop
 		Pickup:
 			TNT1 A 0 
-			TNT1 A 0 A_GrabBackpack // ACS_NamedExecuteAlways("GrabBackpack",0,0,0,0) // Backpack Script
+			TNT1 A 0 A_GrabBackpack
 			Stop
 	}
 }

@@ -1213,7 +1213,6 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 }
 ACTOR HornRodFX2New : HornRodFX2Base
 { 
-	var int user_fuse;
 	Damage (finaldamagedealt) //2
 	DamageType "Acid"
 	DamageType "Magic" 

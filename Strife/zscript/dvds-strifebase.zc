@@ -314,7 +314,7 @@ class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
 	override Name ChooseSpawn()
 	{
 		int modtype = CallACS("CheckModType");
-		int doomtype = CallACS("CheckDoomType");
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
 		int evolvechance = CallACS("GetEvolveChance");
 		int monstersoption = dvds_classicdviimonsters;
 		int checkbombers = dvds_suicidebombers;

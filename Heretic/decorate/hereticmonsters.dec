@@ -3846,9 +3846,6 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 	Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 85
-	Painchance "GravityMP", 85
-	Painchance "GravityHPMP", 85 
 	DamageFactor "Crush", 2.4
 	MeleeRange 96
 	Monster
@@ -4386,9 +4383,6 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 	Painchance "Fist", 84 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 140 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 84 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 1
-	Painchance "GravityMP", 1
-	Painchance "GravityHPMP", 1 
 	DamageFactor "Crush", 0.5
 	meleerange 82
 	Monster
@@ -4528,9 +4522,6 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 1
-	Painchance "GravityMP", 1
-	Painchance "GravityHPMP", 1 
 	DamageFactor "Crush", 0.5
 	MeleeRange 92
 	Monster

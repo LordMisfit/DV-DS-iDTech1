@@ -39,9 +39,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		Painchance "Fist", 15; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 25; // Kick attacks have a +150% chance of stunning an enemy
 		Painchance "Gauntlets", 15; // Fist attacks have a +50% chance of stunning an enemy
-		Painchance "GravityHP", 16;
-		Painchance "GravityMP", 16;
-		Painchance "GravityHPMP", 16; 
 		DamageFactor "Normal", 0.833;
 		DamageFactor "Crush", 2.4;
 		Speed 16;

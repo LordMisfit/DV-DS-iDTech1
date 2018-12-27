@@ -11,9 +11,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 85
-	Painchance "GravityMP", 85
-	Painchance "GravityHPMP", 85 
 	DamageFactor "Crush", 2.4
 	MeleeRange 96
 	Monster
@@ -564,9 +561,6 @@ ACTOR Bormereth : AetheriusMonsterZSC
 	Painchance "Fist", 112 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 187 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 112 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 64
-	Painchance "GravityMP", 64
-	Painchance "GravityHPMP", 64 
 	RadiusDamageFactor 0.25
 	DamageFactor "Crush", 3.2
 	Mass 2500
@@ -2559,9 +2553,6 @@ ACTOR VampireDVDS : BishopNew
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 32
-	Painchance "GravityMP", 32
-	Painchance "GravityHPMP", 32 
 	DamageFactor "Crush", 6.4
 	Species "Bishop"
 	Speed 8
@@ -5296,9 +5287,6 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 	Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 1
-	Painchance "GravityMP", 1
-	Painchance "GravityHPMP", 1 
 	DamageFactor "Crush", 0.5
 	DamageFactor "Normal", 0.667
 	Speed 20
@@ -5505,9 +5493,6 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 64
-	Painchance "GravityMP", 64
-	Painchance "GravityHPMP", 64
 	DamageFactor "Crush", 2.4
 	DamageFactor "Normal", 0.833
 	Speed 10
@@ -5718,9 +5703,6 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 16
-	Painchance "GravityMP", 16
-	Painchance "GravityHPMP", 16 
 	DamageFactor "Normal", 0.833
 	DamageFactor "Crush", 2.4
 	Speed 25
@@ -5991,9 +5973,6 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 16
-	Painchance "GravityMP", 16
-	Painchance "GravityHPMP", 16
 	DamageFactor "Normal", 0.833
 	DamageFactor "Crush", 2.4
 	Reactiontime 8
@@ -6185,9 +6164,6 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "GravityHP", 16
-	Painchance "GravityMP", 16
-	Painchance "GravityHPMP", 16
 	DamageFactor "Normal", 0.833
 	DamageFactor "Crush", 2.4
 	Speed 25

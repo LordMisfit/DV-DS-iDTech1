@@ -3426,18 +3426,6 @@ Actor PatriarchFX : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor PatriarchFXCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			PFX1 C 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" CCDDEEFF 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 Actor PatriarchFXCrisis : PatriarchFX
 {
 	Radius 10
@@ -3454,19 +3442,19 @@ Actor PatriarchFXCrisis : PatriarchFX
 	{
 		Spawn:
 			PFX1 CC 1 Bright A_BishopMissileWeave
-			PFX1 A 0 A_SpawnItemEx("PatriarchFXCrisisParticle",0,0,0,0,0,1.28)
+			PFX1 A 0 A_GenerateCrisisParticle
 			PFX1 CC 1 Bright A_BishopMissileWeave
 			PFX1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			PFX1 DD 1 Bright A_BishopMissileWeave
-			PFX1 A 0 A_SpawnItemEx("PatriarchFXCrisisParticle",0,0,0,0,0,1.28)
+			PFX1 A 0 A_GenerateCrisisParticle
 			PFX1 DD 1 Bright A_BishopMissileWeave
 			PFX1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			PFX1 EE 1 Bright A_BishopMissileWeave
-			PFX1 A 0 A_SpawnItemEx("PatriarchFXCrisisParticle",0,0,0,0,0,1.28)
+			PFX1 A 0 A_GenerateCrisisParticle
 			PFX1 EE 1 Bright A_BishopMissileWeave
 			PFX1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			PFX1 FF 1 Bright A_BishopMissileWeave
-			PFX1 A 0 A_SpawnItemEx("PatriarchFXCrisisParticle",0,0,0,0,0,1.28)
+			PFX1 A 0 A_GenerateCrisisParticle
 			PFX1 FF 1 Bright A_BishopMissileWeave
 			PFX1 A 0 A_SeekerMissile(2,3,SMF_PRECISE)
 			loop
@@ -3533,18 +3521,6 @@ ACTOR PatriarchRainFX : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor PatriarchRainFXCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			PFX3 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR PatriarchRainFXCrisis : PatriarchRainFX
 {
 	Radius 6
@@ -3569,7 +3545,7 @@ ACTOR PatriarchRainFXCrisis : PatriarchRainFX
 		Animation:
 			PFX3 A 2 Bright
 			{
-				A_SpawnItemEx("PatriarchRainFXCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			loop
 		Death:
@@ -5613,18 +5589,6 @@ ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball
 			Stop
   }
 }
-actor DragonFireballCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			DRFX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCDDEEFF 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DragonFireballCrisis : DragonFireballNew
 {
 	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -5633,7 +5597,7 @@ ACTOR DragonFireballCrisis : DragonFireballNew
 		Spawn:
 			DRFX AABBCCDDEEFF 2 Bright
 			{
-				A_SpawnItemEx("DragonFireballCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -5847,18 +5811,6 @@ ACTOR HolyMissileNew : AetheriusProjectileZSC replaces HolyMissile
 			Stop
 	}
 }
-actor HolyMissileCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			SPIR A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" PPPP 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HolyMissileCrisis : HolyMissileNew
 {
 	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -5876,7 +5828,7 @@ ACTOR HolyMissileCrisis : HolyMissileNew
 		Spawn:
 			SPIR PPPP 3 Bright 
 			{
-				A_SpawnItemEx("HolyMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpawnItemEx("HolyMissilePuff");
 			}
 		Death:
@@ -5928,18 +5880,6 @@ ACTOR HolySpiritNew : HolySpiritBase replaces HolySpirit
 			Stop
 	}
 }
-actor HolySpiritCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			SPIR A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HolySpiritCrisis : HolySpiritNew
 {
 	Stamina 30
@@ -5949,7 +5889,7 @@ ACTOR HolySpiritCrisis : HolySpiritNew
 		Spawn:
 			SPIR AAB 2 
 			{
-				A_SpawnItemEx("HolySpiritCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_CHolySeek;
 			}
 			SPIR B 2 
@@ -6090,7 +6030,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 	}
 }
 
-ACTOR FSwordMissileNew : FSwordMissile replaces FSwordMissile
+ACTOR FSwordMissileNew : AetheriusProjectileZSC replaces FSwordMissile
 {
 	Damage (8 * random(1,8))
 	Speed 30
@@ -6120,18 +6060,6 @@ ACTOR FSwordMissileNew : FSwordMissile replaces FSwordMissile
 			Stop
 	}
 }
-actor FSwordMissileCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FSFX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR FSwordMissileCrisis : FSwordMissileNew
 {
 	Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -6140,7 +6068,7 @@ ACTOR FSwordMissileCrisis : FSwordMissileNew
 		Spawn:
 			FSFX ABC 3 Bright
 			{
-				A_SpawnItemEx("FSwordMissileCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -6312,18 +6240,6 @@ ACTOR MageStaffFX2New : MageStaffFX2Base replaces MageStaffFX2
 			Stop
 	}
 }
-actor MageStaffFX2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			MSP2 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR MageStaffFX2Crisis : MageStaffFX2New
 {
 	Stamina 30
@@ -6343,7 +6259,7 @@ ACTOR MageStaffFX2Crisis : MageStaffFX2New
 		Spawn:
 			MSP2 ABCD 2 Bright 
 			{
-				A_SpawnItemEx("MageStaffFX2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_MStaffTrack;
 			}
 			Loop

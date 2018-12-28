@@ -43,18 +43,6 @@ ACTOR HereticImpBallNew : AetheriusProjectileZSC replaces HereticImpBall
 			Stop
 	}
 }
-actor HereticImpBallCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX10 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HereticImpBallCrisis : HereticImpBallNew
 { 
 	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -63,7 +51,7 @@ ACTOR HereticImpBallCrisis : HereticImpBallNew
 		Spawn:
 			FX10 AAABBBCCC 2 Bright
 			{
-				A_SpawnItemEx("HereticImpBallCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -84,18 +72,6 @@ Actor HereticImpBall2 : HereticImpBallNew
 			Stop
 	}
 }
-actor HereticImpBall2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			HIB1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 Actor HereticImpBall2Crisis : HereticImpBallCrisis
 {
 	States
@@ -103,7 +79,7 @@ Actor HereticImpBall2Crisis : HereticImpBallCrisis
 		Spawn:
 			HIB1 AAABBBCCC 2 Bright
 			{
-				A_SpawnItemEx("HereticImpBall2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -142,20 +118,6 @@ ACTOR BeastBallNew : AetheriusProjectileZSC replaces BeastBall
 			Stop
 	}
 }
-actor BeastBallCrisisParticle : BaseCrisisParticle
-{
-	scale 0.667
-
-	States
-	{
-		Spawn:
-			FRB1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR BeastBallCrisis : BeastBallNew
 { 
 	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -164,7 +126,7 @@ ACTOR BeastBallCrisis : BeastBallNew
 		Spawn:
 			FRB1 AABBCC 2 
 			{
-				A_SpawnItemEx("BeastBallCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64);
 			}
 			Loop
@@ -191,20 +153,6 @@ Actor Beastball2 : BeastBallNew
 			Stop
 	}
 }
-actor Beastball2CrisisParticle : BaseCrisisParticle
-{
-	scale 0.667
-
-	States
-	{
-		Spawn:
-			FRB1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 Actor Beastball2Crisis : Beastball2
 {
 	Damage ((4 * random(1,8)) )
@@ -214,7 +162,7 @@ Actor Beastball2Crisis : Beastball2
 		Spawn:
 			FRB1 AABBCC 2 
 			{
-				A_SpawnItemEx("Beastball2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,0,0,0,0,SXF_ABSOLUTEPOSITION, 64);
 			}
 			Loop
@@ -251,18 +199,6 @@ ACTOR MummyFX1New : AetheriusProjectileZSC replaces MummyFX1
 			Stop
 	}
 }
-actor MummyFX1CrisisParticle : BaseCrisisParticle
-{ 
-	States
-	{
-		Spawn:
-			FX15 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCBB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR MummyFX1Crisis : MummyFX1New
 {
 	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -271,21 +207,21 @@ ACTOR MummyFX1Crisis : MummyFX1New
 		Spawn:
 			FX15 A 5 Bright 
 			{
-				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_PlaySound("mummy/head");
 			}
 			FX15 B 5 Bright 
 			{
-				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(10, 20);
 			}
 			FX15 C 5 Bright
 			{
-				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX15 B 5 Bright 
 			{
-				A_SpawnItemEx("MummyFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(10, 20);
 			}
 			Loop
@@ -325,18 +261,6 @@ ACTOR KnightAxeNew : AetheriusEffectProjectile replaces KnightAxe
 			Stop
 	}
 }
-actor KnightAxeCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			SPAX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR KnightAxeCrisis : KnightAxeNew 
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -345,12 +269,12 @@ ACTOR KnightAxeCrisis : KnightAxeNew
 		Spawn:
 			SPAX A 3 Bright
 			{
-				A_SpawnItemEx("KnightAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_PlaySound("hknight/axewhoosh");
 			}
 			SPAX BC 3 Bright
 			{
-				A_SpawnItemEx("KnightAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -384,18 +308,6 @@ ACTOR RedAxeNew : KnightAxeNew replaces RedAxe
 			Stop
 	}
 }
-actor RedAxeCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			RAXE A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR RedAxeCrisis : RedAxeNew 
 {
 	Damage ((7 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -407,7 +319,7 @@ ACTOR RedAxeCrisis : RedAxeNew
 		Spawn:
 			RAXE AA 2 Bright 
 			{
-				A_SpawnItemEx("RedAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			RAXE A 1 Bright 
 			{
@@ -418,7 +330,7 @@ ACTOR RedAxeCrisis : RedAxeNew
 			}
 			RAXE BB 2 Bright 
 			{
-				A_SpawnItemEx("RedAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			RAXE B 1 Bright 
 			{
@@ -474,18 +386,6 @@ ACTOR DKDart : AetheriusProjectileZSC
 			stop
 	}
 }
-actor DKDartCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			DKAT A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DKDartCrisis : DKDart
 {
 	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -494,7 +394,7 @@ ACTOR DKDartCrisis : DKDart
 		Spawn:
 			DKAT ABC 3 Bright
 			{
-				A_SpawnItemEx("DKDartCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			loop
 		Death:
@@ -545,18 +445,6 @@ ACTOR FHeadShot : AetheriusProjectileZSC
 			stop
 	}
 }
-actor FHeadShotCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FHED A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCD 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR FHeadShotCrisis : FHeadShot
 {
 	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -565,7 +453,7 @@ ACTOR FHeadShotCrisis : FHeadShot
 		Spawn:
 			FHED ABCD 3 Bright 
 			{
-				A_SpawnItemEx("FHeadShotCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(5,15);
 			}
 			loop
@@ -602,20 +490,6 @@ ACTOR DKbolt : AetheriusProjectileZSC
 			stop
 	}
 }
-actor DKboltCrisisParticle : BaseCrisisParticle
-{
-	ALPHA 0.536
-
-	States
-	{
-		Spawn:
-			BOLT A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 1 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DKboltCrisis : DKbolt
 {
 	Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -624,7 +498,7 @@ ACTOR DKboltCrisis : DKbolt
 		Spawn:
 			BOLT A 1 Bright 
 			{
-				A_SpawnItemEx("DKboltCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_BishopMissileWeave;
 				A_SpawnItem("RedPuff",0,0);
 			}
@@ -704,18 +578,6 @@ ACTOR DKFire : AetheriusProjectileZSC
 			stop
 	}
 }
-actor DKFireCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			DKAT A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DKFireCrisis : DKFire
 {
 	Damage 0
@@ -734,7 +596,7 @@ ACTOR DKFireCrisis : DKFire
 		Spawn:
 			DKAT NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright 
 			{
-				A_SpawnItemEx("DKFireCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_Explode(4*CallACS("CrisisMultiplier"),8);
 			}
 			stop
@@ -781,18 +643,6 @@ ACTOR WizardFX1New : AetheriusProjectileZSC replaces WizardFX1
 			Stop
 	}
 }
-actor WizardFX1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX11 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR WizardFX1Crisis : WizardFX1New 
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -801,7 +651,7 @@ ACTOR WizardFX1Crisis : WizardFX1New
 		Spawn:
 			FX11 AAABBB 2 Bright
 			{
-				A_SpawnItemEx("WizardFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -843,18 +693,6 @@ actor BansheeFire : AetheriusEffectProjectile
 			stop
 	}
 }
-actor BansheeFireCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BANB A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor BansheeFireCrisis : BansheeFire
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -863,7 +701,7 @@ actor BansheeFireCrisis : BansheeFire
 		Spawn:
 			BANB A 1 BRIGHT 
 			{
-				A_SpawnItemEx("BansheeFireCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpawnItem("BansheeFireTrail",0,0);
 			}
 			BANB AA 2
@@ -889,18 +727,6 @@ actor BansheeFire2 : BansheeFire
 		loop
 	}
 }
-actor BansheeFire2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BANB A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor BansheeFire2Crisis : BansheeFire2
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -913,7 +739,7 @@ actor BansheeFire2Crisis : BansheeFire2
 			}
 			BANB AA 2
 			{
-				A_SpawnItemEx("BansheeFire2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			loop
 	}
@@ -947,20 +773,6 @@ actor BansheeFire3 : BansheeFire
 			stop
 	}
 }
-actor BansheeFire3CrisisParticle : BaseCrisisParticle
-{
-	Scale 2.0
-
-	States
-	{
-		Spawn:
-			BANB A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor BansheeFire3Crisis : BansheeFire3
 {
 	Damage ((100 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -969,7 +781,7 @@ actor BansheeFire3Crisis : BansheeFire3
 		Spawn:
 			BANB A 1 NoDelay BRIGHT 
 			{
-				A_SpawnItemEx("BansheeFire3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(50,50);
 			}
 			BANB A 1 BRIGHT 
@@ -1001,18 +813,6 @@ actor BansheeFire4 : BansheeFire
 			stop
 	}
 }
-actor BansheeFire4CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BANF A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCDEFGH 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor BansheeFire4Crisis : BansheeFire4
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1021,7 +821,7 @@ actor BansheeFire4Crisis : BansheeFire4
 		Spawn:
 			BANF ABCDEFGH 3 bright
 			{
-				A_SpawnItemEx("BansheeFire4CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Stop
 		Death:
@@ -1059,18 +859,6 @@ actor BansheeFire5 : BansheeFire
 			stop
 	}
 }
-actor BansheeFire5CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BAFT A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor BansheeFire5Crisis : BansheeFire5
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1079,13 +867,13 @@ actor BansheeFire5Crisis : BansheeFire5
 		Spawn:
 			BAFT A 2 BRIGHT 
 			{
-				A_SpawnItemEx("BansheeFire5CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(50,50);
 				A_SpawnItem("BansheeFireTrail2",0,0);
 			}
 			BAFT A 2 BRIGHT
 			{
-				A_SpawnItemEx("BansheeFire5CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_GiveInventory("BansheeFire3Token",1);
 				if (CountInv("BansheeFire3Token") >= 30) { return state("Death"); }
 				return state("");
@@ -1196,18 +984,6 @@ ACTOR HeadFX1New : AetheriusEffectProjectile replaces HeadFX1
 			Stop
 	}
 }
-actor HeadFX1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX05 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBBCCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HeadFX1Crisis : HeadFX1New 
 {
 	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1216,7 +992,7 @@ ACTOR HeadFX1Crisis : HeadFX1New
 		Spawn:
 			FX05 AAABBBCCC 2 Bright
 			{
-				A_SpawnItemEx("HeadFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -1274,18 +1050,6 @@ ACTOR HeadFX2New : AetheriusEffectProjectile replaces HeadFX2
 			Stop
 	}
 }
-actor HeadFX2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX05 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" HHHIIIJJJ 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HeadFX2Crisis : HeadFX2New 
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1303,7 +1067,7 @@ ACTOR HeadFX2Crisis : HeadFX2New
 		Spawn:
 			FX05 HHHIIIJJJ 2 Bright
 			{
-				A_SpawnItemEx("HeadFX2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -1373,18 +1137,6 @@ ACTOR HeadFX3New : AetheriusEffectProjectile replaces HeadFX3
 			Stop
 	}
 }
-actor HeadFX3CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX06 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR HeadFX3Crisis : HeadFX3New 
 { 
 	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1393,46 +1145,46 @@ ACTOR HeadFX3Crisis : HeadFX3New
 		Spawn:
 			FX06 A 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 A 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_LichFireGrow;
 			}
 			FX06 B 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 B 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_LichFireGrow;
 			}
 			FX06 C 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 C 2 Bright 
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_LichFireGrow;
 			}
 			Loop
 		NoGrow:
 			FX06 AA 2 Bright
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 A 1 Bright
 			FX06 BB 2 Bright
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 B 1 Bright
 			FX06 CC 2 Bright
 			{
-				A_SpawnItemEx("HeadFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX06 C 1 Bright
 			Loop
@@ -1477,18 +1229,6 @@ ACTOR WhirlwindNew : AetheriusWhirlwind replaces Whirlwind
 			Stop
 	}
 }
-actor WhirlwindCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX07 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR WhirlwindCrisis : WhirlwindNew 
 {
 	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1502,7 +1242,7 @@ ACTOR WhirlwindCrisis : WhirlwindNew
 		Idle:
 			FX07 ABC 3 
 			{
-				A_SpawnItemEx("WhirlwindCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_WhirlwindSeek;
 			}
 			loop
@@ -1553,19 +1293,6 @@ ACTOR IceBreath : AetheriusEffectProjectile
 			stop
 	}
 }
-actor IceBreathCrisisParticle : BaseCrisisParticle
-{
-	Alpha 0.1334
-	States
-	{
-		Spawn:
-			IBRT A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AB 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR IceBreathCrisis : IceBreath
 {
 	damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1574,7 +1301,7 @@ ACTOR IceBreathCrisis : IceBreath
 		Spawn:
 			IBRT ABABABABABABABABABAB 2 bright
 			{
-				A_SpawnItemEx("IceBreathCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 		Death:
 			TNT1 A 0 Bright
@@ -1633,18 +1360,6 @@ ACTOR GoldLichBounce : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor GoldLichBounceCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FXA1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR GoldLichBounceCrisis : GoldLichBounce
 {
 	Damage (1 * random(1,8) * CallACS("CrisisMultiplier"))
@@ -1653,7 +1368,7 @@ ACTOR GoldLichBounceCrisis : GoldLichBounce
 		Spawn:
 			FXA1 AABBCC 2 BRIGHT
 			{
-				A_SpawnItemEx("GoldLichBounceCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -1709,18 +1424,6 @@ ACTOR GoldLichFire : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor GoldLichFireCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX06 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAAABBBBCCCC 1 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR GoldLichFireCrisis : GoldLichFire
 {
 	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1733,7 +1436,7 @@ ACTOR GoldLichFireCrisis : GoldLichFire
 			TNT1 A 0 A_PlaySound("goldlich/attack1")
 			FX06 AAAABBBBCCCC 1 BRIGHT
 			{
-				A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_Weave(3, 0, 4.0, 0.0);
 			}
 			TNT1 A 0 A_Jump(128, "Track")
@@ -1744,7 +1447,7 @@ ACTOR GoldLichFireCrisis : GoldLichFire
 			TNT1 A 0 { user_tracks - 1; }
 			FX06 AAAABBBBCCCC 1 BRIGHT
 			{
-				A_SpawnItemEx("GoldLichFireCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(360, 1);
 			}
 			TNT1 A 0 A_Jump(128, "Weave")
@@ -1781,20 +1484,6 @@ ACTOR FireBreath : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor FireBreathCrisisParticle : BaseCrisisParticle
-{
-	Alpha 0.133
-
-	States
-	{
-		Spawn:
-			FRBS A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" EFG 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR FireBreathCrisis : FireBreath
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1803,7 +1492,7 @@ ACTOR FireBreathCrisis : FireBreath
 		Spawn:
 		FRBS EFGEFGEFGEFGEFGEFG 3
 		{
-			A_SpawnItemEx("FireBreathCrisisParticle",0,0,0,0,0,1.28);
+			A_GenerateCrisisParticle;
 		}
 		Death:
 			TNT1 A 0
@@ -1835,18 +1524,6 @@ ACTOR BloodLichFireball : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor BloodLichFireballCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			MSP4 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR BloodLichFireballCrisis : BloodLichFireball
 {
 	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -1855,7 +1532,7 @@ ACTOR BloodLichFireballCrisis : BloodLichFireball
 		Spawn:
 			MSP4 ABCD 2 Bright
 			{
-				A_SpawnItemEx("BloodLichFireballCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -1917,18 +1594,6 @@ ACTOR CurseSpell : AetheriusEffectProjectile
 			Stop
 	}
 }
-actor CurseSpellCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			CURS A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCDEF 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR CurseSpellCrisis : CurseSpell
 {
 	States
@@ -1938,7 +1603,7 @@ ACTOR CurseSpellCrisis : CurseSpell
 			CURS A 0 A_PlaySound("CurseActive", CHAN_AUTO, 1.0, 1)
 			CURS ABCDEF 3 Bright 
 			{
-				A_SpawnItemEx("CurseSpellCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SeekerMissile(50,50,2);
 			}
 			Loop
@@ -2006,18 +1671,6 @@ ACTOR ClinkAxe : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor ClinkAxeCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			CLAX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR ClinkAxeCrisis : ClinkAxe
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2026,12 +1679,12 @@ ACTOR ClinkAxeCrisis : ClinkAxe
 		Spawn:
 			CLAX A 3 Bright 
 			{
-				A_SpawnItemEx("ClinkAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_PlaySound("hknight/axewhoosh");
 			}
 			CLAX BC 3 Bright
 			{
-				A_SpawnItemEx("ClinkAxeCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2101,32 +1754,20 @@ ACTOR ShadowBeastBallFire : AetheriusEffectProjectile
 			Stop
 	}
 }
-actor ShadowBeastBallFireCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BDP2 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" DDEEFFGGHH 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR ShadowBeastBallFireCrisis : ShadowBeastBallFire
 {
 	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier")) // 2
 	States
 	{
 		Spawn:
-			BDP2 DD 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 DE 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 EE 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 FF 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 FG 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 GG 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 HH 2 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
-			BDP2 H 1 Bright A_SpawnItemEx("ShadowBeastBallFireCrisisParticle",0,0,0,0,0,1.28)
+			BDP2 DD 2 Bright A_GenerateCrisisParticle
+			BDP2 DE 1 Bright A_GenerateCrisisParticle
+			BDP2 EE 2 Bright A_GenerateCrisisParticle
+			BDP2 FF 2 Bright A_GenerateCrisisParticle
+			BDP2 FG 1 Bright A_GenerateCrisisParticle
+			BDP2 GG 2 Bright A_GenerateCrisisParticle
+			BDP2 HH 2 Bright A_GenerateCrisisParticle
+			BDP2 H 1 Bright A_GenerateCrisisParticle
 			Goto Death
 		Death:
 			TNT1 A 0 Bright
@@ -2185,25 +1826,13 @@ ACTOR ShadowBeastBall1 : AetheriusEffectProjectile
 			Stop
 	}
 }
-actor ShadowBeastBall1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BDP2 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR ShadowBeastBall1Crisis : ShadowBeastBall1
 {
 	Damage ((5 * random(1,8)) * CallACS("CrisisMultiplier"))
 	States
 	{
 		Spawn:
-			BDP2 AABBCC 2 Bright A_SpawnItemEx("ShadowBeastBall1CrisisParticle",0,0,0,0,0,1.28)
+			BDP2 AABBCC 2 Bright A_GenerateCrisisParticle
 			Loop
 		Death:
 			TNT1 A 0 Bright
@@ -2248,18 +1877,6 @@ ACTOR ShadowBeastBall2 : AetheriusEffectProjectile
 			Stop
 	}
 }
-actor ShadowBeastBall2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			BDP1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" DDEE 1 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR ShadowBeastBall2Crisis : ShadowBeastBall2
 {
 	Damage ((2 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2272,7 +1889,7 @@ ACTOR ShadowBeastBall2Crisis : ShadowBeastBall2
 			}
 			BDP1 E 0
 			{
-				A_SpawnItemEx("ShadowBeastBall2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			loop
 		Death:
@@ -2307,19 +1924,6 @@ ACTOR ShadowBeastBall3 : AetheriusEffectProjectile
 			Stop
 	}
 }
-actor ShadowBeastBall3CrisisParticle : BaseCrisisParticle
-{
-	Scale 0.933
-	States
-	{
-		Spawn:
-			BDP1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" DEDEDEDEDED 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR ShadowBeastBall3Crisis : ShadowBeastBall3
 {
 	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2328,7 +1932,7 @@ ACTOR ShadowBeastBall3Crisis : ShadowBeastBall3
 		Spawn:
 			BDP1 DEDEDEDEDED 2 
 			{
-				A_SpawnItemEx("ShadowBeastBall3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_BishopMissileWeave;
 			}
 			TNT1 A 0 A_FadeOut(0.20)
@@ -2363,18 +1967,6 @@ ACTOR MinotaurFX1New : AetheriusEffectProjectile replaces MinotaurFX1
 			Stop
 	}
 }
-actor MinotaurFX1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX12 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR MinotaurFX1Crisis : MinotaurFX1New
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2383,7 +1975,7 @@ ACTOR MinotaurFX1Crisis : MinotaurFX1New
 		Spawn:
 			FX12 AAABBB 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2419,18 +2011,6 @@ ACTOR MinotaurFX2New : MinotaurFX1New replaces MinotaurFX2
 			}
 			FX13 JKLM 4 Bright
 			Stop
-	}
-}
-actor MinotaurFX2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX13 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
 	}
 }
 ACTOR MinotaurFX2Crisis : MinotaurFX2New 
@@ -2478,18 +2058,6 @@ ACTOR MinotaurFX3New : MinotaurFX2New replaces MinotaurFX3
 			Stop
 	}
 }
-actor MinotaurFX3CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX13 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" DDCCBBCCDDEEFFGGHH 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR MinotaurFX3Crisis : MinotaurFX3New
 {
 	States
@@ -2497,31 +2065,31 @@ ACTOR MinotaurFX3Crisis : MinotaurFX3New
 		Spawn:
 			FX13 DDCC 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX13 BB 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX13 B 1 Bright
 			FX13 CC 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX13 C 1 Bright
 			FX13 DD 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX13 D 1 Bright
 			FX13 EE 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX13 E 1 Bright
 			FX13 FFGGHH 2 Bright
 			{
-				A_SpawnItemEx("MinotaurFX3CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Stop
 	}
@@ -2556,18 +2124,6 @@ ACTOR SnakeProjANew : AetheriusProjectileZSC replaces SnakeProjA
 			Stop
 	}
 }
-actor SnakeProjACrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			SNFX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCDD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SnakeProjACrisis : SnakeProjANew 
 {
 	Damage ((1 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2589,7 +2145,7 @@ ACTOR SnakeProjACrisis : SnakeProjANew
 		Spawn:
 			SNFX AABBCCDD 2 Bright
 			{
-				A_SpawnItemEx("SnakeProjACrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2618,18 +2174,6 @@ ACTOR SnakeProjBNew : SnakeProjANew replaces SnakeProjB
 			Stop
 	}
 }
-actor SnakeProjBCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			SNFX A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" JJJKKK 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SnakeProjBCrisis : SnakeProjBNew 
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2641,7 +2185,7 @@ ACTOR SnakeProjBCrisis : SnakeProjBNew
 		Spawn:
 			SNFX JJJKKK 2 Bright
 			{
-				A_SpawnItemEx("SnakeProjBCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2680,20 +2224,6 @@ actor HellGuardBall : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor HellGuardBallCrisisParticle : BaseCrisisParticle
-{
-	alpha 0.4489
-
-	States
-	{
-		Spawn:
-			HGFB A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 actor HellGuardBallCrisis : HellGuardBall
 {
 	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2707,7 +2237,7 @@ actor HellGuardBallCrisis : HellGuardBall
 		Idle:
 			HGFB ABCD 2 Bright
 			{
-				A_SpawnItemEx("HellGuardBallCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2739,18 +2269,6 @@ ACTOR SorcererFX1New : AetheriusProjectileZSC replaces SorcererFX1
 			Stop
 	}
 }
-actor SorcererFX1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX14 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBBCCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SorcererFX1Crisis : SorcererFX1New 
 {
 	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2768,7 +2286,7 @@ ACTOR SorcererFX1Crisis : SorcererFX1New
 		Spawn:
 			FX14 AAABBBCCC 2 Bright
 			{
-				A_SpawnItemEx("SorcererFX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2804,18 +2322,6 @@ ACTOR Sorcerer2FX1New : AetheriusProjectileZSC replaces Sorcerer2FX1
 			Stop
 	}
 }
-actor Sorcerer2FX1CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX16 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABC 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR Sorcerer2FX1Crisis : Sorcerer2FX1New 
 { 
 	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2824,7 +2330,7 @@ ACTOR Sorcerer2FX1Crisis : Sorcerer2FX1New
 		Spawn:
 			FX16 ABC 3 Bright 
 			{
-				A_SpawnItemEx("Sorcerer2FX1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_BlueSpark;
 			}
 			Loop
@@ -2862,18 +2368,6 @@ ACTOR Sorcerer2FX2New : AetheriusProjectileZSC replaces Sorcerer2FX2
 			Stop
 	}
 }
-actor Sorcerer2FX2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			FX11 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR Sorcerer2FX2Crisis : Sorcerer2FX2New 
 { 
 	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -2882,7 +2376,7 @@ ACTOR Sorcerer2FX2Crisis : Sorcerer2FX2New
 		Spawn:
 			FX11 AAAAAAAAAAAAA 3 Bright
 			{
-				A_SpawnItemEx("Sorcerer2FX2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			FX11 A 3 Bright 
 			{

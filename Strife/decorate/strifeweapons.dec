@@ -1552,18 +1552,6 @@ ACTOR SpectralLightningBall2Monster : SpectralLightningBall2New
 			Loop
 	}
 }
-actor SpectralLightningBall2MonsterCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZOT3 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCDDEE 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningBall2MonsterCrisis : SpectralLightningBall2Monster
 {
 	+SPECTRAL 
@@ -1574,7 +1562,7 @@ ACTOR SpectralLightningBall2MonsterCrisis : SpectralLightningBall2Monster
 		Spawn:
 			ZOT3 ABCDE 4 Bright
 			{
-				A_SpawnItemEx("SpectralLightningBall2MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 	}
@@ -1665,18 +1653,6 @@ ACTOR SpectralLightningBigV2Monster : SpectralLightningBigV2New
 			Loop
 	}
 }
-actor SpectralLightningBigV2MonsterCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZOT2 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCDDEE 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningBigV2MonsterCrisis : SpectralLightningBigV2Monster
 {
 	DamageType "Sigil"
@@ -1687,7 +1663,7 @@ ACTOR SpectralLightningBigV2MonsterCrisis : SpectralLightningBigV2Monster
 		Spawn:
 			ZOT2 ABCDE 4 Bright 
 			{
-				A_SpawnItemEx("SpectralLightningBigV2MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_Tracer2;
 			}
 			Loop
@@ -1790,19 +1766,6 @@ ACTOR SpectralLightningBigBall2New : SpectralLightningBigBall1New replaces Spect
 			Loop
 	}
 }
-actor SpectralLightningBigBall2CrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZAP7 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABB 2 Bright A_CrisisParticleDo
-			"####" CCDDEE 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 {
 	+SPECTRAL 
@@ -1813,7 +1776,7 @@ ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 		Spawn:
 			ZAP7 AB 4 Bright 
 			{
-				A_SpawnItemEx("SpectralLightningBigBall2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpectralBigBallLightning("SpectralLightningH3MonsterCrisis");
 			}
 			ZAP7 CDE 6 Bright
@@ -1886,19 +1849,6 @@ ACTOR SpectralLightningV1Monster : SpectralLightningV1New
 			Stop
 	}
 }
-actor SpectralLightningV1MonsterCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZOT1 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABB 2 Bright A_CrisisParticleDo
-			"####" CCDDEE 3 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 { 
 	+SPECTRAL 
@@ -1910,11 +1860,11 @@ ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 		Spawn:
 			ZOT1 AB 4 Bright
 			{
-				A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			ZOT1 CDE 6 Bright
 			{
-				A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2007,11 +1957,11 @@ ACTOR SpectralLightningV2MonsterCrisis : SpectralLightningV2Monster
 		Spawn:
 			ZOT1 AB 4 Bright
 			{
-				A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			ZOT1 CDE 6 Bright
 			{
-				A_SpawnItemEx("SpectralLightningV1MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -2123,19 +2073,6 @@ ACTOR SpectralLightningH3Monster : SpectralLightningH3New
 			Loop
 	}
 }
-actor SpectralLightningH3MonsterCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZAP6 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AA 2 Bright A_CrisisParticleDo
-			"####" BBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 {
 	+SPECTRAL 
@@ -2146,11 +2083,11 @@ ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 		Spawn:
 			ZAP6 A 4 Bright
 			{
-				A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			ZAP6 BC 4 Bright 
 			{
-				A_SpawnItemEx("SpectralLightningH3MonsterCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpectralLightningTail;
 			}
 			Loop
@@ -2191,18 +2128,6 @@ ACTOR SpectralLightningSpotNew : SpectralLightningDeath1New replaces SpectralLig
 			Loop
 	}
 }
-actor SpectralLightningSpotCrisisParticle : BaseCrisisParticle
-{
-	States
-	{
-		Spawn:
-			ZAP5 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCCDD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SpectralLightningSpotCrisis : SpectralLightningSpotNew
 {
 	+SPECTRAL 
@@ -2212,17 +2137,17 @@ ACTOR SpectralLightningSpotCrisis : SpectralLightningSpotNew
 		Spawn:
 			ZAP5 A 4 Bright 
 			{
-				A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_Countdown;
 			}
 			ZAP5 B 4 Bright 
 			{
-				A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_SpectralLightning("SpectralLightningV1MonsterCrisis","SpectralLightningV2MonsterCrisis");
 			}
 			ZAP5 CD 4 Bright
 			{
-				A_SpawnItemEx("SpectralLightningSpotCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_Countdown;
 			}
 			Loop

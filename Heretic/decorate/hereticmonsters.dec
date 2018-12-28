@@ -475,20 +475,6 @@ ACTOR PlagueShot : AetheriusEffectProjectile
 			stop
 	}
 }
-actor PlagueShotCrisisParticle : BaseCrisisParticle
-{
-	scale 0.334
-
-	States
-	{
-		Spawn:
-			FVUL A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AAABBB 1 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR PlagueShotCrisis : PlagueShot
 {
 	Damage ((3*random(3,5)) * CallACS("CrisisMultiplier"))
@@ -497,7 +483,7 @@ ACTOR PlagueShotCrisis : PlagueShot
 		Spawn:
 			FVUL AAABBB 1 Bright
 			{
-				A_SpawnItemEx("PlagueShotCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			loop
 		Death:
@@ -4891,20 +4877,6 @@ ACTOR DiscipleShot1 : AetheriusProjectileZSC
 			stop
 	}
 }
-actor DiscipleShot1CrisisParticle : BaseCrisisParticle
-{
-	alpha 0.4489
-
-	States
-	{
-		Spawn:
-			CFX2 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" ABCD 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DiscipleShot1Crisis : DiscipleShot1
 {
 	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -4913,7 +4885,7 @@ ACTOR DiscipleShot1Crisis : DiscipleShot1
 		Spawn:
 			CFX2 ABCD 2 Bright 
 			{
-				A_SpawnItemEx("DiscipleShot1CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_CustomMissile("DSFX1",0,0,0,0);
 			}
 			loop
@@ -4948,20 +4920,6 @@ ACTOR DiscipleShot2 : AetheriusProjectileZSC
 			stop
 	}
 }
-actor DiscipleShot2CrisisParticle : BaseCrisisParticle
-{
-	alpha 0.4489
-
-	States
-	{
-		Spawn:
-			CFX3 A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AB 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR DiscipleShot2Crisis : DiscipleShot2
 {
 	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
@@ -4970,7 +4928,7 @@ ACTOR DiscipleShot2Crisis : DiscipleShot2
 		Spawn:
 			CFX3 AB 3 Bright 
 			{
-				A_SpawnItemEx("DiscipleShot2CrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 				A_CustomMissile("DSFX2",0,0,0,0);
 				A_SeekerMissile(5,8);
 			}
@@ -5297,20 +5255,6 @@ ACTOR FireBlast : AetheriusProjectileZSC
 			Stop
 	}
 }
-actor FireBlastCrisisParticle : BaseCrisisParticle
-{
-	scale 0.5
-
-	States
-	{
-		Spawn:
-			PROJ A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" AABBCC 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR FireBlastCrisis : FireBlast
 {
 	Damage ((3 * random(1,4)) * CallACS("CrisisMultiplier"))
@@ -5319,7 +5263,7 @@ ACTOR FireBlastCrisis : FireBlast
 		Spawn:
 			PROJ AABBCC 2 BRIGHT
 			{
-				A_SpawnItemEx("FireBlastCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:
@@ -5353,20 +5297,6 @@ ACTOR SuperFireBlast : FireBlast
 			Stop
 	}
 }
-actor SuperFireBlastCrisisParticle : FireBlastCrisisParticle
-{
-	scale 1.0
-
-	States
-	{
-		Spawn:
-			GHBL A 0 NoDelay A_CrisisParticleInit
-			goto Idle
-		Idle:
-			"####" A 2 Bright A_CrisisParticleDo
-			loop
-	}
-}
 ACTOR SuperFireBlastCrisis : SuperFireBlast
 {
 	Damage ((24 * random(1,4)) * CallACS("CrisisMultiplier"))
@@ -5375,7 +5305,7 @@ ACTOR SuperFireBlastCrisis : SuperFireBlast
 		Spawn:
 			PROJ AABBCC 2 BRIGHT
 			{
-				A_SpawnItemEx("SuperFireBlastCrisisParticle",0,0,0,0,0,1.28);
+				A_GenerateCrisisParticle;
 			}
 			Loop
 		Death:

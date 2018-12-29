@@ -86,8 +86,8 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(2*random(1,5)+2);
 			}
 			PEAS E 8
@@ -393,8 +393,8 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(11); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(10); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(9); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(2*random(1,5)+2);
 			}
 			BEGR E 1
@@ -673,11 +673,11 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 					A_ActorGetHitScanXSpread(101);
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
 					{
-						A_CrisisBulletAttack (frandom(XSpread*-1,XSpread), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
+						A_CustomBulletAttack(frandom(XSpread*-1,XSpread), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 					else 
 					{
-						A_CrisisBulletAttack (frandom(XSpread*-1,XSpread), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
+						A_CustomBulletAttack(frandom(XSpread*-1,XSpread), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 				}
 				else
@@ -707,11 +707,11 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 					A_ActorGetHitScanXSpread(101);
 					if (levelbehavior > 0 && user_monsterlevel > 75) 
 					{
-						A_CrisisBulletAttack (frandom(XSpread*-1,XSpread), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
+						A_CustomBulletAttack(frandom(XSpread*-1,XSpread), 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 					else 
 					{
-						A_CrisisBulletAttack (frandom(XSpread*-1,XSpread), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
+						A_CustomBulletAttack(frandom(XSpread*-1,XSpread), 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); 
 					}
 				}
 				else
@@ -969,8 +969,8 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 				A_MonsterCrisisCheck; // Single Projectile/Tracer
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -999,8 +999,8 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 				A_PlaySound ("monsters/rifle", CHAN_WEAPON);
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -1368,8 +1368,8 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(1,8)*3, "reaver/blade");
 			}
 			Goto See
@@ -1397,8 +1397,8 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 				{
 					if (bullet_tracer_mode == 0) // Hitscan
 					{
-						if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (11.25, 7, 10, 2*random(3,12), "MaulerPuff", 2048, CBAF_NORANDOM); }
-						else { A_CrisisBulletAttack (11.25, 7, 10, 2*random(1,4), "MaulerPuff", 2048, CBAF_NORANDOM); }
+						if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.25, 7, 10, 2*random(3,12), "MaulerPuff", 2048, CBAF_NORANDOM); }
+						else { A_CustomBulletAttack(11.25, 7, 10, 2*random(1,4), "MaulerPuff", 2048, CBAF_NORANDOM); }
 					}
 					else // Tracers
 					{
@@ -1422,8 +1422,8 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 				{
 					if (bullet_tracer_mode == 0) // Hitscan
 					{
-						if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (22.5, 14, 20, 3*random(3,15), "MaulerPuff", 2048, CBAF_NORANDOM); }
-						else { A_CrisisBulletAttack (22.5, 14, 20, 3*random(1,5), "MaulerPuff", 2048, CBAF_NORANDOM); }
+						if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(22.5, 14, 20, 3*random(3,15), "MaulerPuff", 2048, CBAF_NORANDOM); }
+						else { A_CustomBulletAttack(22.5, 14, 20, 3*random(1,5), "MaulerPuff", 2048, CBAF_NORANDOM); }
 					}
 					else // Tracers
 					{
@@ -1548,8 +1548,8 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(1,8)*3, "reaver/blade");
 			}
 			ROB1 H 6 Slow
@@ -1582,8 +1582,8 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 				A_MonsterCrisisCheck; // Multiple Pellets
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -2199,8 +2199,8 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 				A_MonsterCrisisCheck; // Single Projectile/Tracer
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -2327,8 +2327,8 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 				A_MonsterCrisisCheck; // Multiple Pellets
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -2349,8 +2349,8 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 				A_MonsterCrisisCheck; // Multiple Pellets
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(11.0, 0, 3, random(3,24) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(11.0, 0, 3, random(1,8) * 3, "StrifePuff", 0, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -3103,8 +3103,8 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 				A_MonsterCrisisCheck; // Single Projectile/Tracer
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -3201,8 +3201,8 @@ ACTOR Macil2New : Macil1New replaces Macil2
 				A_MonsterCrisisCheck; // Single Projectile/Tracer
 				if (bullet_tracer_mode == 0)
 				{
-					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CrisisBulletAttack (8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
-					else { A_CrisisBulletAttack (8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
+					if (levelbehavior > 0 && user_monsterlevel > 75) { A_CustomBulletAttack(8, 0, 1, 3*random(3,15), "StrifePuff", 2048, CBAF_NORANDOM); }
+					else { A_CustomBulletAttack(8, 0, 1, 3*random(1,5), "StrifePuff", 2048, CBAF_NORANDOM); }
 				}
 				else
 				{
@@ -3335,8 +3335,8 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * 5);
 			}
 			PRST E 4 
@@ -3511,8 +3511,8 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * 5);
 			}
 			ALN1 H 4 Bright
@@ -3605,8 +3605,8 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * random(5,6));
 			}
 			ALN1 H 4 Bright
@@ -3749,8 +3749,8 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * 6);
 			}
 			ALN1 C 4
@@ -3864,8 +3864,8 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * random(6,7));
 			}
 			ALN1 H 4 Bright
@@ -3976,8 +3976,8 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * 7);
 			}
 			ALN1 H 4 Bright
@@ -4173,8 +4173,8 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 10) * 7);
 			}
 			MNAL C 4 Bright
@@ -4342,8 +4342,8 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 9) * 6);
 			}
 			MNAL T 4 Bright
@@ -4529,8 +4529,8 @@ ACTOR EntityAscended : EntityBossNew
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack((random(1,256) & 11) * 8);
 			}
 			MNAL C 4 Bright

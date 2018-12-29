@@ -56,8 +56,8 @@ ACTOR ChickenNew : AetheriusMorphedMonster replaces Chicken
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
 				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ChicAttack](1,2));
 			}
 			Goto See
@@ -148,8 +148,8 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ImpMeAttack](5,12), "himp/attack", "himp/attack");
 			}
 			Goto See
@@ -303,6 +303,7 @@ actor HereticImpLeaderNew : HereticImpNew // replaces HereticImpLeader
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("HereticImpBallNew", "HereticImpBallCrisis", 16, random[ImpMsAttack2](5,12), "himp/leaderattack");
@@ -364,8 +365,8 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ImpMeAttack](6,14), "himp/attack", "himp/attack");
 			}
 			Goto See
@@ -569,8 +570,8 @@ ACTOR WatcherImp : HereticImpNew
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
 			}
 			WATC "[\" 4 BRIGHT
@@ -585,8 +586,8 @@ ACTOR WatcherImp : HereticImpNew
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ImpMeAttack](7,14), "himp/attack");
 			}
 			Goto See
@@ -613,6 +614,7 @@ ACTOR WatcherImp : HereticImpNew
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
@@ -629,6 +631,7 @@ ACTOR WatcherImp : HereticImpNew
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
@@ -653,6 +656,7 @@ ACTOR WatcherImp : HereticImpNew
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("BeastBall2", "BeastBall2Crisis", 14, random[BeastAttack](1,8)*3, "beast/attack");
@@ -765,8 +769,7 @@ actor MummyNew : AetheriusMonsterZSC // replaces Mummy
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 			}
 			MUMM G 6
@@ -854,8 +857,7 @@ actor MummyGhostNew : MummyNew // replaces MummyGhost
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 			}
 			MUMM G 6
@@ -962,7 +964,7 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 			}
 			MUMM G 6
@@ -1009,6 +1011,7 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
+
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("MummyFX1", "MummyFX1Crisis", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
 			}
@@ -1092,7 +1095,7 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[MummyAttack](1,8)*2, "mummy/attack2", "mummy/attack");
 			}
 			MUMA G 6
@@ -1139,6 +1142,7 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
+
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("MummyFX1", "MummyFX1Crisis", 32, random[MummyAttack2](1,8)*2, "mummy/attack2");
 			}
@@ -1264,8 +1268,7 @@ Actor IceGolem : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
 			}
 			IGLM G 6
@@ -1287,8 +1290,7 @@ Actor IceGolem : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(Random(15,27)*3, "mummy/attack2", "mummy/attack");
 			}
 			IGLM J 6
@@ -1476,6 +1478,7 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				if (bSHADOW == 1 || random(1,256) <= 40)
@@ -1511,6 +1514,7 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 				else if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attacks
 				if (bSHADOW == 1 || random(1,256) < 40)
@@ -1672,8 +1676,8 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(10*random(1,8), "monster/dknhit");
 			}
 			Goto See
@@ -2035,8 +2039,7 @@ ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(10); }
 				else if (levelbehavior > 0 && user_monsterlevel > 23) { A_SetTics(11); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random(1,5)*8, "wizard/melee", none, "Melee", true);
 			}
 			Goto See
@@ -3191,8 +3194,8 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 				A_SetInventory("ClinkLungeAttackStatus",0);
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(6,18), "clink/attack", "clink/attack", "Melee", 1);
 			}
 			Goto See
@@ -3220,8 +3223,8 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[ClinkAttack](3,9), "clink/attack", "clink/attack");
 			}
 			Goto See
@@ -3377,6 +3380,7 @@ ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(7); }
 				else if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(8); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("BeastBallNew", "BeastBallCrisis", 32, random[BeastAttack](1,8)*3, "beast/attack");
@@ -3672,21 +3676,21 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 		Spread:
 			TNT1 A 0 
 			{
-				A_SpawnItemEx ("ShadowBeastSpread", 0, 0, 0, 0, 0, 0, 0, 128);
+				A_SpawnItemEx("ShadowBeastSpread", 0, 0, 0, 0, 0, 0, 0, 128);
 
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
-				A_SpawnItemEx ("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
+				A_SpawnItemEx("ShadowBeastSparkle", random(0,16), random(0,16), random(16,48), 0, 0, 0, random(0,359), 128);
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnItemEx("ShadowBeastCreature", "ShadowBeastCreatureCrisis", 0, 0, random(16,48), random(0,8), random(0,8), random(0,8), random(0,359), 0);

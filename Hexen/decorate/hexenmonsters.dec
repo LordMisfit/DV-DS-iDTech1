@@ -258,7 +258,8 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 			PIGY A 5 A_FaceTarget
 			PIGY A 10 
 			{
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random[PigAttack](2, 3), "PigAttack");
 			}
 			Goto See
@@ -344,8 +345,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[EttinAttack](1,8)*2);
 			}
 			Goto See
@@ -505,8 +505,8 @@ Actor EttinCommander : EttinNew
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
-				A_PlaySound("FighterHammerMiss");
 
+				A_PlaySound("FighterHammerMiss");
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
 			}
@@ -770,6 +770,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
+				A_FaceTarget;
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("BormerethFX1","BormerethFX1Crisis",randompick(25,28,31),8*random(1,8));
@@ -936,8 +937,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
 			}
 			Goto See
@@ -1129,8 +1129,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget;
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				
 				A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
 			}
 			Goto See
@@ -3780,7 +3779,8 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 		MeleeAttack:
 			SSPT N 5 
 			{
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(5*random(1,8));
 				if (random (1,256) < 96) { A_SerpentCheckForAttack; }
 			}
@@ -3917,7 +3917,8 @@ ACTOR IceStalker : StalkerNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(15,30));
 				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
@@ -4027,7 +4028,8 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(15,30));
 				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
@@ -4114,8 +4116,8 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
@@ -4267,8 +4269,8 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
@@ -4503,8 +4505,8 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
@@ -4729,8 +4731,8 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
@@ -4875,8 +4877,8 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
-
-				A_MonsterCrisisCheck; // Single Melee Attack
+				A_FaceTarget;
+				
 				A_CrisisMeleeAttack(random(4,5) * random(2,9));
 			}
 			Goto See

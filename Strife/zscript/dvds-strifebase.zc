@@ -20,7 +20,7 @@ class SpectralMonsterBase : AetheriusBossZSC
 		if (CheckClass("EntitySecondNew", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 6;
 		if (CheckClass("EntityAscended", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 11) * 8;
 		dmg /= 5;
-		A_MonsterCrisisCheck();
+		A_MonsterCrisisCheck(); // Spectres/Entity - Touch Damage
 		if (user_canusecrisisatk == 1) 
 		{
 			dmg *= CallACS("CrisisMultiplier");
@@ -76,7 +76,7 @@ class SpectralMonsterBase : AetheriusBossZSC
 	{
 		string atktype1 = centerball;
 		string atktype2 = subball;
-		A_MonsterCrisisCheck();
+		A_MonsterCrisisCheck(); // Spectre3 - Lightning Ball 180
 		if(user_canusecrisisatk == 1) 
 		{
 			atktype1 = centerballcrisis;
@@ -245,7 +245,7 @@ class SpectralMonsterBase : AetheriusBossZSC
 			break;
 
 		case 2:
-			A_MonsterCrisisCheck();
+			A_MonsterCrisisCheck(); // Entity Attack - 180 Spread
 			A_CrisisSpawnProjectile("SpectralLightningH3Monster", "SpectralLightningH3MonsterCrisis", 32, 0);
 			break;
 
@@ -254,12 +254,12 @@ class SpectralMonsterBase : AetheriusBossZSC
 			break;
 
 		case 4:
-			A_MonsterCrisisCheck();
+			A_MonsterCrisisCheck(); // Entity Attack - Large Lightning Column
 			A_CrisisSpawnProjectile("SpectralLightningBigV2Monster", "SpectralLightningBigV2MonsterCrisis", 32, 0);
 			break;
 
 		default:
-			A_MonsterCrisisCheck();
+			A_MonsterCrisisCheck(); // Entity Attack - Giant Ball
 			A_CrisisSpawnProjectile("SpectralLightningBigBall2New", "SpectralLightningBigBall2Crisis", 32, 0);
 			break;
 		}

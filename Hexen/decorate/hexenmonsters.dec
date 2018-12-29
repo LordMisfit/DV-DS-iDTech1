@@ -174,7 +174,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			{
 				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 				SetDamage(7+(user_monsterlevel/45));
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Minotaur Charge
 				if(user_canusecrisisatk == 1) 
 				{
 					A_PlayCrisisAtkSound;
@@ -256,7 +256,11 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 		Melee:
 			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
 			PIGY A 5 A_FaceTarget
-			PIGY A 10 A_CustomMeleeAttack(random[PigAttack](2, 3), "PigAttack")
+			PIGY A 10 
+			{
+				A_MonsterCrisisCheck; // Single Melee Attack
+				A_CrisisMeleeAttack(random[PigAttack](2, 3), "PigAttack");
+			}
 			Goto See
 		Pain:
 			PIGY D 4 A_PigPain
@@ -341,7 +345,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random[EttinAttack](1,8)*2);
 			}
 			Goto See
@@ -484,7 +488,7 @@ Actor EttinCommander : EttinNew
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 				A_FaceTarget;
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
 			}
 			Goto See
@@ -503,7 +507,7 @@ Actor EttinCommander : EttinNew
 				A_FaceTarget;
 				A_PlaySound("FighterHammerMiss");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("ThrownMace","ThrownMaceCrisis",52,(random(2,8)*4));
 			}
 			Goto See
@@ -608,7 +612,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
@@ -624,7 +628,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
@@ -640,7 +644,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			BORM EF 6
@@ -656,7 +660,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			Goto see
@@ -680,7 +684,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",31,10,0);
 			}
 			BORM G 3 Bright
@@ -689,7 +693,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",28,5,0);
 			}
 			BORM G 3 Bright
@@ -698,7 +702,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 			}
 			Goto see
@@ -717,7 +721,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				A_FaceTarget;
 				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,20);
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,-20);
@@ -745,7 +749,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			}
 			TNT1 A 0 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("PossEttFireBall","PossEttFireBallCrisis",64,25,0);
 			}
 			BORM FG 5
@@ -767,7 +771,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("BormerethFX1","BormerethFX1Crisis",randompick(25,28,31),8*random(1,8));
 			}
 			BORM E 0 A_CPosRefire
@@ -777,7 +781,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 224)
 				{
-					A_MonsterCrisisCheck;
+					A_MonsterCrisisCheck; // Multiple Projectiles
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
@@ -795,7 +799,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 224)
 				{
-					A_MonsterCrisisCheck;
+					A_MonsterCrisisCheck; // Multiple Projectiles
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
@@ -814,7 +818,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 224)
 				{
-					A_MonsterCrisisCheck;
+					A_MonsterCrisisCheck; // Multiple Projectiles
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
 					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
@@ -933,7 +937,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget;
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random[CentaurAttack](3, 9));
 			}
 			Goto See
@@ -1126,7 +1130,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget;
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random[CentaurAttack](5, 13));
 			}
 			Goto See
@@ -1156,7 +1160,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				user_defendtimer += 1;
 				if (user_defendtimer == 1) 
 				{
-					A_MonsterCrisisCheck;
+					A_MonsterCrisisCheck; // Single Projectile
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
 
@@ -1193,7 +1197,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 				user_defendtimer += 1;
 				if (user_defendtimer == 1) 
 				{
-					A_MonsterCrisisCheck;
+					A_MonsterCrisisCheck; // Single Projectile
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
 			
@@ -1390,7 +1394,7 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
 				A_PlaySound("FireDemonAttack");
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("FireDemonMissile","FireDemonMissileCrisis",32);
 			}
 			Goto Chase
@@ -1522,7 +1526,7 @@ Actor FireDemonLeader : FireDemonNew
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				A_PlaySound("FireDemonAttack");
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("FireDemonLeaderMissile","FireDemonLeaderMissileCrisis",32);
 			}
 			Goto Chase
@@ -1691,7 +1695,7 @@ Actor FireDemonCommander : FireDemonNew
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				A_PlaySound("FireDemonAttack");
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("FireDemonCommanderMissile","FireDemonCommanderMissileCrisis",32);
 			}
 			Goto Chase
@@ -1863,7 +1867,7 @@ Actor FireDemonQueen : FireDemonNew
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 				A_FaceTarget;
 				A_PlaySound("FireDemonAttack");
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("FireDemonQueenMissile","FireDemonQueenMissileCrisis",32);
 			}
 			Goto Chase
@@ -1967,7 +1971,7 @@ actor FireDemonQueenClone : FireDemonQueen
 				A_FaceTarget;
 				A_PlaySound("FireDemonAttack");
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("FireDemonQueenCloneMissile","FireDemonQueenCloneMissileCrisis",32);
 			}
 			Goto Chase
@@ -2348,7 +2352,7 @@ Actor DarkDisciple : BishopNew
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,-60,1);
 				A_CrisisSpawnProjectile("DiscipleSpreadFX","DiscipleSpreadFXCrisis",32,0,60,1);
 				A_CrisisSpawnProjectile("DiscipleFX","DiscipleFXCrisis",32);
@@ -2657,7 +2661,7 @@ ACTOR VampireDVDS : BishopNew
 			{
 				A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128);
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BatAttack","BatAttackCrisis",Random(8,64),Random(-32,32),Random(20,-20),1);
 
 				user_shotsfired += 1;
@@ -2690,7 +2694,7 @@ ACTOR VampireDVDS : BishopNew
 		BeamLoop: // 56
 			VAM1 F 1 Bright 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("VampireRoundBeam","VampireRoundBeamCrisis",32,0,0,1);
 
 				user_shotsfired += 1;
@@ -3776,7 +3780,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 		MeleeAttack:
 			SSPT N 5 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(5*random(1,8));
 				if (random (1,256) < 96) { A_SerpentCheckForAttack; }
 			}
@@ -3807,7 +3811,7 @@ ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("SerpentFXNew", "SerpentFXCrisis", 32, 0);
 			}
 			Goto Dive
@@ -3913,7 +3917,7 @@ ACTOR IceStalker : StalkerNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(15,30));
 				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
@@ -3993,7 +3997,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		Missile:
 			ISPT N 5 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
 				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
 			}
@@ -4023,7 +4027,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		MeleeAttack:
 			ISPT N 5 
 			{
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(15,30));
 				if (random (1,8) <= 3) { A_SerpentCheckForAttack; }
 			}
@@ -4111,7 +4115,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
@@ -4135,7 +4139,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("Demon1FX1New", "Demon1FX1Crisis", 62, 0);
 			}
 			Goto See
@@ -4264,7 +4268,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(2,3) * random(1,8));
 			}
 			Goto See
@@ -4288,7 +4292,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("Demon2FX1New", "Demon2FX1Crisis", 62, 0);
 			}
 			Goto See
@@ -4500,7 +4504,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
@@ -4524,7 +4528,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("Demon3FX","Demon3FXCrisis",62,0,0,0);
 			}
 			Goto See
@@ -4726,7 +4730,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(3,4) * random(1,8));
 			}
 			Goto See
@@ -4750,7 +4754,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("Demon4FX","Demon4FXCrisis",62,0,0,0);
 			}
 			Goto See
@@ -4872,7 +4876,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Melee Attack
 				A_CrisisMeleeAttack(random(4,5) * random(2,9));
 			}
 			Goto See
@@ -4906,7 +4910,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, -10);
 				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 0);
 				A_CrisisSpawnProjectile("Demon5FX1", "Demon5FX1Crisis", 62, 0, 10);
@@ -4922,7 +4926,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("Demon5Jet", "Demon5JetCrisis", 62, 0);
 
 				user_shotsfired += 1;
@@ -5064,7 +5068,7 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("WraithFX1", "WraithFX1Crisis", 32, 0);
 			}
 			Goto See
@@ -5219,7 +5223,7 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_IceGuyAttack("IceGuyFXNew","IceGuyFXCrisis");
 			}
 			ICEY F 4
@@ -5532,7 +5536,7 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(6); }
 				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(7); }
 
-				A_MonsterCrisisCheck;
+				A_MonsterCrisisCheck; // Single Projectile
 				A_DragonAttack("DragonFireball","DragonFireballCrisis");
 			}
 			Goto See+4

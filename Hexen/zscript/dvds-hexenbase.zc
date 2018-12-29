@@ -266,14 +266,14 @@ class KoraxBase : AetheriusBossZSC
 		// Fire all 6 missiles at once
 		A_PlaySound(sounds[type], CHAN_WEAPON, 1, false, ATTN_NONE);
 
-		A_MonsterCrisisCheck();
+		A_MonsterCrisisCheck(); // Korax - Attack [Multiple (6) at once]
 		class<Actor> info = choices[type];
 		class<Actor> crisisinfo = crisischoices[type];
 
 		// Throws out the fireballs form Korax's arms
 		for (int i = 0; i < 6; ++i)
 		{
-			if(user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i); } else { KoraxFire(info, i); }
+			if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i); } else { KoraxFire(info, i); }
 		}
 	}
 

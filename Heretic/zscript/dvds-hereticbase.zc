@@ -161,7 +161,17 @@ class DSparilBase : AetheriusBossZSC
 
 		if (random[Srcr2Decide]() < chance[chanceindex])
 		{
-			DSparilTeleport ();
+			int ExtraChance;
+			if (user_legendaryevolved)
+			{
+				ExtraChance = 1 + (user_monsterlevel / 90);
+				if (random(1,16) <= ExtraChance) DSparilTeleport ();
+			}
+			else
+			{
+				ExtraChance = 2 + (user_monsterlevel / 90);
+				if (random(1,4) <= ExtraChance) DSparilTeleport ();
+			}
 		}
 	}
 

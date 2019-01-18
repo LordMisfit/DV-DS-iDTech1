@@ -2518,7 +2518,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 	}
 }
 
-actor DSparilStaff : HereticWeaponBase
+actor DSparilStaff : HereticWeaponBase 32123
 {
 	Weapon.Kickback 63
 	Weapon.Ammouse1 5

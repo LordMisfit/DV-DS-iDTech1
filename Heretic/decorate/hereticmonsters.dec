@@ -3753,7 +3753,7 @@ ACTOR ShadowBeastSpread //: AetheriusProjectileZSC
 	}
 }
 
-ACTOR ShadowBeastCreature
+ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 {
 	Alpha 1.0
 	Renderstyle Add

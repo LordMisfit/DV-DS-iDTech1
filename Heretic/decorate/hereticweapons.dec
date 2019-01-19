@@ -2482,7 +2482,11 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 			FX16 ABC 3 Bright A_BlueSpark
 			Loop
 		Death:
-			FX16 G 5 Bright A_Explode(random(104,152),128,0)
+			FX16 G 5 Bright 
+			{
+				A_GetPlayerAttackDamage(61,0);
+				A_Explode((finaldamagedealt),128,0);
+			}
 			FX16 HIJKL 5 Bright
 			Stop
 	}

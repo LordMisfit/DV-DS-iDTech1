@@ -185,7 +185,7 @@ class KoraxBase : AetheriusBossZSC
 		spirit.args[1] = 0; 						// initial look angle
 
 		// Spawn a tail for spirit
-		SpawnSpiritTail (spirit);
+		HolyTail.SpawnSpiritTail (spirit);
 	}
 
 	void A_KoraxMissile()

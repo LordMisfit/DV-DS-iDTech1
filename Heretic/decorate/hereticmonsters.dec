@@ -199,7 +199,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				// A_ImpMsAttack; Emulation
 				SetDamage(((0+(user_monsterlevel/45))));
 				A_MonsterCrisisCheck; // SkullAttack
-				if(user_canusecrisisatk == 1) 
+				if (user_canusecrisisatk == 1) 
 				{
 					if (user_monsterlevel >= 45) { A_PlayCrisisAtkSound; } 
 					SetDamage((((0+(user_monsterlevel/45)))*CallACS("CrisisMultiplier"))); 
@@ -3992,7 +3992,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 				SetDamage(7+(user_monsterlevel/45));
 				A_MonsterCrisisCheck; // Minotaur Charge
-				if(user_canusecrisisatk == 1) 
+				if (user_canusecrisisatk == 1) 
 				{
 					A_PlayCrisisAtkSound;
 					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));

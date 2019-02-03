@@ -47,7 +47,7 @@ class DSparilBase : AetheriusBossZSC
 			return;
 		}
 
-		if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
+		if (user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
 		int fireballhealth1;
 		if (User_MaxHP <= 0) fireballhealth1 = SpawnHealth()/3*2; else fireballhealth1 = User_MaxHP/3*2;
 		int fireballhealth2;
@@ -202,7 +202,7 @@ class DSparilBase : AetheriusBossZSC
 			target.TraceBleed (newdam > 0 ? newdam : damage, self);
 			return;
 		}
-		if(user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
+		if (user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 
 		int chance = health < attackhealth/2 ? 96 : 48;
 		if (random[Srcr2Atk]() < chance)
 		{

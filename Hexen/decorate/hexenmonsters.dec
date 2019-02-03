@@ -175,7 +175,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 				SetDamage(7+(user_monsterlevel/45));
 				A_MonsterCrisisCheck; // Minotaur Charge
-				if(user_canusecrisisatk == 1) 
+				if (user_canusecrisisatk == 1) 
 				{
 					A_PlayCrisisAtkSound;
 					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));

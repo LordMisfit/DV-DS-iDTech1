@@ -1,4 +1,4 @@
-ACTOR GauntletsNew : RandomSpawner replaces Gauntlets
+ACTOR GauntletsNew : RandomSpawner2 replaces Gauntlets
 {
 	DropItem "BerserkSphere", 255, 191
 	DropItem "RandomSeedDropForced", 255, 64
@@ -31,7 +31,7 @@ ACTOR ArtiTimeBombNew replaces ArtiTimeBomb
 	}
 }
 
-ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
+ACTOR ArtiTorchNew : RandomSpawner2 replaces ArtiTorch
 {
 	+DONTGIB
 	DropItem "RandomMagicSpawner", 256
@@ -89,7 +89,7 @@ ACTOR ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 	Tag "Darchala's Chaos Device: Teleports you away to near a level's entry point."
 }
   
-ACTOR ArtiTomeOfPowerNew : RandomSpawner replaces ArtiTomeOfPower
+ACTOR ArtiTomeOfPowerNew : RandomSpawner2 replaces ArtiTomeOfPower
 {
 	DropItem "Experiessence", 255, 112
 	DropItem "LargeExperiessence", 255, 72
@@ -208,7 +208,7 @@ ACTOR ArtiInvulnerabilityNew : AetheriusCustomInventory replaces ArtiInvulnerabi
 	}
 }
 
-actor SilverShieldNew : RandomSpawner replaces SilverShield
+actor SilverShieldNew : RandomSpawner2 replaces SilverShield
 {
 	DropItem "MaxHealthBonusReal", 255, 96
 	DropItem "FloraRandomArmorAlwaysDrop", 255, 2
@@ -216,7 +216,7 @@ actor SilverShieldNew : RandomSpawner replaces SilverShield
 	DropItem "SauronGauntlets", 255, 1
 }
 
-actor EnchantedShieldNew : RandomSpawner replaces EnchantedShield
+actor EnchantedShieldNew : RandomSpawner2 replaces EnchantedShield
 {
 	DropItem "MaxHealthBonusReal", 255, 88
 	DropItem "FloraRandomArmorAlwaysDrop", 255, 6

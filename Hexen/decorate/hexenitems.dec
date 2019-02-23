@@ -1,4 +1,4 @@
-ACTOR ArtiTorchNew : RandomSpawner replaces ArtiTorch
+ACTOR ArtiTorchNew : RandomSpawner2 replaces ArtiTorch
 {
 	+DONTGIB
 	DropItem "RandomMagicSpawner", 255
@@ -239,7 +239,7 @@ ACTOR ArtiHealingRadiusNew : AetheriusCustomInventory replaces ArtiHealingRadius
 			fail
 	}
 }
-actor FlechetteReplacer : RandomSpawner replaces ArtiPoisonBag
+actor FlechetteReplacer : RandomSpawner2 replaces ArtiPoisonBag
 {
 	+DONTGIB
 	DropItem "CrystalVial", 96, 18
@@ -288,42 +288,42 @@ actor ArtiBlastRadiusNew : FlechetteReplacer replaces ArtiBlastRadius
 //**********************
 //**Armor Replacements**
 //**********************
-actor RandomArmorNew : RandomSpawner replaces ArtiBoostArmor
+actor RandomArmorNew : RandomSpawner2 replaces ArtiBoostArmor
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 12, 96
 	DropItem "SauronHelmet", 64, 2
 	DropItem "SauronGauntlets", 64, 2
 }
-actor ArtiBoostArmorNew : RandomSpawner replaces ArtiBoostArmor
+actor ArtiBoostArmorNew : RandomSpawner2 replaces ArtiBoostArmor
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 48, 96
 	DropItem "SauronHelmet", 255, 2
 	DropItem "SauronGauntlets", 255, 2
 }
-actor PlatinumHelmNew : RandomSpawner replaces PlatinumHelm
+actor PlatinumHelmNew : RandomSpawner2 replaces PlatinumHelm
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 24, 96
 	DropItem "SauronHelmet", 255, 2
 	DropItem "SauronGauntlets", 255, 2
 }
-actor AmuletOfWardingNew : RandomSpawner replaces AmuletOfWarding
+actor AmuletOfWardingNew : RandomSpawner2 replaces AmuletOfWarding
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 24, 96
 	DropItem "SauronHelmet", 255, 2
 	DropItem "SauronGauntlets", 255, 2
 }
-actor FalconShieldNew : RandomSpawner replaces FalconShield
+actor FalconShieldNew : RandomSpawner2 replaces FalconShield
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 24, 96
 	DropItem "SauronHelmet", 255, 2
 	DropItem "SauronGauntlets", 255, 2
 }
-actor MeshArmorNew : RandomSpawner replaces MeshArmor
+actor MeshArmorNew : RandomSpawner2 replaces MeshArmor
 {
 	+DONTGIB
 	DropItem "FloraRandomArmorAlwaysDrop", 24, 96
@@ -335,7 +335,7 @@ actor MeshArmorNew : RandomSpawner replaces MeshArmor
 //**Weapon Replacements**
 //***********************
 // Slot 4 Hellcore [replaces 2nd weapons in Hexen]
-actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
+actor FWeapAxeNew : RandomSpawner2 replaces FWeapAxe
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -348,7 +348,7 @@ actor FWeapAxeNew : RandomSpawner replaces FWeapAxe
 	DropItem "AbaddonEyeCI"
 	DropItem "KnightFistCI"
 }
-actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
+actor CWeapStaffNew : RandomSpawner2 replaces CWeapStaff
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -361,7 +361,7 @@ actor CWeapStaffNew : RandomSpawner replaces CWeapStaff
 	DropItem "AbaddonEyeCI"
 	DropItem "KnightFistCI"
 }
-actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
+actor MWeapFrostNew : RandomSpawner2 replaces MWeapFrost
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -376,7 +376,7 @@ actor MWeapFrostNew : RandomSpawner replaces MWeapFrost
 }
 
 // Slot 5 Hellcore [replaces 3rd weapons in Hexen]
-actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
+actor FWeapHammerNew : RandomSpawner2 replaces FWeapHammer
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -389,7 +389,7 @@ actor FWeapHammerNew : RandomSpawner replaces FWeapHammer
 	DropItem "ArchonFistCI"
 	DropItem "PyroFistCI"
 }
-actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
+actor CWeapFlameNew : RandomSpawner2 replaces CWeapFlame
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -402,7 +402,7 @@ actor CWeapFlameNew : RandomSpawner replaces CWeapFlame
 	DropItem "ArchonFistCI"
 	DropItem "PyroFistCI"
 }
-actor MWeapLightningNew : RandomSpawner replaces MWeapLightning
+actor MWeapLightningNew : RandomSpawner2 replaces MWeapLightning
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -416,7 +416,7 @@ actor MWeapLightningNew : RandomSpawner replaces MWeapLightning
 	DropItem "PyroFistCI"
 }
 
-actor FWeaponPiece1New : RandomSpawner replaces FWeaponPiece1
+actor FWeaponPiece1New : RandomSpawner2 replaces FWeaponPiece1
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -425,7 +425,7 @@ actor FWeaponPiece1New : RandomSpawner replaces FWeaponPiece1
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor FWeaponPiece2New : RandomSpawner replaces FWeaponPiece2
+actor FWeaponPiece2New : RandomSpawner2 replaces FWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -434,7 +434,7 @@ actor FWeaponPiece2New : RandomSpawner replaces FWeaponPiece2
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor FWeaponPiece3New : RandomSpawner replaces FWeaponPiece3
+actor FWeaponPiece3New : RandomSpawner2 replaces FWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -443,7 +443,7 @@ actor FWeaponPiece3New : RandomSpawner replaces FWeaponPiece3
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor FWeapQuietusNew : RandomSpawner replaces FWeapQuietus
+actor FWeapQuietusNew : RandomSpawner2 replaces FWeapQuietus
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -452,7 +452,7 @@ actor FWeapQuietusNew : RandomSpawner replaces FWeapQuietus
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor CWeaponPiece1New : RandomSpawner replaces CWeaponPiece1
+actor CWeaponPiece1New : RandomSpawner2 replaces CWeaponPiece1
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -461,7 +461,7 @@ actor CWeaponPiece1New : RandomSpawner replaces CWeaponPiece1
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor CWeaponPiece2New : RandomSpawner replaces CWeaponPiece2
+actor CWeaponPiece2New : RandomSpawner2 replaces CWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -470,7 +470,7 @@ actor CWeaponPiece2New : RandomSpawner replaces CWeaponPiece2
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor CWeaponPiece3New : RandomSpawner replaces CWeaponPiece3
+actor CWeaponPiece3New : RandomSpawner2 replaces CWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -479,7 +479,7 @@ actor CWeaponPiece3New : RandomSpawner replaces CWeaponPiece3
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor CWeapWraithvergeNew : RandomSpawner replaces CWeapWraithverge
+actor CWeapWraithvergeNew : RandomSpawner2 replaces CWeapWraithverge
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -488,7 +488,7 @@ actor CWeapWraithvergeNew : RandomSpawner replaces CWeapWraithverge
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor MWeaponPiece1New : RandomSpawner replaces MWeaponPiece1
+actor MWeaponPiece1New : RandomSpawner2 replaces MWeaponPiece1
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -497,7 +497,7 @@ actor MWeaponPiece1New : RandomSpawner replaces MWeaponPiece1
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor MWeaponPiece2New : RandomSpawner replaces MWeaponPiece2
+actor MWeaponPiece2New : RandomSpawner2 replaces MWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -506,7 +506,7 @@ actor MWeaponPiece2New : RandomSpawner replaces MWeaponPiece2
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor MWeaponPiece3New : RandomSpawner replaces MWeaponPiece3
+actor MWeaponPiece3New : RandomSpawner2 replaces MWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
@@ -515,7 +515,7 @@ actor MWeaponPiece3New : RandomSpawner replaces MWeaponPiece3
 	DropItem "ArchvileHandCI"
 	DropItem "DiabloistHandCI"
 }
-actor MWeapBloodscourgeNew : RandomSpawner replaces MWeapBloodscourge
+actor MWeapBloodscourgeNew : RandomSpawner2 replaces MWeapBloodscourge
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"

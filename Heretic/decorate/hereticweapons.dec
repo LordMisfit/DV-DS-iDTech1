@@ -1487,6 +1487,23 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	}
 }
 
+ACTOR PhoenixPuff2 : PhoenixPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOTELEPORT
+	+CANNOTPUSH
+	Scale 0.75
+	RenderStyle Add
+	Alpha 0.30
+	States
+	{
+		Spawn:
+			FX04 BCDEF 2
+			Stop
+	}
+}
+
 ACTOR PhoenixFX1New : PhoenixFX1Base
 {
 	Damage (finaldamagedealt) //2
@@ -1527,6 +1544,94 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 			Stop
 	}
 }
+ACTOR PhoenixFX1Seeking : PhoenixFX1New
+{
+	Speed 15 // 20
+	Scale 0.75
+	var float user_seekstrength;
+	var int user_specificTarget;
+	States
+	{
+		Spawn:
+			FX04 A 0 NoDelay 
+			{
+				A_GetPlayerAttackDamage(33,0);
+				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
+				if (user_seekstrength > 0)
+				{
+					A_ChangeFlag("SEEKERMISSILE", true);
+					if (random(1,4) == 1) { A_ChangeFlag("THRUGHOST", false); } else { A_ChangeFlag("THRUGHOST", true); }
+					
+					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
+					user_specificTarget = A_SelectSeekTargetByShooterAim;
+				}
+				// This is needed so that subclasses can override the Idle state.
+				return state("Idle");
+			}
+		Idle:
+			FX04 A 1 Bright 
+			{
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			FX04 A 1 Bright 
+			{
+				//A_PhoenixPuff("PhoenixPuff2",45.0*random(1,2),1.3);
+				A_PhoenixPuff("PhoenixPuff2",11.25*random(1,8),1.3);
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			Loop
+	}
+}
+ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
+{
+	Speed 15 // 20
+	Scale 0.75
+	var float user_seekstrength;
+	var int user_specificTarget;
+	States
+	{
+		Spawn:
+			FX04 A 0 NoDelay 
+			{
+				A_GetPlayerAttackDamage(33,0);
+				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
+				if (user_seekstrength > 0)
+				{
+					A_ChangeFlag("SEEKERMISSILE", true);
+					if (random(1,4) == 1) { A_ChangeFlag("THRUGHOST", false); } else { A_ChangeFlag("THRUGHOST", true); }
+					
+					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
+					user_specificTarget = A_SelectSeekTargetByShooterAim;
+				}
+				// This is needed so that subclasses can override the Idle state.
+				return state("Idle");
+			}
+		Idle:
+			FX04 A 1 Bright 
+			{
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			FX04 A 1 Bright 
+			{
+				//A_PhoenixPuff("PhoenixPuff2",45.0*random(1,2),1.3);
+				A_PhoenixPuff("PhoenixPuff2",11.25*random(1,8),1.3);
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			Loop
+	}
+}
 ACTOR PhoenixFX2New : PhoenixFX2Base
 {
 	Damage (finaldamagedealt) //2
@@ -1550,7 +1655,59 @@ ACTOR PhoenixFX2New : PhoenixFX2Base
 			Stop
 	}
 }
-
+ACTOR PhoenixFX2Seeking : PhoenixFX2Base
+{
+	Scale 0.75
+	var float user_seekstrength;
+	var int user_specificTarget;
+	States
+	{
+		Spawn:
+			FX09 A 0 NoDelay 
+			{
+				A_GetPlayerAttackDamage(34,0);
+				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 4;
+				if (user_seekstrength > 0)
+				{
+					A_ChangeFlag("SEEKERMISSILE", true);
+					
+					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
+					user_specificTarget = A_SelectSeekTargetByShooterAim;
+				}
+				// This is needed so that subclasses can override the Idle state.
+				return state("Idle");
+			}
+		Idle:
+		/*
+			FX09 ABABA 2 Bright
+			FX09 B 2 Bright A_FlameEnd
+			FX09 CDEF 2 Bright
+		*/
+			FX09 AABBAABBAA 1 Bright 
+			{
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			FX09 B 1 Bright 
+			{
+				A_FlameEnd;
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			FX09 BCCDDEEFF 1 Bright 
+			{
+				if (user_seekstrength > 0)
+				{
+					A_SuperSeekerMissile(user_seekstrength, user_seekstrength, !user_specificTarget);
+				}
+			}
+			stop
+	}
+}
 ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod 
 {
 	+WEAPON.NOAUTOFIRE
@@ -1579,7 +1736,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 			WPHX A 1
 			Loop
 		Ready:
-			PHNX A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			PHNX A 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER4)
 			Loop
 		Deselect:
 			TNT1 A 0 
@@ -1615,7 +1772,15 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(4); }
 
 				CallACS("StartTensionCountDown");
-				A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE",0,1,"PhoenixRodAmmo",0,0,0,0);
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE",0,1,"PhoenixRodAmmo",0,0,0,0);
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1Seeking","PhoenixFX1NoAOESeeking",0,1,"PhoenixRodAmmo",0,0,0,0);
+				}
 
 				A_GetRecoil(1);
 				A_Recoil(CountInv("RecoilAmt", AAPTR_PLAYER1));
@@ -1645,7 +1810,15 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 			PHNX C 1 // A_FirePhoenixPL2
 			{
 				CallACS("StartTensionCountDown");
-				A_SpreadAuraFireProjectile("PhoenixFX2New",random(-2,2),0,"",random(-2,2),0,1,2);
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					A_SpreadAuraFireProjectile("PhoenixFX2New",random(-2,2),0,"",random(-2,2),0,1,2);
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(-2,2),0,"",random(-2,2),0,1,2);
+				}
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_FlameCount(1,-1);
 				A_FlameCount(2);
@@ -1666,6 +1839,29 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				A_StopSound(CHAN_WEAPON);
 			}
 			Goto Ready
+			
+		User4:
+			PHNX A 0
+			{
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10053) > 0)
+					{
+						A_SetInventory("PRMode",1,AAPTR_PLAYER1);
+						A_Print("Using Seeking Shots");
+						A_PlaySound("world/lavasizzle",0);
+					}
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SetInventory("PRMode",0,AAPTR_PLAYER1);
+					A_Print("Using Non-Seeking Shots");
+					A_PlaySound("world/lavasizzle",0);
+				}
+			}
+			PHNX A 8
+			goto Ready
 	}
 }
 
@@ -1689,7 +1885,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 			WPHX A -1
 			Stop
 		Ready:
-			PHND A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			PHND A 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER4)
 			Loop
 		Deselect:
 			TNT1 A 0 
@@ -1725,8 +1921,17 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(4); }
 
 				CallACS("StartTensionCountDown");
-				A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE", 3,1,"PhoenixRodAmmo", 3,0,0,0);
-				A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE",-3,1,"PhoenixRodAmmo",-3,0,0,0);
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE", 3,1,"PhoenixRodAmmo", 3,0,0,0);
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1New","PhoenixFX1NoAOE",-3,1,"PhoenixRodAmmo",-3,0,0,0);
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1Seeking","PhoenixFX1NoAOESeeking", 3,1,"PhoenixRodAmmo", 3,0,0,0);
+					A_SpreadAuraFireProjectileAoE("PhoenixFX1Seeking","PhoenixFX1NoAOESeeking",-3,1,"PhoenixRodAmmo",-3,0,0,0);
+				}
 
 				A_GetRecoil(2);
 				A_Recoil(CountInv("RecoilAmt", AAPTR_PLAYER1));
@@ -1756,8 +1961,17 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 			PHND C 1 // A_FirePhoenixPL2
 			{
 				CallACS("StartTensionCountDown");
-				A_SpreadAuraFireProjectile("PhoenixFX2New",random(-5,1),0,"",random(-5,1),0,1,2);
-				A_SpreadAuraFireProjectile("PhoenixFX2New",random(1,5),0,"",random(1,5),0,1,2);
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					A_SpreadAuraFireProjectile("PhoenixFX2New",random(-5,1),0,"",random(-5,1),0,1,2);
+					A_SpreadAuraFireProjectile("PhoenixFX2New",random(1,5),0,"",random(1,5),0,1,2);
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(-5,1),0,"",random(-5,1),0,1,2);
+					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(1,5),0,"",random(1,5),0,1,2);
+				}
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_FlameCount(1,-1);
@@ -1780,6 +1994,29 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 				A_StopSound(CHAN_WEAPON);
 			}
 			Goto Ready
+			
+		User4:
+			PHND A 0
+			{
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 0)
+				{
+					if (CallACS("MiscVarCheckDECORATE",10053) > 0)
+					{
+						A_SetInventory("PRMode",1,AAPTR_PLAYER1);
+						A_Print("Using Seeking Shots");
+						A_PlaySound("world/lavasizzle",0);
+					}
+				}
+				else
+				if (CountInv("PRMode",AAPTR_PLAYER1) == 1)
+				{
+					A_SetInventory("PRMode",0,AAPTR_PLAYER1);
+					A_Print("Using Non-Seeking Shots");
+					A_PlaySound("world/lavasizzle",0);
+				}
+			}
+			PHND A 8
+			goto Ready
 	}
 }
 

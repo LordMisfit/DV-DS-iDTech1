@@ -1,13 +1,26 @@
 ACTOR GauntletsNew : RandomSpawner2 replaces Gauntlets
 {
-	DropItem "BerserkSphere", 255, 191
-	DropItem "RandomSeedDropForced", 255, 64
-	DropItem "DiarisLongbow", 255, 64
-	DropItem "GoldWandNew", 255, 64
-	DropItem "SuperCrossbowNew", 255, 64
-	DropItem "PoisonNeedle", 255, 64
-	DropItem "RandomHellcoreWeapon", 255, 64
+	+DONTGIB
+	DropItem "BerserkSphere", 255, 255
+	DropItem "RandomSeedDropForcedAlways", 255, 128
+	DropItem "DiarisLongbow", 255, 128
+	DropItem "PoisonNeedle", 255, 128
+	DropItem "RandomHellcoreWeapon", 255, 128
+	DropItem "RandomHereticWeapon", 255, 128
 	DropItem "FyggForced", 255, 1
+}
+
+actor RandomHereticWeapon : RandomSpawner2 26906
+{
+	+DONTGIB
+	DropItem "GoldWandNew", 255, 30
+	DropItem "CrossbowNew", 255, 30
+	DropItem "SuperCrossbowNew", 255, 30
+	DropItem "DragonClawNew", 255, 30
+	DropItem "HellStaffNew", 255, 30
+	DropItem "PhoenixRodNew", 255, 30
+	DropItem "FiremaceNew", 255, 30
+	DropItem "DSparilStaff", 255, 1
 }
 
 ACTOR ArtiTimeBombNew replaces ArtiTimeBomb

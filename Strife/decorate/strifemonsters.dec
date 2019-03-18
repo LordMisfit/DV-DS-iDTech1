@@ -3811,12 +3811,12 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 				A_GiveInventory("QuestItem23",1,AAPTR_PLAYER1); // Oracle dead
 				
 				// If bishop is dead, mark Oracle as dead.
-				if(CountInv("QuestItem21",AAPTR_PLAYER1) > 0)
+				if (CountInv("QuestItem21",AAPTR_PLAYER1) > 0)
 				{
 					A_GiveInventory("QuestItem22",1,AAPTR_PLAYER1); // Oracle dead
 				}
 	
-				if(CountInv("QuestItem24",AAPTR_PLAYER1) > 0) // If Macil is already dead...
+				if (CountInv("QuestItem24",AAPTR_PLAYER1) > 0) // If Macil is already dead...
 				{
 					A_PlaySound("svox/voc85",2,1.0,0,ATTN_NONE);
 					A_GiveInventory("Sigil5",1,AAPTR_PLAYER1);
@@ -3922,7 +3922,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 				A_PrintBold("MACIL HAS BEEN PUT OUT OF HIS MISERY!");
 				A_GiveInventory("QuestItem24",1,AAPTR_PLAYER1); // Oracle dead
 				
-				if(CountInv("QuestItem23",AAPTR_PLAYER1) > 0) // If Oracle is already dead...
+				if (CountInv("QuestItem23",AAPTR_PLAYER1) > 0) // If Oracle is already dead...
 				{
 					A_GiveInventory("Sigil4",1,AAPTR_PLAYER1);
 				}
@@ -3931,7 +3931,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 					A_GiveInventory("Sigil3",1,AAPTR_PLAYER1);
 				}
 	
-				if(CountInv("QuestItem25",AAPTR_PLAYER1) > 0) // If Converter was destroyed
+				if (CountInv("QuestItem25",AAPTR_PLAYER1) > 0) // If Converter was destroyed
 				{
 					A_PlaySound("svox/voc106",2,1.0,0,ATTN_NONE);
 					SendToCommunicator(106,0,0,0); // Back to the factory for another Sigil!
@@ -4035,7 +4035,7 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 				A_GiveInventory("QuestItem26",1,AAPTR_PLAYER1); // Loremaster dead
 				ACS_NamedExecuteAlways("StrifeComboUpgrade",0,1);
 
-				if(CountInv("QuestItem24",AAPTR_PLAYER1) > 0) // If Oracle is already dead...
+				if (CountInv("QuestItem24",AAPTR_PLAYER1) > 0) // If Oracle is already dead...
 				{
 					A_GiveInventory("Sigil5",1,AAPTR_PLAYER1);
 					A_GiveInventory("SigilComplete",1,AAPTR_PLAYER1);

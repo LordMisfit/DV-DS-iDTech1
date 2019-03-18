@@ -512,7 +512,7 @@ conversation
 			cost
 			{
 				item = 168; // Coin
-				amount = 450;
+				amount = 125;
 			}
 			displaycost = true;
 			yesmessage = "THANK YOU. ANYTHING ELSE?";

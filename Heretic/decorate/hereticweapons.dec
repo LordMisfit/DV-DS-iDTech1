@@ -383,7 +383,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				CallACS("StartTensionCountDown");
 			
 				A_GetPlayerAttackDamage(29,1);
-				A_SpreadAuraFireBullets(5.625,0,1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,16384,"",0,0,1,"GoldWandAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,16384,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWND D 3
@@ -496,7 +496,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 				CallACS("StartTensionCountDown");
 			
 				A_GetPlayerAttackDamage(29,1);
-				A_SpreadAuraFireBullets(5.625,0,1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,0,"",0,0,1,"GoldWandAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, (CountInv("FinalDamageDealt",AAPTR_PLAYER1)), "GoldWandPuff1New",FBF_NORANDOM,FBF_USEAMMO|FBF_NORANDOM,0,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWN2 E 3
@@ -1048,7 +1048,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 				CallACS("StartTensionCountDown");	
 				A_PlaySound("weapons/blastershoot",1);
 				A_GetPlayerAttackDamage(27,1);
-				A_SpreadAuraFireBullets(5.625,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(14),A_GetHitScanYSpread(14),1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FBLS CB 2
 			{
@@ -1141,7 +1141,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 				CallACS("StartTensionCountDown");
 				A_PlaySound("weapons/blastershoot",1);
 				A_GetPlayerAttackDamage(27,1);
-				A_SpreadAuraFireBullets(5.625,0,1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(14),A_GetHitScanYSpread(14),1,(CountInv("FinalDamageDealt",AAPTR_PLAYER1)),"BlasterPuffNew",FBF_NORANDOM,FBF_NORANDOM,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FDBL FG 2
 			{

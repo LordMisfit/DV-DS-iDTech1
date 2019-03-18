@@ -1715,7 +1715,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	Weapon.Kickback 38
 	Weapon.YAdjust 0
 	Weapon.AmmoUse1 1
-	Weapon.AmmoUse2 1
+	Weapon.AmmoUse2 0
 	Weapon.AmmoGive 2
 	Weapon.AmmoType1 "PhoenixRodAmmo"
 	Weapon.AmmoType2 "PhoenixRodAmmo"
@@ -1795,9 +1795,34 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 		AltFire:
 			TNT1 A 0
 			{
-				A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1);
-				if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
-				return state("");
+				if (CountInv("RandomInfiniteAmmo",AAPTR_PLAYER1) > 0)
+				{
+					A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1);
+					if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+					return state("");
+				}
+				else
+				{
+					if (CountInv("PhoenixRodAmmo",AAPTR_PLAYER1) >= 1) 
+					{
+						A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1);
+						if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+						return state("");
+					}
+					else
+					{
+						if (CountInv("FlameCount",AAPTR_PLAYER1) >= 1) 
+						{
+							A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1);
+							if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+							return state("");
+						}
+						else
+						{
+							return state("Ready");
+						}
+					}
+				}
 			}
 			PHNX B 3 // A_InitPhoenixPL2
 			{
@@ -1821,7 +1846,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				}
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_FlameCount(1,-1);
-				A_FlameCount(2);
+				A_FlameCount(2,350);
 			}
 			PHNX B 4 
 			{
@@ -1835,7 +1860,6 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
-				A_TakeInventory("PhoenixRodAmmo",1,TIF_NOTAKEINFINITE,AAPTR_PLAYER1);
 				A_StopSound(CHAN_WEAPON);
 			}
 			Goto Ready
@@ -1872,7 +1896,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	Weapon.Kickback 38
 	Weapon.YAdjust 0
 	Weapon.AmmoUse1 1
-	Weapon.AmmoUse2 1
+	Weapon.AmmoUse2 0
 	Weapon.AmmoGive 2
 	Weapon.AmmoType1 "PhoenixRodAmmo"
 	Weapon.AmmoType2 "PhoenixRodAmmo"
@@ -1946,9 +1970,34 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1);
-				if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
-				return state("");
+				if (CountInv("RandomInfiniteAmmo",AAPTR_PLAYER1) > 0)
+				{
+					A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1);
+					if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+					return state("");
+				}
+				else
+				{
+					if (CountInv("PhoenixRodAmmo",AAPTR_PLAYER1) >= 2) 
+					{
+						A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1);
+						if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+						return state("");
+					}
+					else
+					{
+						if (CountInv("DualFlameCount",AAPTR_PLAYER1) >= 1) 
+						{
+							A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1);
+							if (CountInv("CanUseManaAttack", AAPTR_PLAYER1) == 0) { return state("Ready"); }
+							return state("");
+						}
+						else
+						{
+							return state("Ready");
+						}
+					}
+				}
 			}
 			PHND B 3 // A_InitPhoenixPL2
 			{
@@ -1975,7 +2024,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
 				A_FlameCount(1,-1);
-				A_FlameCount(2);
+				A_FlameCount(2,350);
 			}
 			PHND B 4 
 			{
@@ -1990,7 +2039,6 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 2) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
-				A_TakeInventory("PhoenixRodAmmo",2,TIF_NOTAKEINFINITE,AAPTR_PLAYER1);
 				A_StopSound(CHAN_WEAPON);
 			}
 			Goto Ready

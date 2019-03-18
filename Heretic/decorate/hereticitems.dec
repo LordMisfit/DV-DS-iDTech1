@@ -23,6 +23,18 @@ actor RandomHereticWeapon : RandomSpawner2 26906
 	DropItem "DSparilStaff", 255, 1
 }
 
+actor RandomHereticWeapon2 : RandomSpawner2 26907
+{
+	+DONTGIB
+	DropItem "GoldWandNew", 255, 32
+	DropItem "CrossbowNew", 255, 30
+	DropItem "SuperCrossbowNew", 255, 30
+	DropItem "DragonClawNew", 255, 30
+	DropItem "HellStaffNew", 255, 30
+	DropItem "PhoenixRodNew", 255, 30
+	DropItem "FiremaceNew", 255, 30
+}
+
 ACTOR ArtiTimeBombNew replaces ArtiTimeBomb
 {
 	Radius 16

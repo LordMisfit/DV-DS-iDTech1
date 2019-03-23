@@ -904,7 +904,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 	}
 }
 
-ACTOR RipperNew : AetheriusProjectileZSC
+ACTOR RipperNew : RipperBase
 {
 	DamageType "Magic" 
 	Radius 8
@@ -947,7 +947,7 @@ ACTOR BlasterPuffNew : AetheriusProjectileZSC
 			Stop
 	}
 }
-ACTOR BlasterFX1New : AetheriusFastProjectileZSC 
+ACTOR BlasterFX1New : BlasterFX1Base 
 {
 	Radius 12
 	Height 8
@@ -967,17 +967,7 @@ ACTOR BlasterFX1New : AetheriusFastProjectileZSC
 			ACLO EEEEEEEE 1 { A_GetPlayerAttackDamage(28,0); }
 			Loop
 		Death:
-			FX18 A 3 Bright
-			{
-				A_CustomMissile("RipperNew",0,0,  0,6);
-				A_CustomMissile("RipperNew",0,0, 45,6);
-				A_CustomMissile("RipperNew",0,0, 90,6);
-				A_CustomMissile("RipperNew",0,0,135,6);
-				A_CustomMissile("RipperNew",0,0,180,6);
-				A_CustomMissile("RipperNew",0,0,225,6);
-				A_CustomMissile("RipperNew",0,0,270,6);
-				A_CustomMissile("RipperNew",0,0,315,6);
-			}
+			FX18 A 3 Bright A_SpawnRippers("RipperNew")
 			FX18 B 3 Bright
 			FX18 CDEFG 4 Bright
 			Stop

@@ -57,7 +57,11 @@ ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 	States
 	{
 		Spawn:
-			AROW A 0 NoDelay { A_GetPlayerAttackDamage(25,0); }
+			AROW A 0 NoDelay 
+			{ 
+				A_GetPlayerAttackDamage(25,0); 
+				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+			}
 		Idle:
 			AROW A 10 A_LoopActiveSound
 			Loop
@@ -86,7 +90,11 @@ ACTOR PoisonBoltNew : AetheriusProjectileZSC replaces PoisonBolt
 	States
 	{
 		Spawn:
-			ARWP A 0 NoDelay { A_GetPlayerAttackDamage(26,0); }
+			ARWP A 0 NoDelay 
+			{ 
+				A_GetPlayerAttackDamage(26,0); 
+				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+			}
 		Idle:
 			ARWP A 10 A_LoopActiveSound
 			Loop

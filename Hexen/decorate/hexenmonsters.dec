@@ -3762,23 +3762,70 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			SSPT [ 1 A_FreezeDeathChunks
 			Wait
 		Walk:
-			SSPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
-			SSPT J 5 A_SerpentCheckForAttack
+			SSPT IJI 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_Chase("Attack", "None", CHF_NIGHTMAREFAST);
+			}
+			SSPT J 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentCheckForAttack;
+			}
 			Goto Dive
 		Hump:
-			SSPT H 3 A_SerpentUnHide
-			SSPT EFGEF 3 A_SerpentRaiseHump
+			SSPT H 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentUnHide;
+			}
+			SSPT EFGEF 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentRaiseHump;
+			}
 			SSPT GEF 3
-			SSPT GEFGE 3 A_SerpentLowerHump
-			SSPT F 3 A_SerpentHide
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			SSPT GEFGE 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentLowerHump;
+			}
+			SSPT F 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
+			}
 			Goto See
 		Attack:
-			SSPT K 6 A_FaceTarget
-			SSPT L 5 A_SerpentChooseAttack
+			SSPT K 6 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			SSPT L 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentChooseAttack;
+			}
 			Goto MeleeAttack
 		MeleeAttack:
 			SSPT N 5 
 			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				
 				A_CrisisMeleeAttack(5*random(1,8));
@@ -3878,19 +3925,65 @@ ACTOR IceStalker : StalkerNew
 			goto Dive
 		Dive:
 			ISDV ABC 4
-			ISDV D 4 A_UnSetShootable
-			ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			}
+			ISDV D 4 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_UnSetShootable;
+			}
+			ISDV E 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_PlaySoundEx("SerpentActive", "Body");
+			}
 			ISDV F 3
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
 			ISDV GH 4
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			}
 			ISDV I 3
-			ISDV J 3 A_SerpentHide
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISDV J 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
+			}
 			Goto See
 		Melee:
+			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
 			ISPT A 1 A_UnHideThing
 			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
-			ISPT B 3 A_SetShootable
+			ISPT B 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SetShootable;
+			}
 			ISPT C 3
-			ISPT D 4 A_SerpentCheckForAttack
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISPT D 4 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_SerpentCheckForAttack;
+			}
 			Goto Dive
 		Death:
 		XDeath:
@@ -3900,23 +3993,70 @@ ACTOR IceStalker : StalkerNew
 			ISPT [ 1 A_IceGuyDie
 			Stop
 		Walk:
-			ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
-			ISPT J 5 A_SerpentCheckForAttack
+			ISPT IJI 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_Chase("Attack", "None", CHF_NIGHTMAREFAST);
+			}
+			ISPT J 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentCheckForAttack;
+			}
 			Goto Dive
 		Hump:
-			ISPT H 3 A_SerpentUnHide
-			ISPT EFGEF 3 A_SerpentRaiseHump
+			ISPT H 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentUnHide;
+			}
+			ISPT EFGEF 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentRaiseHump;
+			}
 			ISPT GEF 3
-			ISPT GEFGE 3 A_SerpentLowerHump
-			ISPT F 3 A_SerpentHide
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISPT GEFGE 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentLowerHump;
+			}
+			ISPT F 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
+			}
 			Goto See
 		Attack:
-			ISPT K 6 A_FaceTarget
-			ISPT L 5 A_SerpentChooseAttack
+			ISPT K 6 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			ISPT L 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentChooseAttack;
+			}
 			Goto MeleeAttack
 		MeleeAttack:
 			ISPT N 5 
 			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				
 				A_CrisisMeleeAttack(random(15,30));
@@ -3981,23 +4121,72 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			goto Dive
 		Dive:
 			ISDV ABC 4
-			ISDV D 4 A_UnSetShootable
-			ISDV E 3 A_PlaySoundEx("SerpentActive", "Body")
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			}
+			ISDV D 4 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_UnSetShootable;
+			}
+			ISDV E 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_PlaySoundEx("SerpentActive", "Body");
+			}
 			ISDV F 3
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
 			ISDV GH 4
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+			}
 			ISDV I 3
-			ISDV J 3 A_SerpentHide
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISDV J 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
+			}
 			Goto See
 		Melee:
+			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
 			ISPT A 1 A_UnHideThing
 			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
-			ISPT B 3 A_SetShootable
+			ISPT B 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SetShootable;
+			}
 			ISPT C 3
-			ISPT D 4 A_SerpentCheckForAttack
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISPT D 4 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(2); }
+				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				A_SerpentCheckForAttack;
+			}
 			Goto Dive
 		Missile:
 			ISPT N 5 
 			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, 10, 0, 1);
 				A_CrisisSpawnProjectile("IceGuyFXNew", "IceGuyFXCrisis", 32, -10, 0, 1);
@@ -4011,23 +4200,70 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			ISPT [ 1 A_IceGuyDie
 			Stop
 		Walk:
-			ISPT IJI 5 A_Chase("Attack", "None", CHF_NIGHTMAREFAST)
-			ISPT J 5 A_SerpentCheckForAttack
+			ISPT IJI 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_Chase("Attack", "None", CHF_NIGHTMAREFAST);
+			}
+			ISPT J 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentCheckForAttack;
+			}
 			Goto Dive
 		Hump:
-			ISPT H 3 A_SerpentUnHide
-			ISPT EFGEF 3 A_SerpentRaiseHump
+			ISPT H 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentUnHide;
+			}
+			ISPT EFGEF 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentRaiseHump;
+			}
 			ISPT GEF 3
-			ISPT GEFGE 3 A_SerpentLowerHump
-			ISPT F 3 A_SerpentHide
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+			}
+			ISPT GEFGE 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentLowerHump;
+			}
+			ISPT F 3 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SerpentHide;
+			}
 			Goto See
 		Attack:
-			ISPT K 6 A_FaceTarget
-			ISPT L 5 A_SerpentChooseAttack
+			ISPT K 6 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			ISPT L 5 
+			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SerpentChooseAttack;
+			}
 			Goto MeleeAttack
 		MeleeAttack:
 			ISPT N 5 
 			{
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 				
 				A_CrisisMeleeAttack(random(15,30));

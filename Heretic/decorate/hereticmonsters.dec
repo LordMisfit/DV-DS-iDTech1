@@ -741,6 +741,7 @@ actor MummyNew : AetheriusMonsterZSC // replaces Mummy
 	ActiveSound "mummy/active"
 	HitObituary "%o was smashed by a golem."
 	DropItem "GoldWandAmmo", 84, 3
+	DropItem "GoldWandHefty", 8, 15
 
 	states
 	{
@@ -935,6 +936,7 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 	Obituary "$OB_MUMMYLEADER"
 	HitObituary "%o was smashed by a golem."
 	DropItem "GoldWandAmmo", 84, 3
+	DropItem "GoldWandHefty", 8, 15
 
 	states
 	{
@@ -1437,6 +1439,7 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 	Obituary "$OB_BONEKNIGHT"
 	HitObituary "$OB_BONEKNIGHTHIT"
 	DropItem "CrossbowAmmo", 84, 5
+	DropItem "CrossbowHefty", 8, 25
 
 	States
 	{
@@ -1950,6 +1953,7 @@ ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 	Obituary "$OB_WIZARD"
 	HitObituary "$OB_WIZARDHIT"
 	DropItem "BlasterAmmo", 84, 10
+	DropItem "BlasterHefty", 8, 50
 	DropItem "ArtiTomeOfPower", 4, 0
 	Obituary "%o was cursed by a Disciple of D'Sparil."
 	HitObituary "%o was scratched by a Disciple of D'Sparil."
@@ -2176,7 +2180,12 @@ ACTOR Banshee : AetheriusMonsterZSC
 	MeleeSound "Banshee/Raise"
 	MONSTER
 	Obituary "%o Heard The Banshee's Wail"
+	DropItem "BlasterAmmo", 42, 10
+	DropItem "BlasterHefty", 4, 50
+	DropItem "BlasterAmmo", 84, 10
+	DropItem "BlasterHefty", 8, 50
 	DropItem "BlasterAmmo", 128, 10
+	DropItem "BlasterHefty", 13, 50
 	DropItem "ArtiTomeOfPower", 8, 0    
 
 	States
@@ -2483,6 +2492,7 @@ ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 	Obituary "$OB_IRONLICH"
 	HitObituary "$OB_IRONLICHHIT"
 	DropItem "BlasterAmmo", 84, 10
+	DropItem "BlasterHefty", 8, 50
 	DropItem "ArtiEgg", 51, 0
 
 	States
@@ -2708,7 +2718,11 @@ ACTOR Goldlich : IronlichNew 31044
 	Translation "0:17=112:121", "18:35=137:144", "36:42=116:121", "43:51=137:144", "52:58=114:121", "59:65=137:144"
 	Obituary "%o was annihilated by the goldlich's power."
 	Species "GoldLich"
+	DropItem "BlasterAmmo", 84, 50
+	DropItem "BlasterAmmo", 8, 50
 	DropItem "BlasterHefty", 84, 50
+	DropItem "BlasterHefty", 8, 50
+	DropItem "ArtiEgg", 51, 0
 	DropItem "ArtiEgg", 51, 0
 
 	States
@@ -2973,6 +2987,16 @@ ACTOR BloodLich : AetheriusMonsterZSC
 	DeathSound "ironlich/death"
 	ActiveSound "ironlich/active"
 	Obituary "%o was reduced to a pile of ash by a Blood Lich."
+	DropItem "BlasterAmmo", 21, 50
+	DropItem "BlasterAmmo", 2, 50
+	DropItem "BlasterAmmo", 84, 50
+	DropItem "BlasterAmmo", 8, 50
+	DropItem "BlasterHefty", 21, 50
+	DropItem "BlasterHefty", 2, 50
+	DropItem "BlasterHefty", 84, 50
+	DropItem "BlasterHefty", 8, 50
+	DropItem "ArtiEgg", 51, 0
+	DropItem "ArtiEgg", 51, 0
 
 	States
 	{
@@ -3098,7 +3122,8 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 	DeathSound "clink/death"
 	ActiveSound "clink/active"
 	Obituary "$OB_CLINK"
-	DropItem "SkullRodAmmo", 84, 20	
+	DropItem "SkullRodAmmo", 84, 20
+	DropItem "SkullRodHefty", 8, 100
 
 	States
 	{
@@ -3346,6 +3371,7 @@ ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 	ActiveSound "beast/active"
 	Obituary "$OB_BEAST"
 	DropItem "CrossbowAmmo", 84, 10
+	DropItem "CrossbowHefty", 8, 50
 
 	States
 	{
@@ -3852,9 +3878,17 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 	DeathSound "minotaur/death"
 	ActiveSound "minotaur/active"
 	DropItem "ArtiSuperHealth", 51
-	DropItem "PhoenixRodAmmo", 84, 10
-	DropItem "PhoenixRodHefty", 84
 	DropItem "ArtiSuperHealth", 51
+	DropItem "ArtiSuperHealth", 51
+	DropItem "ArtiSuperHealth", 51
+	DropItem "PhoenixRodAmmo", 168, 2
+	DropItem "PhoenixRodHefty", 17, 10
+	DropItem "PhoenixRodAmmo", 84, 2
+	DropItem "PhoenixRodHefty", 8, 10
+	DropItem "PhoenixRodAmmo", 42, 2
+	DropItem "PhoenixRodHefty", 4, 10
+	DropItem "PhoenixRodAmmo", 21, 2
+	DropItem "PhoenixRodHefty", 2, 10
 
 	States
 	{
@@ -4096,11 +4130,10 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 	DeathSound "snake/death"
 	ActiveSound "snake/active"
 	Obituary "$OB_SNAKE"
-	DropItem "PhoenixRodAmmoNew", 84
-	DropItem "PhoenixRodAmmoNew", 84
-	DropItem "PhoenixRodAmmoNew", 84
-	DropItem "PhoenixRodAmmoNew", 84
-	DropItem "PhoenixRodAmmoNew", 84
+	DropItem "PhoenixRodAmmo", 84
+	DropItem "PhoenixRodAmmo", 84
+	DropItem "PhoenixRodHefty", 8
+	DropItem "PhoenixRodHefty", 8
 	Species "Ophidian"
 
 	States
@@ -4218,6 +4251,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 	Species "HellNoble"
 	+DONTHARMSPECIES
 	DropItem "PhoenixRodAmmo", 132, 5
+	DropItem "PhoenixRodHefty", 13, 25
+	DropItem "PhoenixRodAmmo", 44, 5
+	DropItem "PhoenixRodHefty", 4, 25
+	DropItem "PhoenixRodAmmo", 15, 5
+	DropItem "PhoenixRodHefty", 2, 25
 
 	States
 	{

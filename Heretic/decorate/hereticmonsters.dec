@@ -4421,6 +4421,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 	+FLOORCLIP
 	+DONTGIB
 	+AVOIDMELEE
+	+NOFEAR
 	SeeSound "dsparilserpent/sight"
 	AttackSound "dsparilserpent/attack"
 	PainSound "dsparilserpent/pain"
@@ -4562,6 +4563,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 	+FLOORCLIP
 	+BOSSDEATH
 	+AVOIDMELEE
+	+NOFEAR
 	SeeSound "dsparil/sight"
 	AttackSound "dsparil/attack"
 	PainSound "dsparil/pain"

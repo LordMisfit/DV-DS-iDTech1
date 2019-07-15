@@ -5545,6 +5545,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 	+DONTMORPH
 	+NOTARGET
 	+NOICEDEATH
+	+NOFEAR
 	SeeSound "KoraxSight"
 	AttackSound "KoraxAttack"
 	PainSound "KoraxPain"

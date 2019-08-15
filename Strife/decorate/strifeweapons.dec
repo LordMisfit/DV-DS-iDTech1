@@ -131,18 +131,20 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 		Deselect:
 			XBOW A 1 
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			XBOW A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -352,18 +354,18 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 		Deselect:
 			XBOW H 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			XBOW H 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -620,10 +622,10 @@ ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
 			RIFG A 1 A_WeaponReady
 			Loop
 		Deselect:
-			RIFG B 1 A_DVDSLower(18)
+			RIFG B 1 A_Lower(18)
 			Loop
 		Select:
-			RIFG A 1 A_DVDSRaise(18)
+			RIFG A 1 A_Raise(18)
 			Loop
 		Fire:
 			RIFF AB 3 A_FireAssaultGun
@@ -757,10 +759,10 @@ ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
 			MMIS A 1 A_WeaponReady
 			Loop
 		Deselect:
-			MMIS A 1 A_DVDSLower(18)
+			MMIS A 1 A_Lower(18)
 			Loop
 		Select:
-			MMIS A 1 A_DVDSRaise(18)
+			MMIS A 1 A_Raise(18)
 			Loop
 		Fire:
 			MMIS A 4 A_FireMiniMissile
@@ -808,10 +810,10 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 			FLMT AB 3 A_WeaponReady
 			Loop
 		Deselect:
-			FLMT A 1 A_DVDSLower(18)
+			FLMT A 1 A_Lower(18)
 			Loop
 		Select:
-			FLMT A 1 A_DVDSRaise(18)
+			FLMT A 1 A_Raise(18)
 			Loop
 		Fire:
 			FLMF A 2 A_FireFlamer
@@ -920,10 +922,10 @@ ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLau
 			GREN A 1 A_WeaponReady
 			Loop
 		Deselect:
-			GREN A 1 A_DVDSLower(18)
+			GREN A 1 A_Lower(18)
 			Loop
 		Select:
-			GREN A 1 A_DVDSRaise(18)
+			GREN A 1 A_Raise(18)
 			Loop
 		Fire:
 			GREN A 5 A_FireGrenade("HEGrenade", -90, "Flash")
@@ -950,10 +952,10 @@ ACTOR StrifeGrenadeLauncher2New : StrifeGrenadeLauncher2 replaces StrifeGrenadeL
 			GREN D 1 A_WeaponReady
 			Loop
 		Deselect:
-			GREN D 1 A_DVDSLower(18)
+			GREN D 1 A_Lower(18)
 			Loop
 		Select:
-			GREN D 1 A_DVDSRaise(18)
+			GREN D 1 A_Raise(18)
 			Loop
 		Fire:
 			GREN D 5 A_FireGrenade("PhosphorousGrenade", -90, "Flash")
@@ -1062,10 +1064,10 @@ ACTOR MaulerNew : Mauler replaces Mauler
 			MAUL FGHA 6 A_WeaponReady
 			Loop
 		Deselect:
-			MAUL A 1 A_DVDSLower(18)
+			MAUL A 1 A_Lower(18)
 			Loop
 		Select:
-			MAUL A 1 A_DVDSRaise(18)
+			MAUL A 1 A_Raise(18)
 			Loop
 		Fire:
 			BLSF A 5 Bright A_FireMauler1 // see MaulerPuff
@@ -1087,10 +1089,10 @@ ACTOR Mauler2New : Mauler2 replaces Mauler2
 			MAUL IJKL 7 A_WeaponReady
 			Loop
 		Deselect:
-			MAUL I 1 A_DVDSLower(18)
+			MAUL I 1 A_Lower(18)
 			Loop
 		Select:
-			MAUL I 1 A_DVDSRaise(18)
+			MAUL I 1 A_Raise(18)
 			Loop
 		Fire:
 			MAUL I 20 A_FireMauler2Pre
@@ -1129,7 +1131,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLA A 1 Bright 
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1137,7 +1140,7 @@ Actor NNSigil : StrifeWeaponBase
 			SGLB A 1 Bright 
 			{
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1145,7 +1148,7 @@ Actor NNSigil : StrifeWeaponBase
 			SGLC A 1 Bright 
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1153,7 +1156,7 @@ Actor NNSigil : StrifeWeaponBase
 			SGLD A 1 Bright
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1161,7 +1164,7 @@ Actor NNSigil : StrifeWeaponBase
 			SGLE A 1 Bright
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1177,7 +1180,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLA A 1 Bright
 			{ 
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1185,7 +1189,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLB A 1 Bright
 			{ 
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1193,7 +1198,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLC A 1 Bright
 			{ 
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1201,7 +1207,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLD A 1 Bright
 			{ 
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1209,7 +1216,8 @@ Actor NNSigil : StrifeWeaponBase
 			SGLE A 1 Bright
 			{ 
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop

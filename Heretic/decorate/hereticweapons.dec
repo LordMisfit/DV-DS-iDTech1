@@ -361,18 +361,20 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 		Deselect:
 			GWND A 1 
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			GWND A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -472,18 +474,20 @@ ACTOR DualGoldWandNew : GoldWandNew
 		Deselect:
 			GWN2 A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			GWN2 A 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -680,18 +684,20 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 		Deselect:
 			CRBW AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			CRBW AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -804,18 +810,20 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 		Deselect:
 			CRBD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			CRBD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1021,18 +1029,20 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 		Deselect:
 			FBLS A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			FBLS A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1112,18 +1122,20 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 		Deselect:
 			FDBL A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			FDBL A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1307,18 +1319,20 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 		Deselect:
 			HROD A 1 
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			HROD A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1409,18 +1423,20 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 		Deselect:
 			DHRD A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DHRD A 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1771,18 +1787,20 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 		Deselect:
 			PHNX A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			PHNX A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1942,18 +1960,20 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 		Deselect:
 			PHND A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			PHND A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2233,18 +2253,20 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 		Deselect:
 			MACE A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			MACE A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2345,18 +2367,20 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 		Deselect:
 			DMAC A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DMAC A 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2471,18 +2495,20 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 		Deselect:
 			CRB2 AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			loop
 		Select:
 			CRB2 AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			loop
@@ -2626,18 +2652,20 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 		Deselect:
 			SCRD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			loop
 		Select:
 			SCRD AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			loop
@@ -2893,18 +2921,20 @@ actor DSparilStaff : HereticWeaponBase 32123
 		Deselect:
 			DSTF A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DSTF A 1 
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -3005,18 +3035,20 @@ actor DualDSparilStaff : HereticWeaponBase
 		Deselect:
 			DSTD A 1
 			{
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DSTD A 1
 			{
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(ACS_NamedExecuteWithResult("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop

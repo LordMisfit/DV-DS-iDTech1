@@ -357,6 +357,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -366,6 +367,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
 				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1141,6 +1143,7 @@ Actor NNSigil : StrifeWeaponBase
 			{
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1149,6 +1152,7 @@ Actor NNSigil : StrifeWeaponBase
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1157,6 +1161,7 @@ Actor NNSigil : StrifeWeaponBase
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1165,6 +1170,7 @@ Actor NNSigil : StrifeWeaponBase
 			{ 
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
 				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
+				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
 				A_DVDSLower(18);
 			}
 			Loop

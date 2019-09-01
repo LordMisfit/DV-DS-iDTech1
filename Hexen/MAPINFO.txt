@@ -3,7 +3,7 @@
 gameinfo
 {
  InfoPage = "HELP1", "HELP2"
- AddInfoPage = "GENHELP", "HINTHELP", "HINTHEL2", "STATHELP", "FLORA-1", "FLORA-2", "FLORA-3", "FLORA-4"
+ AddInfoPage = "GENHELP", "HINTHELP", "HINTHEL2", "STATHELP", "FLORA-1", "FLORA-2", "FLORA-3", "FLORA-4", "FLORA-5"
  TitlePage = "TITLE"
  CreditPage = "CREDIT"
  borderflat = "FIGHT1"

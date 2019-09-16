@@ -126,7 +126,7 @@ conversation
 		}
 		choice
 		{
-			text = "6 DIARIS ARROWS";
+			text = "DIARIS ARROWS";
 			cost
 			{
 				item = 168; // Coin
@@ -141,7 +141,7 @@ conversation
 		}
 		choice
 		{
-			text = "QUIVER OF 30 ARROWS";
+			text = "QUIVER OF DIARIS ARROWS";
 			cost
 			{
 				item = 168; // Coin

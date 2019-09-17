@@ -46,7 +46,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 //		MNTR AB 10 A_MinotaurLook
 			goto Spawn+1
 		Roam:
-			MNTR A 0 A_RefreshStealthInfo(0)
+			MNTR A 0
 			MNTR ABCD 5
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
@@ -57,7 +57,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			}
 			Loop
 		See:
-			MNTR A 0 A_RefreshStealthInfo(0)
+			MNTR A 0
 			MNTR ABCD 5
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
@@ -71,7 +71,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			TNT1 A 0 
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10 
 			{
@@ -101,7 +100,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			TNT1 A 0 
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10
 			{
@@ -129,7 +127,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			TNT1 A 0 
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			MNTR V 10 
 			{
@@ -159,7 +156,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			TNT1 A 0 
 			{
 				A_SetInventory("MaulotaurChargeDefense",0);
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			MNTR X 12
 			{
@@ -172,7 +168,6 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 		Charge:
 			TNT1 A 0 
 			{
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 				SetDamage(7+(user_monsterlevel/45));
 				A_MonsterCrisisCheck; // Minotaur Charge
 				if (user_canusecrisisatk == 1) 
@@ -246,7 +241,7 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 			PIGY B 10 A_Look
 			goto Spawn+1
 		See:
-			PIGY A 0 A_RefreshStealthInfo(0)
+			PIGY A 0
 			PIGY ABCD 3
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
@@ -254,7 +249,7 @@ ACTOR PigNew : AetheriusMorphedMonster replaces Pig
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			PIGY A 5 A_FaceTarget
 			PIGY A 10 
 			{
@@ -324,7 +319,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			ETTN AA 10 A_Look
 			goto Spawn+1
 		See:
-			ETTN A 0 A_RefreshStealthInfo(0)
+			ETTN A 0
 			ETTN ABCD 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
@@ -333,7 +328,7 @@ ACTOR EttinNew : AetheriusMonsterZSC // replaces Ettin
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			ETTN EF 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
@@ -455,7 +450,7 @@ Actor EttinCommander : EttinNew
 			CETN AA 10 A_Look
 			goto Spawn+1
 		See:
-			CETN A 0 A_RefreshStealthInfo(0)
+			CETN A 0
 			CETN ABCD 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
@@ -475,7 +470,7 @@ Actor EttinCommander : EttinNew
 			CETN HH 7
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			CETN EF 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
@@ -493,7 +488,7 @@ Actor EttinCommander : EttinNew
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			CETN EF 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(4); }
@@ -588,7 +583,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			BORM A 10 A_Look
 			Loop
 		See:
-			BORM A 0 A_RefreshStealthInfo(0)
+			BORM A 0
 			BORM AABBCCDD 4
 			{
 				user_bormpainreact = 0;
@@ -597,7 +592,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			}
 			Loop
 		Missile:
-			BORM A 0 A_RefreshStealthInfo(1)
+			BORM A 0
 			TNT1 A 0 A_Jump(60,"Missile2")
 			TNT1 A 0 A_Jump(128,"Missile1b")
 			BORM EF 6
@@ -935,7 +930,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			CENT AB 10 A_Look
 			goto Spawn+1
 		See:
-			CENT A 0 A_RefreshStealthInfo(0)
+			CENT A 0
 			CENT ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
@@ -945,7 +940,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			CENT H 5 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -1137,7 +1132,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	States
 	{
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			CENT H 5 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -1160,7 +1155,7 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 		MissilePhase1:
 			CENT E 1
 			{
@@ -1372,7 +1367,7 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			FDMN EFG 10 Bright A_FloatLook(16)
 			Goto Spawn+3
 		See:
-			FDMN E 0 A_RefreshStealthInfo(0)
+			FDMN E 0
 			FDMN E 8 Bright
 			FDMN F 6 Bright
 			FDMN G 5 Bright
@@ -1382,7 +1377,7 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			FDMN HI 5 Bright
 			FDMN J 5 Bright A_UnSetInvulnerable
 		Chase:
-			TNT1 A 0 A_RefreshStealthInfo(0)
+			TNT1 A 0
 			FDMN ABC 5 Bright
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -1406,7 +1401,7 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			FDMN DDDD 6 Bright
 			Goto Chase
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			FDMN K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1504,7 +1499,7 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL EFG 10 Bright A_Look
 			Goto Spawn+3
 		See:
-			FDNL E 0 A_RefreshStealthInfo(0)
+			FDNL E 0
 			FDNL E 8 Bright
 			FDNL F 6 Bright
 			FDNL G 5 Bright
@@ -1515,7 +1510,7 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL J 5 Bright A_UnSetInvulnerable
 		Chase:
 			FDNL A 0 Bright A_UnsetInvulnerable
-			TNT1 A 0 A_RefreshStealthInfo(0)
+			TNT1 A 0
 			FDNL AABBCC 3 Bright
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -1538,7 +1533,7 @@ Actor FireDemonLeader : FireDemonNew
 			FDNL DDDD 3 Bright
 			Goto Chase
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			FDNL K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1673,7 +1668,7 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC EFG 10 Bright A_Look
 			Goto Spawn+3
 		See:
-			FDNC E 0 A_RefreshStealthInfo(0)
+			FDNC E 0
 			FDNC E 8 Bright
 			FDNC F 6 Bright
 			FDNC G 5 Bright
@@ -1684,7 +1679,7 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC J 5 Bright A_UnSetInvulnerable
 		Chase:
 			FDNC A 0 Bright A_UnsetInvulnerable
-			TNT1 A 0 A_RefreshStealthInfo(0)
+			TNT1 A 0
 			FDNC AABBCC 3 Bright
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -1707,7 +1702,7 @@ Actor FireDemonCommander : FireDemonNew
 			FDNC DDDD 3 Bright
 			Goto Chase
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			FDNC K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1844,7 +1839,7 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ EFG 10 Bright A_Look
 			Goto Spawn+3
 		See:
-			FDNQ E 0 A_RefreshStealthInfo(0)
+			FDNQ E 0
 			FDNQ E 8 Bright
 			FDNQ F 6 Bright
 			FDNQ G 5 Bright
@@ -1855,7 +1850,7 @@ Actor FireDemonQueen : FireDemonNew
 			FDNQ J 5 Bright A_UnSetInvulnerable
 		Chase:
 			FDNQ A 0 Bright A_UnsetInvulnerable
-			TNT1 A 0 A_RefreshStealthInfo(0)
+			TNT1 A 0
 			FDNQ AABBCC 3 Bright
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -1879,7 +1874,7 @@ Actor FireDemonQueen : FireDemonNew
 			Goto Chase
 		Missile:
 			TNT1 A 0 A_Jump(48,"Clone")
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			FDNQ K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1982,7 +1977,7 @@ actor FireDemonQueenClone : FireDemonQueen
 			FDNQ AAAAAAA 1 Bright A_FadeIn(0.10)
 			Goto Chase
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			FDNQ K 4 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
@@ -2079,7 +2074,7 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			BISH A 10 A_FloatLook(16)
 			goto Spawn+1
 		See:
-			BISH A 0 A_RefreshStealthInfo(0)
+			BISH A 0
 			BISH A 2
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
@@ -2149,7 +2144,7 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			BISH C 0
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			BISH ADE 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -2242,7 +2237,6 @@ Actor DarkDisciple : BishopNew
 		See:
 			HDIS A 0 
 			{
-				A_RefreshStealthInfo(0);
 				A_ChangeFlag("GHOST",0);
 				A_SetTranslucent(1,0);
 			}
@@ -2607,7 +2601,7 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 AB 10 A_FloatLook(8)
 			goto Spawn+1
 		See:
-			VAM1 A 0 A_RefreshStealthInfo(0)
+			VAM1 A 0
 			VAM1 A 2
 			{
 				A_BishopDecide;
@@ -2669,7 +2663,7 @@ ACTOR VampireDVDS : BishopNew
 			Goto See
 
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			VAM1 X 0 Bright A_Jump(96,"Missile2")
 			VAM1 X 8 Bright
 			{
@@ -3114,7 +3108,6 @@ Actor DarkPatriarch : BishopNew
 		See:
 			DPTR A 0 
 			{
-				A_RefreshStealthInfo(0);
 				//A_RadiusGive("PatriarchRadiusHeal", 256, RGF_MONSTERS, 1);
 			}
 			DPTR A 2 
@@ -3170,7 +3163,7 @@ Actor DarkPatriarch : BishopNew
 			DPTR A 0 A_SpawnItemEx("PatriarchBlur")
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DPTR A 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -3319,9 +3312,6 @@ Actor DarkPatriarchClone : DarkPatriarch
 			Loop
 		See:
 			DPTR A 0 
-			{
-				A_RefreshStealthInfo(0);
-			}
 			DPTR A 2 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
@@ -3373,7 +3363,7 @@ Actor DarkPatriarchClone : DarkPatriarch
 			DPTR A 0 A_SpawnItem("PatriarchBlurClone")
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DPTR A 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 360) { A_SetTics(1); }
@@ -3673,7 +3663,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			SSPT H 10 A_Look
 			goto Spawn+1
 		See:
-			SSPT H 0 A_RefreshStealthInfo(0)
+			SSPT H 0
 			SSPT HH 1 
 			{
 				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
@@ -3739,7 +3729,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			}
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			SSPT A 1 A_UnHideThing
 			SSPT A 1 
 			{
@@ -3878,7 +3868,7 @@ ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 	States
 	{
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			SSPT N 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -3924,7 +3914,7 @@ ACTOR IceStalker : StalkerNew
 			ISPT H 10 A_Look
 			goto Spawn+1
 		See:
-			ISPT H 0 A_RefreshStealthInfo(0)
+			ISPT H 0
 			ISPT HH 1 
 			{
 				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
@@ -3990,7 +3980,7 @@ ACTOR IceStalker : StalkerNew
 			}
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			ISPT A 1 A_UnHideThing
 			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
 			ISPT B 3 
@@ -4120,7 +4110,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			ISPT H 10 A_Look
 			goto Spawn+1
 		See:
-			ISPT H 0 A_RefreshStealthInfo(0)
+			ISPT H 0
 			ISPT HH 1 
 			{
 				A_Chase("Melee", "None", CHF_NIGHTMAREFAST|CHF_NOPLAYACTIVE);
@@ -4186,7 +4176,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			}
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			ISPT A 1 A_UnHideThing
 			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
 			ISPT B 3 
@@ -4335,7 +4325,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			DEMN AA 10 A_Look
 			goto Spawn+1
 		See:
-			DEMN A 0 A_RefreshStealthInfo(0)
+			DEMN A 0
 			DEMN ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -4357,7 +4347,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			DEMN EEEE 4
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEMN E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -4384,7 +4374,7 @@ ACTOR GreenChaosSerpentNew : AetheriusMonsterZSC // replaces Demon1
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEMN E 5 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -4488,7 +4478,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			DEM2 AA 10 A_Look
 			goto Spawn+1
 		See:
-			DEM2 A 0 A_RefreshStealthInfo(0)
+			DEM2 A 0
 			DEM2 ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -4510,7 +4500,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			DEM2 EEEE 4
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM2 E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -4537,7 +4527,7 @@ ACTOR BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM2 E 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -4738,7 +4728,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 			RDMN AA 10 A_Look
 			goto Spawn+1
 		See:
-			RDMN A 0 A_RefreshStealthInfo(0)
+			RDMN A 0
 			RDMN ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -4746,7 +4736,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			RDMN E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -4773,7 +4763,7 @@ Actor MagmaChaosSerpentNew : GreenChaosSerpentNew
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			RDMN E 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -4964,7 +4954,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			DEM4 AA 10 A_Look
 			goto Spawn+1
 		See:
-			DEM4 A 0 A_RefreshStealthInfo(0)
+			DEM4 A 0
 			DEM4 ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -4972,7 +4962,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM4 E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -4999,7 +4989,7 @@ Actor BlackChaosSerpentNew : BrownChaosSerpentNew
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM4 E 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -5110,7 +5100,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			DEM5 AA 10 A_Look
 			goto Spawn+1
 		See:
-			DEM5 A 0 A_RefreshStealthInfo(0)
+			DEM5 A 0
 			DEM5 ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -5118,7 +5108,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			}
 			Loop
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM5 E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -5145,7 +5135,7 @@ Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DEM5 E 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -5268,11 +5258,11 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			WRTH B 5 A_WraithInit
 			goto Look
 		Look:
-			WRTH A 0 A_RefreshStealthInfo(0)
+			WRTH A 0
 			WRTH AB 15 A_Look
 			Loop
 		See:
-			WRTH A 0 A_RefreshStealthInfo(0)
+			WRTH A 0
 			WRTH ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -5294,7 +5284,7 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			WRTH HH 6
 			Goto See
 		Melee:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			WRTH E 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -5318,7 +5308,7 @@ ACTOR WraithNew : AetheriusMonsterZSC replaces Wraith
 			}
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			WRTH EF 6
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
@@ -5399,18 +5389,18 @@ ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
 			TNT1 A 0 NoDelay 
 			Goto Look
 		Look:
-			WRTH A 0 A_RefreshStealthInfo(0)
+			WRTH A 0
 			WRTH AB 15 A_Look
 			Loop
 		See:
-			WRTH A 0 A_RefreshStealthInfo(0)
+			WRTH A 0
 			WRTH A 2 A_WraithRaiseInit
 			WRTH A 2 A_WraithRaise
 			WRTH A 2 A_FaceTarget
 			WRTH BB 2 A_WraithRaise
 			Goto See+2
 		Chase:
-			TNT1 A 0 A_RefreshStealthInfo(0)
+			TNT1 A 0
 			WRTH ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -5452,7 +5442,7 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 			ICEY A 10 A_IceGuyLook
 			goto Spawn+1
 		See:
-			ICEY A 0 A_RefreshStealthInfo(0)
+			ICEY A 0
 			ICEY A 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -5473,7 +5463,7 @@ ACTOR IceGuyNew : AetheriusMonsterZSC replaces IceGuy
 			ICEY A 1 A_DVDSPain
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			ICEY EF 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -5562,7 +5552,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			KORX A 5 A_Look
 			goto Spawn+1
 		See:
-			KORX A 0 A_RefreshStealthInfo(0)
+			KORX A 0
 			KORX AAA 3
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -5627,7 +5617,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			KORX HHH 5
 			Goto See
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			KORX E 2 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
@@ -5765,7 +5755,7 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 			DRAG D 10 A_Look
 			goto Spawn+1
 		See:
-			DRAG A 0 A_RefreshStealthInfo(0)
+			DRAG A 0
 			DRAG CB 5
 			DRAG A 5 A_DragonInitFlight
 			DRAG B 3 
@@ -5793,7 +5783,7 @@ ACTOR DragonNew : AetheriusMonsterZSC replaces Dragon
 			DRAG F 15
 			Goto See+4
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			DRAG E 8 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(4); }
@@ -5962,7 +5952,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			CLER A 5 A_Look
 			goto Spawn+1
 		See:
-			CLER A 0 A_RefreshStealthInfo(0)
+			CLER A 0
 			CLER ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -5986,7 +5976,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			Goto See
 		Melee:
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			CLER EF 8 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -6209,7 +6199,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			PLAY A 5 A_Look
 			goto Spawn+1
 		See:
-			PLAY A 0 A_RefreshStealthInfo(0)
+			PLAY A 0
 			PLAY ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -6233,7 +6223,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			Goto See
 		Melee:
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			PLAY E 8
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -6387,7 +6377,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			MAGE A 5 A_Look
 			goto Spawn+1
 		See:
-			MAGE A 0 A_RefreshStealthInfo(0)
+			MAGE A 0
 			MAGE ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
@@ -6411,7 +6401,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			Goto See
 		Melee:
 		Missile:
-			TNT1 A 0 A_RefreshStealthInfo(1) // makes a Stealth Monster become more visible
+			TNT1 A 0
 			MAGE E 8
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }

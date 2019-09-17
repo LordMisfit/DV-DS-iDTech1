@@ -87,7 +87,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			SORC A 0 
 			{
 				A_ShieldCheck();
-				A_RefreshStealthInfo(0);
 			}
 			SORC ABCD 5
 			{
@@ -143,7 +142,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			TNT1 A 0 
 			{
 				A_ShieldCheck();
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			SORC F 6 Bright
 			{
@@ -174,7 +172,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			TNT1 A 0 
 			{
 				A_ShieldCheck();
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			SORC E 6 Bright
 			{
@@ -203,7 +200,6 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			TNT1 A 0 
 			{
 				A_ShieldCheck();
-				A_RefreshStealthInfo(1); // makes a Stealth Monster become more visible
 			}
 			SORC E 2 Bright
 			{

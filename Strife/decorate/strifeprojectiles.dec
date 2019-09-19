@@ -229,19 +229,19 @@ ACTOR StrifeMaulerTracer2 : StrifeMaulerTracer
    
 ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 {
-Damage ((Random(1,4) * 2) * CallACS("CrisisMultiplier"))
-States
-{
-	Spawn:
-		TNT1 A 0 bright
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-		TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-		TNT1 A 1 bright A_SpawnItemEx("StrifeMaulerTracerTrail",0.0,0,0,0,0,0,0,128,0)
-		loop
+	Damage ((Random(1,4) * 2) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			TNT1 A 0 bright
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-12.5,0,0,0,0,0,0,128,0)
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-10.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-7.5,0,0,0,0,0,0,128,0)
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-5.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-2.5,0,0,0,0,0,0,128,0)
+			TNT1 A 1 bright A_SpawnItemEx("StrifeMaulerTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			loop
 	}
 }
 

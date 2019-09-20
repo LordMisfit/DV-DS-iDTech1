@@ -1818,7 +1818,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 		AltFire:
 			TNT1 A 0
 			{
-				if (CountInv("RandomInfiniteAmmo",AAPTR_PLAYER1) > 0)
+				if (A_WeaponCheckInfiniteAmmo > 0)
 				{
 					if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
 					return state("");
@@ -1989,7 +1989,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				if (CountInv("RandomInfiniteAmmo",AAPTR_PLAYER1) > 0)
+				if (A_WeaponCheckInfiniteAmmo > 0)
 				{
 					if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
 					return state("");

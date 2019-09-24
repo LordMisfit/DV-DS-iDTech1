@@ -61,7 +61,7 @@ episode e1ma
 //*********************
 gamedefaults
 {
- KeepFullInventory
+  KeepFullInventory
 }
 
 map E1MA "Skip Map"

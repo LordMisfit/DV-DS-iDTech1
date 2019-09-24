@@ -405,6 +405,7 @@ ACTOR EttinGhostNew : EttinNew replaces EttinMash
 	+NOICEDEATH
 	RenderStyle Translucent
 	Alpha 0.4
+	DamageFactor "Eldritch", 0.4
 
 	States
 	{
@@ -1097,6 +1098,7 @@ ACTOR CentaurGhostNew : CentaurNew replaces CentaurMash
 	+NOICEDEATH
 	RenderStyle Translucent
 	Alpha 0.4
+	DamageFactor "Eldritch", 0.4
 
 	States
 	{

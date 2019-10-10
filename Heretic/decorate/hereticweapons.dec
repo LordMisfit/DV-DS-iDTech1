@@ -1808,7 +1808,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 					A_SpreadAuraFireProjectileAoE("PhoenixFX1Seeking","PhoenixFX1NoAOESeeking",0,1,"PhoenixRodAmmo",0,0,0,0);
 				}
 
-				A_Recoil(A_GetRecoil(1));
+				A_GetWeaponShotRecoil(1);
 			}
 			PHNX DB 4
 			{
@@ -1979,7 +1979,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 					A_SpreadAuraFireProjectileAoE("PhoenixFX1Seeking","PhoenixFX1NoAOESeeking",-3,1,"PhoenixRodAmmo",-3,0,0,0);
 				}
 
-				A_Recoil(A_GetRecoil(2));
+				A_GetWeaponShotRecoil(2);
 			}
 			PHND DB 4
 			{

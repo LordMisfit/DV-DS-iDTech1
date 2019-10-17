@@ -98,7 +98,7 @@ class DSparilBase : AetheriusBossZSC
 		}
 	}
 
-	void A_Sor2Chase ()
+	void A_Sor2Chase()
 	{
 		if (special2)
 		{

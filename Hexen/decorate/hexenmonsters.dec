@@ -903,6 +903,7 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 	Painchance "Fist", 201 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 201 // Fist attacks have a +50% chance of stunning an enemy
+	DamageFactor "Plasma", 2
 	DamageFactor "Shock", 3
 	DamageFactor "Electric", 3
 	DamageFactor "Thunder", 3
@@ -1126,7 +1127,10 @@ ACTOR SlaughtaurNew : CentaurNew replaces CentaurLeader
 	RadiusDamageFactor 0.75
 	DamageFactor "Explosive", 0.75
 	DamageFactor "Magic", 1.1167
+	DamageFactor "Plasma", 2
 	DamageFactor "Thunder", 3
+	DamageFactor "Electric", 3
+	DamageFactor "Lightning", 3
 	DamageFactor "Crush", 8
 
 	Translation "81:96=85:92", "97:121=101:113", "0:32=231:235", "33:50=231:235"  // Dark Skin, Obsidian Armor

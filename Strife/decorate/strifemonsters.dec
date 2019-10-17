@@ -849,7 +849,10 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 	DamageFactor "Crush", 8
 	DamageFactor "Fire", 0.875
 	DamageFactor "Ice", 0.9375
+	DamageFactor "Plasma", 1.125
 	DamageFactor "Thunder", 1.25
+	DamageFactor "Electric", 1.25
+	DamageFactor "Lightning", 1.25
 	Speed 7
 	Radius 24
 	Height 64
@@ -1302,7 +1305,10 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
+	DamageFactor "Plasma", 1.25
 	DamageFactor "Thunder", 1.5
+	DamageFactor "Electric", 1.5
+	DamageFactor "Lightning", 1.5
 	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 5.6
 	Speed 8
@@ -1496,7 +1502,10 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 	DamageFactor "Crush", 5.6
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
+	DamageFactor "Plasma", 1.375
 	DamageFactor "Thunder", 1.75
+	DamageFactor "Electric", 1.75
+	DamageFactor "Lightning", 1.75
 	Speed 12
 	Radius 20
 	Height 60
@@ -1658,7 +1667,10 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
+	DamageFactor "Plasma", 1.375
 	DamageFactor "Thunder", 1.75
+	DamageFactor "Electric", 1.75
+	DamageFactor "Lightning", 1.75
 	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 3.2
 	Monster
@@ -1788,7 +1800,10 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 	DamageFactor "Crush", 10
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
+	DamageFactor "Plasma", 1.375
 	DamageFactor "Thunder", 1.75
+	DamageFactor "Electric", 1.75
+	DamageFactor "Lightning", 1.75
 	Speed 7
 	Radius 23
 	Height 53
@@ -1900,7 +1915,10 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 	Painchance "Gauntlets", 60 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
+	DamageFactor "Plasma", 1.375
 	DamageFactor "Thunder", 1.75
+	DamageFactor "Electric", 1.75
+	DamageFactor "Lightning", 1.75
 	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 10
 	Speed 16
@@ -2147,7 +2165,10 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 	DamageFactor "Crush", 0.01
 	DamageFactor "Fire", 0.85
 	DamageFactor "Ice", 0.9375
+	DamageFactor "Plasma", 1.125
 	DamageFactor "Thunder", 1.25
+	DamageFactor "Electric", 1.25
+	DamageFactor "Lightning", 1.25
 	Mass 1000000000
 	Monster
 	-SOLID
@@ -2244,7 +2265,10 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 	DamageFactor "Crush", 1.6
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.5
+	DamageFactor "Plasma", 1.375
 	DamageFactor "Thunder", 1.75
+	DamageFactor "Electric", 1.75
+	DamageFactor "Lightning", 1.75
 	+DROPOFF
 	+NOBLOOD
 	+BOSS
@@ -2465,7 +2489,10 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 	Damagefactor "Disintegrate", 0.25
 	DamageFactor "Fire", 0.15
 	Damagefactor "Ice", 0
+	DamageFactor "Plasma", 1.625
 	DamageFactor "Thunder", 2.25
+	DamageFactor "Electric", 2.25
+	DamageFactor "Lightning", 2.25
 	DamageFactor "PoisonBolt", 0.125
 	DamageFactor "Crush", 1.6
 	Speed 20
@@ -2901,7 +2928,10 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 	+NOFEAR
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
+	DamageFactor "Plasma", 1.25
 	DamageFactor "Thunder", 1.5
+	DamageFactor "Electric", 1.5
+	DamageFactor "Lightning", 1.5
 	MinMissileChance 150
 	MaxDropoffHeight 32
 	SeeSound "bishop/sight"
@@ -3410,7 +3440,10 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	DamageFactor "Magic", 1
 	DamageFactor "Fire", 0.375
 	DamageFactor "Ice", 0.375
+	DamageFactor "Plasma", 0.6875
 	DamageFactor "Thunder", 0.375
+	DamageFactor "Electric", 0.375
+	DamageFactor "Lightning", 0.375
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "ImpClaw", 1
@@ -4067,7 +4100,10 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	DamageFactor "Magic", 1
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.25
+	DamageFactor "Plasma", 0.625
 	DamageFactor "Thunder", 0.25
+	DamageFactor "Electric", 0.25
+	DamageFactor "Lightning", 0.25
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "ImpClaw", 1
@@ -4236,7 +4272,10 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	DamageFactor "Magic", 1
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.25
+	DamageFactor "Plasma", 0.625
 	DamageFactor "Thunder", 0.25
+	DamageFactor "Electric", 0.25
+	DamageFactor "Lightning", 0.25
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "ImpClaw", 1
@@ -4425,7 +4464,10 @@ ACTOR EntityAscended : EntityBossNew
 	DamageFactor "Magic", 0.75
 	DamageFactor "Fire", 0.1875
 	DamageFactor "Ice", 0.1875
+	DamageFactor "Plasma", 0.59375
 	DamageFactor "Thunder", 0.1875
+	DamageFactor "Electric", 0.1875
+	DamageFactor "Lightning", 0.1875
 	DamageFactor "Holy", 0.75
 	DamageFactor "Sigil", 1.5
 	DamageFactor "ImpClaw", 0.75

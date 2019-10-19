@@ -403,7 +403,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostwand") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			GWND B 3 
@@ -509,7 +509,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 		AltFire: // 10 Frames
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostwand") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			GWN2 B 3 
@@ -720,7 +720,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostcrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			CRBW D 5 // A_FireCrossbowPL2
@@ -856,7 +856,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostcrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			CRBD D 5 // A_FireCrossbowPL2
@@ -1056,7 +1056,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 		AltHold:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostdragonclaw") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			FBLS D 3 
@@ -1147,7 +1147,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 		AltHold:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostdragonclaw") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			FDBL DE 3 
@@ -1331,7 +1331,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcosthellstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			HROD C 2
@@ -1436,7 +1436,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcosthellstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			DHRD C 2
@@ -1822,21 +1822,21 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 			{
 				if (A_WeaponCheckInfiniteAmmo > 0)
 				{
-					if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+					if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 					return state("");
 				}
 				else
 				{
 					if (CountInv("PhoenixRodAmmo",AAPTR_PLAYER1) >= 1) 
 					{
-						if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+						if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 						return state("");
 					}
 					else
 					{
 						if (CountInv("FlameCount",AAPTR_PLAYER1) >= 1) 
 						{
-							if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+							if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 							return state("");
 						}
 						else
@@ -1993,21 +1993,21 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 			{
 				if (A_WeaponCheckInfiniteAmmo > 0)
 				{
-					if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+					if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 					return state("");
 				}
 				else
 				{
 					if (CountInv("PhoenixRodAmmo",AAPTR_PLAYER1) >= 2) 
 					{
-						if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+						if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 						return state("");
 					}
 					else
 					{
 						if (CountInv("DualFlameCount",AAPTR_PLAYER1) >= 1) 
 						{
-							if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostphoenixrod") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+							if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 							return state("");
 						}
 						else
@@ -2283,7 +2283,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 		AltHold:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostfiremace") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			MACE B 4
@@ -2398,7 +2398,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 		AltHold:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostfiremace") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			DMAC B 4
@@ -2538,7 +2538,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostscrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			CRB2 A 3
@@ -2705,7 +2705,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostscrossbow") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			SCRD A 3
@@ -2942,7 +2942,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostdsparilstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100),2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			DSTF B 4 bright 
@@ -3074,7 +3074,7 @@ actor DualDSparilStaff : HereticWeaponBase
 		AltFire:
 			TNT1 A 0
 			{
-				if (A_UseManaAttack(((GetCVar("dvds_floratomedmpcostdsparilstaff") * GetCVar("dvds_floratomedmpcostratio")) / 100) * 2,2,0,1) == 0) { return state("Ready"); }
+				if (A_UseManaAttack(CountInv("AltFireManaCost",AAPTR_PLAYER1),2,0,1) == 0) { return state("Ready"); }
 				return state("");
 			}
 			DSTD B 4 bright

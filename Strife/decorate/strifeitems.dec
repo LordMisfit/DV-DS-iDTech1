@@ -346,7 +346,7 @@ ACTOR MedPatchNew : AetheriusCustomInventory replaces MedPatch // : HealthPickup
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medical Patch: Restores (8-12 + 8-12%) HP & 12.5-15.0% Stamina"
+	Tag "Medical Patch: Restores (8-12 + 8-12%) HP & 18.75-21.25% Stamina"
 	Inventory.Icon "I_STMP"
 	Inventory.PickupMessage "You picked up the \cdMed patch\c-."
 	AetheriusCustomInventory.Autouse 3
@@ -380,7 +380,7 @@ ACTOR MedicalKitNew : AetheriusCustomInventory replaces MedicalKit // HealthPick
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medical Kit: Restores (20-30 + 20-30%) HP & 32.5-37.5% Stamina"
+	Tag "Medical Kit: Restores (20-30 + 20-30%) HP & 45-55% Stamina"
 	Inventory.Icon "I_MDKT"
 	Inventory.PickupMessage "You picked up the \cdMedical kit\c-."
 	AetheriusCustomInventory.Autouse 3

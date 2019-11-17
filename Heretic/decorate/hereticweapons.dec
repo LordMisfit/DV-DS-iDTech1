@@ -1704,11 +1704,6 @@ ACTOR PhoenixFX2Seeking : PhoenixFX2Base
 				return state("Idle");
 			}
 		Idle:
-		/*
-			FX09 ABABA 2 Bright
-			FX09 B 2 Bright A_FlameEnd
-			FX09 CDEF 2 Bright
-		*/
 			FX09 AABBAABBAA 1 Bright 
 			{
 				if (user_seekstrength > 0)

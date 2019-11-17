@@ -333,22 +333,23 @@ ACTOR ScannerNew : Scanner replaces Scanner
 }
 
 // Medical Items
-ACTOR MedPatchNew : MedPatch replaces MedPatch // : HealthPickup 2011
+ACTOR MedPatchNew : AetheriusCustomInventory replaces MedPatch // : HealthPickup 2011
 {
 	Game Strife
 	ConversationID 125, 121, 124
-	Health 10
 	+FLOORCLIP
-	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
+	+INVENTORY.PERSISTENTPOWER
+	+INVENTORY.KEEPDEPLETED
+	+DONTGIB
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medical Patch: Restores 10 HP."
+	Tag "Medical Patch: Restores (8-12 + 8-12%) HP & 12.5-15.0% Stamina"
 	Inventory.Icon "I_STMP"
 	Inventory.PickupMessage "You picked up the \cdMed patch\c-."
-	HealthPickup.Autouse 3
+	AetheriusCustomInventory.Autouse 3
 	Inventory.PickupSound "misc/i_pkup"
 	States
 	{
@@ -360,25 +361,29 @@ ACTOR MedPatchNew : MedPatch replaces MedPatch // : HealthPickup 2011
 		Idle:
 			STMP A -1
 			Stop
+		Use:
+			TNT1 A 0 A_UseCustomInventoryItem(-8)
+			fail
 	}
 }
 
-ACTOR MedicalKitNew : MedicalKit replaces MedicalKit // HealthPickup 2012
+ACTOR MedicalKitNew : AetheriusCustomInventory replaces MedicalKit // HealthPickup 2012
 {
 	Game Strife
 	ConversationID 126, 122, 125
-	Health 25
 	+FLOORCLIP
-	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
+	+INVENTORY.PERSISTENTPOWER
+	+INVENTORY.KEEPDEPLETED
+	+DONTGIB
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Medical Kit: Restores 25 HP."
+	Tag "Medical Kit: Restores (20-30 + 20-30%) HP & 32.5-37.5% Stamina"
 	Inventory.Icon "I_MDKT"
 	Inventory.PickupMessage "You picked up the \cdMedical kit\c-."
-	HealthPickup.Autouse 3
+	AetheriusCustomInventory.Autouse 3
 	States
 	{
 		SpawnHerb:
@@ -389,10 +394,13 @@ ACTOR MedicalKitNew : MedicalKit replaces MedicalKit // HealthPickup 2012
 		Idle:
 			MDKT A -1
 			Stop
+		Use:
+			TNT1 A 0 A_UseCustomInventoryItem(-9)
+			fail
 	}
 }
 
-ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
+ACTOR SurgeryKitNew : AetheriusCustomInventory replaces SurgeryKit // HealthPickup 83
 {
 	Game Strife
 	ConversationID 127, 123, 126
@@ -400,11 +408,10 @@ ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
 	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
-	Health -100
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 		
-	Tag "Surgery Kit: Fully restores all HP."
+	Tag "Surgery Kit: Fully restores all HP and gives 200% Stamina."
 	Inventory.Icon "I_FULL"
 	Inventory.PickupMessage "You picked up the \cdSurgery Kit\c-."
 	States
@@ -417,6 +424,9 @@ ACTOR SurgeryKitNew : SurgeryKit replaces SurgeryKit // HealthPickup 83
 		Idle:
 			FULL AB 35
 			Loop
+		Use:
+			TNT1 A 0 A_UseCustomInventoryItem(-10)
+			fail
 	}
 }
 

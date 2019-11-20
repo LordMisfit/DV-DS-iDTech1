@@ -913,11 +913,6 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 			}
 			goto Spawn+1
 		See:
-			AGRD A 0
-			AGRD A 0
-			{
-				A_AcolyteShieldOff;
-			}
 			AGRD A 6 Fast Slow 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }

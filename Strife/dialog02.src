@@ -365,6 +365,21 @@ conversation
 		}
 		choice
 		{
+			text = "(Spare) Poison Needle";
+			cost
+			{
+				item = 168; // Coin
+				amount = 825;
+			}
+			displaycost = true;
+			yesmessage = "DON'T POKE THE WRONG PERSON NOW.";
+			nomessage = "BIT DANGEROUS FOR SUCH LITTLE GOLD.";
+			giveitem = 415; // PoisonNeedleAmmo
+			nextpage = 5;
+			closedialog = false;
+		}
+		choice
+		{
 			text = "MONSTER MUNCHIES";
 			cost
 			{

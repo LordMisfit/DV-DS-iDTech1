@@ -1203,7 +1203,7 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(5); }
 				else if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 
-				A_BeShadowyFoe;
+				A_BeShadowy;
 			}
 			Goto Super::See+1
 		Pain:

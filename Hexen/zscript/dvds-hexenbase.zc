@@ -83,14 +83,15 @@ class KoraxBase : AetheriusBossZSC
 	//	250-254	For use in respective control scripts
 	//	255		For use in death script (spawn spots)
 	//===========================================================================
-	void A_KoraxStep()
+	void A_KoraxStep(statelabel melee = '_a_chase_default', statelabel missile = '_a_chase_default', int flags = 0, int type = 0, int value1 = 0, int value2 = 0, int value3 = 0, int value4 = 0, int value5 = 0)
 	{
 		A_PlaySound("KoraxStep"); 
-		A_Chase(); 
+		A_DVDSChase(melee,missile,flags,type,value1,value2,value3,value4,value5); 
 	}
 
 	void A_KoraxChase()
 	{
+		
 		int teleporthealth;
 		if (User_MaxHP <= 0) teleporthealth = SpawnHealth()/2; else teleporthealth = User_MaxHP/2;
 		if ((!special2) && (health <= (teleporthealth)))

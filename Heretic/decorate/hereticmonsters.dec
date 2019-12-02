@@ -36,7 +36,7 @@ ACTOR ChickenNew : AetheriusMorphedMonster replaces Chicken
 			CHKN AB 3
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -131,7 +131,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 			{
 				A_FloatChaseCheck(6,12,18,24,0.333,0.333);
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -347,7 +347,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -551,7 +551,7 @@ ACTOR WatcherImp : HereticImpNew
 			{
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 
@@ -752,7 +752,7 @@ actor MummyNew : AetheriusMonsterZSC // replaces Mummy
 			MUMM ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -841,7 +841,7 @@ actor MummyGhostNew : MummyNew // replaces MummyGhost
 			MUMM ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -949,7 +949,7 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -1082,7 +1082,7 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -1243,7 +1243,7 @@ Actor IceGolem : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				
 				if (health <= user_HPCritRange) { user_regenchance = 32; }
 				else if (health <= user_HPLowRange) { user_regenchance = 8; }
@@ -1454,7 +1454,7 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 			KNIG ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -1643,7 +1643,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 				A_DeathKnightShieldOff;
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
 		SeeShielded:
@@ -1651,7 +1651,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			DKNT PPQQRRSS 3 // A_SetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOn;
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			DKNT S 0
 			{
@@ -1974,52 +1974,52 @@ ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD A 4
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD A 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD A 4
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD B 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD B 4
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD B 3
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			WZRD B 4
 			{
 				A_FloatChaseCheck(4,8,12,16,0.5,0.5);
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -2209,7 +2209,7 @@ ACTOR Banshee : AetheriusMonsterZSC
 				A_TakeInventory("BansheeMissile5Token",24);
 				A_TakeInventory("BansheePainToken",2);
 
-				A_VileChase;
+				A_DVDSChase("","Missile", CHF_RESURRECT,1,3,1,1);
 			}
 			BANS A 2
 			{
@@ -2217,7 +2217,7 @@ ACTOR Banshee : AetheriusMonsterZSC
 				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(1); }
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 
-				A_VileChase;
+				A_DVDSChase("Melee","Missile", CHF_RESURRECT,1,3,1,1);
 				A_SpawnItem("BansheeTrail",0,0);
 			}
 			BANS A 0 A_Jump(2,"BansheeTeleport")
@@ -2377,9 +2377,9 @@ ACTOR Banshee : AetheriusMonsterZSC
 			BANS A 1 A_SetTranslucent(0.20)
 			BANS A 1 A_SetTranslucent(0.10)
 			BANS A 0 A_Jump(128,25)
-			TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_DVDSChase("","",CHF_FASTCHASE,1,3,1,1)
 			TNT1 A 0 A_Jump(128,25)
-			TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_ExtChase(0,0,1,1)
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_DVDSChase("","",CHF_FASTCHASE,1,3,1,1)
 			BANS A 1 A_SetTranslucent(0.10)
 			BANS A 1 A_SetTranslucent(0.20)
 			BANS A 1 A_SetTranslucent(0.30)
@@ -2509,7 +2509,7 @@ ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 			LICH A 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -2624,19 +2624,19 @@ ACTOR IceLich : AetheriusMonsterZSC
 			ILCH A 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
 			}
 			ILCH A 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
 			}
 			ILCH A 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			loop
 		Missile:
@@ -2742,7 +2742,7 @@ ACTOR Goldlich : IronlichNew 31044
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
 				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -2791,14 +2791,14 @@ ACTOR Goldlich : IronlichNew 31044
 		Missile2:
 			LICH BBBBBBBB 1 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0)
 			TNT1 A 0 A_SpawnItemEx("TeleportFog")
-			TNT1 AAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 AAAAAAAAAAAAAAAA 0 A_DVDSWander(0,1,3,1,1)
 			TNT1 A 0 
 			{
 				A_SpawnItemEx("TeleportFog");
 				A_UnsetSolid;
 				A_SpawnItemEx("FakeGoldlich", 0,0,0, 0,0,0, 0, SXF_TRANSFERTRANSLATION);
 			}
-			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_DVDSWander(0,1,3,1,1)
 			TNT1 A 4 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
@@ -3013,7 +3013,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
 
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -3142,7 +3142,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC replaces Clink
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
 
-				if (levelbehavior > 0 && user_monsterlevel > 45) { A_Chase; } else { A_Chase("Melee",""); }
+				if (levelbehavior > 0 && user_monsterlevel > 45) { A_DVDSChase("Melee","Missile",0,1,3,1,1); } else { A_DVDSChase("Melee","",0,1,3,1,1); }
 			}
 			Loop
 		Missile:
@@ -3387,7 +3387,7 @@ ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -3507,7 +3507,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); A_ChangeFlag("AVOIDMELEE",1); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); A_ChangeFlag("AVOIDMELEE",1); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); A_ChangeFlag("AVOIDMELEE",1); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Run:
@@ -3517,7 +3517,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
-				A_Chase("","");
+				A_DVDSChase("","",0,1,3,1,1);
 			}
 			TNT1 A 0 A_Jump(252, "Missile")
 			Goto See
@@ -3745,14 +3745,14 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 300) { A_SetTics(1); }
-				A_Wander;
+				A_DVDSWander(0,1,3,1,1);
 			}
 			BDEM ABCDEF 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 				A_FadeIn(0.1667,FTF_CLAMP);
-				if (random(1,6) == 1) { A_Wander; } else { A_Chase("",""); }
+				if (random(1,6) == 1) { A_DVDSWander(0,1,3,1,1); } else { A_DVDSChase("","",0,1,3,1,1); }
 			}
 			TNT1 A 0 
 			{
@@ -3918,7 +3918,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
-				A_MinotaurChase;
+				A_MinotaurChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Melee:
@@ -4145,7 +4145,7 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 			SNKE ABCD 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); A_SetTics(3); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -4267,7 +4267,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -4705,7 +4705,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			DISC A 0 A_Jump(80,1)
 			Loop
@@ -4714,12 +4714,12 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 
 				A_PlaySound("monster/blur");
-				A_FastChase;
+				A_DVDSChase("Melee","Missile",CHF_FASTCHASE);
 			}
 			DISC AAABBBBAAAABBBB 1
 			{
 				A_SpawnItem("DSFX3",0,0);
-				A_FastChase;
+				A_DVDSChase("Melee","Missile",CHF_FASTCHASE);
 			}
 			DISC B 0 A_Jump(96,1)
 			Goto See+9
@@ -5068,7 +5068,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(2); }
-				A_Chase;
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			Loop
 		Missile:
@@ -5104,7 +5104,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				A_SetInventory("ApprenticeSheenMode",1);
 				A_SetTranslucent(0.1,0);
 			}
-			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_DVDSWander(0,1,3,1,1); A_FaceTarget; }
 			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
 			APDP D 6
 			{
@@ -5119,7 +5119,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
 			}
 			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
-			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_DVDSWander(0,1,3,1,1); A_FaceTarget; }
 			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
 			APDP D 6
 			{
@@ -5134,7 +5134,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
 			}
 			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
-			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_DVDSWander(0,1,3,1,1); A_FaceTarget; }
 			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
 			APDP D 6
 			{
@@ -5149,7 +5149,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
 			}
 			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
-			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_DVDSWander(0,1,3,1,1); A_FaceTarget; }
 			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
 			APDP D 6
 			{
@@ -5164,7 +5164,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,10,4);
 			}
 			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
-			APDP CCCCCCCCCCCCCCCC 1 { A_Wander; A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_DVDSWander(0,1,3,1,1); A_FaceTarget; }
 			APDP BABABABAB 1 { A_SetTranslucent(alpha+0.1,0); A_FaceTarget; }
 			APDP A 1 // A_UnsetInvulnerable
 			{

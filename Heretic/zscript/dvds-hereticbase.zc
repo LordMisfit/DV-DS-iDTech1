@@ -4,7 +4,7 @@ class DSparilBase : AetheriusBossZSC
 	//*D'Sparil*
 	//**********
 	// w/ Chaos Serpent
-	void A_Sor1Pain ()
+	void A_Sor1Pain()
 	{
 		int extrasteps;
 		if (levelbehavior > 0) extrasteps = user_monsterlevel / 8;
@@ -12,7 +12,7 @@ class DSparilBase : AetheriusBossZSC
 		A_Pain();
 	}
 
-	void A_Sor1Chase ()
+	void A_Sor1Chase(statelabel melee = '_a_chase_default', statelabel missile = '_a_chase_default', int flags = 0)
 	{
 		if (special1)
 		{
@@ -20,7 +20,7 @@ class DSparilBase : AetheriusBossZSC
 			tics -= 3;
 			if (tics < 1) tics = 1;
 		}
-		A_Chase();
+		A_Chase(melee,missile,flags);
 	}
 
 	void A_Srcr1Attack(int meleedamage = 8, string missiletype = "SorcererFX1New", string crisismissiletype = "SorcererFX1Crisis")
@@ -98,7 +98,7 @@ class DSparilBase : AetheriusBossZSC
 		}
 	}
 
-	void A_Sor2Chase()
+	void A_Sor2Chase(statelabel melee = '_a_chase_default', statelabel missile = '_a_chase_default', int flags = 0)
 	{
 		if (special2)
 		{
@@ -106,10 +106,10 @@ class DSparilBase : AetheriusBossZSC
 			tics -= 2;
 			if (tics < 1) tics = 1;
 		}
-		A_Chase();
+		A_Chase(melee,missile,flags);
 	}
 
-	void A_Sor2Pain ()
+	void A_Sor2Pain()
 	{
 		if (random[Sorc2Pain](1,4) <= 3)
 		{

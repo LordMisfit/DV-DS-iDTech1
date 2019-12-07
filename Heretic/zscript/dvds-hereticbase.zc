@@ -529,8 +529,13 @@ class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
 	{
 		let evolveChance = CallACS("GetEvolveChance");
 		
-		if (random(1,512) <= evolveChance)
-			return "HellGuard";
+		if (random(1,512) <= evolvechance)
+		{
+			if (random(1,512) <= evolvechance)
+				return "Serpathor";
+			else
+				return "HellGuard";
+		}
 		else
 			return "SnakeNew";
 	}

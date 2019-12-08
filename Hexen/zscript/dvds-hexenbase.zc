@@ -365,6 +365,7 @@ class EttinSpawner : AetheriusMonsterSpawner replaces Ettin
 		
 		if (random(1,1024) <= evolveChance)
 		{
+			evolveChance = CallACS("GetEvolveChance");
 			if (random(1,4096) <= evolveChance)
 				return "Bormereth";
 			else
@@ -384,7 +385,8 @@ class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
 		
 		if (random(1,512) <= evolveChance)
 		{
-			if (random(1,16384) <= evolveChance)
+			evolveChance = CallACS("GetEvolveChance");
+			if (random(1,8912) <= evolveChance)
 				return "EtherealChaosSerpentNew";
 			else
 				return "MagmaChaosSerpentNew";
@@ -403,7 +405,8 @@ class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
 		
 		if (random(1,512) <= evolveChance)
 		{
-			if (random(1,16384) <= evolveChance)
+			evolveChance = CallACS("GetEvolveChance");
+			if (random(1,8192) <= evolveChance)
 				return "EtherealChaosSerpentNew";
 			else
 				return "BlackChaosSerpentNew";
@@ -421,8 +424,10 @@ class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 		
 		if (random(1,256) <= evolveChance)
 		{
+			evolveChance = CallACS("GetEvolveChance");
 			if (random(1,512) <= evolveChance)
 			{
+				evolveChance = CallACS("GetEvolveChance");
 				if (random(1,1024) <= evolveChance)
 					return "FireDemonQueen";
 				else
@@ -444,8 +449,10 @@ class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 		
 		if (random(1,256) <= evolveChance)
 		{
+			evolveChance = CallACS("GetEvolveChance");
 			if (random(1,512) <= evolveChance)
 			{
+				evolveChance = CallACS("GetEvolveChance");
 				if (random(1,1024) <= evolveChance)
 					return "DarkPatriarch";
 				else
@@ -495,7 +502,7 @@ class PatriarchRadiusHeal : AetheriusCustomInventory
 
 	override void Tick()
 	{
-		Console.Printf("e324");
+		//Console.Printf("e324");
 		let healactor = AetheriusMonsterZSC(owner);
 		if (healactor)
 		{

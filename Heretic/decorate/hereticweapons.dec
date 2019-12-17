@@ -924,7 +924,11 @@ ACTOR RipperNew : RipperBase
 	States
 	{
 		Spawn:
-			FX18 M 0 NoDelay { A_GetPlayerAttackDamage(24,0); }
+			FX18 M 0 NoDelay 
+			{ 
+				A_GetPlayerAttackDamage(24,0);
+				A_ScaleVelocity(1.00-((CallACS("MiscVarCheckDECORATE",10053)*0.05)-(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
+			}
 		Idle:
 			FX18 MMMM 1 { A_GetPlayerAttackDamage(24,0); }
 			FX18 NNNNN 1 { A_GetPlayerAttackDamage(24,0); }

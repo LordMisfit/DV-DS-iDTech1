@@ -1228,6 +1228,7 @@ Actor IceGolem : AetheriusMonsterZSC
 	Species "Golem"
 	var int user_HalfMaxHP;
 	var int user_regenchance;
+	var int user_regenchanceextra;
 
 	States
 	{
@@ -1240,20 +1241,27 @@ Actor IceGolem : AetheriusMonsterZSC
 			IGLM ABCD 5
 			{
 				user_HalfMaxHP = user_MaxHP / 2;
+				if (health <= user_HPCritRange) { user_regenchance = 32; }
+				else if (health <= user_HPLowRange) { user_regenchance = 8; }
+				else if (health <= user_HalfMaxHP) { user_regenchance = 4; }
+				else if (health <= user_MaxHP) { user_regenchance = 2; }
+				if (levelbehavior > 0)
+				{
+					user_regenchanceextra = user_regenchance / 4;
+					user_regenchanceextra = (user_regenchanceextra * user_monsterlevel) / 45;
+
+					user_regenchance += user_regenchanceextra;
+					//A_LogInt(user_regenchance);
+					//A_LogInt(user_regenchanceextra);
+				}
+
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
 				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 				
-				if (health <= user_HPCritRange) { user_regenchance = 32; }
-				else if (health <= user_HPLowRange) { user_regenchance = 8; }
-				else if (health <= user_HalfMaxHP) { user_regenchance = 4; }
-				else if (health <= user_MaxHP) { user_regenchance = 2; }
 
-				if (random(1,256) <= user_regenchance) 
-				{
-					return state("RegenerateStart"); 
-				}
+				if (random(1,256) <= user_regenchance && health < user_MaxHP) { return state("RegenerateStart");  }
 				return state("");
 			}
 			Loop
@@ -1315,7 +1323,20 @@ Actor IceGolem : AetheriusMonsterZSC
 				A_GiveInventory("IceGolemArmor",1);
 			}
 		Regenerate:
-			IGLM K 0 { if (health < user_MaxHP) { HealThing((user_MaxHP/random(18,22))); user_regencycles += 1; } else { return state("RegenerateEnd"); } return state(""); }
+			IGLM K 0 
+			{ 
+				if (health < user_MaxHP) 
+				{ 
+					A_DVDSHealThing((user_MaxHP/random(18,22)),user_MaxHP);
+					//A_Print("23r2");
+					user_regencycles += 1; 
+				} 
+				else 
+				{ 
+					return state("RegenerateEnd"); 
+				} 
+				return state(""); 
+			}
 			IGLM KKKKKKKKKK 1 A_SpawnItemEx("IceGolemParticleA", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128)
 		RegenerateCheck:
 			IGLM K 0

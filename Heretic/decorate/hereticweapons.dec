@@ -1254,6 +1254,7 @@ ACTOR RainPillarNew : RainPillarBase replaces RainPillar
 {
 	Damage (finaldamagedealt) //5
 	DamageType "Magic" 
+	ProjectileKickback 6
 	States
 	{
 		Spawn:

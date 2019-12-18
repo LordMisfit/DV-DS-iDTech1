@@ -197,7 +197,6 @@ ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
-	-INVENTORY.FANCYPICKUPSOUND
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 	Inventory.PickupSound "misc/i_pkup"
@@ -231,7 +230,6 @@ ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
-	-INVENTORY.FANCYPICKUPSOUND
 	RenderStyle Translucent
 	Tag "Shadow Armor: Gives player invisibility"
 	inventory.maxamount 9999
@@ -294,7 +292,6 @@ ACTOR TargeterNew : Targeter replaces Targeter
 	+DONTGIB
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
-	-INVENTORY.FANCYPICKUPSOUND
 	Tag "Targetter: Will depict your range of accuracy visually"
 	Powerup.Type "Targeter"
 	inventory.maxamount 9999
@@ -316,7 +313,6 @@ ACTOR ScannerNew : Scanner replaces Scanner
 	+FLOORCLIP
 	+DONTGIB
 	+INVENTORY.KEEPDEPLETED
-	+INVENTORY.FANCYPICKUPSOUND
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 	Tag "Scanner: Shows location of things on the map"

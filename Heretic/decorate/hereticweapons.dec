@@ -335,7 +335,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 	Weapon.AmmoUse1 1  
 	Weapon.AmmoUse2 1  
 	Weapon.YAdjust 0
-	Inventory.PickupMessage "$TXT_WPNGOLDWAND" // "GOLD WAND"
+	Inventory.PickupMessage "Elven Wand \cx[Slot 2]\c-"
 	Obituary "$OB_MPGOLDWAND"
 	Tag "Elven Wand"
 
@@ -453,7 +453,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 	Weapon.AmmoUse1 1  
 	Weapon.AmmoUse2 1  
 	Weapon.YAdjust 0
-	Inventory.PickupMessage "$TXT_WPNGOLDWAND" // "GOLD WAND"
+	Inventory.PickupMessage "Elven Wand \cx[Slot 2] (can now dual wield)\c-"
 	Obituary "$OB_MPGOLDWAND"
 	Tag "Dual Elven Wands"
 	States
@@ -632,7 +632,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 	Weapon.AmmoType2 "CrossbowAmmo"
 	Weapon.YAdjust 0
 	Weapon.Kickback 75
-	Inventory.PickupMessage "$TXT_WPNCROSSBOW"
+	Inventory.PickupMessage "Ethereal Crossbow \cx[Slot 3]\c-"
 	Tag "$TAG_CROSSBOW"
 	States
 	{
@@ -781,7 +781,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 	Weapon.AmmoType2 "CrossbowAmmo"
 	Weapon.YAdjust 0
 	Weapon.Kickback 75
-	Inventory.PickupMessage "$TXT_WPNCROSSBOW"
+	Inventory.PickupMessage "Ethereal Crossbow \cx[Slot 3] (can now dual wield)\c-"
 	Tag "Dual Ethereal Crossbows"
 
 	States
@@ -995,7 +995,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 	Weapon.AmmoType1 "BlasterAmmo"
 	Weapon.AmmoType2 "BlasterAmmo"
 	Weapon.YAdjust 0
-	Inventory.PickupMessage "$TXT_WPNBLASTER"
+	Inventory.PickupMessage "Dragon Claw \cx[Slot 4]\c-"
 	Tag "$TAG_BLASTER"
 	Obituary "$OB_MPBLASTER"
 	States
@@ -1094,7 +1094,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 	Weapon.AmmoType1 "BlasterAmmo"
 	Weapon.AmmoType2 "BlasterAmmo"
 	Weapon.YAdjust 0
-	Inventory.PickupMessage "$TXT_WPNBLASTER"
+	Inventory.PickupMessage "Dragon Claw \cx[Slot 4] (can now dual wield)\c-"
 	Tag "Dual Dragon Claws"
 	Obituary "$OB_MPBLASTER"
 	States
@@ -1281,7 +1281,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	Weapon.YAdjust 0
 	Weapon.AmmoType1 "SkullRodAmmo"
 	Weapon.AmmoType2 "SkullRodAmmo"
-	Inventory.PickupMessage "$TXT_WPNSKULLROD"
+	Inventory.PickupMessage "Hellstaff \cx[Slot 5]\c-"
 	Tag "$TAG_SKULLROD"
 
 	States
@@ -1393,7 +1393,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 	Weapon.YAdjust 0
 	Weapon.AmmoType1 "SkullRodAmmo"
 	Weapon.AmmoType2 "SkullRodAmmo"
-	Inventory.PickupMessage "$TXT_WPNSKULLROD"
+	Inventory.PickupMessage "Hellstaff \cx[Slot 5] (can now dual wield)\c-"
 	Tag "Dual HellStaves"
 	States
 	{
@@ -1744,7 +1744,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	Weapon.AmmoGive 2
 	Weapon.AmmoType1 "PhoenixRodAmmo"
 	Weapon.AmmoType2 "PhoenixRodAmmo"
-	Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
+	Inventory.PickupMessage "Phoenix Rod \cx[Slot 6]\c-"
 	Tag "$TAG_PHOENIxROD"
 
 	States
@@ -1921,7 +1921,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 	Weapon.AmmoGive 2
 	Weapon.AmmoType1 "PhoenixRodAmmo"
 	Weapon.AmmoType2 "PhoenixRodAmmo"
-	Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
+	Inventory.PickupMessage "Phoenix Rod \cx[Slot 6] (can now dual wield)\c-"
 	Tag "Dual Phoenix Rods"
 
 	States
@@ -2203,7 +2203,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	Weapon.YAdjust 0
 	Weapon.AmmoType1 "MaceAmmo"
 	Weapon.AmmoType2 "MaceAmmo"
-	Inventory.PickupMessage "$TXT_WPNMACE"
+	Inventory.PickupMessage "Firemace \cx[Slot 7]\c-"
 	Tag "$TAG_MACE"
 
 	States
@@ -2324,7 +2324,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 	Weapon.YAdjust 0
 	Weapon.AmmoType1 "MaceAmmo"
 	Weapon.AmmoType2 "MaceAmmo"
-	Inventory.PickupMessage "$TXT_WPNMACE"
+	Inventory.PickupMessage "Firemace \cx[Slot 7] (can now dual wield)\c-"
 	Tag "Dual Firemaces"
 
 	States
@@ -2437,7 +2437,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 	obituary "%o was splattered by %k's super crossbow."
 	radius 20
 	height 16
-	inventory.pickupmessage "SUPER ETHEREAL CROSSBOW"
+	Inventory.PickupMessage "Super Ethereal Crossbow \cx[Slot 3]\c-"
 	weapon.selectionorder 400
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
@@ -2601,7 +2601,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 	obituary "%o was splattered by %k's super crossbows."
 	radius 20
 	height 16
-	inventory.pickupmessage "SUPER ETHEREAL CROSSBOW"
+	Inventory.PickupMessage "Super Ethereal Crossbow \cx[Slot 3] (can now dual wield)\c-"
 	weapon.selectionorder 400
 	Weapon.AmmoType1 "CrossbowAmmo"
 	Weapon.AmmoType2 "CrossbowAmmo"
@@ -2867,7 +2867,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 	Weapon.Ammogive 50
 	Weapon.Ammotype1 "BlasterAmmo"
 	Weapon.Ammotype2 "BlasterAmmo"
-	Inventory.Pickupmessage "staff of d'sparil"
+	Inventory.Pickupmessage "Staff of D'Sparil \cx[Slot 8]\c-"
 	Obituary "%o was no match for %k's staff of D'Sparil"
 	Tag "Staff of D'Sparil"
 	States
@@ -2987,7 +2987,7 @@ actor DualDSparilStaff : HereticWeaponBase
 	Weapon.Ammogive 50
 	Weapon.Ammotype1 "BlasterAmmo"
 	Weapon.Ammotype2 "BlasterAmmo"
-	Inventory.Pickupmessage "staff of d'sparil"
+	Inventory.Pickupmessage "Staff of D'Sparil \cx[Slot 8] (can now dual wield)\c-"
 	Obituary "%o was no match for %k's staves of D'Sparil"
 	Tag "Dual Staves of D'Sparil"
 	States

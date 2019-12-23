@@ -1433,6 +1433,7 @@ Actor FrostGolem : IceGolem
 	Obituary "%o was iced over by an frost golem"
 	HitObituary "%o was bludgeoned by an frost golem"
 	Species "Golem"
+	var int user_randvar1;
 
 	States
 	{
@@ -1530,8 +1531,13 @@ Actor FrostGolem : IceGolem
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(7); }
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
-				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, 10, 0, 1);
-				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, -10, 0, 1);
+				user_randvar1 = random(3,9) * 2;
+				A_PlaySound("IceGuyAttack");
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, ((user_randvar1*4)/2), 0, 1); }
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, user_randvar1, 0, 1);
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, 0, 0, 1); }
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, -user_randvar1, 0, 1);
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, ((-user_randvar1*4)/2), 0, 1); }
 			}
 			IGLM K 4
 			{

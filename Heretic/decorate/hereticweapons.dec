@@ -26,6 +26,26 @@ ACTOR GoldWandAmmoSpawner : GoldWandAmmo replaces GoldWandAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("GoldWandNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualGoldWandNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("GoldWandAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("GoldWandAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("GoldWandAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -45,6 +65,26 @@ ACTOR GoldWandHeftySpawner : GoldWandHefty replaces GoldWandHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("GoldWandNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualGoldWandNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("GoldWandHeftyNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("GoldWandHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("GoldWandHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -64,6 +104,48 @@ ACTOR CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("CrossbowNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualCrossbowNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+						{
+							if (random(1,2048) <= 1)
+							{
+								A_SpawnItemEx("SuperCrossbowNew");
+								A_FadeOut(1,1);
+							}
+						}
+						else
+						{
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+							{
+								if (random(1,4096) <= 1)
+								{
+									A_SpawnItemEx("DualSuperCrossbowNew");
+									A_FadeOut(1,1);
+								}
+							}
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("CrossbowAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("CrossbowAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("CrossbowAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -83,6 +165,48 @@ ACTOR CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("CrossbowNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualCrossbowNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+						{
+							if (random(1,2048) <= 1)
+							{
+								A_SpawnItemEx("SuperCrossbowNew");
+								A_FadeOut(1,1);
+							}
+						}
+						else
+						{
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+							{
+								if (random(1,4096) <= 1)
+								{
+									A_SpawnItemEx("DualSuperCrossbowNew");
+									A_FadeOut(1,1);
+								}
+							}
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("CrossbowHeftyNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("CrossbowHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("CrossbowHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -102,6 +226,37 @@ ACTOR BlasterAmmoSpawner : BlasterAmmo replaces BlasterAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("DragonClawNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualDragonClawNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
+						{
+							if (random(1,8192) <= 1)
+							{
+								A_SpawnItemEx("DualDSparilStaff");
+								A_FadeOut(1,1);
+							}
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("BlasterAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <=  1)	{ A_SpawnItemEx("BlasterAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("BlasterAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -121,6 +276,37 @@ ACTOR BlasterHeftySpawner : BlasterHefty replaces BlasterHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("DragonClawNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualDragonClawNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
+						{
+							if (random(1,8192) <= 1)
+							{
+								A_SpawnItemEx("DualDSparilStaff");
+								A_FadeOut(1,1);
+							}
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("BlasterHeftyNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("BlasterHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("BlasterHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -140,6 +326,26 @@ ACTOR PhoenixRodAmmoSpawner : PhoenixRodAmmo replaces PhoenixRodAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("PhoenixRodNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualPhoenixRodNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("PhoenixRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("PhoenixRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -159,6 +365,26 @@ ACTOR PhoenixRodHeftySpawner : PhoenixRodHefty replaces PhoenixRodHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("PhoenixRodNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualPhoenixRodNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("PhoenixRodHeftyNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("PhoenixRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("PhoenixRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -178,6 +404,26 @@ ACTOR MaceAmmoSpawner : MaceAmmo replaces MaceAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("FiremaceNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualFiremaceNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("MaceAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("MaceAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("MaceAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -197,6 +443,26 @@ ACTOR MaceHeftySpawner : MaceHefty replaces MaceHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("FiremaceNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualFiremaceNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("MaceHeftyNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("MaceHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("MaceHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
@@ -216,6 +482,25 @@ ACTOR SkullRodAmmoSpawner : SkullRodAmmo replaces SkullRodAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
+				if (CountInv("HellStaffNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("HellStaffNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualHellStaffNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualHellStaffNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
 				if (Random(1,1) <= 1)		{ A_SpawnItemEx("SkullRodAmmoNew",0,0,0,0,0,0); }
 				if (Random(1,5) <= 1)		{ A_SpawnItemEx("SkullRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
 				if (Random(1,25) <= 1)	{ A_SpawnItemEx("SkullRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }

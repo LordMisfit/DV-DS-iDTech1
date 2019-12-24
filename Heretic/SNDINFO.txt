@@ -1,3 +1,12 @@
+misc/projectilehit		hrnhit
+misc/fireballhit		firhit
+misc/fireballbig		firbig
+misc/fireballsmall      firsml
+misc/magichit			maghit
+misc/magicsmall         magsml
+misc/icehit				icehit
+
+
 // Flora [extra Heretic specfic sounds]
 FloraGiggle1			NERAGIG1
 $pitchshift FloraGiggle1 0

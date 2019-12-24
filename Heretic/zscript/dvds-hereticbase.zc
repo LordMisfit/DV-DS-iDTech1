@@ -576,7 +576,7 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 }
 
 // Disciple Spawner
-class FWizardSpawner : AetheriusMonsterSpawner replaces Wizard
+class FWizardSpawner : AetheriusMonsterSpawner
 {
 	Default
 	{

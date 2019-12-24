@@ -29,6 +29,7 @@ ACTOR HereticImpBallNew : AetheriusProjectileZSC replaces HereticImpBall
 	DamageType "Fire" 
 	Projectile
 	SeeSound "himp/leaderattack"
+	DeathSound "misc/fireballsmall"
 	+SPAWNSOUNDSOURCE
 	-ACTIVATEPCROSS
 	-ACTIVATEIMPACT
@@ -105,6 +106,7 @@ ACTOR BeastBallNew : AetheriusProjectileZSC replaces BeastBall
 	+SPAWNSOUNDSOURCE
 	RenderStyle Add
 	SeeSound "beast/attack"
+	DeathSound "misc/fireballhit"
 	States
 	{
 		Spawn:
@@ -139,6 +141,7 @@ Actor Beastball2 : BeastBallNew
 {
 	Damage (4 * random(1,8))
 	DamageType "Fire" 
+	DeathSound "misc/fireballhit"
 
 	States
 	{
@@ -633,6 +636,7 @@ ACTOR WizardFX1New : AetheriusProjectileZSC replaces WizardFX1
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
 	RenderStyle Add
+	DeathSound "misc/magichit"
 	States
 	{
 		Spawn:
@@ -959,6 +963,7 @@ ACTOR HeadFX1New : AetheriusEffectProjectile replaces HeadFX1
 	+THRUGHOST
 	DamageType "Ice" 
 	RenderStyle Add
+  DeathSound "misc/icehit"
 
 	States
 	{
@@ -1026,6 +1031,7 @@ ACTOR HeadFX2New : AetheriusEffectProjectile replaces HeadFX2
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
 	RenderStyle Add
+  DeathSound "misc/icehit"
 
 	States
 	{
@@ -1104,6 +1110,7 @@ ACTOR HeadFX3New : AetheriusEffectProjectile replaces HeadFX3
 	-ACTIVATEPCROSS
 	-NOBLOCKMAP
 	RenderStyle Add
+  DeathSound "misc/fireballbig"
 
 	States
 	{
@@ -2183,6 +2190,7 @@ ACTOR SnakeProjANew : AetheriusProjectileZSC replaces SnakeProjA
 	+SPAWNSOUNDSOURCE
 	RenderStyle Add
 	SeeSound "snake/attack"
+	DeathSound "misc/magicsmall"
 	States
 	{
 		Spawn:
@@ -2231,6 +2239,7 @@ ACTOR SnakeProjBNew : SnakeProjANew replaces SnakeProjB
 {
 	Damage (3 * random(1,8))
 	DamageType "Fire" 
+	DeathSound "misc/magichit"
 	+NOBLOCKMAP
 	-WINDTHRUST
 	States

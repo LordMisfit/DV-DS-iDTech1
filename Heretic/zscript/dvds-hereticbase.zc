@@ -554,6 +554,31 @@ class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 }
 
 // Disciple Spawner
+class ClinkSpawner : AetheriusMonsterSpawner replaces Clink
+{
+	Default
+	{
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Name ChooseSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,768) <= evolveChance)
+		{
+			if (CanFitHere("DarkClink")) return "DarkClink";
+			else return "ClinkNew";
+		}
+		else
+			return "ClinkNew";
+	}
+}
+
+// Disciple Spawner
 class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 {
 	Default

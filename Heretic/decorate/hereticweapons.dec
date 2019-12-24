@@ -2851,7 +2851,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 			FX11 A 0
 			{
 				A_SpawnItem("TeleportFog",0,0,0,0);
-				A_SpawnItem("FWizard",0,0,0,0);
+				A_SpawnItem("FWizardSpawner",0,0,0,0);
 			}
 			stop
 		Death:

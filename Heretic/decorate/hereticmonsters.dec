@@ -1198,8 +1198,8 @@ Actor IceGolem : AetheriusMonsterZSC
 {
 	Tag "Ice Golem"
 	Health 450
-	Radius 22
-	Height 62
+	Radius 26 // 22
+	Height 75 // 62
 	Mass 900
 	Speed 16
 	Painchance 32
@@ -1219,7 +1219,7 @@ Actor IceGolem : AetheriusMonsterZSC
 	+DONTHARMSPECIES
 	RenderStyle Translucent
 	Alpha 0.8
-	Scale 1.0
+	Scale 1.2
 	SeeSound "mummy/sight"
 	AttackSound "mummy/attack1"
 	PainSound "mummy/pain"
@@ -1404,20 +1404,20 @@ Actor FrostGolem : IceGolem
 {
 	Tag "Frost Golem"
 	Health 540
-	Radius 22
-	Height 62
+	Radius 26 // 22
+	Height 75 // 62
 	Mass 900
 	Speed 16
 	Painchance 32
-	Painchance "Fire", 56 // Fire attacks have a +80% chance of stunning an enemy
+	Painchance "Fire", 44 // Fire attacks have a +80% chance of stunning an enemy
 	Painchance "Ice", 0 // Ice can't stun Ice Golems
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
 	RadiusDamageFactor 0.625
 	DamageFactor "Crush", 5.6
-	DamageFactor "Normal", 0.925
-	DamageFactor "Fire", 1.8
+	DamageFactor "Normal", 0.85
+	DamageFactor "Fire", 1.4
 	DamageFactor "Ice", 0.0
 	Monster
 	+FLOORCLIP
@@ -1425,7 +1425,7 @@ Actor FrostGolem : IceGolem
 	+DONTHARMSPECIES
 	RenderStyle Translucent
 	Alpha 0.8
-	Scale 1.0
+	Scale 1.2
 	SeeSound "mummy/sight"
 	AttackSound "mummy/attack1"
 	PainSound "mummy/pain"
@@ -1446,14 +1446,14 @@ Actor FrostGolem : IceGolem
 			IGLM ABCD 5
 			{
 				user_HalfMaxHP = user_MaxHP / 2;
-				if (health <= user_HPCritRange) { user_regenchance = 32; }
-				else if (health <= user_HPLowRange) { user_regenchance = 8; }
-				else if (health <= user_HalfMaxHP) { user_regenchance = 4; }
-				else if (health <= user_MaxHP) { user_regenchance = 2; }
+				if (health <= user_HPCritRange) { user_regenchance = 40; }
+				else if (health <= user_HPLowRange) { user_regenchance = 10; }
+				else if (health <= user_HalfMaxHP) { user_regenchance = 5; }
+				else if (health <= user_MaxHP) { user_regenchance = random(2,3); }
 				if (levelbehavior > 0)
 				{
-					user_regenchanceextra = user_regenchance / 4;
-					user_regenchanceextra = (user_regenchanceextra * user_monsterlevel) / 45;
+					user_regenchanceextra = user_regenchance * 6 / 20;
+					user_regenchanceextra = (user_regenchanceextra * user_monsterlevel) / 36;
 
 					user_regenchance += user_regenchanceextra;
 					//A_LogInt(user_regenchance);
@@ -1533,11 +1533,11 @@ Actor FrostGolem : IceGolem
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				user_randvar1 = random(3,9) * 2;
 				A_PlaySound("IceGuyAttack");
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, ((user_randvar1*4)/2), 0, 1); }
-				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, user_randvar1, 0, 1);
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, 0, 0, 1); }
-				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, -user_randvar1, 0, 1);
-				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 32, ((-user_randvar1*4)/2), 0, 1); }
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, ((user_randvar1*4)/2), 0, 1); }
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, user_randvar1, 0, 1);
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, 0, 0, 1); }
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, -user_randvar1, 0, 1);
+				if (levelbehavior > 0 && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, ((-user_randvar1*4)/2), 0, 1); }
 			}
 			IGLM K 4
 			{
@@ -3613,21 +3613,22 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 	Health 550
 	Height 64
 	Radius 30
-	Mass 300
-	Speed 18
-	Painchance 24
-	Painchance "Fist", 36 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "Kick", 60 // Kick attacks have a +150% chance of stunning an enemy
-	Painchance "Gauntlets", 36 // Fist attacks have a +50% chance of stunning an enemy
+	Mass 600
+	Speed 16
+	Painchance 48
+	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Gauntlets", 72 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Crush", 5.6
-	DamageFactor "Holy", 1.75
+	DamageFactor "Holy", 1.50
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.25
 	DamageFactor "Thunder", 0.25
-	Painchance "Holy", 42
-	Painchance "Fire", 6
-	Painchance "Ice", 6
-	Painchance "Thunder", 6
+	Painchance "Holy", 60
+	Painchance "Fire", 12
+	Painchance "Ice", 12
+	Painchance "Thunder", 12
+	RadiusDamageFactor 0.625
 	MONSTER
 	SeeSound "clink/sight"
 	DeathSound "clink/death"
@@ -3720,25 +3721,25 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 
 		Pain:
 			DCLK H 5
-			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,25)
+			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,55)
 			Goto See
 		Pain.Fist:
 			DCLK H 5
-			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,50)
+			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,110)
 			DCLK HH 5
 			Goto See
 		Pain.Kick:
 			DCLK H 5
-			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,75)
+			DCLK H 5 A_DVDSPain(1,random(18,22),8,0,0,165)
 			DCLK HHHH 5
 			Goto See
 		Death:
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
-			DCLK I 8
-			DCLK J 8 A_Scream
-			DCLK K 8
-			DCLK L 8 A_NoBlocking
-			DCLK MN 8
+			DCLK I 5
+			DCLK J 5 A_Scream
+			DCLK K 5
+			DCLK L 5 A_NoBlocking
+			DCLK MN 5
 			DCLK O -1 A_Die
 			Stop
 		Ice:
@@ -3747,7 +3748,7 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 			DCLK H 1 A_FreezeDeathChunks
 			wait
 		Raise:
-			DCLK ONMLKJI 8
+			DCLK ONMLKJI 5
 			Goto See
 	}
 }
@@ -5296,6 +5297,13 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			wait
 	} 
 }
+actor FGreaterDisciple : GreaterDisciple
+{
+	-COUNTKILL 
+	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
+	Species "FriendlyMonsters"
+	dropitem NoItemSpawn 1
+}
 
 
 ACTOR DSFX3
@@ -5671,6 +5679,13 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 			APDP E 1 A_FreezeDeathChunks
 			wait
 	}
+}
+actor FHereticApprentice : HereticApprenticeNew
+{
+	-COUNTKILL 
+	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
+	Species "FriendlyMonsters"
+	dropitem NoItemSpawn 1
 }
 
 Actor AoDGhost

@@ -319,16 +319,28 @@ class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 						if (random(1,256) <= evolveChance)
 						{
 							if (random(1,4) == 1)
-								return "FrostGolemGhost";
+							{
+								if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
+								else return "MummyLeaderGhostNew";
+							}
 							else
-								return "FrostGolem";
+							{
+								if (CanFitHere("FrostGolem")) return "FrostGolem";
+								else return "MummyLeaderNew";
+							}
 						}
 						else
 						{
 							if (random(1,4) == 1)
-								return "IceGolemGhost";
+							{
+								if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
+								else return "MummyLeaderGhostNew";
+							}
 							else
-								return "IceGolem";
+							{
+								if (CanFitHere("IceGolem")) return "IceGolem";
+								else return "MummyLeaderNew";
+							}
 						}
 					}
 					else
@@ -364,16 +376,28 @@ class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
 					if (random(1,256) <= evolveChance)
 					{
 						if (random(1,4) == 1)
-							return "FrostGolemGhost";
+						{
+							if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
+							else return "MummyLeaderGhostNew";
+						}
 						else
-							return "FrostGolem";
+						{
+							if (CanFitHere("FrostGolem")) return "FrostGolem";
+							else return "MummyLeaderNew";
+						}
 					}
 					else
 					{
 						if (random(1,4) == 1)
-							return "IceGolemGhost";
+						{
+							if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
+							else return "MummyLeaderGhostNew";
+						}
 						else
-							return "IceGolem";
+						{
+							if (CanFitHere("IceGolem")) return "IceGolem";
+							else return "MummyLeaderNew";
+						}
 					}
 				}
 				else
@@ -403,16 +427,28 @@ class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 				if (random(1,256) <= evolveChance)
 				{
 					if (random(1,4) == 1)
-						return "FrostGolemGhost";
+					{
+						if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
+						else return "MummyLeaderGhostNew";
+					}
 					else
-						return "FrostGolem";
+					{
+						if (CanFitHere("FrostGolem")) return "FrostGolem";
+						else return "MummyLeaderNew";
+					}
 				}
 				else
 				{
 					if (random(1,4) == 1)
-						return "IceGolemGhost";
+					{
+						if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
+						else return "MummyLeaderGhostNew";
+					}
 					else
-						return "IceGolem";
+					{
+						if (CanFitHere("IceGolem")) return "IceGolem";
+						else return "MummyLeaderNew";
+					}
 				}
 			}
 			else
@@ -436,16 +472,28 @@ class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
 			if (random(1,256) <= evolveChance)
 			{
 				if (random(1,4) == 1)
-					return "FrostGolemGhost";
+				{
+					if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
+					else return "MummyLeaderGhostNew";
+				}
 				else
-					return "FrostGolem";
+				{
+					if (CanFitHere("FrostGolem")) return "FrostGolem";
+					else return "MummyLeaderNew";
+				}
 			}
 			else
 			{
 				if (random(1,4) == 1)
-					return "IceGolemGhost";
+				{
+					if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
+					else return "MummyLeaderGhostNew";
+				}
 				else
-					return "IceGolem";
+				{
+					if (CanFitHere("IceGolem")) return "IceGolem";
+					else return "MummyLeaderNew";
+				}
 			}
 		}
 		else
@@ -523,6 +571,42 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 		}
 		else
 			return "WizardNew";
+		
+	}
+}
+
+// Disciple Spawner
+class FWizardSpawner : AetheriusMonsterSpawner replaces Wizard
+{
+	Default
+	{
+		+FRIENDLY
+		+FLOAT
+		+NOGRAVITY
+		+SPAWNFLOAT
+		+DONTOVERLAP
+	}
+
+	override Name ChooseSpawn()
+	{
+		let evolveChance = CallACS("GetEvolveChance");
+		
+		if (random(1,384) <= evolveChance)
+		{
+			evolveChance = CallACS("GetEvolveChance");
+			if (random(1,768) <= evolveChance)
+			{
+				evolveChance = CallACS("GetEvolveChance");
+				if (random(1,1152) <= evolveChance)
+					return "FBanshee";
+				else 
+					return "FHereticApprentice";
+			}
+			else
+				return "FGreaterDisciple";
+		}
+		else
+			return "FWizard";
 		
 	}
 }

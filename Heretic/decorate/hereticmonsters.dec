@@ -3608,7 +3608,7 @@ actor ClinkLungeAttackStatus : PowerProtection
 }
 
 ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) sprites by Phobus, Decorate by Phobus, Edited by Bouncy
-{ 
+{
 	Tag "SabreBlade"
 	Health 550
 	Height 64
@@ -3653,10 +3653,22 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 		See:
 			DCLK ABCD 2
 			{
-				A_SetInventory("ClinkLungeAttackStatus",0);
-				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(1); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				user_fastchasetimermax = 8;
+				if (levelbehavior > 0 && user_monsterlevel > 225) { user_fastchasetimermax = 5; }
+				else if (levelbehavior > 0 && user_monsterlevel > 150) { user_fastchasetimermax = 6; }
+				else if (levelbehavior > 0 && user_monsterlevel > 75) { user_fastchasetimermax = 7; }
+				user_fastchasetimer++;
+				if (user_fastchasetimer >= user_fastchasetimermax) 
+				{
+					if (levelbehavior > 0 && user_monsterlevel > 45) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE|CHF_NIGHTMAREFAST,1,3,1,1); } else { A_DVDSChase("Melee","",CHF_FASTCHASE|CHF_NIGHTMAREFAST,1,3,1,1); }
+					user_fastchasetimer = 0; 
+				}
+				else
+				{
+					if (levelbehavior > 0 && user_monsterlevel > 45) { A_DVDSChase("Melee","Missile",0,1,3,1,1); } else { A_DVDSChase("Melee","",0,1,3,1,1); }
+				}
 
-				if (levelbehavior > 0 && user_monsterlevel > 45) { A_DVDSChase("Melee","Missile",0,1,3,1,1); } else { A_DVDSChase("Melee","",0,1,3,1,1); }
 			}
 			Loop
 		Melee:
@@ -3751,6 +3763,13 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 			DCLK ONMLKJI 5
 			Goto See
 	}
+}
+actor FDarkClink : DarkClink
+{
+	-COUNTKILL 
+	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
+	Species "FriendlyMonsters"
+	dropitem NoItemSpawn 1
 }
 
 ACTOR DarkClinkBall : AetheriusProjectileZSC

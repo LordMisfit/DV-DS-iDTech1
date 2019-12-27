@@ -121,7 +121,7 @@ class DSparilBase : AetheriusBossZSC
 	}
 
 	// without Chaos Serpent
-	void DSparilTeleport ()
+	void DSparilTeleport()
 	{
 		SpotState state = Level.GetSpotState();
 		if (state == null) return;

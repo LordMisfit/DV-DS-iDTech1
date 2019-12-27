@@ -4578,6 +4578,7 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 	DropItem "PhoenixRodHefty", 8
 	DropItem "PhoenixRodHefty", 8
 	Species "Ophidian"
+	var float user_varience;
 
 	States
 	{
@@ -4607,7 +4608,18 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck; // Single Projectile
-				A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, 0, CMF_CHECKTARGETDEAD);
+				if (A_JumpIfCloser(256,"")) { user_varience = 1.0; }
+				else if (A_JumpIfCloser(512,"")) { user_varience = 2.0; }
+				else if (A_JumpIfCloser(1024,"")) { user_varience = 3.0; }
+				else if (A_JumpIfCloser(2048,"")) { user_varience = 4.0; }
+				else { user_varience = 5.0; }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience));
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
 			}
 			SNKE FFF 5
 			{
@@ -4621,7 +4633,18 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck; // Single Projectile
-				A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, 0, CMF_CHECKTARGETDEAD);
+				if (A_JumpIfCloser(256,"")) { user_varience = 1.0; }
+				else if (A_JumpIfCloser(512,"")) { user_varience = 2.0; }
+				else if (A_JumpIfCloser(1024,"")) { user_varience = 3.0; }
+				else if (A_JumpIfCloser(2048,"")) { user_varience = 4.0; }
+				else { user_varience = 5.0; }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience));
+				if (levelbehavior > 0 && user_monsterlevel > 60) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("SnakeProjBNew", "SnakeProjBCrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
 			}
 			Goto See
 		Pain:
@@ -4731,7 +4754,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck; // Single Projectile
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 			}
 			HLGD E 4
 			{
@@ -4746,7 +4773,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
 				{
 					A_MonsterCrisisCheck; // Single Projectile
+					if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+					if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
+					if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+					if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 				}
 				else 
 				{
@@ -4765,7 +4796,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 
 				A_MonsterCrisisCheck; // Single Projectile
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 				A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
+				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 			}
 			HLGD E 4
 			{
@@ -4780,7 +4815,11 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) 
 				{
 					A_MonsterCrisisCheck; // Single Projectile
+					if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+					if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 					A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0));
+					if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
+					if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-3.0,3.0)); }
 				}
 				else 
 				{
@@ -5826,7 +5865,9 @@ actor Serpathor : AetheriusMonsterZSC
 	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 72 // Fist attacks have a +50% chance of stunning an enemy
+	PainChance "Fire", 12
 	DamageFactor "Crush", 6.4
+	DamageFactor "Fire", 0.25
 	Mass 900 // 500
 	Reactiontime 8
 	MONSTER 
@@ -5839,6 +5880,7 @@ actor Serpathor : AetheriusMonsterZSC
 	PainSound "snake/pain"
 	DeathSound "snake/death"
 	ActiveSound "snake/active"
+	Species "Ophidian"
 	Obituary "%o was stoned by a Serpathor."
 	DropItem "PhoenixRodAmmo", 84, 5
 	DropItem "PhoenixRod", 28, 1
@@ -5955,6 +5997,9 @@ actor Serpathor : AetheriusMonsterZSC
 		Pain:
 			SBTC H 3
 			SBTC H 3 A_DVDSPain(1,random(18,22),8,0,0,75)
+			Goto See
+		Pain.Fire:
+			SBTC H 3 A_DVDSPain(1,random(18,22),8,0,0,25)
 			Goto See
 		Pain.Fist:
 			SBTC H 3

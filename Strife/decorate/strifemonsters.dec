@@ -3061,7 +3061,6 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Normal", 0.001
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "PoisonBolt", 0.625
@@ -3175,7 +3174,6 @@ ACTOR Macil2New : Macil1New replaces Macil2
 	DamageFactor "PoisonBolt", 0.625
 	DamageFactor "Crush", 0.5
 	DamageFactor "SpectralLow", 0.125 // Sigil level 1 cannot hurt them
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1
 	DamageFactor "Magic", 1
@@ -3429,7 +3427,6 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	DamageFactor "PoisonBolt", 0.0025
 	DamageFactor "Crush", 0.001
 	DamageFactor "SpectralLow", 2 // Sigil level 1 can hurt them
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1
 	DamageFactor "Magic", 1
@@ -3610,7 +3607,6 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 	Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
 
 	DamageFactor "SpectralLow", 1 // Sigil level 1 can mostly hurt them
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	DamageFactor "Sigil", 2
 	Radius 24
 	//DropItem "Sigil2"
@@ -3705,7 +3701,6 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "SpectralLow", 0.5 // Sigil level 1 can somewhat hurt them
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	DamageFactor "Sigil", 2
 	Radius 24
 	+SPAWNCEILING
@@ -3869,7 +3864,6 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "SpectralLow", 0.25 // Sigil level 1 can barely hurt them
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	DamageFactor "Sigil", 2
 	Radius 24
 	// DropItem "Sigil4"
@@ -3981,7 +3975,6 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 125 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "SpectralLow", 0 // Sigil level 1 cannot hurt them at all
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	DamageFactor "Sigil", 2
 	Radius 24
 	// DropItem "Sigil5"
@@ -4089,7 +4082,6 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1
 	DamageFactor "Magic", 1
@@ -4261,7 +4253,6 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1.5
 	DamageFactor "Magic", 1
@@ -4453,7 +4444,6 @@ ACTOR EntityAscended : EntityBossNew
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Crush", 0.001
-	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 0.75
 	DamageFactor "Magic", 0.75

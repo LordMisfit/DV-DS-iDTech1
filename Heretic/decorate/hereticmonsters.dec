@@ -12,7 +12,11 @@ ACTOR ChickenNew : AetheriusMorphedMonster replaces Chicken
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
+
 	DamageFactor 0.5
+	RadiusDamageFactor 0.5
+	DamageFactor "Explosion", 0.5
+
 	DamageFactor "Crush", 32
 	Monster
 	-COUNTKILL
@@ -1208,9 +1212,12 @@ Actor IceGolem : AetheriusMonsterZSC
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	RadiusDamageFactor 0.625
-	DamageFactor "Crush", 5.6
+
 	DamageFactor 0.925
+	RadiusDamageFactor 0.578125
+	DamageFactor "Explosion", 0.578125
+
+	DamageFactor "Crush", 5.6
 	DamageFactor "Fire", 1.8
 	DamageFactor "Ice", 0.0
 	Monster
@@ -1414,9 +1421,12 @@ Actor FrostGolem : IceGolem
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	RadiusDamageFactor 0.625
-	DamageFactor "Crush", 5.6
+
 	DamageFactor 0.85
+	DamageFactor "Explosive", 0.53125
+	RadiusDamageFactor 0.53125
+
+	DamageFactor "Crush", 5.6
 	DamageFactor "Fire", 1.4
 	DamageFactor "Ice", 0.0
 	Monster
@@ -1864,7 +1874,10 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 	Painchance "Kick", 50 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 30 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Holy", 35 // Holy attacks have a +75% chance of stunning an enemy
+
 	DamageFactor 0.875
+	RadiusDamageFactor 0.875
+	DamageFactor "Explosive", 0.875
 	DamageFactor "Holy", 1.75
 	DamageFactor "Crush", 7.2
 	MONSTER
@@ -3618,6 +3631,10 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 72 // Fist attacks have a +50% chance of stunning an enemy
+
+	RadiusDamageFactor 0.625
+	DamageFactor "Explosive", 0.625
+
 	DamageFactor "Crush", 5.6
 	DamageFactor "Holy", 1.50
 	DamageFactor "Fire", 0.25
@@ -3627,7 +3644,6 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 	Painchance "Fire", 12
 	Painchance "Ice", 12
 	Painchance "Thunder", 12
-	RadiusDamageFactor 0.625
 	MONSTER
 	SeeSound "clink/sight"
 	DeathSound "clink/death"
@@ -5857,7 +5873,11 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
+
 	DamageFactor 0.8
+	RadiusDamageFactor 0.8
+	DamageFactor "Explosive", 0.8
+
 	DamageFactor "Magic", 0.8
 	DamageFactor "Crush", 6.4
 	MONSTER 

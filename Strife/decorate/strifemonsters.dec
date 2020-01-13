@@ -3181,20 +3181,20 @@ ACTOR Macil2New : Macil1New replaces Macil2
 	DamageFactor "Sceptre", 1
 	DamageFactor "Magic", 1
 	DamageFactor "Sigil", 1
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3445,20 +3445,20 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "SpectralLow", 2 // Sigil level 1 can hurt them
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3629,20 +3629,20 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "SpectralLow", 1 // Sigil level 1 can mostly hurt them
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3753,20 +3753,20 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "SpectralLow", 0.5 // Sigil level 1 can somewhat hurt them
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3945,20 +3945,20 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "SpectralLow", 0.25 // Sigil level 1 can barely hurt them
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4085,20 +4085,20 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
 	DamageFactor "SpectralLow", 0 // Sigil level 1 cannot hurt them at all
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4221,20 +4221,20 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	DamageFactor "Lightning", 0.25
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4398,20 +4398,20 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	DamageFactor "Lightning", 0.25
 	DamageFactor "Holy", 1
 	DamageFactor "Sigil", 2
-	DamageFactor "ImpClaw", 1
-	DamageFactor "DarkImpClaw", 1
-	DamageFactor "CacodemonEye", 1
-	DamageFactor "CacolanternEye", 1
+	DamageFactor "ImpSoul", 1
+	DamageFactor "DarkImpSoul", 1
+	DamageFactor "CacodemonSoul", 1
+	DamageFactor "CacolanternSoul", 1
 	DamageFactor "AbaddonEye", 1
-	DamageFactor "KnightFist", 1
-	DamageFactor "BaronFist", 1
-	DamageFactor "BelphegorFist", 1
+	DamageFactor "KnightSoul", 1
+	DamageFactor "BaronSoul", 1
+	DamageFactor "BelphegorSoul", 1
 	DamageFactor "BrusierFist", 1
-	DamageFactor "ArchonFist", 1
-	DamageFactor "PyroFist", 1
-	DamageFactor "IncarnateSkull", 1
-	DamageFactor "DiabloistHand", 1
-	DamageFactor "BalrogFist", 1
+	DamageFactor "ArchonSoul", 1
+	DamageFactor "PyroDemonSoul", 1
+	DamageFactor "IncarnateSoul", 1
+	DamageFactor "DiabloistSoul", 1
+	DamageFactor "BalrogSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4595,20 +4595,20 @@ ACTOR EntityAscended : EntityBossNew
 	DamageFactor "Lightning", 0.1875
 	DamageFactor "Holy", 0.75
 	DamageFactor "Sigil", 1.5
-	DamageFactor "ImpClaw", 0.75
-	DamageFactor "DarkImpClaw", 0.75
-	DamageFactor "CacodemonEye", 0.75
-	DamageFactor "CacolanternEye", 0.75
+	DamageFactor "ImpSoul", 0.75
+	DamageFactor "DarkImpSoul", 0.75
+	DamageFactor "CacodemonSoul", 0.75
+	DamageFactor "CacolanternSoul", 0.75
 	DamageFactor "AbaddonEye", 0.75
-	DamageFactor "KnightFist", 0.75
-	DamageFactor "BaronFist", 0.75
-	DamageFactor "BelphegorFist", 0.75
+	DamageFactor "KnightSoul", 0.75
+	DamageFactor "BaronSoul", 0.75
+	DamageFactor "BelphegorSoul", 0.75
 	DamageFactor "BrusierFist", 0.75
-	DamageFactor "ArchonFist", 0.75
-	DamageFactor "PyroFist", 0.75
-	DamageFactor "IncarnateSkull", 0.75
-	DamageFactor "DiabloistHand", 0.75
-	DamageFactor "BalrogFist", 0.75
+	DamageFactor "ArchonSoul", 0.75
+	DamageFactor "PyroDemonSoul", 0.75
+	DamageFactor "IncarnateSoul", 0.75
+	DamageFactor "DiabloistSoul", 0.75
+	DamageFactor "BalrogSoul", 0.75
 	DamageFactor "Fist", 0.75
 	DamageFactor "Kick", 0.75
 	DamageFactor "Gauntlets", 0.75

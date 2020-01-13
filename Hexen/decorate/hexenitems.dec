@@ -338,12 +338,12 @@ actor FWeapAxeNew : RandomSpawner2 replaces FWeapAxe
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "ImpClawCI"
-	DropItem "DarkImpClawCI"
-	DropItem "CacodemonEyeCI"
-	DropItem "CacolanternEyeCI"
+	DropItem "ImpSoulCI"
+	DropItem "DarkImpSoulCI"
+	DropItem "CacodemonSoulCI"
+	DropItem "CacolanternSoulCI"
 	DropItem "AbaddonEyeCI"
-	DropItem "KnightFistCI"
+	DropItem "KnightSoulCI"
 }
 actor CWeapStaffNew : RandomSpawner2 replaces CWeapStaff
 {
@@ -351,12 +351,12 @@ actor CWeapStaffNew : RandomSpawner2 replaces CWeapStaff
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "ImpClawCI"
-	DropItem "DarkImpClawCI"
-	DropItem "CacodemonEyeCI"
-	DropItem "CacolanternEyeCI"
+	DropItem "ImpSoulCI"
+	DropItem "DarkImpSoulCI"
+	DropItem "CacodemonSoulCI"
+	DropItem "CacolanternSoulCI"
 	DropItem "AbaddonEyeCI"
-	DropItem "KnightFistCI"
+	DropItem "KnightSoulCI"
 }
 actor MWeapFrostNew : RandomSpawner2 replaces MWeapFrost
 {
@@ -364,12 +364,12 @@ actor MWeapFrostNew : RandomSpawner2 replaces MWeapFrost
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "ImpClawCI"
-	DropItem "DarkImpClawCI"
-	DropItem "CacodemonEyeCI"
-	DropItem "CacolanternEyeCI"
+	DropItem "ImpSoulCI"
+	DropItem "DarkImpSoulCI"
+	DropItem "CacodemonSoulCI"
+	DropItem "CacolanternSoulCI"
 	DropItem "AbaddonEyeCI"
-	DropItem "KnightFistCI"
+	DropItem "KnightSoulCI"
 }
 
 // Slot 5 Hellcore [replaces 3rd weapons in Hexen]
@@ -379,12 +379,12 @@ actor FWeapHammerNew : RandomSpawner2 replaces FWeapHammer
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "IncarnateSkullCI"
-	DropItem "BaronFistCI"
-	DropItem "BelphegorFistCI"
-	DropItem "BruiserFistCI"
-	DropItem "ArchonFistCI"
-	DropItem "PyroFistCI"
+	DropItem "IncarnateSoulCI"
+	DropItem "BaronSoulCI"
+	DropItem "BelphegorSoulCI"
+	DropItem "BruiserSoulCI"
+	DropItem "ArchonSoulCI"
+	DropItem "PyroDemonSoulCI"
 }
 actor CWeapFlameNew : RandomSpawner2 replaces CWeapFlame
 {
@@ -392,12 +392,12 @@ actor CWeapFlameNew : RandomSpawner2 replaces CWeapFlame
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "IncarnateSkullCI"
-	DropItem "BaronFistCI"
-	DropItem "BelphegorFistCI"
-	DropItem "BruiserFistCI"
-	DropItem "ArchonFistCI"
-	DropItem "PyroFistCI"
+	DropItem "IncarnateSoulCI"
+	DropItem "BaronSoulCI"
+	DropItem "BelphegorSoulCI"
+	DropItem "BruiserSoulCI"
+	DropItem "ArchonSoulCI"
+	DropItem "PyroDemonSoulCI"
 }
 actor MWeapLightningNew : RandomSpawner2 replaces MWeapLightning
 {
@@ -405,12 +405,12 @@ actor MWeapLightningNew : RandomSpawner2 replaces MWeapLightning
 	DropItem "PoisonNeedle"
 	DropItem "SapphireWandNew"
 	DropItem "DiarisLongbow"
-	DropItem "IncarnateSkullCI"
-	DropItem "BaronFistCI"
-	DropItem "BelphegorFistCI"
-	DropItem "BruiserFistCI"
-	DropItem "ArchonFistCI"
-	DropItem "PyroFistCI"
+	DropItem "IncarnateSoulCI"
+	DropItem "BaronSoulCI"
+	DropItem "BelphegorSoulCI"
+	DropItem "BruiserSoulCI"
+	DropItem "ArchonSoulCI"
+	DropItem "PyroDemonSoulCI"
 }
 
 actor FWeaponPiece1New : RandomSpawner2 replaces FWeaponPiece1
@@ -418,108 +418,108 @@ actor FWeaponPiece1New : RandomSpawner2 replaces FWeaponPiece1
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor FWeaponPiece2New : RandomSpawner2 replaces FWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor FWeaponPiece3New : RandomSpawner2 replaces FWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor FWeapQuietusNew : RandomSpawner2 replaces FWeapQuietus
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor CWeaponPiece1New : RandomSpawner2 replaces CWeaponPiece1
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor CWeaponPiece2New : RandomSpawner2 replaces CWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor CWeaponPiece3New : RandomSpawner2 replaces CWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor CWeapWraithvergeNew : RandomSpawner2 replaces CWeapWraithverge
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor MWeaponPiece1New : RandomSpawner2 replaces MWeaponPiece1
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor MWeaponPiece2New : RandomSpawner2 replaces MWeaponPiece2
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor MWeaponPiece3New : RandomSpawner2 replaces MWeaponPiece3
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 actor MWeapBloodscourgeNew : RandomSpawner2 replaces MWeapBloodscourge
 {
 	+DONTGIB
 	DropItem "PoisonNeedle"
 	DropItem "DiarisLongbow"
-	DropItem "BalrogFistCI"
-	DropItem "ArchvileHandCI"
-	DropItem "DiabloistHandCI"
+	DropItem "BalrogSoulCI"
+	DropItem "ArchvileSoulCI"
+	DropItem "DiabloistSoulCI"
 }
 
 //*******************

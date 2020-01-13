@@ -342,7 +342,7 @@ actor FWeapAxeNew : RandomSpawner2 replaces FWeapAxe
 	DropItem "DarkImpSoulCI"
 	DropItem "CacodemonSoulCI"
 	DropItem "CacolanternSoulCI"
-	DropItem "AbaddonEyeCI"
+	DropItem "AbaddonSoulCI"
 	DropItem "KnightSoulCI"
 }
 actor CWeapStaffNew : RandomSpawner2 replaces CWeapStaff
@@ -355,7 +355,7 @@ actor CWeapStaffNew : RandomSpawner2 replaces CWeapStaff
 	DropItem "DarkImpSoulCI"
 	DropItem "CacodemonSoulCI"
 	DropItem "CacolanternSoulCI"
-	DropItem "AbaddonEyeCI"
+	DropItem "AbaddonSoulCI"
 	DropItem "KnightSoulCI"
 }
 actor MWeapFrostNew : RandomSpawner2 replaces MWeapFrost
@@ -368,7 +368,7 @@ actor MWeapFrostNew : RandomSpawner2 replaces MWeapFrost
 	DropItem "DarkImpSoulCI"
 	DropItem "CacodemonSoulCI"
 	DropItem "CacolanternSoulCI"
-	DropItem "AbaddonEyeCI"
+	DropItem "AbaddonSoulCI"
 	DropItem "KnightSoulCI"
 }
 

@@ -421,6 +421,8 @@ actor FWeaponPiece1New : RandomSpawner2 replaces FWeaponPiece1
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor FWeaponPiece2New : RandomSpawner2 replaces FWeaponPiece2
 {
@@ -430,6 +432,8 @@ actor FWeaponPiece2New : RandomSpawner2 replaces FWeaponPiece2
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor FWeaponPiece3New : RandomSpawner2 replaces FWeaponPiece3
 {
@@ -439,6 +443,8 @@ actor FWeaponPiece3New : RandomSpawner2 replaces FWeaponPiece3
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor FWeapQuietusNew : RandomSpawner2 replaces FWeapQuietus
 {
@@ -448,6 +454,8 @@ actor FWeapQuietusNew : RandomSpawner2 replaces FWeapQuietus
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor CWeaponPiece1New : RandomSpawner2 replaces CWeaponPiece1
 {
@@ -457,6 +465,8 @@ actor CWeaponPiece1New : RandomSpawner2 replaces CWeaponPiece1
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor CWeaponPiece2New : RandomSpawner2 replaces CWeaponPiece2
 {
@@ -466,6 +476,8 @@ actor CWeaponPiece2New : RandomSpawner2 replaces CWeaponPiece2
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor CWeaponPiece3New : RandomSpawner2 replaces CWeaponPiece3
 {
@@ -475,6 +487,8 @@ actor CWeaponPiece3New : RandomSpawner2 replaces CWeaponPiece3
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor CWeapWraithvergeNew : RandomSpawner2 replaces CWeapWraithverge
 {
@@ -484,6 +498,8 @@ actor CWeapWraithvergeNew : RandomSpawner2 replaces CWeapWraithverge
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor MWeaponPiece1New : RandomSpawner2 replaces MWeaponPiece1
 {
@@ -493,6 +509,8 @@ actor MWeaponPiece1New : RandomSpawner2 replaces MWeaponPiece1
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor MWeaponPiece2New : RandomSpawner2 replaces MWeaponPiece2
 {
@@ -502,6 +520,8 @@ actor MWeaponPiece2New : RandomSpawner2 replaces MWeaponPiece2
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor MWeaponPiece3New : RandomSpawner2 replaces MWeaponPiece3
 {
@@ -511,6 +531,8 @@ actor MWeaponPiece3New : RandomSpawner2 replaces MWeaponPiece3
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 actor MWeapBloodscourgeNew : RandomSpawner2 replaces MWeapBloodscourge
 {
@@ -520,6 +542,8 @@ actor MWeapBloodscourgeNew : RandomSpawner2 replaces MWeapBloodscourge
 	DropItem "BalrogSoulCI"
 	DropItem "ArchvileSoulCI"
 	DropItem "DiabloistSoulCI"
+	DropItem "HElementalSoulCI"
+	DropItem "HOverlordSoulCI"
 }
 
 //*******************

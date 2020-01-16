@@ -3195,6 +3195,8 @@ ACTOR Macil2New : Macil1New replaces Macil2
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3459,6 +3461,8 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3643,6 +3647,8 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3767,6 +3773,8 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -3959,6 +3967,8 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4099,6 +4109,8 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4235,6 +4247,8 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4412,6 +4426,8 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	DamageFactor "IncarnateSoul", 1
 	DamageFactor "DiabloistSoul", 1
 	DamageFactor "BalrogSoul", 1
+	DamageFactor "HElementalSoul", 1
+	DamageFactor "HOverlordSoul", 1
 	DamageFactor "Fist", 1
 	DamageFactor "Kick", 1
 	DamageFactor "Gauntlets", 1
@@ -4609,6 +4625,8 @@ ACTOR EntityAscended : EntityBossNew
 	DamageFactor "IncarnateSoul", 0.75
 	DamageFactor "DiabloistSoul", 0.75
 	DamageFactor "BalrogSoul", 0.75
+	DamageFactor "HElementalSoul", 0.75
+	DamageFactor "HOverlordSoul", 0.75
 	DamageFactor "Fist", 0.75
 	DamageFactor "Kick", 0.75
 	DamageFactor "Gauntlets", 0.75

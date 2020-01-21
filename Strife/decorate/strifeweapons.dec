@@ -126,7 +126,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 			Stop
 		Ready:
 			XBOW A 0 A_GunFlash ("Flash", GFF_NOEXTCHANGE)
-			XBOW A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			XBOW A 1 A_WeaponReady
 			Wait
 		Deselect:
 			XBOW A 1 
@@ -349,7 +349,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	States
 	{
 		Ready:
-			XBOW H 1 A_WeaponReady(WRF_ALLOWUSER1)
+			XBOW H 1 A_WeaponReady
 			Loop
 		Deselect:
 			XBOW H 1
@@ -1237,19 +1237,19 @@ Actor NNSigil : StrifeWeaponBase
 			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 2, "Ready2")
 			TNT1 A 0 A_JumpIf(CallACS("NNSigilPieceCount") == 1, "Ready1")
 		Ready1:
-			SGLA A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			SGLA A 1 Bright A_WeaponReady
 			goto Ready
 		Ready2:
-			SGLB A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			SGLB A 1 Bright A_WeaponReady
 			goto Ready
 		Ready3:
-			SGLC A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			SGLC A 1 Bright A_WeaponReady
 			goto Ready
 		Ready4:
-			SGLD A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			SGLD A 1 Bright A_WeaponReady
 			goto Ready
 		Ready5:
-			SGLE A 1 Bright A_WeaponReady(WRF_ALLOWUSER1)
+			SGLE A 1 Bright A_WeaponReady
 			goto Ready
 
 		Fire:

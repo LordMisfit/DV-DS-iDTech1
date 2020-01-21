@@ -641,7 +641,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 			GWAN A 0
 			Stop
 		Ready:
-			GWND A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			GWND A 1 A_WeaponReady
 			Loop
 		Deselect:
 			GWND A 1 
@@ -747,7 +747,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 			GWAN A -1
 			Stop
 		Ready:
-			GWN2 A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			GWN2 A 1 A_WeaponReady
 			Loop
 		Deselect:
 			GWN2 A 1
@@ -950,7 +950,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 			WBOW A 1
 			Loop
 		Ready:
-			CRBW AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
+			CRBW AAAAAABBBBBBCCCCCC 1 A_WeaponReady
 			Loop
 		Deselect:
 			CRBW AAAAAABBBBBBCCCCCC 1
@@ -1075,7 +1075,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 			WBOW A -1
 			Stop
 		Ready:
-			CRBD AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
+			CRBD AAAAAABBBBBBCCCCCC 1 A_WeaponReady
 			Loop
 		Deselect:
 			CRBD AAAAAABBBBBBCCCCCC 1
@@ -1297,7 +1297,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 			WBLS A 1
 			Loop
 		Ready:
-			FBLS A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			FBLS A 1 A_WeaponReady
 			Loop
 		Deselect:
 			FBLS A 1
@@ -1388,7 +1388,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 			WBLS A -1
 			Stop
 		Ready:
-			FDBL A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			FDBL A 1 A_WeaponReady
 			Loop
 		Deselect:
 			FDBL A 1
@@ -1584,7 +1584,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 			WSKL A 1
 			Loop
 		Ready:
-			HROD A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			HROD A 1 A_WeaponReady
 			Loop
 		Deselect:
 			HROD A 1 
@@ -1687,7 +1687,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 			WSKL A -1
 			Stop
 		Ready:
-			DHRD A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			DHRD A 1 A_WeaponReady
 			Loop
 		Deselect:
 			DHRD A 1
@@ -2047,7 +2047,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 			WPHX A 1
 			Loop
 		Ready:
-			PHNX A 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER4)
+			PHNX A 1 A_WeaponReady(WRF_ALLOWUSER4)
 			Loop
 		Deselect:
 			PHNX A 1
@@ -2216,7 +2216,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 			WPHX A -1
 			Stop
 		Ready:
-			PHND A 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER4)
+			PHND A 1 A_WeaponReady(WRF_ALLOWUSER4)
 			Loop
 		Deselect:
 			PHND A 1
@@ -2506,7 +2506,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 			WMCE A 1
 			Loop
 		Ready:
-			MACE A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			MACE A 1 A_WeaponReady
 			Loop
 		Deselect:
 			MACE A 1
@@ -2619,7 +2619,7 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 			WMCE A -1
 			Stop
 		Ready:
-			DMAC A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			DMAC A 1 A_WeaponReady
 			Loop
 		Deselect:
 			DMAC A 1
@@ -2746,7 +2746,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 			WBOW B 1
 			Loop
 		Ready: 
-			CRB2 AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
+			CRB2 AAAAAABBBBBBCCCCCC 1 A_WeaponReady
 			loop
 		Deselect:
 			CRB2 AAAAAABBBBBBCCCCCC 1 
@@ -2902,7 +2902,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 			WBOW B -1
 			stop
 		Ready: 
-			SCRD AAAAAABBBBBBCCCCCC 1 A_WeaponReady(WRF_ALLOWUSER1)
+			SCRD AAAAAABBBBBBCCCCCC 1 A_WeaponReady
 			loop
 		Deselect:
 			SCRD AAAAAABBBBBBCCCCCC 1
@@ -3170,7 +3170,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 			DSTA A 1
 			Loop
 		Ready:
-			DSTF A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			DSTF A 1 A_WeaponReady
 			Loop
 		Deselect:
 			DSTF A 1
@@ -3283,7 +3283,7 @@ actor DualDSparilStaff : HereticWeaponBase
 			DSTA A -1
 			Stop
 		Ready:
-			DSTD A 1 A_WeaponReady(WRF_ALLOWUSER1)
+			DSTD A 1 A_WeaponReady
 			Loop
 		Deselect:
 			DSTD A 1

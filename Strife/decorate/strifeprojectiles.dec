@@ -21,14 +21,7 @@ ACTOR StrifeGenBulletTracer : AetheriusBulletTracerZSC
 		Spawn:
 			TNT1 A 0 NoDelay bright
 		Idle:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5)
 			loop
 		XDeath:
 			TNT1 A 1 //A_SpawnItem("StrifePuff")
@@ -43,6 +36,21 @@ ACTOR StrifeGenBulletTracer : AetheriusBulletTracerZSC
 ACTOR StrifeGenBulletTracer2 : StrifeGenBulletTracer
 {
 	Damage ((Random(3,15) * 3))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5)
+			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
+	}
 }
 
 ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
@@ -51,21 +59,42 @@ ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
 	States
 	{
 		Spawn:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeGenBulletTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 NoDelay bright
+			CTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5)
+			CTAC A 0 bright A_GenerateCrisisParticle
 			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
 	}
 }
 
 ACTOR StrifeGenBulletTracer2Crisis : StrifeGenBulletTracerCrisis
 {
 	Damage ((Random(3,15) * 3) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+			CTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5)
+			CTAC A 0 bright A_GenerateCrisisParticle
+			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
+	}
 }
 
 actor StrifeGenBulletTracerTrail
@@ -112,14 +141,7 @@ ACTOR StrifeReaverBulletTracer : AetheriusBulletTracerZSC
 		Spawn:
 			TNT1 A 0 NoDelay bright
 		Idle:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5)
 			loop
 		XDeath:
 			TNT1 A 1 //A_SpawnItem("StrifePuff")
@@ -134,6 +156,21 @@ ACTOR StrifeReaverBulletTracer : AetheriusBulletTracerZSC
 ACTOR StrifeReaverBulletTracer2 : StrifeReaverBulletTracer
 {
 	Damage ((Random(3,24) * 3))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5)
+			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
+	}
 }
 
 ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
@@ -142,21 +179,42 @@ ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
 	States
 	{
 		Spawn:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeReaverBulletTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 NoDelay bright
+			CTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5)
+			CTAC A 0 bright A_GenerateCrisisParticle
 			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
 	}
 }
 
 ACTOR StrifeReaverBulletTracer2Crisis : StrifeReaverBulletTracerCrisis
 {
 	Damage ((Random(3,24) * 3) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+			CTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5)
+			CTAC A 0 bright A_GenerateCrisisParticle
+			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("StrifePuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff")
+			stop
+	}
 }
    
 actor StrifeReaverBulletTracerTrail
@@ -203,14 +261,7 @@ ACTOR StrifeMaulerTracer : AetheriusBulletTracerZSC
 		Spawn:
 			TNT1 A 0 NoDelay bright
 		Idle:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeMaulerTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5)
 			loop
 		XDeath:
 			TNT1 A 1 A_SpawnItem("MaulerPuff")
@@ -225,6 +276,21 @@ ACTOR StrifeMaulerTracer : AetheriusBulletTracerZSC
 ACTOR StrifeMaulerTracer2 : StrifeMaulerTracer
 {
 	Damage ((Random(3,12) * 2))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5)
+			loop
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
+	}
 }
    
 ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
@@ -233,21 +299,42 @@ ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 	States
 	{
 		Spawn:
-			TNT1 A 0 bright
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-15.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-12.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-10.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-7.5,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-5.0,0,0,0,0,0,0,128,0)
-			TNT1 A 0 bright A_SpawnItemEx("StrifeMaulerTracerTrail",-2.5,0,0,0,0,0,0,128,0)
-			TNT1 A 1 bright A_SpawnItemEx("StrifeMaulerTracerTrail",0.0,0,0,0,0,0,0,128,0)
+			TNT1 A 0 NoDelay bright
+			GTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5)
+			GTAC A 0 bright A_GenerateCrisisParticle
 			loop
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
 	}
 }
 
 ACTOR StrifeMaulerTracer2Crisis : StrifeMaulerTracerCrisis
 {
 	Damage ((Random(3,12) * 2) * CallACS("CrisisMultiplier"))
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+			GTAC A 0 bright A_GenerateCrisisParticle
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5)
+			GTAC A 0 bright A_GenerateCrisisParticle
+			loop
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff")
+			stop
+	}
 }
 
 ACTOR StrifeMaulerTracerRetail : StrifeMaulerTracer

@@ -254,7 +254,7 @@ ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 	}
 }
 
-ACTOR TeleporterBeaconNew : TeleporterBeacon replaces TeleporterBeacon
+ACTOR TeleporterBeaconNew : AetheriusTeleporterBeaconNew replaces TeleporterBeacon
 {
 	ConversationID 166
 	Health 5

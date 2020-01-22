@@ -324,3 +324,58 @@ class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
 			return "InquisitorNew";
 	}
 }
+
+//
+class AetheriusTeleporterBeaconNew : TeleporterBeacon
+{
+	void A_Beacon(string cname = "Rebel1New")
+	{
+		Actor owner = target;
+		Actor rebel = Spawn(cname, (pos.xy, floorz), ALLOW_REPLACE);
+		if (rebel == null)
+		{
+			return;
+		}
+		if (!rebel.TryMove (rebel.Pos.xy, true))
+		{
+			rebel.Destroy();
+			return;
+		}
+		// Once the rebels start teleporting in, you can't pick up the beacon anymore.
+		bSpecial = false;
+		Inventory(self).DropTime = 0;
+		// Set up the new rebel.
+		rebel.threshold = rebel.DefThreshold;
+		rebel.ChangeTID(1000);
+		rebel.target = null;
+		rebel.bInCombat = true;
+		rebel.LastHeard = owner;	// Make sure the rebels look for targets
+		if (deathmatch)
+		{
+			rebel.health *= 2;
+		}
+		if (owner != null)
+		{
+			// Rebels are the same color as their owner (but only in multiplayer)
+			if (multiplayer)
+			{
+				rebel.Translation = owner.Translation;
+			}
+			rebel.SetFriendPlayer(owner.player);
+			// Set the rebel's target to whatever last hurt the player, so long as it's not
+			// one of the player's other rebels.
+			if (owner.target != null && !rebel.IsFriend (owner.target))
+			{
+				rebel.target = owner.target;
+			}
+		}
+
+		rebel.SetState (rebel.SeeState);
+		rebel.Angle = Angle;
+		rebel.SpawnTeleportFog(rebel.Vec3Angle(20., Angle, 0), false, true);
+		if (--health < 0)
+		{
+			SetStateLabel("Death");
+		}
+	}
+}

@@ -74,7 +74,7 @@ actor YggdrasilDewSellItem1 : BaseSellItem
 		Use:
 			TNT1 A 1 
 			{
-				A_GiveInventory("Coin",312,AAPTR_PLAYER1);
+				A_GiveInventory("Coin",625,AAPTR_PLAYER1);
 				A_TakeInventory("YggdrasilDewSellItem1",1,0,AAPTR_PLAYER1);
 				A_PlaySound("Grabbed/Coins",0);
 			}

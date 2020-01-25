@@ -889,7 +889,7 @@ conversation
 			cost
 			{
 				item = 168;
-				amount = 625;
+				amount = 1250;
 			}
 			displaycost = true;
 			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
@@ -1016,7 +1016,7 @@ conversation
 			cost
 			{
 				item = 168;
-				amount = 625;
+				amount = 1250;
 			}
 			displaycost = true;
 			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";
@@ -2124,7 +2124,7 @@ conversation
     }
 		choice
 		{
-			text = "YGGDRASIL DEW (312 GOLD)";
+			text = "YGGDRASIL DEW (625 GOLD)";
 			cost
 			{
 				item = 354; // YggdrasilDew

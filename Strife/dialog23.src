@@ -500,7 +500,7 @@ conversation
 			cost
 			{
 				item = 168;
-				amount = 700;
+				amount = 1400;
 			}
 			displaycost = true;
 			yesmessage = "ONE YGGDRASIL DEW FOR YOU. HOLD ON TO IT FOR AN EMERGENCY.";

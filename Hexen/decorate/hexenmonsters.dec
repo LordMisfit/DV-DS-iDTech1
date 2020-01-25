@@ -3262,7 +3262,7 @@ Actor DarkPatriarch : BishopNew
 }
 
 /*
-Actor PatriarchRadiusHeal : Custominventory
+Actor PatriarchRadiusHeal : AetheriusCustomInventory
 {
 	Inventory.MaxAmount 0
 	+Inventory.AUTOACTIVATE

@@ -225,7 +225,7 @@ ACTOR ArtiHealingRadiusNew : AetheriusCustomInventory replaces ArtiHealingRadius
 	Inventory.Icon "ARTIHRAD"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIHEALINGRADIUS" // "MYSTIC AMBIT INCANT"
-	Tag "Mystic Ambit Incant: Recovers 62.5% HP/MP and 125% Stamina up to 200%/500% of Maximums"
+	Tag "Mystic Ambit Incant: Recovers 62.5% HP/MP (you/allies in moderate range) and 125% Stamina (you only) up to 200%/500% of Maximums"
 	States
 	{
 		Spawn:
@@ -251,9 +251,10 @@ actor FlechetteReplacer : RandomSpawner2 replaces ArtiPoisonBag
 	DropItem "PaxaPunch", 96, 5
 	DropItem "MercuryBandana", 96, 5
 	DropItem "ArtiBoostMana", 96, 3
-	DropItem "YggdrasilDew", 96, 3
 	DropItem "LesserVimstone", 96, 3
 	DropItem "ArtiHealingRadiusNew" 96, 3
+	DropItem "MiraclePotion", 96, 2
+	DropItem "YggdrasilDew", 96, 1
 	DropItem "GreaterVimstone", 96, 1
 	DropItem "RandomArmorNew", 96, 1
 }
@@ -275,9 +276,10 @@ actor ArtiBlastRadiusNew : FlechetteReplacer replaces ArtiBlastRadius
 	DropItem "PaxaPunch", 96, 5
 	DropItem "MercuryBandana", 96, 5
 	DropItem "ArtiBoostMana", 96, 3
-	DropItem "YggdrasilDew", 96, 3
 	DropItem "LesserVimstone", 96, 3
 	DropItem "ArtiHealingRadiusNew" 96, 3
+	DropItem "MiraclePotion", 96, 2
+	DropItem "YggdrasilDew", 96, 1
 	DropItem "GreaterVimstone", 96, 1
 	DropItem "RandomArmorNew", 96, 1
 }

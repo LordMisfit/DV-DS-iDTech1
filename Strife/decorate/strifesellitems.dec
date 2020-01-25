@@ -358,6 +358,23 @@ actor GreaterVimstoneSellItem1 : BaseSellItem
 	}
 }
 
+actor MiraclePotionSellItem1 : BaseSellItem
+{
+	ConversationID 522 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
+	States
+	{
+		Pickup:
+		Use:
+			TNT1 A 1 
+			{
+				A_GiveInventory("Coin",315,AAPTR_PLAYER1);
+				A_TakeInventory("MiraclePotionSellItem1",1,0,AAPTR_PLAYER1);
+				A_PlaySound("Grabbed/Coins",0);
+			}
+			stop
+	}
+}
+
 // OTHER "JUNK"
 actor OfferingChaliceItem1 : BaseSellItem
 {

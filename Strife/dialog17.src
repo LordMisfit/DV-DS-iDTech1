@@ -282,6 +282,21 @@ conversation
 		}
 		choice
 		{
+			text = "MIRACLE POTION";
+			cost
+			{
+				item = 168;
+				amount = 420;
+			}
+			displaycost = true;
+			yesmessage = "ONE MIRACLE POTION FOR YOU. USE IT WISELY.";
+			nomessage = "SORRY, NOT ENOUGH GOLD FOR ONE OF THESE!";
+			giveitem = 389; // Miracle Potion
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
 			text = "YGGDRASIL DEW";
 			cost
 			{

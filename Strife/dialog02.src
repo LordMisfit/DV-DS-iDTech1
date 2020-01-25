@@ -885,6 +885,21 @@ conversation
 		}
 		choice
 		{
+			text = "MIRACLE POTION";
+			cost
+			{
+				item = 168;
+				amount = 630;
+			}
+			displaycost = true;
+			yesmessage = "ONE MIRACLE POTION FOR YOU. USE IT WISELY.";
+			nomessage = "SORRY, NOT ENOUGH GOLD FOR ONE OF THESE!";
+			giveitem = 389; // Miracle Potion
+			nextpage = 1;
+			closedialog = false;
+		}
+		choice
+		{
 			text = "YGGDRASIL DEW";
 			cost
 			{
@@ -1007,6 +1022,21 @@ conversation
 			yesmessage = "ONE SPECIALIZED MEDICINAL HERB FOR YA.";
 			nomessage = "SORRY, THESE KINDS OF HERBS AREN'T CHEAP.";
 			giveitem = 353; // SpecialMedicene
+			nextpage = 3;
+			closedialog = false;
+		}
+		choice
+		{
+			text = "MIRACLE POTION";
+			cost
+			{
+				item = 168;
+				amount = 630;
+			}
+			displaycost = true;
+			yesmessage = "ONE MIRACLE POTION FOR YOU. USE IT WISELY.";
+			nomessage = "SORRY, NOT ENOUGH GOLD FOR ONE OF THESE!";
+			giveitem = 389; // Miracle Potion
 			nextpage = 3;
 			closedialog = false;
 		}
@@ -2051,7 +2081,7 @@ conversation
 			giveitem = 505; // MedPatchSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "MEDICAL KIT (12 GOLD)";
@@ -2065,7 +2095,7 @@ conversation
 			giveitem = 506; // MedicalKitSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "SURGERY KIT (37 GOLD)";
@@ -2079,7 +2109,7 @@ conversation
 			giveitem = 507; // SurgeryKitSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "MEDICINAL HERB (10 GOLD)";
@@ -2093,7 +2123,7 @@ conversation
 			giveitem = 501; // MedicinalHerbSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "STRONG MEDICENE (25 GOLD)";
@@ -2107,7 +2137,7 @@ conversation
 			giveitem = 502; // StrongMediceneSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "SPECIAL MEDICENE (75 GOLD)";
@@ -2121,7 +2151,21 @@ conversation
 			giveitem = 503; // SpecialMediceneSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
+		choice
+		{
+			text = "MIRACLE POTION (315 GOLD)";
+			cost
+			{
+				item = 389; // Miracle Potion
+				amount = 1;
+			}
+			yesmessage = "THANK YOU FOR YOUR SERVICE.";
+			nomessage = "SORRY YOU NEED SOMETHING TO SELL FOR GOLD, YOU KNOW.";
+			giveitem = 522; // MiraclePotionSellItem1
+			nextpage = 2;
+			closedialog = false;
+ 		}
 		choice
 		{
 			text = "YGGDRASIL DEW (625 GOLD)";
@@ -2135,7 +2179,7 @@ conversation
 			giveitem = 504; // YggdrasilDewSellItem1
 			nextpage = 2;
 			closedialog = false;
-    }
+ 		}
 		choice
 		{
 			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";

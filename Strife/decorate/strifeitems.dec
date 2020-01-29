@@ -113,7 +113,7 @@ ACTOR MetalArmorNew : MetalArmor replaces MetalArmor
 // Degnin Ore [both variants]
 
 // This is the initial pickup. It will not explode if hit in this form.
-ACTOR DegninOrePickup : AetheriusCustomInventory replaces DegninOre
+ACTOR DegninOrePickup : AetheriusUsableInventory replaces DegninOre
 {
 	Radius 16
 	Height 16
@@ -188,7 +188,7 @@ ACTOR DegninOreNew : DegninOre
 }
 
 // Others
-ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit // PowerupGiver
+ACTOR EnvironmentalSuitNew : AetheriusUsableInventory replaces EnvironmentalSuit // PowerupGiver
 {
 	ConversationID 161, 157, 160
 	+FLOORCLIP
@@ -202,7 +202,7 @@ ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit
 	Inventory.PickupSound "misc/i_pkup"
 	Inventory.Icon "I_MASK"
 	Inventory.PickupMessage "You picked up the \cdEnvironmental Suit\c-."
-	Tag "Environmental Suit: Protects from Hazardous Waste, as well as Fire"
+	Tag "Environmental Suit: Protects from Hazardous Waste, as well as Fire, for 80 seconds"
 
 	States
 	{
@@ -210,17 +210,12 @@ ACTOR EnvironmentalSuitNew : AetheriusCustomInventory replaces EnvironmentalSuit
 			MASK A -1
 			Stop
 		Use:
-			TNT1 A 0
-			{
-				A_GiveBuffsPowerup(22,80);
-				A_TakeInventory("EnvironmentalSuitNew",1,0,AAPTR_PLAYER1);
-				A_PlaySound("misc/invuse",0);
-			}
+			TNT1 A 0 A_UseCustomInventoryItem(-12)
 			fail
 	}
 }
 
-ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
+ACTOR ShadowArmorNew : AetheriusUsableInventory replaces ShadowArmor
 {
 	ConversationID 160, 156, 159
 	+FLOORCLIP
@@ -231,7 +226,7 @@ ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
 	RenderStyle Translucent
-	Tag "Shadow Armor: Gives player invisibility"
+	Tag "Shadow Armor: Gives player invisibility for 80 seconds"
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 
@@ -244,12 +239,7 @@ ACTOR ShadowArmorNew : AetheriusCustomInventory replaces ShadowArmor
 			SHD1 A -1 Bright
 			Stop
 		Use:
-			TNT1 A 0
-			{
-				A_GiveBuffsPowerup(1,55);
-				A_TakeInventory("ShadowArmorNew",1,0,AAPTR_PLAYER1);
-				A_PlaySound("misc/invuse",0);
-			}
+			TNT1 A 0 A_UseCustomInventoryItem(-11)
 			fail
 	}
 }
@@ -329,7 +319,7 @@ ACTOR ScannerNew : Scanner replaces Scanner
 }
 
 // Medical Items
-ACTOR MedPatchNew : AetheriusCustomInventory replaces MedPatch // : HealthPickup 2011
+ACTOR MedPatchNew : AetheriusUsableInventory replaces MedPatch // : HealthPickup 2011
 {
 	Game Strife
 	ConversationID 125, 121, 124
@@ -363,7 +353,7 @@ ACTOR MedPatchNew : AetheriusCustomInventory replaces MedPatch // : HealthPickup
 	}
 }
 
-ACTOR MedicalKitNew : AetheriusCustomInventory replaces MedicalKit // HealthPickup 2012
+ACTOR MedicalKitNew : AetheriusUsableInventory replaces MedicalKit // HealthPickup 2012
 {
 	Game Strife
 	ConversationID 126, 122, 125
@@ -396,7 +386,7 @@ ACTOR MedicalKitNew : AetheriusCustomInventory replaces MedicalKit // HealthPick
 	}
 }
 
-ACTOR SurgeryKitNew : AetheriusCustomInventory replaces SurgeryKit // HealthPickup 83
+ACTOR SurgeryKitNew : AetheriusUsableInventory replaces SurgeryKit // HealthPickup 83
 {
 	Game Strife
 	ConversationID 127, 123, 126

@@ -124,7 +124,7 @@ ACTOR ArtiTomeOfPowerNew : RandomSpawner2 replaces ArtiTomeOfPower
 	DropItem "SauronGauntlets", 255, 1
 }
 
-ACTOR ArtiInvisibilityNew : AetheriusCustomInventory replaces ArtiInvisibility
+ACTOR ArtiInvisibilityNew : AetheriusUsableInventory replaces ArtiInvisibility
 {
 	+DONTGIB
 	+COUNTITEM
@@ -202,7 +202,7 @@ ACTOR ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
 	}
 }
 
-ACTOR ArtiInvulnerabilityNew : AetheriusCustomInventory replaces ArtiInvulnerability
+ACTOR ArtiInvulnerabilityNew : AetheriusUsableInventory replaces ArtiInvulnerability
 {
 	+DONTGIB
 	+COUNTITEM
@@ -321,7 +321,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 	}
 }
 
-ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
+ACTOR ArtiHealthNew : AetheriusUsableInventory replaces ArtiHealth
 {
 	+DONTGIB
 	+COUNTITEM
@@ -332,7 +332,7 @@ ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
 	Inventory.DefMaxAmount
-	Inventory.Icon ARTIPTN2
+	Inventory.Icon "ARTIPTN2"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
 	Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
@@ -350,7 +350,7 @@ ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
 	}
 }
 
-ACTOR ArtiSuperHealthNew : AetheriusCustomInventory replaces ArtiSuperHealth
+ACTOR ArtiSuperHealthNew : AetheriusUsableInventory replaces ArtiSuperHealth
 {
 	+DONTGIB
 	+COUNTITEM

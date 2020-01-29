@@ -181,7 +181,7 @@ ACTOR ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
 	}
 }
 
-ACTOR ArtiInvulnerability2New : AetheriusCustomInventory replaces ArtiInvulnerability2
+ACTOR ArtiInvulnerability2New : AetheriusUsableInventory replaces ArtiInvulnerability2
 {
 	+DONTGIB
 	+COUNTITEM
@@ -209,7 +209,7 @@ ACTOR ArtiInvulnerability2New : AetheriusCustomInventory replaces ArtiInvulnerab
 	}
 }
 
-ACTOR ArtiHealingRadiusNew : AetheriusCustomInventory replaces ArtiHealingRadius
+ACTOR ArtiHealingRadiusNew : AetheriusUsableInventory replaces ArtiHealingRadius
 {
 	+DONTGIB
 	+COUNTITEM
@@ -720,7 +720,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
   }
 }
 
-ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
+ACTOR ArtiHealthNew : AetheriusUsableInventory replaces ArtiHealth
 {
 	+DONTGIB
 	+COUNTITEM
@@ -733,7 +733,7 @@ ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 
-	Inventory.Icon ARTIPTN2
+	Inventory.Icon "ARTIPTN2"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
 	Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
@@ -748,7 +748,7 @@ ACTOR ArtiHealthNew : AetheriusCustomInventory replaces ArtiHealth
 	}
 }
 
-ACTOR ArtiSuperHealthNew : AetheriusCustomInventory replaces ArtiSuperHealth
+ACTOR ArtiSuperHealthNew : AetheriusUsableInventory replaces ArtiSuperHealth
 {
 	+DONTGIB
 	+COUNTITEM
@@ -776,7 +776,7 @@ ACTOR ArtiSuperHealthNew : AetheriusCustomInventory replaces ArtiSuperHealth
 	}
 }
 
-ACTOR ArtiBoostManaNew : AetheriusCustomInventory replaces ArtiBoostMana
+ACTOR ArtiBoostManaNew : AetheriusUsableInventory replaces ArtiBoostMana
 {
 	+DONTGIB
 	+FLOATBOB

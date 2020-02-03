@@ -286,7 +286,7 @@ actor FPig : PigNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 
@@ -399,7 +399,7 @@ actor FEttin : EttinNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR EttinGhostNew : EttinNew replaces EttinMash
@@ -553,7 +553,7 @@ actor FEttinCommander : EttinCommander
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Bormereth :V
@@ -903,7 +903,7 @@ actor FBormereth : Bormereth
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
@@ -1101,7 +1101,7 @@ actor FCentaur : CentaurNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR CentaurGhostNew : CentaurNew replaces CentaurMash
@@ -1343,7 +1343,7 @@ actor FSlaughtaur : SlaughtaurNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
@@ -1477,7 +1477,7 @@ actor FFireDemon : FireDemonNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 Actor FireDemonLeader : FireDemonNew
@@ -2216,7 +2216,7 @@ actor FBishop : BishopNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 Actor DarkDisciple : BishopNew
@@ -2845,7 +2845,7 @@ actor FVampire : VampireDVDS
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 Actor VampirePainBlur
@@ -3876,7 +3876,7 @@ actor FStalker : StalkerNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR StalkerLeaderNew : StalkerNew // replaces SerpentLeader
@@ -3906,7 +3906,7 @@ actor FStalkerLeader : StalkerLeaderNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR IceStalker : StalkerNew
@@ -4458,7 +4458,7 @@ actor FGreenChaosSerpent : GreenChaosSerpentNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR GreenChaosSerpentGhostNew : GreenChaosSerpentNew replaces Demon1Mash
@@ -4611,7 +4611,7 @@ actor FBrownChaosSerpent : BrownChaosSerpentNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR BrownChaosSerpentGhostNew : BrownChaosSerpentNew replaces Demon2Mash
@@ -4854,7 +4854,7 @@ actor FMagmaChaosSerpentNew : MagmaChaosSerpentNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Black Serpent [Demon4]
@@ -5078,7 +5078,7 @@ actor FBlackChaosSerpentNew : BlackChaosSerpentNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 Actor EtherealChaosSerpentNew : GreenChaosSerpentNew
@@ -5240,7 +5240,7 @@ actor FEtherealChaosSerpentNew : EtherealChaosSerpentNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Wraiths
@@ -5388,7 +5388,7 @@ actor FWraith : WraithNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR WraithBuriedNew : WraithNew replaces WraithBuried
@@ -5523,7 +5523,7 @@ actor FIceGuy : IceGuyNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor FHeresiarch : HeresiarchNew
@@ -5531,7 +5531,7 @@ actor FHeresiarch : HeresiarchNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR KoraxNew : KoraxBase replaces Korax
@@ -5841,7 +5841,7 @@ actor FDragon : DragonNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball

@@ -90,7 +90,7 @@ actor FChicken : ChickenNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
@@ -270,7 +270,7 @@ actor FHereticImp : HereticImpNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor HereticImpLeaderNew : HereticImpNew // replaces HereticImpLeader
@@ -319,7 +319,7 @@ actor FHereticImpLeader : HereticImpLeaderNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Plague Gargoyle
@@ -822,7 +822,7 @@ actor FMummy : MummyNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor MummyGhostNew : MummyNew // replaces MummyGhost
@@ -911,7 +911,7 @@ actor FMummyGhost : MummyGhostNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
@@ -1061,7 +1061,7 @@ actor FMummyLeader : MummyLeaderNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
@@ -1194,7 +1194,7 @@ actor FMummyLeaderGhost : MummyLeaderGhostNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Ice Golem
@@ -1838,7 +1838,7 @@ actor FKnight : KnightNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 ACTOR KnightGhostNew : KnightNew // replaces KnightGhost
 {
@@ -1855,7 +1855,7 @@ actor FKnightGhost : KnightGhostNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Death Knight
@@ -2420,7 +2420,7 @@ actor FWizard : WizardNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR Banshee : AetheriusMonsterZSC
@@ -2667,21 +2667,7 @@ ACTOR Banshee : AetheriusMonsterZSC
 			BANS B 8 BRIGHT
 			BANS C 8 BRIGHT
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120)
-				{
-					A_CustomMissile("ReviveProj2", 0, 0, 0, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 72, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 144, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 216, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 288, 0);
-				}
-				else
-				if (levelbehavior > 0 && user_monsterlevel > 60)
-				{
-					A_CustomMissile("ReviveProj2", 0, 0, 0, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 120, 0);
-					A_CustomMissile("ReviveProj2", 0, 0, 240, 0);
-				}
+				A_BanshHealProj;
 			}
 			BANS D 8 BRIGHT
 			Goto See
@@ -2720,7 +2706,7 @@ actor FBanshee : Banshee
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 actor BansheePainToken : Ammo
@@ -2844,7 +2830,7 @@ actor FIronlich : IronlichNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Ice Lich
@@ -3564,7 +3550,7 @@ actor FClink : ClinkNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR SabreclawGhostTrail //: AetheriusProjectileZSC
@@ -3786,7 +3772,7 @@ actor FDarkClink : DarkClink
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR DarkClinkBall : AetheriusProjectileZSC
@@ -3930,7 +3916,7 @@ actor FBeast : BeastNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR ShadowBeast : AetheriusMonsterZSC 30123
@@ -4565,7 +4551,7 @@ actor FMaulotaur : MaulotaurNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
@@ -4702,7 +4688,7 @@ actor FSnake : SnakeNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 // Hell Guard
@@ -5706,7 +5692,7 @@ actor FGreaterDisciple : GreaterDisciple
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 
@@ -6093,7 +6079,7 @@ actor FHereticApprentice : HereticApprenticeNew
 	-COUNTKILL 
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
-	dropitem NoItemSpawn 1
+	dropitem "NoItemSpawn", 1
 }
 
 Actor AoDGhost

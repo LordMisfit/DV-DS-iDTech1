@@ -6,10 +6,12 @@ DV-DS-iDTech1 ["Aetherius" iDTech1 Packages - Allows "Aetherius" to run with oth
 
 HOW TO INSTALL / RUN / ETC:
 
+  [Note: if you have downloaded this as a file off the repository's site, the main folder[s] below inside the archive file will have the postfix '-master' appended onto them [i.e. "DV-DS-idTech1-master"]. Either consider that postfix in the folders for the command lines below, or rename the folders inside to remove the '-master' post fix. I usually don't use zips for testing, but I use a git client to directly upload the revisions of these repositories to Github and to download them as well, so they don't append '-master' to the foldernames on my end.]
+
  - Important - Make absolutely sure you got DV-DS-ComboPack [@ https://github.com/LordMisfit/DV-DS-ComboPack ] working right before you do anything here. Refer to that repository's README.md file for more information.
 
- - Installing 1 - Make sure you unzip the entire "DV-DS-CompatPacks" folder inside the zip file to your designated GZDoom folder. Do not try to install the subfolders within into "DV-DS-ComboPacks" or into your main GZDoom folder, or you've done flapped it up and have to do everything up to this point on both repositories over again. :V
- - TL;DR: So basically make sure "DV-DS-ComboPacks" & "DV-DS-idTech1" are seperate subfolders in your main GZDoom folder. :P
+ - Installing 1 - Make sure you unzip the entire "DV-DS-idTech1" folder inside the zip file to your designated GZDoom folder. Do not try to install the subfolders within into "DV-DS-ComboPack" or into your main GZDoom folder, or you've done flapped it up and have to do everything up to this point on both repositories over again. :V
+ - TL;DR: So basically make sure "DV-DS-ComboPack" & "DV-DS-idTech1" are seperate subfolders in your main GZDoom folder. :P
 
  - Running - 1. There is no launcher packed for use with DV-DS-idTech1, you'll have to rely on command lines for now. My general method is to create a batch [.bat] file and name it something you'll remember. Remember you can right click a .bat file and "edit" them to change the command line used inside.
 

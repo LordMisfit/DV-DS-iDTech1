@@ -136,10 +136,10 @@ class DSparilBase : AetheriusBossZSC
 			if (mo) 
 			{
 				mo.Translation = Translation;
-				mo.A_PlaySound("misc/teleport", CHAN_BODY);
+				mo.A_StartSound("misc/teleport", CHAN_BODY);
 			}
-			SetStateLabel ("Teleport");
-			A_PlaySound ("misc/teleport", CHAN_BODY);
+			SetStateLabel("Teleport");
+			A_StartSound("misc/teleport", CHAN_BODY);
 			SetZ(floorz);
 			angle = spot.angle;
 			vel = (0,0,0); 

@@ -851,5 +851,5 @@ ACTOR PhosphorusGrenadeRoundsProp : BaseProp 25018
 // Dummy Items
 actor BestEndingFlag : PlaceholderItem { ConversationID 420 }
 
-// Special Give Items [Dialouge Scripts]
-ACTOR Dialouge500Gold : Coin { ConversationID 421 Inventory.GiveQuest 3 Inventory.Amount 500 }
+// Special Give Items [dialogue Scripts]
+ACTOR Dialogue500Gold : Coin { ConversationID 421 Inventory.GiveQuest 3 Inventory.Amount 500 }

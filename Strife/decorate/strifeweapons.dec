@@ -540,24 +540,23 @@ ACTOR ClipOfBulletsNew : ClipOfBullets replaces ClipOfBullets
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 1)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 48)
-				{
-					A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			BLIT A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 1)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 48)
+					{
+						A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -568,24 +567,23 @@ ACTOR BoxOfBulletsNew : BoxOfBullets replaces BoxOfBullets
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 3)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 144)
-				{
-					A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			BBOX A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 3)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 144)
+					{
+						A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -596,28 +594,27 @@ ACTOR AssaultGunNew : AssaultGun replaces AssaultGun
 	ConversationID 188
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 32)
-				{
-					A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 16)
-				{
-					A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 4)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			RIFL A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 32)
+					{
+						A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 16)
+					{
+						A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 4)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 
 		Ready:
@@ -645,28 +642,27 @@ ACTOR AssaultGunStandingNew : AssaultGunStanding replaces AssaultGunStanding
 	Inventory.PickupMessage "$TXT_ASSAULTGUN" // "You picked up the assault gun."
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 32)
-				{
-					A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 16)
-				{
-					A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 4)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			RIFL B 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 32)
+					{
+						A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 16)
+					{
+						A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 4)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -677,24 +673,23 @@ ACTOR MiniMissilesNew : MiniMissiles replaces MiniMissiles
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 1)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 48)
-				{
-					A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			MSSL A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 1)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 48)
+					{
+						A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -705,24 +700,23 @@ ACTOR CrateOfMissilesNew : CrateOfMissiles replaces CrateOfMissiles
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 3)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 144)
-				{
-					A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			ROKT A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 3)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 144)
+					{
+						A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -733,28 +727,27 @@ ACTOR MiniMissileLauncherNew : MiniMissileLauncher replaces MiniMissileLauncher
 	ConversationID 192
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 48)
-				{
-					A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 24)
-				{
-					A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 6)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			MMSL A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 48)
+					{
+						A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 24)
+					{
+						A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 6)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 
 		Ready:
@@ -784,28 +777,27 @@ ACTOR FlameThrowerNew : FlameThrower replaces FlameThrower
 	ConversationID 190
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 64)
-				{
-					A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 32)
-				{
-					A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 8)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			FLAM A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 64)
+					{
+						A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 32)
+					{
+						A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 8)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 
 		Ready:
@@ -830,24 +822,23 @@ ACTOR HEGrenadeRoundsNew : HEGrenadeRounds replaces HEGrenadeRounds
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			MSSL A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -858,28 +849,23 @@ ACTOR PhosphorusGrenadeRoundsNew : PhosphorusGrenadeRounds replaces PhosphorusGr
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			ROKT A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -892,32 +878,31 @@ ACTOR StrifeGrenadeLauncherNew : StrifeGrenadeLauncher replaces StrifeGrenadeLau
 	Weapon.SisterWeapon "StrifeGrenadeLauncher2New"
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			GRND A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 256) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 192) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 128) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					if (random(1,256) <= 64) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 
 		Ready:
@@ -981,24 +966,23 @@ ACTOR EnergyPodNew : EnergyPod replaces EnergyPod
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 5)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 240)
-				{
-					A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			MSSL A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 5)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 240)
+					{
+						A_SpawnItemEx("DoomSpellMana",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -1009,24 +993,23 @@ ACTOR EnergyPackNew : EnergyPack replaces EnergyPack
 	+DONTGIB
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 15)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 240)
-				{
-					A_SpawnItemEx("DoomSpellMana2",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			ROKT A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 15)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 240)
+					{
+						A_SpawnItemEx("DoomSpellMana2",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 	}
 }
@@ -1038,28 +1021,27 @@ ACTOR MaulerNew : Mauler replaces Mauler
 	Weapon.SisterWeapon "Mauler2New"
 	States
 	{
-		FloraDetected: // bonus will be turned into something else
-			TNT1 A 0
-			{
-				if (random(1,256) <= 256)
-				{
-					A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 64)
-				{
-					A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
-				}
-				if (random(1,256) <= 16)
-				{
-					A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
-				}
-				A_FadeOut(1.0);
-			}
-			Loop
-
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckCharacterClass") == 2, "FloraDetected")
+			TNT1 A 0 NoDelay
 			TRPD A 1
+			{
+				if (CallACS("CheckCharacterClass") == 2)
+				{
+					if (random(1,256) <= 256)
+					{
+						A_SpawnItemEx("RandomHellcoreWeapon",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 64)
+					{
+						A_SpawnItemEx("DiarisLongBow",0,0,0,0,0,0,0,0,0);
+					}
+					if (random(1,256) <= 16)
+					{
+						A_SpawnItemEx("DiarisArrow",0,0,0,0,0,0,0,0,0);
+					}
+					A_FadeOut(1.0);
+				}
+			}
 			loop
 
 		Ready:

@@ -2144,7 +2144,7 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			}
 			Loop
 		Blur:
-			BISH A 2 A_BishopDoBlur(3,3)
+			BISH A 2 A_BishopDoBlur(3,3,11.0)
 			BISH A 4 A_BishopSpawnBlur(96)
 			Wait
 		Pain:
@@ -2313,7 +2313,7 @@ Actor DarkDisciple : BishopNew
 		Blur:
 			HDIS A 0 A_ChangeFlag("GHOST",1)
 			HDIS A 0 A_SetTranslucent(0.8,0)
-			HDIS A 2 A_BishopDoBlur(3,3)
+			HDIS A 2 A_BishopDoBlur(3,3,14.0)
 			HDIS AAA 4 A_SpawnItem("DiscipleBlur")
 			TNT1 A 0 A_Jump(256,1,2,3)
 			HDIS AA 4 A_SpawnItem("DiscipleBlur")
@@ -2674,7 +2674,7 @@ ACTOR VampireDVDS : BishopNew
 			Loop
 
 		Blur:
-			VAM1 A 2 A_BishopDoBlur(3,3)
+			VAM1 A 2 A_BishopDoBlur(3,3,17.0)
 			VAM1 AAA 4 A_SpawnItem("VampireBlur")
 			TNT1 A 0 A_Jump(256,1,2,3)
 			VAM1 AA 4 A_SpawnItem("VampireBlur")
@@ -3174,7 +3174,7 @@ Actor DarkPatriarch : BishopNew
 			Loop
 		Blur:
 			DPTR A 0 A_FaceTarget
-			DPTR A 2 A_BishopDoBlur
+			DPTR A 2 A_BishopDoBlur(3,3,17.0)
 			DPTR A 0 A_UnsetShootable
 			DPTR AAA 4 A_SpawnItemEx("PatriarchBlur")
 			DPTR A 0 A_Jump(256,1,2,3)
@@ -3376,7 +3376,7 @@ Actor DarkPatriarchClone : DarkPatriarch
 			Loop
 		Blur:
 			DPTR A 0 A_FaceTarget
-			DPTR A 2 A_BishopDoBlur
+			DPTR A 2 A_BishopDoBlur(3,3,17.0)
 			DPTR AAA 4 A_SpawnItem("PatriarchBlurClone")
 			DPTR A 0 A_Jump(256,1,2,3)
 			DPTR AA 4 A_SpawnItem("PatriarchBlurClone")

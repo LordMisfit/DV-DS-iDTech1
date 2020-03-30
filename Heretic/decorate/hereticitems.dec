@@ -45,7 +45,7 @@ ACTOR ArtiTimeBombNew replaces ArtiTimeBomb
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (random(1,1) <= 1) { A_SpawnItemEx("RockBombShard"); }
+				if (random(1,1) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,0,0,0,0,tid,0); }
 				if (random(1,4) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
 				if (random(1,16) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }
 				if (random(1,64) <= 1) { A_SpawnItemEx("RockBombShard",0,0,0,random(-2,2),random(-2,2),random(-2,2),0,0,0); }

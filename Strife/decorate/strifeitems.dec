@@ -377,7 +377,7 @@ ACTOR MedicalKitNew : AetheriusUsableInventory replaces MedicalKit // HealthPick
 	States
 	{
 		Spawn:
-			STMP A 0
+			MDKT A 0
 			{
 				if (A_CheckFlag("DROPPED","Null")) { }
 				else
@@ -411,7 +411,7 @@ ACTOR SurgeryKitNew : AetheriusUsableInventory replaces SurgeryKit // HealthPick
 	States
 	{
 		Spawn:
-			STMP A 0 NoDelay
+			FULL A 0 NoDelay
 			{
 				if (A_CheckFlag("DROPPED","Null")) { }
 				else

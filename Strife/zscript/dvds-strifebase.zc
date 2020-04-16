@@ -379,3 +379,109 @@ class AetheriusTeleporterBeaconNew : TeleporterBeacon
 		}
 	}
 }
+
+
+class HealthFillUpNew : DummyStrifeItem replaces HealthFillUp
+{
+	Default
+	{
+		Tag "$TAG_HEALTHFILLUP";
+	}
+	
+	override bool TryPickup (in out Actor toucher)
+	{
+		AetheriusPlayerPawn cplayerpawn;
+
+		
+		int TrueGameSkill = dvds_gendifficultycurve + Skill;
+		double healthrestorefactor = 1.0;
+		double healthrestorelimit = 1.0;
+		int CurrentHealth;
+		int PlayerMaxHP = CallACS("StatCheck",1);
+		if (TrueGameSkill == 0) { healthrestorefactor = 1.000; healthrestorelimit = 1.000; }
+		if (TrueGameSkill == 1) { healthrestorefactor = 0.75; healthrestorelimit = 0.75; }
+		if (TrueGameSkill == 2) { healthrestorefactor = 0.75; healthrestorelimit = 0.75; }
+		if (TrueGameSkill == 3) { healthrestorefactor = 0.50; healthrestorelimit = 0.50; }
+		if (TrueGameSkill == 4) { healthrestorefactor = 0.50; healthrestorelimit = 0.50; }
+		if (TrueGameSkill == 5) { healthrestorefactor = 0.375; healthrestorelimit = 0.375; }
+		if (TrueGameSkill == 6) { healthrestorefactor = 0.375; healthrestorelimit = 0.375; }
+		if (TrueGameSkill == 7) { healthrestorefactor = 0.25; healthrestorelimit = 0.25; }
+		if (TrueGameSkill == 8) { healthrestorefactor = 0.25; healthrestorelimit = 0.25; }
+		if (TrueGameSkill == 9) { healthrestorefactor = 0.125; healthrestorelimit = 0.125; }
+		healthrestorefactor *= 0.25;
+		int HealLimit = (PlayerMaxHP * healthrestorelimit);
+		
+		if (toucher)
+		{
+			cplayerpawn = AetheriusPlayerPawn(toucher);
+			if (cplayerpawn)
+			{
+				CurrentHealth = cplayerpawn.player.mo.health;
+				if (CurrentHealth < HealLimit)
+				{
+					CurrentHealth += (PlayerMaxHP * healthrestorefactor);
+					if (CurrentHealth >= HealLimit) CurrentHealth = HealLimit;
+					cplayerpawn.player.mo.health = cplayerpawn.player.health = CurrentHealth;
+					toucher.A_StartSound("gethealthkit",83,CHANF_DEFAULT,1.0,ATTN_NORM);
+					toucher.A_SetBlend("E0 E0 E0",0.33,random(17,18),"E0 E0 E0",0.0); // FadeRange(224,224,224,0.33,224,224,224,0,0.5);
+					Console.Printf("[True] CurrentHealth: %d, Limit: %d", CurrentHealth, (PlayerMaxHP * healthrestorelimit));
+				}
+				else
+				{
+					Console.Printf("[False] CurrentHealth: %d, Limit: %d", CurrentHealth, (PlayerMaxHP * healthrestorelimit));
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		GoAwayAndDie();
+		return true;
+	}
+}
+
+class AmmoFillupNew : DummyStrifeItem replaces AmmoFillup
+{
+	Default
+	{
+		Tag "$TAG_AMMOFILLUP";
+	}
+	
+	override bool TryPickup (in out Actor toucher)
+	{
+		//Console.Printf("235252");
+		int maxammo;
+		Inventory item = toucher.FindInventory("ElectricBolts");
+		if (item == NULL)
+		{
+			item = toucher.GiveInventoryType("ElectricBolts");
+			if (item != NULL)
+			{
+				maxammo = item.MaxAmount;
+				item.Amount = maxammo / 5;
+				toucher.A_StartSound("misc/i_pkup",9,CHANF_DEFAULT,1.0,ATTN_NORM);
+				toucher.A_SetBlend("FF FF FF",0.33,random(11,12),"FF FF FF",0.0); // FadeRange(224,224,224,0.33,224,224,224,0,0.5);
+			}
+		}
+		else 
+		{
+			maxammo = item.MaxAmount;
+			if (item.Amount < (maxammo / 5))
+			{
+				item.Amount = maxammo / 5;
+				toucher.A_StartSound("misc/i_pkup",9,CHANF_DEFAULT,1.0,ATTN_NORM);
+				toucher.A_SetBlend("FF FF FF",0.33,random(11,12),"FF FF FF",0.0); // FadeRange(224,224,224,0.33,224,224,224,0,0.5);
+			}
+			else
+			{
+				return false;
+			}
+		}
+		GoAwayAndDie ();
+		return true;
+	}
+	
+}

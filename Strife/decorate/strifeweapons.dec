@@ -59,7 +59,7 @@ ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 		Spawn:
 			AROW A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(25,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(25,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
 			}
 		Idle:
@@ -92,7 +92,7 @@ ACTOR PoisonBoltNew : AetheriusProjectileZSC replaces PoisonBolt
 		Spawn:
 			ARWP A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(26,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(26,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
 			}
 		Idle:

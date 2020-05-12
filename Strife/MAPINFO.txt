@@ -1,5 +1,11 @@
 // Strife patch MAPINFO
 
+ConversationIDs
+{
+	298 = AmmoFillupNew
+	299 = HealthFillUpNew
+}
+
 gameinfo
 {
  InfoPage = "HELP1", "HELP2", "HELP3"

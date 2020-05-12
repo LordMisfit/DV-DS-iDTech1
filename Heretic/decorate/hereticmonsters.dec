@@ -561,6 +561,9 @@ ACTOR WatcherImp : HereticImpNew
 
 		Melee:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			WATC DE 4 BRIGHT
 			{
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
@@ -596,6 +599,10 @@ ACTOR WatcherImp : HereticImpNew
 			Goto See
 
 		Missile:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			WATC D 0
 			{
 				user_firevolleys = 0;
@@ -604,6 +611,10 @@ ACTOR WatcherImp : HereticImpNew
 			}
 			WATC D 0 BRIGHT A_Jump(85,"Beastball")
 		MissileLoop:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			WATC DE 4 BRIGHT
 			{
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
@@ -620,6 +631,10 @@ ACTOR WatcherImp : HereticImpNew
 
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
+			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
 			}
 			WATC "[\" 4 BRIGHT
 			{
@@ -638,6 +653,10 @@ ACTOR WatcherImp : HereticImpNew
 				A_MonsterCrisisCheck; // Combo Attack
 				A_CrisisComboAttack("HereticImpBall2", "HereticImpBall2Crisis", 14, 14, "himp/leaderattack");
 			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			WATC ] 0 BRIGHT
 			{
 				user_firevolleys += 1;
@@ -646,6 +665,10 @@ ACTOR WatcherImp : HereticImpNew
 			}
 			loop
 		Beastball:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			WATC DE 6 BRIGHT
 			{
 				A_FloatChaseCheck(3,6,9,12,0.625,0.625);
@@ -4598,6 +4621,9 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 			Loop
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			SNKE FF 5
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -4606,6 +4632,8 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 			}
 			SNKE FFF 4
 			{
+				A_CheckIfTargetDead("See");
+
 				if (levelbehavior > 0 && user_monsterlevel > 80) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 40) { A_SetTics(3); }
 
@@ -4622,6 +4650,10 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 				if (levelbehavior > 0 && user_monsterlevel > 60) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("SnakeProjANew", "SnakeProjACrisis", 32, 0, frandom(user_varience,-user_varience), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(user_varience,-user_varience)); }
+			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
 			}
 			SNKE FFF 5
 			{
@@ -4741,6 +4773,9 @@ actor HellGuard : AetheriusMonsterZSC 3114
 			Loop
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			HLGD E 8 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -4761,6 +4796,10 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(-3.0,3.0)); }
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(-3.0,3.0)); }
 			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			HLGD E 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
@@ -4784,6 +4823,10 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				{
 					A_SetTics(0); 
 				}
+			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
 			}
 			HLGD E 4
 			{
@@ -4803,6 +4846,10 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(-3.0,3.0)); }
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_CrisisSpawnProjectile("HellGuardBall", "HellGuardBallCrisis", 28, -8, (frandom(-4.0,4.0)*2.0), CMF_OFFSETPITCH|CMF_BADPITCH|CMF_CHECKTARGETDEAD, frandom(-3.0,3.0)); }
 			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			HLGD E 4
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
@@ -4826,6 +4873,10 @@ actor HellGuard : AetheriusMonsterZSC 3114
 				{
 					A_SetTics(0); 
 				}
+			}
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
 			}
 			HLGD E 4
 			{

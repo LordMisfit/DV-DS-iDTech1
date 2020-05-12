@@ -1423,6 +1423,9 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			Goto Chase
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			FDMN K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1431,6 +1434,8 @@ ACTOR FireDemonNew : AetheriusMonsterZSC // replaces FireDemon
 			}
 			FDMN KKK 5 Bright 
 			{
+				A_CheckIfTargetDead("Chase");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 
@@ -1555,6 +1560,9 @@ Actor FireDemonLeader : FireDemonNew
 			Goto Chase
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			FDNL K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1563,6 +1571,8 @@ Actor FireDemonLeader : FireDemonNew
 			}
 			FDNL KKKKK 5 Bright 
 			{
+				A_CheckIfTargetDead("Chase");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
@@ -1724,6 +1734,9 @@ Actor FireDemonCommander : FireDemonNew
 			Goto Chase
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			FDNC K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1732,6 +1745,8 @@ Actor FireDemonCommander : FireDemonNew
 			}
 			FDNC KKKKKKK 5 Bright 
 			{
+				A_CheckIfTargetDead("Chase");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
@@ -1760,7 +1775,6 @@ Actor FireDemonCommander : FireDemonNew
 				A_SpawnItemEx("FireDemonCommanderSplotch1",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 				A_SpawnItemEx("FireDemonCommanderSplotch2",0,0,0,Random(1,2),Random(1,2),Random(3,5),Random(1,360));
 			}
-			TNT1 A 0 
 			FDNC O 5 //A_DVDSBossDeath
 			Stop
 		Death:
@@ -1896,6 +1910,9 @@ Actor FireDemonQueen : FireDemonNew
 		Missile:
 			TNT1 A 0 A_Jump(48,"Clone")
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			FDNQ K 3 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -1904,6 +1921,8 @@ Actor FireDemonQueen : FireDemonNew
 			}
 			FDNQ KKKKKKKKK 4 Bright 
 			{
+				A_CheckIfTargetDead("Chase");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(2); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(3); }
 				A_FaceTarget;
@@ -1913,6 +1932,10 @@ Actor FireDemonQueen : FireDemonNew
 			}
 			Goto Chase
 		Clone:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			TNT1 A 0 Thing_Stop(0)
 			TNT1 A 0 A_KillChildren
 			TNT1 A 0 A_UnSetShootable
@@ -1999,6 +2022,9 @@ actor FireDemonQueenClone : FireDemonQueen
 			Goto Chase
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("Chase");
+			}
 			FDNQ K 4 Bright 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(2); }
@@ -2007,6 +2033,8 @@ actor FireDemonQueenClone : FireDemonQueen
 			}
 			FDNQ KKK 5 Bright 
 			{
+				A_CheckIfTargetDead("Chase");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
@@ -2166,6 +2194,9 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			Goto See
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			BISH ADE 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -2180,6 +2211,8 @@ ACTOR BishopNew : AetheriusMonsterZSC // replaces Bishop
 			}
 			BISH F 5 
 			{
+				A_CheckIfTargetDead("See");
+
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(4); }
 				A_BishopAttack2("BishopFXNew","BishopFXCrisis");
@@ -2371,6 +2404,10 @@ Actor DarkDisciple : BishopNew
 			HDIS C 0
 			Goto See
 		Missile:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			HDIS ADE 3
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -2387,6 +2424,10 @@ Actor DarkDisciple : BishopNew
 				A_PlaySound("BishopAttack");
 			}
 		MissileLoop:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			HDIS F 5 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(3); }
@@ -2685,6 +2726,9 @@ ACTOR VampireDVDS : BishopNew
 
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			VAM1 X 0 Bright A_Jump(96,"Missile2")
 			VAM1 X 8 Bright
 			{
@@ -2697,6 +2741,10 @@ ACTOR VampireDVDS : BishopNew
 				user_shotsfiredmax = 9 + (random(1,256) & 3) + (user_monsterlevel/45);
 			}
 		BatAttack:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			TNT1 A 0 Bright 
 			{
 				A_SpawnItemEx("VampCloudSpawner", 0, 0, 30, 0, 0, 0, 0, 128);
@@ -2720,6 +2768,10 @@ ACTOR VampireDVDS : BishopNew
 			goto see
 
 		Missile2:
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			VAM1 E 8 Bright
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(4); }
@@ -2732,6 +2784,10 @@ ACTOR VampireDVDS : BishopNew
 			}
 			VAM1 AAAAAAAAAAAAAA 0 A_SpawnDebris("VampireBloodBoom",1)
 		BeamLoop: // 56
+			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			VAM1 F 1 Bright 
 			{
 				A_MonsterCrisisCheck; // Single Projectile
@@ -3185,6 +3241,9 @@ Actor DarkPatriarch : BishopNew
 			Goto See
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			DPTR A 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(1); }
@@ -3206,6 +3265,8 @@ Actor DarkPatriarch : BishopNew
 			TNT1 A 0 A_Jump(256,1,2,3,4)
 			DPTR FFFFFFFF 5 
 			{
+				A_CheckIfTargetDead("See");
+
 				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(4); }
 				A_FaceTarget;
@@ -3385,6 +3446,9 @@ Actor DarkPatriarchClone : DarkPatriarch
 			Goto See
 		Missile:
 			TNT1 A 0
+			{
+				A_CheckIfTargetDead("See");
+			}
 			DPTR A 3 
 			{
 				if (levelbehavior > 0 && user_monsterlevel > 360) { A_SetTics(1); }
@@ -3405,6 +3469,8 @@ Actor DarkPatriarchClone : DarkPatriarch
 			}
 			DPTR FFF 5 
 			{
+				A_CheckIfTargetDead("See");
+
 				if (levelbehavior > 0 && user_monsterlevel > 240) { A_SetTics(3); }
 				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
 				A_FaceTarget;

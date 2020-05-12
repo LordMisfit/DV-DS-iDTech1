@@ -594,7 +594,7 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 		Spawn:
 			FX01 A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(41,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(41,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -616,7 +616,7 @@ ACTOR GoldWandFX2New : GoldWandFX1New
 		Spawn:
 			FX01 C 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(42,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(42,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -893,7 +893,7 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 		Spawn:
 			FX03 B 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(21,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(21,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
 			}
 		Idle:
@@ -915,7 +915,7 @@ ACTOR CrossbowFX2New : CrossbowFX1New
 		Spawn:
 			FX03 B 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(22,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(22,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
 			}
 		Idle:
@@ -938,7 +938,7 @@ ACTOR CrossbowFX3New : CrossbowFX1New
 		Spawn:
 			FX03 A 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(23,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(23,0);
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
 			}
 		Idle:
@@ -1254,12 +1254,14 @@ ACTOR RipperNew : RipperBase
 		Spawn:
 			FX18 M 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(24,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(24,0);
 				A_ScaleVelocity(1.00-((CallACS("MiscVarCheckDECORATE",10053)*0.05)-(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
 			}
 		Idle:
-			FX18 MMMM 1 { A_GetPlayerAttackDamage(24,0); }
-			FX18 NNNNN 1 { A_GetPlayerAttackDamage(24,0); }
+			FX18 MMMMNNNNN 1 
+			{ 
+				finaldamagedealt = A_GetPlayerAttackDamage(24,0); 
+			}
 			Loop
 		Death:
 			FX18 OPQRS 4 Bright
@@ -1300,9 +1302,15 @@ ACTOR BlasterFX1New : BlasterFX1Base
 	States
 	{
 		Spawn:
-			ACLO E 0 NoDelay { A_GetPlayerAttackDamage(28,0); }
+			ACLO E 0 NoDelay 
+			{
+				finaldamagedealt = A_GetPlayerAttackDamage(28,0); 
+			}
 		Idle:
-			ACLO EEEEEEEE 1 { A_GetPlayerAttackDamage(28,0); }
+			ACLO EEEEEEEE 1 
+			{
+				finaldamagedealt = A_GetPlayerAttackDamage(28,0); 
+			}
 			Loop
 		Death:
 			FX18 A 3 Bright A_SpawnRippers("RipperNew")
@@ -1521,7 +1529,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 		Spawn:
 			FX00 A 0 Bright NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(31,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(31,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -1530,7 +1538,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 		Death:
 			FX00 H 5 Bright
 			{
-				A_GetPlayerAttackDamage(31,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(31,0);
 				A_Explode((finaldamagedealt/8),(16+(CallACS("MiscVarCheckDECORATE",10053)*8)+(CallACS("MiscVarCheckDECORATE",10054)*20)),0,0,(8+(CallACS("MiscVarCheckDECORATE",10053)*4)+(CallACS("MiscVarCheckDECORATE",10053)*10)));
 			}
 			FX00 I 5 Bright
@@ -1550,7 +1558,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
 		Spawn:
 			FX00 C 0 Bright NoDelay 
 			{
-				A_GetPlayerAttackDamage(32,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(32,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -1568,7 +1576,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
 			FX00 H 5 Bright // A_AddPlayerRain
 			FX00 I 5 Bright 
 			{
-				A_GetPlayerAttackDamage(32,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(32,0);
 				A_Explode((16+random(-9,9)+(finaldamagedealt/8)),(32+(CallACS("MiscVarCheckDECORATE",10053)*16)+(CallACS("MiscVarCheckDECORATE",10054)*40)),0,0,(16+(CallACS("MiscVarCheckDECORATE",10053)*8)+(CallACS("MiscVarCheckDECORATE",10053)*20)));
 			}
 			FX00 J 4 Bright
@@ -1586,7 +1594,10 @@ ACTOR RainPillarNew : RainPillarBase replaces RainPillar
 	States
 	{
 		Spawn:
-			FX22 A 0 NoDelay { A_GetPlayerAttackDamage(43,0); }
+			FX22 A 0 NoDelay 
+			{
+				finaldamagedealt = A_GetPlayerAttackDamage(43,0); 
+			}
 		Idle:
 			FX22 A -1 Bright
 			Stop
@@ -1844,7 +1855,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(33,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -1859,7 +1870,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 			}
 			FX08 A 6 Bright 
 			{
-				A_GetPlayerAttackDamage(61,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(61,0);
 				A_Explode((finaldamagedealt),128,1);
 			}
 			FX08 BC 5 Bright
@@ -1876,7 +1887,7 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(33,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -1906,7 +1917,7 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 		Spawn:
 			FX04 A 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(33,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
 
 				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
@@ -1952,7 +1963,7 @@ ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
 		Spawn:
 			FX04 A 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(33,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
 				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
 				if (user_seekstrength > 0)
@@ -1997,7 +2008,7 @@ ACTOR PhoenixFX2New : PhoenixFX2Base
 		Spawn:
 			FX09 A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(34,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(34,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
 			}
 		Idle:
@@ -2023,7 +2034,7 @@ ACTOR PhoenixFX2Seeking : PhoenixFX2Base
 		Spawn:
 			FX09 A 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(34,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(34,0);
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
 				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 4;
 				if (user_seekstrength > 0)
@@ -2426,7 +2437,7 @@ ACTOR MaceFX1New : MaceFX1Base
 		Spawn:
 			FX02 A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(35,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(35,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -2450,7 +2461,7 @@ ACTOR MaceFX2New : MaceFX2Base
 		Spawn:
 			FX02 C 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(36,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(36,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -2470,7 +2481,7 @@ ACTOR MaceFX3New : MaceFX3Base
 		Spawn:
 			FX02 A 0 NoDelay 
 			{
-				A_GetPlayerAttackDamage(37,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(37,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -2490,7 +2501,7 @@ ACTOR MaceFX4New : MaceFX4Base
 		Spawn:
 			FX02 E 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(38,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(38,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -3137,7 +3148,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 		Spawn:
 			FX16 A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(39,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(39,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:
@@ -3146,7 +3157,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 		Death:
 			FX16 G 5 Bright 
 			{
-				A_GetPlayerAttackDamage(61,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(61,0);
 				A_Explode((finaldamagedealt),128,0);
 			}
 			FX16 HIJKL 5 Bright
@@ -3169,7 +3180,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 		Spawn:
 			FX11 A 0 NoDelay 
 			{ 
-				A_GetPlayerAttackDamage(40,0); 
+				finaldamagedealt = A_GetPlayerAttackDamage(40,0); 
 				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
 			}
 		Idle:

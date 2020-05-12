@@ -4253,7 +4253,6 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 				A_PrintBold("THE LOREMASTER NOW FOREVER RESTS!");
 				Floor_LowerToLowest(666, 8);
 				A_GiveInventory("QuestItem26",1,AAPTR_PLAYER1); // Loremaster dead
-				//ACS_NamedExecuteAlways("StrifeComboUpgrade",0,1);
 
 				if (CountInv("QuestItem24",AAPTR_PLAYER1) > 0) // If Oracle is already dead...
 				{

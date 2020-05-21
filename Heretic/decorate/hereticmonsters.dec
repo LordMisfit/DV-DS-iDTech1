@@ -2531,9 +2531,9 @@ ACTOR Banshee : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 176) 
 				{
-					if (random(1,256) <= CallACS("GetEvolveChance")) 
+					if (random(1,256) <= A_GetEvolveChance) 
 					{
-						if (random(1,384) <= CallACS("GetEvolveChance")) { A_PainAttack("ForgottenOne"); }
+						if (random(1,384) <= A_GetEvolveChance) { A_PainAttack("ForgottenOne"); }
 						else { A_PainAttack("DSLostSoul2"); }
 					}
 					else 
@@ -2543,9 +2543,9 @@ ACTOR Banshee : AetheriusMonsterZSC
 				}
 				else
 				{
-					if (random(1,256) <= CallACS("GetEvolveChance")) 
+					if (random(1,256) <= A_GetEvolveChance) 
 					{
-						if (random(1,384) <= CallACS("GetEvolveChance")) { A_DualPainAttack("ForgottenOne"); }
+						if (random(1,384) <= A_GetEvolveChance) { A_DualPainAttack("ForgottenOne"); }
 						else { A_DualPainAttack("DSLostSoul2"); }
 					}
 					else 

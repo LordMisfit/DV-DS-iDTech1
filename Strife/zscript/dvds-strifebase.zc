@@ -314,7 +314,7 @@ class InquisitorSpawner : AetheriusMonsterSpawner replaces Inquisitor
 	{
 		int modtype = CallACS("OtherVarCheckDECORATE",8);
 		int doomtype = CallACS("OtherVarCheckDECORATE",7);
-		int evolvechance = CallACS("GetEvolveChance");
+		int evolvechance = A_GetEvolveChance();
 		int monstersoption = dvds_classicdviimonsters;
 		int checkbombers = dvds_suicidebombers;
 		

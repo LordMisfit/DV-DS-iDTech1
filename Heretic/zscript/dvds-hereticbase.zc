@@ -250,11 +250,11 @@ class GargoyleSpawner : AetheriusMonsterSpawner replaces HereticImp
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,256) <= evolveChance)
 			{
 				if (random(1,2) == 1)
@@ -283,7 +283,7 @@ class GargoyleLeaderSpawner : AetheriusMonsterSpawner replaces HereticImpLeader
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -302,20 +302,20 @@ class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,256) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,256) <= evolveChance)
 				{
-					evolveChance = CallACS("GetEvolveChance");
+					evolveChance = A_GetEvolveChance();
 					if (random(1,1024) <= evolveChance)
 					{
-						evolveChance = CallACS("GetEvolveChance");
+						evolveChance = A_GetEvolveChance();
 						if (random(1,256) <= evolveChance)
 						{
 							if (random(1,4) == 1)
@@ -362,17 +362,17 @@ class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,256) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,1024) <= evolveChance)
 				{
-					evolveChance = CallACS("GetEvolveChance");
+					evolveChance = A_GetEvolveChance();
 					if (random(1,256) <= evolveChance)
 					{
 						if (random(1,4) == 1)
@@ -416,14 +416,14 @@ class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,1024) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,256) <= evolveChance)
 				{
 					if (random(1,4) == 1)
@@ -464,11 +464,11 @@ class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,1024) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,256) <= evolveChance)
 			{
 				if (random(1,4) == 1)
@@ -506,11 +506,11 @@ class KnightSpawner : AetheriusMonsterSpawner replaces Knight
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,2048) <= evolveChance)
 			{
 				if (random(1,4) == 1)
@@ -531,7 +531,7 @@ class KnightGhostSpawner : AetheriusMonsterSpawner replaces KnightGhost
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 
 		if (random(1,2048) <= evolveChance)
 			return "DeathKnightGhost";
@@ -553,14 +553,14 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,384) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,768) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,1152) <= evolveChance)
 					return "Banshee";
 				else 
@@ -589,14 +589,14 @@ class FWizardSpawner : AetheriusMonsterSpawner
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,384) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,768) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,1152) <= evolveChance)
 					return "FBanshee";
 				else 
@@ -616,14 +616,14 @@ class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,256) <= evolveChance)
 		{
-			evolveChance = CallACS("GetEvolveChance");
+			evolveChance = A_GetEvolveChance();
 			if (random(1,384) <= evolveChance)
 			{
-				evolveChance = CallACS("GetEvolveChance");
+				evolveChance = A_GetEvolveChance();
 				if (random(1,512) <= evolveChance)
 					return "BloodLich";
 				else
@@ -650,7 +650,7 @@ class ClinkSpawner : AetheriusMonsterSpawner replaces Clink
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,768) <= evolveChance)
 		{
@@ -675,7 +675,7 @@ class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,768) <= evolveChance)
 		{
@@ -692,7 +692,7 @@ class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = CallACS("GetEvolveChance");
+		let evolveChance = A_GetEvolveChance();
 		
 		if (random(1,384) <= evolvechance)
 		{

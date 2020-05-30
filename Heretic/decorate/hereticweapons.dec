@@ -660,8 +660,8 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 	Weapon.AmmoGive 25
 	Weapon.AmmoType1 "GoldWandAmmo"
 	Weapon.AmmoType2 "GoldWandAmmo"
-	Weapon.AmmoUse1 1  
-	Weapon.AmmoUse2 1  
+	Weapon.AmmoUse1 1
+	Weapon.AmmoUse2 1
 	Weapon.YAdjust 0
 	Inventory.PickupMessage "Elven Wand \cx[Slot 2]\c-"
 	Obituary "$OB_MPGOLDWAND"
@@ -718,7 +718,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 				CallACS("StartTensionCountDown");
 			
-				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_USEAMMO|FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,1,"GoldWandAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWND D 3
@@ -824,7 +824,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(3); }
 				CallACS("StartTensionCountDown");
 			
-				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_USEAMMO|FBF_NORANDOM|FBF_NORANDOMPUFFZ,0,"",0,0,1,"GoldWandAmmo");
+				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,0,"",0,0,1,"GoldWandAmmo");
 				A_PlaySound("weapons/wandhit",1);
 			}
 			GWN2 E 3

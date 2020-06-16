@@ -23,7 +23,7 @@ class SpectralMonsterBase : AetheriusBossZSC
 		A_MonsterCrisisCheck(); // Spectres/Entity - Touch Damage
 		if (user_canusecrisisatk == 1) 
 		{
-			dmg *= CallACS("CrisisMultiplier");
+			dmg *= CrisisMultiplier;
 			if (self.health > 0) A_PlayCrisisAtkSound(); 
 		}
 		//Console.Printf("dmg = %d", dmg);

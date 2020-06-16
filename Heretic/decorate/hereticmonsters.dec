@@ -206,7 +206,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 				if (user_canusecrisisatk == 1) 
 				{
 					if (user_monsterlevel >= 45) { A_PlayCrisisAtkSound; } 
-					SetDamage((((0+(user_monsterlevel/45)))*CallACS("CrisisMultiplier"))); 
+					SetDamage((((0+(user_monsterlevel/45)))*CrisisMultiplier)); 
 				}
 				A_SkullAttack(12+(user_monsterlevel/random(22,23)));
 			}
@@ -481,7 +481,7 @@ ACTOR PlagueShot : AetheriusEffectProjectile
 }
 ACTOR PlagueShotCrisis : PlagueShot
 {
-	Damage ((3*random(3,5)) * CallACS("CrisisMultiplier"))
+	Damage ((3*random(3,5)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -4312,7 +4312,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 			BDSP ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 2 A_Chase
 			Goto Death  
 		Melee:
-			BDSP AB 2 A_CustomMeleeAttack((5 * random(1,8) * CallACS("CrisisMultiplier")), "", "", "Magic")
+			BDSP AB 2 A_CustomMeleeAttack((5 * random(1,8) * CrisisMultiplier), "", "", "Magic")
 			Goto See
 		Death:
 			TNT1 A 0 A_Playsound("shadowbeast/spiritdth")
@@ -4497,7 +4497,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 				if (user_canusecrisisatk == 1) 
 				{
 					A_PlayCrisisAtkSound;
-					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
+					SetDamage((7+(user_monsterlevel/45))*CrisisMultiplier);
 				}
 			}
 			MNTR U 2 A_MinotaurCharge
@@ -5133,7 +5133,7 @@ ACTOR SerpathorPhoenixFX1 : PhoenixFX1Base
 }
 ACTOR SerpathorPhoenixFX1Crisis : SerpathorPhoenixFX1
 {
-	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier")) // 5
+	Damage ((10 * random(1,8)) * CrisisMultiplier) // 5
 	Speed 20 // 18
 	States
 	{
@@ -5200,7 +5200,7 @@ ACTOR MedusabeamCrisis : Medusabeam
 	Speed 125 // 100
 	Radius 4
 	Height 4
-	Damage ((1*random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((1*random(1,8)) * CrisisMultiplier)
 	MissileType "MBSparkCrisis"
 	Scale 0.25
 	Decal "CrossbowScorch2"
@@ -5792,7 +5792,7 @@ ACTOR DiscipleShot1 : AetheriusProjectileZSC
 }
 ACTOR DiscipleShot1Crisis : DiscipleShot1
 {
-	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((3 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -5835,7 +5835,7 @@ ACTOR DiscipleShot2 : AetheriusProjectileZSC
 }
 ACTOR DiscipleShot2Crisis : DiscipleShot2
 {
-	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((6 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -6181,7 +6181,7 @@ ACTOR FireBlast : AetheriusProjectileZSC
 }
 ACTOR FireBlastCrisis : FireBlast
 {
-	Damage ((3 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((3 * random(1,4)) * CrisisMultiplier)
 	states
 	{
 		Spawn:
@@ -6193,7 +6193,7 @@ ACTOR FireBlastCrisis : FireBlast
 		Death:
 			PROJ D 4 BRIGHT 
 			{
-				A_Explode(8*CallACS("CrisisMultiplier"),64,0);
+				A_Explode(8*CrisisMultiplier,64,0);
 			}
 			PROJ EFGH 4 BRIGHT
 			PROJ I 4 BRIGHT A_FadeOut(0.50)
@@ -6223,7 +6223,7 @@ ACTOR SuperFireBlast : FireBlast
 }
 ACTOR SuperFireBlastCrisis : SuperFireBlast
 {
-	Damage ((24 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((24 * random(1,4)) * CrisisMultiplier)
 	states
 	{
 		Spawn:
@@ -6233,7 +6233,7 @@ ACTOR SuperFireBlastCrisis : SuperFireBlast
 			}
 			Loop
 		Death:
-			PROJ D 4 BRIGHT A_Explode(256*CallACS("CrisisMultiplier"),128,0)
+			PROJ D 4 BRIGHT A_Explode(256*CrisisMultiplier,128,0)
 			PROJ EFGH 4 BRIGHT
 			PROJ I 4 BRIGHT A_FadeOut(0.50)
 			Stop

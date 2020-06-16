@@ -30,7 +30,7 @@ class DSparilBase : AetheriusBossZSC
 		if (user_canusecrisisatk == 1) 
 		{
 			projtype = crisismissiletype;
-			meleedamage *= CallACS("CrisisMultiplier"); 
+			meleedamage *= CrisisMultiplier; 
 		}
 
 		if (!target)
@@ -184,7 +184,7 @@ class DSparilBase : AetheriusBossZSC
 		{
 			attacktype1 = missiletype1crisis;
 			attacktype2 = missiletype2crisis;
-			meleedamage *= CallACS("CrisisMultiplier");
+			meleedamage *= CrisisMultiplier;
 		}
 
 		int attackhealth;

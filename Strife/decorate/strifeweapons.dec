@@ -60,7 +60,7 @@ ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 			AROW A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(25,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 		Idle:
 			AROW A 10 A_LoopActiveSound
@@ -93,7 +93,7 @@ ACTOR PoisonBoltNew : AetheriusProjectileZSC replaces PoisonBolt
 			ARWP A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(26,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 		Idle:
 			ARWP A 10 A_LoopActiveSound
@@ -131,20 +131,20 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 		Deselect:
 			XBOW A 1 
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			XBOW A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -354,20 +354,20 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 		Deselect:
 			XBOW H 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			XBOW H 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1114,45 +1114,45 @@ Actor NNSigil : StrifeWeaponBase
 		Deselect1:
 			SGLA A 1 Bright 
 			{ 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,317,1.2);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Deselect2:
 			SGLB A 1 Bright 
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,317,1.2);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Deselect3:
 			SGLC A 1 Bright 
 			{ 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,317,1.2);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Deselect4:
 			SGLD A 1 Bright
 			{ 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,317,1.2);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Deselect5:
 			SGLE A 1 Bright
 			{ 
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,317,1.2);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
@@ -1167,45 +1167,45 @@ Actor NNSigil : StrifeWeaponBase
 		Select1:
 			SGLA A 1 Bright
 			{ 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,317,1.2);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
 		Select2:
 			SGLB A 1 Bright
 			{ 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,317,1.2);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
 		Select3:
 			SGLC A 1 Bright
 			{ 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,317,1.2);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
 		Select4:
 			SGLD A 1 Bright
 			{ 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,317,1.2);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
 		Select5:
 			SGLE A 1 Bright
 			{ 
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",317)*1.2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,317,1.2);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1539,7 +1539,7 @@ ACTOR SpectralLightningBall2MonsterCrisis : SpectralLightningBall2Monster
 {
 	+SPECTRAL 
 	DamageType "Sigil" 
-	Damage ((20 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((20 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1640,7 +1640,7 @@ ACTOR SpectralLightningBigV2MonsterCrisis : SpectralLightningBigV2Monster
 {
 	DamageType "Sigil"
 	+SPECTRAL
-	Damage ((60 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((60 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1753,7 +1753,7 @@ ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 {
 	+SPECTRAL 
 	DamageType "Sigil" 
-	Damage ((30 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((30 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1837,7 +1837,7 @@ ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow"
-	Damage ((100 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((100 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1934,7 +1934,7 @@ ACTOR SpectralLightningV2MonsterCrisis : SpectralLightningV2Monster
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow" 
-	Damage ((50 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((50 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -2060,7 +2060,7 @@ ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 {
 	+SPECTRAL 
 	DamageType "Sigil" 
-	Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((10 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:

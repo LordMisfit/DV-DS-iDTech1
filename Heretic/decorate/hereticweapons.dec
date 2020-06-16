@@ -595,7 +595,7 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 			FX01 A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(41,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX01 AB 6 Bright
@@ -617,7 +617,7 @@ ACTOR GoldWandFX2New : GoldWandFX1New
 			FX01 C 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(42,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX01 CD 6 Bright
@@ -689,20 +689,20 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 		Deselect:
 			GWND A 1 
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			GWND A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -795,20 +795,20 @@ ACTOR DualGoldWandNew : GoldWandNew
 		Deselect:
 			GWN2 A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			GWN2 A 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -894,7 +894,7 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 			FX03 B 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(21,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 		Idle:
 			FX03 B 1 Bright
@@ -916,7 +916,7 @@ ACTOR CrossbowFX2New : CrossbowFX1New
 			FX03 B 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(22,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 		Idle:
 			FX03 B 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625,
@@ -939,7 +939,7 @@ ACTOR CrossbowFX3New : CrossbowFX1New
 			FX03 A 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(23,0);
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10031)*0.10)+(CallACS("MiscVarCheckDECORATE",10031)*0.25)));
+				A_ScaleVelocity(1.00+((ArcheryMasteryPerkLevel*0.10)+(ArcheryMasteryEXPerkLevel*0.25)));
 			}
 		Idle:
 			FX03 A 1 Bright
@@ -998,20 +998,20 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 		Deselect:
 			CRBW AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			CRBW AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1123,20 +1123,20 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 		Deselect:
 			CRBD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			CRBD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1255,7 +1255,7 @@ ACTOR RipperNew : RipperBase
 			FX18 M 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(24,0);
-				A_ScaleVelocity(1.00-((CallACS("MiscVarCheckDECORATE",10053)*0.05)-(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
+				A_ScaleVelocity(1.00-((WandMastPerkLvl*0.05)-(WandMastEXPerkLvl*0.125)));
 			}
 		Idle:
 			FX18 MMMMNNNNN 1 
@@ -1353,20 +1353,20 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 		Deselect:
 			FBLS A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			FBLS A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1444,20 +1444,20 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 		Deselect:
 			FDBL A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			FDBL A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1530,7 +1530,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 			FX00 A 0 Bright NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(31,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX00 AB 6 Bright
@@ -1539,7 +1539,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 			FX00 H 5 Bright
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(31,0);
-				A_Explode((finaldamagedealt/8),(16+(CallACS("MiscVarCheckDECORATE",10053)*8)+(CallACS("MiscVarCheckDECORATE",10054)*20)),0,0,(8+(CallACS("MiscVarCheckDECORATE",10053)*4)+(CallACS("MiscVarCheckDECORATE",10053)*10)));
+				A_Explode((finaldamagedealt/8),(16+(WandMastPerkLvl*8)+(WandMastEXPerkLvl*20)),0,0,(8+(WandMastPerkLvl*4)+(WandMastPerkLvl*10)));
 			}
 			FX00 I 5 Bright
 			FX00 JK 4 Bright
@@ -1559,7 +1559,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
 			FX00 C 0 Bright NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(32,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX00 C 0 Bright 
@@ -1577,7 +1577,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
 			FX00 I 5 Bright 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(32,0);
-				A_Explode((16+random(-9,9)+(finaldamagedealt/8)),(32+(CallACS("MiscVarCheckDECORATE",10053)*16)+(CallACS("MiscVarCheckDECORATE",10054)*40)),0,0,(16+(CallACS("MiscVarCheckDECORATE",10053)*8)+(CallACS("MiscVarCheckDECORATE",10053)*20)));
+				A_Explode((16+random(-9,9)+(finaldamagedealt/8)),(32+(WandMastPerkLvl*16)+(WandMastEXPerkLvl*40)),0,0,(16+(WandMastPerkLvl*8)+(WandMastPerkLvl*20)));
 			}
 			FX00 J 4 Bright
 			FX00 KLM 3 Bright
@@ -1643,20 +1643,20 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 		Deselect:
 			HROD A 1 
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			HROD A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1746,20 +1746,20 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 		Deselect:
 			DHRD A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DHRD A 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -1856,7 +1856,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 			FX04 A 0 Bright NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX04 A 4 Bright A_PhoenixPuff
@@ -1888,7 +1888,7 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 			FX04 A 0 Bright NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.10)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX04 A 4 Bright A_PhoenixPuff
@@ -1918,9 +1918,9 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 			FX04 A 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
 
-				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
+				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 2;
 				if (user_seekstrength > 0)
 				{
 					A_ChangeFlag("SEEKERMISSILE", true);
@@ -1964,8 +1964,8 @@ ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
 			FX04 A 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
-				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 2;
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
+				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 2;
 				if (user_seekstrength > 0)
 				{
 					A_ChangeFlag("SEEKERMISSILE", true);
@@ -2009,7 +2009,7 @@ ACTOR PhoenixFX2New : PhoenixFX2Base
 			FX09 A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(34,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
 			}
 		Idle:
 			FX09 ABABA 2 Bright
@@ -2035,8 +2035,8 @@ ACTOR PhoenixFX2Seeking : PhoenixFX2Base
 			FX09 A 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(34,0);
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.05)+(CallACS("MiscVarCheckDECORATE",10054)*0.125)));
-				user_seekstrength = (CallACS("MiscVarCheckDECORATE", 10053) + (CallACS("MiscVarCheckDECORATE", 10054) * 2)) * 4;
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
+				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 4;
 				if (user_seekstrength > 0)
 				{
 					A_ChangeFlag("SEEKERMISSILE", true);
@@ -2106,20 +2106,20 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 		Deselect:
 			PHNX A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			PHNX A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2275,20 +2275,20 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 		Deselect:
 			PHND A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			PHND A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2438,7 +2438,7 @@ ACTOR MaceFX1New : MaceFX1Base
 			FX02 A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(35,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX02 AB 4 A_MacePL1Check
@@ -2462,7 +2462,7 @@ ACTOR MaceFX2New : MaceFX2Base
 			FX02 C 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(36,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX02 CD 4
@@ -2482,7 +2482,7 @@ ACTOR MaceFX3New : MaceFX3Base
 			FX02 A 0 NoDelay 
 			{
 				finaldamagedealt = A_GetPlayerAttackDamage(37,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX02 AB 4
@@ -2502,7 +2502,7 @@ ACTOR MaceFX4New : MaceFX4Base
 			FX02 E 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(38,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX02 E 99
@@ -2565,20 +2565,20 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 		Deselect:
 			MACE A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			MACE A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2678,20 +2678,20 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 		Deselect:
 			DMAC A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DMAC A 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -2805,20 +2805,20 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 		Deselect:
 			CRB2 AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			loop
 		Select:
 			CRB2 AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			loop
@@ -2961,20 +2961,20 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 		Deselect:
 			SCRD AAAAAABBBBBBCCCCCC 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10031,3);
+				A_DVDSLower(0,10032,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			loop
 		Select:
 			SCRD AAAAAABBBBBBCCCCCC 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10031)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10032)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10031,3);
+				A_DVDSRaise(0,10032,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			loop
@@ -3149,7 +3149,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 			FX16 A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(39,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX16 ABC 3 Bright A_BlueSpark
@@ -3181,7 +3181,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 			FX11 A 0 NoDelay 
 			{ 
 				finaldamagedealt = A_GetPlayerAttackDamage(40,0); 
-				A_ScaleVelocity(1.00+((CallACS("MiscVarCheckDECORATE",10053)*0.1)+(CallACS("MiscVarCheckDECORATE",10054)*0.25)));
+				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.1)+(WandMastEXPerkLvl*0.25)));
 			}
 		Idle:
 			FX11 ABABABAB 5 bright
@@ -3229,20 +3229,20 @@ actor DSparilStaff : HereticWeaponBase 32123
 		Deselect:
 			DSTF A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DSTF A 1 
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop
@@ -3342,20 +3342,20 @@ actor DualDSparilStaff : HereticWeaponBase
 		Deselect:
 			DSTD A 1
 			{
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSLower(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSLower(0,10053,3);
+				A_DVDSLower(0,10054,7.5);
+				A_DVDSLower(0,10035,2);
+				A_DVDSLower(0,10036,5);
 				A_DVDSLower(18);
 			}
 			Loop
 		Select:
 			DSTD A 1
 			{
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10053)*3);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10054)*7.5);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10035)*2);
-				A_DVDSRaise(CallACS("MiscVarCheckDECORATE",10036)*5);
+				A_DVDSRaise(0,10053,3);
+				A_DVDSRaise(0,10054,7.5);
+				A_DVDSRaise(0,10035,2);
+				A_DVDSRaise(0,10036,5);
 				A_DVDSRaise(18);
 			}
 			Loop

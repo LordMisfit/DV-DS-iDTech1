@@ -173,7 +173,7 @@ ACTOR MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 				if (user_canusecrisisatk == 1) 
 				{
 					A_PlayCrisisAtkSound;
-					SetDamage((7+(user_monsterlevel/45))*CallACS("CrisisMultiplier"));
+					SetDamage((7+(user_monsterlevel/45))*CrisisMultiplier);
 				}
 			}
 			MNTR U 2 A_MinotaurCharge
@@ -3540,7 +3540,7 @@ Actor PatriarchFXCrisis : PatriarchFX
 	DamageType "Spiritual"
 	Projectile
 	+SEEKERMISSILE
-	Damage ((frandom(8,28)) * CallACS("CrisisMultiplier"))
+	Damage ((frandom(8,28)) * CrisisMultiplier)
 	RenderStyle Add
 	SeeSound "PatriarchMissileFire"
 	DeathSound "PatriarchMissileExplode"
@@ -3632,7 +3632,7 @@ ACTOR PatriarchRainFXCrisis : PatriarchRainFX
 	Radius 6
 	Height 12
 	Speed 12
-	Damage ((frandom(3,24)) * CallACS("CrisisMultiplier"))
+	Damage ((frandom(3,24)) * CrisisMultiplier)
 	DamageType "Spiritual"
 	Mass 5
 	Projectile
@@ -5942,7 +5942,7 @@ ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball
 }
 ACTOR DragonFireballCrisis : DragonFireballNew
 {
-	Damage ((6 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((6 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -5962,7 +5962,7 @@ ACTOR DragonFireballCrisis : DragonFireballNew
 	}
 }
 
-ACTOR DragonExplosionNew : DragonExplosion replaces DragonExplosion
+ACTOR DragonExplosionNew : AetheriusProjectileZSC replaces DragonExplosion
 {
 	Radius 8
 	Height 8
@@ -5998,7 +5998,7 @@ ACTOR DragonExplosionCrisis : DragonExplosionNew
 			CFCF Q 4 Bright A_UnHideThing
 			CFCF R 3 Bright A_Scream
 			CFCF S 4 Bright
-			CFCF T 3 Bright A_Explode(80*CallACS("CrisisMultiplier"), 128, 0)
+			CFCF T 3 Bright A_Explode(80*CrisisMultiplier, 128, 0)
 			CFCF U 4 Bright
 			CFCF V 3 Bright
 			CFCF W 4 Bright
@@ -6167,7 +6167,7 @@ ACTOR HolyMissileNew : AetheriusProjectileZSC replaces HolyMissile
 }
 ACTOR HolyMissileCrisis : HolyMissileNew
 {
-	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((4 * random(1,8)) * CrisisMultiplier)
 	Speed 30
 	Radius 15
 	Height 8
@@ -6237,7 +6237,7 @@ ACTOR HolySpiritNew : HolySpiritBase replaces HolySpirit
 ACTOR HolySpiritCrisis : HolySpiritNew
 {
 	Stamina 30
-	Damage ((3 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((3 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -6419,7 +6419,7 @@ ACTOR FSwordMissileNew : AetheriusProjectileZSC replaces FSwordMissile
 }
 ACTOR FSwordMissileCrisis : FSwordMissileNew
 {
-	Damage ((8 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((8 * random(1,8)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -6431,7 +6431,7 @@ ACTOR FSwordMissileCrisis : FSwordMissileNew
 		Death:
 			FSFX D 4 Bright
 			FSFX E 3 Bright A_FSwordFlames
-			FSFX F 4 Bright A_Explode(64*CallACS("CrisisMultiplier"), 128, 0)
+			FSFX F 4 Bright A_Explode(64*CrisisMultiplier, 128, 0)
 			FSFX G 3 Bright
 			FSFX H 4 Bright
 			FSFX I 3 Bright
@@ -6603,7 +6603,7 @@ ACTOR MageStaffFX2New : MageStaffFX2Base replaces MageStaffFX2
 ACTOR MageStaffFX2Crisis : MageStaffFX2New
 {
 	Stamina 30
-	Damage ((4 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((4 * random(1,8)) * CrisisMultiplier)
 	Speed 17
 	Height 8
 	DamageType "Fire"
@@ -6625,7 +6625,7 @@ ACTOR MageStaffFX2Crisis : MageStaffFX2New
 			Loop
 		Death:
 			MSP2 E 4 Bright A_SetTranslucent(1, 1)
-			MSP2 F 5 Bright A_Explode(80*CallACS("CrisisMultiplier"), 192, 0)
+			MSP2 F 5 Bright A_Explode(80*CrisisMultiplier, 192, 0)
 			MSP2 GH 5 Bright
 			MSP2 I 4 Bright
 			Stop

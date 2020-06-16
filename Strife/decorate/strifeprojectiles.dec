@@ -55,7 +55,7 @@ ACTOR StrifeGenBulletTracer2 : StrifeGenBulletTracer
 
 ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
 {
-	Damage ((Random(1,5) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(1,5) * 3) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -77,7 +77,7 @@ ACTOR StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
 
 ACTOR StrifeGenBulletTracer2Crisis : StrifeGenBulletTracerCrisis
 {
-	Damage ((Random(3,15) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(3,15) * 3) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -175,7 +175,7 @@ ACTOR StrifeReaverBulletTracer2 : StrifeReaverBulletTracer
 
 ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
 {
-	Damage ((Random(1,8) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(1,8) * 3) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -197,7 +197,7 @@ ACTOR StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
 
 ACTOR StrifeReaverBulletTracer2Crisis : StrifeReaverBulletTracerCrisis
 {
-	Damage ((Random(3,24) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(3,24) * 3) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -295,7 +295,7 @@ ACTOR StrifeMaulerTracer2 : StrifeMaulerTracer
    
 ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 {
-	Damage ((Random(1,4) * 2) * CallACS("CrisisMultiplier"))
+	Damage ((Random(1,4) * 2) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -317,7 +317,7 @@ ACTOR StrifeMaulerTracerCrisis : StrifeMaulerTracer
 
 ACTOR StrifeMaulerTracer2Crisis : StrifeMaulerTracerCrisis
 {
-	Damage ((Random(3,12) * 2) * CallACS("CrisisMultiplier"))
+	Damage ((Random(3,12) * 2) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -349,12 +349,12 @@ ACTOR StrifeMaulerTracerRetail2 : StrifeMaulerTracerRetail
 
 ACTOR StrifeMaulerTracerRetailCrisis : StrifeMaulerTracer
 {
-	Damage ((Random(1,5) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(1,5) * 3) * CrisisMultiplier)
 }
 
 ACTOR StrifeMaulerTracerRetail2Crisis : StrifeMaulerTracerRetailCrisis
 {
-	Damage ((Random(3,15) * 3) * CallACS("CrisisMultiplier"))
+	Damage ((Random(3,15) * 3) * CrisisMultiplier)
 }
 
 actor StrifeMaulerTracerTrail
@@ -457,7 +457,7 @@ ACTOR EMPGrenade : AetheriusProjectileZSC
 }
 ACTOR EMPGrenadeCrisis : EMPGrenade
 {
-	Damage ((10 * random(1,8)) * CallACS("CrisisMultiplier"))
+	Damage ((10 * random(1,8)) * CrisisMultiplier)
 	Speed 30
 	Radius 5
 	Height 5
@@ -487,13 +487,13 @@ ACTOR EMPGrenadeCrisis : EMPGrenade
 				A_ChangeFlag("NOGRAVITY",TRUE);
 				A_ChangeFlag("FORCERADIUSDMG",TRUE);
 				A_ChangeFlag("NOINTERACTION",TRUE);
-				A_Explode(15*CallACS("CrisisMultiplier"),40,0);
+				A_Explode(15*CrisisMultiplier,40,0);
 				user_boost = 48;
 				user_boost2 = 24;
 			}
 			TXP1 A 1 Bright
 			{
-				A_Explode(15*CallACS("CrisisMultiplier"),user_boost,0,0,user_boost2);
+				A_Explode(15*CrisisMultiplier,user_boost,0,0,user_boost2);
 				A_SetScale(0.4);
 				user_boost += 8;
 				user_boost2 += 4;
@@ -501,14 +501,14 @@ ACTOR EMPGrenadeCrisis : EMPGrenade
 			TXP1 BCDEFGH 1 Bright
 			{
 				A_SetScale(scalex+0.08);
-				A_Explode(15*CallACS("CrisisMultiplier"),user_boost,0,0,user_boost2);
+				A_Explode(15*CrisisMultiplier,user_boost,0,0,user_boost2);
 				user_boost += 8;
 				user_boost2 += 4;
 			}
 			TXP1 I 1 Bright
 			{
 				A_SetScale(scalex+0.08);
-				A_Explode(15*CallACS("CrisisMultiplier"),user_boost,0,0,user_boost2);
+				A_Explode(15*CrisisMultiplier,user_boost,0,0,user_boost2);
 				A_SetTranslucent(0.96);
 				user_boost += 8;
 				user_boost2 += 4;
@@ -516,7 +516,7 @@ ACTOR EMPGrenadeCrisis : EMPGrenade
 			TXP1 JKLMNOP 1 Bright
 			{
 				A_SetScale(1.12);
-				A_Explode(15*CallACS("CrisisMultiplier"),user_boost,0,0,user_boost2);
+				A_Explode(15*CrisisMultiplier,user_boost,0,0,user_boost2);
 				A_FadeOut(alpha-0.12);
 				user_boost += 8;
 				user_boost2 += 4;
@@ -770,7 +770,7 @@ ACTOR DarkMatterBall : AetheriusProjectileZSC
 }
 ACTOR DarkMatterBallCrisis : DarkMatterBall
 {
-	Damage ((35 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((35 * random(1,4)) * CrisisMultiplier)
 	Radius 11
 	Height 8
 	Speed 32
@@ -895,7 +895,7 @@ ACTOR FastFlameMissileNew : FlameMissileNew
 }
 ACTOR FastFlameMissileCrisis : FastFlameMissileNew
 {
-	Damage (1 * random(1,4) * CallACS("CrisisMultiplier"))
+	Damage (1 * random(1,4) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -945,7 +945,7 @@ ACTOR CrusaderMissileNew : AetheriusProjectileZSC
 }
 ACTOR CrusaderMissileCrisis : CrusaderMissileNew
 {
-	Damage ((7 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((7 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1006,7 +1006,7 @@ ACTOR Sentinel2FX1New : SentinelFX1New
 }
 ACTOR Sentinel2FX1Crisis : Sentinel2FX1New
 {
-	Damage ((1 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((1 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:
@@ -1025,10 +1025,10 @@ ACTOR Sentinel2FX2New : Sentinel2FX1New { Damage 3 }
 ACTOR Sentinel2FX3New : Sentinel2FX1New { Damage 6 }
 ACTOR Sentinel2FX4New : Sentinel2FX1New { Damage 10 }
 ACTOR Sentinel2FX5New : Sentinel2FX1New { Damage 15 }
-ACTOR Sentinel2FX2Crisis : Sentinel2FX1Crisis { Damage ((3 * random(1,4)) * CallACS("CrisisMultiplier")) }
-ACTOR Sentinel2FX3Crisis : Sentinel2FX1Crisis { Damage ((6 * random(1,4)) * CallACS("CrisisMultiplier")) }
-ACTOR Sentinel2FX4Crisis : Sentinel2FX1Crisis { Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier")) }
-ACTOR Sentinel2FX5Crisis : Sentinel2FX1Crisis { Damage ((15 * random(1,4)) * CallACS("CrisisMultiplier")) }
+ACTOR Sentinel2FX2Crisis : Sentinel2FX1Crisis { Damage ((3 * random(1,4)) * CrisisMultiplier) }
+ACTOR Sentinel2FX3Crisis : Sentinel2FX1Crisis { Damage ((6 * random(1,4)) * CrisisMultiplier) }
+ACTOR Sentinel2FX4Crisis : Sentinel2FX1Crisis { Damage ((10 * random(1,4)) * CrisisMultiplier) }
+ACTOR Sentinel2FX5Crisis : Sentinel2FX1Crisis { Damage ((15 * random(1,4)) * CrisisMultiplier) }
 
 // Inquisitor
 ACTOR InquisitorShotNew : AetheriusProjectileZSC
@@ -1081,7 +1081,7 @@ ACTOR InquisitorShotCrisis : InquisitorShotNew
 			Loop
 		Death:
 			BNG2 A 0 Bright A_SetTranslucent(1, 1)
-			BNG2 A 4 Bright A_Explode(192*CallACS("CrisisMultiplier"), 192, 1, 1)
+			BNG2 A 4 Bright A_Explode(192*CrisisMultiplier, 192, 1, 1)
 			BNG2 B 4 Bright
 			BNG2 C 4 Bright
 			BNG2 D 4 Bright
@@ -1125,7 +1125,7 @@ ACTOR BishopMissileNew : AetheriusProjectileZSC replaces BishopMissile
 }
 ACTOR BishopMissileCrisis : BishopMissileNew
 {
-	Damage ((10 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((10 * random(1,4)) * CrisisMultiplier)
 	Speed 20
 	Radius 10
 	Height 14
@@ -1152,7 +1152,7 @@ ACTOR BishopMissileCrisis : BishopMissileNew
 		Death:
 			SMIS A 0 Bright A_SetTranslucent(1, 1)
 			SMIS A 0 Bright // State left for savegame compatibility
-			SMIS A 5 Bright A_Explode(64*CallACS("CrisisMultiplier"), 64, 1, 1)
+			SMIS A 5 Bright A_Explode(64*CrisisMultiplier, 64, 1, 1)
 			SMIS B 5 Bright
 			SMIS C 4 Bright
 			SMIS DEFG 2 Bright
@@ -1167,7 +1167,7 @@ ACTOR LoreShotNew : LoreShotBase
 }
 ACTOR LoreShotCrisis : LoreShotNew
 {
-	Damage ((2 * random(1,4)) * CallACS("CrisisMultiplier"))
+	Damage ((2 * random(1,4)) * CrisisMultiplier)
 	States
 	{
 		Spawn:

@@ -315,7 +315,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 		Pickup:
 			TNT1 A 0 
 			{
-				if (A_CheckHealthLevels(0) > 0) { return state("Success"); } return state(""); 
+				if (A_CheckHealthLevels(0)) { return state("Success"); } return state(""); 
 			}
 			Fail
 	}

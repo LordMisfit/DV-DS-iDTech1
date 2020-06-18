@@ -1886,7 +1886,7 @@ ACTOR Demon2FX1New : AetheriusEffectProjectile replaces Demon2FX1
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -1916,7 +1916,7 @@ ACTOR Demon2FX1Crisis : Demon2FX1New
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2079,7 +2079,7 @@ Actor Demon4FX : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(280,420)); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2114,7 +2114,7 @@ Actor Demon4FXCrisis : Demon4FX
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(280,420)*CallACS("CrisisMultiplier",5)) ); // Poison for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2181,7 +2181,7 @@ Actor PoisonVolcanoTBlast : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(24);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(35,53)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2210,7 +2210,7 @@ Actor PoisonVolcanoTBlastCrisis : PoisonVolcanoTBlast
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(24);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(35,53)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -2250,7 +2250,7 @@ ACTOR Demon5FX1 : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(5);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						user_random = random(1,6);
 						if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", random(7,9), 1, 0, 0); } // Drain 4-6% mana
@@ -2288,7 +2288,7 @@ ACTOR Demon5FX1Crisis : Demon5FX1
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(5);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						user_random = random(1,6);
 						if (user_random >= 1 && user_random <= 4) { CallACS("ManaDrain", (random(7,9)*CallACS("CrisisMultiplier",2)) , 1, 0, 0); } // Drain 4-6% mana
@@ -2341,7 +2341,7 @@ ACTOR Demon5Jet : AetheriusEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(15);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						user_random = random(1,12);
 						if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", random(1,2), 0, 0, 0); } // Drain 0-1 mana
@@ -2379,7 +2379,7 @@ ACTOR Demon5JetCrisis : Demon5Jet
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(15);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						user_random = random(1,12);
 						if (user_random >= 1 && user_random <= 10) { CallACS("ManaDrain", (random(1,2)*CallACS("CrisisMultiplier",2)) , 0, 0, 0); } // Drain 0-1 mana

@@ -92,9 +92,9 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			}
 			SORC ABCD 5
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 60) { bAVOIDMELEE = 1; }
-				if (levelbehavior > 0 && user_monsterlevel > 45) { A_SetTics(4); }
-				if (levelbehavior > 0 && user_monsterlevel > 90) { A_SetTics(3); }
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = 1; }
+				if (levelbehavior && user_monsterlevel > 45) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
 				A_ShieldCheck();
 				A_Chase();
 			}
@@ -147,25 +147,25 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			}
 			SORC F 6 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget();
 				A_ShieldCheck();
 			}
 			SORC F 6 Bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_SpeedBalls();
 				A_ShieldCheck();
 			}
 			SORC F 6 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget();
 				A_ShieldCheck();
 			}
@@ -177,23 +177,23 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			}
 			SORC E 6 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_ShieldCheck();
 			}
 			SORC E 6 Bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 180) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(4); }
-				else if (levelbehavior > 0 && user_monsterlevel > 60) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_SpawnFizzle();
 				A_ShieldCheck();
 			}
 			SORC E 5 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 150) { A_SetTics(3); }
-				else if (levelbehavior > 0 && user_monsterlevel > 75) { A_SetTics(4); }
+				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(4); }
 				A_FaceTarget();
 				A_ShieldCheck();
 			}
@@ -205,12 +205,12 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 			}
 			SORC E 2 Bright
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_ShieldCheck();
 			}
 			SORC E 2 Bright 
 			{
-				if (levelbehavior > 0 && user_monsterlevel > 120) { A_SetTics(1); }
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
 				A_SorcBossAttack();
 				A_ShieldCheck();
 			}

@@ -714,7 +714,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 		Pickup:
 			TNT1 A 0 
 			{
-				if (A_CheckHealthLevels(0) > 0) { return state("Success"); } return state(""); 
+				if (A_CheckHealthLevels(0)) { return state("Success"); } return state(""); 
 			}
 			Fail
   }
@@ -867,7 +867,7 @@ Actor DartNew : AetheriusEffectProjectile replaces Dart
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
@@ -901,7 +901,7 @@ ACTOR IceShardNew : AetheriusEffectProjectile replaces IceShard
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
 					A_StatusEffectChecker(6);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,105)); // Deceleratle for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}

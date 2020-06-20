@@ -36,7 +36,7 @@ ACTOR GoldWandAmmoSpawner : GoldWandAmmo replaces GoldWandAmmo
 				}
 				else
 				{
-					if (CountInv("DualGoldWandNew") <= 0)
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -79,7 +79,7 @@ ACTOR GoldWandHeftySpawner : GoldWandHefty replaces GoldWandHefty
 				}
 				else
 				{
-					if (CountInv("DualGoldWandNew") <= 0)
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -122,7 +122,7 @@ ACTOR CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
 				}
 				else
 				{
-					if (CountInv("DualCrossbowNew") <= 0)
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -142,7 +142,7 @@ ACTOR CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
 						}
 						else
 						{
-							if (CountInv("DualSuperCrossbowNew") <= 0)
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
 							{
 								if (random(1,4096) <= 1)
 								{
@@ -187,7 +187,7 @@ ACTOR CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
 				}
 				else
 				{
-					if (CountInv("DualCrossbowNew") <= 0)
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -207,7 +207,7 @@ ACTOR CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
 						}
 						else
 						{
-							if (CountInv("DualSuperCrossbowNew") <= 0)
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
 							{
 								if (random(1,4096) <= 1)
 								{
@@ -251,7 +251,7 @@ ACTOR BlasterAmmoSpawner : BlasterAmmo replaces BlasterAmmo
 				}
 				else
 				{
-					if (CountInv("DualDragonClawNew") <= 0)
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -305,7 +305,7 @@ ACTOR BlasterHeftySpawner : BlasterHefty replaces BlasterHefty
 				}
 				else
 				{
-					if (CountInv("DualDragonClawNew") <= 0)
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -359,7 +359,7 @@ ACTOR PhoenixRodAmmoSpawner : PhoenixRodAmmo replaces PhoenixRodAmmo
 				}
 				else
 				{
-					if (CountInv("DualPhoenixRodNew") <= 0)
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -402,7 +402,7 @@ ACTOR PhoenixRodHeftySpawner : PhoenixRodHefty replaces PhoenixRodHefty
 				}
 				else
 				{
-					if (CountInv("DualPhoenixRodNew") <= 0)
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -441,7 +441,7 @@ ACTOR MaceAmmoSpawner : MaceAmmo replaces MaceAmmo
 				}
 				else
 				{
-					if (CountInv("DualFiremaceNew") <= 0)
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -484,7 +484,7 @@ ACTOR MaceHeftySpawner : MaceHefty replaces MaceHefty
 				}
 				else
 				{
-					if (CountInv("DualFiremaceNew") <= 0)
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -527,7 +527,7 @@ ACTOR SkullRodAmmoSpawner : SkullRodAmmo replaces SkullRodAmmo
 				}
 				else
 				{
-					if (CountInv("DualHellStaffNew") <= 0)
+					if (CountInv("DualHellStaffNew",AAPTR_PLAYER1) <= 0)
 					{
 						if (random(1,4096) <= 1)
 						{
@@ -3215,7 +3215,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 		Spawn:
 			DSTA A 0 NoDelay
 			{
-				if (CountInv("DSparilStaff") > 0)
+				if (CountInv("DSparilStaff",AAPTR_PLAYER1))
 				{
 					A_SpawnItemEx("DualDSparilStaff");
 					A_FadeOut(1,1);

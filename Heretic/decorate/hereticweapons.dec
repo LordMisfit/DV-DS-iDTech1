@@ -26,7 +26,7 @@ ACTOR GoldWandAmmoSpawner : GoldWandAmmo replaces GoldWandAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("GoldWandNew") <= 0)
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -69,7 +69,7 @@ ACTOR GoldWandHeftySpawner : GoldWandHefty replaces GoldWandHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("GoldWandNew") <= 0)
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -112,7 +112,7 @@ ACTOR CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("CrossbowNew") <= 0)
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -132,7 +132,7 @@ ACTOR CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
 					}
 					else
 					{
-						if (CountInv("SuperCrossbowNew") <= 0)
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
 						{
 							if (random(1,2048) <= 1)
 							{
@@ -177,7 +177,7 @@ ACTOR CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("CrossbowNew") <= 0)
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -197,7 +197,7 @@ ACTOR CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
 					}
 					else
 					{
-						if (CountInv("SuperCrossbowNew") <= 0)
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
 						{
 							if (random(1,2048) <= 1)
 							{
@@ -241,7 +241,7 @@ ACTOR BlasterAmmoSpawner : BlasterAmmo replaces BlasterAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("DragonClawNew") <= 0)
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -261,7 +261,7 @@ ACTOR BlasterAmmoSpawner : BlasterAmmo replaces BlasterAmmo
 					}
 					else
 					{
-						if (CountInv("DSparilStaff") > 0)
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
 						{
 							if (random(1,8192) <= 1)
 							{
@@ -295,7 +295,7 @@ ACTOR BlasterHeftySpawner : BlasterHefty replaces BlasterHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("DragonClawNew") <= 0)
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -315,7 +315,7 @@ ACTOR BlasterHeftySpawner : BlasterHefty replaces BlasterHefty
 					}
 					else
 					{
-						if (CountInv("DSparilStaff") > 0)
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
 						{
 							if (random(1,8192) <= 1)
 							{
@@ -349,7 +349,7 @@ ACTOR PhoenixRodAmmoSpawner : PhoenixRodAmmo replaces PhoenixRodAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("PhoenixRodNew") <= 0)
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -392,7 +392,7 @@ ACTOR PhoenixRodHeftySpawner : PhoenixRodHefty replaces PhoenixRodHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("PhoenixRodNew") <= 0)
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -431,7 +431,7 @@ ACTOR MaceAmmoSpawner : MaceAmmo replaces MaceAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("FiremaceNew") <= 0)
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -474,7 +474,7 @@ ACTOR MaceHeftySpawner : MaceHefty replaces MaceHefty
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("FiremaceNew") <= 0)
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -517,7 +517,7 @@ ACTOR SkullRodAmmoSpawner : SkullRodAmmo replaces SkullRodAmmo
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				if (CountInv("HellStaffNew") <= 0)
+				if (CountInv("HellStaffNew",AAPTR_PLAYER1) <= 0)
 				{
 					if (random(1,2048) <= 1)
 					{
@@ -672,7 +672,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 		Spawn:
 			GWAN A 0 NoDelay
 			{
-				if (CountInv("GoldWandNew") > 0)
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualGoldWandNew");
 					A_FadeOut(1,1);
@@ -984,7 +984,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 		Idle:
 			WBOW A 0
 			{
-				if (CountInv("CrossbowNew") > 0)
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualCrossbowNew");
 					A_FadeOut(1,1);
@@ -1339,7 +1339,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 		Spawn:
 			WBLS A 0 NoDelay
 			{
-				if (CountInv("DragonClawNew") > 0)
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualDragonClawNew");
 					A_FadeOut(1,1);
@@ -1550,7 +1550,6 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 ACTOR HornRodFX2New : HornRodFX2Base
 { 
 	Damage (finaldamagedealt) //2
-	DamageType "Acid"
 	DamageType "Magic" 
 	+SEEKERMISSILE
 	States
@@ -1629,7 +1628,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 		Spawn:
 			WSKL A 0 NoDelay
 			{
-				if (CountInv("HellStaffNew") > 0)
+				if (CountInv("HellStaffNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualHellStaffNew");
 					A_FadeOut(1,1);
@@ -1870,7 +1869,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 			}
 			FX08 A 6 Bright 
 			{
-				finaldamagedealt = A_GetPlayerAttackDamage(61,0);
+				finaldamagedealt = A_GetPlayerAttackDamage(60,0);
 				A_Explode((finaldamagedealt),128,1);
 			}
 			FX08 BC 5 Bright
@@ -2092,7 +2091,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 		Spawn:
 			WPHX A 0 NoDelay
 			{
-				if (CountInv("PhoenixRodNew") > 0)
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualPhoenixRodNew");
 					A_FadeOut(1,1);
@@ -2551,7 +2550,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 		Spawn:
 			WMCE A 0 NoDelay
 			{
-				if (CountInv("FiremaceNew") > 0)
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualFiremaceNew");
 					A_FadeOut(1,1);
@@ -2791,7 +2790,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 		Spawn:
 			WBOW B 0 NoDelay
 			{
-				if (CountInv("SuperCrossbowNew") > 0)
+				if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) > 0)
 				{
 					A_SpawnItemEx("DualSuperCrossbowNew");
 					A_FadeOut(1,1);
@@ -3136,7 +3135,6 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 	FastSpeed 28
 	Damage (finaldamagedealt) //20
 	DamageType "Thunder"
-	DamageType "Magic"
 	Projectile
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS

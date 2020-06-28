@@ -252,6 +252,7 @@ ACTOR CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 	+FLOATBOB
 	Inventory.Amount 10
 	Inventory.PickupMessage "$TXT_ITEMHEALTH" // "CRYSTAL VIAL"
+	Inventory.PickupSound "pickup/qpotion"
 	States
 	{
 			Herb1:

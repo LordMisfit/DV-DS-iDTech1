@@ -248,7 +248,7 @@ ACTOR KnightAxeNew : AetheriusEffectProjectile replaces KnightAxe
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
 	+WINDTHRUST
-	+THRUGHOST
+	+THRUGHOST // Knight Axe [Green]
 	DeathSound "hknight/hit"
 	States
 	{
@@ -361,7 +361,7 @@ ACTOR DKDart : AetheriusProjectileZSC
 	RENDERSTYLE ADD
 	ALPHA 1.00
 	PROJECTILE
-	+THRUGHOST
+	+THRUGHOST // Death Knight "Dart"
 	Seesound "monster/dkndrt"
 	DeathSound "weapons/firex2"
 	States
@@ -432,7 +432,7 @@ ACTOR FHeadShot : AetheriusProjectileZSC
 	PROJECTILE
 	DamageType Fire
 	+SEEKERMISSILE
-	+THRUGHOST
+	+THRUGHOST // Death Knight Head Fireball
 	Seesound "monster/dknmsl"
 	DeathSound "weapons/boom1"
 	States
@@ -476,7 +476,7 @@ ACTOR DKbolt : AetheriusProjectileZSC
 	RENDERSTYLE ADD
 	ALPHA 0.80
 	DamageType Fire
-	+THRUGHOST
+	+THRUGHOST // Death Knight Bolt
 	SeeSound "Weapons/boltfi"
 	DeathSound "weapons/firex4"
 	States
@@ -569,7 +569,7 @@ ACTOR DKFire : AetheriusProjectileZSC
 	RENDERSTYLE ADD
 	ALPHA 0.95
 	PROJECTILE
-	+THRUGHOST
+	+THRUGHOST // Death Knight Fire
 	DeathSound "weapons/scorch"
 	States
 	{
@@ -592,7 +592,7 @@ ACTOR DKFireCrisis : DKFire
 	RENDERSTYLE ADD
 	ALPHA 0.95
 	PROJECTILE
-	+THRUGHOST
+	+THRUGHOST // Death Knight Fire [Crisis]
 	DeathSound "weapons/scorch"
 	States
 	{
@@ -960,7 +960,7 @@ ACTOR HeadFX1New : AetheriusEffectProjectile replaces HeadFX1
 	Projectile
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
-	+THRUGHOST
+	+THRUGHOST // Icon Lich Ice Ball
 	DamageType "Ice" 
 	RenderStyle Add
   DeathSound "misc/icehit"
@@ -1659,7 +1659,7 @@ ACTOR ClinkAxe : AetheriusProjectileZSC
 	+NODAMAGETHRUST
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
-	+THRUGHOST
+	+THRUGHOST // Sabreclaw/Clink Spectral Axe
 	+WINDTHRUST
 	Renderstyle Add
 	Scale 0.6
@@ -1711,7 +1711,7 @@ ACTOR ClinkAxe2 : ClinkAxe
 	+NODAMAGETHRUST
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
-	+THRUGHOST
+	+THRUGHOST // SabreBlade/DarkClink Spectral Axe 2
 	+WINDTHRUST
 	Renderstyle Add
 	Scale 0.8

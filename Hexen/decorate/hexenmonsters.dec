@@ -995,8 +995,9 @@ ACTOR CentaurNew : AetheriusMonsterZSC replaces Centaur
 				A_CentaurShieldOn;
 				A_FaceTarget;
 
-				if (random(1,32) == 1) { user_defendtimer += 1; }
-				if (random(1,8) == 1) { user_defendtimer += 1; }
+				if (random(1,128) <= 1) { user_defendtimer += 1; }
+				if (random(1,32) <= 1) { user_defendtimer += 1; }
+				if (random(1,8) <= 1) { user_defendtimer += 1; }
 				user_defendtimer += 1;
 
 				if (levelbehavior && user_monsterlevel > 270) { user_defendtimermax = 3; }

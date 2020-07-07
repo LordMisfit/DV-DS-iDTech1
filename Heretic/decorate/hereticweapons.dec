@@ -1926,7 +1926,7 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 			FX04 A 0 NoDelay 
 			{
 				A_ChangeFlag("FORCERADIUSDMG",0);
-				user_ignoreaoeimmunity = (WandMastPerkLvl * 2.5) + (WandMastEXPerkLvl * 6.25);
+				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
 				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0);

@@ -1847,6 +1847,7 @@ ACTOR PhoenixPuff2 : PhoenixPuff
 
 ACTOR PhoenixFX1New : PhoenixFX1Base
 {
+	var float user_ignoreaoeimmunity;
 	Damage (finaldamagedealt) //2
 	DamageType "Fire"
 	States
@@ -1854,6 +1855,10 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
+				A_ChangeFlag("FORCERADIUSDMG",0);
+				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
@@ -1886,6 +1891,10 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
+				A_ChangeFlag("FORCERADIUSDMG",0);
+				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
 			}
@@ -1916,6 +1925,10 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 		Spawn:
 			FX04 A 0 NoDelay 
 			{
+				A_ChangeFlag("FORCERADIUSDMG",0);
+				user_ignoreaoeimmunity = (WandMastPerkLvl * 2.5) + (WandMastEXPerkLvl * 6.25);
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
 

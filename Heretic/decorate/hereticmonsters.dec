@@ -503,6 +503,7 @@ ACTOR PlagueShot : AetheriusEffectProjectile
 	Speed 16
 	PROJECTILE
 	+THRUGHOST // Plague Gargoyle Poisonball
+	DamageType "Poison"
 	scale 0.5
 	SeeSound "himp/leaderattack"
 	DeathSound "monster/plaugeBall"

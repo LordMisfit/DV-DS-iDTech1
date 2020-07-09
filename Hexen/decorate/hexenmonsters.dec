@@ -3502,6 +3502,7 @@ Actor PatriarchBlurClone
 
 Actor PatriarchFX : AetheriusProjectileZSC
 {
+	Tag "Patriarch Star"
 	Radius 10
 	Height 6
 	Speed 15
@@ -3591,6 +3592,7 @@ Actor PatriarchFXClone : PatriarchFX
 
 ACTOR PatriarchRainFX : AetheriusProjectileZSC
 {
+	Tag "Patriarch Rain"
 	Radius 6
 	Height 12
 	Speed 12
@@ -3673,6 +3675,7 @@ ACTOR PatriarchRainFXCrisis : PatriarchRainFX
 
 ACTOR PatriarchShot
 {
+	Tag "Patriarch Shot"
 	Radius 10
 	Height 6
 	Speed 25
@@ -5913,6 +5916,7 @@ actor FDragon : DragonNew
 
 ACTOR DragonFireballNew : AetheriusProjectileZSC replaces DragonFireball
 {
+	Tag "Wyvern Clusterblast"
 	Damage (6 * random(1,8))
 	Speed 24
 	Radius 12
@@ -5965,6 +5969,7 @@ ACTOR DragonFireballCrisis : DragonFireballNew
 
 ACTOR DragonExplosionNew : AetheriusProjectileZSC replaces DragonExplosion
 {
+	Tag "Wyvern Clusterblast"
 	Radius 8
 	Height 8
 	DamageType "Fire"
@@ -6141,6 +6146,7 @@ ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 
 ACTOR HolyMissileNew : AetheriusProjectileZSC replaces HolyMissile
 {
+	Tag "WraithVerge Shot"
 	Damage (4 * random(1,8))
 	Speed 30
 	Radius 15
@@ -6197,6 +6203,7 @@ ACTOR HolyMissileCrisis : HolyMissileNew
 
 ACTOR HolySpiritNew : HolySpiritBase replaces HolySpirit
 {
+	Tag "WraithVerge Spirit"
 	Damage (3 * random(1,8))
 	Health 105
 	Speed 12
@@ -6390,6 +6397,7 @@ ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 
 ACTOR FSwordMissileNew : AetheriusProjectileZSC replaces FSwordMissile
 {
+	Tag "Quietus Dart"
 	Damage (8 * random(1,8))
 	Speed 30
 	Radius 16
@@ -6574,6 +6582,7 @@ ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 }
 ACTOR MageStaffFX2New : MageStaffFX2Base replaces MageStaffFX2
 {
+	Tag "Bloodscourge Star"
 	Damage (4 * random(1,8))
 	Speed 17
 	Height 8
@@ -6635,6 +6644,7 @@ ACTOR MageStaffFX2Crisis : MageStaffFX2New
 
 ACTOR ZPoisonCloudNew : PoisonCloud
 {
+	Tag "PoisonCloud"
 	reactiontime 24
 	Radius 20
 	Height 30

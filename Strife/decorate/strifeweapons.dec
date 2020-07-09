@@ -39,6 +39,7 @@ ACTOR PoisonBoltsNew : PoisonBolts replaces PoisonBolts
 // Crossbow Projectiles
 ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 {
+	Tag "Electric Bolt"
 	Speed 30
 	Radius 10
 	Height 10
@@ -76,6 +77,7 @@ ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 
 ACTOR PoisonBoltNew : AetheriusProjectileZSC replaces PoisonBolt
 {
+	Tag "Poison Bolt"
 	Speed 30
 	Radius 10
 	Height 10
@@ -1485,6 +1487,7 @@ ACTOR SpectralLightningBaseNew : AetheriusProjectileZSC replaces SpectralLightni
 // and The Entity use, probably for balance reasons.
 ACTOR SpectralLightningBall1New : SpectralLightningBaseNew replaces SpectralLightningBall1
 {
+	Tag "Sigil Spread Shot"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (finaldamagedealt) // 70
@@ -1507,6 +1510,7 @@ ACTOR SpectralLightningBall1New : SpectralLightningBaseNew replaces SpectralLigh
 // the original, probably for balance reasons.
 ACTOR SpectralLightningBall2New : SpectralLightningBall1New replaces SpectralLightningBall2
 {
+	Tag "Spectral Spread Shot"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (finaldamagedealt) // 20
@@ -1523,6 +1527,7 @@ ACTOR SpectralLightningBall2New : SpectralLightningBall1New replaces SpectralLig
 }
 ACTOR SpectralLightningBall2Monster : SpectralLightningBall2New
 {
+	Tag "Spectral Spread Shot"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (20 * random(1,4))
@@ -1584,6 +1589,7 @@ ACTOR SpectralLightningDeath1New : SpectralLightningBaseNew replaces SpectralLig
 // 4th Spectre and The Entity use, probably for balance reasons.
 ACTOR SpectralLightningBigV1New : SpectralLightningDeath1New replaces SpectralLightningBigV1
 {
+	Tag "Sigil Lightning Column"
 	DamageType "Sigil"
 	+SPECTRAL
 	Speed 28
@@ -1608,6 +1614,7 @@ ACTOR SpectralLightningBigV1New : SpectralLightningDeath1New replaces SpectralLi
 // damage as the original, probably for balance reasons.
 ACTOR SpectralLightningBigV2New : SpectralLightningBigV1New
 {
+	Tag "Spectral Lightning Column"
 	DamageType "Sigil"
 	+SPECTRAL
 	Damage 60
@@ -1623,6 +1630,7 @@ ACTOR SpectralLightningBigV2New : SpectralLightningBigV1New
 }
 ACTOR SpectralLightningBigV2Monster : SpectralLightningBigV2New
 {
+	Tag "Spectral Lightning Column"
 	DamageType "Sigil"
 	+SPECTRAL
 	Damage (60 * random(1,4))
@@ -1701,6 +1709,7 @@ ACTOR SpectralLightningDeathShortNew : SpectralLightningBaseNew replaces Spectra
 // and another ahead of it).
 ACTOR SpectralLightningBigBall1New : SpectralLightningDeath2New replaces SpectralLightningBigBall1
 {
+	Tag "Sigil Lightning MegaBlast"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (finaldamagedealt) // 130
@@ -1732,6 +1741,7 @@ ACTOR SpectralLightningBigBall1New : SpectralLightningDeath2New replaces Spectra
 // every few tics on multiple sides of it as it travels (one to its left, another to its right, and another ahead of it).
 ACTOR SpectralLightningBigBall2New : SpectralLightningBigBall1New replaces SpectralLightningBigBall2
 {
+	Tag "Spectral Lightning MegaBlast"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (30 * random(1,4))
@@ -1775,6 +1785,7 @@ ACTOR SpectralLightningBigBall2Crisis : SpectralLightningBigBall2New
 // Does NOT deal Area of Effect damage, since it's death animation skips the frame where the explosion happens.
 ACTOR SpectralLightningV1New : SpectralLightningDeathShortNew replaces SpectralLightningV1 
 { 
+	Tag "Sigil LightningFall"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow"
@@ -1801,6 +1812,7 @@ ACTOR SpectralLightningV1New : SpectralLightningDeathShortNew replaces SpectralL
 // Programmer/Spectral Monster only version
 ACTOR SpectralLightningV1Monster : SpectralLightningV1New
 { 
+	Tag "Spectral LightningFall"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow"
@@ -1869,6 +1881,7 @@ ACTOR SpectralLightningV1MonsterCrisis : SpectralLightningV1Monster
 // Does NOT deal Area of Effect damage, since it's death animation skips the frame where the explosion happens.
 ACTOR SpectralLightningV2New : SpectralLightningV1New replaces SpectralLightningV2
 { 
+	Tag "Sigil LightningFall"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow" 
@@ -1902,6 +1915,7 @@ ACTOR SpectralLightningV2New : SpectralLightningV1New replaces SpectralLightning
 // Programmer/Spectral Monster only version
 ACTOR SpectralLightningV2Monster : SpectralLightningV2New
 { 
+	Tag "Spectral LightningFall"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	DamageType "SpectralLow" 
@@ -1965,6 +1979,7 @@ ACTOR SpectralLightningV2MonsterCrisis : SpectralLightningV2Monster
 // Probably for balance purposes. It also leaves a "tail" like afterimage of itself behind it as it travels.
 ACTOR SpectralLightningH1New : SpectralLightningBaseNew replaces SpectralLightningH1
 {
+	Tag "Sigil Lightning Bolt"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (finaldamagedealt) // 70
@@ -2019,6 +2034,7 @@ ACTOR SpectralLightningH2New : SpectralLightningH1New replaces SpectralLightning
 // and one to its right, at the same time.
 ACTOR SpectralLightningH3New : SpectralLightningH1New replaces SpectralLightningH3
 {
+	Tag "Sigil Lightning Bolt"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (finaldamagedealt) // 10
@@ -2040,6 +2056,7 @@ ACTOR SpectralLightningH3New : SpectralLightningH1New replaces SpectralLightning
 }
 ACTOR SpectralLightningH3Monster : SpectralLightningH3New
 {
+	Tag "Spectral Lightning Bolt"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Damage (10 * random(1,4))
@@ -2083,6 +2100,7 @@ ACTOR SpectralLightningH3MonsterCrisis : SpectralLightningH3Monster
 // enough to be standing there. The spot fades out after about 8 seconds of activity.
 ACTOR SpectralLightningSpotNew : SpectralLightningDeath1New replaces SpectralLightningSpot
 {
+	Tag "Sigil Lightning Beacon"
 	+SPECTRAL 
 	DamageType "Sigil" 
 	Speed 18
@@ -2140,6 +2158,7 @@ ACTOR SpectralLightningSpotCrisis : SpectralLightningSpotNew
 // Modded Sigil's version of SpectralLightningSpot
 Actor NNSigilLightningSpot : SpectralLightningSpotNew
 {
+	Tag "Sigil Lightning Beacon"
 	+SPECTRAL //This flag is needed, otherwise the SpectralLightningV1/V2
 	DamageType "Sigil"
 	States    //actors won't damage the spectres. Wierd.
@@ -2159,6 +2178,7 @@ Actor NNSigilLightningSpot : SpectralLightningSpotNew
 // Modded version of SpectralLightningBigV1New for the new Sigil
 Actor NNSigilLightningBigV : SpectralLightningBigV1New
 {
+	Tag "Sigil Lightning Column"
 	Decal "BaronScorch"
 	DamageType "Sigil"
 	+SPECTRAL

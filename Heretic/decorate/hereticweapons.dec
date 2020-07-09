@@ -580,6 +580,7 @@ ACTOR SkullRodHeftySpawner : SkullRodHefty replaces SkullRodHefty
 // *******************
 ACTOR GoldWandFX1New : AetheriusProjectileZSC 
 {
+	Tag "Elven Wand Shot"
 	Radius 10
 	Height 6
 	Speed 22
@@ -607,6 +608,7 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 }
 ACTOR GoldWandFX2New : GoldWandFX1New 
 {
+	Tag "Elven Wand Ball"
 	Speed 18
 	Damage (finaldamagedealt) // 1
 	DamageType "Magic" 
@@ -626,6 +628,7 @@ ACTOR GoldWandFX2New : GoldWandFX1New
 }
 ACTOR GoldWandPuff1New : AetheriusProjectileZSC 
 { 
+	Tag "Elven Wand Shot"
 	DamageType "Magic" 
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -640,6 +643,7 @@ ACTOR GoldWandPuff1New : AetheriusProjectileZSC
 }
 ACTOR GoldWandPuff2New : AetheriusProjectileZSC 
 { 
+	Tag "Elven Wand Shot"
 	DamageType "Magic" 
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -878,6 +882,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 
 ACTOR CrossbowFX1New : AetheriusProjectileZSC 
 {
+	Tag "Ethereal Arrow"
 	DamageType "Magic"
 	Damage (finaldamagedealt) // 10
 	Speed 30
@@ -906,6 +911,7 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 }
 ACTOR CrossbowFX2New : CrossbowFX1New
 {
+	Tag "Ethereal Arrow"
 	DamageType "Magic" 
 	Damage (finaldamagedealt) // 6
 	Speed 32
@@ -926,6 +932,7 @@ ACTOR CrossbowFX2New : CrossbowFX1New
 }
 ACTOR CrossbowFX3New : CrossbowFX1New
 {
+	Tag "Ethereal Arrow"
 	DamageType "Magic" 
 	Damage (finaldamagedealt) // 2
 	Speed 20
@@ -1240,6 +1247,7 @@ ACTOR DualCrossbowNew : HereticWeaponBase
 
 ACTOR RipperNew : RipperBase
 {
+	Tag "DragonClaw Ripper"
 	DamageType "Magic" 
 	Radius 8
 	Height 6
@@ -1270,6 +1278,7 @@ ACTOR RipperNew : RipperBase
 }
 ACTOR BlasterPuffNew : AetheriusProjectileZSC 
 { 
+	Tag "DragonClaw Shot"
 	DamageType "Magic" 
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -1289,6 +1298,7 @@ ACTOR BlasterPuffNew : AetheriusProjectileZSC
 }
 ACTOR BlasterFX1New : BlasterFX1Base 
 {
+	Tag "DragonClaw Blast"
 	Radius 12
 	Height 8
 	Speed 184
@@ -1512,6 +1522,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 
 ACTOR HornRodFX1New : AetheriusProjectileZSC 
 { 
+	Tag "Hellstaff Shot"
 	Radius 12
 	Height 8
 	Speed 22
@@ -1549,6 +1560,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 }
 ACTOR HornRodFX2New : HornRodFX2Base
 { 
+	Tag "Hellrain Blast"
 	Damage (finaldamagedealt) //2
 	DamageType "Magic" 
 	+SEEKERMISSILE
@@ -1587,6 +1599,7 @@ ACTOR HornRodFX2New : HornRodFX2Base
 }
 ACTOR RainPillarNew : RainPillarBase replaces RainPillar 
 {
+	Tag "Hellstaff Raindrop"
 	Damage (finaldamagedealt) //5
 	DamageType "Magic" 
 	ProjectileKickback 6
@@ -1847,6 +1860,7 @@ ACTOR PhoenixPuff2 : PhoenixPuff
 
 ACTOR PhoenixFX1New : PhoenixFX1Base
 {
+	Tag "Phoenix Shot"
 	var float user_ignoreaoeimmunity;
 	Damage (finaldamagedealt) //2
 	DamageType "Fire"
@@ -1884,6 +1898,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 }
 ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot deal self-AOE [necessary due to how Spreader Aura spreads out extra shots]
 {
+	Tag "Phoenix Shot"
 	Damage (finaldamagedealt) //2
 	DamageType "Fire"
 	States
@@ -1916,6 +1931,7 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 }
 ACTOR PhoenixFX1Seeking : PhoenixFX1New
 {
+	Tag "Phoenix Seeker"
 	Speed 15 // 20
 	Scale 0.75
 	var float user_seekstrength;
@@ -1966,6 +1982,7 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 }
 ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
 {
+	Tag "Phoenix Seeker"
 	Speed 15 // 20
 	Scale 0.75
 	var float user_seekstrength;
@@ -2011,6 +2028,7 @@ ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
 }
 ACTOR PhoenixFX2New : PhoenixFX2Base
 {
+	Tag "Phoenix Flame"
 	Damage (finaldamagedealt) //2
 	DamageType "Fire"
 	ProjectileKickback 0
@@ -2038,6 +2056,7 @@ ACTOR PhoenixFX2New : PhoenixFX2Base
 }
 ACTOR PhoenixFX2Seeking : PhoenixFX2Base
 {
+	Tag "Phoenix Flame Seeker"
 	Scale 0.75
 	var float user_seekstrength;
 	var int user_specificTarget;
@@ -2439,6 +2458,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 
 ACTOR MaceFX1New : MaceFX1Base
 {
+	Tag "Mace Minisphere"
 	Damage (finaldamagedealt) //2
 	BounceType "HexenCompat"
 	BounceFactor 0.85
@@ -2463,6 +2483,7 @@ ACTOR MaceFX1New : MaceFX1Base
 }
 ACTOR MaceFX2New : MaceFX2Base 
 { 
+	Tag "Mace Sphere"
 	Damage (finaldamagedealt) //2
 	BounceType "HexenCompat"
 	BounceFactor 0.85
@@ -2483,6 +2504,7 @@ ACTOR MaceFX2New : MaceFX2Base
 }
 ACTOR MaceFX3New : MaceFX3Base
 { 
+	Tag "Mace Sphere"
 	Damage (finaldamagedealt) //2
 	BounceType "HexenCompat"
 	BounceFactor 0.85
@@ -2503,6 +2525,7 @@ ACTOR MaceFX3New : MaceFX3Base
 }
 ACTOR MaceFX4New : MaceFX4Base
 { 
+	Tag "Mace Megasphere"
 	Damage (finaldamagedealt) //2
 	BounceType "HexenCompat"
 	BounceFactor 0.925
@@ -3142,6 +3165,7 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 
 ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 {
+	Tag "Staff ElectroBlast"
 	Radius 10
 	Height 6
 	Speed 20
@@ -3178,6 +3202,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 
 actor Sorcerer2FX3 : AetheriusProjectileZSC
 {
+	Tag "Staff Wizard Shot"
 	Radius 10
 	Height 6
 	Speed 6

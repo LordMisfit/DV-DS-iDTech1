@@ -418,6 +418,7 @@ class SorcBallBase : AetheriusProjectileZSC
 {
 	Default
 	{
+		Tag "Heresiarch Mana Cube";
 		Speed 10;
 		Radius 5;
 		Height 5;
@@ -966,6 +967,7 @@ class SorcFX1Base : AetheriusProjectileZSC
 {
 	Default
 	{
+		Tag "Heresiarch Bouncing Fireface";
 		Speed 7;
 		Radius 5;
 		Height 5;
@@ -1164,6 +1166,7 @@ class SorcFX3Base : AetheriusProjectileZSC
 {
 	Default
 	{
+		Tag "Heresiarch Spawn Sphere";
 		Speed 15;
 		Radius 22;
 		Height 65;
@@ -1235,6 +1238,7 @@ class SorcFX4Base : AetheriusProjectileZSC
 {
 	Default
 	{
+		Tag "Heresiarch Magic Missile";
 		Speed 12;
 		Radius 10;
 		Height 10;

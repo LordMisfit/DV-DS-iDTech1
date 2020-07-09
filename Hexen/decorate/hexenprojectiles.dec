@@ -1,6 +1,7 @@
 // DarkServent Maulotaur
 ACTOR MinotaurFX1New : AetheriusEffectProjectile replaces MinotaurFX1 
 {
+	Tag "'taur Fire"
 	Damage (3 * random(1,8))
 	DamageType "Fire" 
 	Radius 10
@@ -41,6 +42,7 @@ ACTOR MinotaurFX1Crisis : MinotaurFX1New
 
 ACTOR MinotaurFX2New : MinotaurFX1New replaces MinotaurFX2 
 {
+	Tag "'taur Firesnake"
 	Damage (4 * random(1,8))
 	DamageType "Fire" 
 	Radius 5
@@ -91,6 +93,7 @@ ACTOR MinotaurFX2Crisis : MinotaurFX2New
 
 ACTOR MinotaurFX3New : MinotaurFX2New replaces MinotaurFX3 
 {
+	Tag "'taur Firesnake"
 	DamageType "Fire" 
 	Radius 8
 	Height 16
@@ -168,6 +171,7 @@ ACTOR MinotaurFX3Crisis : MinotaurFX3New
 // PorkFX
 ACTOR PorkFXNew : PorkFX replaces PorkFX
 {
+	Tag "Porkulator Shot"
 	Radius 8
 	Height 8
 	Speed 18
@@ -188,6 +192,7 @@ ACTOR PorkFXNew : PorkFX replaces PorkFX
 // Ettin Commander
 ACTOR ThrownMace : AetheriusProjectileZSC
 {
+	Tag "Thrown Mace"
 	Damage ((Random(2,8)*4))
 	Speed 15
 	FastSpeed 20
@@ -263,6 +268,7 @@ ACTOR ThrownMaceCrisis : ThrownMace
 // Reiver and Bormereth
 actor DBigEttinMace : AetheriusProjectileZSC
 {
+	Tag "Thrown Mace"
 	+DOOMBOUNCE
 	Speed 3
 	States
@@ -276,6 +282,7 @@ actor DBigEttinMace : AetheriusProjectileZSC
 
 ACTOR WraithFX1New : AetheriusProjectileZSC replaces WraithFX1
 {
+	Tag "Sizzling Fireball"
 	Damage (5 * random(1,8))
 	DamageType "Fire"
 	Speed 14
@@ -342,6 +349,7 @@ ACTOR WraithFX1Crisis : WraithFX1New
 
 Actor BormerethFX1 : WraithFX1New
 {
+	Tag "Sizzling Fireball"
 	Damage (8 * random(1,8))
 	DeathSound "bormereth/missilesimpledeath"
 	Scale 0.85
@@ -448,6 +456,7 @@ Actor PossEttFakeFireBall : WraithFX1New
 
 Actor PossEttFireBall : WraithFX1New
 {
+	Tag "Sizzling Fireball"
 	Damage (15 * random(1,8))
 	Scale 1.1
 	Speed 20
@@ -690,6 +699,7 @@ Actor PEFBTrail : AetheriusProjectileZSC
 //-------------------------------------------------------
 Actor FirePillarStarter : AetheriusProjectileZSC
 {
+	Tag "Fire Pillar"
 	Projectile
 	+RIPPER
 	Speed 28
@@ -710,6 +720,7 @@ Actor FirePillarStarter : AetheriusProjectileZSC
 }
 Actor FirePillarStarterCrisis : FirePillarStarter
 {
+	Tag "Fire Pillar"
 	States
 	{
 		Spawn:
@@ -723,6 +734,7 @@ Actor FirePillarStarterCrisis : FirePillarStarter
 
 Actor FirePillarBase : AetheriusProjectileZSC
 {
+	Tag "Fire Pillar"
 	var int user_times;
 	Projectile
 	Speed 0
@@ -754,6 +766,7 @@ Actor FirePillarBase : AetheriusProjectileZSC
 }
 Actor FirePillarBaseCrisis : FirePillarBase
 {
+	Tag "Fire Pillar"
 	States
 	{
 		Spawn: // 5
@@ -780,6 +793,7 @@ Actor FirePillarBaseCrisis : FirePillarBase
 
 Actor FirePillarShot : AetheriusProjectileZSC
 {
+	Tag "Fire Pillar"
 	Damage (3 * random(1,8))
 	DamageType Fire
 	Projectile
@@ -837,6 +851,7 @@ Actor FirePillarShotCrisis : FirePillarShot
 
 Actor FirePillarShot2 : FirePillarShot	//this one wont have light definition
 {
+	Tag "Fire Pillar"
 	Damage (3 * random(1,8))
 	Alpha 0.6
 }
@@ -848,6 +863,7 @@ Actor FirePillarShot2Crisis : FirePillarShotCrisis
 // Slaughtaur
 ACTOR CentaurFXNew : AetheriusProjectileZSC
 {
+	Tag "Shield Blast"
 	Speed 20
 	Damage (4 * random(1,8))
 	Projectile
@@ -897,8 +913,9 @@ ACTOR CentaurFXCrisis : CentaurFXNew
 }
 
 // Afrits
-Actor FireDemonMissileNew : AetheriusProjectileZSC
+Actor FireDemonMissileNew : AetheriusProjectileZSC replaces FireDemonMissile
 {
+	Tag "Fire Missile"
 	Health 1000
 	ReactionTime 8
 	Speed 10
@@ -939,6 +956,7 @@ Actor FireDemonMissileCrisis : FireDemonMissileNew
 
 Actor FireDemonLeaderMissile : FireDemonMissileNew
 {
+	Tag "Fire Missile"
 	Damage (random(1,2) * random(1,6))
 	DamageType "Fire"
 	Speed 15
@@ -1039,6 +1057,7 @@ ACTOR FireDemonLeaderTrail2
 
 Actor FireDemonCommanderMissile : FireDemonMissileNew
 {
+	Tag "Fire Missile"
 	Damage ((random(1,2) * random(1,6)) + random(3,9))
 	Speed 15
 	FastSpeed 20
@@ -1139,6 +1158,7 @@ ACTOR FireDemonCommanderTrail2
 
 Actor FireDemonQueenMissile : FireDemonMissileNew
 {
+	Tag "Fire Missile"
 	Damage ((random(2,3) * random(1,6)) + random(1,4))
 	Speed 15
 	FastSpeed 20
@@ -1174,6 +1194,7 @@ Actor FireDemonQueenMissile : FireDemonMissileNew
 }
 Actor FireDemonQueenCloneMissile : FireDemonQueenMissile
 {
+	Tag "Fire Missile"
 	Damage (((random(2,3) * random(1,6)) + random(1,4)) / 4)
 	Speed 15
 	FastSpeed 20
@@ -1356,6 +1377,7 @@ ACTOR FireDemonQueenTrail2
 // Dark Bishop
 ACTOR BishopFXNew2 : BishopFXNew replaces BishopFX
 {
+	Tag "Green Star"
 	Damage (random(2,6)+random(1,4))
 	Radius 10
 	Height 6
@@ -1412,6 +1434,7 @@ ACTOR BishopFXCrisis : BishopFXNew2
 // Dark Disciple
 Actor DiscipleFX : AetheriusProjectileZSC
 {
+	Tag "Disciple's Star"
 	Damage (random(1,4)*random(1,4))
 	Radius 10
 	Height 6
@@ -1524,6 +1547,7 @@ Actor DiscipleSpreadFXCrisis : DiscipleFXCrisis
 // Vampire
 ACTOR VampireRoundBeam : AetheriusProjectileZSC
 {
+	Tag "Vampiric Blood Beam"
 	Damage (random(1,5))
 	Radius 2
 	Height 4
@@ -1616,6 +1640,7 @@ ACTOR VampireRoundBeamTrail : AetheriusProjectileZSC
 
 ACTOR BatAttack : AetheriusProjectileZSC
 {
+	Tag "Bat Familiar"
 	Damage (3 * random(1,8))
 	Radius 8
 	Height 16
@@ -1769,6 +1794,7 @@ ACTOR BatAttackSafe : AetheriusProjectileZSC
 // Stalker
 ACTOR SerpentFXNew : AetheriusProjectileZSC replaces SerpentFX
 {
+	Tag "Sizzling Slime"
 	Damage (4 * random(1,8))
 	Speed 15
 	Radius 8
@@ -1823,6 +1849,7 @@ ACTOR SerpentFXCrisis : SerpentFXNew
 // Chaos Serpents
 ACTOR Demon1FX1New : AetheriusProjectileZSC replaces Demon1FX1
 {
+	Tag "Serpentfire"
 	Damage (5 * random(1,8))
 	DamageType "Fire"
 	Speed 15
@@ -1864,6 +1891,7 @@ ACTOR Demon1FX1Crisis : Demon1FX1New
 
 ACTOR Demon2FX1New : AetheriusEffectProjectile replaces Demon2FX1
 {
+	Tag "Poisoned Serpentfire"
 	Damage (5 * random(1,8))
 	Speed 15
 	Radius 10
@@ -1932,6 +1960,7 @@ ACTOR Demon2FX1Crisis : Demon2FX1New
 
 Actor Demon3FX : AetheriusProjectileZSC
 {
+	Tag "Magmatized Serpentfire"
 	Damage (5 * random(1,8))
 	Speed 15
 	FastSpeed 20
@@ -2010,6 +2039,7 @@ ACTOR Demon3FX1Trail : AetheriusProjectileZSC
 
 ACTOR HrVolcanoTBlast : AetheriusProjectileZSC
 {
+	Tag "Magmatized VolcanoBlast"
 	Damage (random(1,8))
 	Radius 8
 	Height 6
@@ -2051,6 +2081,7 @@ ACTOR HrVolcanoTBlastCrisis : HrVolcanoTBlast
 
 Actor Demon4FX : AetheriusEffectProjectile
 {
+	Tag "Magmatized Poisoned Serpentfire"
 	Damage (5 * random(1,8))
 	Speed 15
 	FastSpeed 20
@@ -2155,6 +2186,7 @@ ACTOR BlackDemonTrail : AetheriusEffectProjectile
 
 Actor PoisonVolcanoTBlast : AetheriusEffectProjectile
 {
+	Tag "Magmatized Poisoned VolcanoBlast"
 	Damage (random(1,8))
 	Radius 8
 	Height 6
@@ -2226,6 +2258,7 @@ Actor PoisonVolcanoTBlastCrisis : PoisonVolcanoTBlast
 // Ethereal Serpent [Demon5]
 ACTOR Demon5FX1 : AetheriusEffectProjectile
 {
+	Tag "Spirit Breath"
 	Damage (5 * random(1,8))
 	Speed 15
 	FastSpeed 20
@@ -2312,6 +2345,7 @@ ACTOR Demon5FX1Crisis : Demon5FX1
 
 ACTOR Demon5Jet : AetheriusEffectProjectile
 {
+	Tag "Spirit Breath"
 	Damage (random(1,4))
 	Radius 14
 	Height 12

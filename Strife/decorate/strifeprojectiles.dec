@@ -2,6 +2,7 @@
 
 ACTOR StrifeGenBulletTracer : AetheriusBulletTracerZSC
 {
+	Tag "shot"
 	Damage ((Random(1,5) * 3))
 	Damagetype "Bullet"
 	Radius 1
@@ -35,6 +36,7 @@ ACTOR StrifeGenBulletTracer : AetheriusBulletTracerZSC
 
 ACTOR StrifeGenBulletTracer2 : StrifeGenBulletTracer
 {
+	Tag "shot"
 	Damage ((Random(3,15) * 3))
 	States
 	{
@@ -122,6 +124,7 @@ actor StrifeGenBulletTracerTrail
 
 ACTOR StrifeReaverBulletTracer : AetheriusBulletTracerZSC
 {
+	Tag "shot"
 	Damage ((Random(1,8) * 3))
 	Damagetype "Bullet"
 	Radius 1
@@ -155,6 +158,7 @@ ACTOR StrifeReaverBulletTracer : AetheriusBulletTracerZSC
 
 ACTOR StrifeReaverBulletTracer2 : StrifeReaverBulletTracer
 {
+	Tag "shot"
 	Damage ((Random(3,24) * 3))
 	States
 	{
@@ -242,6 +246,7 @@ actor StrifeReaverBulletTracerTrail
 
 ACTOR StrifeMaulerTracer : AetheriusBulletTracerZSC
 {
+	Tag "Mauler shot"
 	Damage ((Random(1,4) * 2))
 	Damagetype "Disintegrate"
 	Radius 1
@@ -275,6 +280,7 @@ ACTOR StrifeMaulerTracer : AetheriusBulletTracerZSC
 
 ACTOR StrifeMaulerTracer2 : StrifeMaulerTracer
 {
+	Tag "Mauler shot"
 	Damage ((Random(3,12) * 2))
 	States
 	{
@@ -339,11 +345,13 @@ ACTOR StrifeMaulerTracer2Crisis : StrifeMaulerTracerCrisis
 
 ACTOR StrifeMaulerTracerRetail : StrifeMaulerTracer
 {
+	Tag "Mauler shot"
 	Damage ((Random(1,5) * 3))
 }
 
 ACTOR StrifeMaulerTracerRetail2 : StrifeMaulerTracerRetail
 {
+	Tag "Mauler shot"
 	Damage ((Random(3,15) * 3))
 }
 
@@ -386,6 +394,7 @@ ACTOR FlightToken : Inventory //Used to keep the Dark Inquisitor in the air even
 
 ACTOR EMPGrenade : AetheriusProjectileZSC
 {
+	Tag "EMP Grenade"
 	Damage (10 * random(1,8))
 	Speed 30
 	Radius 5
@@ -548,6 +557,7 @@ actor DarkInquisitorGibber
 
 actor Shrapnel1 : AetheriusProjectileZSC
 {
+	Tag "Shrapnel"
 	+DOOMBOUNCE
 	PROJECTILE
 	-NOGRAVITY
@@ -589,6 +599,7 @@ actor Shrapnel1 : AetheriusProjectileZSC
 
 actor Shrapnel2 : AetheriusProjectileZSC
 {
+	Tag "Shrapnel"
 	+DOOMBOUNCE
 	PROJECTILE
 	-NOGRAVITY
@@ -630,6 +641,7 @@ actor Shrapnel2 : AetheriusProjectileZSC
 
 actor Shrapnel3 : AetheriusProjectileZSC
 {
+	Tag "Shrapnel"
 	+DOOMBOUNCE
 	PROJECTILE
 	-NOGRAVITY
@@ -671,6 +683,7 @@ actor Shrapnel3 : AetheriusProjectileZSC
 
 actor InquisitorDeathExplosion : AetheriusProjectileZSC
 {
+	Tag "Explosion"
 	radius 10
 	height 12
 	damage 0
@@ -695,6 +708,7 @@ actor InquisitorDeathExplosion : AetheriusProjectileZSC
 
 ACTOR DarkInquisitorBigExplosion : AetheriusProjectileZSC
 {   
+	Tag "Explosion"
 	Radius 2
 	Height 2
 	Damage 0
@@ -737,6 +751,7 @@ Actor EMPTrail : AetheriusProjectileZSC
 
 ACTOR DarkMatterBall : AetheriusProjectileZSC
 {
+	Tag "Dark Matter Ball"
 	Damage (35 * random(1,4))
 	Radius 11
 	Height 8
@@ -858,6 +873,7 @@ ACTOR DarkMatterSpark : AetheriusProjectileZSC
 // Crusader
 ACTOR FlameMissileNew : AetheriusProjectileZSC 
 {
+	Tag "Flamethrower"
 	Speed 15
 	Height 11
 	Radius 8
@@ -888,6 +904,7 @@ ACTOR FlameMissileNew : AetheriusProjectileZSC
 
 ACTOR FastFlameMissileNew : FlameMissileNew
 {
+	Tag "Flamethrower"
 	Damage (1 * random(1,4))
 	DamageType "Fire"
 	Mass 50
@@ -917,6 +934,7 @@ ACTOR FastFlameMissileCrisis : FastFlameMissileNew
 
 ACTOR CrusaderMissileNew : AetheriusProjectileZSC
 {
+	Tag "Mini Missile"
 	Damage (7 * random(1,4))
 	Speed 20
 	Radius 10
@@ -968,6 +986,7 @@ ACTOR CrusaderMissileCrisis : CrusaderMissileNew
 // Sentinel/Stalker
 ACTOR SentinelFX1New : AetheriusProjectileZSC
 {
+	Tag "Laser"
 	Speed 40
 	Radius 10
 	Height 8
@@ -990,6 +1009,7 @@ ACTOR SentinelFX1New : AetheriusProjectileZSC
 
 ACTOR Sentinel2FX1New : SentinelFX1New
 {
+	Tag "Laser"
 	SeeSound "sentinel/plasma"
 	Damage (1 * random(1,4))
 	States
@@ -1033,6 +1053,7 @@ ACTOR Sentinel2FX5Crisis : Sentinel2FX1Crisis { Damage ((15 * random(1,4)) * Cri
 // Inquisitor
 ACTOR InquisitorShotNew : AetheriusProjectileZSC
 {
+	Tag "shot"
 	ReactionTime 15
 	Speed 25
 	Radius 13
@@ -1097,6 +1118,7 @@ ACTOR InquisitorShotCrisis : InquisitorShotNew
 // Bishop
 ACTOR BishopMissileNew : AetheriusProjectileZSC replaces BishopMissile
 {
+	Tag "Missile"
 	Damage (10 * random(1,4))
 	Speed 20
 	Radius 10
@@ -1163,6 +1185,7 @@ ACTOR BishopMissileCrisis : BishopMissileNew
 // LoreMaster
 ACTOR LoreShotNew : LoreShotBase
 {
+	Tag "Hookshot"
 	Damage (2 * random(1,4))
 }
 ACTOR LoreShotCrisis : LoreShotNew

@@ -495,72 +495,6 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 	}
 }
 
-ACTOR PlagueShot : AetheriusEffectProjectile
-{
-	Damage (3*random(3,5))
-	Radius 8
-	Height 16
-	Speed 16
-	PROJECTILE
-	+THRUGHOST // Plague Gargoyle Poisonball
-	DamageType "Poison"
-	scale 0.5
-	SeeSound "himp/leaderattack"
-	DeathSound "monster/plaugeBall"
-
-	States
-	{
-		Spawn:
-			FVUL AAABBB 1 Bright
-			loop
-		Death:
-			TNT1 A 0 Bright
-			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-				{
-					A_StatusEffectChecker(3);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
-					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					}
-				}
-				return state("");
-			}
-		Death2:
-			FVUL CDEF 4 Bright
-			stop
-	}
-}
-ACTOR PlagueShotCrisis : PlagueShot
-{
-	Damage ((3*random(3,5)) * CrisisMultiplier)
-	States
-	{
-		Spawn:
-			FVUL AAABBB 1 Bright
-			{
-				A_GenerateCrisisParticle;
-			}
-			loop
-		Death:
-			TNT1 A 0 Bright
-			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-				{
-					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
-					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					}
-				}
-				return state("");
-			}
-		Death2:
-			FVUL CDEF 4 Bright
-			stop
-	}
-}
-
 // Dark/Watcher Gargoyle
 ACTOR WatcherImp : HereticImpNew 
 {
@@ -3850,29 +3784,6 @@ actor FDarkClink : DarkClink
 	dropitem "NoItemSpawn", 1
 }
 
-ACTOR DarkClinkBall : AetheriusProjectileZSC
-{
-	Height 16
-	Radius 8
-	Speed 18
-	Damage 3
-	PROJECTILE
-	RENDERSTYLE ADD
-	ALPHA 0.7
-	Decal "DoomImpScorch"
-	SeeSound "imp/attack"
-	DeathSound "imp/shotx"
-	States
-	{
-		Spawn:
-			CLBL AABBCCDD 2 Bright
-			Loop
-		Death:
-			CLBL EFG 5 Bright
-			Stop
-	}
-}
-
 ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 {
 	Tag "Were-Dragon"
@@ -4287,6 +4198,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 
 ACTOR ShadowBeastSpread //: AetheriusProjectileZSC
 {
+	Tag "Shadow Beast Shot"
 	Radius 1
 	Height 1
 	Damage 0
@@ -4306,6 +4218,7 @@ ACTOR ShadowBeastSpread //: AetheriusProjectileZSC
 
 ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 {
+	Tag "Shadow Beast Spirit"
 	Alpha 1.0
 	Renderstyle Add
 	Speed 16
@@ -4340,6 +4253,7 @@ ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 }
 ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 {
+	Tag "Shadow Beast Spirit"
 	Alpha 1.0
 	Renderstyle Add
 	Speed 16
@@ -5166,133 +5080,6 @@ actor Serpathor : AetheriusMonsterZSC
 			goto See
 	}
 }
-
-ACTOR SerpathorPhoenixFX1 : PhoenixFX1Base
-{
-	Damage (10 * random(1,8)) // 5
-	Speed 20 // 18
-	States
-	{
-		Idle:
-			FX04 A 4 Bright A_PhoenixPuff
-			Loop
-		Death:
-			FX08 A 3 Bright A_Explode((64+random(-12,12)),128,0)
-			FX08 BC 5 Bright
-			FX08 DEFGH 4 Bright
-			Stop
-	}
-}
-ACTOR SerpathorPhoenixFX1Crisis : SerpathorPhoenixFX1
-{
-	Damage ((10 * random(1,8)) * CrisisMultiplier) // 5
-	Speed 20 // 18
-	States
-	{
-		Spawn:
-			FX04 A 0
-		Idle:
-			"####" AAA 1 Bright
-			{
-				A_GenerateCrisisParticle;
-			}
-			"####" A 1 Bright 
-			{
-				A_GenerateCrisisParticle;
-				A_PhoenixPuff;
-			}
-			Loop
-		Death:
-			FX08 A 3 Bright A_Explode((64+random(-12,12)),128,0)
-			FX08 BC 5 Bright
-			FX08 DEFGH 4 Bright
-			Stop
-	}
-}
-
-ACTOR Medusabeam : AetheriusEffectFastProjectile
-{
-	Speed 125 // 100
-	Radius 4
-	Height 4
-	Damage (1*random(1,8))
-	MissileType "MBSpark"
-	Scale 0.25
-	Decal "CrossbowScorch2"
-	States
-	{
-		Spawn:
-			TNT1 A 1
-			Loop
-		Death:
-			TNT1 A 0 Bright
-			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE)
-				{
-					A_StatusEffectChecker(8);
-					if (random(1,user_ailmentmaxchance) <= 7 && user_canafflict)
-					{
-						user_random = random(1,5);
-						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)); } // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random >= 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(280,420)); } // Deceleratle for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					}
-				}
-				return state("");
-			}
-		Death2:
-			FX16 GHIJKL 2 bright
-			Stop
-	}
-}
-ACTOR MedusabeamCrisis : Medusabeam
-{
-	Speed 125 // 100
-	Radius 4
-	Height 4
-	Damage ((1*random(1,8)) * CrisisMultiplier)
-	MissileType "MBSparkCrisis"
-	Scale 0.25
-	Decal "CrossbowScorch2"
-}
-
-ACTOR MBSpark
-{
-  Radius 2
-  Height 2
-  +NOINTERACTION
-  +CLIENTSIDEONLY 
-  RenderStyle Add
-  States
-  {
-  Spawn:
-    FX16 DEF 3 BRIGHT
-    Stop
-  }
-}
-
-ACTOR MBSparkCrisis
-{
-  Radius 2
-  Height 2
-  +NOINTERACTION
-  +CLIENTSIDEONLY 
-  RenderStyle Add
-  States
-  {
-  Spawn:
-    FX16 DEF 3 BRIGHT
-		{
-			A_SpawnItemEx("MBSpark", random[TeleGlitter](0,31)-16,random[TeleGlitter](0,31)-16,0, 0,0,0.25, SXF_NOCHECKPOSITION,0);
-			A_SpawnItemEx("MBSpark", random[TeleGlitter](0,31)-16,random[TeleGlitter](0,31)-16,0, 0,0,0.25, SXF_NOCHECKPOSITION,0);
-			A_SpawnItemEx("MBSpark", random[TeleGlitter](0,31)-16,random[TeleGlitter](0,31)-16,0, 0,0,0.25, SXF_NOCHECKPOSITION,0);
-		}
-    Stop
-  }
-}
-
 ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 {
 	Tag "$DSPARIL1TAG"
@@ -5581,6 +5368,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 
 actor PodNew : Pod replaces Pod
 {
+	Tag "Explosive Pod"
 	DamageType "Explosive"
 	DamageFactor "Dashing", 0
 	Painchance "Dashing", 0
@@ -5798,144 +5586,6 @@ actor FGreaterDisciple : GreaterDisciple
 	+FRIENDLY +THRUSPECIES +DONTHARMSPECIES
 	Species "FriendlyMonsters"
 	dropitem "NoItemSpawn", 1
-}
-
-
-ACTOR DSFX3
-{   
-	Radius 2
-	Height 2
-	Speed 0
-	Scale 0.90
-	PROJECTILE
-	RENDERSTYLE Translucent
-	ALPHA 0.90
-	States
-	{
-		Spawn:
-			NULL A 3
-			DISC A 3 A_FadeOut(0.10)
-			goto spawn+1
-	}
-}
-
-ACTOR DiscipleShot1 : AetheriusProjectileZSC
-{
-	Damage (3 * random(1,8))
-	Radius 8
-	Height 16
-	Speed 15
-	RENDERSTYLE ADD
-	ALPHA 0.67
-	PROJECTILE
-	DeathSound "monster/disht1"
-	States
-	{
-		Spawn:
-			CFX2 ABCD 2 Bright 
-			{
-				A_CustomMissile("DSFX1",0,0,0,0);
-			}
-			loop
-		Death:
-			CFX2 EFGHI 3 Bright
-			stop
-	}
-}
-ACTOR DiscipleShot1Crisis : DiscipleShot1
-{
-	Damage ((3 * random(1,8)) * CrisisMultiplier)
-	States
-	{
-		Spawn:
-			CFX2 ABCD 2 Bright 
-			{
-				A_GenerateCrisisParticle;
-				A_CustomMissile("DSFX1",0,0,0,0);
-			}
-			loop
-		Death:
-			CFX2 EFGHI 3 Bright
-			stop
-	}
-}
-
-ACTOR DiscipleShot2 : AetheriusProjectileZSC
-{
-	Damage (6 * random(1,8))
-	Radius 8
-	Height 16
-	Speed 15
-	RENDERSTYLE ADD
-	ALPHA 0.67
-	PROJECTILE
-	+SEEKERMISSILE
-	DeathSound "monster/disht2"
-	States
-	{
-		Spawn:
-			CFX3 AB 3 Bright 
-			{
-				A_CustomMissile("DSFX2",0,0,0,0);
-				A_SeekerMissile(5,8);
-			}
-			loop
-		Death:
-			CFX3 CDEFG 3 Bright
-			stop
-	}
-}
-ACTOR DiscipleShot2Crisis : DiscipleShot2
-{
-	Damage ((6 * random(1,8)) * CrisisMultiplier)
-	States
-	{
-		Spawn:
-			CFX3 AB 3 Bright 
-			{
-				A_GenerateCrisisParticle;
-				A_CustomMissile("DSFX2",0,0,0,0);
-				A_SeekerMissile(5,8);
-			}
-			loop
-		Death:
-			CFX3 CDEFG 3 Bright
-			stop
-	}
-}
-
-ACTOR DSFX1
-{   
-	Radius 2
-	Height 2
-	Speed 0
-	PROJECTILE
-	RENDERSTYLE ADD
-	ALPHA 0.67
-	States
-	{
-		Spawn:
-			NULL A 3 Bright
-			CFX2 EFGHI 3 Bright
-			Stop 
-	}
-}
-
-ACTOR DSFX2
-{   
-	Radius 2
-	Height 2
-	Speed 0
-	PROJECTILE
-	RENDERSTYLE ADD
-	ALPHA 0.67
-	States
-	{
-		Spawn:
-			NULL A 3 Bright
-			CFX3 HIJK 3 Bright
-			Stop 
-	}
 }
 
 // Apprentice of D'Sparil
@@ -6206,89 +5856,3 @@ Actor AoDGhost
     Stop
   }
 }
-
-ACTOR FireBlast : AetheriusProjectileZSC
-{
-	Damage (3 * random(1,4))
-	Speed 25
-	Scale 0.75
-	PROJECTILE
-	+StrifeDamage
-	+NoGravity
-	DEATHSOUND "fireblast/explode"
-	states
-	{
-		Spawn:
-			PROJ AABBCC 2 BRIGHT
-			Loop
-    Death:
-			PROJ D 4 BRIGHT 
-			{
-				A_Explode(8,64,0);
-			}
-			PROJ EFGH 4 BRIGHT
-			PROJ I 4 BRIGHT A_FadeOut(0.50)
-			Stop
-	}
-}
-ACTOR FireBlastCrisis : FireBlast
-{
-	Damage ((3 * random(1,4)) * CrisisMultiplier)
-	states
-	{
-		Spawn:
-			PROJ AABBCC 2 BRIGHT
-			{
-				A_GenerateCrisisParticle;
-			}
-			Loop
-		Death:
-			PROJ D 4 BRIGHT 
-			{
-				A_Explode(8*CrisisMultiplier,64,0);
-			}
-			PROJ EFGH 4 BRIGHT
-			PROJ I 4 BRIGHT A_FadeOut(0.50)
-			Stop
-	}
-}
-
-ACTOR SuperFireBlast : FireBlast
-{
-	Damage (24 * random(1,4))
-	Speed 16
-	Scale 1.5
-	DEATHSOUND "superfireblast/explode"
-	states
-	{
-		Spawn:
-			PROJ AABBCC 2 BRIGHT
-			{
-			}
-			Loop
-    Death:
-			PROJ D 4 BRIGHT A_Explode(256,128,0)
-			PROJ EFGH 4 BRIGHT
-			PROJ I 4 BRIGHT A_FadeOut(0.50)
-			Stop
-	}
-}
-ACTOR SuperFireBlastCrisis : SuperFireBlast
-{
-	Damage ((24 * random(1,4)) * CrisisMultiplier)
-	states
-	{
-		Spawn:
-			PROJ AABBCC 2 BRIGHT
-			{
-				A_GenerateCrisisParticle;
-			}
-			Loop
-		Death:
-			PROJ D 4 BRIGHT A_Explode(256*CrisisMultiplier,128,0)
-			PROJ EFGH 4 BRIGHT
-			PROJ I 4 BRIGHT A_FadeOut(0.50)
-			Stop
-	}
-}
-

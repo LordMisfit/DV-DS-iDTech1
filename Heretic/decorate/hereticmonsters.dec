@@ -5222,7 +5222,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 
 ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 {
-	Tag "\cfD'Sparil\c-"
+	Tag "D'Sparil"
 	Health 56000
 	Radius 16
 	Height 70

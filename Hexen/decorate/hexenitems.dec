@@ -15,12 +15,11 @@ ACTOR ArtiPorkNew : AetheriusBaseCustomInventoryZSC replaces ArtiPork
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIEGG2" // "PORKALATOR"
 	Inventory.DefMaxAmount
-	Tag "$TAG_ARTIPORK"
+	Tag "Porkulator: Transforms up to eleven enemies into pigs."
 	+DONTGIB
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 
-	Tag "Porkulator: Transforms up to eleven enemies into pigs."
 	States
 	{
 		Spawn:

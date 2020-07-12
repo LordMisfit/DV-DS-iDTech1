@@ -5606,7 +5606,7 @@ actor FHeresiarch : HeresiarchNew
 
 ACTOR KoraxNew : KoraxBase replaces Korax
 {
-	Tag "\cfKorax\c-"
+	Tag "Korax"
 	Health 80000
 	Painchance 20
 	Painchance "Fist", 30 // Fist attacks have a +50% chance of stunning an enemy
@@ -6018,7 +6018,7 @@ ACTOR DragonExplosionCrisis : DragonExplosionNew
 
 ACTOR ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 {
-	Tag "\cfTraductus, Grand Patriarch of the Church\c-"
+	Tag "Traductus, Grand Patriarch of the Church"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -6269,7 +6269,7 @@ ACTOR HolySpiritCrisis : HolySpiritNew
 
 ACTOR FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 {
-	Tag "\cfZedek, Grand Marshal of the Legion\c-"
+	Tag "Zedek, Grand Marshal of the Legion"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -6452,7 +6452,7 @@ ACTOR FSwordMissileCrisis : FSwordMissileNew
 
 ACTOR MageBossNew : AetheriusMonsterZSC replaces MageBoss
 {
-	Tag "\cfMenelkir, Arch Mage of the Arcanum\c-"
+	Tag "Menelkir, Arch Mage of the Arcanum"
 	Health 12800
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy

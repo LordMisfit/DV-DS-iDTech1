@@ -35,7 +35,7 @@ ACTOR StrifeHumanoidBase : AetheriusMonsterZSC
 // PEASANTS
 ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	Health 31
 	PainChance 200
 	DamageFactor "PoisonBolt", 25.0
@@ -188,28 +188,28 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 
 ACTOR Peasant1New : PeasantNew replaces Peasant1
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 6
 	Speed 4
 }
 
 ACTOR Peasant2New : PeasantNew replaces Peasant2
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 7
 	Speed 5
 }
 
 ACTOR Peasant3New : PeasantNew replaces Peasant3
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 8
 	Speed 5
 }
 
 ACTOR Peasant4New : PeasantNew replaces Peasant4
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 9
 	Translation 0
 	Speed 7
@@ -217,7 +217,7 @@ ACTOR Peasant4New : PeasantNew replaces Peasant4
 
 ACTOR Peasant5New : PeasantNew replaces Peasant5
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 10
 	Translation 0
 	Speed 7
@@ -225,7 +225,7 @@ ACTOR Peasant5New : PeasantNew replaces Peasant5
 
 ACTOR Peasant6New : PeasantNew replaces Peasant6
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 11
 	Translation 0
 	Speed 7
@@ -233,112 +233,112 @@ ACTOR Peasant6New : PeasantNew replaces Peasant6
 
 ACTOR Peasant7New : PeasantNew replaces Peasant7
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 12
 	Translation 2
 }
 
 ACTOR Peasant8New : PeasantNew replaces Peasant8
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 13
 	Translation 2
 }
 
 ACTOR Peasant9New : PeasantNew replaces Peasant9
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 14
 	Translation 2
 }
 
 ACTOR Peasant10New : PeasantNew replaces Peasant10
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 15
 	Translation 1
 }
 
 ACTOR Peasant11New : PeasantNew replaces Peasant11
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 16
 	Translation 1
 }
 
 ACTOR Peasant12New : PeasantNew replaces Peasant12
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 17
 	Translation 1
 }
 
 ACTOR Peasant13New : PeasantNew replaces Peasant13
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 18
 	Translation 3
 }
 
 ACTOR Peasant14New : PeasantNew replaces Peasant14
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 19
 	Translation 3
 }
 
 ACTOR Peasant15New : PeasantNew replaces Peasant15
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 20
 	Translation 3
 }
 
 ACTOR Peasant16New : PeasantNew replaces Peasant16
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 21
 	Translation 5
 }
 
 ACTOR Peasant17New : PeasantNew replaces Peasant17
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 22
 	Translation 5
 }
 
 ACTOR Peasant18New : PeasantNew replaces Peasant18
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 23
 	Translation 5
 }
 
 ACTOR Peasant19New : PeasantNew replaces Peasant19
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 24
 	Translation 4
 }
 
 ACTOR Peasant20New : PeasantNew replaces Peasant20
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 25
 	Translation 4
 }
 
 ACTOR Peasant21New : PeasantNew replaces Peasant21
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 26
 	Translation 4
 }
 
 ACTOR Peasant22New : PeasantNew replaces Peasant22
 {
-	Tag "\cbPeasant\c-"
+	Tag "Peasant"
 	ConversationID 27
 	Translation 6
 }
@@ -346,7 +346,7 @@ ACTOR Peasant22New : PeasantNew replaces Peasant22
 // BEGGARS
 ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	DamageFactor "PoisonBolt", 25.0
 	DamageFactor "Crush", 8
 	Health 20
@@ -360,7 +360,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 	+NOSPLASHALERT
 	+CANTSEEK
 	MinMissileChance 150
-	Tag "$TAG_BEGGAR" // "Beggar"
+	Tag "Beggar"
 	MaxStepHeight 16
 	MaxDropoffHeight 32
 	HitObituary "$OB_BEGGAR" // "%o was beaten to death by the poor."
@@ -476,38 +476,38 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 
 ACTOR Beggar1New : BeggarNew replaces Beggar1 
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	ConversationID 38
 }
 
 ACTOR Beggar2New : BeggarNew replaces Beggar2 
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	ConversationID 39
 }
 
 ACTOR Beggar3New : BeggarNew replaces Beggar3 
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	ConversationID 40
 }
 
 ACTOR Beggar4New : BeggarNew replaces Beggar4 
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	ConversationID 41
 }
 
 ACTOR Beggar5New : BeggarNew replaces Beggar5 
 {
-	Tag "\cbBeggar\c-"
+	Tag "Beggar"
 	ConversationID 42
 }
 
 // MERCHANTS
 ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 {
-	Tag "\cbMerchant\c-"
+	Tag "Merchant"
 	Health 94
 	PainChance 256 // a merchant should always enter the pain state when getting hurt
 	Radius 20
@@ -561,7 +561,7 @@ ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 
 ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 {
-	Tag "\cbWeapon Smith\c-"
+	Tag "Weapon Smith"
 	ConversationID 2
 	PainSound "smith/pain"
 	Tag "$TAG_WEAPONSMITH" // "Weapon Smith"
@@ -569,7 +569,7 @@ ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 
 ACTOR BarKeepNew : MerchantNew replaces BarKeep
 {
-	Tag "\cbBartender\c-"
+	Tag "Bartender"
 	ConversationID 3
 	Translation 4
 	PainSound "barkeep/pain"
@@ -579,7 +579,7 @@ ACTOR BarKeepNew : MerchantNew replaces BarKeep
 
 ACTOR ArmorerNew : MerchantNew replaces Armorer
 {
-	Tag "\cbArmorer\c-"
+	Tag "Armorer"
 	ConversationID 4
 	Translation 5
 	PainSound "armorer/pain"
@@ -588,7 +588,7 @@ ACTOR ArmorerNew : MerchantNew replaces Armorer
 
 ACTOR MedicNew : MerchantNew replaces Medic
 {
-	Tag "\cbMedic\c-"
+	Tag "Medic"
 	ConversationID 5
 	Translation 6
 	PainSound "medic/pain"
@@ -2807,7 +2807,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 // ORDER LEADERS/ETC
 ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 {
-	Tag "\cfThe Programmer\c-"
+	Tag "The Programmer"
 	ConversationID 95
 	Health 1100
 	PainChance 50
@@ -2965,7 +2965,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 
 ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 { 
-	Tag "\cfThe Bishop\c-"
+	Tag "The Bishop"
 	ConversationID 64
 	Health 500
 	PainChance 128
@@ -3066,7 +3066,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 
 ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 {
-	Tag "\cfThe Oracle\c-"
+	Tag "The Oracle"
 	ConversationID 65
 	Health 250
 	Radius 15
@@ -3116,7 +3116,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 
 ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 {
-	Tag "\cfMacil, Leader of the Front\c-"
+	Tag "Macil, Leader of the Front"
 	ConversationID 49
 	Health 285
 	Radius 20
@@ -3229,7 +3229,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 
 ACTOR Macil2New : Macil1New replaces Macil2
 {
-	Tag "\cfMacil, Leader of the Front\c-"
+	Tag "Macil, Leader of the Front"
 	ConversationID 50
 	PainChance 200
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -3331,7 +3331,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 
 ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 {
-	Tag "\cfThe Loremaster\c-"
+	Tag "The Loremaster"
 	ConversationID 66
 	Health 800
 	Speed 10
@@ -3489,7 +3489,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 // SPECTRES
 ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 {
-	Tag "\cfThe Programmer's Spectre\c-"
+	Tag "The Programmer's Spectre"
 	ConversationID 67
 	Health 1000
 	PainChance 250
@@ -3677,7 +3677,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 
 ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 {
-	Tag "\cfThe Bishop's Spectre\c-"
+	Tag "The Bishop's Spectre"
 	ConversationID 70
 	Health 1200
 	PainChance 50
@@ -3802,7 +3802,7 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 
 ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 {
-	Tag "\cfThe Oracle's Spectre\c-"
+	Tag "The Oracle's Spectre"
 	ConversationID 71
 	Health 1500
 	Mass 500000000
@@ -3996,7 +3996,7 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 
 ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 { 
-	Tag "\cfMacil's Spectre\c-"
+	Tag "Macil's Spectre"
 	ConversationID 72
 	Health 1700
 	Mass 500000000
@@ -4138,7 +4138,7 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 
 ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 {
-	Tag "\cfThe Loremaster's Spectre\c-"
+	Tag "The Loremaster's Spectre"
 	ConversationID 73
 	Health 2000
 	Mass 500000000
@@ -4275,7 +4275,7 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 // ENTITY
 ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 {
-	Tag "\cfThe Entity: The One God\c-"
+	Tag "The Entity: The One God"
 	ConversationID 74
 	Health 2500
 	PainChance 255
@@ -4454,7 +4454,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 
 ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 {
-	Tag "\cfMiniature Entity\c-"
+	Tag "Miniature Entity"
 	ConversationID 75
 	Health 990
 	PainChance 255
@@ -4654,7 +4654,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 
 ACTOR EntityAscended : EntityBossNew
 {
-	Tag "\cfThe Entity: The One God: Ascendant\c-"
+	Tag "The Entity: The One God: Ascendant"
 	Health 3250
 	PainChance 64
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
@@ -4891,7 +4891,7 @@ actor AlienSpectre1Model : AlienSpectreModel 27401
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "\cfGhost of The Programmer's Spectre\c-"
+	Tag "Ghost of The Programmer's Spectre"
 
 	ConversationID 666
 	Health 1000
@@ -4902,7 +4902,7 @@ actor AlienSpectre2Model : AlienSpectreModel 27402
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "\cfGhost of The Bishop's Spectre\c-"
+	Tag "Ghost of The Bishop's Spectre"
 
 	ConversationID 667
 	Health 1200
@@ -4913,7 +4913,7 @@ actor AlienSpectre3Model : AlienSpectreModel 27403
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "\cfGhost of The Oracle's Spectre\c-"
+	Tag "Ghost of The Oracle's Spectre"
 
 	ConversationID 668
 	Health 1500
@@ -4924,7 +4924,7 @@ actor AlienSpectre4Model : AlienSpectreModel 27404
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "\cfGhost of Macil's Spectre\c-"
+	Tag "Ghost of Macil's Spectre"
 
 	ConversationID 669
 	Health 1700
@@ -4935,7 +4935,7 @@ actor AlienSpectre5Model : AlienSpectreModel 27405
 	//$NotAngled
 	//$Color 12
 	//$Category "DV-DS Strife Patch/Models"
-	Tag "\cfGhost of The Loremaster's Spectre\c-"
+	Tag "Ghost of The Loremaster's Spectre"
 
 	ConversationID 670
 	Health 2000

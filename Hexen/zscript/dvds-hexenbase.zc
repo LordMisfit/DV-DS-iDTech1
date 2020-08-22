@@ -361,7 +361,11 @@ class EttinSpawner : AetheriusMonsterSpawner replaces Ettin
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,1024) <= evolveChance)
 		{
@@ -381,7 +385,11 @@ class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,512) <= evolveChance)
 		{
@@ -401,7 +409,11 @@ class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,512) <= evolveChance)
 		{
@@ -420,7 +432,11 @@ class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -445,7 +461,11 @@ class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -470,7 +490,11 @@ class StalkerSpawner : AetheriusMonsterSpawner replaces Serpent
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 			return "IceStalker";
@@ -483,7 +507,11 @@ class StalkerLeaderSpawner : AetheriusMonsterSpawner replaces SerpentLeader
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 			return "IceStalkerLeader";

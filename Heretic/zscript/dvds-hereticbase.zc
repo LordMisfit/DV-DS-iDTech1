@@ -251,7 +251,11 @@ class GargoyleSpawner : AetheriusMonsterSpawner replaces HereticImp
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -284,7 +288,11 @@ class GargoyleLeaderSpawner : AetheriusMonsterSpawner replaces HereticImpLeader
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -303,11 +311,89 @@ class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,256) <= evolveChance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			evolveChance = A_GetEvolveChance();
+			return "HellCleric";
+		}
+		else
+		{
+			if (random(1,256) <= evolveChance)
+			{
+				evolveChance = A_GetEvolveChance();
+				if (random(1,256) <= evolveChance)
+				{
+					evolveChance = A_GetEvolveChance();
+					if (random(1,256) <= evolveChance)
+					{
+						evolveChance = A_GetEvolveChance();
+						if (random(1,1024) <= evolveChance)
+						{
+							evolveChance = A_GetEvolveChance();
+							if (random(1,256) <= evolveChance)
+							{
+								if (random(1,4) == 1)
+								{
+									if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
+									else return "MummyLeaderGhostNew";
+								}
+								else
+								{
+									if (CanFitHere("FrostGolem")) return "FrostGolem";
+									else return "MummyLeaderNew";
+								}
+							}
+							else
+							{
+								if (random(1,4) == 1)
+								{
+									if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
+									else return "MummyLeaderGhostNew";
+								}
+								else
+								{
+									if (CanFitHere("IceGolem")) return "IceGolem";
+									else return "MummyLeaderNew";
+								}
+							}
+						}
+						else
+							return "MummyLeaderGhostNew";
+					}
+					else
+						return "MummyLeaderNew";
+				}
+				else
+					return "MummyGhostNew";
+			}
+			else
+				return "MummyNew";
+		}
+	}
+}
+
+// Golem Ghost Spawner
+class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
+{
+	override Name ChooseSpawn()
+	{
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
+		
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
+		{
+			return "HellCleric";
+		}
+		else
+		{
 			if (random(1,256) <= evolveChance)
 			{
 				evolveChance = A_GetEvolveChance();
@@ -353,21 +439,26 @@ class GolemSpawner : AetheriusMonsterSpawner replaces Mummy
 			else
 				return "MummyGhostNew";
 		}
-		else
-			return "MummyNew";
 	}
 }
 
-// Golem Ghost Spawner
-class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
+// NitroGolem Spawner
+class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,256) <= evolveChance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			evolveChance = A_GetEvolveChance();
+			return "HellCleric";
+		}
+		else
+		{
 			if (random(1,256) <= evolveChance)
 			{
 				evolveChance = A_GetEvolveChance();
@@ -407,21 +498,26 @@ class GolemGhostSpawner : AetheriusMonsterSpawner replaces MummyGhost
 			else
 				return "MummyLeaderNew";
 		}
-		else
-			return "MummyGhostNew";
 	}
 }
 
-// NitroGolem Spawner
-class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
+// NitroGolem Ghost Spawner
+class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,256) <= evolveChance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			evolveChance = A_GetEvolveChance();
+			return "HellCleric";
+		}
+		else
+		{
 			if (random(1,1024) <= evolveChance)
 			{
 				evolveChance = A_GetEvolveChance();
@@ -455,50 +551,6 @@ class NitroGolemSpawner : AetheriusMonsterSpawner replaces MummyLeader
 			else
 				return "MummyLeaderGhostNew";
 		}
-		else
-			return "MummyLeaderNew";
-	}
-}
-
-// NitroGolem Ghost Spawner
-class NitroGolemGhostSpawner : AetheriusMonsterSpawner replaces MummyLeaderGhost
-{
-	override Name ChooseSpawn()
-	{
-		let evolveChance = A_GetEvolveChance();
-		
-		if (random(1,1024) <= evolveChance)
-		{
-			evolveChance = A_GetEvolveChance();
-			if (random(1,256) <= evolveChance)
-			{
-				if (random(1,4) == 1)
-				{
-					if (CanFitHere("FrostGolemGhost")) return "FrostGolemGhost";
-					else return "MummyLeaderGhostNew";
-				}
-				else
-				{
-					if (CanFitHere("FrostGolem")) return "FrostGolem";
-					else return "MummyLeaderNew";
-				}
-			}
-			else
-			{
-				if (random(1,4) == 1)
-				{
-					if (CanFitHere("IceGolemGhost")) return "IceGolemGhost";
-					else return "MummyLeaderGhostNew";
-				}
-				else
-				{
-					if (CanFitHere("IceGolem")) return "IceGolem";
-					else return "MummyLeaderNew";
-				}
-			}
-		}
-		else
-			return "MummyLeaderGhostNew";
 	}
 }
 
@@ -507,23 +559,34 @@ class KnightSpawner : AetheriusMonsterSpawner replaces Knight
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,256) <= evolveChance)
+		if (random(1,256) <= 2 && modtype == 0 && monstersoption == 1) 
 		{
-			evolveChance = A_GetEvolveChance();
-			if (random(1,2048) <= evolveChance)
-			{
-				if (random(1,4) == 1)
-					return "DeathKnightGhost";
-				else
-					return "DeathKnight";
-			}
-			else
-				return "KnightGhostNew";
+			return "HellCleric";
 		}
 		else
-			return "KnightNew";
+		{
+			if (random(1,256) <= evolveChance)
+			{
+				evolveChance = A_GetEvolveChance();
+				if (random(1,2048) <= evolveChance)
+				{
+					if (random(1,4) == 1)
+						return "DeathKnightGhost";
+					else
+						return "DeathKnight";
+				}
+				else
+					return "KnightGhostNew";
+			}
+			else
+				return "KnightNew";
+		}
 	}
 }
 
@@ -532,12 +595,23 @@ class KnightGhostSpawner : AetheriusMonsterSpawner replaces KnightGhost
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 
-		if (random(1,2048) <= evolveChance)
-			return "DeathKnightGhost";
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
+		{
+			return "HellCleric";
+		}
 		else
-			return "KnightNew";
+		{
+			if (random(1,2048) <= evolveChance)
+				return "DeathKnightGhost";
+			else
+				return "KnightNew";
+		}
 	}
 }
 
@@ -554,7 +628,11 @@ class WizardSpawner : AetheriusMonsterSpawner replaces Wizard
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,384) <= evolveChance)
 		{
@@ -590,7 +668,11 @@ class FWizardSpawner : AetheriusMonsterSpawner
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,384) <= evolveChance)
 		{
@@ -617,7 +699,11 @@ class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
 		if (random(1,256) <= evolveChance)
 		{
@@ -651,15 +737,26 @@ class ClinkSpawner : AetheriusMonsterSpawner replaces Clink
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,768) <= evolveChance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			if (CanFitHere("DarkClink")) return "DarkClink";
-			else return "ClinkNew";
+			return "HellCleric";
 		}
 		else
-			return "ClinkNew";
+		{
+			if (random(1,768) <= evolveChance)
+			{
+				if (CanFitHere("DarkClink")) return "DarkClink";
+				else return "ClinkNew";
+			}
+			else
+				return "ClinkNew";
+		}
 	}
 }
 
@@ -676,15 +773,26 @@ class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,768) <= evolveChance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			if (CanFitHere("ShadowBeast")) return "ShadowBeast";
-			else return "BeastNew";
+			return "HellCleric";
 		}
 		else
-			return "BeastNew";
+		{
+			if (random(1,768) <= evolveChance)
+			{
+				if (CanFitHere("ShadowBeast")) return "ShadowBeast";
+				else return "BeastNew";
+			}
+			else
+				return "BeastNew";
+		}
 	}
 }
 
@@ -693,16 +801,27 @@ class SnakeSpawner : AetheriusMonsterSpawner replaces Snake
 {
 	override Name ChooseSpawn()
 	{
-		let evolveChance = A_GetEvolveChance();
+		int modtype = CallACS("OtherVarCheckDECORATE",8);
+		int doomtype = CallACS("OtherVarCheckDECORATE",7);
+		int evolvechance = A_GetEvolveChance();
+		int monstersoption = dvds_classicdviimonsters;
+		int checkbombers = dvds_suicidebombers;
 		
-		if (random(1,384) <= evolvechance)
+		if (random(1,256) <= 1 && modtype == 0 && monstersoption == 1) 
 		{
-			if (random(1,384) <= evolvechance)
-				return "Serpathor";
-			else
-				return "HellGuard";
+			return "HellCleric";
 		}
 		else
-			return "SnakeNew";
+		{
+			if (random(1,384) <= evolvechance)
+			{
+				if (random(1,384) <= evolvechance)
+					return "Serpathor";
+				else
+					return "HellGuard";
+			}
+			else
+				return "SnakeNew";
+		}
 	}
 }

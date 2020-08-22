@@ -3618,8 +3618,8 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 {
 	Tag "SabreBlade"
 	Health 550
-	Height 64
 	Radius 30
+	Height 64
 	Mass 600
 	Speed 16
 	Painchance 48

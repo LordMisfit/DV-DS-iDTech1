@@ -1564,6 +1564,8 @@ ACTOR HornRodFX2New : HornRodFX2Base
 	Damage (finaldamagedealt) //2
 	DamageType "Magic" 
 	+SEEKERMISSILE
+	species "Players"
+	+THRUSPECIES
 	States
 	{
 		Spawn:
@@ -1603,6 +1605,8 @@ ACTOR RainPillarNew : RainPillarBase replaces RainPillar
 	Damage (finaldamagedealt) //5
 	DamageType "Magic" 
 	ProjectileKickback 6
+	species "Players"
+	+THRUSPECIES
 	States
 	{
 		Spawn:
@@ -2256,6 +2260,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 			}
 			Goto Ready
 			
+		// Fire Mode
 		User4:
 			PHNX A 0
 			{
@@ -2431,6 +2436,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 			}
 			Goto Ready
 			
+		// Fire Mode
 		User4:
 			PHND A 0
 			{

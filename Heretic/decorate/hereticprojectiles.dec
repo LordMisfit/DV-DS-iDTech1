@@ -2956,3 +2956,58 @@ ACTOR SuperFireBlastCrisis : SuperFireBlast
 			Stop
 	}
 }
+
+ACTOR VolcanoBlastNew : AetheriusProjectileZSC replaces VolcanoBlast
+{
+	Tag "Volcano Magma Blast"
+	Radius 8
+	Height 8
+	Speed 2
+	Damage (random(2,3) * random(1,8))
+	DamageType Fire
+	Gravity 0.125
+	+NOBLOCKMAP
+	+MISSILE
+	+DROPOFF
+	+NOTELEPORT
+	DeathSound "world/volcano/blast"
+	
+	//action native A_VolcBallImpact();
+	
+	States
+	{
+		Spawn:
+			VFBL AB 4 BRIGHT A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, 
+																		random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64)
+			Loop
+		Death:
+			XPL1 A 4 BRIGHT A_VolcBallImpact
+			XPL1 BCDEF 4 BRIGHT
+			Stop
+	}
+}
+
+ACTOR VolcanoTBlastNew : AetheriusProjectileZSC replaces VolcanoTBlast
+{
+	Tag "Volcano Magma MiniBlast"
+	Damage (1*random(1,8))
+	Radius 8
+	Height 6
+	Speed 2
+	Gravity 0.125
+	+NOBLOCKMAP
+	+MISSILE
+	+DROPOFF
+	+NOTELEPORT
+	Damagetype "Fire"
+	Renderstyle Add
+	States
+	{
+		Spawn:
+			VTFB AABB 2 BRIGHT
+			Loop
+		Death:
+			SFFI CBABCDE 4 BRIGHT
+			Stop
+	}
+}

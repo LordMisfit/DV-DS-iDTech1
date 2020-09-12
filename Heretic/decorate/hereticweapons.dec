@@ -675,7 +675,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(256,1)
-			TNT1 A 0 A_SigilPieceSpawn(2048,1)
+			TNT1 A 0 A_SigilPieceSpawn(256,1)
 		Idle:
 			TNT1 A 0
 			{
@@ -976,7 +976,7 @@ ACTOR CrossbowNew : HereticWeaponBase replaces Crossbow
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(128,1)
-			TNT1 A 0 A_SigilPieceSpawn(1024,1)
+			TNT1 A 0 A_SigilPieceSpawn(128,1)
 		Idle:
 			TNT1 A 0
 			{
@@ -1354,7 +1354,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(144,1)
-			TNT1 A 0 A_SigilPieceSpawn(1152,1)
+			TNT1 A 0 A_SigilPieceSpawn(144,1)
 		Idle:
 			TNT1 A 0
 			{
@@ -1653,7 +1653,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(144,1)
-			TNT1 A 0 A_SigilPieceSpawn(1152,1)
+			TNT1 A 0 A_SigilPieceSpawn(144,1)
 		Idle:
 			WSKL A 0
 			{
@@ -2138,7 +2138,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(96,1)
-			TNT1 A 0 A_SigilPieceSpawn(768,1)
+			TNT1 A 0 A_SigilPieceSpawn(96,1)
 		Idle:
 			WPHX A 0
 			{
@@ -2606,7 +2606,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(112,1)
-			TNT1 A 0 A_SigilPieceSpawn(896,1)
+			TNT1 A 0 A_SigilPieceSpawn(112,1)
 		Idle:
 			WMCE A 0
 			{
@@ -2849,7 +2849,7 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_UnmakerSpawn(72,1)
-			TNT1 A 0 A_SigilPieceSpawn(576,1)
+			TNT1 A 0 A_SigilPieceSpawn(72,1)
 		Idle:
 			WBOW B 0
 			{
@@ -3287,7 +3287,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 						if (random(1,8) <= 7)
 						{
 							A_UnmakerSpawn(16,1);
-							A_SigilPieceSpawn(128,1);
+							A_SigilPieceSpawn(16,1);
 							A_SpawnItemEx("BlasterHeftySpawner",frandom(-24,24),frandom(-24,24),0,0,0,0,0,SXF_NOCHECKPOSITION);
 							A_SpawnItemEx("BlasterHeftySpawner",frandom(-24,24),frandom(-24,24),0,0,0,0,0,SXF_NOCHECKPOSITION);
 							A_SpawnItemEx("BlasterHeftySpawner",frandom(-24,24),frandom(-24,24),0,0,0,0,0,SXF_NOCHECKPOSITION);

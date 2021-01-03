@@ -172,8 +172,8 @@ ACTOR ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
 			TNT1 A 0 A_SpawnItemEx("SeedOfMagic",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,248)
 			TNT1 A 0 A_SpawnItemEx("SeedOfMagic",0,0,0,random(-3,3),random(-3,3),random(-3,3),0,0,248)
 
-			TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,252)
-			TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,254)
+			TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,255)
+			TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,255)
 			TNT1 A 0 A_SpawnItemEx("Fygg",0,0,0,0,0,0,0,0,255)
 			TNT1 A 0 A_FadeOut(1.0)
 			Loop
@@ -736,7 +736,7 @@ ACTOR ArtiHealthNew : AetheriusUsableInventory replaces ArtiHealth
 	Inventory.Icon "ARTIPTN2"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
-	Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
+	Tag "Quartz Flask: Recovers 25-30% HP to 112.5% of Maximum"
 	States
 	{
 		Spawn:

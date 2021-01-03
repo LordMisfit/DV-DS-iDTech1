@@ -1,12 +1,12 @@
 ACTOR GauntletsNew : RandomSpawner2 replaces Gauntlets
 {
 	+DONTGIB
-	DropItem "BerserkSphere", 255, 255
-	DropItem "RandomHereticWeapon", 255, 128
-	DropItem "RandomHellcoreWeapon", 255, 128
-	DropItem "DiarisLongbow", 255, 128
-	DropItem "PoisonNeedle", 255, 128
-	DropItem "RandomSeedDropForcedAlways", 255, 128
+	DropItem "BerserkSphere", 255, 511
+	DropItem "RandomHereticWeapon", 255, 256
+	DropItem "RandomHellcoreWeapon", 255, 256
+	DropItem "DiarisLongbow", 255, 256
+	DropItem "PoisonNeedle", 255, 256
+	DropItem "RandomSeedDropForcedAlways", 255, 256
 	DropItem "FyggForced", 255, 1
 }
 
@@ -336,7 +336,7 @@ ACTOR ArtiHealthNew : AetheriusUsableInventory replaces ArtiHealth
 	Inventory.Icon "ARTIPTN2"
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.PickupMessage "$TXT_ARTIHEALTH" // "QUARTZ FLASK"
-	Tag "Quartz Flask: Recovers 25-30% HP to 105% of Maximum"
+	Tag "Quartz Flask: Recovers 25-30% HP to 112.5% of Maximum"
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999
 

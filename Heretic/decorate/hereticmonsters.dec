@@ -445,7 +445,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 		Pain:
 			IMPX G 3
 			IMPX G 3 A_FloatPain(0,8,64)
-			Goto See
+			Goto See	
 		Pain.Fist:
 			IMPX G 3
 			IMPX G 3 A_FloatPain(0,8,64)
@@ -1967,8 +1967,8 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			Goto See
 		Missile:
 			TNT1 A 0
-			DKNT E 0 A_Jump(88,"Attack1")
-			DKNT E 0 A_Jump(88,"Attack2")
+			DKNT E 0 A_Jump(88,"Missile1")
+			DKNT E 0 A_Jump(88,"Missile2")
 			DKNT E 0 Bright // A_UnSetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOff;
@@ -2007,9 +2007,9 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 					A_CrisisSpawnProjectile("DKDart","DKDartCrisis",32,0,7,0);
 				}
 			}
-			DKNT A 0 A_Jump(64,"Attack2")
+			DKNT A 0 A_Jump(64,"Missile2")
 			Goto See
-		Attack1:
+		Missile1:
 			DKNT T 1 Bright // A_SetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOn;
@@ -2020,17 +2020,17 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (levelbehavior && user_monsterlevel > 120) { user_defendtimermax = 4; }
 				else if (levelbehavior && user_monsterlevel > 60) { user_defendtimermax = 5; }
 				else { user_defendtimermax = 6; }
-				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Attack1Phase2"); }
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Missile1Phase2"); }
 				return state("");
 			}
 			loop
-		Attack1Phase2:
+		Missile1Phase2:
 			DKNT U 1 Bright
 			{
 				A_DeathKnightShieldOn;
 				A_FaceTarget;
 			}
-		Attack1Phase3:
+		Missile1Phase3:
 			DKNT U 1 Bright 
 			{
 				A_DeathKnightShieldOn;
@@ -2047,24 +2047,24 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (levelbehavior && user_monsterlevel > 120) { user_defendtimermax = 3; }
 				else if (levelbehavior && user_monsterlevel > 60) { user_defendtimermax = 4; }
 				else { user_defendtimermax = 5; }
-				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Attack1End"); }
+				if (user_defendtimer >= user_defendtimermax) { user_defendtimer = 0; return state("Missile1End"); }
 				return state("");
 			}
 			loop
-		Attack1End:
+		Missile1End:
 			DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOff;
 			}
-			DKNT U 0 A_Jump(64,"Attack2")
+			DKNT U 0 A_Jump(64,"Missile2")
 			Goto See
-		Attack2:
+		Missile2:
 			DKNT T 0 Bright // A_SetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOn;
 				A_FaceTarget;
 			}
-		Attack2Phase1: // 6 times
+		Missile2Phase1: // 6 times
 			DKNT T 1 Bright 
 			{
 				A_DeathKnightShieldOn;
@@ -2077,12 +2077,12 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (user_defendtimer >= user_defendtimermax) 
 				{
 					user_defendtimer = 0; 
-					return state("Attack2Phase2"); 
+					return state("Missile2Phase2"); 
 				}
 				return state("");
 			}
 			loop
-		Attack2Phase2: // 6 times
+		Missile2Phase2: // 6 times
 			DKNT U 1 Bright 
 			{
 				A_DeathKnightShieldOn;
@@ -2102,13 +2102,13 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 					user_defendtimer = 0; 
 					user_defendcycles += 1;
 					
-					if (user_defendcycles >= 6) { return state("Attack2End"); } else { return state("Attack2Phase1"); }
+					if (user_defendcycles >= 6) { return state("Missile2End"); } else { return state("Missile2Phase1"); }
 					return state(""); 
 				}
 				return state("");
 			}
 			loop
-		Attack2End:
+		Missile2End:
 			DKNT U 0 Bright // A_UnSetReflectiveInvulnerable
 			{
 				A_DeathKnightShieldOff;
@@ -2192,7 +2192,6 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			DKNT H 1 A_FreezeDeathChunks
 			wait
 		Raise:
-			DKNT Q 8 Bright   
 			DKNT NMLKJI 8 Bright
 			Goto See 
 	}
@@ -3958,9 +3957,9 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 		Missile:
 			TNT1 A 0
 			TNT1 A 0 A_JumpIfHealthLower ((user_MaxHP/2), "Missile2") 
-			TNT1 A 0 A_Jump(90, "Attack1b")
+			TNT1 A 0 A_Jump(90, "Missile1b")
 
-			Attack1a:
+			Missile1a:
 				BDEM H 6 
 				{
 					if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
@@ -3981,7 +3980,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 					A_CrisisSpawnProjectile("ShadowBeastBall1", "ShadowBeastBall1Crisis", 56, 0, 8);
 				}
 				Goto See
-			Attack1b:
+			Missile1b:
 				BDEM H 4 
 				{
 					if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
@@ -4045,8 +4044,8 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 				Goto See
 
 		Missile2:
-			TNT1 A 0 A_Jump(90, "Attack2b")
-		Attack2a:
+			TNT1 A 0 A_Jump(90, "Missile2b")
+		Missile2a:
 			BDEM H 6 
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
@@ -4062,7 +4061,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 				A_CrisisSpawnProjectile("ShadowBeastBallFire", "ShadowBeastBallFireCrisis", 56, 0, random(-8,8));
 			}
 			Goto See
-		Attack2b:
+		Missile2b:
 			BDEM H 16 
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(8); }
@@ -5428,7 +5427,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			}
 			DISC AAABBBBAAAABBBB 1
 			{
-				A_SpawnItem("DSFX3",0,0);
+				A_SpawnItemEx("DSFX3",0.0,0.0,0.0,0.0,0.0,0.0,0.0,SXF_TRANSFERALPHA);
 				A_DVDSChase("Melee","Missile",CHF_FASTCHASE);
 			}
 			Goto See
@@ -5446,7 +5445,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			{
 				A_FaceTarget;
 				A_SkullAttack;
-				A_SpawnItem("DSFX3",0,0);
+				A_SpawnItemEx("DSFX3",0.0,0.0,0.0,0.0,0.0,0.0,0.0,SXF_TRANSFERALPHA);
 			}
 			Goto See
 		Missile2:

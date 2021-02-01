@@ -15,13 +15,13 @@ HOW TO INSTALL / RUN / ETC:
 
  - Running - 1. There is no launcher packed for use with DV-DS-idTech1, you'll have to rely on command lines for now. My general method is to create a batch [.bat] file and name it something you'll remember. Remember you can right click a .bat file and "edit" them to change the command line used inside.
 
- - Running - 2. To run Heretic w/ "Aetherius" Command line: "start gzdoom.exe -iwad heretic.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Heretic" +hud_scale 0 exit" 
+ - Running - 2. To run Heretic w/ "Aetherius" Command line: "start gzdoom.exe -iwad heretic.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Heretic" exit" 
  - Note: "Aetherius" highly recommends using "hud_scale 0" for HUDs, so keep that in mind if you play this and go back to a different mod and your hud looks odd, you'll likely need to enter "hud_scale 1" or so in your console when you play said other mod. :P
  - Note: Hexen's patch can also be loaded with Heretic if you want to use the console to "summon" the monsters from Hexen in Heretic. Just add "DV-DS-idTech1/Hexen" in the above command line BEFORE "DV-DS-idTech1/Heretic" to do so.
  - Note: Putting "start" and "exit" around a command line makes the CMD prompt that pops up immediately disappear so you don't have to manually close the window after the command runs. However if you're making a shortcut that's not a .bat file, you don't need "start" or "exit" in those command lines.
 
- - Running - 3. To run Hexen w/ "Aetherius" Command line: "start gzdoom.exe -iwad hexen.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" +hud_scale 0 exit" 
+ - Running - 3. To run Hexen w/ "Aetherius" Command line: "start gzdoom.exe -iwad hexen.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" exit" 
 
- - Running - 4. To run Hexen: DeathKings of the Dark Citadel w/ "Aetherius" Command line: "start gzdoom.exe -iwad hexdd.wad "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" "DV-DS-idTech1/HexDD" +hud_scale 0 exit" 
+ - Running - 4. To run Hexen: DeathKings of the Dark Citadel w/ "Aetherius" Command line: "start gzdoom.exe -iwad hexdd.wad "DV-DS-ComboPack" "DV-DS-idTech1/Hexen" "DV-DS-idTech1/HexDD" exit" 
 
- - Running - 5. To run Strife w/ "Aetherius" Command line: "start gzdoom.exe -iwad strife1.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Strife" +hud_scale 0 exit" 
+ - Running - 5. To run Strife w/ "Aetherius" Command line: "start gzdoom.exe -iwad strife1.wad -file "DV-DS-ComboPack" "DV-DS-idTech1/Strife" exit" 

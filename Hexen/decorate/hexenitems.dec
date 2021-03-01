@@ -255,7 +255,7 @@ actor FlechetteReplacer : RandomSpawner2 replaces ArtiPoisonBag
 	DropItem "MiraclePotion", 96, 2
 	DropItem "YggdrasilDew", 96, 1
 	DropItem "GreaterVimstone", 96, 1
-	DropItem "RandomArmorNew", 96, 1
+	DropItem "ArtiBoostArmorNew", 96, 1
 }
 actor ArtiPoisonBag1New : FlechetteReplacer replaces ArtiPoisonBag1 { }
 actor ArtiPoisonBag2New : FlechetteReplacer replaces ArtiPoisonBag2 { }
@@ -280,25 +280,18 @@ actor ArtiBlastRadiusNew : FlechetteReplacer replaces ArtiBlastRadius
 	DropItem "MiraclePotion", 96, 2
 	DropItem "YggdrasilDew", 96, 1
 	DropItem "GreaterVimstone", 96, 1
-	DropItem "RandomArmorNew", 96, 1
+	DropItem "ArtiBoostArmorNew", 96, 1
 }
 
 //**********************
 //**Armor Replacements**
 //**********************
-actor RandomArmorNew : RandomSpawner2 replaces ArtiBoostArmor
-{
-	+DONTGIB
-	DropItem "FloraRandomArmorAlwaysDrop", 12, 96
-	DropItem "SauronHelmet", 64, 2
-	DropItem "SauronGauntlets", 64, 2
-}
 actor ArtiBoostArmorNew : RandomSpawner2 replaces ArtiBoostArmor
 {
 	+DONTGIB
-	DropItem "FloraRandomArmorAlwaysDrop", 48, 96
-	DropItem "SauronHelmet", 255, 2
-	DropItem "SauronGauntlets", 255, 2
+	DropItem "FloraRandomArmorAlwaysDrop", 24, 96
+	DropItem "SauronHelmet", 64, 2
+	DropItem "SauronGauntlets", 64, 2
 }
 actor PlatinumHelmNew : RandomSpawner2 replaces PlatinumHelm
 {
@@ -846,6 +839,7 @@ Actor Pottery3New : Pottery3 replaces Pottery3
 
 Actor DartNew : AetheriusEffectProjectile replaces Dart
 {
+	Tag "Poison Dart"
 	Speed 6
 	Radius 8
 	Height 4
@@ -866,7 +860,7 @@ Actor DartNew : AetheriusEffectProjectile replaces Dart
 			{
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
-					A_StatusEffectChecker(4);
+					A_StatusEffectChecker(5);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
 						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
@@ -880,8 +874,38 @@ Actor DartNew : AetheriusEffectProjectile replaces Dart
 	}
 }
 
+ACTOR PoisonDartNew : DartNew replaces PoisonDart
+{
+	Tag "Strong Poison Dart"
+	PoisonDamage 20
+	Damage ((2 * random(1,8)) + random(1,8))
+	States
+	{
+		Spawn:
+			DART A -1
+			Stop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(7);
+					if (random(1,user_ailmentmaxchance) <= 5 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(105,175)); // Poison for 3-5 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			DART A 1
+			Stop
+	}
+}
+
 ACTOR IceShardNew : AetheriusEffectProjectile replaces IceShard
 {
+	Tag "Ice Shard"
 	Speed 25
 	Radius 13
 	Height 8

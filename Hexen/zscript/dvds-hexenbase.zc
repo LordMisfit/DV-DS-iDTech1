@@ -62,6 +62,17 @@ class KoraxBase : AetheriusBossZSC
 	const KORAX_COMMAND_OFFSET			= 27;
 
 	const KORAX_SPIRIT_LIFETIME 		= 5*TICRATE/5;	// 5 seconds
+	
+	int maxhealchance;
+	int timeshealed;
+	int maxhealsallowed;
+	
+	override void PostBeginPlay()
+	{
+		maxhealchance = 32 + random(-4,4);
+		maxhealsallowed = random(4,6);
+		Super.PostBeginPlay();
+	}
  
 	//*******
 	//*Korax*
@@ -91,7 +102,6 @@ class KoraxBase : AetheriusBossZSC
 
 	void A_KoraxChase()
 	{
-		
 		int teleporthealth;
 		if (User_MaxHP <= 0) teleporthealth = SpawnHealth()/2; else teleporthealth = User_MaxHP/2;
 		if ((!special2) && (health <= (teleporthealth)))
@@ -162,12 +172,13 @@ class KoraxBase : AetheriusBossZSC
 		}
 	}
 
-	void A_KoraxBonePop()
+	void A_KoraxBonePop(int numspirits = 6)
 	{
-		// Spawn 6 spirits equalangularly
-		for (int i = 0; i < 6; ++i)
+		// Spawn (usually 6?) spirits equalangularly
+		double spiritangle = 360.0 / numspirits;
+		for (int i = 0; i < numspirits; ++i)
 		{
-			Actor mo = SpawnMissileAngle ("KoraxSpirit", 60.*i, 5.);
+			Actor mo = SpawnMissileAngle ("KoraxSpiritNew", spiritangle*i, 5.);
 			if (mo)
 			{
 				KSpiritInit (mo);
@@ -271,14 +282,80 @@ class KoraxBase : AetheriusBossZSC
 		class<Actor> info = choices[type];
 		class<Actor> crisisinfo = crisischoices[type];
 
+		int commandhealth;
+		if (User_MaxHP <= 0) commandhealth = SpawnHealth() >> 1; else commandhealth = User_MaxHP >> 1;
+
 		// Throws out the fireballs form Korax's arms
+		//Console.Printf("Korax Volley 1");
 		for (int i = 0; i < 6; ++i)
 		{
-			if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i); } else { KoraxFire(info, i); }
+			if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(0.0,0.2)); } else { KoraxFire(info, i, frandom(0.0,0.2)); }
+		}
+		if (health <= commandhealth)
+		{
+			if (random(1,256) <= 192)
+			{
+				//Console.Printf("Korax Volley 2 [low health]");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(2.0,2.2)); } else { KoraxFire(info, i, frandom(2.0,2.2)); }
+				}
+			}
+			if (random(1,256) <= 128)
+			{
+				//Console.Printf("Korax Volley 3 [low health]");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(3.2,3.4)); } else { KoraxFire(info, i, frandom(3.2,3.4)); }
+				}
+			}
+			if (random(1,256) <= 64)
+			{
+				//Console.Printf("Korax Volley 4 [low health]");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(4.4,4.6)); } else { KoraxFire(info, i, frandom(4.4,4.6)); }
+				}
+			}
+			if (random(1,256) <= 32)
+			{
+				//Console.Printf("Korax Volley 5 [low health]");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(5.6,5.8)); } else { KoraxFire(info, i, frandom(5.6,5.8)); }
+				}
+			}
+		}
+		else
+		{
+			if (random(1,256) <= 96)
+			{
+				//Console.Printf("Korax Volley 2");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(2.0,2.2)); } else { KoraxFire(info, i, frandom(2.0,2.2)); }
+				}
+			}
+			if (random(1,256) <= 48)
+			{
+				//Console.Printf("Korax Volley 3");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(3.2,3.4)); } else { KoraxFire(info, i, frandom(3.2,3.4)); }
+				}
+			}
+			if (random(1,256) <= 24)
+			{
+				//Console.Printf("Korax Volley 4");
+				for (int i = 0; i < 6; ++i)
+				{
+					if (user_canusecrisisatk == 1) { A_PlayCrisisAtkSound(); KoraxFire(crisisinfo, i, frandom(4.4,4.6)); } else { KoraxFire(info, i, frandom(4.4,4.6)); }
+				}
+			}
 		}
 	}
 
-	void KoraxFire (Class<Actor> type, int arm)
+	void KoraxFire (Class<Actor> type, int arm, double angleerror = 0.0)
 	{
 		static const int extension[] =
 		{
@@ -299,12 +376,13 @@ class KoraxBase : AetheriusBossZSC
 			KORAX_ARM6_HEIGHT
 		};
 
-		double ang = angle + (arm < 3 ? -KORAX_DELTAANGLE : KORAX_DELTAANGLE);
+		double angerr2 = frandom(-angleerror,angleerror);
+		double ang = angle + (arm < 3 ? -KORAX_DELTAANGLE : KORAX_DELTAANGLE) + angerr2;
 		Vector3 pos = Vec3Angle(extension[arm], ang, armheight[arm] - Floorclip);
-		SpawnKoraxMissile (pos, target, type);
+		SpawnKoraxMissile (pos, target, type, angerr2);
 	}
 
-	private void SpawnKoraxMissile (Vector3 pos, Actor dest, Class<Actor> type)
+	private void SpawnKoraxMissile (Vector3 pos, Actor dest, Class<Actor> type, double angleerror = 0.0)
 	{
 		Actor th = Spawn (type, pos, ALLOW_REPLACE);
 		if (th != null)
@@ -316,6 +394,9 @@ class KoraxBase : AetheriusBossZSC
 				// Invisible target
 				an += Random2[KoraxMissile]() * (45/256.);
 			}
+			an += frandom(-angleerror,angleerror);
+			//Console.Printf("angle: %8f, angleerror: %8f", an, angleerror);
+
 			th.angle = an;
 			th.VelFromAngle();
 			double dist = dest.DistanceBySpeed(th, th.Speed);
@@ -324,7 +405,7 @@ class KoraxBase : AetheriusBossZSC
 		}
 	}
 
-	void A_KoraxCommand()
+	void A_KoraxCommand(int firstscriptnum = 250, int lastscriptnum = 254)
 	{
 		int numcommands;
 
@@ -333,21 +414,246 @@ class KoraxBase : AetheriusBossZSC
 		// Shoot stream of lightning to ceiling
 		double ang = angle - 90;
 		Vector3 pos = Vec3Angle(KORAX_COMMAND_OFFSET, ang, KORAX_COMMAND_HEIGHT);
-		Spawn("KoraxBolt", pos, ALLOW_REPLACE);
 
 		int commandhealth;
 		if (User_MaxHP <= 0) commandhealth = SpawnHealth() >> 1; else commandhealth = User_MaxHP >> 1;
 
-		if (health <= commandhealth)
+		int maxhealchance2 = maxhealchance;
+		if (health >= (User_MaxHP * 2)) maxhealchance2 *= 256;
+		if (health >= (User_MaxHP * 1.5)) maxhealchance2 *= 1.75;
+		if (health >= (User_MaxHP * 1.0)) maxhealchance2 *= 1.5;
+		if (health <= (User_MaxHP * 0.75)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.5)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.25)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.125)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.0625)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.03125)) maxhealchance2 *= 0.5;
+		if (health <= (User_MaxHP * 0.015625)) maxhealchance2 *= 0.5;
+		if (maxhealchance2 < 1) maxhealchance2 = 1;
+
+		int TrueGameSkill = dvds_gendifficultycurve + Skill;
+
+		//Console.Printf("\cycommandhealth: %d", commandhealth);
+		int maxheals = (maxhealsallowed + (TrueGameSkill * 0.625));
+		if (timeshealed <= maxheals)
 		{
-			numcommands = 5;
+			int healroll = random(1,maxhealchance2);
+			Console.Printf("\cxhealroll: %d / maxhealchance: %d", healroll, maxhealchance2);
+			if (healroll <= 1)
+			{
+				Spawn("KoraxBoltHealing", pos, ALLOW_REPLACE);
+				int healamount;
+				healamount = user_MaxHP * (frandompick(frandom(0.0375,0.075), frandom(0.10,0.15), frandom(0.20,0.30)) * (1.00 + ((TrueGameSkill * 0.125))));
+				int temphealth = health + healamount;
+				if (temphealth > (user_MaxHP * 2)) temphealth = (user_MaxHP * 2);
+				health = temphealth;
+				A_StartSound("healing_dq",83,CHANF_DEFAULT,1.0,ATTN_NORM);
+				A_StartSound("healing_dq",84,CHANF_DEFAULT,1.0,ATTN_NONE);
+				A_PrintHealingMessage(self, healamount);
+				int healscale = frandom(1.25,1.75);
+				maxhealchance *= (frandompick(1.125,1.25,1.375,1.5,1.625,1.75,1.875) * (1.00 - (TrueGameSkill * 0.0625)));
+				A_UCIIHealSpark(self,"CustomHealSpark",healscale,healscale,"Heal3Glitter",random(12,20),(healscale*5),(healscale*5),(healscale*5));
+				timeshealed++;
+				//Console.Printf("\czKorax Healed Himself %d Times So Far!", timeshealed);
+			}
+			else
+			{
+				Spawn("KoraxBoltNew", pos, ALLOW_REPLACE);
+				ACS_Execute(random(firstscriptnum,lastscriptnum), 0);
+			}
 		}
 		else
 		{
-			numcommands = 4;
+			Spawn("KoraxBoltNew", pos, ALLOW_REPLACE);
+			ACS_Execute(random(firstscriptnum,lastscriptnum), 0);
 		}
+	}
+}
 
-		ACS_Execute(250 + (random[KoraxCommand]()%numcommands), 0);
+class KoraxSpiritNew : AetheriusBaseZSC replaces KoraxSpirit
+{
+	Default
+	{
+		Speed 8;
+		Projectile;
+		+NOCLIP
+		-ACTIVATEPCROSS
+		-ACTIVATEIMPACT
+		RenderStyle "Translucent";
+		Alpha 0.4;
+	}
+	
+	States
+	{
+		Spawn:
+			SPIR AB 5 A_KSpiritRoam;
+			Loop;
+		Death:
+			SPIR DEFGHI 5;
+			Stop;
+	}
+	
+	//============================================================================
+	//
+	// A_KSpiritSeeker
+	//
+	//============================================================================
+
+	private void KSpiritSeeker (double thresh, double turnMax)
+	{
+		Actor target = tracer;
+		if (target == null)
+		{
+			return;
+		}
+		double dir = deltaangle(angle, AngleTo(target));
+		double delta = abs(dir);
+		if (delta > thresh)
+		{
+			delta /= 2;
+			if(delta > turnMax)
+			{
+				delta = turnMax;
+			}
+		}
+		if(dir > 0)
+		{ // Turn clockwise
+			angle += delta;
+		}
+		else
+		{ // Turn counter clockwise
+			angle -= delta;
+		}
+		VelFromAngle();
+
+		if (!(Level.maptime&15) 
+			|| pos.z > target.pos.z + target.Default.Height
+			|| pos.z + height < target.pos.z)
+		{
+			double newZ = target.pos.z + random[KoraxRoam]() * target.Default.Height / 256;
+			double deltaZ = newZ - pos.z;
+
+			if (abs(deltaZ) > 15)
+			{
+				if(deltaZ > 0)
+				{
+					deltaZ = 15;
+				}
+				else
+				{
+					deltaZ = -15;
+				}
+			}
+			Vel.Z = deltaZ + DistanceBySpeed(target, Speed);
+		}
+	}
+
+	//============================================================================
+	//
+	// A_KSpiritRoam
+	//
+	//============================================================================
+
+	void A_KSpiritRoam()
+	{
+		if (health-- <= 0)
+		{
+			A_StartSound("SpiritDie", CHAN_VOICE);
+			SetStateLabel ("Death");
+		}
+		else
+		{
+			if (tracer)
+			{
+				KSpiritSeeker(args[0], args[0] * 2.);
+			}
+			int xyspeed = random[KoraxRoam](0, 4);
+			int zspeed = random[KoraxRoam](0, 4);
+			A_Weave(xyspeed, zspeed, 4., 2.);
+
+			if (random[KoraxRoam]() < 50)
+			{
+				A_StartSound("SpiritActive", CHAN_VOICE, CHANF_DEFAULT, 1., ATTN_NONE);
+			}
+		}
+	}
+}
+
+class KoraxBoltNew : AetheriusBaseZSC replaces KoraxBolt
+{
+	const KORAX_BOLT_HEIGHT		= 48.;
+	const KORAX_BOLT_LIFETIME		= 3;
+	
+	Default
+	{
+		Radius 15;
+		Height 35;
+		Projectile;
+		-ACTIVATEPCROSS
+		-ACTIVATEIMPACT
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			MLFX I 2 Bright;
+			MLFX J 2 Bright A_KBoltRaise("KoraxBoltNew");
+			MLFX IJKLM 2 Bright A_KBolt;
+			Stop;
+	}
+	
+	//============================================================================
+	//
+	// A_KBolt
+	//
+	//============================================================================
+
+	void A_KBolt()
+	{
+		// Countdown lifetime
+		if (special1-- <= 0)
+		{
+			Destroy ();
+		}
+	}
+
+	//============================================================================
+	//
+	// A_KBoltRaise
+	//
+	//============================================================================
+
+	void A_KBoltRaise(string actorname = "KoraxBoltNew")
+	{
+		// Spawn a child upward
+		double z = pos.z + KORAX_BOLT_HEIGHT;
+
+		if ((z + KORAX_BOLT_HEIGHT) < ceilingz)
+		{
+			Actor mo = Spawn(actorname, (pos.xy, z), ALLOW_REPLACE);
+			if (mo)
+			{
+				mo.special1 = KORAX_BOLT_LIFETIME;
+			}
+		}
+	}
+}
+
+class KoraxBoltHealing : KoraxBoltNew
+{
+	default
+	{
+		Translation "217:223=211:216", "32:32=216:216";
+	}
+	
+	States
+	{
+		Spawn:
+			MLFX I 2 Bright;
+			MLFX J 2 Bright A_KBoltRaise("KoraxBoltHealing");
+			MLFX IJKLM 2 Bright A_KBolt;
+			Stop;
 	}
 }
 
@@ -544,5 +850,442 @@ class PatriarchRadiusHeal : AetheriusCustomInventory
 		Use:
 			TNT1 A 0;
 			Stop;
+	}
+}
+
+class ThrustFloorDVDS : AetheriusBaseZSC replaces ThrustFloor
+{
+	int bloodtimer;
+	Default
+	{
+		Tag "Thrusting Trap Spike";
+		Radius 20;
+		Height 128;
+	}
+	
+	override void Tick()
+	{
+		if (args[1])
+		{
+			bloodtimer++;
+			if (bloodtimer >= (35*60))
+			{
+				bloodtimer = (random(-6,6) * 35);
+				args[1] = 0; // Unbloodies the spike after 60 seconds
+			}
+		}
+
+		super.Tick();
+	}
+
+	States
+	{
+		ThrustRaising:
+			TSPK A 1 A_ThrustRaise;
+			Loop;
+		BloodThrustRaising:
+			TSPK B 1 A_ThrustRaise;
+			Loop;
+		ThrustLower:
+			TSPK A 1 A_ThrustLower(12);
+			Loop;
+		BloodThrustLower:
+			TSPK B 1 A_ThrustLower(12);
+			Loop;
+		ThrustInit1:
+			TSPK A 1;
+			TSPK A 1 A_ThrustInitDn(10);
+			TSPK A -1;
+			Loop;
+		BloodThrustInit1:
+			TSPK B 1;
+			TSPK B 1 A_ThrustInitDn(10);
+			TSPK B -1;
+			Loop;
+		ThrustInit2:
+			TSPK A 1;
+			TSPK A 1 A_ThrustInitUp(10);
+			TSPK A 3;
+			Loop;
+		BloodThrustInit2:
+			TSPK B 1;
+			TSPK B 1 A_ThrustInitUp(10);
+			TSPK B 3;
+			Loop;
+		ThrustRaise:
+			TSPK A 1
+			{
+				A_ThrustRaise();
+			}
+			TSPK A 1
+			{
+				A_ThrustRaise();
+				A_SetSolid();
+				A_ThrustImpale();
+			}
+			Loop;
+		BloodThrustRaise:
+			TSPK B 1
+			{
+				A_ThrustRaise();
+			}
+			TSPK B 1
+			{
+				A_ThrustRaise();
+				A_SetSolid();
+				A_ThrustImpale();
+			}
+			Loop;
+	}
+	
+	override void Activate (Actor activator)
+	{
+		if (args[0] == 0)
+		{
+			A_StartSound ("ThrustSpikeLower", CHAN_BODY);
+			bInvisible = false;
+			if (args[1])
+				SetStateLabel("BloodThrustRaise");
+			else
+				SetStateLabel("ThrustRaise");
+		}
+	}
+
+	override void Deactivate (Actor activator)
+	{
+		if (args[0] == 1)
+		{
+			A_StartSound ("ThrustSpikeRaise", CHAN_BODY);
+			if (args[1])
+				SetStateLabel("BloodThrustLower");
+			else
+				SetStateLabel("ThrustLower");
+		}
+	}
+	
+	//===========================================================================
+	//
+	// Thrust floor stuff
+	//
+	// Thrust Spike Variables
+	//		master		pointer to dirt clump actor
+	//		special2	speed of raise
+	//		args[0]		0 = lowered,  1 = raised
+	//		args[1]		0 = normal,   1 = bloody
+	//===========================================================================
+
+	void A_ThrustInitUp(int speed = 5)
+	{
+		special2 = speed;	// Raise speed
+		args[0] = 1;		// Mark as up
+		Floorclip = 0;
+		bSolid = true;
+		bNoTeleport = true;
+		bFloorClip = true;
+		special1 = 0;
+	}
+
+	void A_ThrustInitDn(int speed = 5)
+	{
+		special2 = speed;	// Raise speed
+		args[0] = 0;		// Mark as down
+		Floorclip = Default.Height;
+		bSolid = false;
+		bNoTeleport = true;
+		bFloorClip = true;
+		bInvisible = true;
+		master = Spawn("DirtClump", Pos, ALLOW_REPLACE);
+	}
+
+
+	void A_ThrustRaise()
+	{
+		if (RaiseMobj (special2))
+		{	// Reached it's target height
+			args[0] = 1;
+			if (args[1])
+				SetStateLabel ("BloodThrustInit2", true);
+			else
+				SetStateLabel ("ThrustInit2", true);
+		}
+
+		// Lose the dirt clump
+		if ((Floorclip < Height) && master)
+		{
+			master.Destroy ();
+			master = null;
+		}
+
+		// Spawn some dirt
+		if (random[Thrustraise]()<40)
+			SpawnDirt (radius);
+		special2++;							// Increase raise speed
+	}
+
+	void A_ThrustLower(int speed = 12)
+	{
+		if (SinkMobj (speed))
+		{
+			args[0] = 0;
+			if (args[1])
+				SetStateLabel ("BloodThrustInit1", true);
+			else
+				SetStateLabel ("ThrustInit1", true);
+		}
+	}
+
+	
+	void A_ThrustImpale()
+	{
+		BlockThingsIterator it = BlockThingsIterator.Create(self);
+		while (it.Next())
+		{
+			let targ = it.thing;
+			if (targ != null)
+			{
+				AetheriusPlayerPawn playpawn;
+				AetheriusMonsterZSC DVDSActor;
+				playpawn = AetheriusPlayerPawn(targ);
+				DVDSActor = AetheriusMonsterZSC(targ);
+
+				double blockdist = radius + targ.radius;
+				if (abs(targ.pos.x - it.Position.X) >= blockdist || abs(targ.pos.y - it.Position.Y) >= blockdist)
+					continue;
+
+				// Q: Make this z-aware for everything? It never was before.
+				if (targ.pos.z + targ.height < pos.z || targ.pos.z > pos.z + height)
+				{
+					if (CurSector.PortalGroup != targ.CurSector.PortalGroup)
+						continue;
+				}
+
+				if (!targ.bShootable)
+					continue;
+
+				if (targ == self)
+					continue;	// don't clip against self
+				
+				int newdam2;
+				if (playpawn)
+				{
+					if (!(CallACS("GetBuffTimer",4) > 0 || playpawn.bINVULNERABLE || playpawn.player.cheats & CF_GODMODE2 || playpawn.player.cheats & CF_GODMODE || playpawn.CountInv("InvulnerabilitySpell") || playpawn.CountInv("IsInvulnerable") || playpawn.CountInv("InGameMenu") || CallACS("MenuVarCheckDECORATE",0) > 0))
+					{
+						newdam2 = CallACS("StatCheck",1) * (frandom(0.95,1.05) * random(1,4));
+					}
+					else
+					{
+						newdam2 = 0;
+					}
+				}
+				else
+				if (DVDSActor)
+				{
+					if (!(DVDSActor.bINVULNERABLE || CallACS("MenuVarCheckDECORATE",0) > 0))
+					{
+						newdam2 = DVDSActor.user_MaxHP * (frandom(0.95,1.05) * random(1,4));
+						if (DVDSActor.bBOSS) newdam2 *= 0.25;
+					}
+					else
+					{
+						newdam2 = 0;
+					}
+				}
+				else
+				{
+					newdam2 = 10001;
+				}
+
+				int newdam = targ.DamageMobj (self, self, newdam2, 'Crush');
+				targ.TraceBleed (newdam > 0 ? newdam : newdam2, null);
+				args[1] = 1;	// Mark thrust thing as bloody
+			}
+		}
+	}
+}
+
+class BatNew : AetheriusBaseZSC replaces Bat
+{
+	Default
+	{
+		Speed 5;
+		Radius 3;
+		Height 3;
+		+NOBLOCKMAP +NOGRAVITY +MISSILE
+		+NOTELEPORT +CANPASS
+	}
+
+	States
+	{
+		Spawn:
+			ABAT ABC 2 A_BatMove;
+			Loop;
+		Death:
+			ABAT A 2;
+			Stop;
+	}
+	
+	void A_BatMove()
+	{
+		if (special2 < 0)
+		{
+			SetStateLabel ("Death");
+		}
+		special2 -= 2;		// Called every 2 tics
+
+		double newangle;
+		if (random[BatMove]() < 128)
+		{
+			newangle = Angle + args[4];
+		}
+		else
+		{
+			newangle = Angle - args[4];
+		}
+
+		// Adjust velocity vector to new direction
+		VelFromAngle(Speed, newangle);
+
+		if (random[BatMove]() < 15)
+		{
+			A_StartSound ("BatScream", CHAN_VOICE, CHANF_DEFAULT, 1, ATTN_IDLE);
+		}
+
+		// Handle Z movement
+		if (target)
+		{
+			SetZ(target.pos.Z + 2 * BobSin(args[0]));
+			args[0] = (args[0] + 3) & 63;	
+		}
+	}
+}
+
+class PoisonCloudDVDS : AetheriusBaseZSC replaces PoisonCloud
+{
+	Default
+	{
+		Tag "Poisonous Mushroom Bog";
+		Radius 20;
+		Height 30;
+		Mass 0x7fffffff;
+		+NOBLOCKMAP +NOGRAVITY +DROPOFF
+		+NODAMAGETHRUST
+		+DONTSPLASH +FOILINVUL +CANBLAST +BLOODLESSIMPACT +BLOCKEDBYSOLIDACTORS +FORCEZERORADIUSDMG +OLDRADIUSDMG
+		RenderStyle "Translucent";
+		Alpha 0.6;
+		DeathSound "PoisonShroomDeath";
+		DamageType "PoisonCloud";
+	}
+
+	States
+	{
+		Spawn:
+			PSBG D 1;
+			PSBG D 1 A_Scream;
+			PSBG DEEEFFFGGGHHHII 2 A_PoisonBagDamage;
+			PSBG I 2 A_PoisonBagCheck;
+			PSBG I 1 A_PoisonBagCheck;
+			Goto Spawn + 3;
+		Death:
+			PSBG HG 7;
+			PSBG FD 6;
+			Stop;
+	}
+	
+	//===========================================================================
+	//
+	// 
+	//
+	//===========================================================================
+
+	override void BeginPlay ()
+	{
+		Vel.X = MinVel; // missile objects must move to impact other objects
+		special1 = random[PoisonCloud](24, 31);
+		special2 = 0;
+	}
+	
+	//===========================================================================
+	//
+	// 
+	//
+	//===========================================================================
+
+	override int DoSpecialDamage (Actor victim, int damage, Name damagetype)
+	{
+		if (victim.player)
+		{
+			AetheriusPlayerPawn playpawn;
+			playpawn = AetheriusPlayerPawn(victim);
+			bool mate = (target != null && victim.player != target.player && victim.IsTeammate (target));
+			bool dopoison;
+			
+			if (!mate)
+			{
+				dopoison = victim.player.poisoncount < 4;
+			}
+			else
+			{
+				dopoison = victim.player.poisoncount < (int)(4. * level.teamdamage);
+			}
+
+			if (dopoison)
+			{
+				damage = random[PoisonCloud](15, 30);
+				if (mate)
+				{
+					damage = (int)(damage * level.teamdamage);
+				}
+				// Handle passive damage modifiers (e.g. PowerProtection)
+				damage = victim.GetModifiedDamage(damagetype, damage, true);
+				// Modify with damage factors
+				damage = victim.ApplyDamageFactor(damagetype, damage);
+				if (damage > 0)
+				{
+					victim.player.PoisonDamage (self, random[PoisonCloud](15, 30), false); // Don't play painsound
+
+					// If successful, play the poison sound.
+					if (victim.player.PoisonPlayer (self, self.target, 50)) 
+					{
+						if (CallACS("CheckCharacterClass") == 2) playpawn.A_APPPain();
+						else if (CallACS("CheckCharacterClass") == 1) victim.A_Pain();
+						else if (CallACS("CheckCharacterClass") == 0) victim.A_Pain();
+						else victim.A_StartSound ("*poison", CHAN_VOICE);
+					}
+				}
+			}	
+			return -1;
+		}
+		else if (!victim.bIsMonster)
+		{ // only damage monsters/players with the poison cloud
+			return -1;
+		}
+		return damage;
+	}
+	
+	//===========================================================================
+	//
+	// A_PoisonBagCheck
+	//
+	//===========================================================================
+
+	void A_PoisonBagCheck()
+	{
+		if (--special1 <= 0)
+		{
+			SetStateLabel("Death");
+		}
+	}
+
+	//===========================================================================
+	//
+	// A_PoisonBagDamage
+	//
+	//===========================================================================
+
+	void A_PoisonBagDamage()
+	{
+		A_Explode(4, 40);
+		AddZ(BobSin(special2) / 16);
+		special2 = (special2 + 1) & 63;
 	}
 }

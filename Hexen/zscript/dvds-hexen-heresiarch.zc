@@ -290,7 +290,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 	//
 	//============================================================================
 
-    // Selects which Mana Cube to use a spell from. :V
+	// Selects which Mana Cube to use a spell from. :V
 	void A_StopBalls()
 	{
 		int chance = random[Heresiarch]();
@@ -472,7 +472,7 @@ class SorcBallBase : AetheriusProjectileZSC
 
 		// Put sorcerer into throw spell animation
 		if (target.health > 0)
-			target.SetStateLabel ("Attack2");
+			target.SetStateLabel ("Missile2");
 	}
 
 	//============================================================================
@@ -539,7 +539,7 @@ class SorcBallBase : AetheriusProjectileZSC
 			{
 				// Put sorcerer into special throw spell anim
 				if (parent.health > 0)
-					parent.SetStateLabel("Attack1");
+					parent.SetStateLabel("Missile1");
 
 				DoFireSpell ();
 			}
@@ -554,7 +554,7 @@ class SorcBallBase : AetheriusProjectileZSC
 					parent.args[3] = HeresiarchNew.SORC_STOPPED;
 					// Back to orbit balls
 					if (parent.health > 0)
-						parent.SetStateLabel("Attack2");
+						parent.SetStateLabel("Missile2");
 				}
 				else
 				{

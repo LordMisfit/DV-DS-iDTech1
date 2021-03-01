@@ -5721,6 +5721,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
 				A_KoraxDecide;
+				A_FaceTarget;
 			}
 			Wait
 		Attack:
@@ -5738,6 +5739,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 				A_KoraxMissile;
+				A_FaceTarget;
 			}
 			KORX E 8 Bright
 			{
@@ -5745,6 +5747,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(5); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
+				A_FaceTarget;
 			}
 			KORX E 0 Bright
 			{
@@ -5779,6 +5782,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(12); }
 				else if (levelbehavior && user_monsterlevel > 50) { A_SetTics(13); }
 				else if (levelbehavior && user_monsterlevel > 25) { A_SetTics(14); }
+				A_FaceTarget;
 				A_KoraxCommand;
 			}
 			KORX W 10 Bright
@@ -5788,11 +5792,13 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
 				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
 				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget;
 			}
 			KORX E 5 Bright
 			{
 				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget;
 			}
 			Goto See
 
@@ -5804,7 +5810,7 @@ ACTOR KoraxNew : KoraxBase replaces Korax
 			KORX K 5 A_Scream
 			KORX LMNOP 5
 			KORX Q 10
-			KORX R 5 A_KoraxBonePop
+			KORX R 5 A_KoraxBonePop(randompick(6,6,6,12,12,18))
 			KORX S 5 A_NoBlocking
 			KORX TU 5
 			KORX V -1
@@ -6644,7 +6650,7 @@ ACTOR MageStaffFX2Crisis : MageStaffFX2New
 
 ACTOR ZPoisonCloudNew : PoisonCloud
 {
-	Tag "PoisonCloud"
+	Tag "Poison Cloud"
 	reactiontime 24
 	Radius 20
 	Height 30
@@ -6681,6 +6687,7 @@ ACTOR ZPoisonCloudNew : PoisonCloud
 
 ACTOR ZPoisonShroomNew : ZPoisonShroom replaces ZPoisonShroom
 {
+	Tag "Poison Shroom"
 	Radius 6
 	Height 20
 	PainChance 255
@@ -6707,7 +6714,7 @@ ACTOR ZPoisonShroomNew : ZPoisonShroom replaces ZPoisonShroom
 			Goto Spawn
 		Death:
 			SHRM CD 5
-			SHRM E 5 A_SpawnItemEx("ZPoisonCloudNew", 0, 0, 28, 0, 0, 0, 0, SXF_TRANSFERPOINTERS) // A_PoisonBagInit
+			SHRM E 5 A_SpawnItemEx("PoisonCloudDVDS", 0, 0, 28, 0, 0, 0, 0, SXF_TRANSFERPOINTERS) // A_PoisonBagInit
 			SHRM F -1
 			Stop
 	}

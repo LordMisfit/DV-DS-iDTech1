@@ -791,15 +791,24 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (random(1,256) <= 192)
 				{
 					user_bormpainreact = 1;
-					A_MonsterCrisisCheck; // Multiple Projectiles
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+					if (bormcountercooldown <= 0)
+					{
+						A_MonsterCrisisCheck; // Multiple Projectiles
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+						bormcountercooldown = randompick(35,52,70);
+					}
+					else
+					{
+						bormcountercooldown -= random(0,3);
+						if (bormcountercooldown < 0) { bormcountercooldown = 0; }
+					}
 				}
 			}
 			BORM H 2 A_DVDSPain
@@ -814,15 +823,24 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 112)
 				{
-					A_MonsterCrisisCheck; // Multiple Projectiles
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+					if (bormcountercooldown <= 0)
+					{
+						A_MonsterCrisisCheck; // Multiple Projectiles
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+						bormcountercooldown = randompick(35,52,70);
+					}
+					else
+					{
+						bormcountercooldown -= random(0,3);
+						if (bormcountercooldown < 0) { bormcountercooldown = 0; }
+					}
 				}
 			}
 			BORM H 2 A_DVDSPain
@@ -838,15 +856,24 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (random(1,256) <= 112)
 				{
-					A_MonsterCrisisCheck; // Multiple Projectiles
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
-					A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+					if (bormcountercooldown <= 0)
+					{
+						A_MonsterCrisisCheck; // Multiple Projectiles
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,0);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,45);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,90);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,135);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,180);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,225);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,270);
+						A_CrisisSpawnProjectile("FirePillarStarter","FirePillarStarterCrisis",32,0,315);
+						bormcountercooldown = randompick(35,52,70);
+					}
+					else
+					{
+						bormcountercooldown -= random(0,3);
+						if (bormcountercooldown < 0) { bormcountercooldown = 0; }
+					}
 				}
 			}
 			BORM H 2 A_DVDSPain

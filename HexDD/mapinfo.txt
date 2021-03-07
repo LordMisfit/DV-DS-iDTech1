@@ -55,6 +55,70 @@ episode map0b
  key = "H"
 }
 
+Intermission Inter_Chess
+{
+	Fader
+	{
+		Music = "Hall"
+		Background = "FINALE1"
+		Time = 1
+		FadeType = FadeIn
+	}
+	TextScreen
+	{
+		Background = "FINALE1"
+		TextSpeed = 4
+		TextLump = "win1msg"
+		Time = -250
+	}
+	TextScreen
+	{
+		Music = "Orb"
+		Background = "FINALE2"
+		TextSpeed = 4
+		TextLump = "win2msg"
+		Time = -250
+	}
+	Fader
+	{
+		Background = "FINALE2"
+		Time = 1
+		FadeType = FadeOut
+	}
+	Fader
+	{
+		Music = "Chess"
+		Background = "FINALE3"
+		DrawConditional = "Multiplayer", "CHESSALL", 20, 0
+		DrawConditional = "ClericPlayer", "CHESSC", 60, 0
+		DrawConditional = "MagePlayer", "CHESSM", 60, 0
+		Time = 1
+		FadeType = FadeIn
+	}
+	TextScreen
+	{
+		Background = "FINALE3"
+		DrawConditional = "Multiplayer", "CHESSALL", 20, 0
+		DrawConditional = "ClericPlayer", "CHESSC", 60, 0
+		DrawConditional = "MagePlayer", "CHESSM", 60, 0
+		TextSpeed = 3
+		TextLump = "win3msg"
+	}
+}
+//**********************
+//**Classic Hexen Maps**
+//**********************
+gamedefaults
+{
+  nofallingdamage
+	activateowndeathspecials
+	infiniteflightpowerup
+	nointermission
+	noautosequences
+	missilesactivateimpactlines
+	enableskyboxao
+}
+
 //**********************
 //**Classic Hexen Maps**
 //**********************
@@ -67,4 +131,298 @@ map MAP0b "Skip Map"
  sucktime = 1
  aircontrol = 1.0
  NoIntermission
+}
+
+// --- Cluster 1 ---
+
+map 41 "RUINED VILLAGE"
+{
+	warptrans = 1
+	next = 2
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 13
+}
+
+map MAP42 "BLIGHT"
+{
+	warptrans = 2
+	next = 3
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 2
+}
+
+map MAP43 "SUMP"
+{
+	warptrans = 3
+	next = 4
+	cluster = 1
+	sky1 = "SKYFOG2", 0.20
+	sky2 = "SKYFOG", 0.60
+	doublesky 
+	fadetable = fogmap
+	cdtrack = 22
+}
+
+map MAP44 "CATACOMB"
+{
+	warptrans = 4
+	next = 5
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 15
+}
+
+map MAP45 "BADLANDS"
+{
+	warptrans = 5
+	next = 6
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 9
+}
+
+map MAP46 "BRACKENWOOD"
+{
+	warptrans = 6
+	next = 7
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 21
+}
+
+map MAP47 "PYRE"
+{
+	warptrans = 7
+	next = 8
+	cluster = 1
+	sky1 = "SKYWALL", 0
+	sky2 = "SKY1", 0.40
+	doublesky 
+	cdtrack = 14
+}
+
+// --- Cluster 2 ---
+
+map MAP48 "CONSTABLE'S GATE"
+{
+	warptrans = 8
+	next = 9
+	cluster = 2
+	sky1 = "SKYWALL2", 0
+	sky2 = "SKY2", 0.60
+	doublesky 
+	cdtrack = 8
+}
+
+map MAP49 "TREASURY"
+{
+	warptrans = 9
+	next = 10
+	cluster = 2
+	sky1 = "SKYWALL2", 0
+	sky2 = "SKY2", 0.60
+	doublesky 
+	cdtrack = 20
+}
+
+map MAP50 "MARKET PLACE"
+{
+	warptrans = 10
+	next = 11
+	cluster = 2
+	sky1 = "SKYWALL2", 0
+	sky2 = "SKY2", 0.60
+	doublesky 
+	cdtrack = 6
+}
+
+map MAP51 "LOCUS REQUIESCAT"
+{
+	warptrans = 11
+	next = 12
+	cluster = 2
+	sky1 = "SKY2", 0
+	sky2 = "SKY3", 0
+	lightning 
+	cdtrack = 5
+}
+
+map MAP52 "ORDEAL"
+{
+	warptrans = 12
+	next = 13
+	cluster = 2
+	sky1 = "SKYWALL2", 0
+	sky2 = "SKY2", 0.60
+	doublesky 
+	cdtrack = 16
+}
+
+map MAP53 "ARMORY"
+{
+	warptrans = 13
+	next = 14
+	cluster = 2
+	sky1 = "SKYWALL2", 0
+	sky2 = "SKY2", 0.60
+	doublesky 
+	cdtrack = 18
+}
+
+// --- Cluster 3 ---
+
+map MAP54 "NAVE"
+{
+	warptrans = 14
+	next = 15
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 15
+}
+
+map MAP55 "CHANTRY"
+{
+	warptrans = 15
+	next = 16
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 9
+}
+
+map MAP56 "ABATTOIR"
+{
+	warptrans = 16
+	next = 17
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 19
+}
+
+map MAP57 "DARK WATCH"
+{
+	warptrans = 17
+	next = 18
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 17
+}
+
+map MAP58 "CLOACA"
+{
+	warptrans = 18
+	next = 19
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 8
+}
+
+map MAP59 "ICE HOLD"
+{
+	warptrans = 19
+	next = 20
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 6
+}
+
+map MAP60 "DARK CITADEL"
+{
+	warptrans = 20
+	next = 1
+	cluster = 3
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 15
+}
+
+// --- Cluster 4 ---
+
+map MAP33 "TRANSIT"
+{
+	warptrans = 33
+	next = 34
+	cluster = 4
+	sky1 = "SKY1", 0
+	sky2 = "SKY4", 0
+	cdtrack = 7
+}
+
+map MAP34 "OVER N UNDER"
+{
+	warptrans = 34
+	next = 35
+	cluster = 4
+	sky1 = "SKY1", 0
+	sky2 = "SKY4", 0
+	cdtrack = 13
+}
+
+map MAP35 "DEATHFOG"
+{
+	warptrans = 35
+	next = 36
+	cluster = 4
+	sky1 = "SKYFOG2", 0.20
+	sky2 = "SKYFOG", 0.60
+	doublesky 
+	fadetable = fogmap
+	cdtrack = 16
+}
+
+map MAP36 "CASTLE OF PAIN"
+{
+	warptrans = 36
+	next = 37
+	cluster = 4
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 9
+}
+
+map MAP37 "SEWER PIT"
+{
+	warptrans = 37
+	next = 38
+	cluster = 4
+	sky1 = "SKY4", 0
+	sky2 = "SKY4", 0
+	cdtrack = 3
+}
+
+map MAP38 "THE ROSE"
+{
+	warptrans = 38
+	next = 36
+	cluster = 4
+	sky1 = "SKY1", 0
+	sky2 = "SKY4", 0
+	cdtrack = 10
+}
+
+map MAP83 "TEST"
+{
+	warptrans = 39
+	next = 37
+	cluster = 4
+	sky1 = "SKY1", 0
+	sky2 = "SKY4", 0
+	cdtrack = 10
 }

@@ -700,7 +700,7 @@ class Demon1Spawner : AetheriusMonsterSpawner replaces Demon1
 		if (random(1,512) <= evolveChance)
 		{
 			evolveChance = A_GetEvolveChance();
-			if (random(1,8912) <= evolveChance)
+			if (random(1,4096) <= evolveChance)
 				return "EtherealChaosSerpentNew";
 			else
 				return "MagmaChaosSerpentNew";
@@ -724,7 +724,7 @@ class Demon2Spawner : AetheriusMonsterSpawner replaces Demon2
 		if (random(1,512) <= evolveChance)
 		{
 			evolveChance = A_GetEvolveChance();
-			if (random(1,8192) <= evolveChance)
+			if (random(1,4096) <= evolveChance)
 				return "EtherealChaosSerpentNew";
 			else
 				return "BlackChaosSerpentNew";
@@ -750,7 +750,7 @@ class AfritSpawner : AetheriusMonsterSpawner replaces FireDemon
 			if (random(1,512) <= evolveChance)
 			{
 				evolveChance = A_GetEvolveChance();
-				if (random(1,1024) <= evolveChance)
+				if (random(1,2048) <= evolveChance)
 					return "FireDemonQueen";
 				else
 					return "FireDemonCommander";
@@ -779,7 +779,7 @@ class BishopSpawner : AetheriusMonsterSpawner replaces Bishop
 			if (random(1,512) <= evolveChance)
 			{
 				evolveChance = A_GetEvolveChance();
-				if (random(1,1024) <= evolveChance)
+				if (random(1,2048) <= evolveChance)
 					return "DarkPatriarch";
 				else
 					return "VampireDVDS";

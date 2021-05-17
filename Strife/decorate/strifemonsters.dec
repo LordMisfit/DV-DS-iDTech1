@@ -39,7 +39,7 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 	Health 31
 	PainChance 200
 	DamageFactor "PoisonBolt", 25.0
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	Speed 8
 	Radius 20
 	Height 56
@@ -348,7 +348,7 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 {
 	Tag "Beggar"
 	DamageFactor "PoisonBolt", 25.0
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	Health 20
 	PainChance 250
 	Speed 3
@@ -602,7 +602,7 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 	Health 75		// 1.25x the HP
 	PainChance 187	// 75% the original pain chance
 	DamageFactor "PoisonBolt", 25.0
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	Speed 10			// 25% more speed than before
 	Radius 20
 	Height 56
@@ -856,7 +856,7 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 225 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 25.0
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	DamageFactor "Fire", 0.875
 	DamageFactor "Ice", 0.9375
 	DamageFactor "Plasma", 1.125
@@ -1323,7 +1323,7 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	DamageFactor "Electric", 1.5
 	DamageFactor "Lightning", 1.5
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	Speed 8
 	Radius 20
 	Height 60
@@ -1512,7 +1512,7 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "Plasma", 1.375
@@ -1685,7 +1685,7 @@ ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 	DamageFactor "Electric", 1.75
 	DamageFactor "Lightning", 1.75
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 3.2
+	DamageFactor "Crush", 0.4 // 3.2
 	Monster
 	+FLOORCLIP
 	+DONTMORPH
@@ -1810,7 +1810,7 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 10
+	DamageFactor "Crush", 1.25 // 10.0
 	DamageFactor "Fire", 0.75
 	DamageFactor "Ice", 0.875
 	DamageFactor "Plasma", 1.375
@@ -1940,7 +1940,7 @@ ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 	DamageFactor "Electric", 1.75
 	DamageFactor "Lightning", 1.75
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 10
+	DamageFactor "Crush", 1.25 // 10.0
 	Speed 16
 	Radius 31
 	Height 25
@@ -2215,7 +2215,7 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 	Painchance "Kick", 0 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 0 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 0.01
+	DamageFactor "Crush", 0.00125 // 0.01
 	DamageFactor "Fire", 0.85
 	DamageFactor "Ice", 0.9375
 	DamageFactor "Plasma", 1.125
@@ -2322,7 +2322,7 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 	Mass 80000
 	Monster
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 1.6
+	DamageFactor "Crush", 0.2 // 1.6
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.5
 	DamageFactor "Plasma", 1.375
@@ -2554,7 +2554,7 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 	DamageFactor "Electric", 2.25
 	DamageFactor "Lightning", 2.25
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 1.6
+	DamageFactor "Crush", 0.2 // 1.6
 	Speed 20
 	FloatSpeed 15
 	Mass 120000
@@ -2815,7 +2815,7 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.625
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	Speed 26
 	FloatSpeed 5
 	Radius 45
@@ -2973,7 +2973,7 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "PoisonBolt", 0.375
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	Speed 8
 	Radius 40
 	Height 56
@@ -3080,7 +3080,7 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 	DamageFactor "Ice", 0.75
 	DamageFactor "SpectralLow", 0.125 // Sigil level 1 can barely hurt them
 	DamageFactor "PoisonBolt", 0.125
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	MaxDropoffHeight 32
 	Tag "$TAG_ORACLE" // "Oracle"
 	DropItem "Meat"
@@ -3130,7 +3130,7 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "PoisonBolt", 0.625
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	Monster
 	-COUNTKILL
 	+NOTDMATCH
@@ -3241,7 +3241,7 @@ ACTOR Macil2New : Macil1New replaces Macil2
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "PoisonBolt", 0.625
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	DamageFactor "SpectralLow", 0.125 // Sigil level 1 cannot hurt them
 	DamageFactor "Sceptre", 1
 	DamageFactor "Magic", 1
@@ -3341,7 +3341,7 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 	DamageFactor "Fire", 0.5
 	DamageFactor "Ice", 0.75
 	DamageFactor "PoisonBolt", 0.625
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	Monster
 	+FLOAT
 	+NOBLOOD
@@ -3498,7 +3498,7 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 
 	DamageFactor "PoisonBolt", 0.0025
-	DamageFactor "Crush", 0.001
+	DamageFactor "Crush", 0.000125 // 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1
@@ -4283,7 +4283,7 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 
-	DamageFactor "Crush", 0.001
+	DamageFactor "Crush", 0.000125 // 0.001
 	DamageFactor "PoisonBolt", 0.025
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
@@ -4463,7 +4463,7 @@ ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
 
 	DamageFactor "PoisonBolt", 0.025
-	DamageFactor "Crush", 0.001
+	DamageFactor "Crush", 0.000125 // 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 1.5
@@ -4662,7 +4662,7 @@ ACTOR EntityAscended : EntityBossNew
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
 
 	DamageFactor "PoisonBolt", 0.025
-	DamageFactor "Crush", 0.001
+	DamageFactor "Crush", 0.000125 // 0.001
 	DamageFactor "Normal", 0.0001 // 0.01% damage from most attacks. :P
 	// After this, set all vulnerablities to what you want them to have to what you want. :P
 	DamageFactor "Sceptre", 0.75

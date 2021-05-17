@@ -42,7 +42,7 @@ class HeresiarchNew : AetheriusBossZSC replaces Heresiarch
 		DamageFactor 0.833;
 		RadiusDamageFactor 0.833;
 		DamageFactor "Explosive", 0.833;
-		DamageFactor "Crush", 2.4;
+		DamageFactor "Crush", 0.3; // 2.4
 		Speed 16;
 		Radius 40;
 		Height 110;

@@ -17,7 +17,7 @@ ACTOR ChickenNew : AetheriusMorphedMonster replaces Chicken
 	RadiusDamageFactor 0.5
 	DamageFactor "Explosion", 0.5
 
-	DamageFactor "Crush", 32
+	DamageFactor "Crush", 4.0 // 32.0
 	Monster
 	-COUNTKILL
 	+WINDTHRUST
@@ -105,7 +105,7 @@ actor HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 255 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 10
+	DamageFactor "Crush", 1.25 // 10.0
 	Monster
 	+FLOAT
 	+NOGRAVITY
@@ -281,7 +281,7 @@ actor HereticImpLeaderNew : HereticImpNew // replaces HereticImpLeader
 	Painchance "Fist", 225 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 225 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 10
+	DamageFactor "Crush", 1.25 // 10.0
 	Species "Gargoyle"
 	-MISSILEMORE
 	+DONTHARMSPECIES
@@ -327,7 +327,7 @@ ACTOR PlagueImp : HereticImpLeaderNew 31026
 {
 	Tag "Plague Gargoyle"
 	Health 120
-	DamageFactor "Crush", 7.6
+	DamageFactor "Crush", 0.95 // 7.6
 	Scale 1
 	Painchance 160
 	Painchance "Fist", 240 // Fist attacks have a +50% chance of stunning an enemy
@@ -520,7 +520,7 @@ ACTOR WatcherImp : HereticImpNew
 	HitObituary "%o was slashed by a Watcher Gargoyle."
 
 	DamageFactor "Fire", 0.5
-	DamageFactor "Crush", 7.6
+	DamageFactor "Crush", 0.95 // 7.6
 	PainChance 50
 	Painchance "Fire", 25 // Fire attacks have a -50% chance of stunning an enemy
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -740,7 +740,7 @@ actor MummyNew : AetheriusMonsterZSC // replaces Mummy
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 192 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	Species "Golem"
 	Monster
 	+FLOORCLIP
@@ -935,7 +935,7 @@ actor MummyLeaderNew : AetheriusMonsterZSC // replaces MummyLeader
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 8
+	DamageFactor "Crush", 1.0 // 8.0
 	Species "Golem"
 	Monster
 	+FLOORCLIP
@@ -1226,7 +1226,7 @@ Actor IceGolem : AetheriusMonsterZSC
 	RadiusDamageFactor 0.578125
 	DamageFactor "Explosion", 0.578125
 
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	DamageFactor "Fire", 1.8
 	DamageFactor "Ice", 0.0
 	Monster
@@ -1435,7 +1435,7 @@ Actor FrostGolem : IceGolem
 	DamageFactor "Explosive", 0.53125
 	RadiusDamageFactor 0.53125
 
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	DamageFactor "Fire", 1.4
 	DamageFactor "Ice", 0.0
 	Monster
@@ -1704,7 +1704,7 @@ ACTOR KnightNew : AetheriusMonsterZSC // replaces Knight
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 7.2
+	DamageFactor "Crush", 0.9 // 7.2
 	MeleeRange 68
 	Monster
 	+FLOORCLIP
@@ -1888,7 +1888,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 	RadiusDamageFactor 0.875
 	DamageFactor "Explosive", 0.875
 	DamageFactor "Holy", 1.75
-	DamageFactor "Crush", 7.2
+	DamageFactor "Crush", 0.9 // 7.2
 	MONSTER
 	+FLOORCLIP 
 	+NOTARGET 
@@ -2220,7 +2220,7 @@ ACTOR WizardNew : AetheriusMonsterZSC // replaces Wizard
 	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 96 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 7.2
+	DamageFactor "Crush", 0.9 // 7.2
 	Monster
 	+FLOAT
 	+NOGRAVITY
@@ -2446,7 +2446,7 @@ ACTOR Banshee : AetheriusMonsterZSC
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Fire", 0.5
-	DamageFactor "Crush", 4.8
+	DamageFactor "Crush", 0.6 // 4.8
 	+FLOAT
 	+NOGRAVITY
 	+DONTOVERLAP
@@ -2744,7 +2744,7 @@ ACTOR IronlichNew : AetheriusMonsterZSC // replaces Ironlich
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 4
+	Damagefactor "Crush", 0.5 // 4.0
 	Monster
 	+NOBLOOD
 	+DONTMORPH
@@ -2853,7 +2853,7 @@ ACTOR IceLich : AetheriusMonsterZSC
 	Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
 	Damagefactor "Ice", 0
 	Damagefactor "Fire", 2
-	DamageFactor "Crush", 4.0
+	Damagefactor "Crush", 0.5 // 4.0
 	speed 6
 	radius 40
 	height 72
@@ -2976,7 +2976,7 @@ ACTOR Goldlich : IronlichNew 31044
 	Painchance "Fist", 12 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 20 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 12 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 4.0
+	Damagefactor "Crush", 0.5 // 4.0
 	SeeSound "goldlich/sight"
 	PainSound "goldlich/pain"
 	DeathSound "goldlich/death"
@@ -3232,7 +3232,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 	Painchance "Kick", 40 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 24 // Fist attacks have a +50% chance of stunning an enemy
 	DamageFactor "Fire", 0.5
-	DamageFactor "Crush", 2.4
+	DamageFactor "Crush", 0.3 // 2.4
 	MONSTER
 	+NOGRAVITY
 	+NOTARGET
@@ -3378,7 +3378,7 @@ ACTOR ClinkNew : AetheriusMonsterZSC //replaces Clink
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Monster
 	+NOBLOOD
 	+FLOORCLIP
@@ -3629,7 +3629,7 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 	RadiusDamageFactor 0.625
 	DamageFactor "Explosive", 0.625
 
-	DamageFactor "Crush", 5.6
+	DamageFactor "Crush", 0.7 // 5.6
 	DamageFactor "Holy", 1.50
 	DamageFactor "Fire", 0.25
 	DamageFactor "Ice", 0.25
@@ -3795,7 +3795,7 @@ ACTOR BeastNew : AetheriusMonsterZSC // replaces Beast
 	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 150 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Monster
 	+FLOORCLIP
 	SeeSound "beast/sight"
@@ -3918,7 +3918,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 256 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 216 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	SEESOUND "shadowbeast/sight"
 	PAINSOUND "shadowbeast/pain"
 	DEATHSOUND "shadowbeast/death"
@@ -4299,7 +4299,7 @@ ACTOR MaulotaurNew : MaulotaurBase replaces Minotaur
 	Painchance "Fist", 38 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 63 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 38 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 2.4
+	DamageFactor "Crush", 0.3 // 2.4
 	MeleeRange 96
 	Monster
 	+DROPOFF
@@ -4553,7 +4553,7 @@ ACTOR SnakeNew : AetheriusMonsterZSC // replaces Snake
 	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 72 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Monster
 	+FLOORCLIP
 	+DONTHARMSPECIES
@@ -4702,7 +4702,7 @@ actor HellGuard : AetheriusMonsterZSC 3114
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 125 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 75 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Mass 750 // 500
 	MONSTER 
 	+FLOORCLIP
@@ -4912,7 +4912,7 @@ actor Serpathor : AetheriusMonsterZSC
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 72 // Fist attacks have a +50% chance of stunning an enemy
 	PainChance "Fire", 12
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	DamageFactor "Fire", 0.25
 	Mass 900 // 500
 	Reactiontime 8
@@ -5091,7 +5091,7 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 	Painchance "Fist", 84 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 140 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 84 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	meleerange 82
 	Monster
 	+BOSS
@@ -5231,7 +5231,7 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 	Painchance "Fist", 48 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 80 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 48 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 0.5
+	DamageFactor "Crush", 0.0625 // 0.5
 	MeleeRange 92
 	Monster
 	+DROPOFF
@@ -5382,7 +5382,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 	Painchance "Fist", 210 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Gauntlets", 210 // Fist attacks have a +50% chance of stunning an enemy
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	Speed 8
 	Scale 0.90
 	Radius 20 
@@ -5619,7 +5619,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 	DamageFactor "Explosive", 0.8
 
 	DamageFactor "Magic", 0.8
-	DamageFactor "Crush", 6.4
+	DamageFactor "Crush", 0.8 // 6.4
 	MONSTER 
 	+FLOORCLIP
 	+NOGRAVITY

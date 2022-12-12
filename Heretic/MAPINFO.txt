@@ -1,5 +1,5 @@
-// Heretic patch MAPINFO
 
+// Heretic patch MAPINFO
 gameinfo
 {
  InfoPage = "HELP1","HELP2"

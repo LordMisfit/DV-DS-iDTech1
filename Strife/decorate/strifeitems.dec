@@ -225,7 +225,7 @@ ACTOR ShadowArmorNew : AetheriusUsableInventory replaces ShadowArmor
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Tag "Shadow Armor: Gives player invisibility for 80 seconds"
 	inventory.maxamount 9999
 	inventory.InterHubAmount 9999

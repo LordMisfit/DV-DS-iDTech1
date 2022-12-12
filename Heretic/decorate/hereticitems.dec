@@ -135,7 +135,7 @@ ACTOR ArtiInvisibilityNew : AetheriusUsableInventory replaces ArtiInvisibility
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	Inventory.RespawnTics 4230
 	Inventory.Icon ARTIINVS

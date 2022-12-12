@@ -839,7 +839,7 @@ actor MummyGhostNew : MummyNew // replaces MummyGhost
 	Tag "Golem (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	DamageFactor "Eldritch", 0.4
 
@@ -1078,7 +1078,7 @@ actor MummyLeaderGhostNew : MummyLeaderNew // replaces MummyLeaderGhost
 	Tag "NitroGolem (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	DamageFactor "Eldritch", 0.4
 
@@ -1233,7 +1233,7 @@ Actor IceGolem : AetheriusMonsterZSC
 	+FLOORCLIP
 	+NOBLOOD
 	+DONTHARMSPECIES
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.8
 	Scale 1.2
 	SeeSound "mummy/sight"
@@ -1332,7 +1332,7 @@ Actor IceGolem : AetheriusMonsterZSC
 			IGLM K 10
 			{
 				user_regencyclemax = 10;
-				A_PlayWeaponSound("misc/freeze");
+				A_StartSound("misc/freeze",CHAN_WEAPON);
 				A_ChangeFlag("CANTSEEK",1);
 				A_ChangeFlag("NOPAIN",1);
 				A_ChangeFlag("DONTTHRUST",1);
@@ -1410,7 +1410,7 @@ Actor IceGolemGhost : IceGolem
 	Tag "Ice Golem (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.32
 	DamageFactor "Eldritch", 0.4
 }
@@ -1442,7 +1442,7 @@ Actor FrostGolem : IceGolem
 	+FLOORCLIP
 	+NOBLOOD
 	+DONTHARMSPECIES
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.8
 	Scale 1.2
 	SeeSound "mummy/sight"
@@ -1551,7 +1551,7 @@ Actor FrostGolem : IceGolem
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				user_randvar1 = random(3,9) * 2;
-				A_PlaySound("IceGuyAttack");
+				A_StartSound("IceGuyAttack");
 				if (levelbehavior && user_monsterlevel > 240) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, ((user_randvar1*4)/2), 0, 1); }
 				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, user_randvar1, 0, 1);
 				if (levelbehavior && user_monsterlevel > 120) { A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 48, 0, 0, 1); }
@@ -1570,7 +1570,7 @@ Actor FrostGolem : IceGolem
 			IGLM K 10
 			{
 				user_regencyclemax = 10;
-				A_PlayWeaponSound("misc/freeze");
+				A_StartSound("misc/freeze",CHAN_WEAPON);
 				A_ChangeFlag("CANTSEEK",1);
 				A_ChangeFlag("NOPAIN",1);
 				A_ChangeFlag("DONTTHRUST",1);
@@ -1648,7 +1648,7 @@ Actor FrostGolemGhost : FrostGolem
 	Tag "Frost Golem (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.32
 	DamageFactor "Eldritch", 0.4
 }
@@ -1670,7 +1670,7 @@ Actor IceGolemParticleA
 	+NoGravity
 	+DontSplash
 	+NoClip
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.0275
 	States
 	{
@@ -1854,7 +1854,7 @@ ACTOR KnightGhostNew : KnightNew // replaces KnightGhost
 	Tag "Undead Warrior (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	DamageFactor "Eldritch", 0.4
 }
@@ -1954,7 +1954,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
-				A_Playsound("monster/dknswg");
+				A_StartSound("monster/dknswg");
 			}
 			DKNT G 6
 			{
@@ -1984,7 +1984,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
-				A_Playsound("monster/kntswg");
+				A_StartSound("monster/kntswg");
 			}
 			DKNT G 5 Bright
 			{
@@ -2173,11 +2173,11 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			Goto See
 		Death:
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
-			DKNT I 0 Bright A_CustomMissile("DKSword",44,32,-90,0)
+			DKNT I 0 Bright A_SpawnProjectile("DKSword",44,32,-90,0)
 			DKNT I 8 Bright 
 			{
-				if (random(1,4) == 1) { A_CustomMissile("EvilWarriorShield",44,-32,90,0); }
-				else { A_CustomMissile("DKShield",44,-32,90,0); }
+				if (random(1,4) == 1) { A_SpawnProjectile("EvilWarriorShield",44,-32,90,0); }
+				else { A_SpawnProjectile("DKShield",44,-32,90,0); }
 			}
 			DKNT J 8 Bright A_Scream 
 			DKNT K 8 Bright
@@ -2202,7 +2202,7 @@ Actor DeathKnightGhost : DeathKnight
 	Tag "Death Knight (Ghost)"
 	+SHADOW
 	+GHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	+DONTHARMSPECIES
 	Species "UndeadWarrior"
@@ -2702,8 +2702,8 @@ ACTOR Banshee : AetheriusMonsterZSC
 			TNT1 A 0 
 			BANS G 2 A_Scream
 			BANS H 2 A_NoBlocking
-			BANS I 2 A_CustomMissile("SpawnFire", 0, 0, 0)
-			BANS I 2 A_CustomMissile("SpawnFire", 0, 0, 0)
+			BANS I 2 A_SpawnProjectile("SpawnFire", 0, 0, 0)
+			BANS I 2 A_SpawnProjectile("SpawnFire", 0, 0, 0)
 			BANS IJKLMNOPQR 2
 			BANS R -1
 			Stop
@@ -3075,7 +3075,7 @@ ACTOR Goldlich : IronlichNew 31044
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
-				A_PlaySound("goldlich/attack2");
+				A_StartSound("goldlich/attack2");
 				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
 			}
 			LICH B 1 A_FaceTarget
@@ -3119,7 +3119,7 @@ ACTOR Goldlich : IronlichNew 31044
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
-				A_PlaySound("goldlich/attack1");
+				A_StartSound("goldlich/attack1");
 
 				user_shotsfired = 0;
 				user_shotsfiredmax = 4 + (user_monsterlevel/45);
@@ -3567,7 +3567,7 @@ ACTOR SabreclawGhostTrail //: AetheriusProjectileZSC
 	Height 56
 	Speed 1
 	Damage 0
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.7
 	PROJECTILE
 	+CLIENTSIDEONLY
@@ -3586,7 +3586,7 @@ ACTOR SabreclawGhostTrail2 //: AetheriusProjectileZSC
 	Height 56
 	Speed 1
 	Damage 0
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.7
 	PROJECTILE
 	+CLIENTSIDEONLY
@@ -3732,13 +3732,13 @@ ACTOR DarkClink : AetheriusMonsterZSC 10000 //Recolour by Bouncy, new (edited) s
 			DCLK Q 8 
 			{
 				A_FaceTarget;
-				A_CustomMissile ("DarkClinkBall",45,12,0,0);
-				A_CustomMissile ("DarkClinkBall",32,-18,0,0);
+				A_SpawnProjectile ("DarkClinkBall",45,12,0,0);
+				A_SpawnProjectile ("DarkClinkBall",32,-18,0,0);
 			}
 			DCLK R 8 
 			{
 				A_FaceTarget;
-				A_CustomMissile ("DarkClinkBall",32,-12,0,0);
+				A_SpawnProjectile ("DarkClinkBall",32,-12,0,0);
 			}
 			Goto See
 
@@ -3924,7 +3924,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 	DEATHSOUND "shadowbeast/death"
 	ACTIVESOUND "shadowbeast/active"
 	Alpha 1.0
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	MONSTER
 	+FloorClip
 	states
@@ -3943,7 +3943,7 @@ ACTOR ShadowBeast : AetheriusMonsterZSC 30123
 			}
 			Loop
 		Run:
-			TNT1 A 0 A_PlaySound("shadowbeast/sight")
+			TNT1 A 0 A_StartSound("shadowbeast/sight")
 			BDEM AABBCCDDEEFFAABBCCDDEEFFAABBCCDDEEFF 3 
 			{
 				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
@@ -4207,7 +4207,7 @@ ACTOR ShadowBeastSpread //: AetheriusProjectileZSC
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_PlaySound ("shadowbeast/spread")
+			TNT1 A 0 A_StartSound("shadowbeast/spread")
 			BDEM JKLMNOP 8
 			BDEM Q 70 
 			BDEM QQQQQQQQQQ 1 A_FadeOut(0.1)
@@ -4219,7 +4219,7 @@ ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 {
 	Tag "Shadow Beast Spirit"
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	Speed 16
 	MONSTER
 	-SOLID
@@ -4231,7 +4231,7 @@ ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_Playsound("shadowbeast/spiritsit")
+			TNT1 A 0 A_StartSound("shadowbeast/spiritsit")
 			Goto See
 		See:
 			TNT1 A 0 A_Jump(60, 5)
@@ -4245,7 +4245,7 @@ ACTOR ShadowBeastCreature : AetheriusSpawnedItem
 			BDSP AB 2 A_CustomMeleeAttack((5 * random(1,8)), "", "", "Magic")
 			Goto See
 		Death:
-			TNT1 A 0 A_Playsound("shadowbeast/spiritdth")
+			TNT1 A 0 A_StartSound("shadowbeast/spiritdth")
 			BDSP EFGHIJ 5
 			Stop
 	}
@@ -4254,7 +4254,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 {
 	Tag "Shadow Beast Spirit"
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	Speed 16
 	MONSTER
 	-SOLID
@@ -4266,7 +4266,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_Playsound("shadowbeast/spiritsit")
+			TNT1 A 0 A_StartSound("shadowbeast/spiritsit")
 			Goto See
 		See:
 			TNT1 A 0 A_Jump(60, 5)
@@ -4280,7 +4280,7 @@ ACTOR ShadowBeastCreatureCrisis : ShadowBeastCreature
 			BDSP AB 2 A_CustomMeleeAttack((5 * random(1,8) * CrisisMultiplier), "", "", "Magic")
 			Goto See
 		Death:
-			TNT1 A 0 A_Playsound("shadowbeast/spiritdth")
+			TNT1 A 0 A_StartSound("shadowbeast/spiritdth")
 			BDSP EFGHIJ 5
 			Stop
 	}
@@ -4984,7 +4984,7 @@ actor Serpathor : AetheriusMonsterZSC
 			Loop
 		Missile:
 			SBTC E 0 A_Jump(128,"MedusaBlast")
-			SBTC E 0 A_PlaySound ("snake/sight", CHAN_VOICE)
+			SBTC E 0 A_StartSound("snake/sight", CHAN_VOICE)
 			SBTC EE 5 
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
@@ -5029,7 +5029,7 @@ actor Serpathor : AetheriusMonsterZSC
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(7); }
 
-				A_PlaySound ("weapons/blastershoot");
+				A_StartSound("weapons/blastershoot");
 				A_MonsterCrisisCheck;
 				A_CrisisSpawnProjectile("MedusaBeam", "MedusaBeamCrisis", 64, 8);
 				A_CrisisSpawnProjectile("MedusaBeam", "MedusaBeamCrisis", 64, -8);
@@ -5206,10 +5206,10 @@ ACTOR DSparilMountedNew : DSparilBase replaces Sorcerer1
 			SRCR F 7 A_Scream
 			SRCR G 7
 			SRCR HIJK 6 
-			SRCR L 25 A_PlaySound("dsparil/zap", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SRCR L 25 A_StartSound("dsparil/zap", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			SRCR MN 5
 			SRCR O 4
-			SRCR L 20 A_PlaySound("dsparil/zap", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SRCR L 20 A_StartSound("dsparil/zap", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			SRCR MN 5
 			SRCR O 4
 			SRCR L 12
@@ -5289,9 +5289,9 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			SOR2 A 0 
 			SOR2 A 0 
 			SOR2 AB 4
-			SOR2 C 4 A_PlaySound("dsparil/rise", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SOR2 C 4 A_StartSound("dsparil/rise", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			SOR2 DEF 4
-			SOR2 G 12 A_PlaySound("dsparil/sight", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SOR2 G 12 A_StartSound("dsparil/sight", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			Goto See
 		Pain:
 			SOR2 Q 3
@@ -5348,15 +5348,15 @@ ACTOR DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1)
 			SDTH A 8 A_Sor2DthInit
 			SDTH B 8
-			SDTH C 8 A_PlaySound("dsparil/scream", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SDTH C 8 A_StartSound("dsparil/scream", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 		DeathLoop:
 			SDTH DE 7
 			SDTH F 7 A_Sor2DthLoop
-			SDTH G 6 A_PlaySound("dsparil/explode", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SDTH G 6 A_StartSound("dsparil/explode", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			SDTH H 6 A_SpawnItemEx("DSparilStaff",0,0,0,random(-12,12),random(-12,12),random(-12,12))
 			SDTH I 18
 			SDTH J 6 A_NoBlocking
-			SDTH K 6 A_PlaySound("dsparil/bones", CHAN_BODY, 1, FALSE, ATTN_NONE)
+			SDTH K 6 A_StartSound("dsparil/bones", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE)
 			SDTH LMN 6 
 			SDTH O -1 A_DVDSBossDeath
 			Stop
@@ -5422,7 +5422,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			{
 				if (levelbehavior && user_monsterlevel > 60) { A_ChangeFlag("AVOIDMELEE",1); }
 
-				A_PlaySound("monster/blur");
+				A_StartSound("monster/blur");
 				A_DVDSChase("Melee","Missile",CHF_FASTCHASE);
 			}
 			DISC AAABBBBAAAABBBB 1
@@ -5439,7 +5439,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			{
 				A_FaceTarget;
 				A_SkullAttack;
-				A_PlaySound("monster/blur");
+				A_StartSound("monster/blur");
 			}
 			DISC AAAAAAAAAAA 1 
 			{
@@ -5453,7 +5453,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			DISC C 1 Bright
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(0); }
-				A_PlaySound("monster/disat1");
+				A_StartSound("monster/disat1");
 			}
 			DISC CC 5 Bright
 			{
@@ -5481,7 +5481,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			DISC E 1 Bright
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(0); }
-				A_PlaySound("monster/disat2");
+				A_StartSound("monster/disat2");
 			}
 			DISC EE 5 Bright
 			{
@@ -5502,7 +5502,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			DISC E 1 Bright
 			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(0); }
-				A_PlaySound("monster/disat2");
+				A_StartSound("monster/disat2");
 			}
 			DISC EE 5 Bright
 			{
@@ -5523,7 +5523,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			DISC E 1 Bright
 		{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(0); }
-				A_PlaySound("monster/disat2");
+				A_StartSound("monster/disat2");
 			}
 			DISC EE 5 Bright
 			{
@@ -5668,7 +5668,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
@@ -5691,7 +5691,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
@@ -5706,7 +5706,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
@@ -5721,7 +5721,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
@@ -5736,7 +5736,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("FireBlast","FireBlastCrisis",30,-10,-4);
@@ -5758,7 +5758,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 			APDP D 4
 			{
 				A_FaceTarget;
-				A_PlaySound("wizard/attack");
+				A_StartSound("wizard/attack");
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("SuperFireBlast","SuperFireBlastCrisis",15,0,0);
@@ -5808,7 +5808,7 @@ ACTOR HereticApprenticeNew : AetheriusMonsterZSC 30000
 			APDP E 4
 			APDP F 4
 			APDP G 3 A_Scream
-			APDP H 3 A_CustomMissile("AoDGhost",8,0,0)
+			APDP H 3 A_SpawnProjectile("AoDGhost",8,0,0)
 			APDP I 3 A_Fall
 			APDP JKL 2
 			TNT1 A 0 
@@ -5842,7 +5842,7 @@ Actor AoDGhost
   Height 1
   Speed 0
   Projectile
-  RenderStyle Translucent
+  RenderStyle "Translucent"
   Alpha 0.75
   +NoClip
   SeeSound "AoD/Ghost"

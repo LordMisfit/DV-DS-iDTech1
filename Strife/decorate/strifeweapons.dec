@@ -126,7 +126,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 	Weapon.AmmoType1 "ElectricBolts"
 	Weapon.SisterWeapon "StrifeCrossbow2New"
 	Inventory.PickupMessage "You picked up the crossbow \cx[Slot 2]\c-"
-	Tag "$TAG_STRIFECROSSBOW1" // "Crossbow"
+	Tag "Crossbow [w/ Electric Bolts]"
 	Inventory.Icon "CBOWA0"
 	ConversationID 194
 
@@ -198,7 +198,7 @@ ACTOR StrifeCrossbowNew : StrifeWeaponBase replaces StrifeCrossbow
 			TNT1 A 0 
 			{
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/xbowshoot",1);
+				A_StartSound("weapons/xbowshoot",1);
 				A_SpreadAuraFireProjectile("ElectricBoltNew",frandom(-(A_GetHitScanXSpread(6)),(A_GetHitScanXSpread(6))),1,"ElectricBolts",0,0,0,0);
 			}
 			XBOW B 6
@@ -355,7 +355,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 	Weapon.AmmoGive1 0
 	Weapon.AmmoType1 "PoisonBolts"
 	Weapon.SisterWeapon "StrifeCrossbowNew"
-	Tag "$TAG_STRIFECROSSBOW2" // "Crossbow"
+	Tag "Crossbow [w/ Poison Bolts]"
 
 	States
 	{
@@ -420,7 +420,7 @@ ACTOR StrifeCrossbow2New : StrifeWeaponBase replaces StrifeCrossbow2
 			TNT1 A 0 
 			{
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/xbowshoot",1);
+				A_StartSound("weapons/xbowshoot",1);
 				A_SpreadAuraFireProjectile("PoisonBoltNew",frandom(-(A_GetHitScanXSpread(6)),(A_GetHitScanXSpread(6))),1,"PoisonBolts",0,0,0,0);
 			}
 			XBOW B 6 

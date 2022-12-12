@@ -37,7 +37,7 @@ class DSparilBase : AetheriusBossZSC
 		{
 			return;
 		}
-		A_PlaySound (AttackSound, CHAN_BODY);
+		A_StartSound(AttackSound, CHAN_BODY);
 		if (CheckMeleeRange ())
 		{
 			if (user_canusecrisisatk == 1) A_PlayCrisisAtkSound();
@@ -194,7 +194,7 @@ class DSparilBase : AetheriusBossZSC
 		{
 			return;
 		}
-		A_PlaySound (AttackSound, CHAN_BODY, 1, false, ATTN_NONE);
+		A_StartSound(AttackSound, CHAN_BODY, 1, false, ATTN_NONE);
 		if (CheckMeleeRange())
 		{
 			if (user_canusecrisisatk == 1) A_PlayCrisisAtkSound(); 

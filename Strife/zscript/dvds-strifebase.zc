@@ -214,7 +214,7 @@ class SpectralMonsterBase : AetheriusBossZSC
 		if (log > 0)
 		{
 			String voc = "svox/voc" .. log;
-			A_PlaySound(voc, CHAN_VOICE);
+			A_StartSound(voc, CHAN_VOICE);
 			player.player.SetLogNumber (log);
 		}
 	}

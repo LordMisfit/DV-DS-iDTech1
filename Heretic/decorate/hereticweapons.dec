@@ -587,7 +587,7 @@ ACTOR GoldWandFX1New : AetheriusProjectileZSC
 	Damage (finaldamagedealt) // 2
 	DamageType "Magic" 
 	Projectile
-	RenderStyle Add
+	RenderStyle "Add"
 	DeathSound "weapons/wandhit"
 	Obituary "$OB_MPPGOLDWAND"
 	States
@@ -633,7 +633,7 @@ ACTOR GoldWandPuff1New : AetheriusProjectileZSC
 	+NOBLOCKMAP
 	+NOGRAVITY
 	+PUFFONACTORS
-	RenderStyle Add
+	RenderStyle "Add"
 	States
 	{
 		Spawn:
@@ -726,7 +726,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				CallACS("StartTensionCountDown");
 			
 				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,1,"GoldWandAmmo");
-				A_PlaySound("weapons/wandhit",1);
+				A_StartSound("weapons/wandhit",1);
 			}
 			GWND D 3
 			{
@@ -752,7 +752,7 @@ ACTOR GoldWandNew : HereticWeaponBase replaces GoldWand
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 				CallACS("StartTensionCountDown");
 			
-				A_PlaySound("weapons/wandhit",1);
+				A_StartSound("weapons/wandhit",1);
 				A_SetAngle(angle-5.625);
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
 				A_SpreadAuraFireBullets(0,0,1,A_GetPlayerAttackDamage(30,1),"GoldWandPuff2New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,0,"");
@@ -832,7 +832,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 				CallACS("StartTensionCountDown");
 			
 				A_SpreadAuraFireBullets(A_GetHitScanXSpread(13),A_GetHitScanYSpread(13),1, A_GetPlayerAttackDamage(29,1), "GoldWandPuff1New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,0,"",0,0,1,"GoldWandAmmo");
-				A_PlaySound("weapons/wandhit",1);
+				A_StartSound("weapons/wandhit",1);
 			}
 			GWN2 E 3
 			{
@@ -858,7 +858,7 @@ ACTOR DualGoldWandNew : GoldWandNew
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 				CallACS("StartTensionCountDown");
 			
-				A_PlaySound("weapons/wandhit",1);
+				A_StartSound("weapons/wandhit",1);
 				A_SetAngle(angle-5.625);
 				A_SpreadAuraFireProjectile("GoldWandFX2New",0,0,"",0,0,0,0);
 				A_SpreadAuraFireBullets(0,0,1,A_GetPlayerAttackDamage(30,1),"GoldWandPuff2New",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,0,"");
@@ -892,7 +892,7 @@ ACTOR CrossbowFX1New : AetheriusProjectileZSC
 	Radius 11
 	Height 8
 	Projectile
-	RenderStyle Add
+	RenderStyle "Add"
 	SeeSound "weapons/bowshoot"
 	DeathSound "weapons/bowhit"
 	Obituary "$OB_MPCROSSBOW"
@@ -1289,7 +1289,7 @@ ACTOR BlasterPuffNew : AetheriusProjectileZSC
 	+NOBLOCKMAP
 	+NOGRAVITY
 	+PUFFONACTORS
-	RenderStyle Add
+	RenderStyle "Add"
 	SeeSound "weapons/blasterhit"
 	States
 	{
@@ -1401,7 +1401,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");	
-				A_PlaySound("weapons/blastershoot",1);
+				A_StartSound("weapons/blastershoot",1);
 				A_SpreadAuraFireBullets(A_GetHitScanXSpread(14),A_GetHitScanYSpread(14),1, A_GetPlayerAttackDamage(27,1),"BlasterPuffNew",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FBLS CB 2
@@ -1424,7 +1424,7 @@ ACTOR DragonClawNew : HereticWeaponBase replaces Blaster
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/blastershoot",1);
+				A_StartSound("weapons/blastershoot",1);
 				A_SpreadAuraFireProjectile("BlasterFX1New",0,5,"BlasterAmmo",0,0,0,0);
 			}
 			FBLS CB 4
@@ -1492,7 +1492,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/blastershoot",1);
+				A_StartSound("weapons/blastershoot",1);
 				A_SpreadAuraFireBullets(A_GetHitScanXSpread(14),A_GetHitScanYSpread(14),1, A_GetPlayerAttackDamage(27,1),"BlasterPuffNew",FBF_NORANDOM|FBF_NORANDOMPUFFZ,FBF_NORANDOM|FBF_NORANDOMPUFFZ,16384,"",0,0,1,"BlasterAmmo");
 			}
 			FDBL FG 2
@@ -1515,7 +1515,7 @@ ACTOR DualDragonClawNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/blastershoot",1);
+				A_StartSound("weapons/blastershoot",1);
 				A_SpreadAuraFireProjectile("BlasterFX1New",0,5,"BlasterAmmo",0,0,0,0);
 			}
 			FDBL FG 4
@@ -1540,7 +1540,7 @@ ACTOR HornRodFX1New : AetheriusProjectileZSC
 	Projectile
 	+WINDTHRUST
 	-NOBLOCKMAP
-	RenderStyle Add
+	RenderStyle "Add"
 	SeeSound "weapons/hornrodshoot"
 	DeathSound "weapons/hornrodhit"
 	Obituary "$OB_MPSKULLROD"
@@ -1695,7 +1695,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/hornrodshoot",1);
+				A_StartSound("weapons/hornrodshoot",1);
 				A_SpreadAuraFireProjectile("HornRodFX1New",0,1,"SkullRodAmmo",0,0,0,0);
 			}
 			HROD B 0 A_ReFire
@@ -1730,7 +1730,7 @@ ACTOR HellStaffNew : HereticWeaponBase replaces SkullRod
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/hornrodpowshoot",1);
+				A_StartSound("weapons/hornrodpowshoot",1);
 				A_SpreadAuraFireProjectile("HornRodFX2New",0,5,"SkullRodAmmo",0,0,1,0);
 			}
 			HROD F 2
@@ -1798,8 +1798,8 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/hornrodshoot",1);
-				A_PlaySound("weapons/hornrodshoot",1);
+				A_StartSound("weapons/hornrodshoot",1);
+				A_StartSound("weapons/hornrodshoot",1);
 				A_SpreadAuraFireProjectile("HornRodFX1New", 3,1,"SkullRodAmmo", 3,0,0,0);
 				A_SpreadAuraFireProjectile("HornRodFX1New",-3,1,"SkullRodAmmo",-3,0,0,0);
 			}
@@ -1835,7 +1835,7 @@ ACTOR DualHellStaffNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/hornrodpowshoot",1);
+				A_StartSound("weapons/hornrodpowshoot",1);
 				A_SpreadAuraFireProjectile("HornRodFX2New", 3,5,"SkullRodAmmo", 3,0,1,0);
 				A_SpreadAuraFireProjectile("HornRodFX2New",-3,5,"SkullRodAmmo",-3,0,1,0);
 			}
@@ -1864,7 +1864,7 @@ ACTOR PhoenixPuff2 : PhoenixPuff
 	+NOTELEPORT
 	+CANNOTPUSH
 	Scale 0.75
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.30
 	States
 	{
@@ -1898,7 +1898,7 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 		Death:
 			TNT1 A 0 
 			{
-				A_PlaySound("weapons/phoenixhit");
+				A_StartSound("weapons/phoenixhit");
 				A_Quake(1, 4, 0, 512, "");
 				A_Quake(4, 4, 0, 256, "");
 			}
@@ -1935,7 +1935,7 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 		Death:
 			TNT1 A 0 
 			{
-				A_PlaySound("weapons/phoenixhit");
+				A_StartSound("weapons/phoenixhit");
 				A_Quake(1, 4, 0, 512, "");
 				A_Quake(4, 4, 0, 256, "");
 			}
@@ -2255,7 +2255,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				{
 					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(-2,2),0,"",random(-2,2),0,1,2);
 				}
-				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
+				A_StartSound("weapons/phoenixpowshoot",1,CHANF_DEFAULT,1.0,ATTN_NORM);
 				A_FlameCount(1,-1);
 				A_FlameCount(2,350);
 			}
@@ -2285,7 +2285,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 					{
 						A_SetInventory("PRMode",1);
 						A_Print("Using Seeking Shots");
-						A_PlaySound("world/lavasizzle",0);
+						A_StartSound("world/lavasizzle",0);
 					}
 				}
 				else
@@ -2293,7 +2293,7 @@ ACTOR PhoenixRodNew : HereticWeaponBase replaces PhoenixRod
 				{
 					A_SetInventory("PRMode",0);
 					A_Print("Using Non-Seeking Shots");
-					A_PlaySound("world/lavasizzle",0);
+					A_StartSound("world/lavasizzle",0);
 				}
 			}
 			PHNX A 8
@@ -2429,8 +2429,8 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(-5,1),0,"",random(-5,1),0,1,2);
 					A_SpreadAuraFireProjectile("PhoenixFX2Seeking",random(1,5),0,"",random(1,5),0,1,2);
 				}
-				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
-				A_PlaySound("weapons/phoenixpowshoot",1,1.0,1);
+				A_StartSound("weapons/phoenixpowshoot",1,CHANF_DEFAULT,1.0,ATTN_NORM);
+				A_StartSound("weapons/phoenixpowshoot",1,CHANF_DEFAULT,1.0,ATTN_NORM);
 				A_FlameCount(1,-1);
 				A_FlameCount(2,350);
 			}
@@ -2461,7 +2461,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 					{
 						A_SetInventory("PRMode",1);
 						A_Print("Using Seeking Shots");
-						A_PlaySound("world/lavasizzle",0);
+						A_StartSound("world/lavasizzle",0);
 					}
 				}
 				else
@@ -2469,7 +2469,7 @@ ACTOR DualPhoenixRodNew : HereticWeaponBase
 				{
 					A_SetInventory("PRMode",0);
 					A_Print("Using Non-Seeking Shots");
-					A_PlaySound("world/lavasizzle",0);
+					A_StartSound("world/lavasizzle",0);
 				}
 			}
 			PHND A 8
@@ -2566,7 +2566,7 @@ ACTOR MaceFX4New : MaceFX4Base
 		Death:
 			TNT1 A 0 
 			{
-				A_PlaySound("weapons/phoenixhit");
+				A_StartSound("weapons/phoenixhit");
 				A_Quake(1, 4, 0, 512, "");
 				A_Quake(4, 4, 0, 256, "");
 			}
@@ -2654,7 +2654,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
 				if (random(1,100) <= 89) 
 				{
 					A_SpreadAuraFireProjectile("MaceFX1New",frandom(-4.21875,4.21875),1,"MaceAmmo",0,0,0,0);
@@ -2695,7 +2695,7 @@ ACTOR FiremaceNew : HereticWeaponBase replaces Mace
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
 				A_SpreadAuraFireProjectile("MaceFX4New",0,5,"MaceAmmo",0,0,1,0);
 			}
 			MACE B 4
@@ -2767,8 +2767,8 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(1); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/maceshoot",1);
-				A_PlaySound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
 				if (random(1,100) <= 89) 
 				{
 					A_SpreadAuraFireProjectile("MaceFX1New",frandom(-6.328125,2.109375),1,"MaceAmmo",frandom(-3,1),0,0,0);
@@ -2810,8 +2810,8 @@ ACTOR DualFiremaceNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 4) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/maceshoot",1);
-				A_PlaySound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
+				A_StartSound("weapons/maceshoot",1);
 				A_SpreadAuraFireProjectile("MaceFX4New", random(4,0),5,"MaceAmmo", random(4,0),0,1,0);
 				A_SpreadAuraFireProjectile("MaceFX4New",random(0,-4),5,"MaceAmmo",random(0,-4),0,1,0);
 			}
@@ -2896,8 +2896,8 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/bowshoot",1);
-				A_PlaySound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  4.0, 0,             "", -14*0.5,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  2.0, 0,             "",   0,  10*0.5, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New", -2.0, 0,             "",   0,  10*0.5, 0, 0);
@@ -2954,10 +2954,10 @@ actor SuperCrossbowNew : HereticWeaponBase 25100
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  0.0, 0,             "",   7*0.5,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  1.0, 0,             "",   0,   4*0.5, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX2New", -1.0, 0,             "",   0,   4*0.5, 0, 0);
@@ -3052,8 +3052,8 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/bowshoot",1);
-				A_PlaySound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  4.0-6.0, 0,             "", (-14*0.5)-3,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  2.0-6.0, 0,             "",   0-3,  (10*0.5), 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New", -2.0-6.0, 0,             "",   0-3,  (10*0.5), 0, 0);
@@ -3069,8 +3069,8 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/bowshoot",1);
-				A_PlaySound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
+				A_StartSound("weapons/bowshoot",1);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  4.0+6.0, 0,             "", (-14*0.5)+3,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New",  2.0+6.0, 0,             "",   0+3,  (10*0.5), 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX3New", -2.0+6.0, 0,             "",   0+3,  (10*0.5), 0, 0);
@@ -3120,10 +3120,10 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
 				CallACS("StartTensionCountDown");
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  0.0-6.0, 0,             "",   (7*0.5)-3,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  1.0-6.0, 0,             "",   0-3,  (4*0.5), 0, 0);
@@ -3149,10 +3149,10 @@ actor DualSuperCrossbowNew : HereticWeaponBase
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
 
 				CallACS("StartTensionCountDown");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
-				A_PlaySound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
+				A_StartSound("weapons/bowshoot");
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  0.0+6.0, 0,             "",   (7*0.5)+3,   0, 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX2New",  1.0+6.0, 0,             "",   0+3,  (4*0.5), 0, 0);
 				A_SpreadAuraFireProjectile("CrossbowFX2New", -1.0+6.0, 0,             "",   0+3,  (4*0.5), 0, 0);
@@ -3203,7 +3203,7 @@ ACTOR Sorcerer2FX1Player : Sorcerer2FX1New
 	-ACTIVATEIMPACT
 	-ACTIVATEPCROSS
 	+FORCERADIUSDMG
-	RenderStyle Add
+	RenderStyle "Add"
 
 	States
 	{
@@ -3236,7 +3236,7 @@ actor Sorcerer2FX3 : AetheriusProjectileZSC
 	Damage (finaldamagedealt) //10
 	DamageType "Magic"
 	PROJECTILE
-	Renderstyle Add
+	RenderStyle "Add"
 
 	States
 	{
@@ -3341,7 +3341,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlayWeaponSound("dsparil/attack");
+				A_StartSound("dsparil/attack",CHAN_WEAPON);
 			}
 			DSTF CD 4 bright
 			{
@@ -3378,7 +3378,7 @@ actor DSparilStaff : HereticWeaponBase 32123
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlayWeaponSound("dsparil/attack");
+				A_StartSound("dsparil/attack",CHAN_WEAPON);
 			}
 			DSTF CD 4 bright
 			{
@@ -3454,7 +3454,7 @@ actor DualDSparilStaff : HereticWeaponBase
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlayWeaponSound("dsparil/attack");
+				A_StartSound("dsparil/attack",CHAN_WEAPON);
 			}
 			DSTD C 4 bright 
 			{
@@ -3465,7 +3465,7 @@ actor DualDSparilStaff : HereticWeaponBase
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlaySound("dsparil/attack",CHAN_AUTO);
+				A_StartSound("dsparil/attack",CHAN_AUTO);
 			}
 			DSTD E 4 bright
 			{
@@ -3510,7 +3510,7 @@ actor DualDSparilStaff : HereticWeaponBase
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlayWeaponSound("dsparil/attack");
+				A_StartSound("dsparil/attack",CHAN_WEAPON);
 			}
 			DSTD C 4 bright
 			{
@@ -3521,7 +3521,7 @@ actor DualDSparilStaff : HereticWeaponBase
 			{
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 3) { A_SetTics(3); }
 				if (CallACS("MiscVarCheckDECORATE",10053) >= 5) { A_SetTics(2); }
-				A_PlayWeaponSound("dsparil/attack");
+				A_StartSound("dsparil/attack",CHAN_WEAPON);
 			}
 			DSTD E 4 bright
 			{

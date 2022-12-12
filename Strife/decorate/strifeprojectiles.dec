@@ -424,9 +424,9 @@ ACTOR EMPGrenade : AetheriusProjectileZSC
 			{
 				A_StartSound("darkinquisitor/empdie");
 				A_ChangeFlag("QUARTERGRAVITY",FALSE);
-				A_ChangeFlag("NOGRAVITY",TRUE);
-				A_ChangeFlag("FORCERADIUSDMG",TRUE);
-				A_ChangeFlag("NOINTERACTION",TRUE);
+				bNOGRAVITY = true;
+				bFORCERADIUSDMG = true;
+				bNOINTERACTION = true;
 				A_Explode(15,40,0);
 				user_boost = 48;
 				user_boost2 = 24;
@@ -493,9 +493,9 @@ ACTOR EMPGrenadeCrisis : EMPGrenade
 			{
 				A_StartSound("darkinquisitor/empdie");
 				A_ChangeFlag("QUARTERGRAVITY",FALSE);
-				A_ChangeFlag("NOGRAVITY",TRUE);
-				A_ChangeFlag("FORCERADIUSDMG",TRUE);
-				A_ChangeFlag("NOINTERACTION",TRUE);
+				bNOGRAVITY = true;
+				bFORCERADIUSDMG = true;
+				bNOINTERACTION = true;
 				A_Explode(15*CrisisMultiplier,40,0);
 				user_boost = 48;
 				user_boost2 = 24;

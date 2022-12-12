@@ -75,8 +75,8 @@ ACTOR ElectricBoltNew : AetheriusProjectileZSC replaces ElectricBolt
 				user_zaptimer++;
 				if ((user_zaptimer % random(3,4)) == 0) 
 				{
-					A_ChangeFlag("FORCERADIUSDMG",0);
-					if (random(1,(8-CallACS("MiscVarCheckDECORATE",10031)) <= 2)) { A_ChangeFlag("FORCERADIUSDMG",1); }
+					bFORCERADIUSDMG = false;
+					if (random(1,(8-CallACS("MiscVarCheckDECORATE",10031)) <= 2)) { bFORCERADIUSDMG = true; }
 					A_Explode(A_GetPlayerAttackDamage(72),(user_zaprad*2),0,0,user_zaprad,0,0,"BulletPuff","Thunder");
 				}
 			}

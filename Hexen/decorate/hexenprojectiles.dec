@@ -2439,7 +2439,7 @@ Actor SorcBall1New : SorcBall1Base replaces SorcBall1
 	States
 	{
 		Death:
-			SBS4 D 0 A_ChangeFlag("NOBOUNCESOUND", 1)
+			SBS4 D 0 { bNOBOUNCESOUND = true; }
 			SBS4 D 5 A_Explode(255, 255)
 			SBS4 E 5
 			SBS4 FGH 6
@@ -2451,7 +2451,7 @@ Actor SorcBall2New : SorcBall2Base replaces SorcBall2
 	States
 	{
 		Death:
-			SBS3 D 0 A_ChangeFlag("NOBOUNCESOUND", 1)
+			SBS3 D 0 { bNOBOUNCESOUND = true; }
 			SBS3 D 5 A_Explode(255, 255)
 			SBS3 E 5
 			SBS3 FGH 6
@@ -2464,7 +2464,7 @@ Actor SorcBall3New : SorcBall3Base replaces SorcBall3
 	States
 	{
 		Death:
-			SBS3 D 0 A_ChangeFlag("NOBOUNCESOUND", 1)
+			SBS3 D 0 { bNOBOUNCESOUND = true; }
 			SBS3 D 5 A_Explode(255, 255)
 			SBS3 E 5
 			SBS3 FGH 6

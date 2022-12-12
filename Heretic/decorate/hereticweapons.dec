@@ -1885,9 +1885,9 @@ ACTOR PhoenixFX1New : PhoenixFX1Base
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
-				A_ChangeFlag("FORCERADIUSDMG",0);
+				bFORCERADIUSDMG = false;
 				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
-				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { bFORCERADIUSDMG = true; }
 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
@@ -1922,9 +1922,9 @@ ACTOR PhoenixFX1NoAOE : PhoenixFX1New // Spread shots of Phoenix Rod, cannot dea
 		Spawn:
 			FX04 A 0 Bright NoDelay 
 			{ 
-				A_ChangeFlag("FORCERADIUSDMG",0);
+				bFORCERADIUSDMG = false;
 				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
-				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { bFORCERADIUSDMG = true; }
 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0); 
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.10)+(WandMastEXPerkLvl*0.25)));
@@ -1957,9 +1957,9 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 		Spawn:
 			FX04 A 0 NoDelay 
 			{
-				A_ChangeFlag("FORCERADIUSDMG",0);
+				bFORCERADIUSDMG = false;
 				user_ignoreaoeimmunity = (WandMastPerkLvl * 1.25) + (WandMastEXPerkLvl * 3.125);
-				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { A_ChangeFlag("FORCERADIUSDMG",1); }
+				if (frandom(0.01,100.00) <= user_ignoreaoeimmunity) { bFORCERADIUSDMG = true; }
 
 				finaldamagedealt = A_GetPlayerAttackDamage(33,0);
 				A_ScaleVelocity(1.00+((WandMastPerkLvl*0.05)+(WandMastEXPerkLvl*0.125)));
@@ -1967,8 +1967,8 @@ ACTOR PhoenixFX1Seeking : PhoenixFX1New
 				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 2;
 				if (user_seekstrength > 0)
 				{
-					A_ChangeFlag("SEEKERMISSILE", true);
-					if (random(1,4) == 1) { A_ChangeFlag("THRUGHOST", false); } else { A_ChangeFlag("THRUGHOST", true); }
+					bSEEKERMISSILE = true;
+					if (random(1,4) == 1) { bTHRUGHOST = false; } else { bTHRUGHOST = true; }
 					
 					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
 					user_specificTarget = A_SelectSeekTargetByShooterAim;
@@ -2013,8 +2013,8 @@ ACTOR PhoenixFX1NoAOESeeking : PhoenixFX1NoAOE
 				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 2;
 				if (user_seekstrength > 0)
 				{
-					A_ChangeFlag("SEEKERMISSILE", true);
-					if (random(1,4) == 1) { A_ChangeFlag("THRUGHOST", false); } else { A_ChangeFlag("THRUGHOST", true); }
+					bSEEKERMISSILE = true;
+					if (random(1,4) == 1) { bTHRUGHOST = false; } else { bTHRUGHOST = true; }
 					
 					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
 					user_specificTarget = A_SelectSeekTargetByShooterAim;
@@ -2086,7 +2086,7 @@ ACTOR PhoenixFX2Seeking : PhoenixFX2Base
 				user_seekstrength = (WandMastPerkLvl + (WandMastEXPerkLvl * 2)) * 4;
 				if (user_seekstrength > 0)
 				{
-					A_ChangeFlag("SEEKERMISSILE", true);
+					bSEEKERMISSILE = true;
 					
 					// When the rocket is first fired, check if it's being aimed at a specific target. If so, lock on to that target.
 					user_specificTarget = A_SelectSeekTargetByShooterAim;

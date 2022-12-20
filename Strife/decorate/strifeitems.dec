@@ -342,7 +342,7 @@ ACTOR MedPatchNew : AetheriusUsableInventory replaces MedPatch // : HealthPickup
 		Spawn:
 			STMP A 0 NoDelay
 			{
-				if (A_CheckFlag("DROPPED","Null")) { }
+				if (bDROPPED) { }
 				else
 				{
 					if (random(1,256) <= 64) { A_SpawnItemEx("MedicinalHerb",0,0,0,0,0,0,0,0,0); }
@@ -379,7 +379,7 @@ ACTOR MedicalKitNew : AetheriusUsableInventory replaces MedicalKit // HealthPick
 		Spawn:
 			MDKT A 0
 			{
-				if (A_CheckFlag("DROPPED","Null")) { }
+				if (bDROPPED) { }
 				else
 				{
 					if (random(1,256) <= 64) { A_SpawnItemEx("MedicinalHerb",0,0,0,0,0,0,0,0,0); }
@@ -413,7 +413,7 @@ ACTOR SurgeryKitNew : AetheriusUsableInventory replaces SurgeryKit // HealthPick
 		Spawn:
 			FULL A 0 NoDelay
 			{
-				if (A_CheckFlag("DROPPED","Null")) { }
+				if (bDROPPED) { }
 				else
 				{
 					if (random(1,256) <= 64) { A_SpawnItemEx("SpecialMedicine",0,0,0,0,0,0,0,0,0); }

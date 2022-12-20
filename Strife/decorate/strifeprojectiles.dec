@@ -581,7 +581,7 @@ actor Shrapnel1 : AetheriusProjectileZSC
 			goto See
 		Alt:
 			SHRP M 0 ThrustThingZ (0, (Random (40, 130)), 0, 1)
-			Stop 
+			Stop
 		See:
 			SHRP L 5
 			SHRP L 5 ThrustThingZ(0,(Random (6, 20)),1,1)
@@ -623,7 +623,7 @@ actor Shrapnel2 : AetheriusProjectileZSC
 			goto See
 		Alt:
 			SHRP N 0 ThrustThingZ (0, (Random (40, 130)), 0, 1)
-			Stop 
+			Stop
 		See:
 			SHRP M 5
 			SHRP M 5 ThrustThingZ(0,(Random (6, 20)),1,1)
@@ -665,7 +665,7 @@ actor Shrapnel3 : AetheriusProjectileZSC
 			goto See
 		Alt:
 			SHRP L 0 ThrustThingZ (0, (Random (40, 130)), 0, 1)
-			Stop 
+			Stop
 		See:
 			SHRP N 5
 			SHRP N 5 ThrustThingZ(0,(Random (6, 20)),1,1)

@@ -698,7 +698,7 @@ ACTOR RedPuff : AetheriusProjectileZSC
 		Spawn:
 			NULL A 3 Bright
 			RPUF ABCDE 3 Bright
-			Stop 
+			Stop
 	}
 }
 
@@ -749,7 +749,6 @@ actor BansheeFire : AetheriusEffectProjectile
 {
 	Tag "Banshee Firewave"
 	Damage (2 * random(1,8))
-	Game Doom
 	SpawnID 51
 	Radius 13
 	Height 8
@@ -2849,7 +2848,7 @@ ACTOR DSFX1
 		Spawn:
 			NULL A 3 Bright
 			CFX2 EFGHI 3 Bright
-			Stop 
+			Stop
 	}
 }
 
@@ -2866,7 +2865,7 @@ ACTOR DSFX2
 		Spawn:
 			NULL A 3 Bright
 			CFX3 HIJK 3 Bright
-			Stop 
+			Stop
 	}
 }
 

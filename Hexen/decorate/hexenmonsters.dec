@@ -618,7 +618,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
@@ -634,7 +634,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
@@ -650,7 +650,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
@@ -666,7 +666,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
@@ -690,7 +690,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",31,10,0);
@@ -699,7 +699,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",28,5,0);
@@ -708,7 +708,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 			{
 				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(2); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Single Projectile
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,0);
@@ -727,7 +727,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				if (levelbehavior && user_monsterlevel > 150) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 75) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("bormereth/missilesimple","SoundSlot5");
+				A_StartSound("bormereth/missilesimple",CHAN_5);
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("BormerethFX1","BormerethFX1Crisis",25,0,20);
@@ -742,7 +742,7 @@ ACTOR Bormereth : AetheriusMonsterZSC
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
 				A_FaceTarget;
 			}
-			TNT1 A 0 A_PlaySoundEx("bormereth/missile2prepare","SoundSlot5")
+			TNT1 A 0 A_StartSound("bormereth/missile2prepare",CHAN_5)
 			TNT1 A 0 A_SpawnItemEx("PossEttFakeFireBall",5,25,64,0,0,0,0,128)
 			BORM EEEEE 5
 			{
@@ -2912,7 +2912,7 @@ ACTOR VampireDVDS : BishopNew
 			VAM1 N 5 
 			VAM1 O 5 
 			VAM1 P -1 
-			Stop 
+			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			VAM1 C 5 A_GenericFreezeDeath
@@ -2965,7 +2965,6 @@ Actor VampireBlur
 
 actor VampireBloodBoom
 {
-	game Doom
 	scale 0.75
 	health 1
 	radius 8
@@ -3003,7 +3002,6 @@ actor VampireBloodBoom
 
 actor VampireBloodSpot
 {
-	game Doom
 	radius 12
 	height 2
 	mass 1
@@ -3031,7 +3029,6 @@ actor VampireBloodSpot
 
 actor VampireBloodTrail
 {
-	game Doom
 	scale 0.70
 	mass 1
 	+LOWGRAVITY

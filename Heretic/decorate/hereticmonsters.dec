@@ -2188,7 +2188,7 @@ ACTOR DeathKnight : AetheriusMonsterZSC 30114
 			DKNT M 8 Bright 
 			DKNT N 8 Bright 
 			DKNT O -1 
-			Stop 
+			Stop
 		Ice:
 			"####" # 0 A_DVDSIceDeath(-2,0,1)
 			DKNT H 5 A_GenericFreezeDeath
@@ -2921,7 +2921,7 @@ ACTOR IceLich : AetheriusMonsterZSC
 				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(18); }
 				else if (levelbehavior && user_monsterlevel > 20) { A_SetTics(19); }
 				A_FaceTarget;
-				A_PlaySoundEx("IceGuyAttack", auto);
+				A_StartSound("IceGuyAttack", CHAN_AUTO);
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 44, 10, 0, 1);
@@ -2937,7 +2937,7 @@ ACTOR IceLich : AetheriusMonsterZSC
 		BreathLoop: // 5 times
 			ILCH B 0 bright 
 			{
-				A_PlaySoundEx("FrostBreath", auto);
+				A_StartSound("FrostBreath", CHAN_AUTO);
 				A_FaceTarget;
 			}
 			ILCH BBB 2 bright
@@ -3292,7 +3292,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
 				A_FaceTarget;
-				A_PlaySoundEx("MageStaffFire", CHAN_AUTO);
+				A_StartSound("MageStaffFire", CHAN_AUTO);
 
 				A_MonsterCrisisCheck; // Multiple Projectiles
 				A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, 10, -2, 1);
@@ -3308,7 +3308,7 @@ ACTOR BloodLich : AetheriusMonsterZSC
 		BreathLoop: // 5
 			BLCH B 0 Bright
 			{
-				A_PlaySoundEx("FlameBreath", CHAN_AUTO);
+				A_StartSound("FlameBreath", CHAN_AUTO);
 				A_FaceTarget;
 			}
 			BLCH BBB 2 Bright 
@@ -5568,7 +5568,7 @@ ACTOR GreaterDisciple : AetheriusMonsterZSC 30117
 			DISC K 5 Bright A_NoBlocking 
 			DISC LMN 4 Bright 
 			DISC O -1 
-			Stop 
+			Stop
 		Raise: 
 			DISC O 5 
 			DISC NMLKJIH 5

@@ -1,3 +1,2 @@
 #include "decorate/strifemonsters.dec"
 #include "decorate/strifeprojectiles.dec"
-#include "decorate/strifeitems.dec"

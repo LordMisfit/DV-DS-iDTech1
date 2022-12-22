@@ -189,28 +189,24 @@ ACTOR PeasantNew : StrifeHumanoidBase replaces Peasant
 ACTOR Peasant1New : PeasantNew replaces Peasant1
 {
 	Tag "Peasant"
-	ConversationID 6
 	Speed 4
 }
 
 ACTOR Peasant2New : PeasantNew replaces Peasant2
 {
 	Tag "Peasant"
-	ConversationID 7
 	Speed 5
 }
 
 ACTOR Peasant3New : PeasantNew replaces Peasant3
 {
 	Tag "Peasant"
-	ConversationID 8
 	Speed 5
 }
 
 ACTOR Peasant4New : PeasantNew replaces Peasant4
 {
 	Tag "Peasant"
-	ConversationID 9
 	Translation 0
 	Speed 7
 }
@@ -218,7 +214,6 @@ ACTOR Peasant4New : PeasantNew replaces Peasant4
 ACTOR Peasant5New : PeasantNew replaces Peasant5
 {
 	Tag "Peasant"
-	ConversationID 10
 	Translation 0
 	Speed 7
 }
@@ -226,7 +221,6 @@ ACTOR Peasant5New : PeasantNew replaces Peasant5
 ACTOR Peasant6New : PeasantNew replaces Peasant6
 {
 	Tag "Peasant"
-	ConversationID 11
 	Translation 0
 	Speed 7
 }
@@ -234,112 +228,96 @@ ACTOR Peasant6New : PeasantNew replaces Peasant6
 ACTOR Peasant7New : PeasantNew replaces Peasant7
 {
 	Tag "Peasant"
-	ConversationID 12
 	Translation 2
 }
 
 ACTOR Peasant8New : PeasantNew replaces Peasant8
 {
 	Tag "Peasant"
-	ConversationID 13
 	Translation 2
 }
 
 ACTOR Peasant9New : PeasantNew replaces Peasant9
 {
 	Tag "Peasant"
-	ConversationID 14
 	Translation 2
 }
 
 ACTOR Peasant10New : PeasantNew replaces Peasant10
 {
 	Tag "Peasant"
-	ConversationID 15
 	Translation 1
 }
 
 ACTOR Peasant11New : PeasantNew replaces Peasant11
 {
 	Tag "Peasant"
-	ConversationID 16
 	Translation 1
 }
 
 ACTOR Peasant12New : PeasantNew replaces Peasant12
 {
 	Tag "Peasant"
-	ConversationID 17
 	Translation 1
 }
 
 ACTOR Peasant13New : PeasantNew replaces Peasant13
 {
 	Tag "Peasant"
-	ConversationID 18
 	Translation 3
 }
 
 ACTOR Peasant14New : PeasantNew replaces Peasant14
 {
 	Tag "Peasant"
-	ConversationID 19
 	Translation 3
 }
 
 ACTOR Peasant15New : PeasantNew replaces Peasant15
 {
 	Tag "Peasant"
-	ConversationID 20
 	Translation 3
 }
 
 ACTOR Peasant16New : PeasantNew replaces Peasant16
 {
 	Tag "Peasant"
-	ConversationID 21
 	Translation 5
 }
 
 ACTOR Peasant17New : PeasantNew replaces Peasant17
 {
 	Tag "Peasant"
-	ConversationID 22
 	Translation 5
 }
 
 ACTOR Peasant18New : PeasantNew replaces Peasant18
 {
 	Tag "Peasant"
-	ConversationID 23
 	Translation 5
 }
 
 ACTOR Peasant19New : PeasantNew replaces Peasant19
 {
 	Tag "Peasant"
-	ConversationID 24
 	Translation 4
 }
 
 ACTOR Peasant20New : PeasantNew replaces Peasant20
 {
 	Tag "Peasant"
-	ConversationID 25
 	Translation 4
 }
 
 ACTOR Peasant21New : PeasantNew replaces Peasant21
 {
 	Tag "Peasant"
-	ConversationID 26
 	Translation 4
 }
 
 ACTOR Peasant22New : PeasantNew replaces Peasant22
 {
 	Tag "Peasant"
-	ConversationID 27
 	Translation 6
 }
 
@@ -477,31 +455,26 @@ ACTOR BeggarNew : StrifeHumanoidBase replaces Beggar // Base Class
 ACTOR Beggar1New : BeggarNew replaces Beggar1 
 {
 	Tag "Beggar"
-	ConversationID 38
 }
 
 ACTOR Beggar2New : BeggarNew replaces Beggar2 
 {
 	Tag "Beggar"
-	ConversationID 39
 }
 
 ACTOR Beggar3New : BeggarNew replaces Beggar3 
 {
 	Tag "Beggar"
-	ConversationID 40
 }
 
 ACTOR Beggar4New : BeggarNew replaces Beggar4 
 {
 	Tag "Beggar"
-	ConversationID 41
 }
 
 ACTOR Beggar5New : BeggarNew replaces Beggar5 
 {
 	Tag "Beggar"
-	ConversationID 42
 }
 
 // MERCHANTS
@@ -562,7 +535,6 @@ ACTOR MerchantNew : AetheriusMonsterZSC replaces Merchant
 ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 {
 	Tag "Weapon Smith"
-	ConversationID 2
 	PainSound "smith/pain"
 	Tag "$TAG_WEAPONSMITH" // "Weapon Smith"
 }
@@ -570,7 +542,6 @@ ACTOR WeaponSmithNew : MerchantNew replaces WeaponSmith
 ACTOR BarKeepNew : MerchantNew replaces BarKeep
 {
 	Tag "Bartender"
-	ConversationID 3
 	Translation 4
 	PainSound "barkeep/pain"
 	ActiveSound "barkeep/active"
@@ -580,7 +551,6 @@ ACTOR BarKeepNew : MerchantNew replaces BarKeep
 ACTOR ArmorerNew : MerchantNew replaces Armorer
 {
 	Tag "Armorer"
-	ConversationID 4
 	Translation 5
 	PainSound "armorer/pain"
 	Tag "$TAG_ARMORER" // "Armorer"
@@ -589,7 +559,6 @@ ACTOR ArmorerNew : MerchantNew replaces Armorer
 ACTOR MedicNew : MerchantNew replaces Medic
 {
 	Tag "Medic"
-	ConversationID 5
 	Translation 6
 	PainSound "medic/pain"
 	Tag "$TAG_MEDIC" // "Medic"
@@ -812,38 +781,32 @@ ACTOR RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 ACTOR Rebel1New : RebelNew replaces Rebel1
 {
 	Tag "Front Rebel"
-	ConversationID 43
 	DropItem "ClipOfBullets"
 }
 
 ACTOR Rebel2New : RebelNew replaces Rebel2
 {
 	Tag "Front Rebel"
-	ConversationID 44
 }
 
 ACTOR Rebel3New : RebelNew replaces Rebel3
 {
 	Tag "Front Rebel"
-	ConversationID 45
 }
 
 ACTOR Rebel4New : RebelNew replaces Rebel4
 {
 	Tag "Front Rebel"
-	ConversationID 46
 }
 
 ACTOR Rebel5New : RebelNew replaces Rebel5
 {
 	Tag "Front Rebel"
-	ConversationID 47
 }
 
 ACTOR Rebel6New : RebelNew replaces Rebel6
 {
 	Tag "Front Rebel"
-	ConversationID 48
 }
 
 // THE ORDER
@@ -1148,7 +1111,6 @@ ACTOR AcolyteNew : StrifeHumanoidBase replaces Acolyte
 ACTOR AcolyteBlueNew : AcolyteNew replaces AcolyteBlue
 {
 	Tag "Order Acolyte"
-	ConversationID 60
 	Health 60
 	Translation 6
 }
@@ -1156,7 +1118,6 @@ ACTOR AcolyteBlueNew : AcolyteNew replaces AcolyteBlue
 ACTOR AcolyteDGreenNew : AcolyteNew replaces AcolyteDGreen
 {
 	Tag "Order Acolyte"
-	ConversationID 57
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	Translation 3
@@ -1165,7 +1126,6 @@ ACTOR AcolyteDGreenNew : AcolyteNew replaces AcolyteDGreen
 ACTOR AcolyteGoldNew : AcolyteNew replaces AcolyteGold
 {
 	Tag "Order Acolyte"
-	ConversationID 58
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	Translation 4
@@ -1174,7 +1134,6 @@ ACTOR AcolyteGoldNew : AcolyteNew replaces AcolyteGold
 ACTOR AcolyteGrayNew : AcolyteNew replaces AcolyteGray
 {
 	Tag "Order Acolyte"
-	ConversationID 56
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	Translation 2
@@ -1183,7 +1142,6 @@ ACTOR AcolyteGrayNew : AcolyteNew replaces AcolyteGray
 ACTOR AcolyteLGreenNew : AcolyteNew replaces AcolyteLGreen
 {
 	Tag "Order Acolyte"
-	ConversationID 59
 	Health 60
 	Translation 5
 }
@@ -1191,7 +1149,6 @@ ACTOR AcolyteLGreenNew : AcolyteNew replaces AcolyteLGreen
 ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
 {
 	Tag "Order Acolyte"
-	ConversationID 54
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	Translation 0
@@ -1200,7 +1157,6 @@ ACTOR AcolyteRedNew : AcolyteNew replaces AcolyteRed
 ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
 {
 	Tag "Order Acolyte"
-	ConversationID 55
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	Translation 1
@@ -1209,7 +1165,6 @@ ACTOR AcolyteRustNew : AcolyteNew replaces AcolyteRust
 ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 {
 	Tag "Shadow Acolyte"
-	ConversationID 61
 	+MISSILEMORE
 	DropItem "ClipOfBullets"
 	States
@@ -1302,7 +1257,6 @@ ACTOR AcolyteShadowNew : AcolyteNew replaces AcolyteShadow
 ACTOR AcolyteTanNew : AcolyteNew replaces AcolyteTan
 {
 	Tag "Order Acolyte"
-	ConversationID 53
 	+MISSILEMORE
 	+MISSILEEVENMORE
 	DropItem "ClipOfBullets"
@@ -1344,7 +1298,6 @@ ACTOR TemplarNew : AetheriusMonsterZSC replaces Templar
 	Obituary "$OB_TEMPLAR" // "%o was vaporized by a Templar."
 	DropItem "EnergyPod"
 	DropItem "Mauler" 1
-	ConversationID 62
 
 	States
 	{
@@ -1534,7 +1487,6 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 	ActiveSound "reaver/active"
 	HitObituary "$OB_REAVERHIT" // "%o was sliced open by a Reaver."
 	Obituary "$OB_REAVER" // "%o was shot down by a Reaver."
-	ConversationID 52
 
 	States
 	{
@@ -1668,7 +1620,6 @@ ACTOR ReaverNew : AetheriusMonsterZSC replaces Reaver
 ACTOR CrusaderNew : AetheriusMonsterZSC replaces Crusader
 {
 	Tag "Order Crusader"
-	ConversationID 63
 	Speed 8
 	Radius 40
 	Height 56
@@ -1836,7 +1787,6 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 	DeathSound "sentinel/death"
 	ActiveSound "sentinel/active"
 	Obituary "$OB_SENTINEL" // "%o was shot down by a Sentinel."
-	ConversationID 91
 
 	States
 	{
@@ -1927,7 +1877,6 @@ ACTOR SentinelNew : AetheriusMonsterZSC replaces Sentinel
 ACTOR OStalkerNew : AetheriusMonsterZSC replaces Stalker
 {
 	Tag "Order Stalker"
-	ConversationID 92
 	Health 80
 	PainChance 40
 	Painchance "Fist", 60 // Fist attacks have a +50% chance of stunning an enemy
@@ -2234,7 +2183,6 @@ ACTOR CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 	+DONTFALL
 	MinMissileChance 150
 	DeathSound "turret/death"
-	ConversationID 92
 
 	States
 	{
@@ -2341,7 +2289,6 @@ ACTOR InquisitorNew : AetheriusMonsterZSC // replaces Inquisitor
 	DeathSound "inquisitor/death"
 	ActiveSound "inquisitor/active"
 	Obituary "$OB_INQUISITOR" // "%o was sentenced by an Inquisitor."
-	ConversationID 93
 
 	States
 	{
@@ -2822,7 +2769,6 @@ ACTOR DarkInquisitor : InquisitorNew 27406
 ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 {
 	Tag "The Programmer"
-	ConversationID 95
 	Health 1100
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -2980,7 +2926,6 @@ ACTOR ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 { 
 	Tag "The Bishop"
-	ConversationID 64
 	Health 500
 	PainChance 128
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
@@ -3081,7 +3026,6 @@ ACTOR StrifeBishopNew : AetheriusMonsterZSC replaces StrifeBishop
 ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 {
 	Tag "The Oracle"
-	ConversationID 65
 	Health 250
 	Radius 15
 	Height 56
@@ -3131,7 +3075,6 @@ ACTOR OracleNew : AetheriusMonsterZSC replaces Oracle
 ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 {
 	Tag "Macil, Leader of the Front"
-	ConversationID 49
 	Health 285
 	Radius 20
 	Height 56
@@ -3244,7 +3187,6 @@ ACTOR Macil1New : AetheriusMonsterZSC replaces Macil1
 ACTOR Macil2New : Macil1New replaces Macil2
 {
 	Tag "Macil, Leader of the Front"
-	ConversationID 50
 	PainChance 200
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
@@ -3814,7 +3756,6 @@ ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 {
 	Tag "The Oracle's Spectre"
-	ConversationID 71
 	Health 1500
 	Mass 500000000
 	PainChance 50

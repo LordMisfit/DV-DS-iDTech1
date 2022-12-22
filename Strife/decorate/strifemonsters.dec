@@ -3346,7 +3346,6 @@ ACTOR Macil2New : Macil1New replaces Macil2
 ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 {
 	Tag "The Loremaster"
-	ConversationID 66
 	Health 800
 	Speed 10
 	Radius 15
@@ -3504,7 +3503,6 @@ ACTOR LoremasterNew : AetheriusMonsterZSC replaces Loremaster
 ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 {
 	Tag "The Programmer's Spectre"
-	ConversationID 67
 	Health 1000
 	PainChance 250
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -3692,7 +3690,6 @@ ACTOR AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 ACTOR AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 {
 	Tag "The Bishop's Spectre"
-	ConversationID 70
 	Health 1200
 	PainChance 50
 	Painchance "Fist", 75 // Fist attacks have a +50% chance of stunning an enemy
@@ -4011,7 +4008,6 @@ ACTOR AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 { 
 	Tag "Macil's Spectre"
-	ConversationID 72
 	Health 1700
 	Mass 500000000
 	PainChance 50
@@ -4153,7 +4149,6 @@ ACTOR AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 {
 	Tag "The Loremaster's Spectre"
-	ConversationID 73
 	Health 2000
 	Mass 500000000
 	PainChance 50
@@ -4290,7 +4285,6 @@ ACTOR AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 {
 	Tag "The Entity: The One God"
-	ConversationID 74
 	Health 2500
 	PainChance 255
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -4469,7 +4463,6 @@ ACTOR EntityBossNew : SpectralMonsterBase replaces EntityBoss
 ACTOR EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 {
 	Tag "Miniature Entity"
-	ConversationID 75
 	Health 990
 	PainChance 255
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -4907,7 +4900,6 @@ actor AlienSpectre1Model : AlienSpectreModel 27401
 	//$Category "DV-DS Strife Patch/Models"
 	Tag "Ghost of The Programmer's Spectre"
 
-	ConversationID 666
 	Health 1000
 }
 
@@ -4918,7 +4910,6 @@ actor AlienSpectre2Model : AlienSpectreModel 27402
 	//$Category "DV-DS Strife Patch/Models"
 	Tag "Ghost of The Bishop's Spectre"
 
-	ConversationID 667
 	Health 1200
 }
 
@@ -4929,7 +4920,6 @@ actor AlienSpectre3Model : AlienSpectreModel 27403
 	//$Category "DV-DS Strife Patch/Models"
 	Tag "Ghost of The Oracle's Spectre"
 
-	ConversationID 668
 	Health 1500
 }
 
@@ -4940,7 +4930,6 @@ actor AlienSpectre4Model : AlienSpectreModel 27404
 	//$Category "DV-DS Strife Patch/Models"
 	Tag "Ghost of Macil's Spectre"
 
-	ConversationID 669
 	Health 1700
 }
 
@@ -4951,7 +4940,6 @@ actor AlienSpectre5Model : AlienSpectreModel 27405
 	//$Category "DV-DS Strife Patch/Models"
 	Tag "Ghost of The Loremaster's Spectre"
 
-	ConversationID 670
 	Health 2000
 }
 
@@ -5204,7 +5192,6 @@ actor OrderCultistBase 27407
 	Alpha 0.666
 	Radius 24 // 24
 	Height 56 // 56
-	ConversationID 671
 	//Monster
 	+SOLID
 	+NODAMAGE
@@ -5259,7 +5246,6 @@ actor TalkToTeiytenth : PlaceholderItem
 { 
  +INVENTORY.KEEPDEPLETED
  Inventory.MaxAmount 1
- ConversationID 672
 }
 
 ACTOR ExplosiveBarrel2New : ExplosiveBarrel2 replaces ExplosiveBarrel2

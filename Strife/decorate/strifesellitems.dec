@@ -1,6 +1,5 @@
 // IMPORTANT: THESE ARE FOR USE BY STRIFE DIALOGxx SCRIPTS TO GIVE THE PLAYER A SPECIFIC AMOUNT OF 
 // GOLD FOR THE RESPECTIVE ITEMS. SINCE ITEMS CAN ONLY BE GIVEN 1 AT A TIME, THIS THE BEST WORKAROUND I HAVE :V
-
 actor BaseSellItem : AetheriusCustomInventory
 {
 	radius 5
@@ -16,7 +15,6 @@ actor BaseSellItem : AetheriusCustomInventory
 // MEDICAL ITEMS
 actor MedicinalHerbSellItem1 : BaseSellItem
 {
-	ConversationID 501 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -33,7 +31,6 @@ actor MedicinalHerbSellItem1 : BaseSellItem
 
 actor StrongMediceneSellItem1 : BaseSellItem
 {
-	ConversationID 502 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -50,7 +47,6 @@ actor StrongMediceneSellItem1 : BaseSellItem
 
 actor SpecialMediceneSellItem1 : BaseSellItem
 {
-	ConversationID 503 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -67,7 +63,6 @@ actor SpecialMediceneSellItem1 : BaseSellItem
 
 actor YggdrasilDewSellItem1 : BaseSellItem
 {
-	ConversationID 504 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -84,7 +79,6 @@ actor YggdrasilDewSellItem1 : BaseSellItem
 
 actor MedPatchSellItem1 : BaseSellItem
 {
-	ConversationID 505 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -101,7 +95,6 @@ actor MedPatchSellItem1 : BaseSellItem
 
 actor MedicalKitSellItem1 : BaseSellItem
 {
-	ConversationID 506 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -118,7 +111,6 @@ actor MedicalKitSellItem1 : BaseSellItem
 
 actor SurgeryKitSellItem1 : BaseSellItem
 {
-	ConversationID 507 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -136,7 +128,6 @@ actor SurgeryKitSellItem1 : BaseSellItem
 // BUFF ITEMS
 actor PaxaPunchSellItem1 : BaseSellItem
 {
-	ConversationID 508 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -153,7 +144,6 @@ actor PaxaPunchSellItem1 : BaseSellItem
 
 actor MercuryBandanaSellItem1 : BaseSellItem
 {
-	ConversationID 509 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -171,7 +161,6 @@ actor MercuryBandanaSellItem1 : BaseSellItem
 // MAGICAL ITEMS
 actor MagicWaterSellItem1 : BaseSellItem
 {
-	ConversationID 510 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -188,7 +177,6 @@ actor MagicWaterSellItem1 : BaseSellItem
 
 actor SageElixirSellItem1 : BaseSellItem
 {
-	ConversationID 511 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -205,7 +193,6 @@ actor SageElixirSellItem1 : BaseSellItem
 
 actor ElfinElixirItem1 : BaseSellItem
 {
-	ConversationID 512 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -223,7 +210,6 @@ actor ElfinElixirItem1 : BaseSellItem
 // UNIQUE ITEMS
 actor EnvironmentalSuitSellItem1 : BaseSellItem
 {
-	ConversationID 513 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -240,7 +226,6 @@ actor EnvironmentalSuitSellItem1 : BaseSellItem
 
 actor TargeterSellItem1 : BaseSellItem
 {
-	ConversationID 514 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -257,7 +242,6 @@ actor TargeterSellItem1 : BaseSellItem
 
 actor DegninOreSellItem1 : BaseSellItem
 {
-	ConversationID 515 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -274,7 +258,6 @@ actor DegninOreSellItem1 : BaseSellItem
 
 actor ShadowArmorSellItem1 : BaseSellItem
 {
-	ConversationID 516 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -291,7 +274,6 @@ actor ShadowArmorSellItem1 : BaseSellItem
 
 actor TeleporterBeaconSellItem1 : BaseSellItem
 {
-	ConversationID 517 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -308,7 +290,6 @@ actor TeleporterBeaconSellItem1 : BaseSellItem
 
 actor ScannerSellItem1 : BaseSellItem
 {
-	ConversationID 520 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -326,7 +307,6 @@ actor ScannerSellItem1 : BaseSellItem
 // VIMSTONE ITEMS
 actor LesserVimstoneSellItem1 : BaseSellItem
 {
-	ConversationID 518 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -343,7 +323,6 @@ actor LesserVimstoneSellItem1 : BaseSellItem
 
 actor GreaterVimstoneSellItem1 : BaseSellItem
 {
-	ConversationID 519 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -360,7 +339,6 @@ actor GreaterVimstoneSellItem1 : BaseSellItem
 
 actor MiraclePotionSellItem1 : BaseSellItem
 {
-	ConversationID 522 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:
@@ -378,7 +356,6 @@ actor MiraclePotionSellItem1 : BaseSellItem
 // OTHER "JUNK"
 actor OfferingChaliceItem1 : BaseSellItem
 {
-	ConversationID 521 // 345+ are unused by Strife, this is for use in DIALOUxx/SCRIPTxx references
 	States
 	{
 		Pickup:

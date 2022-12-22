@@ -1,7 +1,6 @@
 // Bag/Satchel
 ACTOR AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
 {
-	ConversationID 187
 	+FLOORCLIP
 	+DONTGIB
 	Inventory.Icon "I_BKPK"
@@ -141,7 +140,6 @@ ACTOR DegninOrePickup : AetheriusUsableInventory replaces DegninOre
 
 ACTOR DegninOreNew : DegninOre
 {
-	ConversationID 128, 124, 127 // This is also needed for selling the ore to Celoff in MAP02 :V
 	Health 10
 	DamageFactor "Poison", 0.0
 	DamageFactor "PoisonElemental", 0.0
@@ -190,7 +188,6 @@ ACTOR DegninOreNew : DegninOre
 // Others
 ACTOR EnvironmentalSuitNew : AetheriusUsableInventory replaces EnvironmentalSuit // PowerupGiver
 {
-	ConversationID 161, 157, 160
 	+FLOORCLIP
 	+DONTGIB
 	+INVENTORY.INVBAR
@@ -217,7 +214,6 @@ ACTOR EnvironmentalSuitNew : AetheriusUsableInventory replaces EnvironmentalSuit
 
 ACTOR ShadowArmorNew : AetheriusUsableInventory replaces ShadowArmor
 {
-	ConversationID 160, 156, 159
 	+FLOORCLIP
 	+DONTGIB
 	+VISIBILITYPULSE
@@ -246,7 +242,6 @@ ACTOR ShadowArmorNew : AetheriusUsableInventory replaces ShadowArmor
 
 ACTOR TeleporterBeaconNew : AetheriusTeleporterBeaconNew replaces TeleporterBeacon
 {
-	ConversationID 166
 	Health 5
 	Radius 16
 	Height 16
@@ -277,7 +272,6 @@ ACTOR TeleporterBeaconNew : AetheriusTeleporterBeaconNew replaces TeleporterBeac
 
 ACTOR TargeterNew : Targeter replaces Targeter
 {
-	ConversationID 167
 	+FLOORCLIP
 	+DONTGIB
 	+INVENTORY.INVBAR
@@ -299,7 +293,6 @@ ACTOR TargeterNew : Targeter replaces Targeter
 
 ACTOR ScannerNew : Scanner replaces Scanner
 {
-	ConversationID 165
 	+FLOORCLIP
 	+DONTGIB
 	+INVENTORY.KEEPDEPLETED
@@ -321,8 +314,6 @@ ACTOR ScannerNew : Scanner replaces Scanner
 // Medical Items
 ACTOR MedPatchNew : AetheriusUsableInventory replaces MedPatch // : HealthPickup 2011
 {
-	Game Strife
-	ConversationID 125, 121, 124
 	+FLOORCLIP
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
@@ -359,8 +350,6 @@ ACTOR MedPatchNew : AetheriusUsableInventory replaces MedPatch // : HealthPickup
 
 ACTOR MedicalKitNew : AetheriusUsableInventory replaces MedicalKit // HealthPickup 2012
 {
-	Game Strife
-	ConversationID 126, 122, 125
 	+FLOORCLIP
 	+INVENTORY.INVBAR
 	+INVENTORY.KEEPDEPLETED
@@ -396,8 +385,6 @@ ACTOR MedicalKitNew : AetheriusUsableInventory replaces MedicalKit // HealthPick
 
 ACTOR SurgeryKitNew : AetheriusUsableInventory replaces SurgeryKit // HealthPickup 83
 {
-	Game Strife
-	ConversationID 127, 123, 126
 	+FLOORCLIP
 	+DONTGIB
 	+INVENTORY.INVBAR
@@ -861,7 +848,7 @@ ACTOR PhosphorusGrenadeRoundsProp : BaseProp 25018
 }
 
 // Dummy Items
-actor BestEndingFlag : PlaceholderItem { ConversationID 420 }
+actor BestEndingFlag : PlaceholderItem { }
 
 // Special Give Items [dialogue Scripts]
-ACTOR Dialogue500Gold : Coin { ConversationID 421 Inventory.GiveQuest 3 Inventory.Amount 500 }
+ACTOR Dialogue500Gold : Coin { Inventory.GiveQuest 3 Inventory.Amount 500 }

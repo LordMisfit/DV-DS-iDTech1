@@ -3049,3 +3049,458 @@ class Dialogue500Gold : Coin
 		Inventory.Amount 500;
 	}
 }
+
+// PROJECTILES
+// General Bullet Tracers
+class StrifeGenBulletTracer : AetheriusBulletTracerZSC
+{
+	default
+	{
+		Tag "shot";
+		DamageFunction ((Random(1,5) * 3));
+		Damagetype "Bullet";
+		Radius 1;
+		Height 1;
+		Mass 5;
+		Speed 160; // 80
+		PROJECTILE;
+		+DONTREFLECT;
+		+BLOODSPLATTER;
+		+NODAMAGETHRUST;
+		RenderStyle "Add";
+		Alpha 1.0;
+		Scale 0.5;
+		decal "BulletChip";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeGenBulletTracer2 : StrifeGenBulletTracer
+{
+	default
+	{
+		Tag "shot";
+		DamageFunction ((Random(3,15) * 3));
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeGenBulletTracerCrisis : StrifeGenBulletTracer
+{
+	default
+	{
+		DamageFunction ((Random(1,5) * 3) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			CTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5);
+			CTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeGenBulletTracer2Crisis : StrifeGenBulletTracerCrisis
+{
+	default
+	{
+		DamageFunction ((Random(3,15) * 3) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			CTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeGenBulletTracerTrail",6,-2.5);
+			CTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeGenBulletTracerTrail : AetheriusBaseZSC
+{
+	default
+	{
+		Radius 1;
+		Height 1;
+		Speed 0;
+		DamageFunction (0);
+		Projectile;
+		+CLIENTSIDEONLY;
+		+NOINTERACTION;
+		+NOCLIP;
+		+DONTSPLASH;
+		Scale 0.5;
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			CTAC A 2 bright;
+			Stop;
+	}
+}
+
+// Reaver Tracer
+class StrifeReaverBulletTracer : AetheriusBulletTracerZSC
+{
+	default
+	{
+		Tag "shot";
+		DamageFunction ((Random(1,8) * 3));
+		Damagetype "Bullet";
+		Radius 1;
+		Height 1;
+		Mass 5;
+		Speed 160; // 80
+		PROJECTILE;
+		+DONTREFLECT;
+		+BLOODSPLATTER;
+		+NODAMAGETHRUST;
+		RenderStyle "Add";
+		Alpha 1.0;
+		Scale 0.75;
+		//decal "BulletChip";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeReaverBulletTracer2 : StrifeReaverBulletTracer
+{
+	default
+	{
+		Tag "shot";
+		DamageFunction ((Random(3,24) * 3));
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeReaverBulletTracerCrisis : StrifeGenBulletTracer
+{
+	default
+	{
+		DamageFunction ((Random(1,8) * 3) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			CTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5);
+			CTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+
+class StrifeReaverBulletTracer2Crisis : StrifeReaverBulletTracerCrisis
+{
+	default
+	{
+		DamageFunction ((Random(3,24) * 3) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			CTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeReaverBulletTracerTrail",6,-2.5);
+			CTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1; //A_SpawnItem("StrifePuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("StrifePuff");
+			Stop;
+	}
+}
+   
+class StrifeReaverBulletTracerTrail : AetheriusBaseZSC
+{
+	default
+	{
+		Radius 1;
+		Height 1;
+		Speed 0;
+		DamageFunction (0);
+		Projectile;
+		+CLIENTSIDEONLY;
+		+NOINTERACTION;
+		+NOCLIP;
+		+DONTSPLASH;
+		Scale 0.75;
+		RenderStyle "Add";
+	}
+	States
+	{
+		Spawn:
+			CTAC A 2 bright;
+			Stop;
+	}
+}
+
+// Mauler Tracers
+class StrifeMaulerTracer : AetheriusBulletTracerZSC
+{
+	default
+	{
+		Tag "Mauler shot";
+		DamageFunction ((Random(1,4) * 2));
+		Damagetype "Disintegrate";
+		Radius 1;
+		Height 1;
+		Mass 5;
+		Speed 160; // 80
+		PROJECTILE;
+		+DONTREFLECT;
+		+BLOODSPLATTER;
+		+NODAMAGETHRUST;
+		RenderStyle "Add";
+		Alpha 1.0;
+		Scale 0.5;
+		//decal "BulletChip";
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+	}
+}
+
+class StrifeMaulerTracer2 : StrifeMaulerTracer
+{
+	default
+	{
+		Tag "Mauler shot";
+		DamageFunction ((Random(3,12) * 2));
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5);
+			Loop;
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+	}
+}
+   
+class StrifeMaulerTracerCrisis : StrifeMaulerTracer
+{
+	default
+	{
+		DamageFunction ((Random(1,4) * 2) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			GTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5);
+			GTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+	}
+}
+
+class StrifeMaulerTracer2Crisis : StrifeMaulerTracerCrisis
+{
+	default
+	{
+		DamageFunction ((Random(3,12) * 2) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright;
+			GTAC A 0 bright A_GenerateCrisisParticle();
+		Idle:
+			TNT1 A 1 bright A_SpawnTracerTrail("StrifeMaulerTracerTrail",6,-2.5);
+			GTAC A 0 bright A_GenerateCrisisParticle();
+			Loop;
+		XDeath:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("MaulerPuff");
+			Stop;
+	}
+}
+
+class StrifeMaulerTracerRetail : StrifeMaulerTracer
+{
+	default
+	{
+		Tag "Mauler shot";
+		DamageFunction ((Random(1,5) * 3));
+	}
+}
+
+class StrifeMaulerTracerRetail2 : StrifeMaulerTracerRetail
+{
+	default
+	{
+		Tag "Mauler shot";
+		DamageFunction ((Random(3,15) * 3));
+	}
+}
+
+class StrifeMaulerTracerRetailCrisis : StrifeMaulerTracer
+{
+	default
+	{
+		DamageFunction ((Random(1,5) * 3) * CrisisMultiplier);
+	}
+}
+
+class StrifeMaulerTracerRetail2Crisis : StrifeMaulerTracerRetailCrisis
+{
+	default
+	{
+		DamageFunction ((Random(3,15) * 3) * CrisisMultiplier);
+	}
+}
+
+class StrifeMaulerTracerTrail : AetheriusBaseZSC
+{
+	default
+	{
+		Radius 1;
+		Height 1;
+		Speed 0;
+		DamageFunction (0);
+		Projectile;
+		+CLIENTSIDEONLY;
+		+NOINTERACTION;
+		+NOCLIP;
+		+DONTSPLASH;
+		Scale 0.5;
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			GTAC A 2 bright;
+			Stop;
+	}
+}

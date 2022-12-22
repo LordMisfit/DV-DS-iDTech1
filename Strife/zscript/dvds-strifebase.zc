@@ -11,14 +11,15 @@ class SpectralMonsterBase : AetheriusBossZSC
 	override void Touch (Actor toucher)
 	{
 		int dmg = (random(1,256) & 9) * 5;
-		if (CheckClass("AlienSpectre1New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 5;
-		if (CheckClass("AlienSpectre2New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * random(5,6);
-		if (CheckClass("AlienSpectre3New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 6;
-		if (CheckClass("AlienSpectre4New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * random(6,7);
-		if (CheckClass("AlienSpectre5New", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 7;
-		if (CheckClass("EntityBossNew", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 10) * 7;
-		if (CheckClass("EntitySecondNew", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 9) * 6;
-		if (CheckClass("EntityAscended", AAPTR_DEFAULT) == 1) dmg = (random(1,256) & 11) * 8;
+		string dname = GetClassName();
+		if (dname == "AlienSpectre1New") dmg = (random(1,256) & 9) * 5;
+		if (dname == "AlienSpectre2New") dmg = (random(1,256) & 9) * random(5,6);
+		if (dname == "AlienSpectre3New") dmg = (random(1,256) & 9) * 6;
+		if (dname == "AlienSpectre4New") dmg = (random(1,256) & 9) * random(6,7);
+		if (dname == "AlienSpectre5New") dmg = (random(1,256) & 9) * 7;
+		if (dname == "EntityBossNew") dmg = (random(1,256) & 10) * 7;
+		if (dname == "EntitySecondNew") dmg = (random(1,256) & 9) * 6;
+		if (dname == "EntityAscended") dmg = (random(1,256) & 11) * 8;
 		dmg /= 5;
 		A_MonsterCrisisCheck(); // Spectres/Entity - Touch Damage
 		if (user_canusecrisisatk == 1) 

@@ -106,7 +106,7 @@ class KoraxBase : AetheriusBossZSC
 		if (User_MaxHP <= 0) teleporthealth = SpawnHealth()/2; else teleporthealth = User_MaxHP/2;
 		if ((!special2) && (health <= (teleporthealth)))
 		{
-			ActorIterator it = ActorIterator.Create(KORAX_FIRST_TELEPORT_TID);
+			ActorIterator it = level.CreateActorIterator(KORAX_FIRST_TELEPORT_TID);
 			Actor spot = it.Next ();
 			if (spot != null)
 			{
@@ -137,7 +137,7 @@ class KoraxBase : AetheriusBossZSC
 		{
 			if (random[KoraxChase]() < 10)
 			{
-				ActorIterator it = ActorIterator.Create(KORAX_TELEPORT_TID);
+				ActorIterator it = level.CreateActorIterator(KORAX_TELEPORT_TID);
 				Actor spot;
 
 				if (tracer != null)

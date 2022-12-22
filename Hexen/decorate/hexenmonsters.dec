@@ -3819,7 +3819,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
-				A_PlaySoundEx("SerpentActive", "Body");
+				A_StartSound("SerpentActive",CHAN_BODY);
 			}
 			SSDV F 3
 			{
@@ -3849,7 +3849,7 @@ ACTOR StalkerNew : AetheriusMonsterZSC // replaces Serpent
 			SSPT A 1 
 			{
 				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(0); }
-				A_PlaySoundEx("SerpentBirth", "Voice");
+				A_StartSound("SerpentBirth",CHAN_VOICE);
 			}
 			SSPT B 3
 			{
@@ -4070,7 +4070,7 @@ ACTOR IceStalker : StalkerNew
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
-				A_PlaySoundEx("SerpentActive", "Body");
+				A_StartSound("SerpentActive",CHAN_BODY);
 			}
 			ISDV F 3
 			{
@@ -4097,7 +4097,7 @@ ACTOR IceStalker : StalkerNew
 		Melee:
 			TNT1 A 0
 			ISPT A 1 A_UnHideThing
-			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+			ISPT A 1 A_StartSound("SerpentBirth",CHAN_VOICE)
 			ISPT B 3 
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
@@ -4266,7 +4266,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
-				A_PlaySoundEx("SerpentActive", "Body");
+				A_StartSound("SerpentActive",CHAN_BODY);
 			}
 			ISDV F 3
 			{
@@ -4293,7 +4293,7 @@ ACTOR IceStalkerLeader : StalkerLeaderNew
 		Melee:
 			TNT1 A 0
 			ISPT A 1 A_UnHideThing
-			ISPT A 1 A_PlaySoundEx("SerpentBirth", "Voice")
+			ISPT A 1 A_StartSound("SerpentBirth",CHAN_VOICE)
 			ISPT B 3 
 			{
 				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }

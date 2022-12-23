@@ -1,3 +1,8 @@
+DoomEdNums
+{
+	26906 = RandomHereticWeapon
+	26907 = RandomHereticWeapon2
+}
 
 // Heretic patch MAPINFO
 gameinfo

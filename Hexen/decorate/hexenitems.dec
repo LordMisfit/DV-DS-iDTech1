@@ -9,7 +9,7 @@ ACTOR ArtiPorkNew : AetheriusBaseCustomInventoryZSC replaces ArtiPork
 	+COUNTITEM
 	+FLOATBOB
 	+INVENTORY.INVBAR
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.KEEPDEPLETED
 	Inventory.Icon "ARTIPORK"
 	Inventory.PickupSound "misc/p_pkup"
@@ -186,7 +186,7 @@ ACTOR ArtiInvulnerability2New : AetheriusUsableInventory replaces ArtiInvulnerab
 	+COUNTITEM
 	+FLOATBOB
 	+INVENTORY.INVBAR
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
@@ -217,7 +217,7 @@ ACTOR ArtiHealingRadiusNew : AetheriusUsableInventory replaces ArtiHealingRadius
 	inventory.InterHubAmount 9999
 
 	+INVENTORY.INVBAR
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED
@@ -718,7 +718,7 @@ ACTOR ArtiHealthNew : AetheriusUsableInventory replaces ArtiHealth
 	+DONTGIB
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.INVBAR
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
@@ -746,7 +746,7 @@ ACTOR ArtiSuperHealthNew : AetheriusUsableInventory replaces ArtiSuperHealth
 	+DONTGIB
 	+COUNTITEM
 	+FLOATBOB
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.INVBAR
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
@@ -776,7 +776,7 @@ ACTOR ArtiBoostManaNew : AetheriusUsableInventory replaces ArtiBoostMana
 	+NOGRAVITY
 	+COUNTITEM
 	+INVENTORY.INVBAR
-	+INVENTORY.PICKUPFLASH
+	Inventory.Pickupflash "PickupFlash"
 	+INVENTORY.HUBPOWER
 	+INVENTORY.PERSISTENTPOWER
 	+INVENTORY.KEEPDEPLETED

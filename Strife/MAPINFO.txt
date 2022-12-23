@@ -137,6 +137,15 @@ ConversationIDs
 	25016 = EnergyPackProp
 	25017 = HEGrenadeRoundsProp
 	25018 = PhosphorusGrenadeRoundsProp
+	
+	27401 = AlienSpectre1Model
+	27402 = AlienSpectre2Model
+	27403 = AlienSpectre3Model
+	27404 = AlienSpectre4Model
+	27405 = AlienSpectre5Model
+	27406 = DarkInquisitor
+	27407 = OrderCultistBase
+	32544 = WoodenBarrel2
 }
 
 gameinfo

@@ -1,10 +1,17 @@
 DoomEdNums
 {
+	3114 = HellGuard
+	10000 = DarkClink
 	25100 = SuperCrossbowNew
 
 	26906 = RandomHereticWeapon
 	26907 = RandomHereticWeapon2
 	
+	30000 = HereticApprenticeNew
+	30114 = DeathKnight
+	30117 = GreaterDisciple
+	30123 = ShadowBeast
+	31044 = Goldlich
 	31026 = PlagueImp
 	
 	32123 = DSparilStaff

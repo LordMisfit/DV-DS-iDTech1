@@ -1574,7 +1574,7 @@ Actor FireDemonLeader : FireDemonNew
 	}
 }
 
-Actor FireDemonLeaderSplotch1
+Actor FireDemonLeaderSplotch1 : AetheriusBaseZSC
 {
 	Health 1000
 	ReactionTime 8
@@ -1746,7 +1746,7 @@ Actor FireDemonCommander : FireDemonNew
 	}
 }
 
-Actor FireDemonCommanderSplotch1
+Actor FireDemonCommanderSplotch1 : AetheriusBaseZSC
 {
 	Health 1000
 	ReactionTime 8
@@ -2002,7 +2002,7 @@ actor FireDemonQueenClone : FireDemonQueen
 	}
 }
 
-Actor FireDemonQueenSplotch1
+Actor FireDemonQueenSplotch1 : AetheriusBaseZSC
 {
 	Health 1000
 	ReactionTime 8
@@ -2423,7 +2423,7 @@ Actor DarkDisciple : BishopNew
 	}
 }
 
-Actor DisciplePainBlur
+Actor DisciplePainBlur : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -2437,7 +2437,7 @@ Actor DisciplePainBlur
 	}
 }
 
-Actor DiscipleBlur
+Actor DiscipleBlur : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -2452,7 +2452,7 @@ Actor DiscipleBlur
 	}
 }
 
-Actor EtherealBloodPurple
+Actor EtherealBloodPurple : AetheriusBaseZSC
 {
 	+NoClip
 	+NoBlockMap
@@ -2484,7 +2484,7 @@ Actor EtherealBloodPurple
 	}
 }
 
-Actor EtherealBloodPurpleParticle
+Actor EtherealBloodPurpleParticle : AetheriusBaseZSC
 {
 	Height 0
 	Radius 0
@@ -2853,7 +2853,7 @@ actor FVampire : VampireDVDS
 	dropitem "NoItemSpawn", 1
 }
 
-Actor VampirePainBlur
+Actor VampirePainBlur : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -2868,7 +2868,7 @@ Actor VampirePainBlur
 	}
 }
 
-Actor VampireBlur
+Actor VampireBlur : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -2884,7 +2884,7 @@ Actor VampireBlur
 	}
 }
 
-actor VampireBloodBoom
+actor VampireBloodBoom : AetheriusBaseZSC
 {
 	scale 0.75
 	health 1
@@ -2921,7 +2921,7 @@ actor VampireBloodBoom
 	}
 }
 
-actor VampireBloodSpot
+actor VampireBloodSpot : AetheriusBaseZSC
 {
 	radius 12
 	height 2
@@ -2948,7 +2948,7 @@ actor VampireBloodSpot
 	}
 }
 
-actor VampireBloodTrail
+actor VampireBloodTrail : AetheriusBaseZSC
 {
 	scale 0.70
 	mass 1
@@ -2966,7 +2966,7 @@ actor VampireBloodTrail
 	}
 }
 
-Actor VampCloudSpawner
+Actor VampCloudSpawner : AetheriusBaseZSC
 {
 	radius 0
 	height 0
@@ -2986,7 +2986,7 @@ Actor VampCloudSpawner
 	}
 }
 
-Actor VampCloud
+Actor VampCloud : AetheriusBaseZSC
 {
 	RenderStyle "Translucent"
 	alpha 0.9
@@ -3015,7 +3015,7 @@ Actor VampCloud
 	}
 }
 
-Actor BatCloudSpawner
+Actor BatCloudSpawner : AetheriusBaseZSC
 {
 	radius 0
 	height 0
@@ -3035,7 +3035,7 @@ Actor BatCloudSpawner
 	}
 }
 
-Actor BatCloud
+Actor BatCloud : AetheriusBaseZSC
 {
 	RenderStyle "Translucent"
 	alpha 0.9
@@ -3282,7 +3282,7 @@ Actor PatriarchRadiusHeal : AetheriusCustomInventory
 }
 */
 
-Actor PatriarchPainBlur
+Actor PatriarchPainBlur : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -3299,7 +3299,7 @@ Actor PatriarchPainBlur
 	}
 }
 
-Actor PatriarchBlur
+Actor PatriarchBlur : AetheriusBaseZSC
 {
 	PROJECTILE
 	+RIPPER
@@ -3430,7 +3430,7 @@ Actor DarkPatriarchClone : DarkPatriarch
 	}
 }
 
-Actor PatriarchBlurClone
+Actor PatriarchBlurClone : AetheriusBaseZSC
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -3618,7 +3618,7 @@ ACTOR PatriarchRainFXCrisis : PatriarchRainFX
 	}
 }
 
-ACTOR PatriarchShot
+ACTOR PatriarchShot : AetheriusBaseZSC
 {
 	Tag "Patriarch Shot"
 	Radius 10
@@ -3646,7 +3646,7 @@ ACTOR PatriarchShot
 	}
 }
 
-ACTOR DPFX1
+ACTOR DPFX1 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2

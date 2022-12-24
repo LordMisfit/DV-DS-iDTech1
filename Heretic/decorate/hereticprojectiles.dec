@@ -2598,7 +2598,7 @@ ACTOR MedusabeamCrisis : Medusabeam
 	Decal "CrossbowScorch2"
 }
 
-ACTOR MBSpark
+ACTOR MBSpark : AetheriusBaseZSC
 {
   Radius 2
   Height 2
@@ -2613,7 +2613,7 @@ ACTOR MBSpark
   }
 }
 
-ACTOR MBSparkCrisis
+ACTOR MBSparkCrisis : AetheriusBaseZSC
 {
   Radius 2
   Height 2
@@ -2738,7 +2738,7 @@ ACTOR DiscipleShot2Crisis : DiscipleShot2
 	}
 }
 
-ACTOR DSFX1
+ACTOR DSFX1 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -2755,7 +2755,7 @@ ACTOR DSFX1
 	}
 }
 
-ACTOR DSFX2
+ACTOR DSFX2 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2

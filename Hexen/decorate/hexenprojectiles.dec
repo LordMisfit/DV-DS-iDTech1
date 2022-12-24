@@ -1007,7 +1007,7 @@ Actor FireDemonLeaderMissileCrisis : FireDemonLeaderMissile
 	}
 }
 
-ACTOR FireDemonLeaderTrail1
+ACTOR FireDemonLeaderTrail1 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -1034,8 +1034,7 @@ ACTOR FireDemonLeaderTrail1
 			Stop
 	}
 }
-
-ACTOR FireDemonLeaderTrail2
+ACTOR FireDemonLeaderTrail2 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -1108,7 +1107,7 @@ Actor FireDemonCommanderMissileCrisis : FireDemonCommanderMissile
 	}
 }
 
-ACTOR FireDemonCommanderTrail1
+ACTOR FireDemonCommanderTrail1 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -1135,8 +1134,7 @@ ACTOR FireDemonCommanderTrail1
 			Stop
 	}
 }
-
-ACTOR FireDemonCommanderTrail2
+ACTOR FireDemonCommanderTrail2 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -1326,7 +1324,7 @@ Actor FireDemonQueenCloneMissileCrisis : FireDemonQueenMissileCrisis
 	}
 }
 
-ACTOR FireDemonQueenTrail1
+ACTOR FireDemonQueenTrail1 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -1353,8 +1351,7 @@ ACTOR FireDemonQueenTrail1
 			Stop
 	}
 }
-
-ACTOR FireDemonQueenTrail2
+ACTOR FireDemonQueenTrail2 : AetheriusBaseZSC
 {   
 	Radius 2
 	Height 2
@@ -2617,7 +2614,6 @@ actor ThrustFloorUpDVDS : ThrustFloorDVDS replaces ThrustFloorUp
 			Goto ThrustInit2
 	}
 }
-
 actor ThrustFloorDownDVDS : ThrustFloorDVDS replaces ThrustFloorDown
 {
 	+NOTELEPORT

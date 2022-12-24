@@ -1,3 +1,2 @@
 #include "decorate/hereticmonsters.dec"
 #include "decorate/hereticprojectiles.dec"
-#include "decorate/hereticweapons.dec"

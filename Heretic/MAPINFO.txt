@@ -4,6 +4,9 @@ DoomEdNums
 
 	26906 = RandomHereticWeapon
 	26907 = RandomHereticWeapon2
+	
+	31026 = PlagueImp
+	
 	32123 = DSparilStaff
 }
 

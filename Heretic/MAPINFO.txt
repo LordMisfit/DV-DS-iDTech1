@@ -1,7 +1,10 @@
 DoomEdNums
 {
+	25100 = SuperCrossbowNew
+
 	26906 = RandomHereticWeapon
 	26907 = RandomHereticWeapon2
+	32123 = DSparilStaff
 }
 
 // Heretic patch MAPINFO

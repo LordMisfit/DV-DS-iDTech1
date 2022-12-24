@@ -2026,6 +2026,7 @@ class SorcFX4Base : AetheriusProjectileZSC
 		}
 	}
 }
+
 // MONSTER SPAWNERS
 
 // Ettin

@@ -1327,3 +1327,578 @@ class BagOfHoldingNew : AetheriusCustomInventory replaces BagOfHolding
 			Stop;
 	}
 }
+
+// ****************
+// ***** AMMO *****
+// ****************
+class GoldWandAmmoNew : GoldWandAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 10; Inventory.PickupMessage "Wand crystal [+10 Crystal Wand]"; } }
+class GoldWandHeftyNew : GoldWandHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 50; Inventory.PickupMessage "Crystal geode [+50 Crystal Wand]"; } }
+class CrossbowAmmoNew : CrossbowAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 4; Inventory.PickupMessage "Ethereal arrows [+4] (Super) Ethereal Crossbow"; } }
+class CrossbowHeftyNew : CrossbowHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 20; Inventory.PickupMessage "Quiver of ethereal arrows [+20] (Super) Ethereal Crossbow"; } }
+class BlasterAmmoNew : BlasterAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 10; Inventory.PickupMessage "Claw orb [+10 Dragon Claw]"; } }
+class BlasterHeftyNew : BlasterHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 50; Inventory.PickupMessage "Energy orb [+50 Dragon Claw]"; } }
+class PhoenixRodAmmoNew : PhoenixRodAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 1; Inventory.PickupMessage "Flame orb [+1 Phoenix Rod]"; } }
+class PhoenixRodHeftyNew : PhoenixRodHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 10; Inventory.PickupMessage "Inferno Orb [+10 Phoenix Rod]"; } }
+class MaceAmmoNew : MaceAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 20; Inventory.PickupMessage "Mace Spheres [+20 Firemace]"; } }
+class MaceHeftyNew : MaceHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 100; Inventory.PickupMessage "Pile of mace spheres [+100 Firemace]"; } }
+class SkullRodAmmoNew : SkullRodAmmo { default { +DONTGIB; +BRIGHT; Inventory.Amount 20; Inventory.PickupMessage "Lesser Runes [+20 Hellstaff]"; } }
+class SkullRodHeftyNew : SkullRodHefty { default { +DONTGIB; +BRIGHT; Inventory.Amount 100; Inventory.PickupMessage "Greater Runes [+100 Hellstaff]"; } }
+
+// **************************
+// ***** AMMO REPLACERS *****
+// **************************
+class GoldWandAmmoSpawner : GoldWandAmmo replaces GoldWandAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("GoldWandNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualGoldWandNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("GoldWandAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("GoldWandAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("GoldWandAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("GoldWandAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class GoldWandHeftySpawner : GoldWandHefty replaces GoldWandHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("GoldWandNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("GoldWandNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualGoldWandNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualGoldWandNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("GoldWandHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("GoldWandHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("GoldWandHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("GoldWandHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class CrossbowAmmoSpawner : CrossbowAmmo replaces CrossbowAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("CrossbowNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualCrossbowNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+						{
+							if (random(1,2048) <= 1)
+							{
+								A_SpawnItemEx("SuperCrossbowNew");
+								A_FadeOut(1,1);
+							}
+						}
+						else
+						{
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+							{
+								if (random(1,4096) <= 1)
+								{
+									A_SpawnItemEx("DualSuperCrossbowNew");
+									A_FadeOut(1,1);
+								}
+							}
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("CrossbowAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("CrossbowAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("CrossbowAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("CrossbowAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class CrossbowHeftySpawner : CrossbowHefty replaces CrossbowHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("CrossbowNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("CrossbowNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualCrossbowNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualCrossbowNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("SuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+						{
+							if (random(1,2048) <= 1)
+							{
+								A_SpawnItemEx("SuperCrossbowNew");
+								A_FadeOut(1,1);
+							}
+						}
+						else
+						{
+							if (CountInv("DualSuperCrossbowNew",AAPTR_PLAYER1) <= 0)
+							{
+								if (random(1,4096) <= 1)
+								{
+									A_SpawnItemEx("DualSuperCrossbowNew");
+									A_FadeOut(1,1);
+								}
+							}
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("CrossbowHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("CrossbowHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("CrossbowHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class BlasterAmmoSpawner : BlasterAmmo replaces BlasterAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("DragonClawNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualDragonClawNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
+						{
+							if (random(1,8192) <= 1)
+							{
+								A_SpawnItemEx("DualDSparilStaff");
+								A_FadeOut(1,1);
+							}
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("BlasterAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <=  1)	{ A_SpawnItemEx("BlasterAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("BlasterAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("BlasterAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class BlasterHeftySpawner : BlasterHefty replaces BlasterHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("DragonClawNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("DragonClawNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualDragonClawNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualDragonClawNew");
+							A_FadeOut(1,1);
+						}
+					}
+					else
+					{
+						if (CountInv("DSparilStaff",AAPTR_PLAYER1) > 0)
+						{
+							if (random(1,8192) <= 1)
+							{
+								A_SpawnItemEx("DualDSparilStaff");
+								A_FadeOut(1,1);
+							}
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("BlasterHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("BlasterHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("BlasterHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("BlasterHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class PhoenixRodAmmoSpawner : PhoenixRodAmmo replaces PhoenixRodAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("PhoenixRodNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualPhoenixRodNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("PhoenixRodAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("PhoenixRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("PhoenixRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("PhoenixRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class PhoenixRodHeftySpawner : PhoenixRodHefty replaces PhoenixRodHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("PhoenixRodNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("PhoenixRodNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualPhoenixRodNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualPhoenixRodNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("PhoenixRodHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("PhoenixRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("PhoenixRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class MaceAmmoSpawner : MaceAmmo replaces MaceAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("FiremaceNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualFiremaceNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("MaceAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("MaceAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("MaceAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("MaceAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class MaceHeftySpawner : MaceHefty replaces MaceHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("FiremaceNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("FiremaceNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualFiremaceNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualFiremaceNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("MaceHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("MaceHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("MaceHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("MaceHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class SkullRodAmmoSpawner : SkullRodAmmo replaces SkullRodAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (CountInv("HellStaffNew",AAPTR_PLAYER1) <= 0)
+				{
+					if (random(1,2048) <= 1)
+					{
+						A_SpawnItemEx("HellStaffNew");
+						A_FadeOut(1,1);
+					}
+				}
+				else
+				{
+					if (CountInv("DualHellStaffNew",AAPTR_PLAYER1) <= 0)
+					{
+						if (random(1,4096) <= 1)
+						{
+							A_SpawnItemEx("DualHellStaffNew");
+							A_FadeOut(1,1);
+						}
+					}
+				}
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("SkullRodAmmoNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("SkullRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("SkullRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("SkullRodAmmoNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrow",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,100) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,500) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}
+
+class SkullRodHeftySpawner : SkullRodHefty replaces SkullRodHefty
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				if (Random(1,1) <= 1)		{ A_SpawnItemEx("SkullRodHeftyNew",0,0,0,0,0,0); }
+				if (Random(1,5) <= 1)		{ A_SpawnItemEx("SkullRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,25) <= 1)	{ A_SpawnItemEx("SkullRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,125) <= 1)	{ A_SpawnItemEx("SkullRodHeftyNew",random(-8,8),random(-8,8),0,random(-8,8),random(-8,8),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("DiarisArrowQuiver",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,40) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,200) <= 1)	{ A_SpawnItemEx("DoomSpellMana2",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,50) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+				if (Random(1,250) <= 1)	{ A_SpawnItemEx("RandomMagicSpawner",random(-4,4),random(-4,4),0,random(-4,4),random(-4,4),0); }
+			}
+			TNT1 A 0;
+			Stop;
+	}
+}

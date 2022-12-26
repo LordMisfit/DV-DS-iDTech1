@@ -2850,3 +2850,649 @@ class BansheeMissile5Token : Ammo
 	}
 }
 
+class IronlichNew : AetheriusMonsterZSC
+{
+	default
+	{
+		Tag "Iron Lich";
+		Health 700;
+		Radius 40;
+		Height 72;
+		Mass 325;
+		Speed 6;
+		Painchance 32;
+		Painchance "Fist", 48; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 80; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 48; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Crush", 0.5;
+		Monster;
+		+NOBLOOD;
+		+DONTMORPH;
+		+DONTSQUASH;
+		+BOSSDEATH;
+		SeeSound "ironlich/sight";
+		AttackSound "ironlich/attack";
+		PainSound "ironlich/pain";
+		DeathSound "ironlich/death";
+		ActiveSound "ironlich/active";
+		Obituary "$OB_IRONLICH";
+		HitObituary "$OB_IRONLICHHIT";
+		DropItem "BlasterAmmo", 84, 10;
+		DropItem "BlasterHefty", 8, 50;
+		DropItem "ArtiEgg", 51, 0;
+	}
+	
+	States
+	{
+		Spawn:
+			LICH A 0 NoDelay;
+			LICH A 10 A_Look();
+			goto Spawn+1;
+		See:
+			LICH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop;
+		Missile:
+			LICH A 5 
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				A_FaceTarget();
+			}
+			LICH B 20 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(12); }
+				else if (levelbehavior && user_monsterlevel > 140) { A_SetTics(13); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(14); }
+				else if (levelbehavior && user_monsterlevel > 100) { A_SetTics(15); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(16); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(17); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(18); }
+				else if (levelbehavior && user_monsterlevel > 20) { A_SetTics(19); }
+
+				A_LichAttack(5 + (user_monsterlevel / 30), 1 + (user_monsterlevel / 45), 6 * random(1,8), "HeadFX1New", "HeadFX1Crisis", "HeadFX3New", "HeadFX3Crisis", "WhirlwindNew", "WhirlwindCrisis", 1);
+			}
+			goto See;
+		Pain:
+			LICH A 4;
+			LICH A 4 A_DVDSPain();
+			goto See;
+		Pain.Fist:
+			LICH A 4;
+			LICH A 4 A_DVDSPain();
+			LICH AA 4;
+			goto See;
+		Pain.Kick:
+			LICH A 4;
+			LICH A 4 A_DVDSPain();
+			LICH AAAA 4;
+			goto See;
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			LICH C 7;
+			LICH D 7 A_Scream();
+			LICH EF 7;
+			LICH G 7 A_NoBlocking();
+			LICH H 7;
+			LICH I -1 A_DVDSBossDeath();
+			Stop;
+		Ice:
+			#### # 0 A_DVDSIceDeath(-2,0,1);
+			LICH A 5 A_GenericFreezeDeath();
+			LICH A 1 A_FreezeDeathChunks();
+			Wait;
+		Raise:
+			LICH H 7;
+			LICH GFEDC 7;
+			goto See;
+	}
+}
+class FIronlich : IronlichNew
+{
+	default
+	{
+		-COUNTKILL; 
+		+FRIENDLY;
+		+THRUSPECIES;
+		+DONTHARMSPECIES;
+		Species "FriendlyMonsters";
+		dropitem "NoItemSpawn", 1;
+	}
+}
+
+// Ice Lich
+class IceLich : AetheriusMonsterZSC
+{
+	default
+	{
+		Tag "Ice Lich";
+		health 700;
+		painchance 16;
+		Painchance "Ice", 0; // Ice can't stun Ice Liches
+		Painchance "Fist", 24; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 40; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 24; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Ice", 0;
+		DamageFactor "Fire", 2;
+		DamageFactor "Crush", 0.5;
+		speed 6;
+		radius 40;
+		height 72;
+		mass 500;
+		MONSTER;
+		+NOGRAVITY;
+		+NOBLOOD;
+		+FLOAT;
+		+MISSILEMORE;
+		+DONTBLAST;
+		+DONTMORPH;
+		+DONTSQUASH;
+		+NOICEDEATH;
+		+DONTSPLASH;
+		+BOSSDEATH;
+		seesound "ironlich/sight";
+		attacksound "";
+		painsound "ironlich/pain";
+		deathsound "freeze/shatter";
+		activesound "ironlich/active";
+		obituary "%o was frozen by an Ice Lich";
+	}
+
+	states
+	{
+		Spawn:
+			ILCH A 0 NoDelay;
+			ILCH A 10 A_Look();
+			goto Spawn+1;
+		See:
+			ILCH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+				A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
+			}
+			ILCH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+				A_SpawnItemEx("IceGuyWisp1", random(-20,20), random(-20,20), random(50,70), 0, 0, 0, 32, 128);
+			}
+			ILCH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop;
+		Missile:
+			ILCH B 0 bright A_JumpIfCloser(300, "Breath");
+			ILCH B 20 bright 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(12); }
+				else if (levelbehavior && user_monsterlevel > 140) { A_SetTics(13); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(14); }
+				else if (levelbehavior && user_monsterlevel > 100) { A_SetTics(15); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(16); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(17); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(18); }
+				else if (levelbehavior && user_monsterlevel > 20) { A_SetTics(19); }
+				A_FaceTarget();
+				A_StartSound("IceGuyAttack", CHAN_AUTO);
+
+				A_MonsterCrisisCheck(); // Multiple Projectiles
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 44, 10, 0, 1);
+				A_CrisisSpawnProjectile("IceGuyFX3New", "IceGuyFX3Crisis", 44, -10, 0, 1);
+			}
+			goto See;
+		Breath:
+			ILCH B 0 bright 
+			{
+				user_shotsfired = 0;
+				user_shotsfiredmax = 5 + (user_monsterlevel/45);
+			}
+		BreathLoop: // 5 times
+			ILCH B 0 bright 
+			{
+				A_StartSound("FrostBreath", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			ILCH BBB 2 bright
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
+
+				A_MonsterCrisisCheck(); // Single Projectile
+				A_CrisisSpawnProjectile("IceBreath", "IceBreathCrisis", 20, 0, frandom(-10.0,10.0), CMF_CHECKTARGETDEAD);
+			}
+			ILCH B 0 
+			{
+				A_FaceTarget();
+				user_shotsfired += 1;
+				if (user_shotsfired >= user_shotsfiredmax) { return resolvestate("See"); }
+				return resolvestate(null);
+			}
+			Loop;
+
+		Pain:
+			ILCH A 0 A_DVDSPain();
+			goto See;
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			ILCH A 3 A_Scream();
+			ILCH A 1 A_IceGuyDie();
+			Stop;
+	}
+}
+
+// Gold Lich
+class Goldlich : IronlichNew
+{
+	default
+	{
+		Tag "Gold Lich";
+		Mass 2000;
+		Speed 10;
+		Health 1400;
+		Painchance 8;
+		Painchance "Fist", 12; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 20; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 12; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Crush", 0.5;
+		SeeSound "goldlich/sight";
+		PainSound "goldlich/pain";
+		DeathSound "goldlich/death";
+		ActiveSound "goldlich/active";
+		Translation "0:17=112:121", "18:35=137:144", "36:42=116:121", "43:51=137:144", "52:58=114:121", "59:65=137:144";
+		Obituary "%o was annihilated by the goldlich's power.";
+		Species "GoldLich";
+		DropItem "BlasterAmmo", 84, 50;
+		DropItem "BlasterAmmo", 8, 50;
+		DropItem "BlasterHefty", 84, 50;
+		DropItem "BlasterHefty", 8, 50;
+		DropItem "ArtiEgg", 51, 0;
+		DropItem "ArtiEgg", 51, 0;
+	}
+	
+	States
+	{
+		Spawn:
+			LICH A 0 NoDelay;
+			LICH A 1 A_Look();
+			LICH A 3 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			goto Spawn+1;
+		See:
+			LICH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop;
+		Melee:
+			LICH A 5
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+				A_FaceTarget();
+			}
+			LICH B 5
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+
+				A_LichAttack(5 + (user_monsterlevel / 20), 1 + (user_monsterlevel / 30), 8*random(1,8), "HeadFX1New", "HeadFX1Crisis", "HeadFX3New", "HeadFX3Crisis", "WhirlwindNew", "WhirlwindCrisis", 1);
+			}
+			LICH BBB 5
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(4); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+				A_FaceTarget();
+			}
+			goto See;
+		Missile:
+			LICH A 1 A_FaceTarget();
+			LICH A 3
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 0 A_FaceTarget();
+			LICH B 0
+			{
+				if (random(1,256) <= 85 && GetClassName() == "Goldlich" && user_canusecrisisatk == 0) { return resolvestate("Missile2"); }
+				if (random(1,256) <= 128) { return resolvestate("Missile3"); }
+				if (random(1,256) <= 255) { return resolvestate("Missile4"); }
+				return resolvestate(null);
+			}
+			goto See;
+		Missile2:
+			LICH BBBBBBBB 1 A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			TNT1 A 0 A_SpawnItemEx("TeleportFog");
+			TNT1 AAAAAAAAAAAAAAAA 0 A_DVDSWander(0,1,3,1,1);
+			TNT1 A 0 
+			{
+				A_SpawnItemEx("TeleportFog");
+				A_UnsetSolid();
+				A_SpawnItemEx("FakeGoldlich", 0,0,0, 0,0,0, 0, SXF_TRANSFERTRANSLATION);
+			}
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_DVDSWander(0,1,3,1,1);
+			TNT1 A 4 
+			{
+				if (levelbehavior && user_monsterlevel > 80) { A_SetTics(2); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(3); }
+				A_SetSolid();
+			}
+			TNT1 A 0 A_SpawnItemEx("TeleportFog");
+			goto See;
+		Missile3:
+			LICH B 3 
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_StartSound("goldlich/attack2");
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+			LICH B 3 
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+
+				A_MonsterCrisisCheck(); // Multiple Projectiles
+				for (user_barragecounter = 0; user_barragecounter < 12; user_barragecounter++)
+				{
+					A_CrisisSpawnProjectile("GoldLichBounce","GoldLichBounceCrisis",32,0,user_barragecounter*30);
+				}
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+			LICH B 3
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+			LICH B 3
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+			LICH B 3
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+			goto See;
+		Missile4:
+			LICH B 3 
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+				A_StartSound("goldlich/attack1");
+
+				user_shotsfired = 0;
+				user_shotsfiredmax = 4 + (user_monsterlevel/45);
+				if (random (1,2) == 1)
+				{
+					A_MonsterCrisisCheck(); // Single Projectile
+					A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+				}
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+			}
+			LICH B 1 A_FaceTarget();
+		Missile4Loop: // 4 times
+			LICH B 3
+			{
+				if (levelbehavior && user_monsterlevel > 240) { A_SetTics(1); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
+
+				A_MonsterCrisisCheck(); // Single Projectile
+				A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
+				user_shotsfired += 1;
+			}
+			LICH B 1 
+			{
+				A_FaceTarget();
+				if (user_shotsfired >= user_shotsfiredmax) { return resolvestate("Missile4End"); }
+				return resolvestate(null);
+			}
+			Loop;
+		Missile4End:
+			LICH B 0 
+			{
+				A_MonsterCrisisCheck(); // Single Projectile
+				A_CrisisSpawnProjectile("GoldLichFire","GoldLichFireCrisis");
+			}
+			goto See;
+
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			LICH CC 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0);
+			LICH D 1 A_Scream();
+			LICH D 3 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0);
+			LICH D 4 A_SpawnItemEx("GoldLichGlitter", random(-36,36), random(-36,36), random(8,104),0,0,0, 0,0, 0);
+			LICH EE 4 A_SpawnItemEx("GoldLichGlitter", random(-40,40), random(-40,40), random(0,112),0,0,0, 0,0, 0);
+			LICH FF 4 A_SpawnItemEx("GoldLichGlitter", random(-44,44), random(-44,44), random(0,96),0,0,0, 0,0, 0);
+			LICH G 0 A_NoBlocking();
+			LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0);
+			LICH G 4 A_SpawnItemEx("GoldLichGlitter", random(-52,52), random(-52,52), random(0,80),0,0,0, 0,0, 0);
+			LICH HH 4 A_SpawnItemEx("GoldLichGlitter", random(-56,56), random(-56,56), random(0,64),0,0,0, 0,0, 0);
+			LICH I 4 A_SpawnItemEx("GoldLichGlitter", random(-64,64), random(-64,64), random(0,48),0,0,0, 0,0, 0);
+			LICH I -1 A_DVDSBossDeath();
+			Stop;
+		Ice:
+			#### # 0 A_DVDSIceDeath(-2,0,1);
+			LICH A 5 A_GenericFreezeDeath();
+			LICH A 1 A_FreezeDeathChunks();
+			Wait;
+		Raise:
+			LICH H 7;
+			LICH GFEDC 7;
+			goto See;
+	}
+}
+
+class GoldLichMiniExplodes : AetheriusBaseZSC
+{
+	default
+	{
+		+DONTSPLASH;
+		+NOGRAVITY;
+	}
+	
+	States
+	{
+		Spawn:
+			FXA1 DEF 3 BRIGHT;
+			Stop;
+	}
+}
+class GoldLichGlitter : AetheriusBaseZSC
+{
+	default
+	{
+		+NOGRAVITY;
+	}
+	States
+	{
+		Spawn:
+			GGLT ABCDE 4 BRIGHT;
+			Stop;
+	}
+}
+
+class FakeGoldLich : GoldLich
+{
+	default
+	{
+		Tag "Gold Lich";
+		DropItem "BlasterHefty", 255, 50;
+		Mass 250;
+		Health 175;
+		Species "GoldLich";
+	}
+}
+
+// Blood Lich
+class BloodLich : AetheriusMonsterZSC
+{
+	default
+	{
+		Tag "Blood Lich";
+		Health 2100;
+		Radius 40;
+		Height 72;
+		Mass 2100;
+		Speed 10;
+		PainChance 16;
+		Painchance "Fire", 8; // Fire attacks have a -50% chance of stunning an enemy
+		Painchance "Fist", 24; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 40; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 24; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Fire", 0.5;
+		DamageFactor "Crush", 0.3;
+		MONSTER;
+		+NOGRAVITY;
+		+NOTARGET;
+		+NOFEAR;
+		+SPAWNCEILING;
+		+FLOAT;
+		+MISSILEMORE;
+		+MISSILEEVENMORE;
+		+DONTBLAST;
+		+DONTMORPH;
+		+DONTRIP;
+		+DONTSPLASH;
+		+BOSS;
+		+BOSSDEATH;
+		SeeSound "ironlich/sight";
+		AttackSound "";
+		PainSound "ironlich/pain";
+		DeathSound "ironlich/death";
+		ActiveSound "ironlich/active";
+		Obituary "%o was reduced to a pile of ash by a Blood Lich.";
+		DropItem "BlasterAmmo", 21, 50;
+		DropItem "BlasterAmmo", 2, 50;
+		DropItem "BlasterAmmo", 84, 50;
+		DropItem "BlasterAmmo", 8, 50;
+		DropItem "BlasterHefty", 21, 50;
+		DropItem "BlasterHefty", 2, 50;
+		DropItem "BlasterHefty", 84, 50;
+		DropItem "BlasterHefty", 8, 50;
+		DropItem "ArtiEgg", 51, 0;
+		DropItem "ArtiEgg", 51, 0;
+	}
+
+	States
+	{
+		Spawn:
+			BLCH A 0 NoDelay;
+			BLCH A 10 A_Look();
+			goto Spawn+1;
+		See:
+			BLCH A 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+
+				A_DVDSChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop;
+		Missile:
+			BLCH B 0 Bright A_JumpIfCloser(300, "Breath");
+			BLCH B 0 Bright A_Jump(96,"Curse");
+			BLCH B 6 Bright 
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget();
+				A_StartSound("MageStaffFire", CHAN_AUTO);
+
+				A_MonsterCrisisCheck(); // Multiple Projectiles
+				A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, 10, -2, 1);
+				A_CrisisSpawnProjectile("BloodLichFireball", "BloodLichFireballCrisis", 54, -10, 2, 1);
+			}
+			goto See;
+		Breath:
+			BLCH B 0 bright 
+			{
+				user_shotsfired = 0;
+				user_shotsfiredmax = 5 + (user_monsterlevel/45);
+			}
+		BreathLoop: // 5
+			BLCH B 0 Bright
+			{
+				A_StartSound("FlameBreath", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			BLCH BBB 2 Bright 
+			{
+				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(1); }
+
+				A_MonsterCrisisCheck(); // Single Projectile
+				A_CrisisSpawnProjectile("FireBreath", "FireBreathCrisis", 20, 0, frandom(-3.0,3.0), CMF_CHECKTARGETDEAD);
+			}
+			BLCH B 0 
+			{
+				A_FaceTarget();
+				user_shotsfired += 1;
+				if (user_shotsfired >= user_shotsfiredmax) { return resolvestate("See"); }
+				return resolvestate(null);
+			}
+			Loop;
+		Curse:
+			BLCH B 0 Bright A_JumpIfCloser(300, "Breath");
+			BLCH B 6 Bright 
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget();
+
+				A_MonsterCrisisCheck(); // Single Projectile
+				A_CrisisSpawnProjectile("CurseSpell", "CurseSpellCrisis", 20, 0, 0, 1);
+			}
+			goto See;
+		Pain:
+			BLCH A 0 A_DVDSPain();
+			goto See;
+
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			BLCH C 7 
+			{
+				if (random(1,256) <= 160) { A_PainDie("HereticImpLeader"); }
+			}
+			BLCH D 7 A_Scream();
+			BLCH EF 7;
+			BLCH G 7 A_NoBlocking();
+			BLCH H 7;
+			BLCH I -1 A_DVDSBossDeath();
+			Stop;
+		Ice:
+			#### # 0 A_DVDSIceDeath(-2,0,1);
+			BLCH A 5 A_GenericFreezeDeath();
+			BLCH A 1 A_FreezeDeathChunks();
+			Wait;
+		Raise:
+			BLCH H 7;
+			BLCH GFEDC 7;
+			goto See;
+	}
+}

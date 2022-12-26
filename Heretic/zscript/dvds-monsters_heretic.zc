@@ -3166,9 +3166,9 @@ class Goldlich : IronlichNew
 				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(2); }
 				A_SpawnItemEx("GoldLichGlitter", random(-32,32), random(-32,32), random(8,104),0,0,0, 0,0, 0);
 			}
-			LICH B 0 A_FaceTarget();
 			LICH B 0
 			{
+				A_FaceTarget();
 				if (random(1,256) <= 85 && GetClassName() == "Goldlich" && user_canusecrisisatk == 0) { return resolvestate("Missile2"); }
 				if (random(1,256) <= 128) { return resolvestate("Missile3"); }
 				if (random(1,256) <= 255) { return resolvestate("Missile4"); }

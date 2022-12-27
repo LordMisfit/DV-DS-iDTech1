@@ -5189,3 +5189,1337 @@ class EggFXNew : EggFX replaces EggFX
 	}
 }
 
+// Gargoyles
+class HereticImpBallNew : AetheriusProjectileZSC replaces HereticImpBall 
+{
+	default
+	{
+		Tag "Gargoyle Fireball";
+		Radius 8;
+		Height 8;
+		Speed 10;
+		FastSpeed 20;
+		DamageFunction (1 * random(1,8));
+		DamageType "Fire";
+		Projectile;
+		SeeSound "himp/leaderattack";
+		DeathSound "misc/fireballsmall";
+		+SPAWNSOUNDSOURCE;
+		-ACTIVATEPCROSS;
+		-ACTIVATEIMPACT;
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			FX10 AAABBBCCC 2 Bright;
+			Loop;
+		Death:
+			FX10 DEFG 5 Bright;
+			Stop;
+	}
+}
+class HereticImpBallCrisis : HereticImpBallNew
+{
+	default
+	{
+		DamageFunction ((1 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FX10 AAABBBCCC 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			FX10 DEFG 5 Bright;
+			Stop;
+	}
+}
+
+class HereticImpBall2 : HereticImpBallNew
+{
+	default
+	{
+		Tag "Gargoyle Fireball";
+	}
+	
+	States
+	{
+		Spawn:
+			HIB1 ABC 6 Bright;
+			Loop;
+		Death:
+			HIB1 DEFG 5 Bright;
+			Stop;
+	}
+}
+class HereticImpBall2Crisis : HereticImpBallCrisis
+{
+	States
+	{
+		Spawn:
+			HIB1 AAABBBCCC 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			HIB1 DEFG 5 Bright;
+			Stop;
+	}
+}
+
+// WereDragons
+class BeastBallNew : AetheriusProjectileZSC replaces BeastBall 
+{
+	default
+	{
+		Tag "Gargoyle Fireblast";
+		DamageFunction (4 * random(1,8));
+		DamageType "Fire";
+		Radius 9;
+		Height 8;
+		Speed 12;
+		FastSpeed 20;
+		Projectile;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		-NOBLOCKMAP;
+		+WINDTHRUST;
+		+SPAWNSOUNDSOURCE;
+		RenderStyle "Add";
+		SeeSound "beast/attack";
+		DeathSound "misc/fireballhit";
+	}
+	
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop;
+		Death:
+			FRB1 DEFGH 4;
+			Stop;
+	}
+}
+class BeastBallCrisis : BeastBallNew
+{
+	default
+	{
+		DamageFunction ((4 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_GenerateCrisisParticle();
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,random2[BeastPuff]()*0.015625, 0, 0, 0, 0, SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop;
+		Death:
+			FRB1 DEFGH 4;
+			Stop;
+	}
+}
+class Beastball2 : BeastBallNew
+{
+	default
+	{
+		Tag "Gargoyle Fireblast";
+		DamageFunction (4 * random(1,8));
+		DamageType "Fire";
+		DeathSound "misc/fireballhit";
+	}
+	
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,0,0,0,0,SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop;
+		Death:
+			HIB2 DEFGH 4;
+			Stop;
+	}
+}
+class Beastball2Crisis : Beastball2
+{
+	default
+	{
+		DamageFunction ((4 * random(1,8)));
+	}
+	
+	States
+	{
+		Spawn:
+			FRB1 AABBCC 2 
+			{
+				A_GenerateCrisisParticle();
+				A_SpawnItemEx("Puffy", random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625, random2[BeastPuff]()*0.015625,0,0,0,0,SXF_ABSOLUTEPOSITION, 64);
+			}
+			Loop;
+		Death:
+			HIB2 DEFGH 4;
+			Stop;
+	}
+}
+
+class PlagueShot : AetheriusEffectProjectile
+{
+	default
+	{
+		Tag "Plague Shot";
+		DamageFunction (3*random(3,5));
+		Radius 8;
+		Height 16;
+		Speed 16;
+		PROJECTILE;
+		+THRUGHOST; // Plague Gargoyle Poisonball
+		DamageType "Poison";
+		scale 0.5;
+		SeeSound "himp/leaderattack";
+		DeathSound "monster/plaugeBall";
+	}
+
+	States
+	{
+		Spawn:
+			FVUL AAABBB 1 Bright;
+			Loop;
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(3);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+			}
+		Death2:
+			FVUL CDEF 4 Bright;
+			Stop;
+	}
+}
+class PlagueShotCrisis : PlagueShot
+{
+	default
+	{
+		DamageFunction ((3*random(3,5)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FVUL AAABBB 1 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16, (random(140,210)*CallACS("CrisisMultiplier",5)) ); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+			}
+		Death2:
+			FVUL CDEF 4 Bright;
+			Stop;
+	}
+}
+
+// Golems
+class MummyFX1New : AetheriusProjectileZSC replaces MummyFX1 
+{
+	default
+	{
+		Tag "Screamer Fireskull";
+		Radius 8;
+		Height 14;
+		Speed 9;
+		FastSpeed 18;
+		DamageFunction (4 * random(1,8));
+		DamageType "Fire";
+		RenderStyle "Add";
+		Projectile;
+		-ACTIVATEPCROSS;
+		-ACTIVATEIMPACT;
+		+SEEKERMISSILE;
+	}
+	
+	States
+	{
+		Spawn:
+			FX15 A 5 Bright A_StartSound("mummy/head");
+			FX15 B 5 Bright A_SeekerMissile(10, 20);
+			FX15 C 5 Bright;
+			FX15 B 5 Bright A_SeekerMissile(10, 20);
+			Loop;
+		Death:
+			FX15 DEFG 5 Bright;
+			Stop;
+	}
+}
+class MummyFX1Crisis : MummyFX1New
+{
+	default
+	{
+		DamageFunction ((4 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FX15 A 5 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_StartSound("mummy/head");
+			}
+			FX15 B 5 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SeekerMissile(10, 20);
+			}
+			FX15 C 5 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX15 B 5 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SeekerMissile(10, 20);
+			}
+			Loop;
+		Death:
+			FX15 DEFG 5 Bright;
+			Stop;
+	}
+}
+
+// Undead Knights
+class KnightAxeNew : AetheriusEffectProjectile replaces KnightAxe 
+{
+	default
+	{
+		Tag "Green Axe";
+		DamageFunction (2 * random(1,8));
+		DamageType "Magic";
+		Radius 10;
+		Height 8;
+		Speed 9;
+		FastSpeed 18;
+		Projectile;
+		-NOBLOCKMAP;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		+WINDTHRUST;
+		+THRUGHOST; // Knight Axe [Green]
+		DeathSound "hknight/hit";
+	}
+	
+	States
+	{
+		Spawn:
+			SPAX A 3 Bright
+			{
+				A_StartSound("hknight/axewhoosh");
+			}
+			SPAX BC 3 Bright;
+			Loop;
+		Death:
+			SPAX DDEEFF 3 Bright;
+			Stop;
+	}
+}
+class KnightAxeCrisis : KnightAxeNew 
+{
+	default
+	{
+		DamageFunction ((2 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			SPAX A 3 Bright
+			{
+				A_GenerateCrisisParticle();
+				A_StartSound("hknight/axewhoosh");
+			}
+			SPAX BC 3 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			SPAX DDEEFF 3 Bright;
+			Stop;
+	}
+}
+
+class RedAxeNew : KnightAxeNew replaces RedAxe 
+{
+	default
+	{
+		Tag "Bloody Axe";
+		DamageFunction (7 * random(1,8));
+		+NOBLOCKMAP;
+		-WINDTHRUST;
+	}
+	
+	States
+	{
+		Spawn:
+			RAXE AA 2 Bright;
+			RAXE A 1 Bright 
+			{
+				A_DripBlood();
+			}
+			RAXE BB 2 Bright;
+			RAXE B 1 Bright 
+			{
+				A_DripBlood();
+			}
+			Loop;
+		Death:
+			RAXE CDE 6 Bright;
+			Stop;
+	}
+}
+class RedAxeCrisis : RedAxeNew 
+{
+	default
+	{
+		DamageFunction ((7 * random(1,8)) * CrisisMultiplier);
+		+NOBLOCKMAP;
+		-WINDTHRUST;
+	}
+	
+	States
+	{
+		Spawn:
+			RAXE AA 2 Bright 
+			{
+				A_GenerateCrisisParticle();
+			}
+			RAXE A 1 Bright 
+			{
+				A_DripBlood();
+				A_DripBlood();
+				A_DripBlood();
+				A_DripBlood();
+			}
+			RAXE BB 2 Bright 
+			{
+				A_GenerateCrisisParticle();
+			}
+			RAXE B 1 Bright 
+			{
+				A_DripBlood();
+				A_DripBlood();
+				A_DripBlood();
+				A_DripBlood();
+			}
+			Loop;
+		Death:
+			RAXE CDE 6 Bright;
+			Stop;
+	}
+}
+
+// Death Knight Attacks
+class DKDart : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Sword Dart";
+		DamageFunction (5 * random(1,8));
+		Radius 3;
+		Height 12;
+		Speed 25;
+		ExplosionDamage 64;
+		ExplosionRadius 64;
+		RenderStyle "Add";
+		ALPHA 1.00;
+		PROJECTILE;
+		+THRUGHOST;
+		Seesound "monster/dkndrt";
+		DeathSound "weapons/firex2";
+	}
+	
+	States
+	{
+		Spawn:
+			DKAT ABC 3 Bright;
+			Loop;
+		Death:
+			DKAT D 0 Bright A_SetTranslucent(0.85,1);
+			DKAT D 3 Bright;
+			DKAT E 3 Bright A_Explode(64,64);
+			DKAT FG 3 Bright;
+			DKAT H 3 Bright 
+			{
+				A_SpawnProjectile("DKFire",0,0,0,2);
+				A_SpawnProjectile("DKFire",0,0,45,2);
+				A_SpawnProjectile("DKFire",0,0,90,2);
+				A_SpawnProjectile("DKFire",0,0,135,2);
+				A_SpawnProjectile("DKFire",0,0,180,2);
+				A_SpawnProjectile("DKFire",0,0,225,2);
+				A_SpawnProjectile("DKFire",0,0,270,2);
+				A_SpawnProjectile("DKFire",0,0,315,2);
+			}
+			DKAT IJKLM 3 Bright;
+			Stop;
+	}
+}
+class DKDartCrisis : DKDart
+{
+	default
+	{
+		DamageFunction ((5 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			DKAT ABC 3 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			DKAT D 0 Bright A_SetTranslucent (0.85,1);
+			DKAT D 3 Bright;
+			DKAT E 3 Bright A_Explode((64 * CrisisMultiplier),64);
+			DKAT FG 3 Bright;
+			DKAT H 3 Bright 
+			{
+				A_SpawnProjectile("DKFireCrisis",0,0,0,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,45,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,90,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,135,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,180,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,225,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,270,2);
+				A_SpawnProjectile("DKFireCrisis",0,0,315,2);
+			}
+			DKAT IJKLM 3 Bright;
+			Stop;
+	}
+}
+
+class FHeadShot : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Shield Firehead";
+		DamageFunction (10 * random(1,8));
+		Radius 12;
+		Height 12;
+		Speed 15;
+		RenderStyle "Add";
+		ALPHA 1.00;
+		PROJECTILE;
+		DamageType "Fire";
+		+SEEKERMISSILE;
+		+THRUGHOST; // Death Knight Head Fireball
+		Seesound "monster/dknmsl";
+		DeathSound "weapons/boom1";
+	}
+	
+	States
+	{
+		Spawn:
+			FHED ABCD 3 Bright 
+			{
+				A_SeekerMissile(5,15);
+			}
+			Loop;
+		Death:
+			RIP1 DEFGH 5 Bright;
+			Stop;
+	}
+}
+class FHeadShotCrisis : FHeadShot
+{
+	default
+	{
+		DamageFunction ((10 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FHED ABCD 3 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SeekerMissile(5,15);
+			}
+			Loop;
+		Death:
+			RIP1 DEFGH 5 Bright;
+			Stop;
+	}
+}
+
+class DKbolt : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Shield Firewave";
+		DamageFunction (8 * random(1,8));
+		Radius 8;
+		Height 8;
+		Speed 15;
+		PROJECTILE;
+		RenderStyle "Add";
+		ALPHA 0.80;
+		DamageType "Fire";
+		+THRUGHOST;
+		SeeSound "Weapons/boltfi";
+		DeathSound "weapons/firex4";
+	}
+	
+	States
+	{
+		Spawn:
+			BOLT A 1 Bright 
+			{
+				A_BishopMissileWeave();
+				A_SpawnItem("RedPuff",0,0);
+			}
+			Loop;
+		Death:
+			HBAL EFHI 2 Bright;
+			Stop;
+	}
+}
+class DKboltCrisis : DKbolt
+{
+	default
+	{
+		DamageFunction ((8 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BOLT A 1 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_BishopMissileWeave();
+				A_SpawnItem("RedPuff",0,0);
+			}
+			Loop;
+		Death:
+			HBAL EFHI 2 Bright;
+			Stop;
+	}
+}
+
+class DKSword : AetheriusProjectileZSC // Death piece
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		Speed 1;
+		PROJECTILE;
+		RenderStyle "Normal";
+		-NOGRAVITY;
+		+LOWGRAVITY;
+	}
+	
+	States
+	{
+		Spawn:
+			SWRD KLMNOPQ 3 BRIGHT;
+			goto Death;
+		Death:
+			SWRD RS 4 BRIGHT;
+			SWRD T 4 BRIGHT;
+			SWRD U 4;
+			SWRD T 4 BRIGHT;
+			SWRD U 8;
+			SWRD T 4 BRIGHT;
+			SWRD U 16;
+			SWRD T 4 BRIGHT;
+			SWRD U -1;
+	}
+}
+
+class DKShield : AetheriusProjectileZSC // Death piece
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		Speed 1;
+		PROJECTILE;
+		RenderStyle "Normal";
+		-NOGRAVITY;
+		+LOWGRAVITY;
+	}
+	
+	States
+	{
+		Spawn:
+			SHLD ABCDEFGHI 3;
+			goto Death;
+		Death:
+			SHLD H -1;
+			Stop;
+	}
+}
+
+class DKFire : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Death Knight Flame";
+		DamageFunction (0);
+		ExplosionDamage 4;
+		ExplosionRadius 8;
+		Radius 2;
+		Height 6;
+		Speed 4;
+		RenderStyle "Add";
+		ALPHA 0.95;
+		PROJECTILE;
+		+THRUGHOST;
+		DeathSound "weapons/scorch";
+	}
+	States
+	{
+		Spawn:
+			DKAT NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright 
+			{
+				A_Explode(4,8);
+			}
+			Stop;
+	}
+}
+class DKFireCrisis : DKFire
+{
+	default
+	{
+		DamageFunction (0);
+		ExplosionDamage 4;
+		ExplosionRadius 8;
+		Radius 2;
+		Height 6;
+		Speed 4;
+		RenderStyle "Add";
+		ALPHA 0.95;
+		PROJECTILE;
+		+THRUGHOST; 
+		DeathSound "weapons/scorch";
+	}
+	
+	States
+	{
+		Spawn:
+			DKAT NOPQRSTNOPQRSTNOPQRSTUVW 3 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_Explode((4 * CrisisMultiplier),8);
+			}
+			Stop;
+	}
+}
+
+class RedPuff : AetheriusProjectileZSC
+{
+	default
+	{
+		Radius 0;
+		Height 1;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Add";
+		ALPHA 0.85;
+	}
+	
+	States
+	{
+		Spawn:
+			NULL A 3 Bright;
+			RPUF ABCDE 3 Bright;
+			Stop;
+	}
+}
+
+// Disciple
+class WizardFX1New : AetheriusProjectileZSC replaces WizardFX1 
+{
+	default
+	{
+		Tag "Wizard Shot";
+		DamageType "Magic"; 
+		Radius 10;
+		Height 6;
+		Speed 18;
+		FastSpeed 24;
+		DamageFunction (3 * random(1,8));
+		Projectile;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		RenderStyle "Add";
+		DeathSound "misc/magichit";
+	}
+	
+	States
+	{
+		Spawn:
+			FX11 AAABBB 2 Bright;
+			Loop;
+		Death:
+			FX11 CDEFG 5 Bright;
+			Stop;
+	}
+}
+class WizardFX1Crisis : WizardFX1New 
+{
+	default
+	{
+		DamageFunction ((3 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FX11 AAABBB 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			FX11 CDEFG 5 Bright;
+			Stop;
+	}
+}
+
+// Banshee
+class BansheeFire : AetheriusEffectProjectile
+{
+	default
+	{
+		Tag "Banshee Firewave";
+		DamageFunction (2 * random(1,8));
+		Radius 13;
+		Height 8;
+		Speed 15;
+		Projectile;
+		+RANDOMIZE;
+		+RIPPER;
+		+DEHEXPLOSION;
+		+ROCKETTRAIL;
+		SeeSound "Banshee/ASpawn";
+		DeathSound "Banshee/ADeath";
+		Obituary "%o Heard The Banshee's Wail.";
+		Decal "DoomImpScorch";
+		DamageType "Fire";
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2;
+			Loop;
+		Death:
+			BAL1 CDE 3 bright;
+			Stop;
+	}
+}
+class BansheeFireCrisis : BansheeFire
+{
+	default
+	{
+		DamageFunction ((2 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_GenerateCrisisParticle();
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2;
+			Loop;
+		Death:
+			BAL1 CDE 3 bright;
+			Stop;
+	}
+}
+
+class BansheeFire2 : BansheeFire
+{
+	default
+	{
+		DamageFunction (2 * random(1,8));
+		-RIPPER;
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2;
+			Loop;
+	}
+}
+class BansheeFire2Crisis : BansheeFire2
+{
+	default
+	{
+		DamageFunction ((2 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+			}
+			BANB AA 2
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+	}
+}
+
+class BansheeFire3 : BansheeFire
+{
+	default
+	{
+		Tag "Banshee Megablast";
+		DamageFunction (100 * random(1,8));
+		Radius 24;
+		Height 24;
+		-RIPPER;
+		+NOGRAVITY;
+		+SPAWNCEILING;
+		+SEEKERMISSILE;
+		Scale 3.0;
+		Decal "Scorch";
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 NoDelay BRIGHT A_SeekerMissile (50,50);
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) {return resolvestate("Death"); }
+				return resolvestate(null);
+			}
+			Loop;
+		Death:
+			BAL1 CDE 3 bright;
+			Stop;
+	}
+}
+class BansheeFire3Crisis : BansheeFire3
+{
+	default
+	{
+		DamageFunction ((100 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BANB A 1 NoDelay BRIGHT 
+			{
+				A_GenerateCrisisParticle();
+				A_SeekerMissile(50,50);
+			}
+			BANB A 1 BRIGHT 
+			{
+				A_SpawnItem("BansheeFireTrail",0,0);
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) {return resolvestate("Death"); }
+				return resolvestate(null);
+			}
+			Loop;
+		Death:
+			BAL1 CDE 3 bright;
+			Stop;
+	}
+}
+
+class BansheeFire4 : BansheeFire
+{
+	default
+	{
+		Tag "Banshee Firewave";
+		DamageFunction (2 * random(1,8));
+		Speed 25;
+		-RIPPER;
+	}
+	
+	States
+	{
+		Spawn:
+			BANF ABCDEFGH 3 bright;
+			Stop;
+		Death:
+			BANF H 3 bright;
+			Stop;
+	}
+}
+class BansheeFire4Crisis : BansheeFire4
+{
+	default
+	{
+		DamageFunction ((2 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BANF ABCDEFGH 3 bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Stop;
+		Death:
+			BANF H 3 bright;
+			Stop;
+	}
+}
+
+class BansheeFire5 : BansheeFire
+{
+	default
+	{
+		Tag "Banshee Firewave";
+		DamageFunction (2 * random(1,8));
+		Speed 20;
+		+SEEKERMISSILE;
+		+FLOORHUGGER;
+	}
+	
+	States
+	{
+		Spawn:
+			BAFT A 1 BRIGHT 
+			{
+				A_SeekerMissile(50,50);
+			}
+			BAFT A 2 
+			{
+				A_SpawnItem("BansheeFireTrail2",0,0);
+			}
+			BAFT A 1 BRIGHT
+			{
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) {return resolvestate("Death"); }
+				return resolvestate(null);
+			}
+			Goto Spawn;
+		Death:
+			BAFT BCDEFGH 3 bright;
+			Stop;
+	}
+}
+class BansheeFire5Crisis : BansheeFire5
+{
+	default
+	{
+		DamageFunction ((2 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			BAFT A 2 BRIGHT 
+			{
+				A_GenerateCrisisParticle();
+				A_SeekerMissile(50,50);
+				A_SpawnItem("BansheeFireTrail2",0,0);
+			}
+			BAFT A 2 BRIGHT
+			{
+				A_GenerateCrisisParticle();
+				A_GiveInventory("BansheeFire3Token",1);
+				if (CountInv("BansheeFire3Token") >= 30) {return resolvestate("Death"); }
+				return resolvestate(null);
+			}
+			Goto Spawn;
+		Death:
+			BAFT BCDEFGH 3 bright;
+			Stop;
+	}
+}
+
+class BansheeTrail : AetheriusProjectileZSC
+{
+	default
+	{
+		Radius 20;
+		Height 56;
+		VSpeed 1;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Translucent";
+		ALPHA 0.90;
+		scale 0.80;
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 3;
+		Idle:
+			BANS A 3 
+			{
+				A_SetScale(scale.x-0.06,scale.y-0.06);
+				A_FadeOut(0.09);
+			}
+			Loop;
+	}
+}
+
+class BansheeFireTrail : AetheriusProjectileZSC
+{
+	default
+	{
+		Radius 20;
+		Height 56;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Translucent";
+		Scale 0.50;
+		ALPHA 0.90;
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 3;
+			BANF ABCDEFGH 3 Bright A_FadeOut(0.10);
+			Stop;
+	}
+}
+
+class BansheeFireTrail2 : AetheriusProjectileZSC
+{
+	default
+	{
+		Radius 20;
+		Height 56;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Translucent";
+		Scale 0.50;
+		ALPHA 0.90;
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 3;
+			BAFT ABCDEFG 3 Bright A_FadeOut(0.10);
+			Stop;
+	}
+}
+
+class DSFX3 : AetheriusAfterimageZSC
+{
+	default
+	{
+		Radius 2;
+		Height 2;
+		Speed 0;
+		Scale 0.90;
+		PROJECTILE;
+		RenderStyle "Translucent";
+		ALPHA 0.90;
+	}
+	
+	States
+	{
+		Spawn:
+			NULL A 3;
+			DISC A 3 A_FadeOut(basealpha*0.10);
+			goto Spawn+1;
+	}
+}
+
+class DiscipleShot1 : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Disciple Shot";
+		DamageFunction (3 * random(1,8));
+		Radius 8;
+		Height 16;
+		Speed 15;
+		RenderStyle "Add";;
+		ALPHA 0.67;
+		PROJECTILE;
+		DeathSound "monster/disht1";
+	}
+	
+	States
+	{
+		Spawn:
+			CFX2 ABCD 2 Bright 
+			{
+				A_SpawnProjectile("DSFX1",0,0,0,0);
+			}
+			Loop;
+		Death:
+			CFX2 EFGHI 3 Bright;
+			Stop;
+	}
+}
+class DiscipleShot1Crisis : DiscipleShot1
+{
+	default
+	{
+		DamageFunction ((3 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			CFX2 ABCD 2 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SpawnProjectile("DSFX1",0,0,0,0);
+			}
+			Loop;
+		Death:
+			CFX2 EFGHI 3 Bright;
+			Stop;
+	}
+}
+
+class DiscipleShot2 : AetheriusProjectileZSC
+{
+	default
+	{
+		Tag "Disciple Shot";
+		DamageFunction (6 * random(1,8));
+		Radius 8;
+		Height 16;
+		Speed 15;
+		RenderStyle "Add";
+		ALPHA 0.67;
+		PROJECTILE;
+		+SEEKERMISSILE;
+		DeathSound "monster/disht2";
+	}
+	
+	States
+	{
+		Spawn:
+			CFX3 AB 3 Bright 
+			{
+				A_SpawnProjectile("DSFX2",0,0,0,0);
+				A_SeekerMissile(5,8);
+			}
+			Loop;
+		Death:
+			CFX3 CDEFG 3 Bright;
+			Stop;
+	}
+}
+class DiscipleShot2Crisis : DiscipleShot2
+{
+	default
+	{
+		DamageFunction ((6 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			CFX3 AB 3 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SpawnProjectile("DSFX2",0,0,0,0);
+				A_SeekerMissile(5,8);
+			}
+			Loop;
+		Death:
+			CFX3 CDEFG 3 Bright;
+			Stop;
+	}
+}
+
+class DSFX1 : AetheriusBaseZSC
+{
+	default
+	{
+		Radius 2;
+		Height 2;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Add";
+		ALPHA 0.67;
+	}
+	
+	States
+	{
+		Spawn:
+			NULL A 3 Bright;
+			CFX2 EFGHI 3 Bright;
+			Stop;
+	}
+}
+class DSFX2 : AetheriusBaseZSC
+{
+	default
+	{
+		Radius 2;
+		Height 2;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Add";
+		ALPHA 0.67;
+	}
+	
+	States
+	{
+		Spawn:
+			NULL A 3 Bright;
+			CFX3 HIJK 3 Bright;
+			Stop;
+	}
+}

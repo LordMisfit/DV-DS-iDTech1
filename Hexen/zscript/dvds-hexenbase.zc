@@ -3942,3 +3942,80 @@ class IceShardNew : AetheriusEffectProjectile replaces IceShard
 			Stop;
 	}
 }
+class ZPoisonCloudNew : PoisonCloud
+{
+	default
+	{
+		Tag "Poison Cloud";
+		reactiontime 24;
+		Radius 20;
+		Height 30;
+		Mass 0x7fffffff;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+DROPOFF;
+		+NODAMAGETHRUST;
+		+DONTSPLASH;
+		+FOILINVUL;
+		+CANBLAST;
+		+BLOODLESSIMPACT;
+		+BLOCKEDBYSOLIDACTORS;
+		RenderStyle "Translucent";
+		Alpha 0.6;
+		DeathSound "PoisonShroomDeath";
+		DamageType "PoisonElemental";
+	}
+	
+	States
+	{
+		Spawn:
+			PSBG D 1;
+			PSBG D 1 A_Scream();
+			PSBG DEEEFFFGGGHHHII 2 A_Explode(4*random(1,8),40,XF_HURTSOURCE,0,10); // A_PoisonBagDamage();
+			PSBG I 2 A_CountDown();
+			PSBG I 1 A_CountDown();
+			Goto Spawn+3;
+		Death:
+			PSBG HG 7;
+			PSBG FD 6;
+			Stop;
+	}
+}
+class ZPoisonShroomNew : ZPoisonShroom replaces ZPoisonShroom
+{
+	default
+	{
+		Tag "Poison Shroom";
+		Radius 6;
+		Height 20;
+		PainChance 255;
+		Health 30;
+		Mass 0x7fffffff;
+		+NODAMAGETHRUST;
+		+SHOOTABLE;
+		+SOLID;
+		+NOBLOOD;
+		+NOICEDEATH;
+		-NOBLOCKMAP;
+		-NOGRAVITY;
+		PainSound "PoisonShroomPain";
+		DeathSound "PoisonShroomDeath";
+		DamageType "PoisonElemental";
+	}
+	
+	States
+	{
+		Spawn:
+			SHRM A 5 A_PoisonShroom();
+			Goto Pain+1;
+		Pain:
+			SHRM A 6;
+			SHRM B 8 A_Pain();
+			Goto Spawn;
+		Death:
+			SHRM CD 5;
+			SHRM E 5 A_SpawnItemEx("PoisonCloudDVDS", 0, 0, 28, 0, 0, 0, 0, SXF_TRANSFERPOINTERS); // A_PoisonBagInit();
+			SHRM F -1;
+			Stop;
+	}
+}

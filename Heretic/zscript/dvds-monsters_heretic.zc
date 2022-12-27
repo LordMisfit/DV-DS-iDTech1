@@ -5595,3 +5595,294 @@ class FSerpathor : Serpathor
 		DropItem "NoItemSpawn", 1;
 	}
 }
+
+// D'Sparil
+class DSparilMountedNew : DSparilBase replaces Sorcerer1
+{
+	default
+	{
+		Tag "$DSPARIL1TAG";
+		Health 24000;
+		Radius 28;
+		Height 100;
+		Mass 800;
+		Speed 16;
+		Painchance 56;
+		Painchance "Fist", 84; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 140; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 84; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Crush", 0.0625;
+		meleerange 82;
+		Monster;
+		+BOSS;
+		+DONTMORPH;
+		+NORADIUSDMG;
+		+NOTARGET;
+		+NOICEDEATH;
+		+FLOORCLIP;
+		+DONTGIB;
+		+AVOIDMELEE;
+		+NOFEAR;
+		SeeSound "dsparilserpent/sight";
+		AttackSound "dsparilserpent/attack";
+		PainSound "dsparilserpent/pain";
+		DeathSound "dsparilserpent/death";
+		ActiveSound "dsparilserpent/active";
+		Obituary "$OB_DSPARIL1";
+		HitObituary "$OB_DSPARIL1HIT";
+	}
+	
+	States
+	{
+		Pain.Charm: Goto See;
+		Spawn:
+			SRCR A 0 NoDelay;
+			SRCR AB 10 A_Look();
+			goto Spawn+1;
+		See:
+			SRCR A 0;
+			SRCR ABCD 5 
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; }
+				if (levelbehavior && user_monsterlevel > 90) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 45) { A_SetTics(4); }
+				A_Sor1Chase();
+			}
+			Loop;
+		Missile:
+			SRCR Q 7 
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget();
+			}
+			SRCR R 6
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget();
+			}
+			SRCR S 10 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
+				A_Srcr1Attack(8*random(1,8), "SorcererFX1New", "SorcererFX1Crisis");
+			}
+			Goto See;
+		Missile2:
+			SRCR S 10 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
+				A_FaceTarget();
+			}
+			SRCR Q 7 
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(6); }
+				A_FaceTarget();
+			}
+			SRCR R 6
+			{
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(3); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(5); }
+				A_FaceTarget();
+			}
+			SRCR S 10 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(8); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(9); }
+				A_Srcr1Attack(8*random(1,8), "SorcererFX1New", "SorcererFX1Crisis");
+			}
+			Goto See;
+		Pain:
+			SRCR Q 6 A_Sor1Pain();
+			Goto See;
+		Pain.Fist:
+			SRCR Q 6 A_Sor1Pain();
+			SRCR Q 6;
+			Goto See;
+		Pain.Kick:
+			SRCR Q 6 A_Sor1Pain();
+			SRCR QQ 6;
+			Goto See;
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			SRCR E 7;
+			SRCR F 7 A_Scream();
+			SRCR G 7;
+			SRCR HIJK 6;
+			SRCR L 25 A_StartSound("dsparil/zap", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			SRCR MN 5;
+			SRCR O 4;
+			SRCR L 20 A_StartSound("dsparil/zap", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			SRCR MN 5;
+			SRCR O 4;
+			SRCR L 12;
+			SRCR P -1 A_SorcererRise();
+			Stop;
+		Ice:
+			goto Death;
+	}
+}
+
+class DSparilUnmountedNew : DSparilBase replaces Sorcerer2
+{
+	int user_chaseteleportchance;
+	int user_chaseteleportchance2;
+	default
+	{
+		Tag "D'Sparil";
+		Health 56000;
+		Radius 16;
+		Height 70;
+		Mass 300;
+		Speed 14;
+		Painchance 32;
+		Painchance "Fist", 48; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 80; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Gauntlets", 48; // Fist attacks have a +50% chance of stunning an enemy
+		DamageFactor "Crush", 0.0625;
+		MeleeRange 92;
+		Monster;
+		+DROPOFF;
+		+BOSS;
+		+DONTMORPH;
+		+FULLVOLACTIVE;
+		+NORADIUSDMG;
+		+NOTARGET;
+		+NOICEDEATH;
+		+FLOORCLIP;
+		+BOSSDEATH;
+		+AVOIDMELEE;
+		+NOFEAR;
+		SeeSound "dsparil/sight";
+		AttackSound "dsparil/attack";
+		PainSound "dsparil/pain";
+		ActiveSound "dsparil/active";
+		Obituary "$OB_DSPARIL2";
+		HitObituary "$OB_DSPARIL2HIT";
+	}
+
+	States
+	{
+		Pain.Charm: Goto See;
+		Spawn:
+			SOR2 A 0 NoDelay;
+			SOR2 MN 10 A_Look();
+			goto Spawn+1;
+		See:
+			SOR2 A 0;
+			SOR2 MNOP 4
+			{
+				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
+
+				user_chaseteleportchance = 512;
+				if (levelbehavior && user_monsterlevel > 480) { user_chaseteleportchance = 256; }
+				else if (levelbehavior && user_monsterlevel > 420) { user_chaseteleportchance = 288; }
+				else if (levelbehavior && user_monsterlevel > 360) { user_chaseteleportchance = 320; }
+				else if (levelbehavior && user_monsterlevel > 300) { user_chaseteleportchance = 352; }
+				else if (levelbehavior && user_monsterlevel > 240) { user_chaseteleportchance = 384; }
+				else if (levelbehavior && user_monsterlevel > 180) { user_chaseteleportchance = 416; }
+				else if (levelbehavior && user_monsterlevel > 120) { user_chaseteleportchance = 448; }
+				else if (levelbehavior && user_monsterlevel > 60) { user_chaseteleportchance = 480; }
+				
+				user_chaseteleportchance2 = 1;
+				if (health <= user_HPCritRange) { user_chaseteleportchance2 = 8; }
+				else if (health <= user_HPLowRange) { user_chaseteleportchance2 = 4; }
+				else if (health <= (user_MaxHP/2)) { user_chaseteleportchance2 = 2; }
+				else { user_chaseteleportchance2 = 1; }
+				if (random(1,user_chaseteleportchance) <= user_chaseteleportchance2) { DSparilTeleport(); } else { A_Sor2Chase(); }
+			}
+			Loop;
+		Rise:
+			SOR2 A 0;
+			SOR2 A 0;
+			SOR2 AB 4;
+			SOR2 C 4 A_StartSound("dsparil/rise", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			SOR2 DEF 4;
+			SOR2 G 12 A_StartSound("dsparil/sight", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			Goto See;
+		Pain:
+			SOR2 Q 3;
+			SOR2 Q 6 A_Sor2Pain();
+			Goto See;
+		Pain.Fist:
+			SOR2 Q 3;
+			SOR2 Q 6 A_Sor2Pain();
+			SOR2 Q 3;
+			Goto See;
+		Pain.Kick:
+			SOR2 Q 3;
+			SOR2 Q 6 A_Sor2Pain();
+			SOR2 QQ 3;
+			Goto See;
+		Missile:
+			SOR2 R 9 
+			{
+				if (levelbehavior && user_monsterlevel > 160) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(8); }
+				A_Srcr2Decide();
+			}
+			SOR2 S 9 
+			{
+				if (levelbehavior && user_monsterlevel > 160) { A_SetTics(5); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(6); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(7); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(8); }
+				A_FaceTarget();
+			}
+			SOR2 T 20 
+			{
+				if (levelbehavior && user_monsterlevel > 200) { A_SetTics(10); }
+				else if (levelbehavior && user_monsterlevel > 180) { A_SetTics(11); }
+				else if (levelbehavior && user_monsterlevel > 160) { A_SetTics(12); }
+				else if (levelbehavior && user_monsterlevel > 140) { A_SetTics(13); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(14); }
+				else if (levelbehavior && user_monsterlevel > 100) { A_SetTics(15); }
+				else if (levelbehavior && user_monsterlevel > 80) { A_SetTics(16); }
+				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(17); }
+				else if (levelbehavior && user_monsterlevel > 40) { A_SetTics(18); }
+				else if (levelbehavior && user_monsterlevel > 20) { A_SetTics(19); }
+				A_Srcr2Attack(20*random(1,8),"Sorcerer2FX1New","Sorcerer2FX1Crisis","Sorcerer2FX2New","Sorcerer2FX2Crisis");
+			}
+			Goto See;
+		Teleport:
+			TNT1 A 0; // makes sure D'Sparil is as stealth as possible when proceeding to teleport if flagged as stealth
+			SOR2 LKJIHG 6;
+			Goto See;
+		Death:
+			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
+			SDTH A 8 A_Sor2DthInit();
+			SDTH B 8;
+			SDTH C 8 A_StartSound("dsparil/scream", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+		DeathLoop:
+			SDTH DE 7;
+			SDTH F 7 A_Sor2DthLoop();
+			SDTH G 6 A_StartSound("dsparil/explode", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			SDTH H 6 A_SpawnItemEx("DSparilStaff",0,0,0,random(-12,12),random(-12,12),random(-12,12));
+			SDTH I 18;
+			SDTH J 6 A_NoBlocking();
+			SDTH K 6 A_StartSound("dsparil/bones", CHAN_BODY, CHANF_DEFAULT, 1, ATTN_NONE);
+			SDTH LMN 6;
+			SDTH O -1 A_DVDSBossDeath();
+			Stop;
+		Ice:
+			goto Death;
+	}
+}

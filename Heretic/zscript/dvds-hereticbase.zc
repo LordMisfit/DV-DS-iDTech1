@@ -5163,3 +5163,29 @@ class PodNew : Pod replaces Pod
 		Painchance "Dashing", 0;
 	}
 }
+
+// EggFX
+class EggFXNew : EggFX replaces EggFX
+{
+	default
+	{
+		Tag "Ovum Shot";
+		Radius 8;
+		Height 8;
+		Speed 18;
+		MorphProjectile.PlayerClass "ChickenPlayer";
+		MorphProjectile.MonsterClass "Chicken";
+		MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE;
+	}
+	
+	States
+	{
+		Spawn:
+			EGGM ABCDE 4;
+			Loop;
+		Death:
+			FX01 FFGH 3 Bright;
+			Stop;
+	}
+}
+

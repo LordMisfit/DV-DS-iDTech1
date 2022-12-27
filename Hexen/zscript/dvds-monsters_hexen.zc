@@ -214,6 +214,194 @@ class MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 	}
 }
 
+// Maulotaur [Hexen-side]
+class MinotaurFX1New : AetheriusEffectProjectile replaces MinotaurFX1 
+{
+	default
+	{
+		Tag "'taur Fire";
+		DamageFunction (3 * random(1,8));
+		DamageType "Fire";
+		Radius 10;
+		Height 6;
+		Speed 20;
+		FastSpeed 26;
+		DamageType "Fire";
+		Projectile;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			FX12 AAABBB 2 Bright;
+			Loop;
+		Death:
+			FX12 CDEFGH 5 Bright;
+			Stop;
+	}
+}
+class MinotaurFX1Crisis : MinotaurFX1New
+{
+	default
+	{
+		DamageFunction ((3 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FX12 AAABBB 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Loop;
+		Death:
+			FX12 CDEFGH 5 Bright;
+			Stop;
+	}
+}
+
+class MinotaurFX2New : MinotaurFX1New replaces MinotaurFX2 
+{
+	default
+	{
+		Tag "'taur Firesnake";
+		DamageFunction (4 * random(1,8));
+		DamageType "Fire";
+		Radius 5;
+		Height 12;
+		Speed 14;
+		FastSpeed 20;
+		+FLOORHUGGER;
+		ExplosionDamage 24;
+		DeathSound "minotaur/fx2hit";
+	}
+	
+	States
+	{
+		Spawn:
+			FX13 A 2 Bright 
+			{
+				A_MntrFloorFire("MinotaurFX3New");
+			}
+			Loop;
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode(24,64);
+			}
+			FX13 JKLM 4 Bright;
+			Stop;
+	}
+}
+class MinotaurFX2Crisis : MinotaurFX2New 
+{
+	default
+	{
+		DamageFunction ((4 * random(1,8)) * CrisisMultiplier);
+	}
+	
+	States
+	{
+		Spawn:
+			FX13 A 2 Bright 
+			{
+				A_MntrFloorFire("MinotaurFX3Crisis");
+			}
+			Loop;
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode(24*CrisisMultiplier,64);
+			}
+			FX13 JKLM 4 Bright;
+			Stop;
+	}
+}
+
+class MinotaurFX3New : MinotaurFX2New replaces MinotaurFX3 
+{
+	default
+	{
+		Tag "'taur Firesnake";
+		DamageType "Fire";
+		Radius 8;
+		Height 16;
+		Speed 0;
+		DeathSound "minotaur/fx3hit";
+		ExplosionDamage 128;
+	}
+	
+	States
+	{
+		Spawn:
+			FX13 DDCC 2 Bright;
+			FX13 BB 2 Bright;
+			FX13 B 1 Bright;
+			FX13 CC 2 Bright;
+			FX13 C 1 Bright;
+			FX13 DD 2 Bright;
+			FX13 D 1 Bright;
+			FX13 EE 2 Bright;
+			FX13 E 1 Bright;
+			FX13 FFGGHH 2 Bright;
+			Stop;
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode(128,128);
+			}
+			FX13 JKLM 4 Bright;
+			Stop;
+	}
+}
+class MinotaurFX3Crisis : MinotaurFX3New
+{
+	States
+	{
+		Spawn:
+			FX13 DDCC 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX13 BB 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX13 B 1 Bright;
+			FX13 CC 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX13 C 1 Bright;
+			FX13 DD 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX13 D 1 Bright;
+			FX13 EE 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			FX13 E 1 Bright;
+			FX13 FFGGHH 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			Stop;
+		Death:
+			FX13 I 4 Bright 
+			{
+				A_Explode((128*CrisisMultiplier),128);
+			}
+			FX13 JKLM 4 Bright;
+			Stop;
+	}
+}
+
 // Pig
 class PigNew : AetheriusMorphedMonster replaces Pig
 {

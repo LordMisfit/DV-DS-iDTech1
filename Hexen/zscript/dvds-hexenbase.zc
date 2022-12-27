@@ -4019,3 +4019,29 @@ class ZPoisonShroomNew : ZPoisonShroom replaces ZPoisonShroom
 			Stop;
 	}
 }
+
+// Porkulator
+class PorkFXNew : PorkFX replaces PorkFX
+{
+	default
+	{
+		Tag "Porkulator Shot";
+		Radius 8;
+		Height 8;
+		Speed 18;
+		MorphProjectile.PlayerClass "PigPlayer";
+		MorphProjectile.MonsterClass "Pig";
+		MorphProjectile.MorphStyle MRF_UNDOBYTOMEOFPOWER|MRF_UNDOBYCHAOSDEVICE;
+	}
+	
+	States
+	{
+		Spawn:
+			PRKM ABCDE 4;
+			Loop;
+		Death:
+			FHFX IJKL 3 Bright;
+			Stop;
+	}
+}
+

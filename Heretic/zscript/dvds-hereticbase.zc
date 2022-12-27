@@ -5153,3 +5153,13 @@ class DualDSparilStaff : HereticWeaponBase
 			goto Ready;
 	}
 }
+class PodNew : Pod replaces Pod
+{
+	default
+	{
+		Tag "Explosive Pod";
+		DamageType "Explosive";
+		DamageFactor "Dashing", 0;
+		Painchance "Dashing", 0;
+	}
+}

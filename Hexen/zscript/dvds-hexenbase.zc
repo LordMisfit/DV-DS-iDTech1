@@ -1383,7 +1383,6 @@ class FHeresiarch : HeresiarchNew
 
 // Projectiles
 // Base class for the balls flying around the Heresiarch's head -------------
-
 class SorcBallBase : AetheriusProjectileZSC
 {
 	Default
@@ -2244,6 +2243,191 @@ class SorcFX4Base : AetheriusProjectileZSC
 		{
 			SetStateLabel ("Death");
 		}
+	}
+}
+
+// Heresiarch
+class SorcBall1New : SorcBall1Base replaces SorcBall1
+{
+	States
+	{
+		Death:
+			SBS4 D 0 { bNOBOUNCESOUND = true; }
+			SBS4 D 5 A_Explode(255, 255);
+			SBS4 E 5;
+			SBS4 FGH 6;
+			Stop;
+	}
+}
+class SorcBall2New : SorcBall2Base replaces SorcBall2
+{
+	States
+	{
+		Death:
+			SBS3 D 0 { bNOBOUNCESOUND = true; }
+			SBS3 D 5 A_Explode(255, 255);
+			SBS3 E 5;
+			SBS3 FGH 6;
+			Stop;
+	}
+}
+
+class SorcBall3New : SorcBall3Base replaces SorcBall3
+{
+	States
+	{
+		Death:
+			SBS3 D 0 { bNOBOUNCESOUND = true; }
+			SBS3 D 5 A_Explode(255, 255);
+			SBS3 E 5;
+			SBS3 FGH 6;
+			Stop;
+	}
+}
+
+class SorcFX1New : SorcFX1Base replaces SorcFX1
+{
+	default
+	{
+		Speed 7;
+		Radius 5;
+		Height 5;
+		Projectile;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		-NOGRAVITY;
+		+FULLVOLDEATH;
+		+CANBOUNCEWATER;
+		+NOWALLBOUNCESND;
+		BounceFactor 1.0;
+		DamageType "Magic";
+		+HEXENBOUNCE;
+		SeeSound "SorcererBallBounce";
+		DeathSound "SorcererHeadScream";
+	}
+	
+	States
+	{
+		Spawn:
+			SBS1 A 2 Bright;
+			SBS1 BCD 3 Bright A_SorcFX1Seek();
+			Loop;
+		Death:
+			FHFX S 2 Bright 
+			{
+				A_Explode(30, 128, 0);
+			}
+			FHFX SS 6 Bright;
+			Stop;
+	}
+}
+class SorcFX1Crisis : SorcFX1New
+{
+	default
+	{
+		Speed 7;
+		Radius 5;
+		Height 5;
+		Projectile;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		-NOGRAVITY;
+		+FULLVOLDEATH;
+		+CANBOUNCEWATER;
+		+NOWALLBOUNCESND;
+		BounceFactor 1.0;
+		DamageType "Magic";
+		+HEXENBOUNCE;
+		SeeSound "SorcererBallBounce";
+		DeathSound "SorcererHeadScream";
+	}
+	
+	States
+	{
+		Spawn:
+			SBS1 A 2 Bright
+			{
+				A_GenerateCrisisParticle();
+			}
+			SBS1 BCD 3 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SorcFX1Seek();
+			}
+			Loop;
+		Death:
+			FHFX S 2 Bright 
+			{
+				A_Explode(30*CrisisMultiplier, 128, 0);
+			}
+			FHFX SS 6 Bright;
+			Stop;
+	}
+}
+
+class SorcFX4New : SorcFX4Base replaces SorcFX4
+{
+	default
+	{
+		Speed 12;
+		Radius 10;
+		Height 10;
+		Projectile;
+		DamageType "Magic";
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		DeathSound "SorcererBallExplode";
+	}
+	
+	States
+	{
+		Spawn:
+			SBS4 ABC 2 Bright 
+			{
+				A_SorcFX4Check();
+			}
+			Loop;
+		Death:
+			SBS4 D 2 Bright;
+			SBS4 E 2 Bright
+			{
+				A_Explode(20, 128, 0);
+			}
+			SBS4 FGH 2 Bright;
+			Stop;
+	}
+}
+class SorcFX4Crisis : SorcFX4New
+{
+	default
+	{
+		Speed 12;
+		Radius 10;
+		Height 10;
+		Projectile;
+		DamageType "Magic";
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+		DeathSound "SorcererBallExplode";
+	}
+	
+	States
+	{
+		Spawn:
+			SBS4 ABC 2 Bright 
+			{
+				A_GenerateCrisisParticle();
+				A_SorcFX4Check();
+			}
+			Loop;
+		Death:
+			SBS4 D 2 Bright;
+			SBS4 E 2 Bright
+			{
+				A_Explode(20*CrisisMultiplier, 128, 0);
+			}
+			SBS4 FGH 2 Bright;
+			Stop;
 	}
 }
 
@@ -6553,5 +6737,35 @@ class Demon5JetCrisis : Demon5Jet
 		Death2:
 			D5JT DEFG 2 BRIGHT;
 			Stop;
+	}
+}
+class ThrustFloorUpDVDS : ThrustFloorDVDS replaces ThrustFloorUp
+{
+	default
+	{
+		+SOLID;
+		+NOTELEPORT;
+		+FLOORCLIP;
+	}
+	
+	States
+	{
+		Spawn:
+			Goto ThrustInit2;
+	}
+}
+class ThrustFloorDownDVDS : ThrustFloorDVDS replaces ThrustFloorDown
+{
+	default
+	{
+		+NOTELEPORT;
+		+FLOORCLIP;
+		+INVISIBLE;
+	}
+	
+	States
+	{
+		Spawn:
+			Goto ThrustInit1;
 	}
 }

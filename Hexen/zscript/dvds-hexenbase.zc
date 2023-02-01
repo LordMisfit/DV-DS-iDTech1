@@ -4912,7 +4912,7 @@ class FirePillarShot : AetheriusProjectileZSC
 		Speed 0;
 		Radius 4;
 		Height 3;
-		RenderStyle "Add";;
+		RenderStyle "Add";
 		Scale 0.5;
 		Alpha 0.6;
 	}

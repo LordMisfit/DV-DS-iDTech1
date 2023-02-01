@@ -450,7 +450,7 @@ class PigNew : AetheriusMorphedMonster replaces Pig
 			PIGY A 5 A_FaceTarget();
 			PIGY A 10 
 			{
-				A_FaceTarget();;
+				A_FaceTarget();
 				
 				A_CrisisMeleeAttack(random[PigAttack](2, 3), "PigAttack");
 			}

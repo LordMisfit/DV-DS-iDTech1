@@ -2312,7 +2312,7 @@ class WizardNew : AetheriusMonsterZSC
 		Obituary "%o was cursed by a Disciple of D'Sparil.";
 		HitObituary "%o was scratched by a Disciple of D'Sparil.";
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -2476,7 +2476,7 @@ class WizardNew : AetheriusMonsterZSC
 				else if (levelbehavior && user_monsterlevel > 23) { A_SetTics(11); }
 
 				A_MonsterCrisisCheck(); // Multiple Projectiles / WizAtk3
-				A_WizAtk3("WizardFX1New","WizardFX1Crisis", 4*random(1,8));
+				A_WizAtk3("WizardFX1New","WizardFX1Crisis", 5*random(1,8));
 			}
 			Goto See;
 		Pain:

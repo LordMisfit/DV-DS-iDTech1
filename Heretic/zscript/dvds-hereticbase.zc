@@ -5158,6 +5158,7 @@ class PodNew : Pod replaces Pod
 	default
 	{
 		Tag "Explosive Pod";
+		+PUSHABLE
 		DamageType "Explosive";
 		DamageFactor "Dashing", 0;
 		Painchance "Dashing", 0;

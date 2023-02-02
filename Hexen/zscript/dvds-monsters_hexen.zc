@@ -1185,7 +1185,7 @@ class CentaurNew : AetheriusMonsterZSC replaces Centaur
 		HowlSound "PuppyBeat";
 		Obituary "$OB_CENTAUR";
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -1218,7 +1218,8 @@ class CentaurNew : AetheriusMonsterZSC replaces Centaur
 			}
 			CENT J 7
 			{
-				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget();
 				
@@ -1427,7 +1428,8 @@ class SlaughtaurNew : CentaurNew replaces CentaurLeader
 			}
 			CENT J 7
 			{
-				if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
+				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(4); }
+				else if (levelbehavior && user_monsterlevel > 120) { A_SetTics(5); }
 				else if (levelbehavior && user_monsterlevel > 60) { A_SetTics(6); }
 				A_FaceTarget();
 				
@@ -1579,17 +1581,9 @@ class SlaughtaurNew : CentaurNew replaces CentaurLeader
 				A_CentaurShieldOff();
 				A_SlaughtaurShieldOff();
 				A_FaceTarget();
-	
-				if (levelbehavior && user_monsterlevel > 180) { user_paintomissile = 1; }
-				else if (levelbehavior && user_monsterlevel > 160) { user_paintomissile = 2; }
-				else if (levelbehavior && user_monsterlevel > 140) { user_paintomissile = 3; }
-				else if (levelbehavior && user_monsterlevel > 120) { user_paintomissile = 4; }
-				else if (levelbehavior && user_monsterlevel > 100) { user_paintomissile = 5; }
-				else if (levelbehavior && user_monsterlevel > 80) { user_paintomissile = 6; }
-				else if (levelbehavior && user_monsterlevel > 60) { user_paintomissile = 7; }
-				else if (levelbehavior && user_monsterlevel > 40) { user_paintomissile = 8; }
-				else if (levelbehavior && user_monsterlevel > 20) { user_paintomissile = 9; }
-				else { user_paintomissile = 10; }
+				user_paintomissile = 10;
+				if (levelbehavior) user_paintomissile -= (user_monsterlevel * (0.05));
+				if (user_paintomissile < 1) user_paintomissile = 1;
 	
 				if (random(1,user_paintomissile) == 1) { return resolvestate("Missile"); }
 				return resolvestate(null);

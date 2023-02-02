@@ -170,22 +170,9 @@ class HereticImpNew : AetheriusMonsterZSC // replaces HereticImp
 		Missile:
 			IMPX A 0
 			{
-				if (levelbehavior && user_monsterlevel > 300) { user_chargechance = 70; }
-				else if (levelbehavior && user_monsterlevel > 280) { user_chargechance = 67; }
-				else if (levelbehavior && user_monsterlevel > 260) { user_chargechance = 64; }
-				else if (levelbehavior && user_monsterlevel > 240) { user_chargechance = 61; }
-				else if (levelbehavior && user_monsterlevel > 220) { user_chargechance = 58; }
-				else if (levelbehavior && user_monsterlevel > 200) { user_chargechance = 55; }
-				else if (levelbehavior && user_monsterlevel > 180) { user_chargechance = 52; }
-				else if (levelbehavior && user_monsterlevel > 160) { user_chargechance = 49; }
-				else if (levelbehavior && user_monsterlevel > 140) { user_chargechance = 46; }
-				else if (levelbehavior && user_monsterlevel > 120) { user_chargechance = 43; }
-				else if (levelbehavior && user_monsterlevel > 100) { user_chargechance = 40; }
-				else if (levelbehavior && user_monsterlevel > 80) { user_chargechance = 37; }
-				else if (levelbehavior && user_monsterlevel > 60) { user_chargechance = 34; }
-				else if (levelbehavior && user_monsterlevel > 40) { user_chargechance = 31; }
-				else if (levelbehavior && user_monsterlevel > 20) { user_chargechance = 28; }
-				else { user_chargechance = 25; }
+				user_chargechance = 25;
+				if (levelbehavior) user_chargechance += (user_monsterlevel * (0.15));
+				if (user_chargechance > 70) user_chargechance = 70;
 
 				if (random(1,100) > user_chargechance) { return resolvestate("See"); }
 				else
@@ -994,7 +981,7 @@ class MummyLeaderNew : AetheriusMonsterZSC
 		DropItem "GoldWandAmmo", 84, 3;
 		DropItem "GoldWandHefty", 8, 15;
 	}
-
+	
 	states
 	{
 		Spawn:

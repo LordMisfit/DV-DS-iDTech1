@@ -2677,7 +2677,7 @@ class GreaterDisciple : AetheriusMonsterZSC
 				A_CrisisSpawnProjectile("DiscipleShot2","DiscipleShot2Crisis",36,0,0,0);
 			}
 			DISC E 1 Bright
-		{
+			{
 				if (levelbehavior && user_monsterlevel > 180) { A_SetTics(0); }
 				A_StartSound("monster/disat2");
 			}
@@ -4508,7 +4508,7 @@ class BeastNew : AetheriusMonsterZSC
 		DropItem "CrossbowAmmo", 84, 10;
 		DropItem "CrossbowHefty", 8, 50;
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -5036,7 +5036,7 @@ class SnakeNew : AetheriusMonsterZSC // replaces Snake
 		DropItem "PhoenixRodHefty", 8;
 		Species "Ophidian";
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -6215,7 +6215,7 @@ class DSparilUnmountedNew : DSparilBase replaces Sorcerer2
 		Obituary "$OB_DSPARIL2";
 		HitObituary "$OB_DSPARIL2HIT";
 	}
-
+	
 	States
 	{
 		Pain.Charm: Goto See;

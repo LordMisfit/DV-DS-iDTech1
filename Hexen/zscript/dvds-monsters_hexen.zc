@@ -39,7 +39,7 @@ class MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 		ActiveSound "minotaur/active";
 		DropItem "None";
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -4330,6 +4330,7 @@ class StalkerLeaderNew : StalkerNew // replaces SerpentLeader
 		Health 120;
 		Meleerange 72;
 		Translation "51:66=51:58", "186:202=186:194", "233:239=235:239", "33:50=33:41", "0:32=0:16";
+		PainChance 96;
 	}
 	
 	States
@@ -4957,7 +4958,7 @@ class BrownChaosSerpentNew : GreenChaosSerpentNew // replaces Demon2
 		Species "ChaosSerpent";
 		+DONTHARMSPECIES;
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -6292,7 +6293,7 @@ class ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 		DeathSound "PlayerClericCrazyDeath";
 		Obituary "$OBCBOSS";
 	}
-
+	
 	States
 	{
 		Pain.Charm: Goto See;
@@ -6306,8 +6307,15 @@ class ClericBossNew : AetheriusMonsterZSC replaces ClericBoss
 			CLER ABCD 4
 			{
 				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
-
-				if (random(1,3) == 1) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); } else { A_DVDSChase("Melee","Missile",0,1,3,1,1); }
+				
+				if (random(1,3) <= 1) 
+				{
+					A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); 
+				}
+				else
+				{
+					A_DVDSChase("Melee","Missile",0,1,3,1,1); 
+				}
 			}
 			Loop;
 		Pain:
@@ -6540,7 +6548,6 @@ class FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 		DamageFactor 0.833;
 		RadiusDamageFactor 0.833;
 		DamageFactor "Explosive", 0.833;
-
 		DamageFactor "Crush", 0.3;
 		Reactiontime 8;
 		Meleerange 72;
@@ -6557,7 +6564,7 @@ class FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 		DeathSound "PlayerFighterCrazyDeath";
 		Obituary "$OB_FBOSS";
 	}
-
+	
 	States
 	{
 		Pain.Charm: Goto See;
@@ -6571,8 +6578,15 @@ class FighterBossNew : AetheriusMonsterZSC replaces FighterBoss
 			PLAY ABCD 4
 			{
 				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
-
-				if (random(1,3) == 1) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); } else { A_DVDSChase("Melee","Missile",0); }
+				
+				if (random(1,3) <= 1) 
+				{
+					A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); 
+				}
+				else
+				{
+					A_DVDSChase("Melee","Missile",0,1,3,1,1); 
+				}
 			}
 			Loop;
 		Pain:
@@ -6760,8 +6774,15 @@ class MageBossNew : AetheriusMonsterZSC replaces MageBoss
 			MAGE ABCD 4
 			{
 				if (levelbehavior && user_monsterlevel > 60) { bAVOIDMELEE = true; A_SetTics(3); }
-
-				if (random(1,3) == 1) { A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); } else { A_DVDSChase("Melee","Missile",0); }
+				
+				if (random(1,3) <= 1) 
+				{
+					A_DVDSChase("Melee","Missile",CHF_FASTCHASE,1,3,1,1); 
+				}
+				else
+				{
+					A_DVDSChase("Melee","Missile",0,1,3,1,1); 
+				}
 			}
 			Loop;
 		Pain:

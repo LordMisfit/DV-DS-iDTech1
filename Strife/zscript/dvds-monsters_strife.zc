@@ -687,7 +687,7 @@ class RebelNew : StrifeHumanoidBase replaces Rebel // Base class for Rebels
 		ActiveSound "rebel/active";
 		Obituary "$OB_REBEL"; // "%o was gunned down by a Rebel."
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -959,7 +959,7 @@ class AcolyteNew : StrifeHumanoidBase replaces Acolyte
 		Obituary "$OB_ACOLYTE"; // "%o was zealously shot down by an Acolyte.";
 		DropItem "AssaultGun", 1;
 	}
-
+	
 	States
 	{
 		Spawn:
@@ -1894,6 +1894,7 @@ class CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 		DamageFactor "Lightning", 1.25;
 		Mass 1000000000;
 		Monster;
+		+NOPAIN;
 		-SOLID;
 		-CANPASS;
 		+AMBUSH;
@@ -1906,7 +1907,7 @@ class CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 		MinMissileChance 150;
 		DeathSound "turret/death";
 	}
-
+	
 	States
 	{
 		Spawn:

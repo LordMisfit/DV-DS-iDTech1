@@ -610,7 +610,7 @@ class KnightGhostSpawner : AetheriusMonsterSpawner replaces KnightGhost
 			if (random(1,2048) <= evolveChance)
 				return "DeathKnightGhost";
 			else
-				return "KnightNew";
+				return "KnightGhostNew";
 		}
 	}
 }
@@ -724,7 +724,7 @@ class LichSpawner : AetheriusMonsterSpawner replaces Ironlich
 	}
 }
 
-// Disciple Spawner
+// Sabreclaw Spawner
 class ClinkSpawner : AetheriusMonsterSpawner replaces Clink
 {
 	Default
@@ -760,7 +760,7 @@ class ClinkSpawner : AetheriusMonsterSpawner replaces Clink
 	}
 }
 
-// Disciple Spawner
+// Weredragon Spawner
 class WeredragonSpawner : AetheriusMonsterSpawner replaces Beast
 {
 	Default
@@ -8071,11 +8071,11 @@ class Medusabeam : AetheriusEffectFastProjectile
 					if (random(1,user_ailmentmaxchance) <= 7 && user_canafflict)
 					{
 						user_random = random(1,5);
-						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)); } // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random >= 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						if (user_random <= 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)); } // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 						else if (user_random == 3) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 						else if (user_random == 4) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(210,350)); } // Deceleratle for 6-10 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random == 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(280,420)); } // Deceleratle for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						else if (user_random >= 5) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(280,420)); } // Deceleratle for 8-12 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 					}
 				}
 			}

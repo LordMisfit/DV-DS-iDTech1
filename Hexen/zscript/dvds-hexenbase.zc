@@ -4501,7 +4501,7 @@ class PossEttFireBall : WraithFX1New
 			WRBL GHI 3;
 			Stop;
 	}
-}	
+}
 class PossEttFireBallCrisis : PossEttFireBall
 {
 	default

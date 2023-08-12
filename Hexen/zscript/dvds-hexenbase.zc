@@ -3937,7 +3937,8 @@ class DartNew : AetheriusEffectProjectile replaces Dart
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(5);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -3969,7 +3970,8 @@ class PoisonDartNew : DartNew replaces PoisonDart
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(7);
 					if (random(1,user_ailmentmaxchance) <= 5 && user_canafflict)
@@ -4007,7 +4009,8 @@ class IceShardNew : AetheriusEffectProjectile replaces IceShard
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(6);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6065,7 +6068,8 @@ class Demon2FX1New : AetheriusEffectProjectile replaces Demon2FX1
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(8);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6098,7 +6102,8 @@ class Demon2FX1Crisis : Demon2FX1New
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(8);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6286,7 +6291,8 @@ class Demon4FX : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(4);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6324,7 +6330,8 @@ class Demon4FXCrisis : Demon4FX
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(4);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6399,7 +6406,8 @@ class PoisonVolcanoTBlast : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(24);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6431,7 +6439,8 @@ class PoisonVolcanoTBlastCrisis : PoisonVolcanoTBlast
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(24);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6475,7 +6484,8 @@ class Demon5FX1 : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(5);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6516,7 +6526,8 @@ class Demon5FX1Crisis : Demon5FX1
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(5);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6572,7 +6583,8 @@ class Demon5Jet : AetheriusEffectProjectile
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(15);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
@@ -6613,7 +6625,8 @@ class Demon5JetCrisis : Demon5Jet
 		Death:
 			TNT1 A 0 Bright
 			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				actor player = players[0].mo;
+				if (master == player)
 				{
 					A_StatusEffectChecker(15);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)

@@ -1899,7 +1899,7 @@ class CeilingTurretNew : AetheriusMonsterZSC replaces CeilingTurret
 		-CANPASS;
 		+AMBUSH;
 		+SPAWNCEILING;
-		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		+NOGRAVITY;
 		+NOBLOOD;
 		+NOSPLASHALERT;
@@ -3135,9 +3135,13 @@ class ProgrammerNew : AetheriusMonsterZSC replaces Programmer
 			PRGR X 32 Bright;
 			PRGR X -1 Bright // A_ProgrammerDeath();
 			{
-				A_GiveInventory("Sigil1",1,AAPTR_PLAYER1); // Programmer dead
-				A_GiveInventory("ProgLevelEnder",1,AAPTR_PLAYER1); // Programmer dead
-				A_GiveInventory("ProgrammerDed",1,AAPTR_PLAYER1); // Programmer dead
+				actor playera = players[0].mo;
+				if (playera)
+				{
+					playera.A_GiveInventory("Sigil1",1); // Programmer dead
+					playera.A_GiveInventory("ProgLevelEnder",1); // Programmer dead
+					playera.A_GiveInventory("ProgrammerDed",1); // Programmer dead
+				}
 				A_DVDSBossDeath();
 			}
 			Stop;
@@ -3745,7 +3749,7 @@ class AlienSpectre1New : SpectralMonsterBase replaces AlienSpectre1
 		+LOOKALLAROUND;
 		+NOICEDEATH;
 		+NOFEAR;
-		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		-SPECTRAL;
 	}
 
@@ -3982,11 +3986,15 @@ class AlienSpectre2New : AlienSpectre1New replaces AlienSpectre2
 			AL1P OPQ 5 Bright;
 			AL1P R 5 Bright // A_AlienSpectreDeath();
 			{
-				A_PrintBold("YOU HAVE SLAIN THE BISHOP!");
-				A_StartSound("svox/voc74",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+				actor playera = players[0].mo;
+				if (playera)
+				{
+					A_PrintBold("YOU HAVE SLAIN THE BISHOP!");
+					A_StartSound("svox/voc74",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+					playera.A_GiveInventory("Sigil2",1); // Bishop dead
+					playera.A_GiveInventory("QuestItem21",1); // Bishop dead
+				}
 				SendToCommunicator(74,0,0,0);
-				A_GiveInventory("Sigil2",1,AAPTR_PLAYER1); // Bishop dead
-				A_GiveInventory("QuestItem21",1,AAPTR_PLAYER1); // Bishop dead
 			}
 			Stop;
 	}
@@ -4158,29 +4166,33 @@ class AlienSpectre3New : AlienSpectre1New replaces AlienSpectre3
 			AL1P OPQ 5 Bright;
 			AL1P R 5 Bright // A_AlienSpectreDeath();
 			{
-				A_PrintBold("THE ORACLE HAS FALLEN!");
 				Thing_Destroy(900, 0); // Kill all Oracles.
 				Door_Open(222, 8);
-				A_GiveInventory("QuestItem23",1,AAPTR_PLAYER1); // Oracle dead
-				
-				// If bishop is dead, mark Oracle as dead.
-				if (CountInv("QuestItem21",AAPTR_PLAYER1))
+				actor playera = players[0].mo;
+				if (playera)
 				{
-					A_GiveInventory("QuestItem22",1,AAPTR_PLAYER1); // Oracle dead
-				}
-	
-				if (CountInv("QuestItem24",AAPTR_PLAYER1)) // If Macil is already dead...
-				{
-					A_StartSound("svox/voc85",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					A_GiveInventory("Sigil5",1,AAPTR_PLAYER1);
-					A_GiveInventory("SigilComplete",1,AAPTR_PLAYER1);
-					SendToCommunicator(85,0,0,0); // You wield the power of the complete sigil.
-				}
-				else // If Macil still alive...
-				{
-					A_StartSound("svox/voc87",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					A_GiveInventory("Sigil3",1,AAPTR_PLAYER1);
-					SendToCommunicator(87,0,0,0); // Macil is calling us back...
+					A_PrintBold("THE ORACLE HAS FALLEN!");
+					playera.A_GiveInventory("QuestItem23",1); // Oracle dead
+					
+					// If bishop is dead, mark Oracle as dead.
+					if (playera.CountInv("QuestItem21"))
+					{
+						playera.A_GiveInventory("QuestItem22",1); // Oracle dead
+					}
+		
+					if (playera.CountInv("QuestItem24")) // If Macil is already dead...
+					{
+						A_StartSound("svox/voc85",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						playera.A_GiveInventory("Sigil5",1);
+						playera.A_GiveInventory("SigilComplete",1);
+						SendToCommunicator(85,0,0,0); // You wield the power of the complete sigil.
+					}
+					else // If Macil still alive...
+					{
+						A_StartSound("svox/voc87",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						playera.A_GiveInventory("Sigil3",1);
+						SendToCommunicator(87,0,0,0); // Macil is calling us back...
+					}
 				}
 			}
 			Stop;
@@ -4304,27 +4316,31 @@ class AlienSpectre4New : AlienSpectre1New replaces AlienSpectre4
 			AL1P OPQ 5 Bright;
 			AL1P R 5 Bright // A_AlienSpectreDeath();
 			{
-				A_PrintBold("MACIL HAS BEEN PUT OUT OF HIS MISERY!");
-				A_GiveInventory("QuestItem24",1,AAPTR_PLAYER1); // Oracle dead
-				
-				if (CountInv("QuestItem23",AAPTR_PLAYER1)) // If Oracle is already dead...
+				actor playera = players[0].mo;
+				if (playera)
 				{
-					A_GiveInventory("Sigil4",1,AAPTR_PLAYER1);
-				}
-				else
-				{
-					A_GiveInventory("Sigil3",1,AAPTR_PLAYER1);
-				}
-	
-				if (CountInv("QuestItem25",AAPTR_PLAYER1)) // If Converter was destroyed
-				{
-					A_StartSound("svox/voc106",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					SendToCommunicator(106,0,0,0); // Back to the factory for another Sigil!
-				}
-				else // If Conversion Chapel mission not complete...
-				{
-					A_StartSound("svox/voc79",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					SendToCommunicator(79,0,0,0); // Richter has taken over. Macil is a snake.
+					A_PrintBold("MACIL HAS BEEN PUT OUT OF HIS MISERY!");
+					playera.A_GiveInventory("QuestItem24",1); // Oracle dead
+					
+					if (playera.CountInv("QuestItem23")) // If Oracle is already dead...
+					{
+						playera.A_GiveInventory("Sigil4",1);
+					}
+					else
+					{
+						playera.A_GiveInventory("Sigil3",1);
+					}
+		
+					if (playera.CountInv("QuestItem25")) // If Converter was destroyed
+					{
+						A_StartSound("svox/voc106",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						SendToCommunicator(106,0,0,0); // Back to the factory for another Sigil!
+					}
+					else // If Conversion Chapel mission not complete...
+					{
+						A_StartSound("svox/voc79",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						SendToCommunicator(79,0,0,0); // Richter has taken over. Macil is a snake.
+					}
 				}
 			}
 			Stop;
@@ -4447,22 +4463,26 @@ class AlienSpectre5New : AlienSpectre1New replaces AlienSpectre5
 			AL1P OPQ 5 Bright;
 			AL1P R 5 Bright // A_AlienSpectreDeath();
 			{
-				A_PrintBold("THE LOREMASTER NOW FOREVER RESTS!");
+				actor playera = players[0].mo;
 				Floor_LowerToLowest(666, 8);
-				A_GiveInventory("QuestItem26",1,AAPTR_PLAYER1); // Loremaster dead
+				if (playera)
+				{
+					A_PrintBold("THE LOREMASTER NOW FOREVER RESTS!");
+					playera.A_GiveInventory("QuestItem26",1); // Loremaster dead
 
-				if (CountInv("QuestItem24",AAPTR_PLAYER1)) // If Oracle is already dead...
-				{
-					A_GiveInventory("Sigil5",1,AAPTR_PLAYER1);
-					A_GiveInventory("SigilComplete",1,AAPTR_PLAYER1);
-					A_StartSound("svox/voc85",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					SendToCommunicator(85,0,0,0); // Back to the factory for another Sigil!
-				}
-				else
-				{
-					A_GiveInventory("Sigil4",1,AAPTR_PLAYER1);
-					A_StartSound("svox/voc83",2,CHANF_DEFAULT,1.0,ATTN_NONE);
-					SendToCommunicator(83,0,0,0); // Another Sigil piece. Woohoo!
+					if (playera.CountInv("QuestItem24")) // If Oracle is already dead...
+					{
+						playera.A_GiveInventory("Sigil5",1);
+						playera.A_GiveInventory("SigilComplete",1);
+						A_StartSound("svox/voc85",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						SendToCommunicator(85,0,0,0); // Back to the factory for another Sigil!
+					}
+					else
+					{
+						playera.A_GiveInventory("Sigil4",1);
+						A_StartSound("svox/voc83",2,CHANF_DEFAULT,1.0,ATTN_NONE);
+						SendToCommunicator(83,0,0,0); // Another Sigil piece. Woohoo!
+					}
 				}
 			}
 			Stop;
@@ -4825,7 +4845,12 @@ class EntitySecondNew : SpectralMonsterBase replaces EntitySecond
 		Death:
 			MDTH O 0 A_GiveGold(random(1350,1800));
 			TNT1 A 0 A_DVDSNormalDeath(-2,0,1);
-			TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"Asension",AAPTR_PLAYER1);
+			TNT1 A 0
+			{
+				actor playera = players[0].mo;
+				if (playera && playera.CountInv("BestEndingFlag")) return resolvestate("Asension");
+				return resolvestate(null);
+			}
 		TrueDeath:
 			MDTH A 3 Bright A_Scream();
 			MDTH B 3 Bright A_TossGib();
@@ -5057,6 +5082,7 @@ class AlienSpectreModel : AetheriusMonsterZSC
 		+NOICEDEATH;
 		+NOFEAR;
 		-SPECTRAL;
+		+DONTTHRUST;
 	}
 	
 	States
@@ -5067,7 +5093,12 @@ class AlienSpectreModel : AetheriusMonsterZSC
 			TNT1 A 0 A_FadeOut(1.0);
 			Stop;
 		Check1:
-			TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"StickAround",AAPTR_PLAYER1);
+			TNT1 A 0
+			{
+				actor playera = players[0].mo;
+				if (playera && playera.CountInv("BestEndingFlag")) return resolvestate("StickAround");
+				return resolvestate(null);
+			}
 			TNT1 A 0 A_FadeOut(1.0);
 			Stop;
 		StickAround:
@@ -5430,20 +5461,27 @@ class OrderCultistBase : AetheriusBaseZSC
 			TNT1 A 0 A_FadeOut(1.0);
 			Stop;
 		Check1:
-			TNT1 A 0 A_JumpIfInventory("BestEndingFlag",1,"StickAround",AAPTR_PLAYER1);
+			TNT1 A 0
+			{
+				actor playera = players[0].mo;
+				if (playera && playera.CountInv("BestEndingFlag")) return resolvestate("StickAround");
+				return resolvestate(null);
+			}
 			TNT1 A 0 A_FadeOut(1.0);
 			Stop;
 		StickAround:
 			ORCU CCCCCCCCC 4
 			{
 				A_FadeIn(0.03,0);
-				if (CountInv("TalkToTeiytenth",AAPTR_PLAYER1)) { return resolvestate("Death"); }
+				actor playera = players[0].mo;
+				if (playera && playera.CountInv("TalkToTeiytenth")) return resolvestate("Death");
 				return resolvestate(null);
 			}
 			ORCU CCCCCCCCC 4
 			{
 				A_FadeOut(0.03,0);
-				if (CountInv("TalkToTeiytenth",AAPTR_PLAYER1)) { return resolvestate("Death"); }
+				actor playera = players[0].mo;
+				if (playera && playera.CountInv("TalkToTeiytenth")) return resolvestate("Death");
 				return resolvestate(null);
 			}
 			Loop;

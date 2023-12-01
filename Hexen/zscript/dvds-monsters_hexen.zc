@@ -4382,6 +4382,7 @@ class IceStalker : StalkerNew
 		+INVISIBLE;
 		+NOICEDEATH;
 		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		Obituary "%o caught a chill from an ice stalker.";
 		HitObituary "%o caught a chill from an ice stalker.";
 	}
@@ -4579,7 +4580,9 @@ class IceStalkerLeader : StalkerLeaderNew
 		+NOTELEOTHER;
 		+INVISIBLE;
 		+NOICEDEATH;
+		+DONTTHRUST;
 		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		Obituary "%o caught a chill from an ice stalker.";
 		HitObituary "%o caught a chill from an ice stalker.";
 		Translation "51:66=51:66", "186:202=186:202", "233:239=233:239", "33:50=33:50", "0:32=0:32", "67:80=67:74";  // Neutralizes the Translation from the Stalker Leader [for now]
@@ -5588,6 +5591,7 @@ class EtherealChaosSerpentNew : GreenChaosSerpentNew
 		+TELESTOMP;
 		+FLOORCLIP;
 		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		+NOBLOOD;
 		+NOICEDEATH;
 		+GHOST;
@@ -6071,6 +6075,7 @@ class DragonNew : AetheriusMonsterZSC replaces Dragon
 		+NOICEDEATH;
 		+AVOIDMELEE;
 		+NODAMAGETHRUST;
+		+DONTTHRUST;
 		SeeSound "DragonSight";
 		AttackSound "DragonAttack";
 		PainSound "DragonPain";

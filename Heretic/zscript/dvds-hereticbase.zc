@@ -1010,7 +1010,7 @@ class ArtiInvisibilityNew : AetheriusUsableInventory replaces ArtiInvisibility
 	}
 }
 
-class ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
+class ArtiFlyNew : CustomInventoryExt replaces ArtiFly
 {
 	default
 	{
@@ -1112,7 +1112,7 @@ class EnchantedShieldNew : RandomSpawner2 replaces EnchantedShield
 	}
 }
 
-class CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
+class CrystalVialNew : CustomInventoryExt replaces CrystalVial
 {
 	default
 	{
@@ -1192,7 +1192,7 @@ class CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
 	}
 }
 
-class BagOfHoldingNew : AetheriusCustomInventory replaces BagOfHolding
+class BagOfHoldingNew : CustomInventoryExt replaces BagOfHolding
 {
 	default
 	{

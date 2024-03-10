@@ -2586,7 +2586,7 @@ class StalkerLeaderSpawner : AetheriusMonsterSpawner replaces SerpentLeader
 	}
 }
 
-class PatriarchRadiusHeal : AetheriusCustomInventory
+class PatriarchRadiusHeal : CustomInventoryExt
 {
 	default
 	{
@@ -3139,7 +3139,7 @@ class ArtiTeleportNew : ArtiTeleport replaces ArtiTeleport
 	}
 }
   
-class ArtiSpeedBootsNew : AetheriusCustomInventory replaces ArtiSpeedBoots
+class ArtiSpeedBootsNew : CustomInventoryExt replaces ArtiSpeedBoots
 {
 	default
 	{
@@ -3163,7 +3163,7 @@ class ArtiSpeedBootsNew : AetheriusCustomInventory replaces ArtiSpeedBoots
 			Loop;
 	}
 }
-class ArtiFlyNew : AetheriusCustomInventory replaces ArtiFly
+class ArtiFlyNew : CustomInventoryExt replaces ArtiFly
 {
 	default
 	{
@@ -3802,7 +3802,7 @@ class Mana3New : Ammo replaces Mana3
 //****************
 //**Health Items**
 //****************
-class CrystalVialNew : AetheriusCustomInventory replaces CrystalVial
+class CrystalVialNew : CustomInventoryExt replaces CrystalVial
 {
 	default
 	{

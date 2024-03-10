@@ -1656,7 +1656,7 @@ class Mauler2New : Mauler2 replaces Mauler2
 // SELL ITEMS
 // IMPORTANT: THESE ARE FOR USE BY STRIFE DIALOGxx SCRIPTS TO GIVE THE PLAYER A SPECIFIC AMOUNT OF 
 // GOLD FOR THE RESPECTIVE ITEMS. SINCE ITEMS CAN ONLY BE GIVEN 1 AT A TIME, THIS THE BEST WORKAROUND I HAVE :V
-class BaseSellItem : AetheriusCustomInventory
+class BaseSellItem : CustomInventoryExt
 {
 	default
 	{
@@ -1944,7 +1944,7 @@ class OfferingChaliceItem1 : BaseSellItem
 
 // PICKUPS
 // Bag/Satchel
-class AmmoSatchelNew : AetheriusCustomInventory replaces AmmoSatchel
+class AmmoSatchelNew : CustomInventoryExt replaces AmmoSatchel
 {
 	default
 	{

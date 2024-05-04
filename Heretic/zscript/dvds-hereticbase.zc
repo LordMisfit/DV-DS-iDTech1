@@ -7,7 +7,7 @@ class DSparilBase : AetheriusBossZSC
 	void A_Sor1Pain()
 	{
 		int extrasteps;
-		if (levelbehavior) extrasteps = user_monsterlevel / 8;
+		if (levelbehavior) extrasteps = user_monsterlevel / A_CheckMonsterLevelDiv(8,true,self);
 		special1 = random(18,22) + extrasteps; // Number of steps to walk fast
 		A_Pain();
 	}
@@ -115,7 +115,7 @@ class DSparilBase : AetheriusBossZSC
 		if (random[Sorc2Pain](1,4) <= 3)
 		{
 			int extrasteps;
-			if (levelbehavior) extrasteps = user_monsterlevel / 6;
+			if (levelbehavior) extrasteps = user_monsterlevel / A_CheckMonsterLevelDiv(6,true,self);
 			special2 = random(16,24) + extrasteps; // Number of steps to walk fast
 			A_Pain();
 		}
@@ -165,12 +165,12 @@ class DSparilBase : AetheriusBossZSC
 			int ExtraChance;
 			if (CountInv("LDLegendaryMonsterTransformed"))
 			{
-				ExtraChance = 1 + (user_monsterlevel / 90);
+				ExtraChance = 1 + (user_monsterlevel / A_CheckMonsterLevelDiv(90,true,self));
 				if (random(1,16) <= ExtraChance) DSparilTeleport ();
 			}
 			else
 			{
-				ExtraChance = 2 + (user_monsterlevel / 90);
+				ExtraChance = 2 + (user_monsterlevel / A_CheckMonsterLevelDiv(90,true,self));
 				if (random(1,4) <= ExtraChance) DSparilTeleport ();
 			}
 		}

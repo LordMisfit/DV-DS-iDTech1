@@ -93,9 +93,9 @@ class MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			MNTR X 12 
 			{
 				if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { A_SetTics(8); }
-				else if (levelbehavior && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(67,68),2,true,self)) { A_SetTics(9); }
 				else if (levelbehavior && A_CheckMonsterLevel(45,2,true,self)) { A_SetTics(10); }
-				else if (levelbehavior && user_monsterlevel > 23) { A_SetTics(11); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(22,23),2,true,self)) { A_SetTics(11); }
 				A_MinotaurAtk1(4*random(1,8), -16);
 			}
 			Goto See;
@@ -149,9 +149,9 @@ class MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			MNTR X 12 
 			{
 				if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { A_SetTics(8); }
-				else if (levelbehavior && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(67,68),2,true,self)) { A_SetTics(9); }
 				else if (levelbehavior && A_CheckMonsterLevel(45,2,true,self)) { A_SetTics(10); }
-				else if (levelbehavior && user_monsterlevel > 23) { A_SetTics(11); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(22,23),2,true,self)) { A_SetTics(11); }
 				A_MinotaurAtk3(4*random(1,8), -16, "MinotaurFX2New", "MinotaurFX2Crisis");
 			}
 			Goto See;
@@ -163,9 +163,9 @@ class MaulotaurNew : MaulotaurFriendBase replaces MinotaurFriend
 			MNTR X 12
 			{
 				if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { A_SetTics(8); }
-				else if (levelbehavior && user_monsterlevel > 67) { A_SetTics(9); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(67,68),2,true,self)) { A_SetTics(9); }
 				else if (levelbehavior && A_CheckMonsterLevel(45,2,true,self)) { A_SetTics(10); }
-				else if (levelbehavior && user_monsterlevel > 23) { A_SetTics(11); }
+				else if (levelbehavior && A_CheckMonsterLevel(random(22,23),2,true,self)) { A_SetTics(11); }
 			}
 			Goto Hammer;
 		Charge:
@@ -1248,7 +1248,7 @@ class CentaurNew : AetheriusMonsterZSC replaces Centaur
 				if (random(1,8) <= 1) { user_defendtimer += 1; }
 				user_defendtimer += 1;
 
-				if (levelbehavior && user_monsterlevel > 270) { user_defendtimermax = 3; }
+				if (levelbehavior && A_CheckMonsterLevel(270,2,true,self)) { user_defendtimermax = 3; }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { user_defendtimermax = 4; }
 				else if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { user_defendtimermax = 5; }
 				else { user_defendtimermax = 6; }
@@ -1466,7 +1466,7 @@ class SlaughtaurNew : CentaurNew replaces CentaurLeader
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
 
-				if (levelbehavior && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+				if (levelbehavior && A_CheckMonsterLevel(270,2,true,self)) { user_defendtimermax = random(5,6); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { user_defendtimermax = random(6,7); }
 				else if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { user_defendtimermax = random(7,8); }
 				else { user_defendtimermax = 8; }
@@ -1503,7 +1503,7 @@ class SlaughtaurNew : CentaurNew replaces CentaurLeader
 					A_CrisisSpawnProjectile("CentaurFXNew", "CentaurFXCrisis", 45, 0, 0, CMF_AIMOFFSET); 
 				}
 			
-				if (levelbehavior && user_monsterlevel > 270) { user_defendtimermax = random(5,6); }
+				if (levelbehavior && A_CheckMonsterLevel(270,2,true,self)) { user_defendtimermax = random(5,6); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { user_defendtimermax = random(6,7); }
 				else if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { user_defendtimermax = random(7,8); }
 				else { user_defendtimermax = 8; }
@@ -1538,8 +1538,8 @@ class SlaughtaurNew : CentaurNew replaces CentaurLeader
 				if (random(1,8) == 1) { user_defendtimer += 1; }
 				user_defendtimer += 1;
 	
-				if (levelbehavior && user_monsterlevel > 315) { user_defendtimermax = 2; }
-				else if (levelbehavior && user_monsterlevel > 210) { user_defendtimermax = 3; }
+				if (levelbehavior && A_CheckMonsterLevel(315,2,true,self)) { user_defendtimermax = 2; }
+				else if (levelbehavior && A_CheckMonsterLevel(210,2,true,self)) { user_defendtimermax = 3; }
 				else if (levelbehavior && A_CheckMonsterLevel(105,2,true,self)) { user_defendtimermax = 4; }
 				else { user_defendtimermax = 5; }
 	
@@ -3735,39 +3735,39 @@ class DarkPatriarchClone : DarkPatriarch
 		See:
 			DPTR A 2 
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			DPTR A 2
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_BishopDecide();
 				A_BishopChase(1,1,3,1);
 			}
 			DPTR A 2 
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_BishopDecide();
 			}
 			DPTR B 2 
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_BishopChase(1,1,3,1);
 			}
 			DPTR B 2 
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_BishopDecide();
 				A_DVDSChase("Melee","Missile",0,1,3,1,1);
 			}
 			DPTR B 2 
 			{
-				if (levelbehavior && user_monsterlevel > 300) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(300,2,true,self)) { A_SetTics(1); }
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { bAVOIDMELEE = true; }
 				A_BishopDecide();
 				A_BishopChase(1,1,3,1);
@@ -3790,19 +3790,19 @@ class DarkPatriarchClone : DarkPatriarch
 			}
 			DPTR A 3 
 			{
-				if (levelbehavior && user_monsterlevel > 360) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(360,2,true,self)) { A_SetTics(1); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { A_SetTics(2); }
 				A_FaceTarget();
 			}
 			DPTR DE 3 
 			{
-				if (levelbehavior && user_monsterlevel > 360) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(360,2,true,self)) { A_SetTics(1); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { A_SetTics(2); }
 				A_FaceTarget();
 			}
 			DPTR F 3 
 			{
-				if (levelbehavior && user_monsterlevel > 360) { A_SetTics(1); }
+				if (levelbehavior && A_CheckMonsterLevel(360,2,true,self)) { A_SetTics(1); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { A_SetTics(2); }
 				A_StartSound("BishopAttack");
 			}
@@ -6121,10 +6121,10 @@ class DragonNew : AetheriusMonsterZSC replaces Dragon
 		Missile:
 			DRAG E 8 Fast
 			{
-				if (levelbehavior && user_monsterlevel > 270) { A_SetTics(2); }
+				if (levelbehavior && A_CheckMonsterLevel(270,2,true,self)) { A_SetTics(2); }
 				else if (levelbehavior && A_CheckMonsterLevel(225,2,true,self)) { A_SetTics(3); }
 				else if (levelbehavior && A_CheckMonsterLevel(180,2,true,self)) { A_SetTics(4); }
-				else if (levelbehavior && user_monsterlevel > 135) { A_SetTics(5); }
+				else if (levelbehavior && A_CheckMonsterLevel(135,2,true,self)) { A_SetTics(5); }
 				else if (levelbehavior && A_CheckMonsterLevel(90,2,true,self)) { A_SetTics(6); }
 				else if (levelbehavior && A_CheckMonsterLevel(45,2,true,self)) { A_SetTics(7); }
 

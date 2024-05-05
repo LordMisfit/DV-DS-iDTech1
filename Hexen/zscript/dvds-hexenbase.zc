@@ -730,11 +730,11 @@ class KoraxNew : AetheriusBossZSC
 			KORX G 15 Bright 
 			{
 				if (levelbehavior && A_CheckMonsterLevel(150,2,true,self)) { A_SetTics(9); }
-				else if (levelbehavior && user_monsterlevel > 125) { A_SetTics(10); }
-				else if (levelbehavior && user_monsterlevel > 100) { A_SetTics(11); }
+				else if (levelbehavior && A_CheckMonsterLevel(125,2,true,self)) { A_SetTics(10); }
+				else if (levelbehavior && A_CheckMonsterLevel(100,2,true,self)) { A_SetTics(11); }
 				else if (levelbehavior && A_CheckMonsterLevel(75,2,true,self)) { A_SetTics(12); }
-				else if (levelbehavior && user_monsterlevel > 50) { A_SetTics(13); }
-				else if (levelbehavior && user_monsterlevel > 25) { A_SetTics(14); }
+				else if (levelbehavior && A_CheckMonsterLevel(50,2,true,self)) { A_SetTics(13); }
+				else if (levelbehavior && A_CheckMonsterLevel(25,2,true,self)) { A_SetTics(14); }
 				A_FaceTarget();
 				A_KoraxCommand();
 			}

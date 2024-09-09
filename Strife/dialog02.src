@@ -2207,7 +2207,7 @@ conversation
 			giveitem = 508; // PaxaPunchSellItem1
 			nextpage = 3;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "MERCURY BANDANA (250 GOLD)";
@@ -2221,7 +2221,7 @@ conversation
 			giveitem = 509; // MercuryBandanaSellItem1
 			nextpage = 3;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "I WANT TO CHOOSE A DIFFERENT CATEGORY OF ITEMS NOW.";
@@ -2249,7 +2249,7 @@ conversation
 			giveitem = 510; // MagicWaterSellItem1
 			nextpage = 4;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "SAGE ELIXIR (225 GOLD)";
@@ -2263,7 +2263,7 @@ conversation
 			giveitem = 511; // SageElixirSellItem1
 			nextpage = 4;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "ELFIN ELIXIR (500 GOLD)";
@@ -2277,7 +2277,7 @@ conversation
 			giveitem = 512; // SageElixirSellItem1
 			nextpage = 4;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "[CHOOSE A DIFFERENT CATEGORY]";
@@ -2305,7 +2305,7 @@ conversation
 			giveitem = 513; // EnvironmentalSuitSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "TARGETER (125 GOLD)";
@@ -2319,7 +2319,7 @@ conversation
 			giveitem = 514; //TargeterSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "DEGNIN ORE (1375 GOLD)";
@@ -2333,7 +2333,7 @@ conversation
 			giveitem = 515; //DegninOreSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "SHADOW ARMOR (500 GOLD)";
@@ -2347,7 +2347,7 @@ conversation
 			giveitem = 516; //ShadowArmorSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "TELEPORTER BEACON (150 GOLD)";
@@ -2361,7 +2361,7 @@ conversation
 			giveitem = 517; //TeleporterBeaconSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "MAP SCANNER (750 GOLD)";
@@ -2375,7 +2375,7 @@ conversation
 			giveitem = 520; //ScannerSellItem1
 			nextpage = 5;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "[CHOOSE A DIFFERENT CATEGORY]";
@@ -2403,7 +2403,7 @@ conversation
 			giveitem = 518; // LesserVimstoneSellItem1
 			nextpage = 6;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "GREATER VIMSTONE (4020 GOLD)";
@@ -2417,7 +2417,7 @@ conversation
 			giveitem = 519; // GreaterVimstoneSellItem1
 			nextpage = 6;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "[CHOOSE A DIFFERENT CATEGORY]";
@@ -2450,12 +2450,12 @@ conversation
 			giveitem = 521; //OfferingChaliceItem1
 			nextpage = 1;
 			closedialog = false;
-    }
+		}
 		choice
 		{
 			text = "[CHOOSE A DIFFERENT CATEGORY]";
 			nextpage = 1;
 			closedialog = false;
 		}
-  }
+	}
 }
